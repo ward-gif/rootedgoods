@@ -197,9 +197,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 .main-navigation-link:hover .main-navigation-link-text {
-  text-decoration: underline;
-  text-decoration-color: #ab8249;
-  text-decoration-thickness: 2px;
+  color: #ab8249;
 }
 
 .navigation-flyout-category .navigation-item {
