@@ -257,6 +257,15 @@ h1, h2, h3, h4, h5, h6 {
 .main-navigation-link:hover [itemprop="name"] {
   color: #cd8c4a !important;
 }
+.nav-main .main-navigation-link {
+  font-size: 14px !important;
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+
+.nav-main .nav {
+  justify-content: center;
+}
 
 .navigation-flyout-category .navigation-item {
   position: relative;
