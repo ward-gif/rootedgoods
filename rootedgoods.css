@@ -165,6 +165,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible !important;
 }
 
+.header-wishlist-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
 /* CATEGORY FLYOUT STYLING + LINKS */ 
 .navigation-flyout {
     width: 95%;
