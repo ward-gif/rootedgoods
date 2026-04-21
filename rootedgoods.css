@@ -289,3 +289,34 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 /* test github connectie */
+
+/* BUTTON STYLING */
+.btn {
+  border-radius: 50px !important;
+  padding: 0.75rem 1.75rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+.btn-primary {
+  background-color: #cd8c4a !important;
+  border-color: #cd8c4a !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: #8f6b3a !important;
+  border-color: #8f6b3a !important;
+}
+
+.btn-outline-primary {
+  background-color: transparent !important;
+  border-color: #cd8c4a !important;
+  color: #cd8c4a !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #cd8c4a !important;
+  color: #fff !important;
+}
