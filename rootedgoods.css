@@ -166,14 +166,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-wishlist-btn {
-  position: relative;
+  position: relative !important;
+  overflow: visible !important;
 }
 
 .header-wishlist-badge {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  transform: translate(50%, -50%);
+  position: absolute !important;
+  top: 2px !important;
+  right: 2px !important;
+  transform: none !important;
 }
 
 /* CATEGORY FLYOUT STYLING + LINKS */ 
@@ -332,38 +333,38 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff !important;
 }
 
-/* IMAGE ROW SPOTLIGHT */
+/* AFBEELDING RONDE HOEKEN IMAGE ROW SPOTLIGHT */
 .image-row-spotlight .cms-block-element {
-  margin-top: 0;
+  overflow: hidden;
 }
 
-.image-row-spotlight .cms-block-element:nth-child(2) {
-  margin-top: 40px;
-}
-
-.image-row-spotlight .cms-block-element:nth-child(3) {
-  margin-top: -20px;
-}
-
-.image-row-spotlight .cms-block-element:nth-child(4) {
-  margin-top: 60px;
-}
-
-.image-row-spotlight .cms-block-element:nth-child(5) {
-  margin-top: 20px;
-}
-
-.image-row-spotlight .cms-block-element:nth-child(6) {
-  margin-top: -40px;
+.image-row-spotlight .cms-image-container {
+  border-radius: 16px !important;
+  overflow: hidden !important;
 }
 
 .image-row-spotlight .cms-image {
   border-radius: 16px !important;
 }
 
-.image-row-spotlight .cms-image-container {
-  border-radius: 16px !important;
-  overflow: hidden !important;
+.image-row-spotlight .cms-block-element:nth-child(2) {
+  padding-top: 40px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(3) {
+  padding-top: 20px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(4) {
+  padding-top: 60px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(5) {
+  padding-top: 20px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(6) {
+  padding-top: 40px;
 }
 
 .image-row-spotlight {
