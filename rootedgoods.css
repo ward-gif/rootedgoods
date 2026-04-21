@@ -347,11 +347,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .image-row-spotlight .cms-image {
+  border-radius: 20px !important;
+}
+
+.image-row-spotlight .cms-image-container {
   border-radius: 16px !important;
+  overflow: hidden !important;
 }
 
 .image-row-spotlight {
-  margin-top: -50px;
+  margin-top: -50px !important;
 }
 
 /* LOGO SLIDER */
