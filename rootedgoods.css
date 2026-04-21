@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px !important;
   padding: 0.9rem 2rem !important;
   font-size: 0.9rem !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 1.2 !important;
 }
 
@@ -352,4 +352,44 @@ h1, h2, h3, h4, h5, h6 {
 
 .image-row-spotlight {
   margin-top: -50px;
+}
+
+/* LOGO SLIDER */
+.home.productslider .carousel-control-prev,
+.home.productslider .carousel-control-next {
+  display: none !important;
+}
+
+.home.productslider .carousel-inner {
+  overflow: visible;
+}
+
+/* Continue scroll animatie */
+.home.productslider .carousel-item.active {
+  display: flex !important;
+  gap: 4rem;
+  align-items: center;
+  animation: logoScroll 20s linear infinite;
+}
+
+@keyframes logoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.home.productslider .card {
+  border: none !important;
+  background: transparent !important;
+  flex-shrink: 0;
+}
+
+.home.productslider .card-img img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.home.productslider .card-img img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
 }
