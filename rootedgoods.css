@@ -90,14 +90,14 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 620;
 }
 .header-search-input {
-  padding: 1rem 1rem;
+  padding: 0.6rem 1rem !important;
   background-color: #ede9e2;
   border: none;
   border-top-left-radius: 32px !important;
   border-bottom-left-radius: 32px !important;
 }
 .header-search-input:focus {
-  padding: 1rem 1rem;
+  padding: 0.6rem 1rem !important;
   background-color: #ede9e2;
   border: none;
   border-color: none;
@@ -110,7 +110,11 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-right-radius: 32px !important;
 }
 .header-main .header-search .header-search-btn {
-  line-height: 2.5;
+  line-height: 1.5 !important;
+  padding: 0.6rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .header-search-input:focus,
 .header-search-input:focus ~ .header-search-btn {
@@ -173,6 +177,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* WISHLIST BADGE */
+
+.header-wishlist,
+.header-wishlist-btn,
+.header-actions-col,
+.header-actions-col .row {
+  overflow: visible !important;
+}
+
 .header-wishlist {
   position: relative;
   display: inline-block;
@@ -184,9 +196,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-wishlist-badge {
   position: absolute !important;
-  top: 4px !important;
-  right: 4px !important;
-  transform: none !important;
+  top: 0px !important;
+  right: -8px !important;
+  transform: translateY(-30%) !important;
   min-width: 18px !important;
   height: 18px !important;
   padding: 0 4px !important;
