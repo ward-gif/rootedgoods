@@ -108,10 +108,19 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
 }
 .header-search-btn {
-  background: #ede9e2;
-  border: none;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 1rem !important;
+  background: #ede9e2 !important;
+  border: none !important;
   border-top-right-radius: 32px !important;
   border-bottom-right-radius: 32px !important;
+}
+
+.header-search-btn .header-search-icon {
+  display: flex !important;
+  align-items: center !important;
 }
 .header-main .header-search .header-search-btn {
   line-height: 1.5 !important;
