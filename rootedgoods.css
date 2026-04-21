@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   content: "\f5fd";
   margin-right: 0.4rem;
-  color: #ab8249;
+  color: #cd8c4a;
 }
 .main-navigation-link.home-link {
   display: none;
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-navigation-link:hover .main-navigation-link-text,
 .main-navigation-link:hover .main-navigation-link-text span,
 .main-navigation-link:hover [itemprop="name"] {
-  color: #ab8249 !important;
+  color: #cd8c4a !important;
 }
 
 .navigation-flyout-category .navigation-item {
