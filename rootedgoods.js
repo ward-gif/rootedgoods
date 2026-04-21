@@ -77,3 +77,57 @@ window.addEventListener('load', function() {
     flyoutContent.appendChild(col);
   }
 });
+
+// LOGO SLIDER - continue scroll animatie vervangt Shopware carousel
+window.addEventListener('load', function() {
+  var carousel = document.querySelector('.logo-slider .cms-element-custom-cms-slider');
+  if (!carousel) return;
+
+  // Verzamel unieke logo afbeeldingen uit eerste carousel-item
+  var images = [];
+  var seen = [];
+  var firstItem = carousel.querySelector('.carousel-item');
+  if (!firstItem) return;
+
+  firstItem.querySelectorAll('.card-img img').forEach(function(img) {
+    if (!seen.includes(img.src)) {
+      seen.push(img.src);
+      images.push({ src: img.src, alt: img.alt });
+    }
+  });
+
+  // Bouw continue scroll track — dupliceer voor naadloze loop
+  var track = document.createElement('div');
+  track.style.cssText = 'display:flex; align-items:center; width:max-content; animation:logoScroll 25s linear infinite;';
+
+  [images, images].forEach(function(set) {
+    set.forEach(function(img) {
+      var div = document.createElement('div');
+      div.style.cssText = 'padding: 0 3rem; flex-shrink:0;';
+      div.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" style="height:50px; opacity:0.6; filter:grayscale(100%); transition:all 0.3s;">';
+      div.querySelector('img').addEventListener('mouseover', function() {
+        this.style.opacity = '1';
+        this.style.filter = 'grayscale(0%)';
+      });
+      div.querySelector('img').addEventListener('mouseout', function() {
+        this.style.opacity = '0.6';
+        this.style.filter = 'grayscale(100%)';
+      });
+      track.appendChild(div);
+    });
+  });
+
+  // Wrapper met overflow hidden voor clean edges
+  var wrapper = document.createElement('div');
+  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0; background-color:#fbf7f5;';
+  wrapper.appendChild(track);
+
+  // Voeg keyframe animatie toe aan head
+  var style = document.createElement('style');
+  style.textContent = '@keyframes logoScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }';
+  document.head.appendChild(style);
+
+  // Verberg origineel carousel en voeg nieuwe slider in
+  carousel.style.display = 'none';
+  carousel.parentNode.insertBefore(wrapper, carousel);
+});
