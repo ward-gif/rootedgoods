@@ -161,22 +161,37 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible;
 }
 
+/* RESET HEADER ACTION BUTTONS */
 .header-actions-btn {
-  overflow: visible !important;
+  border-radius: 0 !important;
+  padding: 0 12px !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: 34px !important;
+  background: none !important;
+  border: none !important;
 }
 
 /* WISHLIST BADGE */
 .header-wishlist {
   position: relative;
+  display: inline-block;
+}
+
+.header-wishlist-btn {
+  position: relative !important;
 }
 
 .header-wishlist-badge {
   position: absolute !important;
-  top: 0px !important;
-  right: 0px !important;
+  top: 4px !important;
+  right: 4px !important;
   transform: none !important;
-  padding: 0.25rem 0.4rem !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  padding: 0 4px !important;
   font-size: 0.65rem !important;
+  line-height: 18px !important;
   border-radius: 50px !important;
 }
 
