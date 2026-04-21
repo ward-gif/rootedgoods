@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
   margin: auto;
 }
+.header-logo-main-link img,
+.header-logo img {
+  max-width: 250px;
+}
 
 /* STICKY HEADER + NAV */
 .header-main {
@@ -65,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-main {
     position: fixed;
-    top: 100px;
+    top: 97px;
     left: 0;
     width: 100%;
     transition: transform 0.3s ease;
@@ -196,10 +200,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-wishlist-badge {
   position: absolute !important;
-  top: 0px !important;
-  right: -8px !important;
+  top: 2px !important;
+  right: -2px !important;
   transform: translateY(-30%) !important;
-  min-width: 18px !important;
+  min-width: 10px;
   height: 18px !important;
   padding: 0 4px !important;
   font-size: 0.65rem !important;
