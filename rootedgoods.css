@@ -165,10 +165,15 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible !important;
 }
 
+.header-wishlist-btn {
+  position: relative;
+}
+
 .header-wishlist-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: 0px;
+  right: 0px;
+  transform: translate(50%, -50%);
 }
 
 /* CATEGORY FLYOUT STYLING + LINKS */ 
@@ -353,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .image-row-spotlight .cms-image {
-  border-radius: 20px !important;
+  border-radius: 16px !important;
 }
 
 .image-row-spotlight .cms-image-container {
