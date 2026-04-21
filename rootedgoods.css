@@ -165,16 +165,19 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible !important;
 }
 
-.header-wishlist-btn {
-  position: relative !important;
-  overflow: visible !important;
+/* WISHLIST BADGE */
+.header-wishlist {
+  position: relative;
 }
 
 .header-wishlist-badge {
   position: absolute !important;
-  top: 2px !important;
-  right: 2px !important;
+  top: 0px !important;
+  right: 0px !important;
   transform: none !important;
+  padding: 0.25rem 0.4rem !important;
+  font-size: 0.65rem !important;
+  border-radius: 50px !important;
 }
 
 /* CATEGORY FLYOUT STYLING + LINKS */ 
@@ -302,12 +305,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* test github connectie */
 
-/* BUTTON STYLING */
-.btn {
+/* BUTTON STYLING - uitgezonderd header icoon buttons */
+.btn:not(.header-actions-btn) {
   border-radius: 50px !important;
   padding: 0.9rem 2rem !important;
   font-size: 0.9rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   line-height: 1.2 !important;
 }
 
@@ -368,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .image-row-spotlight {
-  margin-top: -50px !important;
+  margin-top: -80px;
 }
 
 /* LOGO SLIDER */
