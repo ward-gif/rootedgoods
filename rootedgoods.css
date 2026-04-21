@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 500;
 }
 .header-main .header-row {
-  background-color: #fbf7f5;
+  background-color: #ffffff;
   position: relative;
   z-index: 500;
 }
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 499;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
-    background-color: #fbf7f5;
+    background-color: #ffffff;
 }
 .header-main.header-hidden {
   transform: translateY(-100%);
