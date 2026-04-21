@@ -320,3 +320,28 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #cd8c4a !important;
   color: #fff !important;
 }
+
+/* IMAGE ROW SPOTLIGHT */
+.image-row-spotlight .cms-block-element {
+  margin-top: 0;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(2) {
+  margin-top: 40px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(3) {
+  margin-top: -20px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(4) {
+  margin-top: 60px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(5) {
+  margin-top: 20px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(6) {
+  margin-top: -40px;
+}
