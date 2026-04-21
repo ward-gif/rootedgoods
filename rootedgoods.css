@@ -129,6 +129,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex !important;
   align-items: center !important;
 }
+
+.header-search-btn .icon > svg {
+  top: 0px !important;
+}
 .header-main .header-search .header-search-btn {
   line-height: 1.5 !important;
   padding: 0.6rem 1rem !important;
