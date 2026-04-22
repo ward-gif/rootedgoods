@@ -25,30 +25,34 @@ p {
   color: #2d4528 !important;
 }
 
-/* Type scale — desktop (modular scale 1.25 / major third) */
-h1 { font-size: 4rem !important;    font-weight: 400 !important; }
-h2 { font-size: 3rem !important;    font-weight: 400 !important; }
-h3 { font-size: 2.25rem !important; font-weight: 500 !important; }
-h4 { font-size: 1.5rem !important;  font-weight: 500 !important; }
-h5 { font-size: 1.25rem !important; font-weight: 600 !important; }
-h6 { font-size: 1rem !important;    font-weight: 600 !important; }
+/* Type scale — desktop (modular scale 1.25 / major third).
+   Dubbele selector (generiek + .cms-element-text scope) om Promidata
+   thema-overrides te verslaan die op class-level staan.
+   Weights iets zwaarder dan standaard — Cormorant Garamond is van
+   nature slanker dan Libre Baskerville bij dezelfde weight. */
+h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 500 !important; }
+h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 500 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600 !important; }
+h4, .cms-element-text h4 { font-size: 1.5rem !important;  font-weight: 600 !important; }
+h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 600 !important; }
+h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 
 /* Type scale — tablet (<992px) */
 @media (max-width: 991px) {
-  h1 { font-size: 3rem !important; }
-  h2 { font-size: 2.5rem !important; }
-  h3 { font-size: 1.875rem !important; }
-  h4 { font-size: 1.375rem !important; }
-  h5 { font-size: 1.125rem !important; }
+  h1, .cms-element-text h1 { font-size: 3rem !important; }
+  h2, .cms-element-text h2 { font-size: 2.5rem !important; }
+  h3, .cms-element-text h3 { font-size: 1.875rem !important; }
+  h4, .cms-element-text h4 { font-size: 1.375rem !important; }
+  h5, .cms-element-text h5 { font-size: 1.125rem !important; }
 }
 
 /* Type scale — mobile (<577px) */
 @media (max-width: 576px) {
-  h1 { font-size: 2.5rem !important; }
-  h2 { font-size: 2rem !important; }
-  h3 { font-size: 1.625rem !important; }
-  h4 { font-size: 1.25rem !important; }
-  h5 { font-size: 1.0625rem !important; }
+  h1, .cms-element-text h1 { font-size: 2.5rem !important; }
+  h2, .cms-element-text h2 { font-size: 2rem !important; }
+  h3, .cms-element-text h3 { font-size: 1.625rem !important; }
+  h4, .cms-element-text h4 { font-size: 1.25rem !important; }
+  h5, .cms-element-text h5 { font-size: 1.0625rem !important; }
 }
 
 
@@ -474,6 +478,21 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   padding-left: 100px !important;
   margin-right: -60px !important;
   box-sizing: border-box !important;
+  position: relative;
+}
+
+/* Gordijn over de linker 100px padding — dekt gekloonde TinySlider-tegels af
+   die anders in de padding-ruimte zichtbaar zijn. Kleur matcht body bg. */
+.home-productslider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #fbf7f5;
+  z-index: 5;
+  pointer-events: none;
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
@@ -485,29 +504,29 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   overflow: visible !important;
 }
 
-/* Slider — tegelbreedte desktop (~4,3 tegels zichtbaar) */
+/* Slider — tegelbreedte desktop (~3,5 tegels zichtbaar: 3 vol + 4e half) */
 .home-productslider .product-slider-item {
-  width: calc(23vw - 20px) !important;
-  min-width: calc(23vw - 20px) !important;
-  max-width: calc(23vw - 20px) !important;
+  width: calc(27vw - 20px) !important;
+  min-width: calc(27vw - 20px) !important;
+  max-width: calc(27vw - 20px) !important;
   padding-right: 45px !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
-  max-height: 14vw !important;   /* was 16vw — lager op laptop/desktop */
+  max-height: 16vw !important;
   object-fit: contain !important;
 }
 
-/* Slider — tablet groot (~3,3 tegels) */
+/* Slider — tablet groot (~2,5 tegels) */
 @media (max-width: 1199px) {
   .home-productslider .product-slider-item {
-    width: calc(29vw - 20px) !important;
-    min-width: calc(29vw - 20px) !important;
-    max-width: calc(29vw - 20px) !important;
+    width: calc(35vw - 20px) !important;
+    min-width: calc(35vw - 20px) !important;
+    max-width: calc(35vw - 20px) !important;
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 18vw !important;  /* was 20vw — ietsje lager */
+    max-height: 22vw !important;
   }
 }
 
@@ -516,6 +535,9 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   .home-productslider {
     padding-left: 60px !important;
     margin-right: -36px !important;
+  }
+  .home-productslider::before {
+    width: 60px;
   }
   .home-productslider .product-slider-item {
     width: calc(42vw - 20px) !important;
@@ -533,6 +555,9 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   .home-productslider {
     padding-left: 30px !important;
     margin-right: -18px !important;
+  }
+  .home-productslider::before {
+    width: 30px;
   }
   .home-productslider .product-slider-item {
     width: calc(75vw - 20px) !important;
