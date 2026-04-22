@@ -352,12 +352,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* PRODUCT SLIDER - overflow control */
-.home-productslider .tns-outer,
-.home-productslider .tns-inner {
+.home-productslider .tns-outer {
   overflow: hidden !important;
 }
 
-.home-productslider .tns-ovh {
+.home-productslider .tns-ovh,
+.home-productslider .tns-inner {
   overflow: visible !important;
 }
 
@@ -372,18 +372,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* PRODUCT SLIDER - tegel grootte */
 .home-productslider .product-slider-item {
-  width: 260px !important;
-  min-width: 260px !important;
-  max-width: 260px !important;
+  width: 340px !important;
+  min-width: 340px !important;
+  max-width: 340px !important;
   padding-right: 1.5rem !important;
 }
 
 .home-productslider .product-box .product-image-wrapper {
-  max-height: 180px !important;
+  max-height: 220px !important;
 }
 
 .home-productslider .product-box .product-image {
-  max-height: 180px !important;
+  max-height: 220px !important;
   object-fit: contain !important;
 }
 
