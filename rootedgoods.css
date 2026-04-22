@@ -795,13 +795,14 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 
 
 /* ------------------------------------------------------------
-   14. CMS TEXT ON IMAGE (Jumbotron / CTA banner)
-   Blok met achtergrondafbeelding + donkere overlay + witte tekst.
-   Inset met 40px aan de zijkanten, afgeronde hoeken.
+   14. HERO IMAGE-TEXT (CTA banner met achtergrondafbeelding)
+   Specifiek voor blokken met class .hero-image-text — NIET voor alle
+   cms-block-text-on-image varianten, zodat andere text-on-image blokken
+   hun eigen styling kunnen hebben.
    ------------------------------------------------------------ */
 
 /* Block zelf — inset met margin, rounded corners, overflow hidden */
-.cms-block-text-on-image {
+.hero-image-text {
   margin: 2rem 40px !important;
   border-radius: 16px;
   overflow: hidden;
@@ -809,7 +810,7 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 }
 
 /* Donkere overlay over de background-image */
-.cms-block-text-on-image::after {
+.hero-image-text::after {
   content: '';
   position: absolute;
   top: 0;
@@ -822,55 +823,55 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 }
 
 /* Container en content boven de overlay */
-.cms-block-text-on-image .cms-block-container {
+.hero-image-text .cms-block-container {
   position: relative;
   z-index: 2;
   padding: 6rem 2rem !important;
 }
 
 /* Alle tekst wit (overschrijft globale #2d4528) */
-.cms-block-text-on-image .cms-element-text,
-.cms-block-text-on-image .cms-element-text *,
-.cms-block-text-on-image h1,
-.cms-block-text-on-image h2,
-.cms-block-text-on-image h3,
-.cms-block-text-on-image h4,
-.cms-block-text-on-image h5,
-.cms-block-text-on-image h6,
-.cms-block-text-on-image p,
-.cms-block-text-on-image div {
+.hero-image-text .cms-element-text,
+.hero-image-text .cms-element-text *,
+.hero-image-text h1,
+.hero-image-text h2,
+.hero-image-text h3,
+.hero-image-text h4,
+.hero-image-text h5,
+.hero-image-text h6,
+.hero-image-text p,
+.hero-image-text div {
   color: #fff !important;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Ruimte tussen heading en subtekst */
-.cms-block-text-on-image .cms-element-text > h1,
-.cms-block-text-on-image .cms-element-text > h2,
-.cms-block-text-on-image .cms-element-text > h3 {
+.hero-image-text .cms-element-text > h1,
+.hero-image-text .cms-element-text > h2,
+.hero-image-text .cms-element-text > h3 {
   margin-bottom: 1rem !important;
 }
 
-/* Buttons in text-on-image: margin boven voor ademruimte */
-.cms-block-text-on-image .cms-element-text .btn {
+/* Buttons in hero-image-text: margin boven voor ademruimte */
+.hero-image-text .cms-element-text .btn {
   margin-top: 1.5rem;
   text-shadow: none;
 }
 
 /* Responsive — kleinere margins en padding op tablet/mobile */
 @media (max-width: 991px) {
-  .cms-block-text-on-image {
+  .hero-image-text {
     margin: 1.5rem 20px !important;
   }
-  .cms-block-text-on-image .cms-block-container {
+  .hero-image-text .cms-block-container {
     padding: 4rem 1.5rem !important;
   }
 }
 @media (max-width: 576px) {
-  .cms-block-text-on-image {
+  .hero-image-text {
     margin: 1rem 10px !important;
     border-radius: 12px;
   }
-  .cms-block-text-on-image .cms-block-container {
+  .hero-image-text .cms-block-container {
     padding: 3rem 1rem !important;
   }
 }
