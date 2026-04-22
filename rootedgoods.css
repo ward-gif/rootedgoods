@@ -436,44 +436,87 @@ h1, h2, h3, h4, h5, h6 {
 
 /* SPOTLIGHT IMAGES - RESPONSIVE HOOGTES */
 .image-row-spotlight .cms-image-container {
-  min-height: 20vw !important;
+  min-height: 13vw !important;
 }
 
 .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container {
-  min-height: 25vw !important;
+  min-height: 17vw !important;
 }
 
 .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container {
-  min-height: 18vw !important;
+  min-height: 12vw !important;
 }
 
 .image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container {
-  min-height: 22vw !important;
+  min-height: 15vw !important;
 }
 
 .image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container {
-  min-height: 28vw !important;
+  min-height: 19vw !important;
 }
 
 .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container {
-  min-height: 24vw !important;
+  min-height: 16vw !important;
 }
 
 .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container {
-  min-height: 19vw !important;
+  min-height: 13vw !important;
 }
 
 /* TABLET */
 @media (max-width: 991px) {
   .image-row-spotlight .cms-image-container {
-    min-height: 30vw !important;
+    min-height: 20vw !important;
   }
 }
 
 /* MOBILE */
 @media (max-width: 576px) {
   .image-row-spotlight .cms-image-container {
-    min-height: 40vw !important;
+    min-height: 28vw !important;
+  }
+}
+
+/* SPOTLIGHT IMAGES - OVERFLOW DESKTOP/TABLET */
+.image-row-spotlight .cms-block-container-row {
+  flex-wrap: nowrap !important;
+  overflow: hidden !important;
+}
+
+.image-row-spotlight .cms-block-element {
+  min-width: 17% !important;
+  flex: 0 0 17% !important;
+}
+
+/* Bij smaller scherm vallen er automatisch afbeeldingen buiten beeld */
+@media (max-width: 1200px) {
+  .image-row-spotlight .cms-block-element {
+    min-width: 20% !important;
+    flex: 0 0 20% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .image-row-spotlight .cms-block-element {
+    min-width: 25% !important;
+    flex: 0 0 25% !important;
+  }
+}
+
+/* MOBILE - grid */
+@media (max-width: 576px) {
+  .image-row-spotlight .cms-block-container-row {
+    flex-wrap: wrap !important;
+  }
+
+  .image-row-spotlight .cms-block-element {
+    min-width: 33.333% !important;
+    flex: 0 0 33.333% !important;
+    padding-top: 0 !important;
+  }
+
+  .image-row-spotlight {
+    margin-top: 0 !important;
   }
 }
 
