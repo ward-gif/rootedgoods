@@ -422,7 +422,6 @@ h1, h2, h3, h4, h5, h6 {
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh,
 .home-productslider .tns-inner,
-.home-productslider .cms-block-container,
 .home-productslider .cms-block-container-row,
 .home-productslider .col-12,
 .home-productslider .cms-element-product-slider,
@@ -437,7 +436,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
-  padding-left: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
   margin-left: 40px !important;
   overflow: visible !important;
 }
