@@ -241,46 +241,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px !important;
 }
 
-/* VERVANG WISHLIST ICOON */
-.header-wishlist-btn .icon-heart svg {
-  display: none;
-}
-
-.header-wishlist-btn .icon-heart::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 400;
-  content: "\f004";
-  font-size: 1.1rem;
-  color: #000;
-}
-
-/* VERVANG ACCOUNT ICOON */
-.account-menu-btn .icon-avatar svg {
-  display: none;
-}
-
-.account-menu-btn .icon-avatar::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 400;
-  content: "\f007";
-  font-size: 1.1rem;
-  color: #000;
-}
-
-/* VERVANG CART ICOON */
-.header-cart-btn .icon-bag svg {
-  display: none;
-}
-
-.header-cart-btn .icon-bag::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  content: "\f290";
-  font-size: 1.1rem;
-  color: #000;
-}
-
-/* CATEGORY FLYOUT STYLING + LINKS */
+/* CATEGORY FLYOUT STYLING + LINKS */ 
 .navigation-flyout {
     width: 95%;
     margin: 0 auto;
@@ -300,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-navigation-link.all-categories .main-navigation-link-text::before {
   font-family: "Font Awesome 6 Free";
-  font-weight: 400;
+  font-weight: 900;
   content: "\f5fd";
   margin-right: 0.4rem;
   color: #cd8c4a;
