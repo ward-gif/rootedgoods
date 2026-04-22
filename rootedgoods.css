@@ -547,14 +547,14 @@ h1, h2, h3, h4, h5, h6 {
 .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 16vw !important; }
 .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 13vw !important; }
 
-/* Spotlight — overflow desktop (afbeeldingen buiten beeld rechts) */
+/* Spotlight — desktop (alle 6 afbeeldingen passen precies) */
 .image-row-spotlight .cms-block-container-row {
   flex-wrap: nowrap !important;
   overflow: hidden !important;
 }
 .image-row-spotlight .cms-block-element {
-  min-width: 17% !important;
-  flex: 0 0 17% !important;
+  min-width: calc(100% / 6) !important;
+  flex: 0 0 calc(100% / 6) !important;
 }
 
 /* Spotlight — tablet groot */
@@ -632,4 +632,75 @@ h1, h2, h3, h4, h5, h6 {
 .home.productslider .card-img img:hover {
   opacity: 1;
   filter: grayscale(0%);
+}
+
+
+/* ------------------------------------------------------------
+   13. CMS IMAGE-TEXT ROW (Specialiteiten blok)
+   3 kolommen met afbeelding + tekst erop, donkere overlay
+   voor contrast. Stijl geïnspireerd op Sugarcoat solutions.
+   ------------------------------------------------------------ */
+
+/* Col = anker voor absolute tekst-overlay */
+.cms-block-image-text-row .col-md-4 {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Afbeelding ronde hoeken + donkere overlay via pseudo-element */
+.cms-block-image-text-row .cms-image-container {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  position: relative;
+}
+.cms-block-image-text-row .cms-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Tekst-wrapper (tweede data-cms-element-id in col) absoluut over image */
+.cms-block-image-text-row .col-md-4 > div:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  padding: 1rem;
+}
+
+.cms-block-image-text-row .cms-element-text {
+  width: 100%;
+}
+.cms-block-image-text-row .cms-element-text h4 {
+  color: #fff !important;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive — kleinere tekst op tablet/mobile */
+@media (max-width: 991px) {
+  .cms-block-image-text-row .cms-element-text h4 {
+    font-size: 1.5rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .cms-block-image-text-row .cms-element-text h4 {
+    font-size: 1.75rem !important;
+  }
 }
