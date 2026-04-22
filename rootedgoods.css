@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 .home-productslider .product-box .card-body {
-  --bs-card-spacer-y: 4rem;
+  --bs-card-spacer-y: 2rem;
   --bs-card-spacer-x: 2rem;
 }
 
@@ -422,6 +422,8 @@ h1, h2, h3, h4, h5, h6 {
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh,
 .home-productslider .tns-inner,
+.home-productslider .cms-block-container,
+.home-productslider .cms-block-container[style],
 .home-productslider .cms-block-container-row,
 .home-productslider .col-12,
 .home-productslider .cms-element-product-slider,
@@ -430,7 +432,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 !important;
 }
 
-/* Slider — startpositie */
+/* Slider — overflow visible intern, hidden op sectie */
 .home-productslider {
   overflow: hidden !important;
   padding-left: 50px !important;
@@ -439,8 +441,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
-  padding: 0 !important;
-  margin: 0 !important;
   overflow: visible !important;
 }
 .home-productslider .tns-outer,
@@ -454,11 +454,11 @@ h1, h2, h3, h4, h5, h6 {
   width: calc(23vw - 20px) !important;
   min-width: calc(23vw - 20px) !important;
   max-width: calc(23vw - 20px) !important;
-  padding-right: 2.5rem !important;
+  padding-right: 2rem !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
-  max-height: 20vw !important;
+  max-height: 18vw !important;
   object-fit: contain !important;
 }
 
@@ -471,7 +471,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 25vw !important;
+    max-height: 23vw !important;
   }
 }
 
@@ -488,7 +488,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 36vw !important;
+    max-height: 34vw !important;
   }
 }
 
@@ -505,10 +505,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 56vw !important;
+    max-height: 54vw !important;
   }
 }
-
 
 /* ------------------------------------------------------------
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
