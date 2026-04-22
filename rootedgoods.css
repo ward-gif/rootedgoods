@@ -637,8 +637,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ------------------------------------------------------------
    13. CMS IMAGE-TEXT ROW (Specialiteiten blok)
-   3 kolommen met afbeelding + tekst erop, donkere overlay
-   voor contrast. Stijl geïnspireerd op Sugarcoat solutions.
+   3 kolommen met afbeelding + titel + beschrijving erop,
+   donkere overlay voor contrast, zoom-in op hover.
+   Stijl geïnspireerd op Sugarcoat solutions.
    ------------------------------------------------------------ */
 
 /* Col = anker voor absolute tekst-overlay */
@@ -647,12 +648,30 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-/* Afbeelding ronde hoeken + donkere overlay via pseudo-element */
+/* Afbeelding kleiner (88% breed, gecentreerd) + lagere min-height */
+.cms-block-image-text-row .cms-element-image,
+.cms-block-image-text-row .cms-image-link {
+  max-width: 88%;
+  margin: 0 auto;
+  display: block;
+}
 .cms-block-image-text-row .cms-image-container {
   border-radius: 16px !important;
   overflow: hidden !important;
   position: relative;
+  min-height: 280px !important;   /* overschrijft Shopware inline style van 340px */
 }
+
+/* Zoom-in op hover — alleen de img schaalt, container blijft gelijk */
+.cms-block-image-text-row .cms-image {
+  transition: transform 0.5s ease !important;
+  will-change: transform;
+}
+.cms-block-image-text-row .col-md-4:hover .cms-image {
+  transform: scale(1.05);
+}
+
+/* Donkere overlay via pseudo-element op de image-container */
 .cms-block-image-text-row .cms-image-container::after {
   content: '';
   position: absolute;
@@ -663,16 +682,19 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.35);
   border-radius: inherit;
   pointer-events: none;
+  z-index: 1;
 }
 
-/* Tekst-wrapper (tweede data-cms-element-id in col) absoluut over image */
+/* Tekst-wrapper (tweede data-cms-element-id in col) absoluut over image.
+   Width: 88% matcht de image breedte zodat tekst precies over image valt. */
 .cms-block-image-text-row .col-md-4 > div:last-child {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 6%;
+  width: 88%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 2;
@@ -682,14 +704,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .cms-block-image-text-row .cms-element-text {
   width: 100%;
+  color: #fff;
 }
 .cms-block-image-text-row .cms-element-text h4 {
   color: #fff !important;
   font-size: 2rem !important;
   font-weight: 500 !important;
   text-align: center !important;
-  margin: 0;
+  margin: 0 !important;
   line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.cms-block-image-text-row .cms-element-text p {
+  color: #fff !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  margin: 0.5rem 0 0 0 !important;
+  line-height: 1.4;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -698,9 +730,18 @@ h1, h2, h3, h4, h5, h6 {
   .cms-block-image-text-row .cms-element-text h4 {
     font-size: 1.5rem !important;
   }
+  .cms-block-image-text-row .cms-element-text p {
+    font-size: 0.85rem !important;
+  }
 }
 @media (max-width: 576px) {
+  .cms-block-image-text-row .cms-image-container {
+    min-height: 220px !important;
+  }
   .cms-block-image-text-row .cms-element-text h4 {
     font-size: 1.75rem !important;
+  }
+  .cms-block-image-text-row .cms-element-text p {
+    font-size: 0.95rem !important;
   }
 }
