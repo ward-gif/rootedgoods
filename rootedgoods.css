@@ -256,7 +256,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
    Op tablet/mobile: normaal in-flow (logo/actions stacken daar).
    ------------------------------------------------------------ */
 .header-search {
-  max-width: 680px;
+  max-width: 700px;
   margin: auto;
 }
 
@@ -273,8 +273,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    max-width: 680px;
+    width: 700px;
+    max-width: 700px;
     z-index: 620;  /* verplaatst van header-search-col */
   }
 }
@@ -371,10 +371,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
 
 @media (min-width: 768px) {
   .search-suggest-container {
-    width: 800px;
+    width: 700px;
   }
   .search-suggest-container::after {
     display: none;
+  }
+}
+
+/* Desktop — zoekbalk en results altijd minimaal 700px, matchend */
+@media (min-width: 992px) {
+  .header-main .search-suggest-container {
+    width: 700px !important;
+    min-width: 700px !important;
   }
 }
 
@@ -514,9 +522,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
    2. .cms-block-container: overflow hidden kapt exact op de padding-grens,
       waardoor gekloonde TinySlider-tegels die links "uitsteken" verborgen
       worden zonder curtain. */
+/* padding-left schaalt mee met viewport via clamp():
+   - Min 15px op smalle schermen
+   - 1.5vw tussenin
+   - Max 40px op grote schermen (bv. 27" monitor)
+   Zorgt dat de slider op elke laptop/desktop met de juiste offset laadt
+   zonder manual media queries per breakpoint. */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 20px !important;
+  padding-left: clamp(15px, 1.5vw, 40px) !important;
   margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
@@ -534,12 +548,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
   overflow: visible !important;
 }
 
-/* Slider — tegelbreedte desktop (~3,5 tegels zichtbaar: 3 vol + 4e half) */
+/* Slider — tegelbreedte desktop (~3,5 tegels zichtbaar: 3 vol + 4e half).
+   Gap 30px matcht Merchery's compactere look. */
 .home-productslider .product-slider-item {
   width: calc(27vw - 20px) !important;
   min-width: calc(27vw - 20px) !important;
   max-width: calc(27vw - 20px) !important;
-  padding-right: 45px !important;
+  padding-right: 30px !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
@@ -560,12 +575,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
   }
 }
 
-/* Slider — tablet klein (~2,3 tegels) */
+/* Slider — tablet klein (~2,3 tegels)
+   padding-left en margin-right komen nu uit de clamp() van de base-rule,
+   alleen tegelbreedtes overrulen we per breakpoint. */
 @media (max-width: 991px) {
-  .home-productslider {
-    padding-left: 60px !important;
-    margin-right: -36px !important;
-  }
   .home-productslider .product-slider-item {
     width: calc(42vw - 20px) !important;
     min-width: calc(42vw - 20px) !important;
@@ -579,10 +592,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
 
 /* Slider — mobiel (~1,3 tegels) */
 @media (max-width: 576px) {
-  .home-productslider {
-    padding-left: 30px !important;
-    margin-right: -18px !important;
-  }
   .home-productslider .product-slider-item {
     width: calc(75vw - 20px) !important;
     min-width: calc(75vw - 20px) !important;
