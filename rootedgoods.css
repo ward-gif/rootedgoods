@@ -200,6 +200,16 @@ h1, h2, h3, h4, h5, h6 {
   border: none !important;
 }
 
+/* HEADER ICONEN KLEINER */
+.header-actions-btn .icon svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.header-cart-total {
+  font-size: 0.8rem !important;
+}
+
 /* WISHLIST BADGE */
 
 .header-wishlist,
