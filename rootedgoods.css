@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .content-main {
   padding: 0 !important;
-  padding-top: 120px !important;
+  padding-top: 170px !important;
 }
 
 
@@ -454,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
   width: calc(23vw - 20px) !important;
   min-width: calc(23vw - 20px) !important;
   max-width: calc(23vw - 20px) !important;
-  padding-right: 2rem !important;
+  padding-right: 45px !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
