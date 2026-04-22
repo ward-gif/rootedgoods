@@ -471,8 +471,8 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
    schermrand doorloopt en overflow daar kan afkappen. */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 75px !important;
-  margin-right: -45px !important;
+  padding-left: 100px !important;
+  margin-right: -60px !important;
   box-sizing: border-box !important;
 }
 .home-productslider .cms-block-container,
@@ -494,7 +494,7 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
-  max-height: 16vw !important;   /* was 18vw — ratio ~70% t.o.v. 23vw tegel */
+  max-height: 14vw !important;   /* was 16vw — lager op laptop/desktop */
   object-fit: contain !important;
 }
 
@@ -507,7 +507,7 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 20vw !important;  /* was 23vw — ratio ~69% */
+    max-height: 18vw !important;  /* was 20vw — ietsje lager */
   }
 }
 
@@ -732,7 +732,8 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 }
 
 /* Tekst-wrapper (tweede data-cms-element-id in col) absoluut over image.
-   Volledige col-breedte want image vult nu 100% van de col. */
+   Volledige col-breedte want image vult nu 100% van de col.
+   Ruimere padding zodat subtekst ademruimte heeft. */
 .cms-block-image-text-row .col-md-4 > div:last-child {
   position: absolute;
   top: 0;
@@ -745,7 +746,7 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   justify-content: center;
   z-index: 2;
   pointer-events: none;
-  padding: 1rem 1.5rem;
+  padding: 2rem 2.5rem;
 }
 
 .cms-block-image-text-row .cms-element-text {
@@ -801,12 +802,17 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
    hun eigen styling kunnen hebben.
    ------------------------------------------------------------ */
 
-/* Block zelf — inset met margin, rounded corners, overflow hidden */
+/* Block zelf — 40px inset aan zijkanten, 75vh hoogte, rounded corners.
+   Flex-center zodat content verticaal gecentreerd wordt binnen 75vh. */
 .hero-image-text {
   margin: 2rem 40px !important;
+  min-height: 75vh;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Donkere overlay over de background-image */
@@ -857,10 +863,11 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
   text-shadow: none;
 }
 
-/* Responsive — kleinere margins en padding op tablet/mobile */
+/* Responsive — kleinere margins en iets lagere vh op tablet/mobile */
 @media (max-width: 991px) {
   .hero-image-text {
     margin: 1.5rem 20px !important;
+    min-height: 60vh;
   }
   .hero-image-text .cms-block-container {
     padding: 4rem 1.5rem !important;
@@ -869,6 +876,7 @@ h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 @media (max-width: 576px) {
   .hero-image-text {
     margin: 1rem 10px !important;
+    min-height: 50vh;
     border-radius: 12px;
   }
   .hero-image-text .cms-block-container {
