@@ -432,11 +432,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 !important;
 }
 
-/* Slider — overflow visible intern, hidden op sectie */
+/* Slider — overflow visible intern, hidden op sectie.
+   padding-left op .home-productslider (parent heeft géén Shopware inline style,
+   dus wint altijd). margin-right compensatie zodat sectie rechts wél tot
+   schermrand doorloopt en overflow daar kan afkappen. */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 0 !important;
-  margin-right: 0 !important;
+  padding-left: 45px !important;
+  margin-right: -45px !important;
   box-sizing: border-box !important;
 }
 .home-productslider .cms-block-container,
