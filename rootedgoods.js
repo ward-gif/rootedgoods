@@ -143,3 +143,31 @@ window.addEventListener('load', function() {
     actionsCol.insertBefore(col, actionsCol.firstChild);
   }
 });
+// PRODUCT SLIDER - hele tegel klikbaar, alleen bij echte klik (niet bij swipe)
+window.addEventListener('load', function() {
+  var sliderItems = document.querySelectorAll('.home-productslider .product-slider-item');
+  sliderItems.forEach(function(item) {
+    var link = item.querySelector('.product-image-link');
+    if (link) {
+      var href = link.getAttribute('href');
+      item.style.cursor = 'pointer';
+
+      var startX = 0;
+      var startY = 0;
+
+      item.addEventListener('mousedown', function(e) {
+        startX = e.clientX;
+        startY = e.clientY;
+      });
+
+      item.addEventListener('click', function(e) {
+        var deltaX = Math.abs(e.clientX - startX);
+        var deltaY = Math.abs(e.clientY - startY);
+        if (deltaX > 5 || deltaY > 5) return;
+        if (e.target.closest('.product-wishlist')) return;
+        if (e.target.closest('.variant-thumbnail')) return;
+        window.location.href = href;
+      });
+    }
+  });
+});
