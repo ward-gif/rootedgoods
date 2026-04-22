@@ -138,16 +138,17 @@ window.addEventListener('load', function() {
   carousel.parentNode.insertBefore(wrapper, carousel);
 });
 
-// OFFERTE BUTTON IN HEADER - alleen desktop
-// DOMContentLoaded — header is klaar zonder afbeeldingen, voorkomt flicker
+// OFFERTE LINK IN NAV-MAIN - tekstuele CTA naast navigatielinks
+// In bruine accent-kleur met pipe separator ervoor. Alleen desktop.
 document.addEventListener('DOMContentLoaded', function() {
-  var actionsCol = document.querySelector('.header-actions-col .row.g-0');
-  if (actionsCol && window.innerWidth >= 992) {
-    var col = document.createElement('div');
-    col.className = 'col-auto d-flex align-items-center';
-    col.style.paddingRight = '0.75rem';
-    col.innerHTML = '<a href="/offerte" class="btn btn-outline-primary" style="font-size: 0.8rem !important; padding: 0.5rem 1rem !important; border-radius: 50px !important; font-weight: 400 !important; white-space: nowrap !important; letter-spacing: 0.01em !important;">Offerte aanvragen</a>';
-    actionsCol.insertBefore(col, actionsCol.firstChild);
+  var nav = document.querySelector('.nav-main .main-navigation-menu');
+  if (nav && window.innerWidth >= 992) {
+    var link = document.createElement('a');
+    link.href = '/offerte';
+    link.className = 'nav-link main-navigation-link offerte-link';
+    link.title = 'Offerte op maat';
+    link.innerHTML = '<div class="main-navigation-link-text"><span class="offerte-separator">|</span><span>Offerte op maat</span></div>';
+    nav.appendChild(link);
   }
 });
 // PRODUCT SLIDER - hele tegel klikbaar, alleen bij echte klik (niet bij swipe)

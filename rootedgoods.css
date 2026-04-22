@@ -205,6 +205,23 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
   color: #000;
 }
 
+/* Offerte-link in nav-main — accent-CTA in bruine kleur met separator */
+.offerte-link .main-navigation-link-text,
+.offerte-link .main-navigation-link-text span,
+.offerte-link [itemprop="name"] {
+  color: #cd8c4a !important;
+}
+.offerte-link:hover .main-navigation-link-text,
+.offerte-link:hover .main-navigation-link-text span {
+  color: #b57a3d !important;
+}
+.offerte-link .offerte-separator {
+  color: #000 !important;
+  margin-right: 0.5rem;
+  font-weight: 300;
+  opacity: 0.4;
+}
+
 
 /* ------------------------------------------------------------
    5. TOP BAR
@@ -499,7 +516,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
       worden zonder curtain. */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 75px !important;
+  padding-left: 20px !important;
   margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
