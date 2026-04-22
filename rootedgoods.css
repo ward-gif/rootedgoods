@@ -350,6 +350,9 @@ h1, h2, h3, h4, h5, h6 {
 .home-productslider .product-name {
   font-weight: 300;
 }
+.home-productslider .product-action {
+  display: none !important;
+}
 
 /* PRODUCT SLIDER - responsive scaling */
 .home-productslider .tns-outer {
