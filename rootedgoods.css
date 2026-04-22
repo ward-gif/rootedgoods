@@ -179,8 +179,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 32px;
   top: 0 !important;
   z-index: 699;
-  padding-top: 4rem;
-  margin-top: -3rem;
+  padding-top: 3.5rem;
+  margin-top: -2.5rem;
   box-shadow: 0 10px 25px -15px #000;
 }
 .header-actions-col {
@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   content: "\f5fd";
   margin-right: 0.4rem;
-  color: #cd8c4a;
+  color: #000;
 }
 .main-navigation-link.home-link {
   display: none;
