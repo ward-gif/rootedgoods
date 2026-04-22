@@ -437,7 +437,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
-  padding-left: 40px !important;
+  padding-left: 0 !important;
+  margin-left: 40px !important;
   overflow: visible !important;
 }
 .home-productslider .tns-outer,
@@ -451,7 +452,7 @@ h1, h2, h3, h4, h5, h6 {
   width: calc(26vw - 20px) !important;
   min-width: calc(26vw - 20px) !important;
   max-width: calc(26vw - 20px) !important;
-  padding-right: 1.5rem !important;
+  padding-right: 2.5rem !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
@@ -475,7 +476,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Slider — tablet klein (2 tegels) */
 @media (max-width: 991px) {
   .home-productslider .cms-block-container {
-    padding-left: 40px !important;
+    margin-left: 40px !important;
+    padding-left: 0 !important;
   }
   .home-productslider .product-slider-item {
     width: calc(46vw - 20px) !important;
@@ -491,7 +493,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Slider — mobiel (1,5 tegels) */
 @media (max-width: 576px) {
   .home-productslider .cms-block-container {
-    padding-left: 20px !important;
+    margin-left: 20px !important;
+    padding-left: 0 !important;
   }
   .home-productslider .product-slider-item {
     width: calc(72vw - 20px) !important;
