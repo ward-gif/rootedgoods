@@ -430,17 +430,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 !important;
 }
 
-/* Slider — sectie kapt rechts af, intern alles visible zodat tegels uitsteken */
+/* Slider — startpositie */
 .home-productslider {
   overflow: hidden !important;
+  padding-left: 50px !important;
+  margin-right: -50px !important;
+  box-sizing: border-box !important;
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
   padding: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 50px !important;
+  margin: 0 !important;
   overflow: visible !important;
 }
 .home-productslider .tns-outer,
@@ -449,11 +449,11 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible !important;
 }
 
-/* Slider — tegelbreedte desktop (4 tegels + deels 5e zichtbaar) */
+/* Slider — tegelbreedte desktop (~4,3 tegels zichtbaar) */
 .home-productslider .product-slider-item {
-  width: calc(26vw - 20px) !important;
-  min-width: calc(26vw - 20px) !important;
-  max-width: calc(26vw - 20px) !important;
+  width: calc(23vw - 20px) !important;
+  min-width: calc(23vw - 20px) !important;
+  max-width: calc(23vw - 20px) !important;
   padding-right: 2.5rem !important;
 }
 .home-productslider .product-box .product-image-wrapper,
@@ -462,12 +462,12 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain !important;
 }
 
-/* Slider — tablet groot (3 tegels) */
+/* Slider — tablet groot (~3,3 tegels) */
 @media (max-width: 1199px) {
   .home-productslider .product-slider-item {
-    width: calc(32vw - 20px) !important;
-    min-width: calc(32vw - 20px) !important;
-    max-width: calc(32vw - 20px) !important;
+    width: calc(29vw - 20px) !important;
+    min-width: calc(29vw - 20px) !important;
+    max-width: calc(29vw - 20px) !important;
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
@@ -475,16 +475,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Slider — tablet klein (2 tegels) */
+/* Slider — tablet klein (~2,3 tegels) */
 @media (max-width: 991px) {
-  .home-productslider .cms-block-container {
-    margin-left: 40px !important;
-    padding-left: 0 !important;
+  .home-productslider {
+    padding-left: 40px !important;
+    margin-right: -40px !important;
   }
   .home-productslider .product-slider-item {
-    width: calc(46vw - 20px) !important;
-    min-width: calc(46vw - 20px) !important;
-    max-width: calc(46vw - 20px) !important;
+    width: calc(42vw - 20px) !important;
+    min-width: calc(42vw - 20px) !important;
+    max-width: calc(42vw - 20px) !important;
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
@@ -492,16 +492,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Slider — mobiel (1,5 tegels) */
+/* Slider — mobiel (~1,3 tegels) */
 @media (max-width: 576px) {
-  .home-productslider .cms-block-container {
-    margin-left: 20px !important;
-    padding-left: 0 !important;
+  .home-productslider {
+    padding-left: 20px !important;
+    margin-right: -20px !important;
   }
   .home-productslider .product-slider-item {
-    width: calc(72vw - 20px) !important;
-    min-width: calc(72vw - 20px) !important;
-    max-width: calc(72vw - 20px) !important;
+    width: calc(75vw - 20px) !important;
+    min-width: calc(75vw - 20px) !important;
+    max-width: calc(75vw - 20px) !important;
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
