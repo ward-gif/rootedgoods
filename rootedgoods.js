@@ -171,3 +171,10 @@ window.addEventListener('load', function() {
     }
   });
 });
+// PRODUCT SLIDER - startpositie offset via JS
+window.addEventListener('load', function() {
+  var container = document.querySelector('.home-productslider .cms-block-container');
+  if (container) {
+    container.style.setProperty('padding-left', '45px', 'important');
+  }
+});
