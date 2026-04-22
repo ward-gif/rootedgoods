@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .content-main {
   padding: 0 !important;
-  padding-top: 170px !important;
+  padding-top: 120px !important;
 }
 
 
@@ -435,8 +435,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Slider — overflow visible intern, hidden op sectie */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 50px !important;
-  margin-right: -50px !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
   box-sizing: border-box !important;
 }
 .home-productslider .cms-block-container,
