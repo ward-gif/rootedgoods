@@ -351,6 +351,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+/* PRODUCT SLIDER - overflow control */
+.home-productslider .tns-outer,
+.home-productslider .tns-inner {
+  overflow: hidden !important;
+}
+
+.home-productslider .tns-ovh {
+  overflow: visible !important;
+}
+
+.home-productslider .cms-block-container {
+  overflow: visible !important;
+  padding-right: 0 !important;
+}
+
+.home-productslider {
+  overflow: hidden !important;
+}
+
+/* PRODUCT SLIDER - tegel grootte */
+.home-productslider .product-slider-item {
+  width: 260px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
+  padding-right: 1.5rem !important;
+}
+
+.home-productslider .product-box .product-image-wrapper {
+  max-height: 180px !important;
+}
+
+.home-productslider .product-box .product-image {
+  max-height: 180px !important;
+  object-fit: contain !important;
+}
+
 /* PRODUCT BOX */
 .product-box {
   border-color: transparent;
