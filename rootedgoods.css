@@ -1,123 +1,28 @@
-/* ============================================================
-   ROOTED GOODS - CUSTOM STYLESHEET
-   rootedgoods.eu | Shopware 6.5 / Promidata thema
-   ============================================================ */
-
-
-/* ------------------------------------------------------------
-   1. GLOBAL
-   ------------------------------------------------------------ */
+/* GLOBAL CSS STYLING */
 body {
   font-family: 'Montserrat', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Libre Baskerville', serif !important;
 }
-.cms-page .cms-section .cms-block .cms-element-text h2 {
-  font-size: 2.5rem !important;
-  font-weight: 200 !important;
-}
-
-
-/* ------------------------------------------------------------
-   2. LAYOUT & CONTAINER
-   ------------------------------------------------------------ */
-.container,
-.cms-section .boxed {
-  max-width: 100% !important;
-  --bs-gutter-x: 80px;
-}
 .content-main {
-  padding: 0 !important;
-  padding-top: 170px !important;
+    padding: 0px 0 !important;
+    padding-top: 160px;
 }
 
-
-/* ------------------------------------------------------------
-   3. HEADER
-   ------------------------------------------------------------ */
-.header-main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 500;
-  transition: transform 0.3s ease;
-}
+/* NAVIGATION STYLING */
 .header-main .container {
   max-width: 100% !important;
   --bs-gutter-x: 0px;
 }
-.header-main .header-row {
-  background-color: #fbf7f5;
-  position: relative;
-  z-index: 500;
+.container, .cms-section .boxed {
+    max-width: 100% !important;
+      --bs-gutter-x: 80px; 
 }
-.header-row {
-  padding: 0.5rem 2rem;
-  padding-bottom: 0 !important;
+.top-bar-container {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.header-main.header-hidden {
-  transform: translateY(-100%);
-}
-.header-actions-col {
-  position: relative;
-  z-index: 501;
-  overflow: visible;
-}
-.header-actions-btn {
-  overflow: visible !important;
-}
-
-/* Header — icon hover */
-.header-wishlist-btn:hover .icon-heart svg,
-.account-menu-btn:hover .icon-avatar svg,
-.header-cart-btn:hover .icon-bag svg {
-  color: #cd8c4a !important;
-  stroke: #cd8c4a !important;
-}
-
-
-/* ------------------------------------------------------------
-   4. NAVIGATION
-   ------------------------------------------------------------ */
-.nav-main {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  z-index: 499;
-  background-color: #fbf7f5;
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
-  transition: transform 0.3s ease;
-}
-.nav-main.header-hidden {
-  transform: translateY(-170px);
-}
-.main-navigation-link .main-navigation-link-text {
-  font-weight: 500;
-}
-.main-navigation-link.home-link {
-  display: none;
-}
-
-/* Navigation — "Alle categorieën" icoon */
-.main-navigation-link.all-categories .icon-stack {
-  display: none;
-}
-.main-navigation-link.all-categories .main-navigation-link-text::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  content: "\f5fd";
-  margin-right: 0.4rem;
-  color: #ab8249;
-}
-
-
-/* ------------------------------------------------------------
-   5. TOP BAR
-   ------------------------------------------------------------ */
 .top-bar-nav {
   background-color: #ede9e2;
 }
@@ -125,35 +30,119 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
   text-decoration: none;
 }
+
 .top-bar-nav a:hover {
   text-decoration: underline;
 }
-.top-bar-container {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container {
+  padding: 3px 10px 3px 10px;
 }
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
   padding: 0rem 2rem;
 }
-.header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container {
-  padding: 3px 10px;
+.header-row {
+  padding: 0.5rem 2rem;
+  padding-bottom: 0 !important;
 }
-
-
-/* ------------------------------------------------------------
-   6. ZOEKBALK
-   ------------------------------------------------------------ */
 .header-search {
   max-width: 800px;
   margin: auto;
 }
+.header-logo-main-link img,
+.header-logo img {
+  max-width: 250px;
+}
+
+/* STICKY HEADER + NAV */
+.header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  z-index: 500;
+}
+.header-main .header-row {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 500;
+}
+.nav-main {
+    position: fixed;
+    top: 97px;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease;
+    z-index: 499;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    background-color: #ffffff;
+}
+.header-main.header-hidden {
+  transform: translateY(-100%);
+}
+.nav-main.header-hidden {
+  transform: translateY(-170px);
+}
+.content-main {
+  padding-top: 170px;
+}
+
+/* SEARCH BAR STYLING + OVERLAY */
 .header-search-col {
   position: relative;
   z-index: 620;
 }
-.header-search-form {
-  position: relative;
-  z-index: 700;
+.header-search-input {
+  padding: 0.6rem 1rem !important;
+  background-color: #ede9e2;
+  border: none;
+  border-top-left-radius: 32px !important;
+  border-bottom-left-radius: 32px !important;
+}
+.header-search-input:focus {
+  padding: 0.6rem 1rem !important;
+  background-color: #ede9e2;
+  border: none;
+  border-color: none;
+  box-shadow: none;
+}
+.header-search-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 1rem !important;
+  line-height: 1 !important;
+  background: #ede9e2 !important;
+  border: none !important;
+  border-top-right-radius: 32px !important;
+  border-bottom-right-radius: 32px !important;
+}
+
+.header-search-btn .header-search-icon {
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
+.header-search-btn .icon {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header-search-btn .icon > svg {
+  top: 0px !important;
+}
+.header-main .header-search .header-search-btn {
+  line-height: 1.5 !important;
+  padding: 0.6rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.header-search-input:focus,
+.header-search-input:focus ~ .header-search-btn {
+  border-color: none !important;
 }
 .input-group:has(.header-search-input) {
   position: relative;
@@ -161,53 +150,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 32px;
   background-color: #ede9e2;
 }
-.header-search-input {
-  padding: 1rem;
-  background-color: #ede9e2;
-  border: none;
-  border-top-left-radius: 32px !important;
-  border-bottom-left-radius: 32px !important;
-}
-.header-search-input:focus {
-  background-color: #ede9e2;
-  border: none;
-  box-shadow: none;
-}
-.header-search-btn {
-  background: #ede9e2;
-  border: none;
-  border-top-right-radius: 32px !important;
-  border-bottom-right-radius: 32px !important;
-}
-.header-main .header-search .header-search-btn {
-  line-height: 2.5;
-}
-.header-search-input:focus ~ .header-search-btn {
-  border-color: none !important;
-}
-
-/* Zoekbalk — suggesties dropdown */
-.search-suggest.js-search-result {
-  position: relative;
-  z-index: 600;
-}
-.header-main .search-suggest-container {
-  max-height: 550px;
-  border: none;
-  background-color: #ede9e2;
-  border-radius: 32px;
-  top: 0 !important;
-  z-index: 699;
-  padding-top: 4rem;
-  margin-top: -3.5rem;
-  box-shadow: 0 10px 25px -15px #000;
-}
-
-/* Zoekbalk — overlay bij focus */
 #searchOverlay {
   display: none;
   position: fixed;
-  top: 130px;
+  top: 140px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -218,37 +164,134 @@ h1, h2, h3, h4, h5, h6 {
 #searchOverlay.active {
   display: block;
 }
-
-@media (min-width: 768px) {
-  .search-suggest-container {
-    width: 800px;
-  }
-  .search-suggest-container::after {
-    display: none;
-  }
+.header-search-form {
+  position: relative;
+  z-index: 700;
+}
+.search-suggest.js-search-result {
+  position: relative;
+  z-index: 600;
+}
+.header-main .search-suggest-container {
+  max-height: 550px;
+  border: none;
+  background-color: #fff;
+  border-radius: 32px;
+  top: 0 !important;
+  z-index: 699;
+  padding-top: 3.5rem;
+  margin-top: -2.5rem;
+  box-shadow: 0 10px 25px -15px #000;
+}
+.header-actions-col {
+  position: relative;
+  z-index: 501;
+  overflow: visible;
 }
 
+/* RESET HEADER ACTION BUTTONS */
+.header-actions-btn {
+  border-radius: 0 !important;
+  padding: 0 12px !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: 34px !important;
+  background: none !important;
+  border: none !important;
+}
 
-/* ------------------------------------------------------------
-   7. CATEGORY FLYOUT
-   ------------------------------------------------------------ */
+/* HEADER ICONEN KLEINER */
+.header-actions-btn .icon svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.header-cart-total {
+  font-size: 0.8rem !important;
+}
+
+/* WISHLIST BADGE */
+
+.header-wishlist,
+.header-wishlist-btn,
+.header-actions-col,
+.header-actions-col .row {
+  overflow: visible !important;
+}
+
+.header-wishlist {
+  position: relative;
+  display: inline-block;
+}
+
+.header-wishlist-btn {
+  position: relative !important;
+}
+
+.header-wishlist-badge {
+  position: absolute !important;
+  top: 2px !important;
+  right: -2px !important;
+  transform: translateY(-30%) !important;
+  min-width: 10px;
+  height: 18px !important;
+  padding: 0 4px !important;
+  font-size: 0.65rem !important;
+  line-height: 18px !important;
+  border-radius: 50px !important;
+}
+
+/* CATEGORY FLYOUT STYLING + LINKS */ 
 .navigation-flyout {
-  width: 95%;
-  margin: 0 auto;
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
+    width: 95%;
+    margin: 0 auto;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
 }
+
 .navigation-flyout.cio-all-categories-navigation {
   max-width: 95%;
   margin: 0 auto;
   left: 2.5%;
   right: 2.5%;
 }
+.main-navigation-link.all-categories .icon-stack {
+  display: none;
+}
 
-/* Flyout — afbeeldingen met donkere overlay */
+.main-navigation-link.all-categories .main-navigation-link-text::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f5fd";
+  margin-right: 0.4rem;
+  color: #000;
+}
+.main-navigation-link.home-link {
+  display: none;
+}
+.main-navigation-link .main-navigation-link-text {
+    font-weight: 500;
+}
+.main-navigation-link:hover,
+.main-navigation-link:hover .main-navigation-link-text,
+.main-navigation-link:hover .main-navigation-link-text span,
+.main-navigation-link:hover [itemprop="name"] {
+  color: #cd8c4a !important;
+}
+.nav-main .main-navigation-link {
+  font-size: 14px !important;
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+
+.nav-main .nav {
+  justify-content: center;
+}
+
 .navigation-flyout-category .navigation-item {
   position: relative;
 }
+
 .navigation-flyout-category .navigation-item::after {
   content: '';
   position: absolute;
@@ -259,42 +302,31 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.35);
   border-radius: inherit;
 }
+
 .navigation-flyout-category .flyout-text {
   position: relative;
   z-index: 1;
   color: #fff;
   font-weight: 600;
 }
+
 .navigation-flyout-category .icon {
   position: relative;
   z-index: 1;
 }
+
 .navigation-flyout-content::after {
   content: '';
   display: block;
   flex: 0 0 25%;
   max-width: 25%;
 }
+
 .navigation-flyout .row.navigation-flyout-content {
   position: relative;
 }
 
-
-/* ------------------------------------------------------------
-   8. PRODUCT BOX (algemeen)
-   ------------------------------------------------------------ */
-.product-box {
-  border-color: transparent;
-  background-color: #fff;
-  border-radius: 10px !important;
-}
-
-
-/* ------------------------------------------------------------
-   9. HOMEPAGE PRODUCT SLIDER
-   ------------------------------------------------------------ */
-
-/* Slider — verberg overbodige elementen */
+/* PRODUCT SLIDER */
 .badge-new {
   display: none !important;
 }
@@ -304,17 +336,13 @@ h1, h2, h3, h4, h5, h6 {
 .home-productslider .product-box .product-action {
   display: none !important;
 }
-
-/* Slider — tekst styling */
-.home-productslider .product-name {
-  font-weight: 300;
-}
 .home-productslider .product-box .card-body {
   --bs-card-spacer-y: 4rem;
   --bs-card-spacer-x: 2rem;
 }
-
-/* Slider — reset alle interne spacing */
+.home-productslider .product-name {
+  font-weight: 300;
+}
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh,
 .home-productslider .tns-inner,
@@ -326,8 +354,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 !important;
   padding: 0 !important;
 }
-
-/* Slider — overflow: sectie kapt af rechts, intern alles visible */
 .home-productslider {
   overflow: hidden !important;
 }
@@ -340,8 +366,6 @@ h1, h2, h3, h4, h5, h6 {
 .home-productslider .tns-inner {
   overflow: visible !important;
 }
-
-/* Slider — tegelbreedte desktop (4 tegels + deels 5e zichtbaar) */
 .home-productslider .product-slider-item {
   width: calc(26vw - 20px) !important;
   min-width: calc(26vw - 20px) !important;
@@ -353,8 +377,6 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 20vw !important;
   object-fit: contain !important;
 }
-
-/* Slider — tablet groot (3 tegels) */
 @media (max-width: 1199px) {
   .home-productslider .product-slider-item {
     width: calc(32vw - 20px) !important;
@@ -366,8 +388,6 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 25vw !important;
   }
 }
-
-/* Slider — tablet klein (2 tegels) */
 @media (max-width: 991px) {
   .home-productslider .cms-block-container {
     padding-left: 40px !important;
@@ -382,8 +402,6 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 36vw !important;
   }
 }
-
-/* Slider — mobiel (1,5 tegels) */
 @media (max-width: 576px) {
   .home-productslider .cms-block-container {
     padding-left: 20px !important;
@@ -397,4 +415,223 @@ h1, h2, h3, h4, h5, h6 {
   .home-productslider .product-box .product-image {
     max-height: 56vw !important;
   }
+}
+
+/* PRODUCT BOX */
+.product-box {
+  border-color: transparent;
+  background-color: #fff;
+  border-radius: 10px !important;
+}
+
+/* CMS TEXT */
+.cms-page .cms-section .cms-block .cms-element-text h2 {
+  font-size: 2.5rem !important;
+  font-weight: 200 !important;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .search-suggest-container {
+    width: 800px;
+  }
+  .search-suggest-container::after {
+    display: none;
+  }
+}
+/* test github connectie */
+
+/* BUTTON STYLING - uitgezonderd header icoon buttons */
+.btn:not(.header-actions-btn) {
+  border-radius: 50px !important;
+  padding: 0.9rem 2rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+.btn-primary {
+  background-color: #cd8c4a !important;
+  border-color: #cd8c4a !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: #b57a3d !important;
+  border-color: #b57a3d !important;
+}
+
+.btn-outline-primary {
+  background-color: transparent !important;
+  border-color: #cd8c4a !important;
+  color: #cd8c4a !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #cd8c4a !important;
+  color: #fff !important;
+}
+
+/* AFBEELDING RONDE HOEKEN IMAGE ROW SPOTLIGHT */
+.image-row-spotlight .cms-block-element {
+  overflow: hidden;
+}
+
+.image-row-spotlight .cms-image-container {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+.image-row-spotlight .cms-image {
+  border-radius: 16px !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(2) {
+  padding-top: 40px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(3) {
+  padding-top: 20px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(4) {
+  padding-top: 60px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(5) {
+  padding-top: 20px;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(6) {
+  padding-top: 40px;
+}
+
+.image-row-spotlight {
+  margin-top: -80px;
+}
+
+/* SPOTLIGHT IMAGES - RESPONSIVE HOOGTES */
+.image-row-spotlight .cms-image-container {
+  min-height: 13vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container {
+  min-height: 17vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container {
+  min-height: 12vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container {
+  min-height: 15vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container {
+  min-height: 19vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container {
+  min-height: 16vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container {
+  min-height: 13vw !important;
+}
+
+/* TABLET */
+@media (max-width: 991px) {
+  .image-row-spotlight .cms-image-container {
+    min-height: 20vw !important;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .image-row-spotlight .cms-image-container {
+    min-height: 28vw !important;
+  }
+}
+
+/* SPOTLIGHT IMAGES - OVERFLOW DESKTOP/TABLET */
+.image-row-spotlight .cms-block-container-row {
+  flex-wrap: nowrap !important;
+  overflow: hidden !important;
+}
+
+.image-row-spotlight .cms-block-element {
+  min-width: 17% !important;
+  flex: 0 0 17% !important;
+}
+
+/* Bij smaller scherm vallen er automatisch afbeeldingen buiten beeld */
+@media (max-width: 1200px) {
+  .image-row-spotlight .cms-block-element {
+    min-width: 20% !important;
+    flex: 0 0 20% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .image-row-spotlight .cms-block-element {
+    min-width: 25% !important;
+    flex: 0 0 25% !important;
+  }
+}
+
+/* MOBILE - grid */
+@media (max-width: 576px) {
+  .image-row-spotlight .cms-block-container-row {
+    flex-wrap: wrap !important;
+  }
+
+  .image-row-spotlight .cms-block-element {
+    min-width: 33.333% !important;
+    flex: 0 0 33.333% !important;
+    padding-top: 0 !important;
+  }
+
+  .image-row-spotlight {
+    margin-top: 0 !important;
+  }
+}
+
+/* LOGO SLIDER */
+.home.productslider .carousel-control-prev,
+.home.productslider .carousel-control-next {
+  display: none !important;
+}
+
+.home.productslider .carousel-inner {
+  overflow: visible;
+}
+
+/* Continue scroll animatie */
+.home.productslider .carousel-item.active {
+  display: flex !important;
+  gap: 4rem;
+  align-items: center;
+  animation: logoScroll 20s linear infinite;
+}
+
+@keyframes logoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.home.productslider .card {
+  border: none !important;
+  background: transparent !important;
+  flex-shrink: 0;
+}
+
+.home.productslider .card-img img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.home.productslider .card-img img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
 }
