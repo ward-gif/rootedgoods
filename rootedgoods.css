@@ -435,7 +435,8 @@ h1, h2, h3, h4, h5, h6 {
 .home-productslider {
   overflow: hidden !important;
 }
-.home-productslider .cms-block-container {
+.home-productslider .cms-block-container,
+.home-productslider .cms-block-container[style] {
   padding-left: 40px !important;
   overflow: visible !important;
 }
