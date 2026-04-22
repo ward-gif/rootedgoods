@@ -1,6 +1,7 @@
 // SEARCH OVERLAY - donkere overlay achter zoekbalk bij focus
 // Overlay verdwijnt bij klik erop of als zoekbalk focus verliest
-window.addEventListener('load', function() {
+// DOMContentLoaded i.p.v. load — werkt zonder afbeeldingen, draait eerder
+document.addEventListener('DOMContentLoaded', function() {
   var searchInput = document.querySelector('.header-search-input');
   var overlay = document.getElementById('searchOverlay');
 
@@ -35,6 +36,8 @@ window.addEventListener('load', function() {
   var header = document.querySelector('.header-main');
   var nav = document.querySelector('.nav-main');
 
+  // passive: true — browser weet dat we preventDefault() niet gebruiken,
+  // blokkeert scroll-performance niet (vooral merkbaar op mobiel)
   window.addEventListener('scroll', function() {
     var current = window.scrollY;
 
@@ -55,12 +58,13 @@ window.addEventListener('load', function() {
     }
 
     lastScroll = current;
-  });
+  }, { passive: true });
 })();
 
 // CATEGORY FLYOUT - voegt "Bekijk alle producten" button toe
 // als aparte rij onder de categorie items
-window.addEventListener('load', function() {
+// DOMContentLoaded i.p.v. load — flyout-DOM is klaar zonder afbeeldingen
+document.addEventListener('DOMContentLoaded', function() {
   var flyoutContent = document.querySelector('.navigation-flyout-content');
 
   if (flyoutContent) {
@@ -79,6 +83,8 @@ window.addEventListener('load', function() {
 });
 
 // LOGO SLIDER - continue scroll animatie vervangt Shopware carousel
+// Blijft op 'load' — heeft img.src nodig van de originele carousel,
+// die moet eerst volledig geladen zijn voor betrouwbare src-copy
 window.addEventListener('load', function() {
   var carousel = document.querySelector('.logo-slider .cms-element-custom-cms-slider');
   if (!carousel) return;
@@ -133,7 +139,8 @@ window.addEventListener('load', function() {
 });
 
 // OFFERTE BUTTON IN HEADER - alleen desktop
-window.addEventListener('load', function() {
+// DOMContentLoaded — header is klaar zonder afbeeldingen, voorkomt flicker
+document.addEventListener('DOMContentLoaded', function() {
   var actionsCol = document.querySelector('.header-actions-col .row.g-0');
   if (actionsCol && window.innerWidth >= 992) {
     var col = document.createElement('div');
@@ -144,7 +151,8 @@ window.addEventListener('load', function() {
   }
 });
 // PRODUCT SLIDER - hele tegel klikbaar, alleen bij echte klik (niet bij swipe)
-window.addEventListener('load', function() {
+// DOMContentLoaded — product-tegels staan in DOM zonder images
+document.addEventListener('DOMContentLoaded', function() {
   var sliderItems = document.querySelectorAll('.home-productslider .product-slider-item');
   sliderItems.forEach(function(item) {
     var link = item.querySelector('.product-image-link');
