@@ -28,14 +28,14 @@ p {
 /* Type scale — desktop (modular scale 1.25 / major third).
    Dubbele selector (generiek + .cms-element-text scope) om Promidata
    thema-overrides te verslaan die op class-level staan.
-   Weights iets zwaarder dan standaard — Cormorant Garamond is van
-   nature slanker dan Libre Baskerville bij dezelfde weight. */
-h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 500 !important; }
-h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 500 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600 !important; }
-h4, .cms-element-text h4 { font-size: 1.5rem !important;  font-weight: 600 !important; }
-h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 600 !important; }
-h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !important; }
+   Cormorant Garamond is van nature slank — weights hoger gezet
+   voor steviger visuele presence. */
+h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 700 !important; }
+h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 600 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 700 !important; }
+h4, .cms-element-text h4 { font-size: 1.5rem !important;  font-weight: 700 !important; }
+h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 700 !important; }
+h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !important; }
 
 /* Type scale — tablet (<992px) */
 @media (max-width: 991px) {
@@ -469,10 +469,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   padding: 0 !important;
 }
 
-/* Slider — overflow visible intern, hidden op sectie.
-   padding-left op .home-productslider (parent heeft géén Shopware inline style,
-   dus wint altijd). margin-right compensatie zodat sectie rechts wél tot
-   schermrand doorloopt en overflow daar kan afkappen. */
+/* Slider — dubbele clip-strategie:
+   1. .home-productslider: padding-left duwt content 100px naar rechts,
+      margin-right -60 laat sectie tot +60 buiten viewport doorlopen.
+   2. .cms-block-container: overflow hidden kapt exact op de padding-grens,
+      waardoor gekloonde TinySlider-tegels die links "uitsteken" verborgen
+      worden zonder curtain. */
 .home-productslider {
   overflow: hidden !important;
   padding-left: 100px !important;
@@ -480,24 +482,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   box-sizing: border-box !important;
   position: relative;
 }
-
-/* Gordijn over de linker 100px padding — dekt gekloonde TinySlider-tegels af
-   die anders in de padding-ruimte zichtbaar zijn. Kleur matcht body bg. */
-.home-productslider::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  background-color: #fbf7f5;
-  z-index: 5;
-  pointer-events: none;
-}
+/* cms-block-container = primaire clip-boundary (links op padding-edge,
+   rechts op div-edge + margin-right compensatie). */
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
-  overflow: visible !important;
+  overflow: hidden !important;
 }
+/* TinySlider lagen mogen visible zijn — clipping gebeurt op cms-block-container */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh,
 .home-productslider .tns-inner {
@@ -536,9 +527,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     padding-left: 60px !important;
     margin-right: -36px !important;
   }
-  .home-productslider::before {
-    width: 60px;
-  }
   .home-productslider .product-slider-item {
     width: calc(42vw - 20px) !important;
     min-width: calc(42vw - 20px) !important;
@@ -546,7 +534,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 28vw !important;  /* was 34vw — ratio ~67% */
+    max-height: 28vw !important;
   }
 }
 
@@ -556,9 +544,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     padding-left: 30px !important;
     margin-right: -18px !important;
   }
-  .home-productslider::before {
-    width: 30px;
-  }
   .home-productslider .product-slider-item {
     width: calc(75vw - 20px) !important;
     min-width: calc(75vw - 20px) !important;
@@ -566,7 +551,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 48vw !important;  /* was 54vw — ratio ~64% */
+    max-height: 48vw !important;
   }
 }
 
