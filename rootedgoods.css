@@ -6,7 +6,7 @@
 
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
-   Headings: Cormorant Garamond (klassieke Garamond-stijl).
+   Headings: Libre Baskerville (klassiek serif, weights 400 en 700).
    Body: Montserrat.
    Groene kleur #2d4528 alleen op headings en paragraphs,
    zodat buttons/prijzen/labels hun eigen thema-kleuren behouden.
@@ -17,7 +17,7 @@ body {
   font-family: 'Montserrat', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cormorant Garamond', serif !important;
+  font-family: 'Libre Baskerville', serif !important;
   color: #2d4528 !important;
   line-height: 1.2;
 }
@@ -28,14 +28,13 @@ p {
 /* Type scale — desktop (modular scale 1.25 / major third).
    Dubbele selector (generiek + .cms-element-text scope) om Promidata
    thema-overrides te verslaan die op class-level staan.
-   Cormorant Garamond is van nature slank — weights hoger gezet
-   voor steviger visuele presence. */
-h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 700 !important; }
-h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 600 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 700 !important; }
-h4, .cms-element-text h4 { font-size: 1.5rem !important;  font-weight: 700 !important; }
-h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 700 !important; }
-h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !important; }
+   Alle headings op weight 400 (lichtste beschikbaar in Libre Baskerville). */
+h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 400 !important; }
+h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 400 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 400 !important; }
+h4, .cms-element-text h4 { font-size: 1.5rem !important;  font-weight: 400 !important; }
+h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 400 !important; }
+h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !important; }
 
 /* Type scale — tablet (<992px) */
 @media (max-width: 991px) {
@@ -234,10 +233,33 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !impo
 
 /* ------------------------------------------------------------
    6. ZOEKBALK
+   Op desktop: position absolute zodat zoekbalk optisch gecentreerd
+   staat op viewport (boven de nav-links), niet binnen de search-col
+   (die tussen logo en icons hangt en niet symmetrisch is).
+   Op tablet/mobile: normaal in-flow (logo/actions stacken daar).
    ------------------------------------------------------------ */
 .header-search {
-  max-width: 800px;
+  max-width: 680px;
   margin: auto;
+}
+
+@media (min-width: 992px) {
+  .header-row {
+    position: relative;
+  }
+  /* Col position naar static zodat .header-search refereert naar .header-row */
+  .header-search-col {
+    position: static !important;
+  }
+  .header-search {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 680px;
+    z-index: 620;  /* verplaatst van header-search-col */
+  }
 }
 .header-search-col {
   position: relative;
@@ -477,8 +499,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !impo
       worden zonder curtain. */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 100px !important;
-  margin-right: -60px !important;
+  padding-left: 75px !important;
+  margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
 }
@@ -774,7 +796,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !impo
   text-align: center !important;
   margin: 0 !important;
   line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 .image-cards .cms-element-text p {
   color: #fff !important;
@@ -783,7 +804,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !impo
   text-align: center !important;
   margin: 0.5rem 0 0 0 !important;
   line-height: 1.4;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive — kleinere afbeelding + tekst op tablet/mobile */
@@ -857,7 +877,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !impo
 .hero-image-text p,
 .hero-image-text div {
   color: #fff !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Ruimte tussen heading en subtekst */
@@ -870,7 +889,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 700 !impo
 /* Buttons in hero-image-text: margin boven voor ademruimte */
 .hero-image-text .cms-element-text .btn {
   margin-top: 1.5rem;
-  text-shadow: none;
 }
 
 /* Responsive — kleinere margins en iets lagere vh op tablet/mobile */
