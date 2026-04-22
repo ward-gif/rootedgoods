@@ -434,6 +434,49 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: -80px;
 }
 
+/* SPOTLIGHT IMAGES - RESPONSIVE HOOGTES */
+.image-row-spotlight .cms-image-container {
+  min-height: 20vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container {
+  min-height: 25vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container {
+  min-height: 18vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container {
+  min-height: 22vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container {
+  min-height: 28vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container {
+  min-height: 24vw !important;
+}
+
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container {
+  min-height: 19vw !important;
+}
+
+/* TABLET */
+@media (max-width: 991px) {
+  .image-row-spotlight .cms-image-container {
+    min-height: 30vw !important;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .image-row-spotlight .cms-image-container {
+    min-height: 40vw !important;
+  }
+}
+
 /* LOGO SLIDER */
 .home.productslider .carousel-control-prev,
 .home.productslider .carousel-control-next {
