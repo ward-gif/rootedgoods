@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-/* PRODUCT SLIDER - overflow control */
+/* PRODUCT SLIDER - responsive scaling */
 .home-productslider .tns-outer {
   overflow: hidden !important;
 }
@@ -370,21 +370,46 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden !important;
 }
 
-/* PRODUCT SLIDER - tegel grootte */
+/* TEGELS - schaalbaar */
 .home-productslider .product-slider-item {
-  width: 340px !important;
-  min-width: 340px !important;
-  max-width: 340px !important;
+  width: calc(25vw - 20px) !important;
+  min-width: calc(25vw - 20px) !important;
+  max-width: calc(25vw - 20px) !important;
   padding-right: 1.5rem !important;
 }
 
 .home-productslider .product-box .product-image-wrapper {
-  max-height: 220px !important;
+  max-height: calc(20vw) !important;
 }
 
 .home-productslider .product-box .product-image {
-  max-height: 220px !important;
+  max-height: calc(20vw) !important;
   object-fit: contain !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .home-productslider .product-slider-item {
+    width: calc(45vw - 20px) !important;
+    min-width: calc(45vw - 20px) !important;
+    max-width: calc(45vw - 20px) !important;
+  }
+  .home-productslider .product-box .product-image-wrapper,
+  .home-productslider .product-box .product-image {
+    max-height: 35vw !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-productslider .product-slider-item {
+    width: calc(70vw - 20px) !important;
+    min-width: calc(70vw - 20px) !important;
+    max-width: calc(70vw - 20px) !important;
+  }
+  .home-productslider .product-box .product-image-wrapper,
+  .home-productslider .product-box .product-image {
+    max-height: 55vw !important;
+  }
 }
 
 /* PRODUCT BOX */
