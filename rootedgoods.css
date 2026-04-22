@@ -438,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
    schermrand doorloopt en overflow daar kan afkappen. */
 .home-productslider {
   overflow: hidden !important;
-  padding-left: 45px !important;
+  padding-left: 75px !important;
   margin-right: -45px !important;
   box-sizing: border-box !important;
 }
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
-  max-height: 18vw !important;
+  max-height: 16vw !important;   /* was 18vw — ratio ~70% t.o.v. 23vw tegel */
   object-fit: contain !important;
 }
 
@@ -474,15 +474,15 @@ h1, h2, h3, h4, h5, h6 {
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 23vw !important;
+    max-height: 20vw !important;  /* was 23vw — ratio ~69% */
   }
 }
 
 /* Slider — tablet klein (~2,3 tegels) */
 @media (max-width: 991px) {
   .home-productslider {
-    padding-left: 40px !important;
-    margin-right: -40px !important;
+    padding-left: 60px !important;
+    margin-right: -36px !important;
   }
   .home-productslider .product-slider-item {
     width: calc(42vw - 20px) !important;
@@ -491,15 +491,15 @@ h1, h2, h3, h4, h5, h6 {
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 34vw !important;
+    max-height: 28vw !important;  /* was 34vw — ratio ~67% */
   }
 }
 
 /* Slider — mobiel (~1,3 tegels) */
 @media (max-width: 576px) {
   .home-productslider {
-    padding-left: 20px !important;
-    margin-right: -20px !important;
+    padding-left: 30px !important;
+    margin-right: -18px !important;
   }
   .home-productslider .product-slider-item {
     width: calc(75vw - 20px) !important;
@@ -508,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 54vw !important;
+    max-height: 48vw !important;  /* was 54vw — ratio ~64% */
   }
 }
 
