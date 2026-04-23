@@ -572,17 +572,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow: visible !important;
 }
 
-/* Rechter peek-fade: gradient mask aan rechterkant zodat de laatste tegel
-   visueel "uit beeld loopt". Creëert de slide-hint zonder Tiny Slider's
-   transform-berekening te verstoren (wat clones zichtbaar zou maken). */
+/* Rechter peek-fade: brede solid-overgang met body-bg kleur zodat de
+   laatste tegel duidelijk "uit beeld loopt". Creëert de slide-hint zonder
+   Tiny Slider's transform-berekening te verstoren. */
 .home-productslider::after {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
-  width: 140px;
-  background: linear-gradient(to left, #FBF7F5 25%, rgba(251, 247, 245, 0));
+  width: 220px;
+  background: linear-gradient(to left, #FBF7F5 55%, rgba(251, 247, 245, 0));
   z-index: 5;
   pointer-events: none;
 }
