@@ -16,12 +16,7 @@ body {
   font-family: 'Montserrat', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6 {
-  /* Test-chain: verwijder eerste font om volgende kandidaat te zien.
-     - Libre Baskerville (huidige default): chunky, bookish
-     - Playfair Display: hoog contrast, editorial
-     - Lora: subtiel calligraphic, warm
-     - Spectral: modern transitional, elegant */
-  font-family: 'Libre Baskerville', 'Playfair Display', 'Lora', 'Spectral', serif !important;
+  font-family: 'Playfair Display', serif !important;
   color: #2d4528 !important;
   line-height: 1.2;
 }
@@ -29,11 +24,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Type scale — desktop (modular scale 1.25 / major third).
    Dubbele selector (generiek + .cms-element-text scope) om Promidata
    thema-overrides te verslaan die op class-level staan.
-   Libre Baskerville heeft alleen 400 en 700. h4 is uitzondering:
-   Montserrat subtitle-stijl voor gebruik als top-title / eyebrow. */
-h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 400 !important; }
-h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 400 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 400 !important; }
+   Headings op weight 500 (medium) — ideaal voor Playfair Display.
+   h4 is uitzondering: Montserrat subtitle-stijl voor top-title / eyebrow. */
+h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 500 !important; }
+h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 500 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 500 !important; }
 h4, .cms-element-text h4 {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 0.875rem !important;
@@ -42,8 +37,8 @@ h4, .cms-element-text h4 {
   text-transform: uppercase;
   line-height: 1.4;
 }
-h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 400 !important; }
-h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !important; }
+h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 500 !important; }
+h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !important; }
 
 /* Type scale — tablet (<992px). h4 blijft vast op 0.875rem als subtitle. */
 @media (max-width: 991px) {
