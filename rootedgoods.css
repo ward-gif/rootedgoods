@@ -8,10 +8,9 @@
    1. GLOBAL — typografie
    Headings: Libre Baskerville (klassiek serif, weights 400 en 700).
    Body: Montserrat.
-   Groene kleur #2d4528 alleen op headings en paragraphs,
-   zodat buttons/prijzen/labels hun eigen thema-kleuren behouden.
-   Op donkere overlays (image-cards, text-on-image) wordt tekst
-   expliciet wit via hun eigen sectie.
+   Groene kleur #2d4528 alleen op headings. Body paragraphs blijven
+   op de thema-default (zwart). Op donkere overlays (image-cards,
+   text-on-image) wordt tekst expliciet wit via hun eigen sectie.
    ------------------------------------------------------------ */
 body {
   font-family: 'Montserrat', sans-serif !important;
@@ -20,9 +19,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Libre Baskerville', serif !important;
   color: #2d4528 !important;
   line-height: 1.2;
-}
-p {
-  color: #2d4528 !important;
 }
 
 /* Type scale — desktop (modular scale 1.25 / major third).
@@ -522,6 +518,20 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 400 !impo
 .home-productslider .product-box .card-body {
   --bs-card-spacer-y: 2rem;
   --bs-card-spacer-x: 2rem;
+}
+
+/* Product naam + prijs — alleen in homepage slider (niet op PLP of andere slots).
+   Voor globale toepassing: prefix weghalen. */
+.home-productslider .product-box .product-info .product-name {
+  margin: 25px 0 0 0;
+  font-size: 16px;
+}
+.home-productslider .product-price-wrapper {
+  font-size: 16px;
+}
+.home-productslider .product-price {
+  font-size: 16px;
+  font-weight: 600 !important;
 }
 
 /* Slider — reset alle interne spacing */
