@@ -16,7 +16,12 @@ body {
   font-family: 'Montserrat', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Libre Baskerville', serif !important;
+  /* Test-chain: verwijder eerste font om volgende kandidaat te zien.
+     - Libre Baskerville (huidige default): chunky, bookish
+     - Playfair Display: hoog contrast, editorial
+     - Lora: subtiel calligraphic, warm
+     - Spectral: modern transitional, elegant */
+  font-family: 'Libre Baskerville', 'Playfair Display', 'Lora', 'Spectral', serif !important;
   color: #2d4528 !important;
   line-height: 1.2;
 }
