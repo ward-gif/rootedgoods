@@ -567,16 +567,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   box-sizing: border-box !important;
   position: relative;
 }
-/* cms-block-container = primaire clip-boundary (links op padding-edge,
-   rechts op div-edge + margin-right compensatie). */
+/* Laat cms-block-container en Tiny Slider lagen hun default overflow doen.
+   Tiny Slider klipt zelf op tns-ovh (overflow: hidden default) waardoor
+   gekloonde tegels niet zichtbaar zijn. De peek-effect rechts werkt omdat
+   item-breedte (22vw) groter is dan tns-ovh / N zichtbare items. */
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
-  overflow: hidden !important;
-}
-/* TinySlider lagen mogen visible zijn — clipping gebeurt op cms-block-container */
-.home-productslider .tns-outer,
-.home-productslider .tns-ovh,
-.home-productslider .tns-inner {
   overflow: visible !important;
 }
 
