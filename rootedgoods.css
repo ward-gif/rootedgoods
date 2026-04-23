@@ -192,7 +192,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .main-navigation-link:hover .main-navigation-link-text,
 .main-navigation-link:hover .main-navigation-link-text span,
 .main-navigation-link:hover [itemprop="name"] {
-  color: #cd8c4a !important;
+  color: #CA853F !important;
 }
 
 /* Navigatie — "Alle categorieën" icoon */
@@ -218,7 +218,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .offerte-link .main-navigation-link-text,
 .offerte-link .main-navigation-link-text span,
 .offerte-link [itemprop="name"] {
-  color: #cd8c4a !important;
+  color: #CA853F !important;
 }
 .offerte-link:hover .main-navigation-link-text,
 .offerte-link:hover .main-navigation-link-text span {
@@ -467,8 +467,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   line-height: 1.2 !important;
 }
 .btn-primary {
-  background-color: #cd8c4a !important;
-  border-color: #cd8c4a !important;
+  background-color: #CA853F !important;
+  border-color: #CA853F !important;
   color: #fff !important;
 }
 .btn-primary:hover {
@@ -477,11 +477,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 .btn-outline-primary {
   background-color: transparent !important;
-  border-color: #cd8c4a !important;
-  color: #cd8c4a !important;
+  border-color: #CA853F !important;
+  color: #CA853F !important;
 }
 .btn-outline-primary:hover {
-  background-color: #cd8c4a !important;
+  background-color: #CA853F !important;
   color: #fff !important;
 }
 
