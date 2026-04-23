@@ -567,84 +567,25 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   box-sizing: border-box !important;
   position: relative;
 }
-/* Laat cms-block-container en Tiny Slider lagen hun default overflow doen.
-   Tiny Slider klipt zelf op tns-ovh (overflow: hidden default) waardoor
-   gekloonde tegels niet zichtbaar zijn. De peek-effect rechts werkt omdat
-   item-breedte (22vw) groter is dan tns-ovh / N zichtbare items. */
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
   overflow: visible !important;
 }
 
 
-/* Slider — tegelbreedte desktop (~3,5 tegels zichtbaar: 3 vol + 4e half).
-   Gap 30px matcht Merchery's compactere look. */
+/* Slider — item-breedte bepaling.
+   Tiny Slider berekent items-per-view op basis van Promidata's
+   productboxMinWidth (300) uit data-product-slider-options.
+   Op 1900 viewport met 30px gutter → ~6 items zichtbaar, item ~287px.
+   We overschrijven de width NIET meer — dat veroorzaakte mismatch met
+   Tiny Slider's interne transform berekening (clone-zichtbaarheid).
+   Alleen gap en image-hoogte overrulen we. */
 .home-productslider .product-slider-item {
-  width: calc(27vw - 20px) !important;
-  min-width: calc(27vw - 20px) !important;
-  max-width: calc(27vw - 20px) !important;
   padding-right: 30px !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
-  max-height: 16vw !important;
   object-fit: contain !important;
-}
-
-/* Slider — groot scherm (≥1600px):
-   smallere tegels zodat 4 vol + 5e deels zichtbaar wordt.
-   Op 1900 viewport: tegel ≈ 398px, slot ≈ 428px, 4.37 tegels zichtbaar. */
-@media (min-width: 1600px) {
-  .home-productslider .product-slider-item {
-    width: calc(22vw - 20px) !important;
-    min-width: calc(22vw - 20px) !important;
-    max-width: calc(22vw - 20px) !important;
-  }
-  .home-productslider .product-box .product-image-wrapper,
-  .home-productslider .product-box .product-image {
-    max-height: 14vw !important;
-  }
-}
-
-/* Slider — tablet groot (~2,5 tegels) */
-@media (max-width: 1199px) {
-  .home-productslider .product-slider-item {
-    width: calc(35vw - 20px) !important;
-    min-width: calc(35vw - 20px) !important;
-    max-width: calc(35vw - 20px) !important;
-  }
-  .home-productslider .product-box .product-image-wrapper,
-  .home-productslider .product-box .product-image {
-    max-height: 22vw !important;
-  }
-}
-
-/* Slider — tablet klein (~2,3 tegels)
-   padding-left en margin-right komen nu uit de clamp() van de base-rule,
-   alleen tegelbreedtes overrulen we per breakpoint. */
-@media (max-width: 991px) {
-  .home-productslider .product-slider-item {
-    width: calc(42vw - 20px) !important;
-    min-width: calc(42vw - 20px) !important;
-    max-width: calc(42vw - 20px) !important;
-  }
-  .home-productslider .product-box .product-image-wrapper,
-  .home-productslider .product-box .product-image {
-    max-height: 28vw !important;
-  }
-}
-
-/* Slider — mobiel (~1,3 tegels) */
-@media (max-width: 576px) {
-  .home-productslider .product-slider-item {
-    width: calc(75vw - 20px) !important;
-    min-width: calc(75vw - 20px) !important;
-    max-width: calc(75vw - 20px) !important;
-  }
-  .home-productslider .product-box .product-image-wrapper,
-  .home-productslider .product-box .product-image {
-    max-height: 48vw !important;
-  }
 }
 
 /* ------------------------------------------------------------
