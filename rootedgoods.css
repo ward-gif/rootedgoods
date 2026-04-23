@@ -572,35 +572,27 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow: visible !important;
 }
 
-/* Rechter peek-fade: brede solid-overgang met body-bg kleur zodat de
-   laatste tegel duidelijk "uit beeld loopt". Creëert de slide-hint zonder
-   Tiny Slider's transform-berekening te verstoren. */
-.home-productslider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 220px;
-  background: linear-gradient(to left, #FBF7F5 55%, rgba(251, 247, 245, 0));
-  z-index: 5;
-  pointer-events: none;
-}
 
 
-/* Slider — item-breedte bepaling.
-   Tiny Slider berekent items-per-view op basis van Promidata's
-   productboxMinWidth (300) uit data-product-slider-options.
-   Op 1900 viewport met 30px gutter → ~6 items zichtbaar, item ~287px.
-   We overschrijven de width NIET meer — dat veroorzaakte mismatch met
-   Tiny Slider's interne transform berekening (clone-zichtbaarheid).
-   Alleen gap en image-hoogte overrulen we. */
+/* Slider — item-breedte: default Tiny Slider berekening (productboxMinWidth 300).
+   Op groot scherm forceren we iets bredere tegels voor een duidelijke peek. */
 .home-productslider .product-slider-item {
   padding-right: 30px !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
   object-fit: contain !important;
+}
+
+/* Groot scherm (>=1600px): tegels breder zodat 5e deels uit beeld valt.
+   Kleine trade-off: mogelijk lichte clone-zichtbaarheid links, maar
+   peek-effect is duidelijker. */
+@media (min-width: 1600px) {
+  .home-productslider .product-slider-item {
+    width: calc(22vw - 10px) !important;
+    min-width: calc(22vw - 10px) !important;
+    max-width: calc(22vw - 10px) !important;
+  }
 }
 
 /* ------------------------------------------------------------
