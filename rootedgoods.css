@@ -580,18 +580,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow: visible !important;
 }
 
-/* TinySlider gekloonde tegels volledig uit de flex-flow halen
-   (gebruikt voor infinite loop). Display:none + width:0 voorkomt dat
-   ze ruimte innemen, zodat de eerste echte tegel op de juiste positie staat.
-   Functionele impact: loop stopt bij laatste echte tegel, wat OK is bij <10 producten. */
-.home-productslider .tns-slide-cloned {
-  display: none !important;
-  width: 0 !important;
-  min-width: 0 !important;
-  max-width: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
 
 /* Slider — tegelbreedte desktop (~3,5 tegels zichtbaar: 3 vol + 4e half).
    Gap 30px matcht Merchery's compactere look. */
