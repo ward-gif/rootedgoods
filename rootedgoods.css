@@ -580,6 +580,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow: visible !important;
 }
 
+/* TinySlider gekloonde tegels verbergen (gebruikt voor infinite loop).
+   Voorkomt dat clones links/rechts zichtbaar worden in de padding-area.
+   Functionele impact: loop stopt bij laatste echte tegel, wat OK is bij <10 producten. */
+.home-productslider .tns-slide-cloned {
+  visibility: hidden !important;
+}
+
 /* Slider — tegelbreedte desktop (~3,5 tegels zichtbaar: 3 vol + 4e half).
    Gap 30px matcht Merchery's compactere look. */
 .home-productslider .product-slider-item {
@@ -594,17 +601,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   object-fit: contain !important;
 }
 
-/* Slider — groot scherm (≥1600px, bv. 27" monitor of 4K laptop):
-   smallere tegels zodat 4 vol + 5e deels zichtbaar wordt */
+/* Slider — groot scherm (≥1600px):
+   smallere tegels zodat 4 vol + 5e deels zichtbaar wordt.
+   Op 1900 viewport: tegel ≈ 398px, slot ≈ 428px, 4.37 tegels zichtbaar. */
 @media (min-width: 1600px) {
   .home-productslider .product-slider-item {
-    width: calc(21vw - 20px) !important;
-    min-width: calc(21vw - 20px) !important;
-    max-width: calc(21vw - 20px) !important;
+    width: calc(22vw - 20px) !important;
+    min-width: calc(22vw - 20px) !important;
+    max-width: calc(22vw - 20px) !important;
   }
   .home-productslider .product-box .product-image-wrapper,
   .home-productslider .product-box .product-image {
-    max-height: 13vw !important;
+    max-height: 14vw !important;
   }
 }
 
