@@ -594,6 +594,20 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   object-fit: contain !important;
 }
 
+/* Slider — groot scherm (≥1600px, bv. 27" monitor of 4K laptop):
+   smallere tegels zodat 4 vol + 5e deels zichtbaar wordt */
+@media (min-width: 1600px) {
+  .home-productslider .product-slider-item {
+    width: calc(21vw - 20px) !important;
+    min-width: calc(21vw - 20px) !important;
+    max-width: calc(21vw - 20px) !important;
+  }
+  .home-productslider .product-box .product-image-wrapper,
+  .home-productslider .product-box .product-image {
+    max-height: 13vw !important;
+  }
+}
+
 /* Slider — tablet groot (~2,5 tegels) */
 @media (max-width: 1199px) {
   .home-productslider .product-slider-item {
