@@ -575,24 +575,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 
 
 /* Slider — item-breedte: default Tiny Slider berekening (productboxMinWidth 300).
-   Op groot scherm forceren we iets bredere tegels voor een duidelijke peek. */
+   Geen width overrides — dat gaf ongewenste clone-zichtbaarheid links. */
 .home-productslider .product-slider-item {
   padding-right: 30px !important;
 }
 .home-productslider .product-box .product-image-wrapper,
 .home-productslider .product-box .product-image {
   object-fit: contain !important;
-}
-
-/* Groot scherm (>=1600px): tegels breder zodat 5e deels uit beeld valt.
-   Kleine trade-off: mogelijk lichte clone-zichtbaarheid links, maar
-   peek-effect is duidelijker. */
-@media (min-width: 1600px) {
-  .home-productslider .product-slider-item {
-    width: calc(22vw - 10px) !important;
-    min-width: calc(22vw - 10px) !important;
-    max-width: calc(22vw - 10px) !important;
-  }
 }
 
 /* ------------------------------------------------------------
