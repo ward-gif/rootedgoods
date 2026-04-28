@@ -61,24 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { passive: true });
 })();
 
-// CATEGORY FLYOUT - voegt "Bekijk alle producten" button toe als laatste cel
-// rechts in de rij. Berekent dynamisch hoeveel lege spacers nodig zijn om
-// de button in de meest rechter kolom te plaatsen.
+// CATEGORY FLYOUT - voegt "Bekijk alle producten" button toe als cel
+// direct na de laatste categorie (links uitgelijnd in de laatste rij).
 document.addEventListener('DOMContentLoaded', function() {
   var flyoutContent = document.querySelector('.navigation-flyout-content');
 
   if (flyoutContent) {
-    var itemsPerRow = 4;
-    var existingCount = flyoutContent.children.length;
-    // Aantal lege cellen nodig om button op rechterkolom (index itemsPerRow-1) te krijgen
-    var spacersNeeded = (itemsPerRow - 1 - (existingCount % itemsPerRow) + itemsPerRow) % itemsPerRow;
-
-    for (var i = 0; i < spacersNeeded; i++) {
-      var spacer = document.createElement('div');
-      spacer.className = 'col-md-3 flyout-spacer';
-      flyoutContent.appendChild(spacer);
-    }
-
     var col = document.createElement('div');
     col.className = 'col-md-3 navigation-flyout-category flyout-cta-col';
     col.innerHTML = '<a href="/search?search=" class="btn btn-primary">Bekijk alle producten</a>';
@@ -129,7 +117,7 @@ window.addEventListener('load', function() {
 
   // Wrapper met overflow hidden voor clean edges
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0; background-color:#FBF7F5;';
+  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0; background-color:#F7F5F2;';
   wrapper.appendChild(track);
 
   // Voeg keyframe animatie toe aan head

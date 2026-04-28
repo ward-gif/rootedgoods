@@ -456,12 +456,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 
 /* Flyout — "Bekijk alle producten" CTA cel, button onderin uitgelijnd
-   met onderkant van de afbeeldingen, gecentreerd horizontaal.
+   met onderkant van de afbeeldingen, links uitgelijnd horizontaal.
    Button krijgt natuurlijke grootte (niet stretched naar cel-breedte). */
 .flyout-cta-col {
   display: flex !important;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .flyout-cta-col a.btn {
   width: auto !important;
@@ -687,6 +687,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 /* ------------------------------------------------------------
    12. LOGO SLIDER
    ------------------------------------------------------------ */
+
+/* Sectie achtergrond — overschrijft Shopware inline style="background-color: #fff" */
+.cms-section.home.productslider,
+.home.productslider {
+  background-color: #F7F5F2 !important;
+}
+
 .home.productslider .carousel-control-prev,
 .home.productslider .carousel-control-next {
   display: none !important;
