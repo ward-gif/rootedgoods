@@ -129,7 +129,7 @@ window.addEventListener('load', function() {
 
   // Wrapper met overflow hidden voor clean edges
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0; background-color:#FBF7F5;';
+  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0; background-color:#F7F5F2;';
   wrapper.appendChild(track);
 
   // Voeg keyframe animatie toe aan head
