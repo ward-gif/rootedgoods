@@ -955,3 +955,40 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
     padding: 3rem 1rem !important;
   }
 }
+
+
+/* ------------------------------------------------------------
+   15. PDP — PRODUCT DETAIL HEADLINE
+   Productnaam kleiner en links uitgelijnd. Op desktop beperkt
+   tot 7/12 breedte zodat hij boven de gallery-col (col-lg-7)
+   staat en de opties-kolom rechts (col-lg-5) ruimte houdt.
+   Op tablet/mobile schaalt naam mee, container gaat full-width.
+   ------------------------------------------------------------ */
+.product-detail-name {
+  font-size: 2.25rem !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  margin-bottom: 0 !important;
+  line-height: 1.2;
+}
+
+/* Naam-container inkrimpen tot 7/12 op desktop = breedte van de gallery col.
+   Op kleinere schermen blijft de naam full-width (default .col gedrag). */
+@media (min-width: 992px) {
+  .product-detail-name-container {
+    flex: 0 0 auto !important;
+    width: 58.333333% !important;
+  }
+}
+
+/* Responsive — kleinere naam op tablet/mobile */
+@media (max-width: 991px) {
+  .product-detail-name {
+    font-size: 1.875rem !important;
+  }
+}
+@media (max-width: 576px) {
+  .product-detail-name {
+    font-size: 1.5rem !important;
+  }
+}
