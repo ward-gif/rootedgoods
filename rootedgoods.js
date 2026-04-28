@@ -129,8 +129,8 @@ window.addEventListener('load', function() {
 
   // Wrapper met overflow hidden voor clean edges
   var wrapper = document.createElement('div');
-  // Geen background-color — laat de parent (.cms-section / .cms-block)
-  // doorschijnen. Section heeft via Shopware admin al #F7F5F2 ingesteld.
+  // Wrapper transparent: parent (.cms-section / .cms-block) bg schijnt door.
+  // Achtergrondkleur staat via Shopware admin op de section ingesteld.
   wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0;';
   wrapper.appendChild(track);
 
