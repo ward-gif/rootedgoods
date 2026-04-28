@@ -455,6 +455,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   position: relative;
 }
 
+/* Flyout — "Bekijk alle producten" CTA cel, gecentreerd in zelfde grid als categorieën */
+.flyout-cta-col {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* ------------------------------------------------------------
    8. BUTTONS
@@ -477,11 +484,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 .btn-outline-primary {
   background-color: transparent !important;
-  border-color: #CA853F !important;
-  color: #CA853F !important;
+  border-color: #ac723e !important;
+  color: #ac723e !important;
 }
 .btn-outline-primary:hover {
-  background-color: #CA853F !important;
+  background-color: #ac723e !important;
   color: #fff !important;
 }
 
