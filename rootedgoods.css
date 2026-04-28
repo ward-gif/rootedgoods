@@ -375,7 +375,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 #searchOverlay {
   display: none;
   position: fixed;
-  top: 140px;
+  top: 110px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -455,11 +455,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   position: relative;
 }
 
-/* Flyout — "Bekijk alle producten" CTA cel, gecentreerd in zelfde grid als categorieën */
+/* Flyout — "Bekijk alle producten" CTA cel, gecentreerd in zelfde grid als categorieën.
+   Button krijgt natuurlijke grootte (niet stretched naar cel-breedte). */
 .flyout-cta-col {
   display: flex !important;
   align-items: center;
   justify-content: center;
+}
+.flyout-cta-col a.btn {
+  width: auto !important;
+  max-width: max-content !important;
+  height: auto !important;
+  flex: 0 0 auto !important;
+  display: inline-block !important;
 }
 
 
