@@ -1,4 +1,5 @@
-// rootedgoods.js — laatste update: 28-04-2026 15:15
+// rootedgoods.js — laatste update: 28-04-2026 15:30 (restore na revert)
+
 // SEARCH OVERLAY - donkere overlay achter zoekbalk bij focus
 // Overlay verdwijnt bij klik erop of als zoekbalk focus verliest
 // DOMContentLoaded i.p.v. load — werkt zonder afbeeldingen, draait eerder
@@ -128,10 +129,10 @@ window.addEventListener('load', function() {
     });
   });
 
-  // Wrapper met overflow hidden voor clean edges
-  var wrapper = document.createElement('div');
+  // Wrapper met overflow hidden voor clean edges.
   // Wrapper transparent: parent (.cms-section / .cms-block) bg schijnt door.
-  // Achtergrondkleur staat via Shopware admin op de section ingesteld.
+  // Achtergrondkleur #F7F5F2 staat via CSS op .home.productslider section.
+  var wrapper = document.createElement('div');
   wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0;';
   wrapper.appendChild(track);
 
@@ -158,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.appendChild(link);
   }
 });
+
 // PRODUCT SLIDER - hele tegel klikbaar, alleen bij echte klik (niet bij swipe)
 // DOMContentLoaded — product-tegels staan in DOM zonder images
 document.addEventListener('DOMContentLoaded', function() {
