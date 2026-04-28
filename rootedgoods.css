@@ -455,11 +455,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   position: relative;
 }
 
-/* Flyout — "Bekijk alle producten" CTA cel, gecentreerd in zelfde grid als categorieën.
+/* Flyout — "Bekijk alle producten" CTA cel, button onderin uitgelijnd
+   met onderkant van de afbeeldingen, gecentreerd horizontaal.
    Button krijgt natuurlijke grootte (niet stretched naar cel-breedte). */
 .flyout-cta-col {
   display: flex !important;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 .flyout-cta-col a.btn {
@@ -468,6 +469,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   height: auto !important;
   flex: 0 0 auto !important;
   display: inline-block !important;
+  box-shadow: none !important;
 }
 
 
