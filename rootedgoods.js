@@ -1,3 +1,4 @@
+// rootedgoods.js — laatste update: cache-bust voor logo slider bg fix (28-04-2026)
 // SEARCH OVERLAY - donkere overlay achter zoekbalk bij focus
 // Overlay verdwijnt bij klik erop of als zoekbalk focus verliest
 // DOMContentLoaded i.p.v. load — werkt zonder afbeeldingen, draait eerder
