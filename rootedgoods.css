@@ -265,6 +265,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   padding: 3px 10px;
 }
 
+/* Container 5 (Over ons / Cases / Contact links) rechts uitlijnen
+   binnen de cel zodat "Contact" visueel op één lijn staat met
+   het cart-icoon en "€ 0,00" in de header daaronder. */
+.top-bar-nav .top-bar-container.container--5 {
+  text-align: right !important;
+}
+
 
 /* ------------------------------------------------------------
    6. ZOEKBALK
@@ -959,36 +966,282 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 
 /* ------------------------------------------------------------
    15. PDP — PRODUCT DETAIL HEADLINE
-   Productnaam kleiner en links uitgelijnd. Op desktop beperkt
-   tot 7/12 breedte zodat hij boven de gallery-col (col-lg-7)
-   staat en de opties-kolom rechts (col-lg-5) ruimte houdt.
-   Op tablet/mobile schaalt naam mee, container gaat full-width.
+   Productnaam wordt op desktop via JS verplaatst naar de top van
+   de buy-col (col-lg-5) zodat hij naast de gallery staat
+   (Sugarcoat-style). Op mobiel blijft de naam in z'n eigen rij
+   bovenaan (boven de gallery), dat leest beter op kleine schermen.
    ------------------------------------------------------------ */
-.product-detail-name {
-  font-size: 2.25rem !important;
-  font-weight: 500 !important;
-  text-align: left !important;
-  margin-bottom: 0 !important;
-  line-height: 1.2;
-}
 
-/* Naam-container inkrimpen tot 7/12 op desktop = breedte van de gallery col.
-   Op kleinere schermen blijft de naam full-width (default .col gedrag). */
+/* Desktop — originele headline-row verbergen (h1 wordt verplaatst). */
 @media (min-width: 992px) {
-  .product-detail-name-container {
-    flex: 0 0 auto !important;
-    width: 58.333333% !important;
+  .product-detail-headline {
+    display: none !important;
   }
 }
 
-/* Responsive — kleinere naam op tablet/mobile */
+/* Naam in nieuwe locatie (bovenaan buy-col) styling.
+   Margin-bottom voor ademruimte boven de prijs-tabel. */
+.product-detail-buy .product-detail-name {
+  font-size: 3rem !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  margin: 0 0 1.5rem 0 !important;
+  line-height: 1.1;
+}
+
+/* Mobile — h1 blijft in originele positie boven gallery, kleinere font */
 @media (max-width: 991px) {
   .product-detail-name {
-    font-size: 1.875rem !important;
+    font-size: 2.25rem !important;
+    text-align: left !important;
+    margin-bottom: 1rem !important;
   }
 }
 @media (max-width: 576px) {
   .product-detail-name {
-    font-size: 1.5rem !important;
+    font-size: 1.875rem !important;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   16. PDP — GALLERY LAYOUT
+   Thumbnails links (default Promidata gedrag, geen reorder).
+   Hoofdafbeelding groter laten ogen + arrows als minimal overlay
+   (geen witte knop achtergrond, alleen icoon).
+   ------------------------------------------------------------ */
+
+/* Main slider col — anker voor absolute arrows */
+.product-detail-media .gallery-slider-col {
+  position: relative;
+}
+
+/* Hoofdafbeelding container groter (was 430px) — laat de afbeelding
+   meer ruimte vullen. */
+.product-detail-media .gallery-slider-item {
+  min-height: 700px !important;
+}
+
+/* Arrows als minimal overlay — geen knop, alleen icoon */
+.product-detail-media .gallery-slider-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+.product-detail-media .gallery-slider-controls-prev,
+.product-detail-media .gallery-slider-controls-next {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  pointer-events: auto;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 6;
+  box-shadow: none !important;
+}
+.product-detail-media .gallery-slider-controls-prev {
+  left: 0.5rem !important;
+}
+.product-detail-media .gallery-slider-controls-next {
+  right: 0.5rem !important;
+}
+
+/* Arrow icon — donkergroen ipv default lichtgrijs voor zichtbaarheid */
+.product-detail-media .gallery-slider-controls svg use {
+  fill: #2d4528 !important;
+}
+
+/* Zoom-on-hover magnifier uitschakelen — geen lens-overlay op image,
+   geen aparte zoomed-image container, normale cursor terug. */
+.product-detail-media .magnifier-overlay,
+.product-detail-media .js-magnifier-overlay,
+.magnifier-zoom-image,
+.js-magnifier-zoom-image {
+  display: none !important;
+}
+.product-detail-media .gallery-slider-image,
+.product-detail-media .js-magnifier-image {
+  cursor: default !important;
+}
+
+/* Responsive: kleinere image-height op tablet/mobile */
+@media (max-width: 991px) {
+  .product-detail-media .gallery-slider-item {
+    min-height: 500px !important;
+  }
+}
+@media (max-width: 576px) {
+  .product-detail-media .gallery-slider-item {
+    min-height: 380px !important;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   17. PDP — BUY COL: prijs-info en quantity defaults
+   - total-price-top-container verbergen (sticky prijs-tabel boven)
+   - product-price-info links uitlijnen ipv rechts (Promidata default)
+   - Aantal-accordion standaard open (zie ook JS)
+   ------------------------------------------------------------ */
+
+/* Sticky prijs-tabel bovenaan buy-col verbergen.
+   Onderaan blijft de tabel staan via #total-price-bottom-container. */
+#total-price-top-container {
+  display: none !important;
+}
+
+/* Product price info links uitlijnen — overschrijft .text-end */
+.product-detail-buy .product-price-info,
+.product-detail-buy .product-price-info .product-cheapest-price-wrapper.text-end {
+  text-align: left !important;
+}
+
+
+/* ------------------------------------------------------------
+   18. PDP — SPLIT BACKGROUND
+   PDP achtergrond wit, rechter kolom (buy col, col-lg-5) krijgt
+   off-white #FBF7F5. Achtergrond loopt door tot onder het menu
+   via een linear-gradient op .content-main: split op 58.333%
+   (= grens col-lg-7 / col-lg-5).
+   Alleen op desktop — op mobile/tablet stackt alles, geen split.
+   ------------------------------------------------------------ */
+
+/* PDP body wit (overschrijft eventuele Promidata default) */
+body.is-ctl-product {
+  background-color: #ffffff !important;
+}
+
+/* Desktop: gradient op content-main als split bg.
+   content-main heeft padding-top:170px voor het fixed menu — de
+   gradient vult vanaf y=0 (top, achter menu) tot bottom van main,
+   dus visueel "sluit aan tot het menu" zoals gewenst.
+   Split op 50% omdat de buy col verbreed is naar 6/12 (zie hieronder). */
+@media (min-width: 992px) {
+  body.is-ctl-product .content-main {
+    background: linear-gradient(
+      to right,
+      #ffffff 0%,
+      #ffffff 50%,
+      #FBF7F5 50%,
+      #FBF7F5 100%
+    );
+  }
+
+  /* Buy col verbreden van col-lg-5 (5/12) naar 6/12 (50%) voor
+     meer ademruimte rond de configurator. Media col krimpt navenant. */
+  body.is-ctl-product .product-detail-media.col-lg-7 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  body.is-ctl-product .product-detail-buy.col-lg-5 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+}
+
+/* Mobile/tablet: buy col als zelfstandige off-white blok */
+@media (max-width: 991px) {
+  body.is-ctl-product .product-detail-buy {
+    background-color: #FBF7F5;
+    padding: 1.5rem !important;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   19. PDP — BUY COL: sample button verbergen
+   "Sample voor € 22,04 bestellen" knop weghalen — niet relevant
+   voor deze B2B context waar samples via offerte-flow lopen.
+   ------------------------------------------------------------ */
+#js-request-sample {
+  display: none !important;
+}
+
+
+/* ------------------------------------------------------------
+   20. PDP — TABS SECTIE (Beschrijving / Beoordelingen)
+   - Hele section achtergrond off-white, full viewport width
+     via pseudo-element zodat het door de container heen breekt
+   - Card-elementen binnenin transparant zodat de off-white doorschijnt
+   - Beschrijving-tab layout: titel boven, omschrijving links, specs rechts
+   ------------------------------------------------------------ */
+
+.product-detail-tabs {
+  position: relative;
+  margin-top: 3rem;
+  padding: 2.5rem 0;
+}
+
+/* Viewport-wijde off-white achtergrond achter de tabs section */
+.product-detail-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background-color: #FBF7F5;
+  z-index: 0;
+}
+
+/* Content boven de bg pseudo */
+.product-detail-tabs > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards binnen tabs section transparant maken zodat off-white doorschijnt */
+.product-detail-tabs .card,
+.product-detail-tabs .card-tabs,
+.product-detail-tabs .card-header,
+.product-detail-tabs .card-body {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Beschrijving tab — desktop layout: titel boven, omschrijving links,
+   specs-tabel rechts. Mobile blijft stacken. */
+@media (min-width: 992px) {
+  .product-detail-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "text  properties";
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+  }
+  .product-detail-description-title {
+    grid-area: title;
+  }
+  .product-detail-description-text {
+    grid-area: text;
+  }
+  .product-detail-properties {
+    grid-area: properties;
+  }
+
+  /* Properties col-md-10 col-lg-6 vult nu de hele rechter grid-area
+     ipv 6/12 van de oorspronkelijke row */
+  .product-detail-description .product-detail-properties .col-md-10,
+  .product-detail-description .product-detail-properties .col-lg-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 }

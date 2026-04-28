@@ -160,6 +160,32 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// PDP - productnaam verplaatsen naar top van buy-col (col-lg-5)
+// Standaard staat de h1 in een eigen row boven gallery+buy. Wij willen 'm
+// naast de gallery, bovenaan de rechter kolom — modern PDP layout (Sugarcoat-style).
+// Alleen op desktop. Op mobiel blijft de naam waar 'ie is (boven gallery).
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth < 992) return;
+  var h1 = document.querySelector('.product-detail-name');
+  var buyCol = document.querySelector('.product-detail-buy');
+  if (h1 && buyCol) {
+    buyCol.insertBefore(h1, buyCol.firstChild);
+  }
+});
+
+// PDP - "Aantal" accordion standaard open
+// Promidata laat 'm collapsed renderen, wij willen 'm direct zichtbaar
+// zodat klanten het minimum order quantity en staffel-prijzen direct zien.
+document.addEventListener('DOMContentLoaded', function() {
+  var qtyTitle = document.querySelector('#qty-title');
+  var qtyWrapper = document.querySelector('#qty-wrapper');
+  if (qtyTitle && qtyWrapper) {
+    qtyTitle.classList.remove('collapsed');
+    qtyTitle.setAttribute('aria-expanded', 'true');
+    qtyWrapper.classList.add('show');
+  }
+});
+
 // PRODUCT SLIDER - hele tegel klikbaar, alleen bij echte klik (niet bij swipe)
 // DOMContentLoaded — product-tegels staan in DOM zonder images
 document.addEventListener('DOMContentLoaded', function() {
