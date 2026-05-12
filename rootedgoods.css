@@ -501,11 +501,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 .btn-outline-primary {
   background-color: transparent !important;
-  border-color: #ac723e !important;
-  color: #ac723e !important;
+  border-color: #CA853F !important;
+  color: #CA853F !important;
 }
 .btn-outline-primary:hover {
-  background-color: #ac723e !important;
+  background-color: #CA853F !important;
   color: #fff !important;
 }
 
@@ -535,27 +535,155 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   display: none !important;
 }
 
-/* Slider — tekst styling */
-.home-productslider .product-name {
-  font-weight: 300;
-}
-.home-productslider .product-box .card-body {
-  --bs-card-spacer-y: 2rem;
-  --bs-card-spacer-x: 2rem;
+/* Slider — tekst styling, consistent met PLP. Selector op .box-image
+   omdat slider tiles die specific class hebben (PLP heeft .box-standard). */
+.home-productslider .product-box,
+.home-productslider .product-box.box-image,
+.home-productslider .product-slider-item .product-box {
+  border: 1px solid #ede9e2 !important;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
 }
 
-/* Product naam + prijs — alleen in homepage slider (niet op PLP of andere slots).
-   Voor globale toepassing: prefix weghalen. */
-.home-productslider .product-box .product-info .product-name {
-  margin: 25px 0 0 0;
-  font-size: 16px;
+/* Hele tile klikbaar via ::after op de product-name link.
+   Wishlist en variant-thumbs krijgen hogere z-index zodat ze
+   eigen click-target houden. */
+.home-productslider .product-name {
+  position: static;
 }
+.home-productslider .product-name::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.home-productslider .product-wishlist,
+.home-productslider .variant-thumbnail,
+.home-productslider .product-image-link {
+  position: relative;
+  z-index: 2;
+}
+.home-productslider .product-box:hover,
+.home-productslider .product-box.box-image:hover {
+  box-shadow: 0 6px 20px rgba(45, 69, 40, 0.08);
+  transform: translateY(-2px);
+}
+.home-productslider .product-box .card-body {
+  --bs-card-spacer-y: 2.5rem;
+  --bs-card-spacer-x: 1.5rem;
+  padding: 2.5rem 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image-wrapper iets portrait — padding-bottom 110% (5:5.5).
+   Werkt betrouwbaar, niet door Promidata te overschrijven. */
+.home-productslider .product-image-wrapper,
+.home-productslider .product-box .product-image-wrapper {
+  position: relative !important;
+  margin-bottom: 1rem !important;
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 0 !important;
+  padding-bottom: 110% !important;
+}
+.home-productslider .product-image-link,
+.home-productslider .product-box .product-image-link {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+.home-productslider .product-image,
+.home-productslider .product-box .product-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 8px !important;
+}
+
+/* Wishlist button — Promidata default position (onder image, rechts).
+   We laten flow positioning intact, alleen icon-kleur op-brand. */
+.home-productslider .product-wishlist svg use,
+.home-productslider .product-wishlist svg path {
+  fill: #2d4528 !important;
+}
+
+/* Variant thumbnails — ronde swatches, consistent met PLP */
+.home-productslider .variant-thumbnail.slider {
+  margin: 0.25rem 0 0.75rem 0;
+  display: flex;
+  gap: 0.35rem;
+  overflow: hidden;
+}
+.home-productslider .variant-thumbnail .slides {
+  display: flex;
+  gap: 0.35rem;
+}
+.home-productslider .variant-thumbnail-img {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  border: 1px solid #ede9e2 !important;
+  object-fit: cover !important;
+}
+.home-productslider .variant-thumbnail .prev,
+.home-productslider .variant-thumbnail .next {
+  display: none;
+}
+.home-productslider .variant-thumbnail.active .prev,
+.home-productslider .variant-thumbnail.active .next {
+  display: inline-flex;
+}
+
+/* Product info — naam donkergroen, regular weight, hover bruin */
+.home-productslider .product-info {
+  margin-top: auto;
+}
+.home-productslider .product-name,
+.home-productslider .product-box .product-info .product-name {
+  display: block;
+  font-weight: 400 !important;
+  color: #2d4528 !important;
+  text-decoration: none !important;
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0.25rem 0 0.5rem 0;
+}
+.home-productslider .product-name:hover {
+  color: #ac723e !important;
+}
+
+/* Description: subtiel, max 2 regels */
+.home-productslider .product-description {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.825rem;
+  color: #888;
+  line-height: 1.4;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+/* Prijs — bold donkergroen met "Van" subtieler label */
 .home-productslider .product-price-wrapper {
-  font-size: 16px;
+  font-size: 0.95rem;
+  color: #888;
 }
 .home-productslider .product-price {
-  font-size: 16px;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
+  color: #2d4528 !important;
+  font-size: 1.15rem;
+  margin-left: 0.25rem;
 }
 
 /* Slider — reset alle interne spacing */
@@ -585,8 +713,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    Zorgt dat de slider op elke laptop/desktop met de juiste offset laadt
    zonder manual media queries per breakpoint. */
 .home-productslider {
-  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
   padding-left: clamp(15px, 1.5vw, 40px) !important;
+  padding-bottom: 24px !important;
   margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
@@ -596,6 +726,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow: visible !important;
 }
 
+/* TinySlider's clip-containers: horizontaal clippen (clones links/rechts
+   blijven verborgen) maar verticaal toelaten zodat hover-shadow van tiles
+   niet wordt afgesneden. Zonder padding-bottom zou de shadow strak op de
+   bottom-edge geclipt worden. */
+.home-productslider .tns-outer,
+.home-productslider .tns-ovh {
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  padding-bottom: 24px !important;
+}
+
 
 
 /* Slider — item-breedte: default Tiny Slider berekening (productboxMinWidth 300).
@@ -603,10 +744,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider .product-slider-item {
   padding-right: 30px !important;
 }
-.home-productslider .product-box .product-image-wrapper,
-.home-productslider .product-box .product-image {
-  object-fit: contain !important;
-}
+/* (verplaatst naar de productslider-styling sectie hierboven; deze
+   regel was redundant en versnipperde de aspect-ratio rules) */
 
 /* ------------------------------------------------------------
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
@@ -980,26 +1119,28 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 
 /* Naam in nieuwe locatie (bovenaan buy-col) styling.
-   Margin-bottom voor ademruimte boven de prijs-tabel. */
+   Negative margin-top trekt 'm iets boven de natuurlijke top van
+   de buy-col uit, zodat 'ie wat hoger op de pagina zit. */
 .product-detail-buy .product-detail-name {
-  font-size: 3rem !important;
-  font-weight: 500 !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
   text-align: left !important;
-  margin: 0 0 1.5rem 0 !important;
+  margin: -1rem 0 1.25rem 0 !important;
   line-height: 1.1;
 }
 
 /* Mobile — h1 blijft in originele positie boven gallery, kleinere font */
 @media (max-width: 991px) {
   .product-detail-name {
-    font-size: 2.25rem !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
     text-align: left !important;
     margin-bottom: 1rem !important;
   }
 }
 @media (max-width: 576px) {
   .product-detail-name {
-    font-size: 1.875rem !important;
+    font-size: 1.75rem !important;
   }
 }
 
@@ -1011,15 +1152,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    (geen witte knop achtergrond, alleen icoon).
    ------------------------------------------------------------ */
 
-/* Main slider col — anker voor absolute arrows */
+/* Main slider col — anker voor absolute arrows + zoom-button.
+   Geen padding-bottom: dots staan in normal flow eronder. */
 .product-detail-media .gallery-slider-col {
-  position: relative;
+  position: relative !important;
 }
 
 /* Hoofdafbeelding container groter (was 430px) — laat de afbeelding
-   meer ruimte vullen. */
+   meer ruimte vullen. Niet te hoog zodat de dots eronder net boven
+   de fold zichtbaar blijven op standaard laptop schermen. */
 .product-detail-media .gallery-slider-item {
-  min-height: 700px !important;
+  min-height: 580px !important;
 }
 
 /* Arrows als minimal overlay — geen knop, alleen icoon */
@@ -1104,6 +1247,420 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .product-detail-buy .product-price-info,
 .product-detail-buy .product-price-info .product-cheapest-price-wrapper.text-end {
   text-align: left !important;
+}
+
+/* Buy col: extra ademruimte aan de linker kant op desktop */
+@media (min-width: 992px) {
+  body.is-ctl-product .product-detail-buy {
+    padding-left: 3rem !important;
+  }
+}
+
+/* "Van € X Zonder opdruk" blok bovenaan verbergen — onderaan staat
+   al een complete totaal-tabel met dezelfde info. */
+.product-detail-buy .product-price-info {
+  display: none !important;
+}
+
+/* Configurator group titels (Kleur / Aantal / Opdruk / etc.) donkergroen */
+.product-detail-buy .collapse-title,
+.product-detail-buy .product-detail-configurator-group-title,
+.product-detail-buy .collapse-title > span,
+.product-detail-buy .product-detail-configurator-group-title > span {
+  color: #2d4528 !important;
+}
+
+/* Cijferbolletjes (1, 2, 3, 4, 5) voor de titels in donkergroen */
+.product-detail-buy .collapse-title::before,
+.product-detail-buy .product-detail-configurator-group-title::before {
+  background-color: #2d4528 !important;
+  border-color: #2d4528 !important;
+}
+
+/* Kleurkeuze: toon de naam (uit title-attribuut) onder elke swatch.
+   Pure CSS via attr() — geen JS nodig. Promidata zet `title="bamboe"`
+   etc. op elke kleur-label. Geselecteerde kleur krijgt donkergroen +
+   bold; niet-geselecteerd is dimmer. */
+.product-detail-buy .product-detail-configurator-options {
+  padding-bottom: 2rem;
+}
+.product-detail-buy .product-detail-configurator-option {
+  position: relative;
+}
+.product-detail-buy .product-detail-configurator-option-label::after {
+  content: attr(title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 400;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.product-detail-buy .product-detail-configurator-option-input:checked + .product-detail-configurator-option-label::after {
+  color: #2d4528;
+  font-weight: 600;
+}
+
+/* Tabellen in buy-col: dark headers worden donkergroen, tekst wit.
+   Body text (tbody) blijft zwart. Geldt voor staffelprijzen-tabel
+   en het price-overzicht onderaan (custom-configurator-table). */
+.product-detail-buy .table thead.table-dark,
+.product-detail-buy .table thead.table-dark th,
+.product-detail-buy .table thead.table-dark td,
+.product-detail-buy .table-dark {
+  --bs-table-bg: #2d4528 !important;
+  background-color: #2d4528 !important;
+  color: #ffffff !important;
+  border-color: #2d4528 !important;
+}
+.product-detail-buy .table tbody,
+.product-detail-buy .table tbody th,
+.product-detail-buy .table tbody td {
+  color: #000000;
+}
+
+/* Tabel striped accent in buy-col: zelfde topbar-kleur (#ede9e2) als
+   in de properties tabel, ipv default Bootstrap lichtgrijs.
+   Geldt voor de staffel-prijzen tabel én het price-overzicht onderaan. */
+.product-detail-buy .table.table-striped {
+  --bs-table-striped-bg: #ede9e2 !important;
+  --bs-table-striped-color: #000000 !important;
+}
+.product-detail-buy .table.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #ede9e2 !important;
+  color: #000000 !important;
+}
+
+/* Staffel-prijzen tabel (product-block-prices-grid)
+   - Alle rijen wit, ruime padding, subtiele rij-separator
+   - Wrapper met border + rounded corners zodat tabel als kaart oogt
+   - Aantallen dikgedrukt, prijs groter, besparing als groene pill
+   - Highlight-row (actieve tier) accent-border licht-bruin met radius
+   - Hele rij klikbaar (cursor + JS handler) */
+.product-detail-buy .product-block-prices-grid {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+/* Wrapper rond de tabel met afgeronde hoeken */
+.product-detail-buy .product-block-prices {
+  border: 1px solid #ede9e2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Tbody-cellen: wit, ruime cel-padding voor lucht in de rijen */
+.product-detail-buy .product-block-prices-grid > tbody > tr > * {
+  background-color: #ffffff !important;
+  padding-top: 1.1rem !important;
+  padding-bottom: 1.1rem !important;
+  vertical-align: middle !important;
+}
+
+/* Thead-cellen: donkergroen bg, witte tekst, dikgedrukt, ruime padding */
+.product-detail-buy .product-block-prices-grid > thead > tr > * {
+  background-color: #2d4528 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding-top: 1.1rem !important;
+  padding-bottom: 1.1rem !important;
+  vertical-align: middle !important;
+}
+
+/* Side-padding op eerste en laatste cellen voor lucht aan zijkanten */
+.product-detail-buy .product-block-prices-grid > tbody > tr > *:first-child,
+.product-detail-buy .product-block-prices-grid > thead > tr > *:first-child {
+  padding-left: 1.5rem !important;
+}
+.product-detail-buy .product-block-prices-grid > tbody > tr > *:last-child,
+.product-detail-buy .product-block-prices-grid > thead > tr > *:last-child {
+  padding-right: 1.5rem !important;
+}
+
+/* Subtiele rij-separator. Eerste tbody-row krijgt geen extra border (zit
+   al onder de thead). Promidata's #eee border-top wordt hierdoor vervangen. */
+.product-detail-buy .product-block-prices-grid .product-block-prices-body .product-block-prices-row,
+.product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row {
+  border-top: 1px solid #ede9e2 !important;
+}
+.product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row:first-child {
+  border-top: none !important;
+}
+
+/* Aantallen (eerste cel) dikgedrukt — incl. de inline qty-click span */
+.product-detail-buy .product-block-prices-grid > tbody > tr > th:first-child,
+.product-detail-buy .product-block-prices-grid .product-block-prices-quantity {
+  font-weight: 700 !important;
+}
+
+/* Prijs per stuk (laatste cel) groter + dikker */
+.product-detail-buy .product-block-prices-grid > tbody > tr > td:last-child {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+}
+
+/* Besparing als sage-groene pill — wordt via JS in een
+   <span class="product-block-prices-savings"> gewrapped. */
+.product-block-prices-savings {
+  display: inline-block;
+  background-color: #7a9b6f;
+  color: #ffffff;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Highlight-row (actieve tier): border-ring in licht-bruin via cell borders.
+   Eerste cel krijgt linker rounded corners, laatste cel rechter. */
+.product-detail-buy .product-block-prices-row.highlight-row > th,
+.product-detail-buy .product-block-prices-row.highlight-row > td {
+  border-top: 2px solid #ac723e !important;
+  border-bottom: 2px solid #ac723e !important;
+  background-color: #ffffff !important;
+}
+.product-detail-buy .product-block-prices-row.highlight-row > th:first-child {
+  border-left: 2px solid #ac723e !important;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.product-detail-buy .product-block-prices-row.highlight-row > td:last-child,
+.product-detail-buy .product-block-prices-row.highlight-row > th:last-child {
+  border-right: 2px solid #ac723e !important;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.product-detail-buy .product-block-prices-row {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+
+/* ------------------------------------------------------------
+   21. PDP — TOTAALPRIJS-TABEL (custom-configurator-table)
+   Dezelfde styling als staffel-tabel: wit, donkergroene header,
+   afgeronde corners. CSS-only via cell-corner radii — geen JS
+   wrapper, want #total-price-bottom-container wordt door Promidata
+   re-rendered bij prijswijzigingen waardoor wrappers gewist worden.
+   Items-tabel + price-container ogen samen als één rounded kaart:
+   - Tabel: border + top-rounded corners, geen border-bottom
+   - Price-container daaronder: border + bottom-rounded corners,
+     border-top als subtiele scheiding van de tabel
+   ------------------------------------------------------------ */
+
+.product-detail-buy .custom-configurator-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin-bottom: 0 !important;
+  border: 1px solid #ede9e2;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Cell-corners moeten matchen met table border-radius om visueel
+   geen vierkante hoeken te tonen */
+.product-detail-buy .custom-configurator-table > thead > tr > *:first-child {
+  border-top-left-radius: 8px;
+}
+.product-detail-buy .custom-configurator-table > thead > tr > *:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Header donkergroen, witte tekst, dikgedrukt, ruime padding */
+.product-detail-buy .custom-configurator-table > thead > tr > * {
+  background-color: #2d4528 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 1.1rem 1rem !important;
+  vertical-align: middle !important;
+  border: none !important;
+}
+
+/* Tbody rijen wit, ruime padding */
+.product-detail-buy .custom-configurator-table > tbody > tr > * {
+  background-color: #ffffff !important;
+  padding: 1.1rem 1rem !important;
+  vertical-align: middle !important;
+  border-top: 1px solid #ede9e2 !important;
+  border-bottom: none !important;
+}
+
+/* Side-padding op eerste/laatste cellen */
+.product-detail-buy .custom-configurator-table > thead > tr > *:first-child,
+.product-detail-buy .custom-configurator-table > tbody > tr > *:first-child {
+  padding-left: 1.5rem !important;
+}
+.product-detail-buy .custom-configurator-table > thead > tr > *:last-child,
+.product-detail-buy .custom-configurator-table > tbody > tr > *:last-child {
+  padding-right: 1.5rem !important;
+}
+
+/* Override striped — alle rijen wit ipv afwisselend */
+.product-detail-buy table.custom-configurator-table {
+  --bs-table-striped-bg: transparent !important;
+}
+.product-detail-buy table.custom-configurator-table > tbody > tr > *,
+.product-detail-buy table.custom-configurator-table > tbody > tr:nth-of-type(odd) > *,
+.product-detail-buy table.custom-configurator-table > tbody > tr:nth-of-type(even) > * {
+  background-color: #ffffff !important;
+}
+
+/* Price-container (Stukprijs / Totaalprijs Netto / Bruto) sluit
+   visueel aan op de items-tabel: side borders + bottom-rounded corners,
+   border-top als subtiele scheiding. */
+.product-detail-buy #total-price-bottom-container .configurator-price-container {
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-left: 1px solid #ede9e2;
+  border-right: 1px solid #ede9e2;
+  border-bottom: 1px solid #ede9e2;
+  border-top: 1px solid #ede9e2;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 1rem;
+}
+.product-detail-buy #total-price-bottom-container .configurator-price-container > table {
+  margin-bottom: 0 !important;
+}
+.product-detail-buy #total-price-bottom-container .configurator-price-container > table th,
+.product-detail-buy #total-price-bottom-container .configurator-price-container > table td {
+  border: none !important;
+  padding: 0.4rem 0 !important;
+  background-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   22. PDP — FORM CONTROLS (aantallen, opmerkingen)
+   Witte achtergrond, ruimer, consistent met de tabel-styling.
+   ------------------------------------------------------------ */
+
+.product-detail-buy .form-control,
+.product-detail-buy .form-select,
+.product-detail-buy textarea.form-control,
+.product-detail-buy input[type="number"].form-control {
+  background-color: #ffffff !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  border: 1px solid #ede9e2 !important;
+  border-radius: 6px !important;
+  min-height: 48px;
+}
+
+/* Textarea iets meer hoogte voor opmerkingen */
+.product-detail-buy textarea.form-control {
+  min-height: 100px;
+}
+
+/* Focus state — subtiele bruine outline ipv default Bootstrap blauw */
+.product-detail-buy .form-control:focus,
+.product-detail-buy .form-select:focus {
+  border-color: #ac723e !important;
+  box-shadow: 0 0 0 0.2rem rgba(172, 114, 62, 0.15) !important;
+}
+
+
+/* ------------------------------------------------------------
+   23. PDP — STEPS SEPARATORS
+   Promidata zet grijze borders tussen de configurator-steps
+   (Kleur, Aantal, Opdruk, etc.). Wij willen #ede9e2 als accent.
+   ------------------------------------------------------------ */
+
+.product-detail-buy .product-detail-configurator-group,
+.product-detail-buy .collapse-group {
+  border-color: #ede9e2 !important;
+  border-top-color: #ede9e2 !important;
+  border-bottom-color: #ede9e2 !important;
+}
+.product-detail-buy .product-detail-configurator-group + .product-detail-configurator-group,
+.product-detail-buy .collapse-group + .collapse-group {
+  border-top: 1px solid #ede9e2 !important;
+}
+
+/* Hoofdafbeelding klikbaar — cursor zoom-in als hint. */
+.product-detail-media .gallery-slider-image,
+.product-detail-media .js-magnifier-image {
+  cursor: zoom-in !important;
+}
+
+/* Zoom-trigger button — wordt via JS toegevoegd aan de gallery-col.
+   Alleen zichtbaar op hover. Click triggert image click → zoom modal.
+   Note: position:relative + padding-bottom worden ook gezet bij de
+   gallery layout sectie hierboven; hier laten we ze weg om duplicate
+   declaraties te voorkomen. */
+.gallery-zoom-trigger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 7;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.product-detail-media .gallery-slider-col:hover .gallery-zoom-trigger {
+  opacity: 1;
+}
+.gallery-zoom-trigger:hover {
+  background-color: #ffffff;
+}
+.gallery-zoom-trigger svg {
+  width: 20px;
+  height: 20px;
+  stroke: #2d4528;
+}
+
+/* Gallery slider dots — on-brand pill, donkergroene actieve dot.
+   Promidata levert de dots als <div class="base-slider-dots"> met
+   <button class="base-slider-dot"> children, actieve dot heeft
+   .tns-nav-active. */
+.product-detail-media .gallery-slider-col .base-slider-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 999px !important;
+  width: max-content;
+  margin: 1.5rem auto 0 !important;
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+}
+
+.product-detail-media .base-slider-dots .base-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d4cdc2;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-detail-media .base-slider-dots .base-slider-dot:hover {
+  background-color: #ac723e;
+}
+
+.product-detail-media .base-slider-dots .base-slider-dot.tns-nav-active {
+  background-color: #2d4528;
 }
 
 
@@ -1205,17 +1762,68 @@ body.is-ctl-product {
   z-index: 1;
 }
 
-/* Cards binnen tabs section transparant maken zodat off-white doorschijnt */
-.product-detail-tabs .card,
-.product-detail-tabs .card-tabs,
-.product-detail-tabs .card-header,
-.product-detail-tabs .card-body {
-  background-color: transparent !important;
+/* Card-tabs wrapper = de witte box (omsluit zowel tabs-nav als content).
+   Alle inner elementen krijgen expliciet witte bg zodat de visuele box
+   heel doorloopt (Bootstrap's tab-content kan soms uit z'n parent vallen). */
+.product-detail-tabs .card.card-tabs,
+.product-detail-tabs .card.card-tabs > .card-header,
+.product-detail-tabs .card.card-tabs > .card-body,
+.product-detail-tabs .product-detail-tab-navigation,
+.product-detail-tabs .product-detail-tabs-content,
+.product-detail-tabs .tab-content,
+.product-detail-tabs .tab-pane,
+.product-detail-tabs .offcanvas-body {
+  background-color: #ffffff !important;
   border: none !important;
 }
 
-/* Beschrijving tab — desktop layout: titel boven, omschrijving links,
-   specs-tabel rechts. Mobile blijft stacken. */
+.product-detail-tabs .card.card-tabs {
+  border-radius: 16px !important;
+  margin: 0 auto;
+  max-width: 1250px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tab navigation: subtiele border eronder zodat tabs en content
+   visueel gescheiden blijven binnen de witte box */
+.product-detail-tabs .product-detail-tab-navigation {
+  border-bottom: 1px solid #ede9e2 !important;
+  padding: 0.5rem 1.5rem 0 !important;
+}
+
+/* Card body padding consistent maken */
+.product-detail-tabs .card.card-tabs > .card-body,
+.product-detail-tabs .product-detail-tabs-content {
+  padding: 0 !important;
+}
+
+/* Actieve tab: witte bg + lichtbruine border-bottom als active-indicator.
+   Andere borders transparant zodat 'ie naadloos in de witte box overgaat. */
+.product-detail-tabs .nav-tabs .nav-link.active,
+.product-detail-tabs .nav-tabs .nav-link.active:hover,
+.product-detail-tabs .nav-tabs .nav-link.active:focus {
+  background-color: #ffffff !important;
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom: 2px solid #ac723e !important;
+}
+
+/* Hover/focus op INACTIEVE tabs: geen achtergrondswisseling */
+.product-detail-tabs .nav-tabs .nav-link:not(.active):hover,
+.product-detail-tabs .nav-tabs .nav-link:not(.active):focus {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Beschrijving — geen eigen box meer, zit nu binnen de witte
+   card-tabs box hierboven. Alleen layout (grid) + padding. */
+.product-detail-description {
+  padding: 2rem;
+}
+
 @media (min-width: 992px) {
   .product-detail-description {
     display: grid;
@@ -1225,6 +1833,7 @@ body.is-ctl-product {
       "text  properties";
     column-gap: 3rem;
     row-gap: 1.5rem;
+    padding: 2.5rem 3rem;
   }
   .product-detail-description-title {
     grid-area: title;
@@ -1244,4 +1853,377 @@ body.is-ctl-product {
     max-width: 100% !important;
     width: 100% !important;
   }
+}
+
+/* Properties-tabel accent: zelfde kleur als topbar (#ede9e2) als
+   striped-row achtergrond ipv Bootstrap default lichtgrijs.
+   --bs-table-striped-bg is de Bootstrap 5 variabele hiervoor. */
+.product-detail-properties-table {
+  --bs-table-striped-bg: #ede9e2 !important;
+  --bs-table-striped-color: #000000 !important;
+  --bs-table-bg: transparent !important;
+}
+.product-detail-properties-table.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #ede9e2 !important;
+  color: #000000 !important;
+}
+
+
+/* ------------------------------------------------------------
+   24. PLP — PRODUCT LISTING PAGE
+   Cleaner tiles, in stijl van homepage productslider tiles:
+   - Verberg ruis: "Nieuw" badges, hr divider, lange description
+   - Verberg "Details" button — image + naam zijn al klikbaar
+   - Subtiele card-styling met hover-lift en rounded corners
+   - Pricing bold + on-brand kleuren
+   Geen JS toegevoegd: Promidata's PLP heeft al re-renders bij
+   filteren/sorteren — onze CSS is robuust tegen die rebuilds.
+   ------------------------------------------------------------ */
+
+/* Verberg overbodige elementen op de tile */
+.cms-listing-row .badge-new {
+  display: none !important;
+}
+.cms-listing-row .product-box hr {
+  display: none !important;
+}
+.cms-listing-row .product-action {
+  display: none !important;
+}
+
+/* Description: zichtbaar maar subtiel — max 2 regels met ellipsis */
+.cms-listing-row .product-description {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.825rem;
+  color: #888;
+  line-height: 1.4;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+/* Card styling — rounded, border, lift on hover */
+.cms-listing-row .product-box {
+  border: 1px solid #ede9e2 !important;
+  border-radius: 12px !important;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
+  position: relative;
+}
+
+/* Hele tile klikbaar via ::after op de product-name link.
+   Wishlist en variant-thumbs krijgen hogere z-index. */
+.cms-listing-row .product-name {
+  position: static;
+}
+.cms-listing-row .product-name::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.cms-listing-row .product-wishlist,
+.cms-listing-row .variant-thumbnail,
+.cms-listing-row .product-image-link {
+  position: relative;
+  z-index: 2;
+}
+.cms-listing-row .product-box:hover {
+  box-shadow: 0 6px 20px rgba(45, 69, 40, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Card body padding ruimer — meer ademruimte boven en onder
+   image, plus breathing room rond text. */
+.cms-listing-row .product-box .card-body {
+  padding: 2rem 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image-wrapper bijna square — aspect-ratio voor compactere PLP tiles. */
+.cms-listing-row .product-image-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 10 / 9 !important;
+}
+.cms-listing-row .product-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cms-listing-row .product-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  border-radius: 8px;
+}
+
+/* Wishlist button — Promidata default position. Alleen icon-kleur on-brand. */
+.cms-listing-row .product-wishlist svg use,
+.cms-listing-row .product-wishlist svg path {
+  fill: #2d4528 !important;
+}
+
+/* Variant thumbnails — alleen img-styling, layout-rules overlaten
+   aan Promidata zodat .slider.active scroll-modus niet conflicteert. */
+.cms-listing-row .variant-thumbnail-img {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  border: 1px solid #ede9e2 !important;
+  object-fit: cover !important;
+}
+
+/* Variant slider prev/next pijlen — alleen tonen wanneer .active class
+   is gezet (Promidata's JS doet dat als items overflowen). On-brand
+   ronde buttons ipv zwarte vierkanten. */
+.cms-listing-row .variant-thumbnail.slider:not(.active) .prev,
+.cms-listing-row .variant-thumbnail.slider:not(.active) .next {
+  display: none !important;
+}
+.cms-listing-row .variant-thumbnail.slider.active .prev,
+.cms-listing-row .variant-thumbnail.slider.active .next {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  color: #2d4528 !important;
+  border: 1px solid #ede9e2 !important;
+  border-radius: 50% !important;
+  width: 26px !important;
+  height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.cms-listing-row .variant-thumbnail.slider.active .prev:hover,
+.cms-listing-row .variant-thumbnail.slider.active .next:hover {
+  background-color: #ffffff !important;
+  border-color: #ac723e !important;
+  color: #ac723e !important;
+}
+
+/* Product info — naam in donkergroen, regular weight, on-brand */
+.cms-listing-row .product-info {
+  margin-top: auto;
+}
+.cms-listing-row .product-name {
+  display: block;
+  font-weight: 400 !important;
+  color: #2d4528 !important;
+  text-decoration: none !important;
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0.25rem 0 0.5rem 0;
+}
+.cms-listing-row .product-name:hover {
+  color: #ac723e !important;
+}
+
+/* Prijs — bold, donkergroen, "Van" iets dimmer als label */
+.cms-listing-row .product-price-info {
+  margin-top: 0.25rem;
+}
+.cms-listing-row .product-price-wrapper {
+  font-size: 0.95rem;
+  color: #888;
+}
+.cms-listing-row .product-price {
+  font-weight: 700 !important;
+  color: #2d4528 !important;
+  font-size: 1.15rem;
+  margin-left: 0.25rem;
+}
+
+/* Filter en sort balk — meer lucht en consistente styling */
+.cms-element-product-listing-actions {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ede9e2;
+}
+.sorting-label {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #2d4528;
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+/* Sort dropdown gestyled als pill, consistent met filter-pillen.
+   Native arrow weggehaald, vervangen door custom chevron via
+   background-image (zelfde stijl als filter-pillen). */
+.sorting select.sorting {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 2.5rem 0.5rem 1.25rem !important;
+  border: 1px solid #ede9e2 !important;
+  border-radius: 999px !important;
+  background-color: #ffffff !important;
+  color: #2d4528 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%232d4528' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 6 8 10 12 6'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+}
+.sorting select.sorting:hover,
+.sorting select.sorting:focus {
+  border-color: #ac723e !important;
+  outline: none;
+}
+
+/* Filter buttons (Eco / Kleur / Made in Europe / Merk / Prijs).
+   inline-flex + align-items center voor verticaal uitlijnen van
+   tekst, count en chevron-icoon. */
+.filter-panel .filter-panel-item-toggle.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  border: 1px solid #ede9e2 !important;
+  border-radius: 999px !important;
+  background-color: #ffffff !important;
+  color: #2d4528 !important;
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+
+/* Chevron-icoon: span en SVG verticaal centreren, kleur on-brand
+   donkergroen. Promidata's eigen CSS zet `top: <waarde>px` op de
+   SVG (icon-filter-panel-item-toggle), die overschrijven we naar 0. */
+.filter-panel .filter-panel-item-toggle.btn .icon {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.filter-panel .filter-panel-item-toggle.btn .icon svg,
+.icon.icon-filter-panel-item-toggle > svg {
+  display: block !important;
+  width: 12px !important;
+  height: 12px !important;
+  top: 0 !important;
+}
+.filter-panel .filter-panel-item-toggle.btn .icon svg use,
+.filter-panel .filter-panel-item-toggle.btn .icon svg path {
+  fill: #2d4528 !important;
+}
+.filter-panel .filter-panel-item-toggle.btn:hover,
+.filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
+  border-color: #ac723e !important;
+  background-color: #FBF7F5 !important;
+}
+
+/* Filter panel — geen sticky, geen achtergrond, normale flow */
+.cms-block-sidebar-filter {
+  padding: 0.5rem 0;
+}
+
+/* Filter panel active container — chips + reset button als filters actief zijn.
+   Promidata vult deze div automatisch. Verberg als 'ie leeg is. */
+.filter-panel-active-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ede9e2;
+}
+.filter-panel-active-container:empty {
+  display: none;
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Filter chips — pill-style on-brand */
+.filter-panel-active-container .filter-active {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem !important;
+  background-color: #FBF7F5 !important;
+  border: 1px solid #ede9e2 !important;
+  border-radius: 999px !important;
+  font-size: 0.825rem !important;
+  color: #2d4528 !important;
+  font-weight: 500;
+}
+.filter-panel-active-container .filter-active-remove,
+.filter-panel-active-container .filter-active button {
+  background: none !important;
+  border: none !important;
+  color: #2d4528 !important;
+  cursor: pointer;
+  padding: 0 !important;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+.filter-panel-active-container .filter-active-remove:hover {
+  color: #ac723e !important;
+}
+
+/* "Alles resetten" knop — on-brand bruin ipv default Bootstrap rood */
+.filter-panel-active-container .filter-reset-all,
+.filter-panel-active-container .btn,
+.filter-panel-active-container button:not(.filter-active-remove) {
+  background-color: transparent !important;
+  border: 1px solid #ac723e !important;
+  color: #ac723e !important;
+  padding: 0.35rem 0.95rem !important;
+  border-radius: 999px !important;
+  font-size: 0.825rem !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+.filter-panel-active-container .filter-reset-all:hover,
+.filter-panel-active-container button:not(.filter-active-remove):hover {
+  background-color: #ac723e !important;
+  color: #ffffff !important;
+}
+
+/* PLP categorie titel — Playfair, donkergroen, ademruimte */
+.cms-block-text h2 {
+  font-family: 'Playfair Display', serif !important;
+  color: #2d4528 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Sidebar categorie navigatie cleaner */
+.category-navigation .category-navigation-link {
+  color: #2d4528 !important;
+  text-decoration: none;
+  padding: 0.4rem 0;
+  display: block;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+.category-navigation .category-navigation-link:hover {
+  color: #ac723e !important;
+}
+.category-navigation .category-navigation-link.is-active {
+  color: #ac723e !important;
+  font-weight: 600;
+}
+.category-navigation.level-1 {
+  margin-left: 1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid #ede9e2;
 }
