@@ -1,2 +1,14 @@
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Preconnect voor Google Fonts en jsDelivr CDN — browser opent TCP+TLS
+     connectie alvast terwijl HTML nog parseert. Scheelt 50-200ms per resource. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+<!-- Google Fonts — Montserrat (body) + Playfair Display (headings) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Search overlay element — wordt via CSS/JS zichtbaar bij focus op zoekbalk -->
 <div class="search-overlay" id="searchOverlay"></div>
+
+<!-- CSS en JS worden globaal geladen door Promidata via jsDelivr CDN
+     (in het thema): rootedgoods.css en rootedgoods.js@main -->

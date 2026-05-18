@@ -1,46 +1,63 @@
-// rootedgoods.js — laatste update: 28-04-2026 15:30 (restore na revert)
+/* =====================================================================
+ * rootedgoods.js — custom frontend JS voor Rooted Goods (rootedgoods.eu)
+ * Geladen via Promidata theme naast hun eigen scripts.
+ * Last updated: 2026-04-28
+ *
+ * STRUCTUUR:
+ *   SECTIE 1 — GLOBAL          : search overlay, sticky header, flyout CTA, offerte link
+ *   SECTIE 2 — HOMEPAGE        : logo slider, productslider tegel-click
+ *   SECTIE 3 — PDP             : productnaam verplaatsen, accordion default, staffel-tabel, zoom button
+ *
+ * UITGANGSPUNTEN:
+ * - Zo min mogelijk JS op PDP/PLP. Alleen functies die NIET zonder JS kunnen.
+ * - Geen van de PDP-functies muteert containers die Promidata via XHR
+ *   re-rendert: #total-price-bottom-container, #detailed-price-table-container,
+ *   #po-informations-container. Anders worden onze wijzigingen weggegooid bij
+ *   prijswijzigingen (kleur kiezen, aantal aanpassen, opdruk toevoegen).
+ * - Selectors zijn defensief: niets crasht als element niet bestaat.
+ * - Page-detection via body class (is-ctl-product) voor expliciete scoping.
+ * ===================================================================== */
 
-// SEARCH OVERLAY - donkere overlay achter zoekbalk bij focus
-// Overlay verdwijnt bij klik erop of als zoekbalk focus verliest
-// DOMContentLoaded i.p.v. load — werkt zonder afbeeldingen, draait eerder
-document.addEventListener('DOMContentLoaded', function() {
+
+/* =====================================================================
+ * SECTIE 1 — GLOBAL (alle pagina's)
+ * ===================================================================== */
+
+/* ---- 1.1 Search overlay
+ * Donkere overlay achter zoekbalk wanneer 'ie focus heeft.
+ * DOMContentLoaded: werkt zonder afbeeldingen geladen, draait eerder. */
+document.addEventListener('DOMContentLoaded', function () {
   var searchInput = document.querySelector('.header-search-input');
   var overlay = document.getElementById('searchOverlay');
+  if (!searchInput || !overlay) return;
 
-  if (searchInput && overlay) {
+  searchInput.addEventListener('focus', function () {
+    overlay.classList.add('active');
+  });
 
-    // Overlay tonen als zoekbalk focus krijgt
-    searchInput.addEventListener('focus', function() {
-      overlay.classList.add('active');
-    });
+  // 150ms timeout: klik op zoekknop heeft tijd om te firen voordat overlay weg is.
+  searchInput.addEventListener('blur', function () {
+    setTimeout(function () { overlay.classList.remove('active'); }, 150);
+  });
 
-    // Overlay verbergen als zoekbalk focus verliest
-    // setTimeout van 150ms zodat klikken op zoekknop nog werkt
-    searchInput.addEventListener('blur', function() {
-      setTimeout(function() {
-        overlay.classList.remove('active');
-      }, 150);
-    });
-
-    // Overlay verbergen bij klik op de overlay zelf
-    overlay.addEventListener('click', function() {
-      overlay.classList.remove('active');
-      searchInput.blur();
-    });
-  }
+  overlay.addEventListener('click', function () {
+    overlay.classList.remove('active');
+    searchInput.blur();
+  });
 });
 
-// STICKY HEADER - verbergt bij scroll naar beneden, verschijnt bij scroll naar boven
-// Threshold: header verdwijnt pas na 150px scroll
-(function() {
+
+/* ---- 1.2 Sticky header
+ * Verbergt header bij scroll naar beneden, toont bij scroll naar boven.
+ * passive: true voorkomt dat scroll-performance gehinderd wordt. */
+(function () {
   var lastScroll = 0;
   var threshold = 150;
   var header = document.querySelector('.header-main');
   var nav = document.querySelector('.nav-main');
+  if (!header || !nav) return;
 
-  // passive: true — browser weet dat we preventDefault() niet gebruiken,
-  // blokkeert scroll-performance niet (vooral merkbaar op mobiel)
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     var current = window.scrollY;
 
     if (current < threshold) {
@@ -50,11 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (current > lastScroll) {
-      // Scroll naar beneden — verberg header
       header.classList.add('header-hidden');
       nav.classList.add('header-hidden');
     } else {
-      // Scroll naar boven — toon header
       header.classList.remove('header-hidden');
       nav.classList.remove('header-hidden');
     }
@@ -63,65 +78,86 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { passive: true });
 })();
 
-// CATEGORY FLYOUT - voegt "Bekijk alle producten" button toe als laatste cel
-// rechts in de rij. Berekent dynamisch hoeveel lege spacers nodig zijn om
-// de button in de meest rechter kolom te plaatsen.
-document.addEventListener('DOMContentLoaded', function() {
+
+/* ---- 1.3 Category flyout — "Bekijk alle producten" CTA toevoegen
+ * Berekent dynamisch hoeveel lege spacers nodig zijn om de button in
+ * de meest rechter kolom van de grid te plaatsen. */
+document.addEventListener('DOMContentLoaded', function () {
   var flyoutContent = document.querySelector('.navigation-flyout-content');
+  if (!flyoutContent) return;
 
-  if (flyoutContent) {
-    var itemsPerRow = 4;
-    var existingCount = flyoutContent.children.length;
-    // Aantal lege cellen nodig om button op rechterkolom (index itemsPerRow-1) te krijgen
-    var spacersNeeded = (itemsPerRow - 1 - (existingCount % itemsPerRow) + itemsPerRow) % itemsPerRow;
+  var itemsPerRow = 4;
+  var existingCount = flyoutContent.children.length;
+  var spacersNeeded = (itemsPerRow - 1 - (existingCount % itemsPerRow) + itemsPerRow) % itemsPerRow;
 
-    for (var i = 0; i < spacersNeeded; i++) {
-      var spacer = document.createElement('div');
-      spacer.className = 'col-md-3 flyout-spacer';
-      flyoutContent.appendChild(spacer);
-    }
-
-    var col = document.createElement('div');
-    col.className = 'col-md-3 navigation-flyout-category flyout-cta-col';
-    col.innerHTML = '<a href="/search?search=" class="btn btn-primary">Bekijk alle producten</a>';
-    flyoutContent.appendChild(col);
+  for (var i = 0; i < spacersNeeded; i++) {
+    var spacer = document.createElement('div');
+    spacer.className = 'col-md-3 flyout-spacer';
+    flyoutContent.appendChild(spacer);
   }
+
+  var col = document.createElement('div');
+  col.className = 'col-md-3 navigation-flyout-category flyout-cta-col';
+  col.innerHTML = '<a href="/search?search=" class="btn btn-primary">Bekijk alle producten</a>';
+  flyoutContent.appendChild(col);
 });
 
-// LOGO SLIDER - continue scroll animatie vervangt Shopware carousel
-// Blijft op 'load' — heeft img.src nodig van de originele carousel,
-// die moet eerst volledig geladen zijn voor betrouwbare src-copy
-window.addEventListener('load', function() {
+
+/* ---- 1.4 Offerte link in nav-main
+ * Tekstuele CTA naast de hoofdnavigatie, alleen op desktop (>= 992px). */
+document.addEventListener('DOMContentLoaded', function () {
+  var nav = document.querySelector('.nav-main .main-navigation-menu');
+  if (!nav || window.innerWidth < 992) return;
+
+  var link = document.createElement('a');
+  link.href = '/offerte';
+  link.className = 'nav-link main-navigation-link offerte-link';
+  link.title = 'Offerte op maat';
+  link.innerHTML = '<div class="main-navigation-link-text"><span class="offerte-separator">|</span><span>Offerte op maat</span></div>';
+  nav.appendChild(link);
+});
+
+
+/* =====================================================================
+ * SECTIE 2 — HOMEPAGE
+ * Selectors zijn unieke homepage-classes (.home-productslider, .logo-slider).
+ * Op andere pagina's faalt querySelector veilig.
+ * ===================================================================== */
+
+/* ---- 2.1 Logo slider — Shopware carousel vervangen door continue scroll
+ * Gebruikt window.load (niet DOMContentLoaded) omdat we img.src van
+ * de originele carousel kopiëren. Die moet eerst geladen zijn. */
+window.addEventListener('load', function () {
   var carousel = document.querySelector('.logo-slider .cms-element-custom-cms-slider');
   if (!carousel) return;
 
-  // Verzamel unieke logo afbeeldingen uit eerste carousel-item
-  var images = [];
-  var seen = [];
   var firstItem = carousel.querySelector('.carousel-item');
   if (!firstItem) return;
 
-  firstItem.querySelectorAll('.card-img img').forEach(function(img) {
+  // Verzamel unieke logo afbeeldingen
+  var images = [];
+  var seen = [];
+  firstItem.querySelectorAll('.card-img img').forEach(function (img) {
     if (!seen.includes(img.src)) {
       seen.push(img.src);
       images.push({ src: img.src, alt: img.alt });
     }
   });
 
-  // Bouw continue scroll track — dupliceer voor naadloze loop
+  // Bouw scroll-track. Set is verdubbeld voor naadloze loop.
   var track = document.createElement('div');
   track.style.cssText = 'display:flex; align-items:center; width:max-content; animation:logoScroll 25s linear infinite;';
 
-  [images, images].forEach(function(set) {
-    set.forEach(function(img) {
+  [images, images].forEach(function (set) {
+    set.forEach(function (img) {
       var div = document.createElement('div');
       div.style.cssText = 'padding: 0 3rem; flex-shrink:0;';
       div.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" style="height:50px; opacity:0.6; filter:grayscale(100%); transition:all 0.3s;">';
-      div.querySelector('img').addEventListener('mouseover', function() {
+      div.querySelector('img').addEventListener('mouseover', function () {
         this.style.opacity = '1';
         this.style.filter = 'grayscale(0%)';
       });
-      div.querySelector('img').addEventListener('mouseout', function() {
+      div.querySelector('img').addEventListener('mouseout', function () {
         this.style.opacity = '0.6';
         this.style.filter = 'grayscale(100%)';
       });
@@ -129,89 +165,156 @@ window.addEventListener('load', function() {
     });
   });
 
-  // Wrapper met overflow hidden voor clean edges.
-  // Wrapper transparent: parent (.cms-section / .cms-block) bg schijnt door.
-  // Achtergrondkleur #F7F5F2 staat via CSS op .home.productslider section.
+  // Wrapper transparant — section bg (#F7F5F2) komt door de CSS op .home.productslider.
   var wrapper = document.createElement('div');
   wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0;';
   wrapper.appendChild(track);
 
-  // Voeg keyframe animatie toe aan head
+  // Keyframe animatie inject
   var style = document.createElement('style');
   style.textContent = '@keyframes logoScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }';
   document.head.appendChild(style);
 
-  // Verberg origineel carousel en voeg nieuwe slider in
   carousel.style.display = 'none';
   carousel.parentNode.insertBefore(wrapper, carousel);
 });
 
-// OFFERTE LINK IN NAV-MAIN - tekstuele CTA naast navigatielinks
-// In bruine accent-kleur met pipe separator ervoor. Alleen desktop.
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.querySelector('.nav-main .main-navigation-menu');
-  if (nav && window.innerWidth >= 992) {
-    var link = document.createElement('a');
-    link.href = '/offerte';
-    link.className = 'nav-link main-navigation-link offerte-link';
-    link.title = 'Offerte op maat';
-    link.innerHTML = '<div class="main-navigation-link-text"><span class="offerte-separator">|</span><span>Offerte op maat</span></div>';
-    nav.appendChild(link);
-  }
+
+/* ---- 2.2 Productslider — hele tegel klikbaar
+ * Onderscheidt klik vs swipe via mousedown/click delta zodat sliden niet
+ * per ongeluk navigatie triggert. */
+document.addEventListener('DOMContentLoaded', function () {
+  var sliderItems = document.querySelectorAll('.home-productslider .product-slider-item');
+  sliderItems.forEach(function (item) {
+    var link = item.querySelector('.product-image-link');
+    if (!link) return;
+
+    var href = link.getAttribute('href');
+    item.style.cursor = 'pointer';
+    var startX = 0;
+    var startY = 0;
+
+    item.addEventListener('mousedown', function (e) {
+      startX = e.clientX;
+      startY = e.clientY;
+    });
+
+    item.addEventListener('click', function (e) {
+      var deltaX = Math.abs(e.clientX - startX);
+      var deltaY = Math.abs(e.clientY - startY);
+      if (deltaX > 5 || deltaY > 5) return;            // swipe, niet doorklikken
+      if (e.target.closest('.product-wishlist')) return; // wishlist heeft eigen handler
+      if (e.target.closest('.variant-thumbnail')) return; // variant-thumb idem
+      window.location.href = href;
+    });
+  });
 });
 
-// PDP - productnaam verplaatsen naar top van buy-col (col-lg-5)
-// Standaard staat de h1 in een eigen row boven gallery+buy. Wij willen 'm
-// naast de gallery, bovenaan de rechter kolom — modern PDP layout (Sugarcoat-style).
-// Alleen op desktop. Op mobiel blijft de naam waar 'ie is (boven gallery).
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.innerWidth < 992) return;
-  var h1 = document.querySelector('.product-detail-name');
-  var buyCol = document.querySelector('.product-detail-buy');
-  if (h1 && buyCol) {
+
+/* =====================================================================
+ * SECTIE 3 — PDP (product detail page)
+ *
+ * Scoped via body.is-ctl-product (Promidata/Shopware page-class).
+ * Alle functies zijn idempotent (kunnen veilig 2x draaien) en muteren
+ * géén containers die Promidata via XHR re-rendert.
+ * ===================================================================== */
+
+(function () {
+  if (!document.body.classList.contains('is-ctl-product')) return;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    moveProductNameToBuyCol();
+    openQuantityAccordionByDefault();
+    enhanceTierPriceTable();
+    addGalleryZoomButton();
+  });
+
+  /* ---- 3.1 Productnaam verplaatsen naar bovenaan de buy-col (col-lg-5)
+   * Promidata rendert de h1 standaard in een eigen row boven gallery+buy.
+   * Wij willen 'm naast de gallery, bovenaan de rechter kolom (Sugarcoat-style).
+   * Alleen op desktop (>= 992px); op mobile blijft de naam waar 'ie is. */
+  function moveProductNameToBuyCol() {
+    if (window.innerWidth < 992) return;
+    var h1 = document.querySelector('.product-detail-name');
+    var buyCol = document.querySelector('.product-detail-buy');
+    if (!h1 || !buyCol) return;
+    if (buyCol.firstChild === h1) return; // al verplaatst — idempotent
     buyCol.insertBefore(h1, buyCol.firstChild);
   }
-});
 
-// PDP - "Aantal" accordion standaard open
-// Promidata laat 'm collapsed renderen, wij willen 'm direct zichtbaar
-// zodat klanten het minimum order quantity en staffel-prijzen direct zien.
-document.addEventListener('DOMContentLoaded', function() {
-  var qtyTitle = document.querySelector('#qty-title');
-  var qtyWrapper = document.querySelector('#qty-wrapper');
-  if (qtyTitle && qtyWrapper) {
+  /* ---- 3.2 "Aantal" accordion standaard open
+   * Promidata rendert collapsed; wij willen 'm direct zichtbaar zodat
+   * klanten het minimum order quantity en de staffel-prijzen direct zien. */
+  function openQuantityAccordionByDefault() {
+    var qtyTitle = document.querySelector('#qty-title');
+    var qtyWrapper = document.querySelector('#qty-wrapper');
+    if (!qtyTitle || !qtyWrapper) return;
     qtyTitle.classList.remove('collapsed');
     qtyTitle.setAttribute('aria-expanded', 'true');
     qtyWrapper.classList.add('show');
   }
-});
 
-// PRODUCT SLIDER - hele tegel klikbaar, alleen bij echte klik (niet bij swipe)
-// DOMContentLoaded — product-tegels staan in DOM zonder images
-document.addEventListener('DOMContentLoaded', function() {
-  var sliderItems = document.querySelectorAll('.home-productslider .product-slider-item');
-  sliderItems.forEach(function(item) {
-    var link = item.querySelector('.product-image-link');
-    if (link) {
-      var href = link.getAttribute('href');
-      item.style.cursor = 'pointer';
+  /* ---- 3.3 Staffel-prijzen tabel (.product-block-prices-grid)
+   * Twee enhancements:
+   *   a) Hele rij klikbaar — niet alleen het quantity-getal (.qty-click)
+   *      Belt window.changeOrderQuantity(qty) (door Promidata gedefinieerd).
+   *   b) Besparing-cell wrappen in <span class="product-block-prices-savings">
+   *      zodat we 'm als sage-groene pill kunnen stylen via CSS.
+   *
+   * Deze tabel wordt door Promidata NIET re-rendered op prijswijziging
+   * (alleen de .highlight-row class wordt toegevoegd/verwijderd), dus
+   * onze span-wrapper en handlers blijven intact. */
+  function enhanceTierPriceTable() {
+    var rows = document.querySelectorAll('.product-block-prices-row[data-qty]');
+    rows.forEach(function (row) {
+      // (a) Hele rij klikbaar
+      if (!row.dataset.rowClickBound) {
+        row.dataset.rowClickBound = 'true';
+        row.addEventListener('click', function (e) {
+          // Skip als gebruiker direct op de qty-click span klikt
+          // (heeft eigen Promidata handler die changeOrderQuantity aanroept)
+          if (e.target.closest('.qty-click')) return;
+          var qty = row.dataset.qty;
+          if (qty && typeof window.changeOrderQuantity === 'function') {
+            window.changeOrderQuantity(qty);
+          }
+        });
+      }
 
-      var startX = 0;
-      var startY = 0;
+      // (b) Besparing-tekst wrappen in pill-span
+      var savingsCell = row.querySelector('th.text-end, td.text-end');
+      if (savingsCell && !savingsCell.querySelector('.product-block-prices-savings')) {
+        var text = savingsCell.textContent.trim();
+        if (text.length > 0) {
+          savingsCell.innerHTML = '<span class="product-block-prices-savings">' + text + '</span>';
+        }
+      }
+    });
+  }
 
-      item.addEventListener('mousedown', function(e) {
-        startX = e.clientX;
-        startY = e.clientY;
-      });
+  /* ---- 3.4 Gallery zoom-trigger button
+   * Promidata's data-zoom-modal flow opent een zoom-modal bij klik op
+   * de hoofdafbeelding. Wij voegen een zichtbare hint toe in de hoek
+   * (loep-icoon) zodat dit gedrag duidelijk is. Button is alleen zichtbaar
+   * op hover (CSS) en triggert image.click() op de actieve slide. */
+  function addGalleryZoomButton() {
+    var galleryCol = document.querySelector('.product-detail-media .gallery-slider-col');
+    if (!galleryCol) return;
+    if (galleryCol.querySelector('.gallery-zoom-trigger')) return; // skip duplicate
 
-      item.addEventListener('click', function(e) {
-        var deltaX = Math.abs(e.clientX - startX);
-        var deltaY = Math.abs(e.clientY - startY);
-        if (deltaX > 5 || deltaY > 5) return;
-        if (e.target.closest('.product-wishlist')) return;
-        if (e.target.closest('.variant-thumbnail')) return;
-        window.location.href = href;
-      });
-    }
-  });
-});
+    var zoomBtn = document.createElement('button');
+    zoomBtn.type = 'button';
+    zoomBtn.className = 'gallery-zoom-trigger';
+    zoomBtn.setAttribute('aria-label', 'Vergroot afbeelding');
+    zoomBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>';
+
+    zoomBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var activeImage = galleryCol.querySelector('.tns-slide-active .gallery-slider-image, .gallery-slider-image');
+      if (activeImage) activeImage.click();
+    });
+
+    galleryCol.appendChild(zoomBtn);
+  }
+})();
