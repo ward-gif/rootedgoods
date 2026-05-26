@@ -2259,7 +2259,7 @@ body.is-ctl-product {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;          /* landscape; platter = grotere breedte, bv. 2/1 of 21/9 */
+  aspect-ratio: 32 / 9;          /* zeer plat (helft van 16/9 hoogte); hoger = bv. 21/9 of 2/1 */
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none !important;
