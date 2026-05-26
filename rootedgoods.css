@@ -2227,3 +2227,63 @@ body.is-ctl-product {
   padding-left: 0.75rem;
   border-left: 2px solid #ede9e2;
 }
+
+/* ------------------------------------------------------------
+   25. CATEGORIE-TILES (image met tekst-overlay, klikbaar)
+   ------------------------------------------------------------
+   Plaats per CMS-kolom één .rg-cat-tile link. Image vult de tile,
+   overlay-label onderaan met donkere gradient zodat tekst leesbaar
+   blijft op elke foto. Hover = lichte zoom binnen afgeronde hoeken
+   (overflow:hidden klipt de scale). Pure CSS, geen JS nodig.        */
+
+.rg-cat-tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;            /* portrait; pas aan naar 1/1 of 4/3 indien gewenst */
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none !important;
+  background-color: #ede9e2;
+}
+
+.rg-cat-tile__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.rg-cat-tile:hover .rg-cat-tile__img,
+.rg-cat-tile:focus-visible .rg-cat-tile__img {
+  transform: scale(1.06);
+}
+
+/* Volledige donkere overlay (zelfde look als .image-cards blok) zodat
+   de witte tekst overal leesbaar is, niet alleen onderaan. */
+.rg-cat-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rg-cat-tile__label {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  color: #ffffff !important;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  pointer-events: none;
+}
