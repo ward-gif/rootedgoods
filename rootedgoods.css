@@ -2231,16 +2231,35 @@ body.is-ctl-product {
 /* ------------------------------------------------------------
    25. CATEGORIE-TILES (image met tekst-overlay, klikbaar)
    ------------------------------------------------------------
-   Plaats per CMS-kolom één .rg-cat-tile link. Image vult de tile,
-   overlay-label onderaan met donkere gradient zodat tekst leesbaar
-   blijft op elke foto. Hover = lichte zoom binnen afgeronde hoeken
-   (overflow:hidden klipt de scale). Pure CSS, geen JS nodig.        */
+   Eén .rg-cat-grid container met daarin losse .rg-cat-tile links.
+   De grid vouwt automatisch in rijen van 4 (responsive minder).
+   Nieuwe categorie = gewoon een extra <a> in de container plakken;
+   de grid herschikt zelf. Landscape tiles, donkere overlay, witte
+   titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
+
+.rg-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0;
+  padding: 0 40px;
+}
+
+@media (max-width: 991px) {
+  .rg-cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+  .rg-cat-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+}
 
 .rg-cat-tile {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;            /* portrait; pas aan naar 1/1 of 4/3 indien gewenst */
+  aspect-ratio: 4 / 3;            /* landscape; lager = grotere noemer, bv. 16/9 platter, 1/1 hoger */
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none !important;
@@ -2261,7 +2280,7 @@ body.is-ctl-product {
 }
 
 /* Volledige donkere overlay (zelfde look als .image-cards blok) zodat
-   de witte tekst overal leesbaar is, niet alleen onderaan. */
+   de witte tekst overal leesbaar is. */
 .rg-cat-tile::after {
   content: '';
   position: absolute;
@@ -2272,18 +2291,30 @@ body.is-ctl-product {
   z-index: 1;
 }
 
+/* Tekstblok linksboven over de image */
 .rg-cat-tile__label {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
-  color: #ffffff !important;
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  padding: 1.5rem;
   pointer-events: none;
+}
+
+.rg-cat-tile__title {
+  color: #ffffff !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rg-cat-tile__sub {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.3;
 }
