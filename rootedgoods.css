@@ -2259,14 +2259,18 @@ body.is-ctl-product {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;            /* landscape; lager = grotere noemer, bv. 16/9 platter, 1/1 hoger */
+  aspect-ratio: 16 / 9;          /* landscape; platter = grotere breedte, bv. 2/1 of 21/9 */
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none !important;
   background-color: #ede9e2;
 }
 
+/* Absoluut laten vullen zodat de natuurlijke beeldhoogte de tile NIET
+   hoger maakt — alleen aspect-ratio bepaalt de hoogte. */
 .rg-cat-tile__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
