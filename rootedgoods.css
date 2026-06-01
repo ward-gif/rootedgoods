@@ -2364,7 +2364,18 @@ body.is-ctl-product {
    ============================================================ */
 
 
-/* ---- 26.1 Header zoekbalk — schaalt mee i.p.v. fixed 700px ---- */
+/* ---- 26.1 Header zoekbalk — geen overlap met nav, schaalt mee ---- */
+/* Probleem: .header-search is position:absolute met top:50% op .header-row.
+   Als de balk hoger is dan de rij, lekt 'ie zowel boven als onder uit en
+   valt over de hoofdnavigatie. Fix: min-height op .header-row én iets
+   compactere zoekbalk op smalle desktops. */
+@media (min-width: 992px) {
+  .header-row {
+    min-height: 72px;
+    padding-bottom: 6px !important;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1399px) {
   .header-search,
   .header-row .header-search {
@@ -2372,6 +2383,13 @@ body.is-ctl-product {
        in 700px op 1024-1200, dus we cappen op een fluid waarde. */
     width: min(700px, 50vw) !important;
     max-width: min(700px, 50vw) !important;
+  }
+  /* Iets minder hoog zodat 'ie sowieso netjes binnen de header-row blijft */
+  .header-search-form .form-control,
+  .header-search-form input.header-search-input {
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+    font-size: 0.95rem !important;
   }
 }
 
