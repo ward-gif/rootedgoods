@@ -556,8 +556,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   align-items: center;
   justify-content: center;
 }
-/* SVG zelf — wit i.p.v. de hardcoded #758CA3 fill van de Shopware default */
+/* SVG zelf — wit i.p.v. de hardcoded #758CA3 fill van de Shopware default.
+   Path zit niet gecentreerd in de viewBox (y=3.4 → 23), dus optisch
+   omhoog schuiven met translateY zodat 'ie écht in het midden staat. */
 .btn.btn-primary:has(.icon-arrow-up) svg,
+.scroll-up-btn svg,
+.scroll-up .btn-primary svg {
+  width: 18px !important;
+  height: 18px !important;
+  transform: translateY(-2px);
+}
 .btn.btn-primary:has(.icon-arrow-up) svg use,
 .btn.btn-primary:has(.icon-arrow-up) svg path,
 .scroll-up-btn svg use,
@@ -565,8 +573,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .scroll-up .btn-primary svg use,
 .scroll-up .btn-primary svg path {
   fill: #ffffff !important;
-  width: 18px !important;
-  height: 18px !important;
 }
 
 
