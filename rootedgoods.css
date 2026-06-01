@@ -2364,34 +2364,41 @@ body.is-ctl-product {
    ============================================================ */
 
 
-/* ---- 26.1 Header zoekbalk — geen overlap met nav, schaalt mee ---- */
-/* Probleem: .header-search is position:absolute met top:50% op .header-row.
-   Als de balk hoger is dan de rij, lekt 'ie zowel boven als onder uit en
-   valt over de hoofdnavigatie. Fix: min-height op .header-row én iets
-   compactere zoekbalk op smalle desktops. */
+/* ---- 26.1 Header zoekbalk — compacter zodat 'ie binnen de row past ---- */
+/* Probleem 1: .header-search is position:absolute met top:50% op .header-row.
+   Als de input-hoogte de rij overschrijdt, lekt 'ie onderaan over de nav.
+   Probleem 2: .nav-main staat hardcoded op top:97px en gaat uit van een
+   topbar+header-row van precies die hoogte. Als de topbar wrapt op smal,
+   verdwijnt nav achter de header.
+
+   Fix: zoekbalk-input compacter op alle desktop-breedtes (past in de
+   default ~60px row), én nav-main top schalen mee als topbar wrapt. */
+
 @media (min-width: 992px) {
-  .header-row {
-    min-height: 72px;
-    padding-bottom: 6px !important;
+  /* Zoekbalk-input compacter zodat de absolute balk binnen header-row valt */
+  .header-search-form .form-control,
+  .header-search-form input.header-search-input,
+  .header-search-form input[type="search"] {
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.45rem !important;
+    font-size: 0.95rem !important;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1399px) {
+  /* Tussen logo (250px) en actions (~180px) past 700px niet meer op
+     1024-1280. Cap op een fluid waarde zodat 'ie netjes verkleint. */
   .header-search,
   .header-row .header-search {
-    /* Tussen logo (250px) en actions (~180px): zoekbalk past hier nooit
-       in 700px op 1024-1200, dus we cappen op een fluid waarde. */
-    width: min(700px, 50vw) !important;
-    max-width: min(700px, 50vw) !important;
-  }
-  /* Iets minder hoog zodat 'ie sowieso netjes binnen de header-row blijft */
-  .header-search-form .form-control,
-  .header-search-form input.header-search-input {
-    padding-top: 0.4rem !important;
-    padding-bottom: 0.4rem !important;
-    font-size: 0.95rem !important;
+    width: min(700px, 48vw) !important;
+    max-width: min(700px, 48vw) !important;
   }
 }
+
+/* .nav-main bewust NIET verplaatsen — die top:97px is gekoppeld aan de
+   body padding-top in Promidata's theme. Aanpassen → content valt achter
+   de nav-balk. Topbar-wrap pakken we apart aan via compactere padding
+   in 26.7 hieronder. */
 
 
 /* ---- 26.2 Image-row spotlight — geen geclipte afbeeldingen ---- */
