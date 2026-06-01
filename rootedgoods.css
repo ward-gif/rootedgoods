@@ -516,13 +516,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   line-height: 1.2 !important;
 }
 .btn-primary {
-  background-color: #d93025 !important;
-  border-color: #d93025 !important;
+  background-color: #CA853F !important;
+  border-color: #CA853F !important;
   color: #fff !important;
 }
 .btn-primary:hover {
-  background-color: #b8261c !important;
-  border-color: #b8261c !important;
+  background-color: #b57a3d !important;
+  border-color: #b57a3d !important;
 }
 .btn-outline-primary {
   background-color: transparent !important;
@@ -532,6 +532,41 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .btn-outline-primary:hover {
   background-color: #CA853F !important;
   color: #fff !important;
+}
+
+/* Scroll-to-top knop — overschrijf pill-styling; vierkant blokje met
+   dezelfde radius als de tiles. Target via :has() op icon-arrow-up
+   (alleen scroll-up button heeft die in een btn-primary). */
+.btn.btn-primary:has(.icon-arrow-up),
+.scroll-up-btn,
+.scroll-up .btn-primary {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.btn.btn-primary:has(.icon-arrow-up) .icon,
+.scroll-up-btn .icon,
+.scroll-up .btn-primary .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* SVG zelf — wit i.p.v. de hardcoded #758CA3 fill van de Shopware default */
+.btn.btn-primary:has(.icon-arrow-up) svg,
+.btn.btn-primary:has(.icon-arrow-up) svg use,
+.btn.btn-primary:has(.icon-arrow-up) svg path,
+.scroll-up-btn svg use,
+.scroll-up-btn svg path,
+.scroll-up .btn-primary svg use,
+.scroll-up .btn-primary svg path {
+  fill: #ffffff !important;
+  width: 18px !important;
+  height: 18px !important;
 }
 
 
@@ -627,9 +662,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   left: 0 !important;
 }
 .home-productslider .product-image,
-.home-productslider .product-box .product-image {
+.home-productslider .product-box .product-image,
+.home-productslider img.product-image.is-contain,
+.home-productslider .product-image-link > img,
+.home-productslider .product-image-link .product-image {
+  position: absolute !important;   /* forceer fill, ongeacht intrinsieke afmetingen */
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   object-fit: contain !important;
   object-position: center center !important;
   border-radius: 8px !important;
