@@ -2489,20 +2489,44 @@ body.is-ctl-product {
 
 
 /* ---- 26.7 Top-bar USPs — voorkom dat ze in 2 regels breken ---- */
-/* Op smalle desktops: minder horizontale padding zodat 4 USPs op één
-   regel passen. Onder 992 valt het toch al stil door Promidata. */
-@media (min-width: 992px) and (max-width: 1400px) {
+/* Wrap van topbar = totale header > 97px = nav-main verdwijnt achter
+   header. Daarom topbar agressief schalen op alle desktop-breedtes
+   en text expliciet op één regel forceren (mocht 'ie toch te breed
+   zijn, dan wordt 'ie afgekapt i.p.v. gewrapt — beter dan nav weg). */
+@media (min-width: 992px) and (max-width: 1500px) {
   .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
-    padding: 0rem 1rem;
+    padding: 0rem 0.75rem;
+  }
+  .top-bar-nav,
+  .top-bar-nav .top-bar-container {
+    font-size: 0.85rem;
+  }
+  /* Forceer een regel zodat header op exact 97px blijft */
+  .top-bar-nav .top-bar-container,
+  .top-bar-nav .top-bar-container a,
+  .top-bar-nav .top-bar-container span {
+    white-space: nowrap !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1100px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
     padding: 0rem 0.5rem;
   }
-  .top-bar-nav {
-    font-size: 0.85rem;
+  .top-bar-nav,
+  .top-bar-nav .top-bar-container {
+    font-size: 0.8rem;
   }
+}
+
+
+/* ---- 26.7b Nav-main fallback — als topbar tóch wrapt, zak mee.
+   Promidata gebruikt JS om body padding-top te zetten op header height,
+   dus content schuift mee als nav-main lager komt. Veiligheidsnet. ---- */
+@media (min-width: 992px) and (max-width: 1300px) {
+  .nav-main { top: 110px; }
+}
+@media (min-width: 992px) and (max-width: 1100px) {
+  .nav-main { top: 120px; }
 }
 
 
