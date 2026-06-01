@@ -516,13 +516,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   line-height: 1.2 !important;
 }
 .btn-primary {
-  background-color: #CA853F !important;
-  border-color: #CA853F !important;
+  background-color: #d93025 !important;
+  border-color: #d93025 !important;
   color: #fff !important;
 }
 .btn-primary:hover {
-  background-color: #b57a3d !important;
-  border-color: #b57a3d !important;
+  background-color: #b8261c !important;
+  border-color: #b8261c !important;
 }
 .btn-outline-primary {
   background-color: transparent !important;
@@ -2562,5 +2562,104 @@ body.is-ctl-product {
     max-width: 1700px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+
+
+/* ============================================================
+   27. FEATURE ROW — image + tekst naast elkaar
+   ============================================================
+   Herbruikbaar blok met afbeelding aan één kant en titel +
+   uitleg + CTA aan de andere. Default = image links, tekst
+   rechts. Voeg .rg-feature-row--reverse toe voor andersom.
+   Onder 992 stackt 'ie verticaal (image boven tekst).         */
+
+.rg-feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 40px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Variant: image rechts, tekst links */
+.rg-feature-row--reverse .rg-feature-row__media {
+  order: 2;
+}
+.rg-feature-row--reverse .rg-feature-row__content {
+  order: 1;
+}
+
+.rg-feature-row__media {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ede9e2;
+}
+
+.rg-feature-row__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.rg-feature-row__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #2d4528;
+  margin: 0 0 2rem 0;
+}
+
+.rg-feature-row__body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2d4528;
+  margin: 0 0 1.25rem 0;
+}
+
+.rg-feature-row__body p:last-child {
+  margin-bottom: 0;
+}
+
+.rg-feature-row__body p strong {
+  font-weight: 700;
+}
+
+.rg-feature-row__cta {
+  margin-top: 2rem !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive: stack op tablet/mobile */
+@media (max-width: 991px) {
+  .rg-feature-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 20px;
+  }
+  .rg-feature-row__title {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  /* Reverse-variant volgt natuurlijke stack-volgorde op mobiel */
+  .rg-feature-row--reverse .rg-feature-row__media { order: 0; }
+  .rg-feature-row--reverse .rg-feature-row__content { order: 0; }
+}
+
+/* Smalle desktops / split-screen: krap maar nog 2-koloms */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .rg-feature-row {
+    gap: 2.5rem;
+    padding: 3rem 24px;
+  }
+  .rg-feature-row__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
