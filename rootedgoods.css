@@ -2569,11 +2569,16 @@ body.is-ctl-product {
 }
 
 
-/* ---- 26.7b Nav-main fallback — verwijderd.
-   26.7 voorkomt topbar-wrap nu volledig via white-space: nowrap +
-   compactere font/padding, dus de fallback is niet meer nodig én gaf
-   een witte gap tussen header-row en nav-main bij 992-1300px (de nav
-   zakte naar 110-120px terwijl de header op ~95px eindigde). */
+/* ---- 26.7b Nav-main top — schaalt mee met topbar-shrink ---- */
+/* Omdat 26.7 de topbar font + padding verkleint, wordt de header korter
+   dan de hardcoded 97px van .nav-main. Resultaat: witte gap. Verlaag
+   nav-main top zodat 'ie precies onder de header aansluit. */
+@media (min-width: 992px) and (max-width: 1500px) {
+  .nav-main { top: 88px; }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .nav-main { top: 84px; }
+}
 
 
 /* ---- 26.8 Header padding — krimpen op split-screen ---- */
