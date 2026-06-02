@@ -790,9 +790,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  padding-left: clamp(15px, 1.5vw, 40px) !important;
+  /* Full-bleed escape: trekt slider uit parent container zodat 'ie de
+     volledige viewport-breedte pakt, vervolgens padding 40px elke kant
+     zodat tegels precies 40px van de viewport-randen staan. */
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
   padding-bottom: 24px !important;
-  margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
 }
@@ -2574,10 +2580,10 @@ body.is-ctl-product {
    dan de hardcoded 97px van .nav-main. Resultaat: witte gap. Verlaag
    nav-main top zodat 'ie precies onder de header aansluit. */
 @media (min-width: 992px) and (max-width: 1500px) {
-  .nav-main { top: 86px; }
+  .nav-main { top: 92px; }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .nav-main { top: 82px; }
+  .nav-main { top: 88px; }
 }
 
 
@@ -2590,13 +2596,19 @@ body.is-ctl-product {
 }
 
 
-/* ---- 26.9 Productslider — paddding-left schaalt al via clamp(),
-        maar de margin-right hardcode (-45px) is op smal te ruim.
-        Bij split-screen alleen -20px houden zodat peek-effect
-        niet pijnlijk lijkt. ---- */
+/* ---- 26.9 Productslider — full-bleed met 40px gutter is nu in sectie
+        10 zelf geregeld (margin-left/right calc(50% - 50vw) + padding
+        40px). Op smal kleinere padding zodat content niet te krap is. ---- */
 @media (max-width: 1200px) {
   .home-productslider {
-    margin-right: -20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (max-width: 991px) {
+  .home-productslider {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
 
@@ -2608,11 +2620,14 @@ body.is-ctl-product {
    op 100% en wil dat ook houden voor full-bleed nav). */
 @media (min-width: 1700px) {
   .cms-block-image-text-row .cms-block-container,
-  .home-productslider .cms-block-container,
   .image-row-spotlight .cms-block-container {
     max-width: 1700px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+  /* Slider blijft expliciet full-bleed met 40px gutter ook op ultra-wide. */
+  .home-productslider .cms-block-container {
+    max-width: 100% !important;
   }
 }
 
