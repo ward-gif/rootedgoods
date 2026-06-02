@@ -790,12 +790,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  /* Full-bleed escape: trekt slider uit parent container zodat 'ie de
-     volledige viewport-breedte pakt, vervolgens padding 40px elke kant
-     zodat tegels precies 40px van de viewport-randen staan. */
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
+  /* Full-bleed escape: trek slider 40px elke kant DOOR de col-12 padding
+     heen (parent .container is 100% width via sectie 2). Resultaat: outer
+     box = exact viewport-breedte. Plus padding 40px elke kant zodat de
+     tegels netjes 40px van de viewport-randen staan. */
+  width: calc(100% + 80px) !important;
+  margin-left: -40px !important;
+  margin-right: -40px !important;
   padding-left: 40px !important;
   padding-right: 40px !important;
   padding-bottom: 24px !important;
