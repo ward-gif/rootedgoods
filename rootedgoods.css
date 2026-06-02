@@ -2574,10 +2574,10 @@ body.is-ctl-product {
    dan de hardcoded 97px van .nav-main. Resultaat: witte gap. Verlaag
    nav-main top zodat 'ie precies onder de header aansluit. */
 @media (min-width: 992px) and (max-width: 1500px) {
-  .nav-main { top: 88px; }
+  .nav-main { top: 86px; }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .nav-main { top: 84px; }
+  .nav-main { top: 82px; }
 }
 
 
