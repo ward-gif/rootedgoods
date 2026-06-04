@@ -59,14 +59,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 
 /* ------------------------------------------------------------
    2. LAYOUT & CONTAINER
-   ------------------------------------------------------------
-   Eén consistent grid voor de hele site: .container = 100% breed met
-   40px gutter elke kant (--bs-gutter-x: 80px). Geen enkele cms-block
-   mag daar nog extra padding op stapelen — anders krijg je verschillende
-   blok-breedtes naast elkaar en oogt de pagina rommelig.
-
-   Visual-blokken die bewust full-bleed willen (hero banner, spotlight)
-   gebruiken margin escape, niet extra gutter. */
+   ------------------------------------------------------------ */
 .container,
 .cms-section .boxed {
   max-width: 100% !important;
@@ -75,15 +68,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .content-main {
   padding: 0 !important;
   padding-top: 170px !important;
-}
-
-/* Alle cms-block-containers — geen eigen horizontale padding bovenop
-   de .container's 40px gutter. Per-blok inline styles (Promidata
-   default 40px elke kant) worden hiermee overschreven. */
-.cms-block-container,
-.cms-block-container[style] {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 
 
@@ -806,11 +790,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  /* Geen eigen horizontale padding/margin — de .container's 40px gutter
-     positioneert de slider al netjes op één lijn met de spotlight + andere
-     blokken. Eventuele peek-effect aan rechterzijde ontstaat natuurlijk
-     doordat TinySlider tegels berekent o.b.v. productboxMinWidth (300px). */
+  padding-left: clamp(15px, 1.5vw, 40px) !important;
   padding-bottom: 24px !important;
+  margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
 }
@@ -844,13 +826,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
    ------------------------------------------------------------ */
 
-/* Spotlight container — horizontale padding wordt al door de globale
-   regel in sectie 2 op 0 gezet. Hier alleen de bottom-padding voor
-   ademruimte naar het volgende blok. */
-.image-row-spotlight .cms-block-container,
-.image-row-spotlight .cms-block-container[style] {
-  padding-bottom: 40px !important;
-}
+/* Spotlight container — Promidata's inline padding (0 40px 40px 40px)
+   blijft staan; dat geeft 40px van viewport-rand in full-width sectie. */
 
 /* Spotlight — ronde hoeken */
 .image-row-spotlight .cms-block-element {
@@ -992,8 +969,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-/* Horizontale padding wordt door globale regel in sectie 2 op 0 gezet.
-   Hier alleen evt. vertical padding overschrijven indien nodig. */
+.cms-block-image-text-row .cms-block-container {
+  padding: 0 40px !important;
+}
 
 /* Row — 40px gutter tussen kolommen (2.5rem = 40px, verdeeld over beide cols) */
 .cms-block-image-text-row .cms-block-container-row {
@@ -2342,9 +2320,7 @@ body.is-ctl-product {
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin: 2rem 0;
-  /* Geen eigen padding — de parent .container heeft al 40px gutter via
-     sectie 2, dus de tegels lijnen vanzelf met de spotlight + andere
-     blokken op één verticale lijn. */
+  padding: 0 40px;
 }
 
 @media (max-width: 991px) {
@@ -2353,6 +2329,7 @@ body.is-ctl-product {
 @media (max-width: 575px) {
   .rg-cat-grid {
     grid-template-columns: 1fr;
+    padding: 0 15px;
   }
 }
 
@@ -2534,7 +2511,9 @@ body.is-ctl-product {
   .cms-block-image-text-row .cms-image-container {
     min-height: 420px !important;
   }
-  /* Horizontale padding wordt globaal beheerd; hier niets overschrijven */
+  .cms-block-image-text-row .cms-block-container {
+    padding: 0 24px !important;
+  }
   .cms-block-image-text-row .cms-block-container-row {
     --bs-gutter-x: 1.5rem !important;
   }
@@ -2614,8 +2593,12 @@ body.is-ctl-product {
 }
 
 
-/* ---- 26.9 Productslider — geen horizontale margin meer; consistent
-        grid wordt door .container's gutter geregeld ---- */
+/* ---- 26.9 Productslider — margin-right schaalt mee op smal ---- */
+@media (max-width: 1200px) {
+  .home-productslider {
+    margin-right: -20px !important;
+  }
+}
 
 
 /* ---- 26.10 Ultra-wide (1920+) — vang de andere kant af ---- */
@@ -2647,10 +2630,9 @@ body.is-ctl-product {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  /* Vertical padding voor ademruimte. Horizontaal niets — de .container's
-     40px gutter zorgt voor alignment met spotlight, slider en cat-grid. */
-  padding: 4rem 0;
-  margin: 0;
+  padding: 4rem 40px;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 /* Variant: image rechts, tekst links */
@@ -2710,7 +2692,7 @@ body.is-ctl-product {
   .rg-feature-row {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2.5rem 0;
+    padding: 2.5rem 20px;
   }
   .rg-feature-row__title {
     font-size: 1.75rem;
@@ -2725,7 +2707,7 @@ body.is-ctl-product {
 @media (min-width: 992px) and (max-width: 1200px) {
   .rg-feature-row {
     gap: 2.5rem;
-    padding: 3rem 0;
+    padding: 3rem 24px;
   }
   .rg-feature-row__title {
     font-size: 2rem;
