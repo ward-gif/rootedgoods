@@ -2606,20 +2606,11 @@ body.is-ctl-product {
 }
 
 
-/* ---- 26.10 Ultra-wide (1920+) — vang de andere kant af ---- */
-/* Op echt brede schermen kunnen hero/sections wat ademen via een
-   centered max-width zodat tekst niet over 1600px loopt.
-   Bewust ZONDER container override op .header-main (die staat al
-   op 100% en wil dat ook houden voor full-bleed nav). */
-@media (min-width: 1700px) {
-  .cms-block-image-text-row .cms-block-container,
-  .home-productslider .cms-block-container,
-  .image-row-spotlight .cms-block-container {
-    max-width: 1700px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
+/* ---- 26.10 Ultra-wide (1920+) — verwijderd.
+   De max-width: 1700px cap op image-text-row, productslider en spotlight
+   zorgde ervoor dat die blokken op brede schermen niet meer tot de
+   viewport-rand liepen. Elk blok heeft z'n eigen gutter logic (Promidata
+   inline padding of CSS-padding), dus die cap is overbodig én ongewenst. */
 
 
 /* ============================================================
