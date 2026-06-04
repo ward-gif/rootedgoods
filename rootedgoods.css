@@ -826,8 +826,23 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
    ------------------------------------------------------------ */
 
-/* Spotlight container — Promidata's inline padding (0 40px 40px 40px)
-   blijft staan; dat geeft 40px van viewport-rand in full-width sectie. */
+/* Spotlight container — FULL-BLEED override.
+   Promidata zet inline padding: 0 40px 40px 40px; → 40px van viewport-rand.
+   Wij willen de tiles tot exact de viewport-rand laten lopen (Sugarcoat-stijl
+   referentie), dus horizontaal padding op 0. Bottom-padding 40px behouden
+   voor ademruimte naar het volgende blok. */
+.image-row-spotlight .cms-block-container,
+.image-row-spotlight .cms-block-container[style] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Tiles tegen elkaar aan plakken — geen Bootstrap row-gutter ertussen
+   zodat alles één doorlopende strip wordt (zoals Sugarcoat). Mocht je
+   een klein streepje tussen wel willen, vervang 0 door bv. 4px. */
+.image-row-spotlight .cms-block-container-row {
+  --bs-gutter-x: 0 !important;
+}
 
 /* Spotlight — ronde hoeken */
 .image-row-spotlight .cms-block-element {
