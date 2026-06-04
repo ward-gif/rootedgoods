@@ -826,16 +826,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
    ------------------------------------------------------------ */
 
-/* Spotlight container — bijna full-bleed met 20px gutter elke kant
-   (Sugarcoat-stijl referentie). Overrule Promidata's inline 40px padding. */
-.image-row-spotlight .cms-block-container,
-.image-row-spotlight .cms-block-container[style] {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
-
-/* Ruimte tussen tiles — Bootstrap gutter 40px = 20px elke kant van elke col
-   → 20px ruimte tussen aangrenzende tiles. */
+/* Spotlight — 40px gutter aan zijkant komt vanuit Promidata's inline
+   padding op .cms-block-container (geen override nodig). Ruimte tussen
+   tiles via Bootstrap gutter: 40px = 20px padding op elke col-zijde,
+   wat resulteert in 40px gap tussen aangrenzende tiles. */
 .image-row-spotlight .cms-block-container-row {
   --bs-gutter-x: 40px !important;
 }
