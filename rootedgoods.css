@@ -856,9 +856,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   object-fit: cover !important;
 }
 
-/* Spotlight — verticale offset per afbeelding voor dynamisch effect */
+/* Spotlight — verticale offset per afbeelding voor dynamisch effect.
+   margin-top: 40px → matcht de 40px gutter aan de zijkant en onderkant
+   van de row, zodat de spotlight visueel netjes in de hero ademt. */
 .image-row-spotlight {
-  margin-top: -80px;
+  margin-top: 40px;
 }
 .image-row-spotlight .cms-block-element:nth-child(2) { padding-top: 40px; }
 .image-row-spotlight .cms-block-element:nth-child(3) { padding-top: 20px; }
@@ -2488,12 +2490,13 @@ body.is-ctl-product {
   .image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 12px; }
   .image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 24px; }
 }
-/* Negative margin scalen — vanaf 1400px: -60px, vanaf 1100: -40px */
+/* Margin-top blijft consistent 40px op alle breedtes — komt overeen
+   met de 40px gutter aan de zijkant en onderkant van de row. */
 @media (max-width: 1399px) {
-  .image-row-spotlight { margin-top: -60px; }
+  .image-row-spotlight { margin-top: 40px; }
 }
 @media (max-width: 1199px) {
-  .image-row-spotlight { margin-top: -40px; }
+  .image-row-spotlight { margin-top: 40px; }
 }
 
 
