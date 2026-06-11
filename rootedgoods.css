@@ -874,17 +874,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 14px; }
 .image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 18px; }
 
-/* Spotlight — heights ~20% kleiner zodat de row beter past binnen
-   viewport na hero-min-height reductie. Spread blijft groot (8vw)
-   voor random feel; alle waardes proportioneel terug.
-   Heights: 11, 15, 7, 14, 8, 15 vw → max 15vw ipv 19vw. */
-.image-row-spotlight .cms-image-container         { min-height: 10vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 11vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 15vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: 7vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 14vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 8vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 15vw !important; }
+/* Spotlight — heights weer hoger voor meer dramatisch effect en
+   minder vierkante feel. Range 8-19vw (11vw spread, ~2.4× ratio).
+   Hero is nu 50vh dus de tallere row past nog steeds rond de fold. */
+.image-row-spotlight .cms-image-container         { min-height: 13vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 12vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 18vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: 8vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 17vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 11vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 19vw !important; }
 
 /* Spotlight — desktop (alle 6 afbeeldingen passen precies) */
 .image-row-spotlight .cms-block-container-row {
@@ -1126,13 +1125,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    hun eigen styling kunnen hebben.
    ------------------------------------------------------------ */
 
-/* Block zelf — 40px inset aan zijkanten, 60vh hoogte, rounded corners.
-   Flex-center zodat content verticaal gecentreerd wordt binnen 60vh.
-   60vh ipv 75vh zodat de spotlight-row naadlozer aansluit ipv groot
-   gat tussen CTAs en images. */
+/* Block zelf — 40px inset aan zijkanten, 50vh hoogte, rounded corners.
+   Flex-center zodat content verticaal gecentreerd wordt binnen 50vh.
+   50vh ipv 75vh origineel: spotlight sluit dichter aan op CTAs zonder
+   groot gat ertussen. */
 .hero-image-text {
   margin: 2rem 40px !important;
-  min-height: 60vh;
+  min-height: 50vh;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
