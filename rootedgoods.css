@@ -874,16 +874,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 14px; }
 .image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 18px; }
 
-/* Spotlight — heights weer hoger voor meer dramatisch effect en
-   minder vierkante feel. Range 8-19vw (11vw spread, ~2.4× ratio).
-   Hero is nu 50vh dus de tallere row past nog steeds rond de fold. */
-.image-row-spotlight .cms-image-container         { min-height: 13vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 12vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 18vw !important; }
+/* Spotlight — heights iets verlaagd zodat row boven fold past op 1080p
+   (in combinatie met landing-header 45vh).
+   Range 8-17vw (9vw spread, ~2.1× ratio). */
+.image-row-spotlight .cms-image-container         { min-height: 12vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 11vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 16vw !important; }
 .image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: 8vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 17vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 11vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 19vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 15vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 10vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 17vw !important; }
 
 /* Spotlight — desktop (alle 6 afbeeldingen passen precies) */
 .image-row-spotlight .cms-block-container-row {
@@ -1125,13 +1125,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    hun eigen styling kunnen hebben.
    ------------------------------------------------------------ */
 
-/* Block zelf — 40px inset aan zijkanten, 50vh hoogte, rounded corners.
-   Flex-center zodat content verticaal gecentreerd wordt binnen 50vh.
-   50vh ipv 75vh origineel: spotlight sluit dichter aan op CTAs zonder
-   groot gat ertussen. */
+/* Block zelf — 40px inset aan zijkanten, 45vh hoogte, rounded corners.
+   Flex-center zodat content verticaal gecentreerd wordt binnen 45vh.
+   45vh ipv 75vh origineel: spotlight sluit dichter aan op CTAs en
+   blijft boven de fold op 1080p. */
 .hero-image-text {
   margin: 2rem 40px !important;
-  min-height: 50vh;
+  min-height: 45vh;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -2734,59 +2734,29 @@ body.is-ctl-product {
 
 
 /* ============================================================
-   28. LANDING-HEADER — hero met Europa SVG als achtergrond-stempel
+   28. LANDING-SECTIE — Europa SVG als watermerk-stempel
    ============================================================
-   .landing-header is een .cms-block-text-on-image variant.
-   Promidata kan de SVG op twee manieren laden:
-   - als background-image op de block-container (CMS image field)
-   - als <img> in de DOM (JS injectie of inline)
-   Beide cases worden hieronder afgevangen.
+   Promidata zet de SVG via inline style op de .cms-section
+   (de parent die ZOWEL .landing-header als .image-row-spotlight bevat):
+     style="background-image: url(...); background-size: cover;"
 
-   Doel: subtiele Europa-hint achter de heading + CTAs. Centraal,
-   beperkte breedte (~45-55% viewport), niet full-width. */
+   "cover" maakt 'm full-viewport. We overriden dat naar een nette
+   contained vorm: ~60% van de viewport breed, geen herhaling, iets
+   vanaf de top zodat 'ie als watermerk achter de hero zit. */
 
+.cms-section.bg-image:has(.landing-header) {
+  background-size: clamp(600px, 60vw, 1100px) auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center 30% !important;
+}
+
+/* Landing-header hoogte begrenzen zodat spotlight boven de fold blijft
+   op 1080p. 45vh = ~486px op 1080, ruim genoeg voor h1+p+CTAs. */
 .landing-header {
-  position: relative;
-  overflow: hidden;
-  min-height: 50vh;
+  min-height: 45vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Case 1: SVG als background-image op .landing-header of -container.
-   Schaal naar tasteful breedte (clamp), centraal, geen herhaling. */
-.landing-header,
-.landing-header .cms-block-container {
-  background-size: clamp(360px, 50vw, 820px) auto !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-}
-
-/* Case 2: SVG als <img> in de DOM. Forceer 'm naar background-layer
-   positionering: centraal, max-width clamped, achter de tekst. */
-.landing-header > img,
-.landing-header .cms-block-container > img,
-.landing-header .cms-element-image img {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  max-width: clamp(360px, 50vw, 820px) !important;
-  width: auto !important;
-  height: auto !important;
-  max-height: 90% !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-  /* Subtiele opacity zodat de SVG als hint werkt, niet als blikvanger.
-     Pas dit aan als de SVG zelf al een licht-genoege fill heeft. */
-  opacity: 0.6 !important;
-}
-
-/* Content (tekst + buttons) bovenop de stempel via z-index. */
-.landing-header .cms-block-container,
-.landing-header .cms-block-container-row,
-.landing-header .cms-element-text {
   position: relative;
   z-index: 1;
 }
