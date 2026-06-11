@@ -874,16 +874,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 14px; }
 .image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 18px; }
 
-/* Spotlight — heights iets verlaagd zodat row boven fold past op 1080p
-   (in combinatie met landing-header 45vh).
-   Range 8-17vw (9vw spread, ~2.1× ratio). */
-.image-row-spotlight .cms-image-container         { min-height: 12vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 11vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 16vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: 8vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 15vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 10vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 17vw !important; }
+/* Spotlight — heights nog iets kleiner zodat row boven fold past op 1080p
+   (in combinatie met landing-header 42vh).
+   Range 7-16vw (9vw spread, ~2.3× ratio). */
+.image-row-spotlight .cms-image-container         { min-height: 11vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 10vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 15vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: 7vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 14vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 9vw !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 16vw !important; }
 
 /* Spotlight — desktop (alle 6 afbeeldingen passen precies) */
 .image-row-spotlight .cms-block-container-row {
@@ -2744,16 +2744,19 @@ body.is-ctl-product {
    contained vorm: ~60% van de viewport breed, geen herhaling, iets
    vanaf de top zodat 'ie als watermerk achter de hero zit. */
 
-.cms-section.bg-image:has(.landing-header) {
-  background-size: clamp(600px, 60vw, 1100px) auto !important;
+/* SVG target: de "oneliner" sectie (Stay true to your Roots + categorieën).
+   Promidata zet 'background-size: cover' inline → we overriden naar een
+   subtiele watermerk vorm: niet full-cover, centered, vaste max-width. */
+.cms-section.oneliner.bg-image {
+  background-size: clamp(700px, 70vw, 1300px) auto !important;
   background-repeat: no-repeat !important;
-  background-position: center 30% !important;
+  background-position: center center !important;
 }
 
 /* Landing-header hoogte begrenzen zodat spotlight boven de fold blijft
-   op 1080p. 45vh = ~486px op 1080, ruim genoeg voor h1+p+CTAs. */
+   op 1080p. 42vh = ~454px op 1080, voor h1+p+CTAs met minimale padding. */
 .landing-header {
-  min-height: 45vh;
+  min-height: 42vh !important;
   display: flex;
   align-items: center;
   justify-content: center;
