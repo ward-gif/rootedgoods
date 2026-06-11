@@ -792,7 +792,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow-y: visible !important;
   padding-left: clamp(15px, 1.5vw, 40px) !important;
   padding-bottom: 24px !important;
-  margin-right: -200px !important;
+  margin-right: -45px !important;
   box-sizing: border-box !important;
   position: relative;
 }
@@ -834,26 +834,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   --bs-gutter-x: 40px !important;
 }
 
-/* Spotlight — ronde hoeken + image vult col volledig
-   Zonder width:100% laat Promidata de <img> op natural width staan
-   binnen .cms-image-container, waardoor er extra dode ruimte ontstaat
-   in de col. Resultaat: visuele gap tussen tegels > 40px gutter.
-   Door container en image op 100% breedte/hoogte te forceren met
-   object-fit:cover, valt de visuele gap precies samen met de
-   bs-gutter-x (40px) en komt 'ie overeen met side + bottom. */
+/* Spotlight — ronde hoeken */
 .image-row-spotlight .cms-block-element {
   overflow: hidden;
 }
 .image-row-spotlight .cms-image-container {
   border-radius: 16px !important;
   overflow: hidden !important;
-  width: 100% !important;
 }
 .image-row-spotlight .cms-image {
   border-radius: 16px !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
 }
 
 /* Spotlight — verticale offset per afbeelding voor dynamisch effect */
