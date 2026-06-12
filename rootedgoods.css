@@ -2734,27 +2734,10 @@ body.is-ctl-product {
 
 
 /* ============================================================
-   28. LANDING-SECTIE — Europa SVG als watermerk-stempel
+   28. LANDING-HEADER — hoogte begrenzen
    ============================================================
-   Promidata zet de SVG via inline style op de .cms-section
-   (de parent die ZOWEL .landing-header als .image-row-spotlight bevat):
-     style="background-image: url(...); background-size: cover;"
-
-   "cover" maakt 'm full-viewport. We overriden dat naar een nette
-   contained vorm: ~60% van de viewport breed, geen herhaling, iets
-   vanaf de top zodat 'ie als watermerk achter de hero zit. */
-
-/* SVG target: de "oneliner" sectie (Stay true to your Roots + categorieën).
-   Promidata zet 'background-size: cover' inline → we overriden naar een
-   subtiele watermerk vorm: niet full-cover, centered, vaste max-width. */
-.cms-section.oneliner.bg-image {
-  background-size: clamp(700px, 70vw, 1300px) auto !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-}
-
-/* Landing-header hoogte begrenzen zodat spotlight boven de fold blijft
-   op 1080p. 42vh = ~454px op 1080, voor h1+p+CTAs met minimale padding. */
+   Vaste hoogte zodat de spotlight-row daar direct onder op 1080p
+   boven de fold blijft. 42vh = ~454px op 1080, voor h1+p+CTAs. */
 .landing-header {
   min-height: 42vh !important;
   display: flex;
