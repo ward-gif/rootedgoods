@@ -855,28 +855,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   display: flex;
   align-items: center;
   justify-content: center;
-  color: transparent !important;     /* verberg de letterlijke "prev"/"next" text */
-  font-size: 0;
   padding: 0;
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
-/* Chevron-icon via geroteerde border-corner (clean, geen externe icon nodig). */
-.home-productslider button[data-controls]::after {
-  content: '';
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid #2d4528;
-  border-right: 2px solid #2d4528;
+/* Promidata's eigen SVG-arrow tonen, in branded kleur ipv Shopware's #758CA3. */
+.home-productslider button[data-controls] svg {
+  width: 18px;
+  height: 18px;
 }
-.home-productslider button[data-controls="prev"]::after {
-  transform: rotate(-135deg);
-  margin-left: 4px;
-}
-.home-productslider button[data-controls="next"]::after {
-  transform: rotate(45deg);
-  margin-right: 4px;
+.home-productslider button[data-controls] svg use,
+.home-productslider button[data-controls] svg path {
+  fill: #2d4528 !important;
 }
 
 .home-productslider button[data-controls]:hover {

@@ -211,6 +211,58 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 2.3 Productslider — drag to navigate
+ * TinySlider's mouseDrag staat uit in de admin-config. We voegen onze
+ * eigen drag-handler toe: bij release na >60px sleep wordt prev/next
+ * geklikt o.b.v. richting. Voorkomt ook dat een drag tegelijk een
+ * productlink-click triggert. */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.home-productslider').forEach(function (slider) {
+    var track = slider.querySelector('.product-slider-container');
+    var prevBtn = slider.querySelector('button[data-controls="prev"]');
+    var nextBtn = slider.querySelector('button[data-controls="next"]');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    var dragStartX = null;
+    var dragDistance = 0;
+    var threshold = 60;        // px drag voor slider-navigatie
+    var clickGuard = 5;        // px drag voor click-suppressie
+
+    track.addEventListener('mousedown', function (e) {
+      dragStartX = e.clientX;
+      dragDistance = 0;
+    });
+
+    track.addEventListener('mousemove', function (e) {
+      if (dragStartX === null) return;
+      dragDistance = e.clientX - dragStartX;
+    });
+
+    function endDrag(e) {
+      if (dragStartX === null) return;
+      if (Math.abs(dragDistance) > threshold) {
+        (dragDistance < 0 ? nextBtn : prevBtn).click();
+      }
+      dragStartX = null;
+      // dragDistance behouden tot de aansluitende click-handler 'm checkt,
+      // daarna reset zodat een verse klik weer doorgaat.
+      setTimeout(function () { dragDistance = 0; }, 50);
+    }
+    track.addEventListener('mouseup', endDrag);
+    track.addEventListener('mouseleave', endDrag);
+
+    // Suppress click op tile als 't eigenlijk een sleep was.
+    // Capture-phase: vóór de tile-click-handler hierboven (2.2).
+    track.addEventListener('click', function (e) {
+      if (Math.abs(dragDistance) > clickGuard) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
+});
+
+
 /* =====================================================================
  * SECTIE 3 — PDP (product detail page)
  *
