@@ -211,54 +211,68 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 2.3 Productslider — drag to navigate
- * TinySlider's mouseDrag staat uit in de admin-config. We voegen onze
- * eigen drag-handler toe: bij release na >60px sleep wordt prev/next
- * geklikt o.b.v. richting. Voorkomt ook dat een drag tegelijk een
- * productlink-click triggert. */
+/* ---- 2.3 Productslider — custom bottom-right nav arrows
+ * Admin: controls UIT zodat TinySlider's native mouseDrag werkt
+ * (smooth visual feedback tijdens slepen). Wij injecteren een eigen
+ * .rg-slider-nav rechtsonder. Click-handler probeert eerst Promidata's
+ * eigen prev/next button (als nav per ongeluk weer aan staat), valt
+ * anders terug op een gesimuleerde drag (mouseDrag moet dan AAN zijn). */
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.home-productslider').forEach(function (slider) {
     var track = slider.querySelector('.product-slider-container');
-    var prevBtn = slider.querySelector('button[data-controls="prev"]');
-    var nextBtn = slider.querySelector('button[data-controls="next"]');
-    if (!track || !prevBtn || !nextBtn) return;
+    if (!track) return;
 
-    var dragStartX = null;
-    var dragDistance = 0;
-    var threshold = 60;        // px drag voor slider-navigatie
-    var clickGuard = 5;        // px drag voor click-suppressie
+    // Bestaat de nav al? (bv. bij Promidata XHR re-render) Skip dan.
+    if (slider.querySelector('.rg-slider-nav')) return;
 
-    track.addEventListener('mousedown', function (e) {
-      dragStartX = e.clientX;
-      dragDistance = 0;
-    });
+    // Inject DOM
+    var nav = document.createElement('div');
+    nav.className = 'rg-slider-nav';
+    nav.innerHTML =
+      '<button type="button" class="rg-slider-nav__btn rg-slider-nav__btn--prev" aria-label="Vorige producten">' +
+        '<span class="rg-slider-nav__chev" aria-hidden="true"></span>' +
+      '</button>' +
+      '<button type="button" class="rg-slider-nav__btn rg-slider-nav__btn--next" aria-label="Volgende producten">' +
+        '<span class="rg-slider-nav__chev" aria-hidden="true"></span>' +
+      '</button>';
+    slider.appendChild(nav);
 
-    track.addEventListener('mousemove', function (e) {
-      if (dragStartX === null) return;
-      dragDistance = e.clientX - dragStartX;
-    });
+    function simulateDrag(direction) {
+      // Promidata's TinySlider luistert op mousedown/move/up van .product-slider-container
+      // wanneer mouseDrag: true is ingesteld. We dispatchen die sequence.
+      var rect = track.getBoundingClientRect();
+      var startX = rect.left + rect.width / 2;
+      var startY = rect.top + rect.height / 2;
+      var delta = direction === 'next' ? -320 : 320;   // ~1 tile breed bij minWidth 300
 
-    function endDrag(e) {
-      if (dragStartX === null) return;
-      if (Math.abs(dragDistance) > threshold) {
-        (dragDistance < 0 ? nextBtn : prevBtn).click();
-      }
-      dragStartX = null;
-      // dragDistance behouden tot de aansluitende click-handler 'm checkt,
-      // daarna reset zodat een verse klik weer doorgaat.
-      setTimeout(function () { dragDistance = 0; }, 50);
+      track.dispatchEvent(new MouseEvent('mousedown', {
+        clientX: startX, clientY: startY, button: 0,
+        bubbles: true, cancelable: true
+      }));
+      setTimeout(function () {
+        document.dispatchEvent(new MouseEvent('mousemove', {
+          clientX: startX + delta, clientY: startY,
+          buttons: 1, bubbles: true, cancelable: true
+        }));
+        setTimeout(function () {
+          document.dispatchEvent(new MouseEvent('mouseup', {
+            clientX: startX + delta, clientY: startY,
+            button: 0, bubbles: true, cancelable: true
+          }));
+        }, 20);
+      }, 20);
     }
-    track.addEventListener('mouseup', endDrag);
-    track.addEventListener('mouseleave', endDrag);
 
-    // Suppress click op tile als 't eigenlijk een sleep was.
-    // Capture-phase: vóór de tile-click-handler hierboven (2.2).
-    track.addEventListener('click', function (e) {
-      if (Math.abs(dragDistance) > clickGuard) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, true);
+    function navigate(direction) {
+      // Scenario 1: Promidata's eigen button bestaat → die kliklen.
+      var nativeBtn = slider.querySelector('button[data-controls="' + direction + '"]');
+      if (nativeBtn) { nativeBtn.click(); return; }
+      // Scenario 2: geen native button → simuleer een drag.
+      simulateDrag(direction);
+    }
+
+    nav.querySelector('.rg-slider-nav__btn--prev').addEventListener('click', function () { navigate('prev'); });
+    nav.querySelector('.rg-slider-nav__btn--next').addEventListener('click', function () { navigate('next'); });
   });
 });
 

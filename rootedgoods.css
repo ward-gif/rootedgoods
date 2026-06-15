@@ -824,95 +824,75 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 
 
 /* ------------------------------------------------------------
-   10b. PRODUCTSLIDER NAVIGATION (TinySlider controls)
+   10b. PRODUCTSLIDER NAVIGATION — custom bottom-right arrows
    ------------------------------------------------------------
-   Admin: 'controls: true' is aan → TinySlider renderet
-   <button data-controls="prev"> en <button data-controls="next">
-   binnen .tns-outer.
-
-   Probleem default: rechter arrow valt buiten viewport door onze
-   margin-right: -150px peek. Fix: positioneer arrows ABSOLUUT
-   binnen de visible area, met right-arrow op right: 170px om voor
-   de peek te compenseren. */
+   Admin: controls UIT, mouseDrag AAN → TinySlider doet native drag.
+   Wij injecteren via JS een eigen .rg-slider-nav rechtsonder met
+   prev/next-knoppen die ofwel Promidata's button kliklen (als die
+   tóch nog bestaan) ofwel een drag simuleren. */
 
 .home-productslider {
   position: relative;
   z-index: 1;
 }
 
-.home-productslider button[data-controls] {
+/* Native cursor — slider is sleepbaar */
+.home-productslider .product-slider-container { cursor: grab; }
+.home-productslider .product-slider-container:active { cursor: grabbing; }
+
+/* Custom nav-container rechtsonder. Compenseer voor margin-right: -150px
+   peek zodat de knoppen netjes binnen de zichtbare cards-rand vallen. */
+.rg-slider-nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
+  bottom: 0;
+  right: 165px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.rg-slider-nav__btn {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #ffffff !important;
-  border: 1px solid rgba(0,0,0,0.08) !important;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   cursor: pointer;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Promidata's eigen SVG-arrow tonen, in branded kleur ipv Shopware's #758CA3. */
-.home-productslider button[data-controls] svg {
-  width: 18px;
-  height: 18px;
-}
-.home-productslider button[data-controls] svg use,
-.home-productslider button[data-controls] svg path {
-  fill: #2d4528 !important;
-}
-
-.home-productslider button[data-controls]:hover {
-  transform: translateY(-50%) scale(1.08);
+.rg-slider-nav__btn:hover {
+  transform: scale(1.08);
   box-shadow: 0 6px 22px rgba(0,0,0,0.15);
 }
-.home-productslider button[data-controls]:disabled {
+
+.rg-slider-nav__btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }
 
-.home-productslider button[data-controls="prev"]  { left: 10px; }
-/* Compenseer voor margin-right: -150px peek; arrow blijft binnen
-   visible area van .cms-block-container. */
-.home-productslider button[data-controls="next"]  { right: 170px; }
-
-/* Eénmalige attention-nudge op de next-arrow ~2s na pageload
-   → maakt onmiddellijk duidelijk dat er meer items zijn. */
-@keyframes rg-slider-next-nudge {
-  0%, 70%, 100% { transform: translateY(-50%) translateX(0); }
-  77%           { transform: translateY(-50%) translateX(-8px); }
-  84%           { transform: translateY(-50%) translateX(4px); }
-  91%           { transform: translateY(-50%) translateX(-2px); }
-}
-.home-productslider button[data-controls="next"] {
-  animation: rg-slider-next-nudge 2.5s ease-in-out 1.8s 2;
+/* Chevron via geroteerde border — pixel-perfect gecentreerd want geen
+   margin-offset; de border-rectangle staat in het visuele midden van de
+   button (display:flex + center). */
+.rg-slider-nav__chev {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #2d4528;
+  border-right: 2px solid #2d4528;
 }
 
-/* Subtiele fade-gradient op de rechterrand van de visible area =
-   "er is meer" affordance. Zit boven de slider, niet op de peek-tile zelf. */
-.home-productslider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 24px;                          /* matcht padding-bottom slider */
-  right: 150px;                          /* op visible edge, niet in peek-zone */
-  width: 90px;
-  background: linear-gradient(to right, rgba(247,245,242,0) 0%, rgba(247,245,242,0.85) 100%);
-  pointer-events: none;
-  z-index: 5;
+.rg-slider-nav__btn--prev .rg-slider-nav__chev {
+  transform: rotate(-135deg) translate(-1px, 1px);  /* visueel optisch midden */
 }
-
-/* Visuele hint dat de slider sleepbaar is (alleen werkt als admin
-   ook mouseDrag: true zet — productboxMinWidth options uitbreiden). */
-.home-productslider .product-slider-container { cursor: grab; }
-.home-productslider .product-slider-container:active { cursor: grabbing; }
+.rg-slider-nav__btn--next .rg-slider-nav__chev {
+  transform: rotate(45deg) translate(-1px, 1px);
+}
 
 
 /* ------------------------------------------------------------
