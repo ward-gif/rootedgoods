@@ -841,10 +841,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider .product-slider-container:active { cursor: grabbing; }
 
 /* Custom nav-container rechtsonder. Compenseer voor margin-right: -150px
-   peek zodat de knoppen netjes binnen de zichtbare cards-rand vallen. */
+   peek zodat de knoppen netjes binnen de zichtbare cards-rand vallen.
+   bottom: 24px → shadow heeft 20px+ ruimte onder zichzelf, niet afgesneden. */
 .rg-slider-nav {
   position: absolute;
-  bottom: 0;
+  bottom: 24px;
   right: 165px;
   display: flex;
   gap: 10px;

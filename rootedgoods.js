@@ -214,18 +214,20 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ---- 2.3 Productslider — custom bottom-right nav arrows
  * Admin: controls UIT zodat TinySlider's native mouseDrag werkt
  * (smooth visual feedback tijdens slepen). Wij injecteren een eigen
- * .rg-slider-nav rechtsonder. Click-handler probeert eerst Promidata's
- * eigen prev/next button (als nav per ongeluk weer aan staat), valt
- * anders terug op een gesimuleerde drag (mouseDrag moet dan AAN zijn). */
+ * .rg-slider-nav rechtsonder.
+ *
+ * Click-handler probeert in volgorde:
+ *  1. Promidata's eigen prev/next button kliklen (als controls toch aan staat)
+ *  2. Directe transform op .product-slider-container schuiven met
+ *     1 tile-breedte. TinySlider's interne index loopt dan uit sync,
+ *     maar visueel werkt het en bij volgende drag pakt TinySlider weer
+ *     op vanaf de huidige positie. */
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.home-productslider').forEach(function (slider) {
     var track = slider.querySelector('.product-slider-container');
     if (!track) return;
-
-    // Bestaat de nav al? (bv. bij Promidata XHR re-render) Skip dan.
     if (slider.querySelector('.rg-slider-nav')) return;
 
-    // Inject DOM
     var nav = document.createElement('div');
     nav.className = 'rg-slider-nav';
     nav.innerHTML =
@@ -237,38 +239,35 @@ document.addEventListener('DOMContentLoaded', function () {
       '</button>';
     slider.appendChild(nav);
 
-    function simulateDrag(direction) {
-      // Promidata's TinySlider luistert op mousedown/move/up van .product-slider-container
-      // wanneer mouseDrag: true is ingesteld. We dispatchen die sequence.
-      var rect = track.getBoundingClientRect();
-      var startX = rect.left + rect.width / 2;
-      var startY = rect.top + rect.height / 2;
-      var delta = direction === 'next' ? -320 : 320;   // ~1 tile breed bij minWidth 300
+    function shiftTransform(direction) {
+      var item = track.querySelector('.product-slider-item');
+      if (!item) return;
 
-      track.dispatchEvent(new MouseEvent('mousedown', {
-        clientX: startX, clientY: startY, button: 0,
-        bubbles: true, cancelable: true
-      }));
-      setTimeout(function () {
-        document.dispatchEvent(new MouseEvent('mousemove', {
-          clientX: startX + delta, clientY: startY,
-          buttons: 1, bubbles: true, cancelable: true
-        }));
-        setTimeout(function () {
-          document.dispatchEvent(new MouseEvent('mouseup', {
-            clientX: startX + delta, clientY: startY,
-            button: 0, bubbles: true, cancelable: true
-          }));
-        }, 20);
-      }, 20);
+      var tileWidth = item.offsetWidth + 30;   // tile + gutter (gutter 30 in slider config)
+
+      // Lees huidige translateX uit computed transform-matrix
+      var transform = window.getComputedStyle(track).transform;
+      var currentX = 0;
+      if (transform && transform !== 'none') {
+        var matrix = new DOMMatrix(transform);
+        currentX = matrix.m41;
+      }
+
+      // Bounds: maximaal naar links = -(track-content - zichtbaar deel)
+      var visible = track.parentElement ? track.parentElement.offsetWidth : 0;
+      var maxNeg = visible ? -(track.scrollWidth - visible) : -Infinity;
+
+      var delta = direction === 'next' ? -tileWidth : tileWidth;
+      var newX = Math.max(maxNeg, Math.min(0, currentX + delta));
+
+      track.style.transition = 'transform 400ms ease';
+      track.style.transform = 'translate3d(' + newX + 'px, 0px, 0px)';
     }
 
     function navigate(direction) {
-      // Scenario 1: Promidata's eigen button bestaat → die kliklen.
       var nativeBtn = slider.querySelector('button[data-controls="' + direction + '"]');
       if (nativeBtn) { nativeBtn.click(); return; }
-      // Scenario 2: geen native button → simuleer een drag.
-      simulateDrag(direction);
+      shiftTransform(direction);
     }
 
     nav.querySelector('.rg-slider-nav__btn--prev').addEventListener('click', function () { navigate('prev'); });
