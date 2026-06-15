@@ -2864,8 +2864,8 @@ body.is-ctl-product {
 
 .cms-section:has(.landing-header) .image-row-spotlight {
   margin-top: auto !important;
-  /* Bottom breathing room — schuift de spotlight ~80px omhoog van viewport-rand.
-     Flex herverdeelt: landing-header krimpt 80px → tekst centreert hoger op.
-     Resultaat: top-ademruimte ≈ bottom-ademruimte (beide ~80px). */
-  margin-bottom: 80px !important;
+  /* Bottom breathing room. 40px hier + 40px Promidata container padding-bottom
+     = ~80px tussen tile-bottom en viewport-rand. Flex herverdeelt 40px naar
+     boven, dus text-top breathing ≈ tile-bottom breathing. */
+  margin-bottom: 40px !important;
 }
