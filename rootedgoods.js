@@ -243,7 +243,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var item = track.querySelector('.product-slider-item');
       if (!item) return;
 
-      var tileWidth = item.offsetWidth + 30;   // tile + gutter (gutter 30 in slider config)
+      // item.offsetWidth includes onze padding-right: 30px (gutter),
+      // dus dat IS al de full slide-width. Niet nog eens +30 erbij doen.
+      var tileWidth = item.offsetWidth;
 
       // Lees huidige translateX uit computed transform-matrix
       var transform = window.getComputedStyle(track).transform;
