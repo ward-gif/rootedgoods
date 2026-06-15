@@ -874,16 +874,41 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 14px; }
 .image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 18px; }
 
-/* Spotlight — heights nog iets kleiner zodat row boven fold past op 1080p
-   (in combinatie met landing-header 42vh).
-   Range 7-16vw (9vw spread, ~2.3× ratio). */
-.image-row-spotlight .cms-image-container         { min-height: 11vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: 10vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: 15vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: 7vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: 14vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: 9vw !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: 16vw !important; }
+/* Spotlight — heights met min(vw, vh) zodat tegels schalen met
+   zowel breedte als HOOGTE van viewport. Op smalle/lage schermen
+   pakt de vh-cap automatisch, op brede pakt de vw.
+   Bv. nth-6: min(19vw, 36vh) → op 1920×1080 = 19vw=365px,
+   op 1920×720 = 36vh=259px (vh kicked in).
+   Tegels zijn minder vierkant want hoger dan voorheen. */
+.image-row-spotlight .cms-image-container         { min-height: min(11vw, 22vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(12vw, 26vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(18vw, 35vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(9vw,  20vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(16vw, 30vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(11vw, 24vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(19vw, 36vh) !important; }
+
+/* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
+   overblijven die niet vierkant ogen. */
+@media (max-width: 1200px) {
+  .image-row-spotlight .cms-block-element:nth-child(6) {
+    display: none !important;
+  }
+  .image-row-spotlight .cms-block-element {
+    min-width: 20% !important;
+    flex: 0 0 20% !important;
+  }
+}
+@media (max-width: 991px) {
+  .image-row-spotlight .cms-block-element:nth-child(5),
+  .image-row-spotlight .cms-block-element:nth-child(6) {
+    display: none !important;
+  }
+  .image-row-spotlight .cms-block-element {
+    min-width: 25% !important;
+    flex: 0 0 25% !important;
+  }
+}
 
 /* Spotlight — desktop (alle 6 afbeeldingen passen precies) */
 .image-row-spotlight .cms-block-container-row {
@@ -2734,15 +2759,35 @@ body.is-ctl-product {
 
 
 /* ============================================================
-   28. LANDING-HEADER — hoogte begrenzen
+   28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
    ============================================================
-   Vaste hoogte zodat de spotlight-row daar direct onder op 1080p
-   boven de fold blijft. 42vh = ~454px op 1080, voor h1+p+CTAs. */
+   De .cms-section met .landing-header vult de hele viewport (minus
+   topbar 170px). Flex-column distribueert kinderen:
+   - .landing-header krijgt flex:1 → vult resterende ruimte bovenaan
+   - .image-row-spotlight krijgt margin-top:auto → plakt aan onderkant
+   Resultaat: hero bovenaan, spotlight altijd onderaan, 40px van de
+   viewport-rand (via Promidata's inline padding-bottom op container).
+   Geen tile-height tuning meer nodig om "boven de fold" te blijven. */
+
+.cms-section:has(.landing-header) {
+  min-height: calc(100vh - 170px);
+}
+
+.cms-section:has(.landing-header) > .cms-section-default {
+  min-height: calc(100vh - 170px);
+  display: flex;
+  flex-direction: column;
+}
+
 .landing-header {
-  min-height: 42vh !important;
+  flex: 1 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
+}
+
+.cms-section:has(.landing-header) .image-row-spotlight {
+  margin-top: auto !important;
 }
