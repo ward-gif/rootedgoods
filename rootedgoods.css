@@ -822,6 +822,109 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 /* (verplaatst naar de productslider-styling sectie hierboven; deze
    regel was redundant en versnipperde de aspect-ratio rules) */
 
+
+/* ------------------------------------------------------------
+   10b. PRODUCTSLIDER NAVIGATION (TinySlider controls)
+   ------------------------------------------------------------
+   Admin: 'controls: true' is aan → TinySlider renderet
+   <button data-controls="prev"> en <button data-controls="next">
+   binnen .tns-outer.
+
+   Probleem default: rechter arrow valt buiten viewport door onze
+   margin-right: -150px peek. Fix: positioneer arrows ABSOLUUT
+   binnen de visible area, met right-arrow op right: 170px om voor
+   de peek te compenseren. */
+
+.home-productslider {
+  position: relative;
+  z-index: 1;
+}
+
+.home-productslider button[data-controls] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent !important;     /* verberg de letterlijke "prev"/"next" text */
+  font-size: 0;
+  padding: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+/* Chevron-icon via geroteerde border-corner (clean, geen externe icon nodig). */
+.home-productslider button[data-controls]::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #2d4528;
+  border-right: 2px solid #2d4528;
+}
+.home-productslider button[data-controls="prev"]::after {
+  transform: rotate(-135deg);
+  margin-left: 4px;
+}
+.home-productslider button[data-controls="next"]::after {
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
+
+.home-productslider button[data-controls]:hover {
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+}
+.home-productslider button[data-controls]:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.home-productslider button[data-controls="prev"]  { left: 10px; }
+/* Compenseer voor margin-right: -150px peek; arrow blijft binnen
+   visible area van .cms-block-container. */
+.home-productslider button[data-controls="next"]  { right: 170px; }
+
+/* Eénmalige attention-nudge op de next-arrow ~2s na pageload
+   → maakt onmiddellijk duidelijk dat er meer items zijn. */
+@keyframes rg-slider-next-nudge {
+  0%, 70%, 100% { transform: translateY(-50%) translateX(0); }
+  77%           { transform: translateY(-50%) translateX(-8px); }
+  84%           { transform: translateY(-50%) translateX(4px); }
+  91%           { transform: translateY(-50%) translateX(-2px); }
+}
+.home-productslider button[data-controls="next"] {
+  animation: rg-slider-next-nudge 2.5s ease-in-out 1.8s 2;
+}
+
+/* Subtiele fade-gradient op de rechterrand van de visible area =
+   "er is meer" affordance. Zit boven de slider, niet op de peek-tile zelf. */
+.home-productslider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 24px;                          /* matcht padding-bottom slider */
+  right: 150px;                          /* op visible edge, niet in peek-zone */
+  width: 90px;
+  background: linear-gradient(to right, rgba(247,245,242,0) 0%, rgba(247,245,242,0.85) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Visuele hint dat de slider sleepbaar is (alleen werkt als admin
+   ook mouseDrag: true zet — productboxMinWidth options uitbreiden). */
+.home-productslider .product-slider-container { cursor: grab; }
+.home-productslider .product-slider-container:active { cursor: grabbing; }
+
+
 /* ------------------------------------------------------------
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
    ------------------------------------------------------------ */
