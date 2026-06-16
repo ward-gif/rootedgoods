@@ -327,29 +327,40 @@ document.addEventListener('DOMContentLoaded', function () {
    * klikt, waardoor het overzicht (kleur + aantal) wegvalt. Wij willen ze
    * juist open laten zodat de gebruiker context houdt.
    *
-   * Aanpak: bij een click op .btn-configurator-next zetten we een korte
-   * tijdsvenster waarin alle hide.bs.collapse events binnen de configurator-
-   * groepen worden gecancelled. Bootstrap's collapse-event is cancelable,
-   * dus preventDefault() blokkeert de sluit-animatie.
-   *
-   * Handmatig sluiten (klik op de title) blijft werken: dat event komt buiten
-   * het tijdsvenster van een Volgende-klik. */
+   * Aanpak: capture-phase click handler die Promidata's click-logic blokkeert
+   * (stopImmediatePropagation) en zelf alleen de VOLGENDE groep opent — zonder
+   * de huidige te sluiten. Handmatig sluiten via titel-klik blijft werken. */
   function keepConfiguratorStepsOpen() {
-    var blockHideUntil = 0;
-
     document.addEventListener('click', function (e) {
-      if (e.target.closest('.btn-configurator-next')) {
-        blockHideUntil = Date.now() + 500;
-      }
-    }, true);
+      var btn = e.target.closest('.btn-configurator-next');
+      if (!btn) return;
 
-    document.querySelectorAll(
-      '.product-detail-configurator-group .collapse'
-    ).forEach(function (coll) {
-      coll.addEventListener('hide.bs.collapse', function (e) {
-        if (Date.now() < blockHideUntil) e.preventDefault();
-      });
-    });
+      // Blokkeer Promidata's sluit-handler én default link-gedrag.
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+
+      var currentGroup = btn.closest('.product-detail-configurator-group');
+      if (!currentGroup) return;
+
+      // Zoek de eerstvolgende configurator-group sibling.
+      var nextGroup = currentGroup.nextElementSibling;
+      while (nextGroup && !nextGroup.classList.contains('product-detail-configurator-group')) {
+        nextGroup = nextGroup.nextElementSibling;
+      }
+      if (!nextGroup) return;
+
+      var nextTitle = nextGroup.querySelector('.collapse-title');
+      var nextContent = nextGroup.querySelector('.collapse-content');
+      if (!nextTitle || !nextContent) return;
+
+      nextTitle.classList.remove('collapsed');
+      nextTitle.setAttribute('aria-expanded', 'true');
+      nextContent.classList.add('show');
+
+      // Scroll de net-geopende stap in beeld zodat gebruiker direct ziet wat'r staat.
+      nextTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, true);
   }
 
   /* ---- 3.3 Staffel-prijzen tabel (.product-block-prices-grid)

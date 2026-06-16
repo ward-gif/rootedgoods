@@ -1537,6 +1537,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 .product-detail-buy .product-detail-configurator-option {
   position: relative;
+  margin-bottom: 2rem;            /* ruimte voor (potentieel 2-regelig) label */
 }
 .product-detail-buy .product-detail-configurator-option-label::after {
   content: attr(title);
@@ -1544,10 +1545,15 @@ body.is-ctl-product .product-detail-ordernumber-container {
   top: calc(100% + 0.5rem);
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.85rem;
+  width: max-content;
+  max-width: 80px;                      /* matcht ongeveer de swatch-breedte */
+  font-size: 0.8rem;
+  line-height: 1.2;
   color: #888;
   font-weight: 400;
-  white-space: nowrap;
+  white-space: normal;                  /* mag wrappen ipv overlappen */
+  word-break: break-word;
+  text-align: center;
   text-transform: capitalize;
 }
 .product-detail-buy .product-detail-configurator-option-input:checked + .product-detail-configurator-option-label::after {
