@@ -1537,7 +1537,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 .product-detail-buy .product-detail-configurator-option {
   position: relative;
-  margin-bottom: 2rem;            /* ruimte voor (potentieel 2-regelig) label */
+  margin-bottom: 3.5rem;          /* ruim voor 2-regelig label (~32px) + 8px gap */
 }
 .product-detail-buy .product-detail-configurator-option-label::after {
   content: attr(title);
