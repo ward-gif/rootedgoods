@@ -1460,6 +1460,48 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   }
 }
 
+
+/* ------------------------------------------------------------
+   17b. PDP — BUY ACTIONS: primary/secondary swap + reorder
+   ------------------------------------------------------------
+   Standaard: "In het winkelmandje" = primary (filled),
+              "Offerte aanvragen"   = outline.
+   Wij draaien dat om: offerte aanvragen is dé primary action,
+   winkelmandje is secundair. "Offerte afdrukken" wordt verborgen. */
+
+#js-print-offer { display: none !important; }
+
+/* Secundair: "In het winkelmandje" → outline-look (was filled). */
+#buyButton.btn-primary {
+  background-color: transparent !important;
+  color: #CA853F !important;
+  border-color: #CA853F !important;
+}
+#buyButton.btn-primary:hover,
+#buyButton.btn-primary:focus {
+  background-color: #CA853F !important;
+  color: #fff !important;
+}
+
+/* Primair: "Offerte aanvragen" → filled-look (was outline). */
+#js-request-offer.btn-outline-primary {
+  background-color: #CA853F !important;
+  color: #fff !important;
+  border-color: #CA853F !important;
+}
+#js-request-offer.btn-outline-primary:hover,
+#js-request-offer.btn-outline-primary:focus {
+  background-color: #b57a3d !important;
+  border-color: #b57a3d !important;
+  color: #fff !important;
+}
+
+/* Reorder binnen .d-grid: primary action eerst, dan secundair, dan sample.
+   :has(>#buyButton) scoped naar de buy-col grid (geen kruisbesmetting). */
+.d-grid:has(> #buyButton) #js-request-offer  { order: 1; }
+.d-grid:has(> #buyButton) #buyButton         { order: 2; }
+.d-grid:has(> #buyButton) #js-request-sample { order: 3; }
+
 /* "Van € X Zonder opdruk" blok bovenaan verbergen — onderaan staat
    al een complete totaal-tabel met dezelfde info. */
 .product-detail-buy .product-price-info {
