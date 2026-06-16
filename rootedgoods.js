@@ -292,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('DOMContentLoaded', function () {
     moveProductNameToBuyCol();
     openQuantityAccordionByDefault();
+    keepConfiguratorStepsOpen();
     enhanceTierPriceTable();
     addGalleryZoomButton();
   });
@@ -319,6 +320,36 @@ document.addEventListener('DOMContentLoaded', function () {
     qtyTitle.classList.remove('collapsed');
     qtyTitle.setAttribute('aria-expanded', 'true');
     qtyWrapper.classList.add('show');
+  }
+
+  /* ---- 3.2b Configurator-stappen open laten bij klik op "Volgende"
+   * Standaard sluit Promidata de huidige stap zodra je op .btn-configurator-next
+   * klikt, waardoor het overzicht (kleur + aantal) wegvalt. Wij willen ze
+   * juist open laten zodat de gebruiker context houdt.
+   *
+   * Aanpak: bij een click op .btn-configurator-next zetten we een korte
+   * tijdsvenster waarin alle hide.bs.collapse events binnen de configurator-
+   * groepen worden gecancelled. Bootstrap's collapse-event is cancelable,
+   * dus preventDefault() blokkeert de sluit-animatie.
+   *
+   * Handmatig sluiten (klik op de title) blijft werken: dat event komt buiten
+   * het tijdsvenster van een Volgende-klik. */
+  function keepConfiguratorStepsOpen() {
+    var blockHideUntil = 0;
+
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.btn-configurator-next')) {
+        blockHideUntil = Date.now() + 500;
+      }
+    }, true);
+
+    document.querySelectorAll(
+      '.product-detail-configurator-group .collapse'
+    ).forEach(function (coll) {
+      coll.addEventListener('hide.bs.collapse', function (e) {
+        if (Date.now() < blockHideUntil) e.preventDefault();
+      });
+    });
   }
 
   /* ---- 3.3 Staffel-prijzen tabel (.product-block-prices-grid)
