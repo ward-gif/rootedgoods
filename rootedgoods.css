@@ -2344,6 +2344,14 @@ body.is-ctl-product {
   outline: none;
 }
 
+/* "Made in Europe"-filter verbergen op alle PLP's: alle producten zijn
+   made in EU, dus dit filter heeft geen onderscheidende waarde. Match op
+   propertyName in de data-attribuut-JSON zodat het robuust is tegen de
+   wisselende #filter-properties-<id> id's die Promidata genereert. */
+.filter-panel-item.filter-multi-select-properties[data-filter-property-select-options*="Made in Europe"] {
+  display: none !important;
+}
+
 /* Filter buttons (Eco / Kleur / Made in Europe / Merk / Prijs).
    inline-flex + align-items center voor verticaal uitlijnen van
    tekst, count en chevron-icoon. */
