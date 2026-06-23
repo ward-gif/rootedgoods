@@ -3334,6 +3334,34 @@ img.rg-europe-map__svg {
   animation: rgPinPulse 2.8s ease-out infinite;
   animation-delay: calc(0.9s + var(--i, 0) * 0.18s);
 }
+/* Landnaam-tooltip op hover (data-label op de span). */
+.rg-europe-map__pin::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  transform: translateX(-50%) translateY(4px);
+  background: #2d4528;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.28rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 6;
+}
+.rg-europe-map__pin:hover {
+  z-index: 7; /* gehoverde pin (en z'n tooltip) boven de rest */
+}
+.rg-europe-map__pin:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 @keyframes rgPinIn {
   to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
