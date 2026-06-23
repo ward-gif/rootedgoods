@@ -3282,12 +3282,13 @@ body.is-ctl-product {
 }
 
 /* Europa-kaart — statisch, puur visueel.
-   aspect-ratio = exact die van de SVG-viewBox (2187.3 x 1756.8) zodat de
-   kaart de container vult zonder letterboxing → pin-% blijven kloppen. */
+   aspect-ratio = die van de SVG-viewBox zodat de kaart de container vult
+   zonder letterboxing → pin-% blijven kloppen. (Pas dit aan naar de exacte
+   viewBox-verhouding van 'Europa Kaart.svg' als die afwijkt.) */
 .rg-europe-map {
   position: relative;
   width: 100%;
-  aspect-ratio: 2187.3 / 1756.8;
+  aspect-ratio: 1366 / 1004;
 }
 .rg-europe-map__svg {
   width: 100%;
