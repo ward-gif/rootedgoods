@@ -2921,6 +2921,10 @@ body.is-ctl-product {
 
 .cms-section:has(.landing-header) {
   min-height: calc(100vh - 170px);
+  background-color: #f4f1ea;
+  background-image:
+    radial-gradient(95% 65% at 84% 6%, rgba(202, 133, 63, 0.16) 0%, rgba(202, 133, 63, 0) 55%),
+    radial-gradient(85% 60% at 6% 96%, rgba(122, 155, 111, 0.13) 0%, rgba(122, 155, 111, 0) 60%);
 }
 
 .cms-section:has(.landing-header) > .cms-section-default {
@@ -3022,33 +3026,47 @@ body.is-ctl-product {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.95rem 2rem;
+  gap: 0.6rem;
+  padding: 1.05rem 2.4rem;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   text-decoration: none !important;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .rg-hero__btn--primary {
   background-color: #CA853F;
   color: #fff !important;
-  box-shadow: 0 8px 22px -12px rgba(202, 133, 63, 0.9);
+  box-shadow: 0 12px 28px -12px rgba(202, 133, 63, 0.95);
 }
 .rg-hero__btn--primary:hover {
   background-color: #b57a3d;
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px -12px rgba(202, 133, 63, 0.95);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px -14px rgba(202, 133, 63, 1);
+}
+/* Pijl op de primaire CTA — schuift mee op hover */
+.rg-hero__btn--primary::after {
+  content: "";
+  width: 1.1em;
+  height: 1.1em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M5 12h14M13 6l6 6-6 6' stroke='black' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M5 12h14M13 6l6 6-6 6' stroke='black' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+.rg-hero__btn--primary:hover::after {
+  transform: translateX(5px);
 }
 .rg-hero__btn--secondary {
-  background-color: transparent;
-  color: #CA853F !important;
-  border: 2px solid rgba(202, 133, 63, 0.5);
+  background-color: #fff;
+  color: #2d4528 !important;
+  border: 2px solid rgba(45, 69, 40, 0.18);
+  box-shadow: 0 10px 24px -16px rgba(45, 69, 40, 0.6);
 }
 .rg-hero__btn--secondary:hover {
   border-color: #CA853F;
-  background-color: #CA853F;
-  color: #fff !important;
-  transform: translateY(-2px);
+  color: #CA853F !important;
+  transform: translateY(-3px);
 }
 .rg-hero__usps {
   display: flex;
@@ -3062,9 +3080,15 @@ body.is-ctl-product {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #2d4528;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(45, 69, 40, 0.08);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .rg-hero__usps li::before {
   content: "";
@@ -3085,4 +3109,60 @@ body.is-ctl-product {
   .rg-hero__title { font-size: 2.6rem !important; max-width: none; }
   .rg-hero__subline { font-size: 1.15rem !important; }
   .rg-hero__btn { flex: 1 1 100%; }
+}
+
+/* ------------------------------------------------------------
+   HERO — editorial eyebrow (lijntjes flankeren label, centered)
+   ------------------------------------------------------------ */
+.rg-hero--center .rg-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.rg-hero--center .rg-hero__eyebrow::before,
+.rg-hero--center .rg-hero__eyebrow::after {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0.55;
+}
+
+/* ------------------------------------------------------------
+   LANDING — spotlight tiles: zoom-on-hover (binnen frame, niet
+   geclipt) + gestaffelde entree. Lift/shadow vermijden we want
+   .cms-block-element heeft overflow:hidden (zou clippen).
+   ------------------------------------------------------------ */
+.image-row-spotlight .cms-image {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.image-row-spotlight .cms-block-element:hover .cms-image {
+  transform: scale(1.06);
+}
+.image-row-spotlight .cms-image-container {
+  box-shadow: inset 0 0 0 1px rgba(45, 69, 40, 0.05);
+}
+
+/* Entree: tiles faden gestaffeld omhoog (transform op block-element zelf
+   wordt niet geclipt door z'n eigen overflow:hidden). */
+.cms-section:has(.landing-header) .image-row-spotlight .cms-block-element {
+  animation: rgHeroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.image-row-spotlight .cms-block-element:nth-child(1) { animation-delay: 0.20s; }
+.image-row-spotlight .cms-block-element:nth-child(2) { animation-delay: 0.28s; }
+.image-row-spotlight .cms-block-element:nth-child(3) { animation-delay: 0.36s; }
+.image-row-spotlight .cms-block-element:nth-child(4) { animation-delay: 0.44s; }
+.image-row-spotlight .cms-block-element:nth-child(5) { animation-delay: 0.52s; }
+.image-row-spotlight .cms-block-element:nth-child(6) { animation-delay: 0.60s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-hero,
+  .cms-section:has(.landing-header) .image-row-spotlight .cms-block-element {
+    animation: none !important;
+  }
+  .image-row-spotlight .cms-image,
+  .rg-hero__btn,
+  .rg-hero__btn--primary::after {
+    transition: none !important;
+  }
 }
