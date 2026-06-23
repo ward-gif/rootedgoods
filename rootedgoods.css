@@ -955,27 +955,29 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .image-row-spotlight {
   margin-top: clamp(8px, 0.8vw, 20px);
 }
-/* Stagger-offsets — meer onregelmatig (niet alternating) voor random feel.
-   Range blijft compact (0-30px) zodat de row niet onder de fold zakt. */
-.image-row-spotlight .cms-block-element:nth-child(2) { padding-top: 28px; }
-.image-row-spotlight .cms-block-element:nth-child(3) { padding-top: 6px; }
-.image-row-spotlight .cms-block-element:nth-child(4) { padding-top: 22px; }
-.image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 14px; }
-.image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 18px; }
+/* Bottom-aligned arch: geen top-stagger meer (tegels staan op één basislijn,
+   variatie zit in de hoogte). Padding-top expliciet 0 om eerdere staggers
+   en de tablet-staggers te neutraliseren. */
+.image-row-spotlight .cms-block-element,
+.image-row-spotlight .cms-block-element:nth-child(2),
+.image-row-spotlight .cms-block-element:nth-child(3),
+.image-row-spotlight .cms-block-element:nth-child(4),
+.image-row-spotlight .cms-block-element:nth-child(5),
+.image-row-spotlight .cms-block-element:nth-child(6) {
+  padding-top: 0 !important;
+}
 
-/* Spotlight — heights met min(vw, vh) zodat tegels schalen met
-   zowel breedte als HOOGTE van viewport. Op smalle/lage schermen
-   pakt de vh-cap automatisch, op brede pakt de vw.
-   Bv. nth-6: min(19vw, 36vh) → op 1920×1080 = 19vw=365px,
-   op 1920×720 = 36vh=259px (vh kicked in).
-   Tegels zijn minder vierkant want hoger dan voorheen. */
+/* Spotlight — arch-hoogtes met min(vw, vh) zodat tegels schalen met zowel
+   breedte als HOOGTE van viewport. Laag aan de randen, hoog in het midden →
+   de productrij vormt een zachte boog die de CTA erboven omlijst en oogt
+   alsof de producten omhoog "groeien" vanaf de basislijn. */
 .image-row-spotlight .cms-image-container         { min-height: min(11vw, 22vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(12vw, 26vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(18vw, 35vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(9vw,  20vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(16vw, 30vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(11vw, 24vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(19vw, 36vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(13vw, 25vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(16vw, 31vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(18vw, 36vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(17vw, 34vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(15vw, 30vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(13vw, 24vh) !important; }
 
 /* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
    overblijven die niet vierkant ogen. */
@@ -999,10 +1001,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   }
 }
 
-/* Spotlight — desktop (alle 6 afbeeldingen passen precies) */
+/* Spotlight — desktop (alle 6 afbeeldingen passen precies).
+   align-items:flex-end → alle tegels delen één basislijn onderaan en
+   "groeien" omhoog (arch via per-tegel hoogtes hieronder). */
 .image-row-spotlight .cms-block-container-row {
   flex-wrap: nowrap !important;
   overflow: hidden !important;
+  align-items: flex-end !important;
 }
 .image-row-spotlight .cms-block-element {
   min-width: calc(100% / 6) !important;
@@ -2668,13 +2673,7 @@ body.is-ctl-product {
   .image-row-spotlight .cms-image-container {
     min-height: 14vw !important;
   }
-  /* Offsets iets minder extreem zodat de rij niet "scheef" oogt */
-  /* Tablet stagger ook gehalveerd (was 0-36, nu 0-18) — zelfde compactheid */
-  .image-row-spotlight .cms-block-element:nth-child(2) { padding-top: 12px; }
-  .image-row-spotlight .cms-block-element:nth-child(3) { padding-top: 6px; }
-  .image-row-spotlight .cms-block-element:nth-child(4) { padding-top: 18px; }
-  .image-row-spotlight .cms-block-element:nth-child(5) { padding-top: 6px; }
-  .image-row-spotlight .cms-block-element:nth-child(6) { padding-top: 12px; }
+  /* Geen top-stagger meer — tegels zijn nu bottom-aligned (zie sectie 11). */
 }
 /* Margin-top wordt nu in sectie 11 vloeiend geschaald via clamp(),
    dus hier geen breakpoint-overrides meer. */
@@ -2921,10 +2920,13 @@ body.is-ctl-product {
 
 .cms-section:has(.landing-header) {
   min-height: calc(100vh - 170px);
-  background-color: #f4f1ea;
+  background-color: #F7F5F2;
+  /* Warme glow alleen bovenin; onderkant fadet volledig naar #F7F5F2 zodat
+     de sectie naadloos overgaat in alle blokken eronder (ook #F7F5F2). */
   background-image:
-    radial-gradient(95% 65% at 84% 6%, rgba(202, 133, 63, 0.16) 0%, rgba(202, 133, 63, 0) 55%),
-    radial-gradient(85% 60% at 6% 96%, rgba(122, 155, 111, 0.13) 0%, rgba(122, 155, 111, 0) 60%);
+    linear-gradient(to bottom, rgba(247, 245, 242, 0) 50%, #F7F5F2 90%),
+    radial-gradient(78% 52% at 85% 0%, rgba(202, 133, 63, 0.17) 0%, rgba(202, 133, 63, 0) 55%),
+    radial-gradient(64% 42% at 6% 14%, rgba(122, 155, 111, 0.12) 0%, rgba(122, 155, 111, 0) 60%);
 }
 
 .cms-section:has(.landing-header) > .cms-section-default {
@@ -3058,10 +3060,9 @@ body.is-ctl-product {
   transform: translateX(5px);
 }
 .rg-hero__btn--secondary {
-  background-color: #fff;
+  background-color: transparent;
   color: #2d4528 !important;
-  border: 2px solid rgba(45, 69, 40, 0.18);
-  box-shadow: 0 10px 24px -16px rgba(45, 69, 40, 0.6);
+  border: 2px solid rgba(45, 69, 40, 0.28);
 }
 .rg-hero__btn--secondary:hover {
   border-color: #CA853F;
