@@ -248,6 +248,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .top-bar-nav span {
   color: #fff !important;
 }
+/* USP-icoontjes in de topbar in brons #b57a3d (tekst blijft wit). */
+.top-bar-nav .icon,
+.top-bar-nav i,
+.top-bar-nav .fas,
+.top-bar-nav .fa-solid,
+.top-bar-nav svg {
+  color: #b57a3d !important;
+}
+.top-bar-nav svg,
+.top-bar-nav svg use,
+.top-bar-nav svg path {
+  fill: #b57a3d !important;
+}
 .top-bar-nav a {
   text-decoration: none;
 }
