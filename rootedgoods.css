@@ -2938,3 +2938,131 @@ body.is-ctl-product {
      boven, dus text-top breathing ≈ tile-bottom breathing. */
   margin-bottom: 40px !important;
 }
+
+/* ------------------------------------------------------------
+   HERO — homepage brand statement (cms-block-text-hero, pos-0)
+   ------------------------------------------------------------ */
+/* Texture-achtergrond op het volle-breedte heroblok: cream basis,
+   zachte oker- en sage-glow + subtiele papier/grain-laag. */
+.cms-block-text-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #f4f1ea;
+  background-image:
+    radial-gradient(120% 130% at 88% 12%, rgba(202, 133, 63, 0.13) 0%, rgba(202, 133, 63, 0) 46%),
+    radial-gradient(110% 120% at 6% 92%, rgba(122, 155, 111, 0.10) 0%, rgba(122, 155, 111, 0) 52%);
+}
+.cms-block-text-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.cms-block-text-hero .cms-block-container,
+.cms-block-text-hero .cms-element-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Content-opmaak */
+.rg-hero {
+  max-width: 880px;
+  animation: rgHeroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.rg-hero__eyebrow {
+  font-weight: 800 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.95rem !important;
+  color: #ac723e !important;
+  margin: 0 0 1.4rem 0 !important;
+}
+.rg-hero__title {
+  font-size: 4.5rem !important;
+  line-height: 1.08 !important;
+  color: #2d4528 !important;
+  max-width: 16ch;
+  margin: 0 0 1.5rem 0 !important;
+}
+.rg-hero__subline {
+  font-size: 1.4rem !important;
+  line-height: 1.5;
+  color: #4a5a44;
+  max-width: 52ch;
+  margin: 0 0 2.4rem 0 !important;
+}
+.rg-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.6rem;
+}
+.rg-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.rg-hero__btn--primary {
+  background-color: #2d4528;
+  color: #fff !important;
+  box-shadow: 0 8px 22px -12px rgba(45, 69, 40, 0.8);
+}
+.rg-hero__btn--primary:hover {
+  background-color: #223520;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -12px rgba(45, 69, 40, 0.85);
+}
+.rg-hero__btn--secondary {
+  background-color: transparent;
+  color: #2d4528 !important;
+  border: 2px solid rgba(45, 69, 40, 0.35);
+}
+.rg-hero__btn--secondary:hover {
+  border-color: #2d4528;
+  transform: translateY(-2px);
+}
+.rg-hero__usps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rg-hero__usps li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d4528;
+}
+.rg-hero__usps li::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  background-color: #7a9b6f;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+@keyframes rgHeroIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .rg-hero__title { font-size: 2.6rem !important; max-width: none; }
+  .rg-hero__subline { font-size: 1.15rem !important; }
+  .rg-hero__btn { flex: 1 1 100%; }
+}
