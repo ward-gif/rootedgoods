@@ -236,7 +236,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    5. TOP BAR — alle tekst en iconen in donkergroen
    ------------------------------------------------------------ */
 .top-bar-nav {
-  background-color: #ede9e2;
+  background-color: #EAE3D7;
   color: #2d4528;
 }
 .top-bar-nav,
@@ -315,18 +315,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   position: relative;
   z-index: 701;
   border-radius: 32px;
-  background-color: #ede9e2;
+  background-color: #EAE3D7;
 }
 .header-search-input {
   padding: 0.6rem 1rem !important;
-  background-color: #ede9e2;
+  background-color: #EAE3D7;
   border: none;
   border-top-left-radius: 32px !important;
   border-bottom-left-radius: 32px !important;
 }
 .header-search-input:focus {
   padding: 0.6rem 1rem !important;
-  background-color: #ede9e2;
+  background-color: #EAE3D7;
   border: none;
   box-shadow: none;
 }
@@ -336,7 +336,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   justify-content: center !important;
   padding: 0 1rem !important;
   line-height: 1 !important;
-  background: #ede9e2 !important;
+  background: #EAE3D7 !important;
   border: none !important;
   border-top-right-radius: 32px !important;
   border-bottom-right-radius: 32px !important;
@@ -629,7 +629,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider .product-box,
 .home-productslider .product-box.box-image,
 .home-productslider .product-slider-item .product-box {
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 12px !important;
   background-color: #ffffff !important;
   overflow: hidden;
@@ -730,7 +730,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   width: 28px !important;
   height: 28px !important;
   border-radius: 50% !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   object-fit: cover !important;
 }
 .home-productslider .variant-thumbnail .prev,
@@ -1607,15 +1607,15 @@ body.is-ctl-product .product-detail-ordernumber-container {
   color: #000000;
 }
 
-/* Tabel striped accent in buy-col: zelfde topbar-kleur (#ede9e2) als
+/* Tabel striped accent in buy-col: zelfde topbar-kleur (#EAE3D7) als
    in de properties tabel, ipv default Bootstrap lichtgrijs.
    Geldt voor de staffel-prijzen tabel én het price-overzicht onderaan. */
 .product-detail-buy .table.table-striped {
-  --bs-table-striped-bg: #ede9e2 !important;
+  --bs-table-striped-bg: #EAE3D7 !important;
   --bs-table-striped-color: #000000 !important;
 }
 .product-detail-buy .table.table-striped > tbody > tr:nth-of-type(odd) > * {
-  background-color: #ede9e2 !important;
+  background-color: #EAE3D7 !important;
   color: #000000 !important;
 }
 
@@ -1632,7 +1632,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 /* Wrapper rond de tabel met afgeronde hoeken */
 .product-detail-buy .product-block-prices {
-  border: 1px solid #ede9e2;
+  border: 1px solid #EAE3D7;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -1669,7 +1669,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
    al onder de thead). Promidata's #eee border-top wordt hierdoor vervangen. */
 .product-detail-buy .product-block-prices-grid .product-block-prices-body .product-block-prices-row,
 .product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row {
-  border-top: 1px solid #ede9e2 !important;
+  border-top: 1px solid #EAE3D7 !important;
 }
 .product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row:first-child {
   border-top: none !important;
@@ -1742,7 +1742,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
   border-collapse: separate !important;
   border-spacing: 0 !important;
   margin-bottom: 0 !important;
-  border: 1px solid #ede9e2;
+  border: 1px solid #EAE3D7;
   border-bottom: none;
   border-radius: 8px 8px 0 0;
 }
@@ -1771,7 +1771,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
   background-color: #ffffff !important;
   padding: 1.1rem 1rem !important;
   vertical-align: middle !important;
-  border-top: 1px solid #ede9e2 !important;
+  border-top: 1px solid #EAE3D7 !important;
   border-bottom: none !important;
 }
 
@@ -1801,10 +1801,10 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .product-detail-buy #total-price-bottom-container .configurator-price-container {
   background-color: #ffffff;
   padding: 1rem 1.5rem;
-  border-left: 1px solid #ede9e2;
-  border-right: 1px solid #ede9e2;
-  border-bottom: 1px solid #ede9e2;
-  border-top: 1px solid #ede9e2;
+  border-left: 1px solid #EAE3D7;
+  border-right: 1px solid #EAE3D7;
+  border-bottom: 1px solid #EAE3D7;
+  border-top: 1px solid #EAE3D7;
   border-radius: 0 0 8px 8px;
   margin-bottom: 1rem;
 }
@@ -1831,7 +1831,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
   background-color: #ffffff !important;
   padding: 0.75rem 1rem !important;
   font-size: 1rem !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 6px !important;
   min-height: 48px;
 }
@@ -1852,18 +1852,18 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* ------------------------------------------------------------
    23. PDP — STEPS SEPARATORS
    Promidata zet grijze borders tussen de configurator-steps
-   (Kleur, Aantal, Opdruk, etc.). Wij willen #ede9e2 als accent.
+   (Kleur, Aantal, Opdruk, etc.). Wij willen #EAE3D7 als accent.
    ------------------------------------------------------------ */
 
 .product-detail-buy .product-detail-configurator-group,
 .product-detail-buy .collapse-group {
-  border-color: #ede9e2 !important;
-  border-top-color: #ede9e2 !important;
-  border-bottom-color: #ede9e2 !important;
+  border-color: #EAE3D7 !important;
+  border-top-color: #EAE3D7 !important;
+  border-bottom-color: #EAE3D7 !important;
 }
 .product-detail-buy .product-detail-configurator-group + .product-detail-configurator-group,
 .product-detail-buy .collapse-group + .collapse-group {
-  border-top: 1px solid #ede9e2 !important;
+  border-top: 1px solid #EAE3D7 !important;
 }
 
 /* Hoofdafbeelding klikbaar — cursor zoom-in als hint. */
@@ -2074,7 +2074,7 @@ body.is-ctl-product {
 /* Tab navigation: subtiele border eronder zodat tabs en content
    visueel gescheiden blijven binnen de witte box */
 .product-detail-tabs .product-detail-tab-navigation {
-  border-bottom: 1px solid #ede9e2 !important;
+  border-bottom: 1px solid #EAE3D7 !important;
   padding: 0.5rem 1.5rem 0 !important;
 }
 
@@ -2140,16 +2140,16 @@ body.is-ctl-product {
   }
 }
 
-/* Properties-tabel accent: zelfde kleur als topbar (#ede9e2) als
+/* Properties-tabel accent: zelfde kleur als topbar (#EAE3D7) als
    striped-row achtergrond ipv Bootstrap default lichtgrijs.
    --bs-table-striped-bg is de Bootstrap 5 variabele hiervoor. */
 .product-detail-properties-table {
-  --bs-table-striped-bg: #ede9e2 !important;
+  --bs-table-striped-bg: #EAE3D7 !important;
   --bs-table-striped-color: #000000 !important;
   --bs-table-bg: transparent !important;
 }
 .product-detail-properties-table.table-striped > tbody > tr:nth-of-type(odd) > * {
-  background-color: #ede9e2 !important;
+  background-color: #EAE3D7 !important;
   color: #000000 !important;
 }
 
@@ -2190,7 +2190,7 @@ body.is-ctl-product {
 
 /* Card styling — rounded, border, lift on hover */
 .cms-listing-row .product-box {
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 12px !important;
   background-color: #ffffff;
   overflow: hidden;
@@ -2262,7 +2262,7 @@ body.is-ctl-product {
   width: 28px !important;
   height: 28px !important;
   border-radius: 50% !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   object-fit: cover !important;
 }
 
@@ -2277,7 +2277,7 @@ body.is-ctl-product {
 .cms-listing-row .variant-thumbnail.slider.active .next {
   background-color: rgba(255, 255, 255, 0.92) !important;
   color: #2d4528 !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 50% !important;
   width: 26px !important;
   height: 26px !important;
@@ -2334,7 +2334,7 @@ body.is-ctl-product {
 .cms-element-product-listing-actions {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #ede9e2;
+  border-bottom: 1px solid #EAE3D7;
 }
 .sorting-label {
   display: inline-block;
@@ -2350,7 +2350,7 @@ body.is-ctl-product {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 2.5rem 0.5rem 1.25rem !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 999px !important;
   background-color: #ffffff !important;
   color: #2d4528 !important;
@@ -2387,7 +2387,7 @@ body.is-ctl-product {
   display: inline-flex !important;
   align-items: center !important;
   gap: 0.4rem !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 999px !important;
   background-color: #ffffff !important;
   color: #2d4528 !important;
@@ -2435,7 +2435,7 @@ body.is-ctl-product {
   align-items: center;
   margin-top: 1rem;
   padding-top: 0.75rem;
-  border-top: 1px solid #ede9e2;
+  border-top: 1px solid #EAE3D7;
 }
 .filter-panel-active-container:empty {
   display: none;
@@ -2451,7 +2451,7 @@ body.is-ctl-product {
   gap: 0.4rem;
   padding: 0.35rem 0.5rem 0.35rem 0.85rem !important;
   background-color: #FBF7F5 !important;
-  border: 1px solid #ede9e2 !important;
+  border: 1px solid #EAE3D7 !important;
   border-radius: 999px !important;
   font-size: 0.825rem !important;
   color: #2d4528 !important;
@@ -2518,7 +2518,7 @@ body.is-ctl-product {
 .category-navigation.level-1 {
   margin-left: 1rem;
   padding-left: 0.75rem;
-  border-left: 2px solid #ede9e2;
+  border-left: 2px solid #EAE3D7;
 }
 
 /* ------------------------------------------------------------
@@ -2556,7 +2556,7 @@ body.is-ctl-product {
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none !important;
-  background-color: #ede9e2;
+  background-color: #EAE3D7;
 }
 
 /* Absoluut laten vullen zodat de natuurlijke beeldhoogte de tile NIET
@@ -2845,7 +2845,7 @@ body.is-ctl-product {
 .rg-feature-row__media {
   border-radius: 12px;
   overflow: hidden;
-  background-color: #ede9e2;
+  background-color: #EAE3D7;
 }
 
 .rg-feature-row__img {
