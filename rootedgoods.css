@@ -3296,10 +3296,14 @@ body.is-ctl-product {
   object-fit: contain; /* voor de <img>-variant (inline SVG negeert dit) */
 }
 /* Kaartkleur donkerder dan het paginacanvas (#F7F5F2) zodat 'ie opvalt.
-   Overschrijft de .st0-fill uit de SVG. Eén waarde om aan te draaien. */
+   Inline-SVG: via fill-override. <img>-variant: kan niet via fill, dus een
+   filter dat de vlakke kaartkleur uniform iets donkerder/warmer maakt. */
 .rg-europe-map__svg .st0,
 .rg-europe-map__svg path {
   fill: #D6CCB9 !important;
+}
+img.rg-europe-map__svg {
+  filter: brightness(0.88) saturate(1.2);
 }
 .rg-europe-map__pin {
   position: absolute;
