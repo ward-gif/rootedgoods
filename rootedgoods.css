@@ -3009,7 +3009,7 @@ body.is-ctl-product {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: clamp(0.78rem, 0.7rem + 0.35vw, 1rem) !important;
-  color: #ac723e !important;
+  color: #9a5f2c !important; /* iets dieper dan #ac723e → haalt WCAG AA op cream */
   margin: 0 0 clamp(1rem, 0.7rem + 0.9vw, 1.7rem) 0 !important;
 }
 .rg-hero__title {
@@ -3119,6 +3119,12 @@ body.is-ctl-product {
   /* clamp() regelt de fontgroottes; hier alleen mobiel-specifieke layout */
   .rg-hero__title { max-width: none; }
   .rg-hero__btn { flex: 1 1 100%; }
+}
+
+/* Toetsenbord-focus zichtbaar (a11y best practice) */
+.rg-hero__btn:focus-visible {
+  outline: 3px solid rgba(45, 69, 40, 0.55);
+  outline-offset: 3px;
 }
 
 /* ------------------------------------------------------------
