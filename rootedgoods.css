@@ -522,15 +522,20 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   font-size: 0.9rem !important;
   font-weight: 700 !important;
   line-height: 1.2 !important;
+  transition: transform 0.15s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
 }
 .btn-primary {
   background-color: #CA853F !important;
   border-color: #CA853F !important;
   color: #fff !important;
+  box-shadow: 0 8px 22px -12px rgba(202, 133, 63, 0.9) !important;
 }
 .btn-primary:hover {
   background-color: #b57a3d !important;
   border-color: #b57a3d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -12px rgba(202, 133, 63, 0.95) !important;
 }
 .btn-outline-primary {
   background-color: transparent !important;
@@ -540,6 +545,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .btn-outline-primary:hover {
   background-color: #CA853F !important;
   color: #fff !important;
+  transform: translateY(-2px);
 }
 
 /* Scroll-to-top knop — overschrijf pill-styling; vierkant blokje met
@@ -556,6 +562,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  box-shadow: none !important;
 }
 .btn.btn-primary:has(.icon-arrow-up) .icon,
 .scroll-up-btn .icon,
@@ -3023,22 +3030,24 @@ body.is-ctl-product {
   transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 .rg-hero__btn--primary {
-  background-color: #2d4528;
+  background-color: #CA853F;
   color: #fff !important;
-  box-shadow: 0 8px 22px -12px rgba(45, 69, 40, 0.8);
+  box-shadow: 0 8px 22px -12px rgba(202, 133, 63, 0.9);
 }
 .rg-hero__btn--primary:hover {
-  background-color: #223520;
+  background-color: #b57a3d;
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px -12px rgba(45, 69, 40, 0.85);
+  box-shadow: 0 14px 28px -12px rgba(202, 133, 63, 0.95);
 }
 .rg-hero__btn--secondary {
   background-color: transparent;
-  color: #2d4528 !important;
-  border: 2px solid rgba(45, 69, 40, 0.35);
+  color: #CA853F !important;
+  border: 2px solid rgba(202, 133, 63, 0.5);
 }
 .rg-hero__btn--secondary:hover {
-  border-color: #2d4528;
+  border-color: #CA853F;
+  background-color: #CA853F;
+  color: #fff !important;
   transform: translateY(-2px);
 }
 .rg-hero__usps {
