@@ -2923,15 +2923,20 @@ body.is-ctl-product {
    viewport-rand (via Promidata's inline padding-bottom op container).
    Geen tile-height tuning meer nodig om "boven de fold" te blijven. */
 
-/* Landing-pagina: verplaats de header-clearance (170px) van .content-main
-   naar de hero-sectie zelf, zodat de achtergrond doorloopt tot achter de
-   fixed header en bovenaan niet wordt afgesneden. Alleen op deze pagina —
-   andere pagina's houden hun .content-main padding-top. */
-/* Pagina-canvas in #F7F5F2 zodat de 170px header-clearance bovenaan dezelfde
-   kleur heeft als de hero-sectie → geen afgesneden/witte strook boven de glow.
-   De .content-main behoudt z'n padding-top:170px (clearance fixed header). */
-.content-main:has(.landing-header),
+/* Landing-pagina canvas in #F7F5F2 zodat alles boven de hero dezelfde kleur
+   heeft als de sectie. Clearance hier 115px i.p.v. de site-brede 143px: de
+   hero-content staat tóch verticaal gecentreerd (ver van de top), dus de
+   sectie mag ~28px hoger beginnen → de achtergrond loopt door achter de
+   afgeronde onderhoeken van de fixed header (geen afwijkende kleur in de
+   hoeken). Andere pagina's houden de volle 143px clearance. */
+.content-main:has(.landing-header) {
+  padding-top: 115px !important;
+  background-color: #F7F5F2;
+}
+/* container-main: weg met de 20px boven/onder padding en 200px min-height. */
 .content-main:has(.landing-header) .container-main {
+  padding: 0 !important;
+  min-height: 0 !important;
   background-color: #F7F5F2;
 }
 /* Lege breadcrumb boven de hero platdrukken (Bootstrap .breadcrumb heeft
@@ -2943,7 +2948,7 @@ body.is-ctl-product {
 }
 .cms-section:has(.landing-header) {
   position: relative;
-  min-height: calc(100vh - 143px);
+  min-height: calc(100vh - 115px);
   display: flex;
   flex-direction: column;
   background-color: #F7F5F2;
