@@ -3016,25 +3016,10 @@ body.is-ctl-product {
 }
 
 /* ------------------------------------------------------------
-   HERO — homepage brand statement (cms-block-text-hero, pos-0)
+   HERO — content-opmaak (.rg-hero), gebruikt door de landing-header.
+   (Styling voor het losse 'oneliner' cms-block-text-hero is verwijderd —
+   schone lei voor een nieuwe opzet.)
    ------------------------------------------------------------ */
-/* Texture-achtergrond op het volle-breedte heroblok: cream basis met
-   zachte oker- en sage-glow. */
-.cms-block-text-hero {
-  position: relative;
-  overflow: hidden;
-  background-color: #f4f1ea;
-  background-image:
-    radial-gradient(120% 130% at 88% 12%, rgba(202, 133, 63, 0.13) 0%, rgba(202, 133, 63, 0) 46%),
-    radial-gradient(110% 120% at 6% 92%, rgba(122, 155, 111, 0.10) 0%, rgba(122, 155, 111, 0) 52%);
-}
-.cms-block-text-hero .cms-block-container,
-.cms-block-text-hero .cms-element-text {
-  position: relative;
-  z-index: 1;
-}
-
-/* Content-opmaak */
 .rg-hero {
   max-width: 880px;
   animation: rgHeroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
