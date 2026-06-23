@@ -366,9 +366,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   position: relative;
   z-index: 600;
 }
-/* Zoekbalk — overbodige eerste kolom in suggesties verbergen */
+/* Zoekbalk — overbodige eerste kolom (tabs) verbergen, results vullen volle breedte */
 .search-suggest.js-search-result > ul > div > div.col-md-3.col-12 {
   display: none;
+}
+.search-suggest.js-search-result > ul > div > div.col-md-9.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 .header-main .search-suggest-container {
   max-height: 550px;
