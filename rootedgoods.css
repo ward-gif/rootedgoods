@@ -547,6 +547,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   color: #fff !important;
   transform: translateY(-2px);
 }
+/* Zichtbare toetsenbord-focus op alle knoppen (a11y, site-wide) */
+.btn:not(.header-actions-btn):focus-visible {
+  outline: 3px solid rgba(45, 69, 40, 0.55) !important;
+  outline-offset: 3px !important;
+}
 
 /* Scroll-to-top knop — overschrijf pill-styling; vierkant blokje met
    dezelfde radius als de tiles. Target via :has() op icon-arrow-up
@@ -971,13 +976,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    breedte als HOOGTE van viewport. Laag aan de randen, hoog in het midden →
    de productrij vormt een zachte boog die de CTA erboven omlijst en oogt
    alsof de producten omhoog "groeien" vanaf de basislijn. */
-.image-row-spotlight .cms-image-container         { min-height: min(15vw, 26vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(15vw, 27vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(17vw, 31vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(18vw, 33vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(18vw, 32vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(16vw, 29vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(15vw, 27vh) !important; }
+.image-row-spotlight .cms-image-container         { min-height: min(14vw, 25vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(14vw, 25vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(16vw, 28vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(17vw, 30vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(17vw, 29vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(15vw, 27vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(14vw, 25vh) !important; }
 
 /* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
    overblijven die niet vierkant ogen. */
@@ -2926,6 +2931,7 @@ body.is-ctl-product {
   padding-top: 0 !important;
 }
 .cms-section:has(.landing-header) {
+  box-sizing: border-box; /* padding-top binnen de 100vh houden, niet erbovenop */
   min-height: 100vh;
   padding-top: 170px;
   background-color: #F7F5F2;
@@ -2938,6 +2944,7 @@ body.is-ctl-product {
 }
 
 .cms-section:has(.landing-header) > .cms-section-default {
+  box-sizing: border-box;
   min-height: calc(100vh - 170px);
   display: flex;
   flex-direction: column;
@@ -2954,10 +2961,15 @@ body.is-ctl-product {
 
 .cms-section:has(.landing-header) .image-row-spotlight {
   margin-top: auto !important;
-  /* Bottom breathing room. 40px hier + 40px Promidata container padding-bottom
-     = ~80px tussen tile-bottom en viewport-rand. Flex herverdeelt 40px naar
-     boven, dus text-top breathing ≈ tile-bottom breathing. */
-  margin-bottom: 40px !important;
+  /* Onderruimte = 28px, gelijk aan de gutter tussen de beelden (uniforme
+     marge rondom). */
+  margin-bottom: 28px !important;
+}
+/* Zij-ruimte = 28px, óók gelijk aan de gutter tussen de beelden. */
+.image-row-spotlight .cms-block-container {
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+  padding-bottom: 0 !important;
 }
 
 /* ------------------------------------------------------------
