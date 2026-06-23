@@ -537,14 +537,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   transform: translateY(-2px);
   box-shadow: 0 14px 28px -12px rgba(202, 133, 63, 0.95) !important;
 }
+/* Secondary site-wide = zelfde stijl als de hero-secondary (transparant,
+   groene rand, oker op hover) — alleen de maten blijven de site-defaults. */
 .btn-outline-primary {
+  background-color: transparent !important;
+  border: 2px solid rgba(45, 69, 40, 0.28) !important;
+  color: #2d4528 !important;
+}
+.btn-outline-primary:hover {
   background-color: transparent !important;
   border-color: #CA853F !important;
   color: #CA853F !important;
-}
-.btn-outline-primary:hover {
-  background-color: #CA853F !important;
-  color: #fff !important;
   transform: translateY(-2px);
 }
 /* Zichtbare toetsenbord-focus op alle knoppen (a11y, site-wide) */
@@ -2975,6 +2978,9 @@ body.is-ctl-product {
   justify-content: center;
   position: relative;
   z-index: 1;
+  /* Hero-content wat lager + meer lucht bovenin (content blijft binnen de fold
+     omdat de spotlight via margin-top:auto onderaan vastzit). */
+  padding-top: clamp(2.5rem, 8vh, 7rem);
 }
 
 .cms-section:has(.landing-header) .image-row-spotlight {
