@@ -2927,13 +2927,16 @@ body.is-ctl-product {
    naar de hero-sectie zelf, zodat de achtergrond doorloopt tot achter de
    fixed header en bovenaan niet wordt afgesneden. Alleen op deze pagina —
    andere pagina's houden hun .content-main padding-top. */
-.content-main:has(.landing-header) {
-  padding-top: 0 !important;
+/* Pagina-canvas in #F7F5F2 zodat de 170px header-clearance bovenaan dezelfde
+   kleur heeft als de hero-sectie → geen afgesneden/witte strook boven de glow.
+   De .content-main behoudt z'n padding-top:170px (clearance fixed header). */
+.content-main:has(.landing-header),
+.content-main:has(.landing-header) .container-main {
+  background-color: #F7F5F2;
 }
 .cms-section:has(.landing-header) {
-  box-sizing: border-box; /* padding-top binnen de 100vh houden, niet erbovenop */
-  min-height: 100vh;
-  padding-top: 170px;
+  position: relative;
+  min-height: calc(100vh - 170px);
   background-color: #F7F5F2;
   /* Warme glow alleen bovenin; alles onder ~60% is volledig #F7F5F2 (geen
      donkere rand links/onder) → naadloze overgang naar de blokken eronder. */
@@ -2944,7 +2947,6 @@ body.is-ctl-product {
 }
 
 .cms-section:has(.landing-header) > .cms-section-default {
-  box-sizing: border-box;
   min-height: calc(100vh - 170px);
   display: flex;
   flex-direction: column;
