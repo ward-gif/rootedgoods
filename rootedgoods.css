@@ -236,7 +236,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    5. TOP BAR — alle tekst en iconen in donkergroen
    ------------------------------------------------------------ */
 .top-bar-nav {
-  background-color: #EAE3D7;
+  background-color: #E4DBCB; /* iets dieper dan de zoekbalk → onderscheid */
   color: #2d4528;
 }
 .top-bar-nav,
@@ -315,18 +315,25 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   position: relative;
   z-index: 701;
   border-radius: 32px;
-  background-color: #EAE3D7;
+  background-color: #F2EEE7;
+  border: 1px solid rgba(45, 69, 40, 0.12);
 }
 .header-search-input {
   padding: 0.6rem 1rem !important;
-  background-color: #EAE3D7;
+  background-color: #F2EEE7;
+  color: #2d4528 !important; /* getypte tekst donkergroen */
   border: none;
   border-top-left-radius: 32px !important;
   border-bottom-left-radius: 32px !important;
 }
+.header-search-input::placeholder {
+  color: #6a6253 !important; /* donkerder dan default grijs */
+  opacity: 1;
+}
 .header-search-input:focus {
   padding: 0.6rem 1rem !important;
-  background-color: #EAE3D7;
+  background-color: #F2EEE7;
+  color: #2d4528 !important;
   border: none;
   box-shadow: none;
 }
@@ -336,7 +343,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   justify-content: center !important;
   padding: 0 1rem !important;
   line-height: 1 !important;
-  background: #EAE3D7 !important;
+  background: #F2EEE7 !important;
   border: none !important;
   border-top-right-radius: 32px !important;
   border-bottom-right-radius: 32px !important;
@@ -1511,20 +1518,22 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* Secundair: "In het winkelmandje" → outline-look (was filled). */
 #buyButton.btn-primary {
   background-color: transparent !important;
-  color: #CA853F !important;
-  border-color: #CA853F !important;
+  color: #2d4528 !important;
+  border: 2px solid rgba(45, 69, 40, 0.28) !important;
 }
 #buyButton.btn-primary:hover,
 #buyButton.btn-primary:focus {
-  background-color: #CA853F !important;
-  color: #fff !important;
+  background-color: transparent !important;
+  border-color: #CA853F !important;
+  color: #CA853F !important;
 }
 
 /* Primair: "Offerte aanvragen" → filled-look (was outline). */
 #js-request-offer.btn-outline-primary {
   background-color: #CA853F !important;
   color: #fff !important;
-  border-color: #CA853F !important;
+  border: 2px solid #CA853F !important;
+  box-shadow: 0 8px 22px -12px rgba(202, 133, 63, 0.9) !important;
 }
 #js-request-offer.btn-outline-primary:hover,
 #js-request-offer.btn-outline-primary:focus {
