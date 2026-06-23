@@ -67,7 +67,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 .content-main {
   padding: 0 !important;
-  padding-top: 170px !important;
+  padding-top: 143px !important; /* = werkelijke fixed-header hoogte (45.19 + 97.64) */
 }
 
 
@@ -976,13 +976,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    breedte als HOOGTE van viewport. Laag aan de randen, hoog in het midden →
    de productrij vormt een zachte boog die de CTA erboven omlijst en oogt
    alsof de producten omhoog "groeien" vanaf de basislijn. */
-.image-row-spotlight .cms-image-container         { min-height: min(13vw, 21vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(13vw, 21vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(15vw, 24vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(16vw, 26vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(16vw, 25vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(14vw, 23vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(13vw, 21vh) !important; }
+.image-row-spotlight .cms-image-container         { min-height: min(15vw, 24vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(15vw, 24vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(17vw, 27vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(18vw, 30vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(18vw, 29vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(16vw, 26vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(15vw, 24vh) !important; }
 
 /* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
    overblijven die niet vierkant ogen. */
@@ -2934,9 +2934,16 @@ body.is-ctl-product {
 .content-main:has(.landing-header) .container-main {
   background-color: #F7F5F2;
 }
+/* Lege breadcrumb boven de hero platdrukken (Bootstrap .breadcrumb heeft
+   default margin-bottom → zou de sectie net buiten beeld duwen). */
+.content-main:has(.landing-header) .cms-breadcrumb {
+  margin: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
 .cms-section:has(.landing-header) {
   position: relative;
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 143px);
   background-color: #F7F5F2;
   /* Warme glow alleen bovenin; alles onder ~60% is volledig #F7F5F2 (geen
      donkere rand links/onder) → naadloze overgang naar de blokken eronder. */
@@ -2947,7 +2954,7 @@ body.is-ctl-product {
 }
 
 .cms-section:has(.landing-header) > .cms-section-default {
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 143px);
   display: flex;
   flex-direction: column;
 }
