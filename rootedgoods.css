@@ -3237,3 +3237,80 @@ body.is-ctl-product {
     transition: none !important;
   }
 }
+
+
+/* ============================================================
+   29. BRAND-STATEMENT — typografie links + Europa-kaart rechts
+   ============================================================
+   Twee-koloms blok op de homepage (in een cms-block-text-hero).
+   Tekst is leidend; de Europa-kaart is puur ter beeldvorming
+   (statisch, geen interactie). Stackt < 992px: tekst boven, kaart
+   onder. Zet de inline padding van het CMS-blok-container op 0 —
+   .rg-statement regelt z'n eigen ruimte (40px zij-gutter). */
+
+.rg-statement {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 6rem) 40px;
+}
+
+.rg-statement__kicker {
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: clamp(0.78rem, 0.7rem + 0.35vw, 1rem);
+  color: #9a5f2c; /* oker accent — gelijk aan hero-eyebrow, AA-veilig op cream */
+  margin: 0 0 1.3rem 0;
+}
+.rg-statement__title {
+  font-size: clamp(2rem, 1.1rem + 2.9vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #2d4528;
+  margin: 0 0 1.5rem 0;
+}
+.rg-statement__sub {
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  line-height: 1.6;
+  color: #3f4f3a;
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* Europa-kaart — statisch, puur visueel */
+.rg-europe-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+}
+.rg-europe-map__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.rg-europe-map__pin {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #CA853F;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px rgba(202, 133, 63, 0.16);
+}
+
+/* Mobiel: stack (tekst boven, kaart onder), compact */
+@media (max-width: 991px) {
+  .rg-statement {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 2.75rem 24px;
+  }
+  .rg-europe-map {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}
