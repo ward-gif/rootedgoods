@@ -971,13 +971,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    breedte als HOOGTE van viewport. Laag aan de randen, hoog in het midden →
    de productrij vormt een zachte boog die de CTA erboven omlijst en oogt
    alsof de producten omhoog "groeien" vanaf de basislijn. */
-.image-row-spotlight .cms-image-container         { min-height: min(11vw, 22vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(13vw, 25vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(16vw, 31vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(18vw, 36vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(17vw, 34vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(15vw, 30vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(13vw, 24vh) !important; }
+.image-row-spotlight .cms-image-container         { min-height: min(11vw, 20vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(11vw, 20vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(13vw, 24vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(14vw, 26vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(14vw, 25vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(12vw, 22vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(11vw, 20vh) !important; }
 
 /* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
    overblijven die niet vierkant ogen. */
@@ -2918,15 +2918,23 @@ body.is-ctl-product {
    viewport-rand (via Promidata's inline padding-bottom op container).
    Geen tile-height tuning meer nodig om "boven de fold" te blijven. */
 
+/* Landing-pagina: verplaats de header-clearance (170px) van .content-main
+   naar de hero-sectie zelf, zodat de achtergrond doorloopt tot achter de
+   fixed header en bovenaan niet wordt afgesneden. Alleen op deze pagina —
+   andere pagina's houden hun .content-main padding-top. */
+.content-main:has(.landing-header) {
+  padding-top: 0 !important;
+}
 .cms-section:has(.landing-header) {
-  min-height: calc(100vh - 170px);
+  min-height: 100vh;
+  padding-top: 170px;
   background-color: #F7F5F2;
-  /* Warme glow alleen bovenin; onderkant fadet volledig naar #F7F5F2 zodat
-     de sectie naadloos overgaat in alle blokken eronder (ook #F7F5F2). */
+  /* Warme glow alleen bovenin; alles onder ~60% is volledig #F7F5F2 (geen
+     donkere rand links/onder) → naadloze overgang naar de blokken eronder. */
   background-image:
-    linear-gradient(to bottom, rgba(247, 245, 242, 0) 50%, #F7F5F2 90%),
-    radial-gradient(78% 52% at 85% 0%, rgba(202, 133, 63, 0.17) 0%, rgba(202, 133, 63, 0) 55%),
-    radial-gradient(64% 42% at 6% 14%, rgba(122, 155, 111, 0.12) 0%, rgba(122, 155, 111, 0) 60%);
+    linear-gradient(to bottom, rgba(247, 245, 242, 0) 26%, #F7F5F2 60%),
+    radial-gradient(70% 46% at 88% 5%, rgba(202, 133, 63, 0.18) 0%, rgba(202, 133, 63, 0) 55%),
+    radial-gradient(46% 30% at 4% 12%, rgba(122, 155, 111, 0.10) 0%, rgba(122, 155, 111, 0) 60%);
 }
 
 .cms-section:has(.landing-header) > .cms-section-default {
@@ -3060,7 +3068,7 @@ body.is-ctl-product {
   transform: translateX(5px);
 }
 .rg-hero__btn--secondary {
-  background-color: transparent;
+  background-color: transparent !important;
   color: #2d4528 !important;
   border: 2px solid rgba(45, 69, 40, 0.28);
 }
