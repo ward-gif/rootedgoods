@@ -3294,14 +3294,56 @@ body.is-ctl-product {
   height: 100%;
   display: block;
 }
+/* Kaartkleur donkerder dan het paginacanvas (#F7F5F2) zodat 'ie opvalt.
+   Overschrijft de .st0-fill uit de SVG. Eén waarde om aan te draaien. */
+.rg-europe-map__svg .st0,
+.rg-europe-map__svg path {
+  fill: #D6CCB9 !important;
+}
 .rg-europe-map__pin {
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #CA853F;
-  transform: translate(-50%, -50%);
   box-shadow: 0 0 0 4px rgba(202, 133, 63, 0.16);
+  /* Entree: gestaffeld in-poppen (volgorde via --i op de span). */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: rgPinIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 0.06s);
+}
+/* Langzame radar-puls die blijft pingen (start na de entree). */
+.rg-europe-map__pin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(202, 133, 63, 0.4);
+  transform: translate(-50%, -50%) scale(1);
+  z-index: -1;
+  opacity: 0;
+  animation: rgPinPulse 2.8s ease-out infinite;
+  animation-delay: calc(0.9s + var(--i, 0) * 0.18s);
+}
+@keyframes rgPinIn {
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes rgPinPulse {
+  0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  70%  { opacity: 0; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(3.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-europe-map__pin {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .rg-europe-map__pin::after { animation: none !important; opacity: 0 !important; }
 }
 
 /* Mobiel: stack (tekst boven, kaart onder), compact */
