@@ -3293,6 +3293,7 @@ body.is-ctl-product {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain; /* voor de <img>-variant (inline SVG negeert dit) */
 }
 /* Kaartkleur donkerder dan het paginacanvas (#F7F5F2) zodat 'ie opvalt.
    Overschrijft de .st0-fill uit de SVG. Eén waarde om aan te draaien. */
