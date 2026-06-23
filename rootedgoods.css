@@ -2944,6 +2944,8 @@ body.is-ctl-product {
 .cms-section:has(.landing-header) {
   position: relative;
   min-height: calc(100vh - 143px);
+  display: flex;
+  flex-direction: column;
   background-color: #F7F5F2;
   /* Warme glow alleen bovenin; alles onder ~60% is volledig #F7F5F2 (geen
      donkere rand links/onder) → naadloze overgang naar de blokken eronder. */
@@ -2953,8 +2955,10 @@ body.is-ctl-product {
     radial-gradient(46% 30% at 4% 12%, rgba(122, 155, 111, 0.10) 0%, rgba(122, 155, 111, 0) 60%);
 }
 
+/* Inner wrapper vult de sectie (flex:1) i.p.v. een eigen calc-hoogte →
+   robuust tegen eventuele sectie-padding (geen dubbele 100vh-berekening). */
 .cms-section:has(.landing-header) > .cms-section-default {
-  min-height: calc(100vh - 143px);
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
