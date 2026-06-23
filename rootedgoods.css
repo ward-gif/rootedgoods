@@ -236,8 +236,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    5. TOP BAR — alle tekst en iconen in donkergroen
    ------------------------------------------------------------ */
 .top-bar-nav {
-  background-color: #E2DDD4; /* iets dieper dan de zoekbalk, iets minder warm */
-  color: #2d4528;
+  background-color: #2d4528; /* donkergroen */
+  color: #fff;
 }
 .top-bar-nav,
 .top-bar-nav *,
@@ -246,7 +246,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .top-bar-nav .fas,
 .top-bar-nav .fa-solid,
 .top-bar-nav span {
-  color: #2d4528 !important;
+  color: #fff !important;
 }
 .top-bar-nav a {
   text-decoration: none;
