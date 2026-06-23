@@ -976,13 +976,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    breedte als HOOGTE van viewport. Laag aan de randen, hoog in het midden →
    de productrij vormt een zachte boog die de CTA erboven omlijst en oogt
    alsof de producten omhoog "groeien" vanaf de basislijn. */
-.image-row-spotlight .cms-image-container         { min-height: min(14vw, 25vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(14vw, 25vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(16vw, 28vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(17vw, 30vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(17vw, 29vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(15vw, 27vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(14vw, 25vh) !important; }
+.image-row-spotlight .cms-image-container         { min-height: min(13vw, 21vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(13vw, 21vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(15vw, 24vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(16vw, 26vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(16vw, 25vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(14vw, 23vh) !important; }
+.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(13vw, 21vh) !important; }
 
 /* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
    overblijven die niet vierkant ogen. */
@@ -3022,7 +3022,7 @@ body.is-ctl-product {
   text-transform: uppercase;
   font-size: clamp(0.78rem, 0.7rem + 0.35vw, 1rem) !important;
   color: #9a5f2c !important; /* iets dieper dan #ac723e → haalt WCAG AA op cream */
-  margin: 0 0 clamp(1rem, 0.7rem + 0.9vw, 1.7rem) 0 !important;
+  margin: 0 0 clamp(0.9rem, 0.65rem + 0.7vw, 1.4rem) 0 !important;
 }
 .rg-hero__title {
   font-size: clamp(2.4rem, 1.35rem + 3.6vw, 4.75rem) !important;
@@ -3030,14 +3030,14 @@ body.is-ctl-product {
   letter-spacing: -0.01em;
   color: #2d4528 !important;
   max-width: 18ch;
-  margin: 0 0 clamp(1.1rem, 0.8rem + 1vw, 1.8rem) 0 !important;
+  margin: 0 0 clamp(1rem, 0.75rem + 0.9vw, 1.5rem) 0 !important;
 }
 .rg-hero__subline {
   font-size: clamp(1.05rem, 0.95rem + 0.55vw, 1.4rem) !important;
   line-height: 1.55;
   color: #4a5a44;
   max-width: 54ch;
-  margin: 0 0 clamp(1.8rem, 1.3rem + 1.5vw, 2.6rem) 0 !important;
+  margin: 0 0 clamp(1.5rem, 1.1rem + 1.3vw, 2.1rem) 0 !important;
 }
 .rg-hero__cta {
   display: flex;
