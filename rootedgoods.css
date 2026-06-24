@@ -3052,7 +3052,7 @@ body.is-ctl-product {
 }
 .rg-hero__eyebrow {
   font-family: 'Montserrat', sans-serif !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem) !important;
@@ -3271,7 +3271,8 @@ body.is-ctl-product {
   display: inline-flex;
   align-items: center;
   gap: 0.9rem;
-  font-weight: 800;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem);
@@ -3299,8 +3300,8 @@ body.is-ctl-product {
 .rg-statement__cta {
   margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 .rg-statement__cta-btn {
@@ -3338,26 +3339,27 @@ body.is-ctl-product {
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
 }
-/* Handgeschreven annotatie naast de knop, met een gebogen pijl ernaartoe.
-   Pijl iets lager dan de knop, tekst nog iets lager (descending feel). */
+/* Handgeschreven annotatie. Tekst zit lager (bij de staart van de pijl), de
+   pijl begint bovenin en wijst omhoog naar de knop. */
 .rg-cta-note {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  max-width: 250px;
+  max-width: 240px;
+  margin-top: 2.8rem; /* tekst een stuk lager dan de knop */
   font-style: italic;
   font-size: 1rem;
   line-height: 1.25;
   color: #6f7e66;
   transform: rotate(-2deg);
 }
-/* Pijl als los geüpload beeldje (zelf in Illustrator tekenen → exact goed).
-   Tussen knop en tekst plaatsen. */
+/* Pijl (geüpload beeldje): kop bovenaan, wijst omhoog/links naar de knop. */
 .rg-cta-arrow {
   flex: 0 0 auto;
-  align-self: center;
-  width: clamp(48px, 6vw, 78px);
+  align-self: flex-start;
+  width: clamp(56px, 6.5vw, 84px);
   height: auto;
+  margin-top: -0.5rem; /* kop iets boven de knop-top → wijst omhoog naar de knop */
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
