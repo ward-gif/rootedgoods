@@ -200,11 +200,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   display: none;
 }
 .main-navigation-link.all-categories .main-navigation-link-text::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  content: "\f5fd";
-  margin-right: 0.4rem;
-  color: #2d4528;
+  content: none; /* categorie-icoon verborgen → nav consistent zonder iconen */
 }
 
 /* Header iconen — wishlist, account, cart op donkergroen */
@@ -288,7 +284,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    Op tablet/mobile: normaal in-flow (logo/actions stacken daar).
    ------------------------------------------------------------ */
 .header-search {
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -305,8 +301,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    max-width: 700px;
+    width: 600px;
+    max-width: 600px;
     z-index: 620;  /* verplaatst van header-search-col */
   }
 }
@@ -417,7 +413,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 
 @media (min-width: 768px) {
   .search-suggest-container {
-    width: 700px;
+    width: 600px;
   }
   .search-suggest-container::after {
     display: none;
@@ -434,8 +430,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 /* Desktop — zoekbalk en results altijd minimaal 700px, matchend */
 @media (min-width: 992px) {
   .header-main .search-suggest-container {
-    width: 700px !important;
-    min-width: 700px !important;
+    width: 600px !important;
+    min-width: 600px !important;
   }
 }
 
@@ -2677,8 +2673,8 @@ body.is-ctl-product {
      1024-1280. Cap op een fluid waarde zodat 'ie netjes verkleint. */
   .header-search,
   .header-row .header-search {
-    width: min(700px, 48vw) !important;
-    max-width: min(700px, 48vw) !important;
+    width: min(600px, 48vw) !important;
+    max-width: min(600px, 48vw) !important;
   }
 }
 
@@ -3093,14 +3089,14 @@ body.is-ctl-product {
   transition: transform 0.18s ease, box-shadow 0.25s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .rg-hero__btn--primary {
-  background-color: #a05c2a; /* diepere terracotta → wit ≈ 5.2:1 (WCAG AA) */
+  background-color: #a96030; /* terracotta → wit ≈ 4.8:1 (WCAG AA) */
   color: #fff !important;
-  box-shadow: 0 12px 28px -12px rgba(160, 92, 42, 0.95);
+  box-shadow: 0 12px 28px -12px rgba(169, 96, 48, 0.95);
 }
 .rg-hero__btn--primary:hover {
-  background-color: #8a4e23;
+  background-color: #8f5026;
   transform: translateY(-3px);
-  box-shadow: 0 20px 38px -14px rgba(160, 92, 42, 1);
+  box-shadow: 0 20px 38px -14px rgba(169, 96, 48, 1);
 }
 /* Pijl op de primaire CTA — schuift mee op hover */
 .rg-hero__btn--primary::after {
@@ -3349,9 +3345,10 @@ body.is-ctl-product {
   align-items: center;
   gap: 0.55rem;
   max-width: 240px;
-  margin-top: 2.8rem; /* tekst een stuk lager dan de knop */
+  margin-top: 4.8rem; /* tekst lager dan de knop */
+  margin-left: -3rem; /* naar links, onder de pijl */
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.25;
   color: #6f7e66;
   transform: rotate(-2deg);
@@ -3360,9 +3357,9 @@ body.is-ctl-product {
 .rg-cta-arrow {
   flex: 0 0 auto;
   align-self: flex-start;
-  width: clamp(38px, 4vw, 56px);
+  width: clamp(30px, 3vw, 44px);
   height: auto;
-  margin-top: -0.4rem; /* kop iets boven de knop-top → wijst omhoog naar de knop */
+  margin-top: 1.6rem;
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
