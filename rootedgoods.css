@@ -2561,34 +2561,36 @@ body.is-ctl-product {
 .rg-cat-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
   gap: 1.25rem;
-  margin: 2rem 0;
+  max-width: 1600px;
+  margin: 2.5rem auto;
   padding: 0 40px;
-}
-
-@media (max-width: 991px) {
-  .rg-cat-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 575px) {
-  .rg-cat-grid {
-    grid-template-columns: 1fr;
-    padding: 0 15px;
-  }
 }
 
 .rg-cat-tile {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 32 / 9;          /* zeer plat (helft van 16/9 hoogte); hoger = bv. 21/9 of 2/1 */
-  border-radius: 10px;
+  aspect-ratio: 4 / 5;           /* staande kaart; eleganter dan platte balk */
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none !important;
   background-color: #EAE3D7;
+  box-shadow: 0 14px 30px -22px rgba(45, 69, 40, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.rg-cat-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 42px -22px rgba(45, 69, 40, 0.6);
 }
 
-/* Absoluut laten vullen zodat de natuurlijke beeldhoogte de tile NIET
-   hoger maakt — alleen aspect-ratio bepaalt de hoogte. */
+/* Eén categorie uitlichten: 2 koloms breed (asymmetrisch). */
+.rg-cat-tile--feature {
+  grid-column: span 2;
+  aspect-ratio: 8 / 5;
+}
+
 .rg-cat-tile__img {
   position: absolute;
   inset: 0;
@@ -2596,27 +2598,28 @@ body.is-ctl-product {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .rg-cat-tile:hover .rg-cat-tile__img,
 .rg-cat-tile:focus-visible .rg-cat-tile__img {
-  transform: scale(1.06);
+  transform: scale(1.07);
 }
 
-/* Volledige donkere overlay (zelfde look als .image-cards blok) zodat
-   de witte tekst overal leesbaar is. */
+/* Onderste donkergroene gradient i.p.v. volledige dim → beeld blijft zichtbaar. */
 .rg-cat-tile::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: linear-gradient(to top,
+    rgba(45, 69, 40, 0.85) 0%,
+    rgba(45, 69, 40, 0.45) 28%,
+    rgba(45, 69, 40, 0) 58%);
   border-radius: inherit;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Tekstblok linksboven over de image */
+/* Tekstblok onderin over de image */
 .rg-cat-tile__label {
   position: absolute;
   inset: 0;
@@ -2624,17 +2627,41 @@ body.is-ctl-product {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.25rem;
-  padding: 1.5rem;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  padding: 1.3rem 1.4rem;
   pointer-events: none;
 }
 
 .rg-cat-tile__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #ffffff !important;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
+}
+.rg-cat-tile--feature .rg-cat-tile__title {
+  font-size: 1.7rem;
+}
+/* Pijl schuift in op hover (taal-onafhankelijk "ga naar categorie"). */
+.rg-cat-tile__title::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 1.05em;
+  height: 1.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.rg-cat-tile:hover .rg-cat-tile__title::after,
+.rg-cat-tile:focus-visible .rg-cat-tile__title::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .rg-cat-tile__sub {
@@ -2642,6 +2669,18 @@ body.is-ctl-product {
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.3;
+}
+
+@media (max-width: 1200px) {
+  .rg-cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 991px) {
+  .rg-cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+  .rg-cat-grid { grid-template-columns: 1fr; padding: 0 15px; }
+  .rg-cat-tile,
+  .rg-cat-tile--feature { grid-column: auto; aspect-ratio: 3 / 2; }
 }
 
 
@@ -2715,21 +2754,7 @@ body.is-ctl-product {
    dus hier geen breakpoint-overrides meer. */
 
 
-/* ---- 26.3 Categorie-tiles — vloeiend aspect + 3-col tussenstap ---- */
-/* De 32/9 ratio is ideaal op brede schermen maar te plat bij 4 smalle
-   cols. We schalen de ratio (en bij 1100 zakken we naar 3 cols i.p.v.
-   meteen 2) zodat de tiles nooit < ~90px hoog worden. */
-@media (max-width: 1400px) {
-  .rg-cat-tile { aspect-ratio: 24 / 9; }
-}
-@media (max-width: 1200px) {
-  .rg-cat-tile { aspect-ratio: 16 / 7; }
-}
-@media (min-width: 992px) and (max-width: 1100px) {
-  /* Square split-screen-zone: 3 cols (4e schuift naar nieuwe rij) */
-  .rg-cat-grid { grid-template-columns: repeat(3, 1fr); }
-  .rg-cat-tile { aspect-ratio: 16 / 7; }
-}
+/* ---- 26.3 Categorie-tiles — responsive nu in sectie 25 (staande kaarten) ---- */
 
 
 /* ---- 26.4 Image-text-row (Specialiteiten) — minder hoog op smal ---- */
