@@ -231,7 +231,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 }
 .offerte-link:hover .main-navigation-link-text,
 .offerte-link:hover .main-navigation-link-text span {
-  color: #a4703b !important;
+  color: #556e46 !important;
 }
 .offerte-link .offerte-separator {
   color: #000 !important;
@@ -257,7 +257,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .top-bar-nav span {
   color: #fff !important;
 }
-/* USP-icoontjes in de topbar in brons #a4703b (tekst blijft wit).
+/* USP-icoontjes in de topbar in terracotta #ad6331 (tekst blijft wit).
    Hoge specificiteit zodat het de theme- én de witte-tekst-regel verslaat. */
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container i.fas,
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container i.fa-solid,
@@ -783,7 +783,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   margin: 0.25rem 0 0.5rem 0;
 }
 .home-productslider .product-name:hover {
-  color: #a4703b !important;
+  color: #556e46 !important;
 }
 
 /* Description: subtiel, max 2 regels */
@@ -1552,8 +1552,8 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 #js-request-offer.btn-outline-primary:hover,
 #js-request-offer.btn-outline-primary:focus {
-  background-color: #a4703b !important;
-  border-color: #a4703b !important;
+  background-color: #955529 !important; /* terracotta-dark, blijft uit het groen */
+  border-color: #955529 !important;
   color: #fff !important;
 }
 
@@ -1732,18 +1732,18 @@ body.is-ctl-product .product-detail-ordernumber-container {
    Eerste cel krijgt linker rounded corners, laatste cel rechter. */
 .product-detail-buy .product-block-prices-row.highlight-row > th,
 .product-detail-buy .product-block-prices-row.highlight-row > td {
-  border-top: 2px solid #a4703b !important;
-  border-bottom: 2px solid #a4703b !important;
+  border-top: 2px solid #556e46 !important;
+  border-bottom: 2px solid #556e46 !important;
   background-color: #ffffff !important;
 }
 .product-detail-buy .product-block-prices-row.highlight-row > th:first-child {
-  border-left: 2px solid #a4703b !important;
+  border-left: 2px solid #556e46 !important;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
 .product-detail-buy .product-block-prices-row.highlight-row > td:last-child,
 .product-detail-buy .product-block-prices-row.highlight-row > th:last-child {
-  border-right: 2px solid #a4703b !important;
+  border-right: 2px solid #556e46 !important;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -1872,7 +1872,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* Focus state — subtiele bruine outline ipv default Bootstrap blauw */
 .product-detail-buy .form-control:focus,
 .product-detail-buy .form-select:focus {
-  border-color: #a4703b !important;
+  border-color: #556e46 !important;
   box-shadow: 0 0 0 0.2rem rgba(172, 114, 62, 0.15) !important;
 }
 
@@ -1969,7 +1969,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 
 .product-detail-media .base-slider-dots .base-slider-dot:hover {
-  background-color: #a4703b;
+  background-color: #556e46;
 }
 
 .product-detail-media .base-slider-dots .base-slider-dot.tns-nav-active {
@@ -2121,7 +2121,7 @@ body.is-ctl-product {
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
-  border-bottom: 2px solid #a4703b !important;
+  border-bottom: 2px solid #556e46 !important;
 }
 
 /* Hover/focus op INACTIEVE tabs: geen achtergrondswisseling */
@@ -2322,8 +2322,8 @@ body.is-ctl-product {
 .cms-listing-row .variant-thumbnail.slider.active .prev:hover,
 .cms-listing-row .variant-thumbnail.slider.active .next:hover {
   background-color: #ffffff !important;
-  border-color: #a4703b !important;
-  color: #a4703b !important;
+  border-color: #556e46 !important;
+  color: #556e46 !important;
 }
 
 /* Product info — naam in donkergroen, regular weight, on-brand */
@@ -2340,7 +2340,7 @@ body.is-ctl-product {
   margin: 0.25rem 0 0.5rem 0;
 }
 .cms-listing-row .product-name:hover {
-  color: #a4703b !important;
+  color: #556e46 !important;
 }
 
 /* Prijs — bold, donkergroen, "Van" iets dimmer als label */
@@ -2396,7 +2396,7 @@ body.is-ctl-product {
 }
 .sorting select.sorting:hover,
 .sorting select.sorting:focus {
-  border-color: #a4703b !important;
+  border-color: #556e46 !important;
   outline: none;
 }
 
@@ -2445,7 +2445,7 @@ body.is-ctl-product {
 }
 .filter-panel .filter-panel-item-toggle.btn:hover,
 .filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
-  border-color: #a4703b !important;
+  border-color: #556e46 !important;
   background-color: #FBF7F5 !important;
 }
 
@@ -2498,7 +2498,7 @@ body.is-ctl-product {
   align-items: center;
 }
 .filter-panel-active-container .filter-active-remove:hover {
-  color: #a4703b !important;
+  color: #556e46 !important;
 }
 
 /* "Alles resetten" knop — on-brand bruin ipv default Bootstrap rood */
@@ -2506,8 +2506,8 @@ body.is-ctl-product {
 .filter-panel-active-container .btn,
 .filter-panel-active-container button:not(.filter-active-remove) {
   background-color: transparent !important;
-  border: 1px solid #a4703b !important;
-  color: #a4703b !important;
+  border: 1px solid #556e46 !important;
+  color: #556e46 !important;
   padding: 0.35rem 0.95rem !important;
   border-radius: 999px !important;
   font-size: 0.825rem !important;
@@ -2516,7 +2516,7 @@ body.is-ctl-product {
 }
 .filter-panel-active-container .filter-reset-all:hover,
 .filter-panel-active-container button:not(.filter-active-remove):hover {
-  background-color: #a4703b !important;
+  background-color: #556e46 !important;
   color: #ffffff !important;
 }
 
@@ -2537,10 +2537,10 @@ body.is-ctl-product {
   transition: color 0.15s ease;
 }
 .category-navigation .category-navigation-link:hover {
-  color: #a4703b !important;
+  color: #556e46 !important;
 }
 .category-navigation .category-navigation-link.is-active {
-  color: #a4703b !important;
+  color: #556e46 !important;
   font-weight: 600;
 }
 .category-navigation.level-1 {
@@ -3065,7 +3065,7 @@ body.is-ctl-product {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem) !important;
-  color: #a4703b !important;
+  color: #556e46 !important;
   margin: 0 0 clamp(1rem, 0.7rem + 0.9vw, 1.5rem) 0 !important;
 }
 .rg-hero__title {
@@ -3288,7 +3288,7 @@ body.is-ctl-product {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem);
-  color: #a4703b;
+  color: #556e46;
   margin: 0 0 1.5rem 0;
 }
 .rg-statement__kicker::before {
