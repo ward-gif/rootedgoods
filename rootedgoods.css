@@ -3177,6 +3177,41 @@ body.is-ctl-product {
   .rg-hero__btn { flex: 1 1 100%; }
 }
 
+/* Lage/laptop-schermen (breed maar weinig hoogte): titel + ritme + spotlight
+   subtieler zodat alles binnen de fold past mét onderruimte. */
+@media (min-width: 992px) and (max-height: 960px) {
+  .rg-hero__title {
+    font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem) !important;
+    margin: 0 0 clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem) 0 !important;
+  }
+  .rg-hero__eyebrow {
+    margin: 0 0 clamp(0.7rem, 0.5rem + 0.5vw, 1rem) 0 !important;
+  }
+  .rg-hero__subline {
+    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem) !important;
+    margin: 0 0 clamp(1.2rem, 1rem + 0.6vw, 1.8rem) 0 !important;
+  }
+  .image-row-spotlight .cms-image-container,
+  .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(13vw, 19vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(15vw, 21vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(16vw, 23vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(16vw, 22vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(14vw, 20vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(13vw, 19vh) !important; }
+}
+
+/* Extra krap (kleine laptops): nog een tandje subtieler. */
+@media (min-width: 992px) and (max-height: 820px) {
+  .rg-hero__title { font-size: clamp(1.9rem, 0.8rem + 2.2vw, 3.1rem) !important; }
+  .image-row-spotlight .cms-image-container,
+  .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(12vw, 17vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(14vw, 19vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(15vw, 21vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(15vw, 20vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(13vw, 18vh) !important; }
+  .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(12vw, 17vh) !important; }
+}
+
 /* Toetsenbord-focus zichtbaar (a11y best practice) */
 .rg-hero__btn:focus-visible {
   outline: 3px solid rgba(45, 69, 40, 0.55);
