@@ -2696,7 +2696,7 @@ body.is-ctl-product {
   .rg-cat-grid {
     grid-template-columns: 1.4fr 1fr;
     grid-template-rows: repeat(3, 1fr);
-    height: clamp(360px, 34vw, 520px);
+    height: clamp(300px, 28vw, 440px);
   }
   .rg-cat-tile {
     aspect-ratio: auto;   /* cel-hoogte (grid-rows) bepaalt de hoogte */
