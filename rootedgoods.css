@@ -3093,14 +3093,14 @@ body.is-ctl-product {
   transition: transform 0.18s ease, box-shadow 0.25s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .rg-hero__btn--primary {
-  background-color: #cd8c4a;
+  background-color: #a05c2a; /* diepere terracotta → wit ≈ 5.2:1 (WCAG AA) */
   color: #fff !important;
-  box-shadow: 0 12px 28px -12px rgba(205, 140, 74, 0.95);
+  box-shadow: 0 12px 28px -12px rgba(160, 92, 42, 0.95);
 }
 .rg-hero__btn--primary:hover {
-  background-color: #a4703b;
+  background-color: #8a4e23;
   transform: translateY(-3px);
-  box-shadow: 0 20px 38px -14px rgba(205, 140, 74, 1);
+  box-shadow: 0 20px 38px -14px rgba(160, 92, 42, 1);
 }
 /* Pijl op de primaire CTA — schuift mee op hover */
 .rg-hero__btn--primary::after {
