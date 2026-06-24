@@ -2558,21 +2558,22 @@ body.is-ctl-product {
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
 
+/* Mobile-first: 1 kolom. Op desktop wordt het een bento: 1 grote links,
+   3 kleine rechts (zie media queries onderaan sectie 25). */
 .rg-cat-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-flow: dense;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   max-width: 1600px;
   margin: 2.5rem auto;
-  padding: 0 40px;
+  padding: 0 15px;
 }
 
 .rg-cat-tile {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;           /* staande kaart; eleganter dan platte balk */
+  aspect-ratio: 3 / 2;           /* mobiel: liggende kaart */
   border-radius: 16px;
   overflow: hidden;
   text-decoration: none !important;
@@ -2583,12 +2584,6 @@ body.is-ctl-product {
 .rg-cat-tile:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 42px -22px rgba(45, 69, 40, 0.6);
-}
-
-/* Eén categorie uitlichten: 2 koloms breed (asymmetrisch). */
-.rg-cat-tile--feature {
-  grid-column: span 2;
-  aspect-ratio: 8 / 5;
 }
 
 .rg-cat-tile__img {
@@ -2671,16 +2666,33 @@ body.is-ctl-product {
   line-height: 1.3;
 }
 
-@media (max-width: 1200px) {
-  .rg-cat-grid { grid-template-columns: repeat(3, 1fr); }
+/* >= 576px: 2 koloms staande kaarten; uitgelichte kaart over volle breedte. */
+@media (min-width: 576px) {
+  .rg-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 40px;
+  }
+  .rg-cat-tile { aspect-ratio: 4 / 5; }
+  .rg-cat-tile--feature { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 }
-@media (max-width: 991px) {
-  .rg-cat-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 575px) {
-  .rg-cat-grid { grid-template-columns: 1fr; padding: 0 15px; }
-  .rg-cat-tile,
-  .rg-cat-tile--feature { grid-column: auto; aspect-ratio: 3 / 2; }
+
+/* >= 992px: bento — 1 grote kaart links (volle hoogte), 3 kleine rechts.
+   Zet .rg-cat-tile--feature op de eerste <a>; de andere 3 vullen rechts. */
+@media (min-width: 992px) {
+  .rg-cat-grid {
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    height: clamp(460px, 44vw, 660px);
+  }
+  .rg-cat-tile {
+    aspect-ratio: auto;   /* cel-hoogte (grid-rows) bepaalt de hoogte */
+    height: 100%;
+  }
+  .rg-cat-tile--feature {
+    grid-column: 1;
+    grid-row: 1 / -1;     /* volle hoogte links */
+    aspect-ratio: auto;
+  }
 }
 
 
