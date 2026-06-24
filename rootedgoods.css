@@ -2558,6 +2558,20 @@ body.is-ctl-product {
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
 
+/* Sectietitel boven de categorie-grid (lijnt uit met de grid). */
+.rg-cat-heading {
+  max-width: 1600px;
+  margin: 3rem auto 0;
+  padding: 0 15px;
+  color: #2d4528;
+  font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+@media (min-width: 576px) {
+  .rg-cat-heading { padding: 0 40px; }
+}
+
 /* Mobile-first: 1 kolom. Op desktop wordt het een bento: 1 grote links,
    3 kleine rechts (zie media queries onderaan sectie 25). */
 .rg-cat-grid {
@@ -2565,7 +2579,7 @@ body.is-ctl-product {
   grid-template-columns: 1fr;
   gap: 1.25rem;
   max-width: 1600px;
-  margin: 2.5rem auto;
+  margin: 1.25rem auto 2.5rem;   /* kleine top-marge = afstand tot de titel */
   padding: 0 15px;
 }
 
