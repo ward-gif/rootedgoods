@@ -3344,19 +3344,23 @@ body.is-ctl-product {
 .rg-cta-note {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  max-width: 240px;
+  gap: 0.5rem;
+  max-width: 250px;
   font-style: italic;
   font-size: 1rem;
   line-height: 1.25;
   color: #6f7e66;
   transform: rotate(-2deg);
 }
-.rg-cta-note__arrow {
+/* Gebogen pijl (CSS-mask, geen inline SVG → overleeft de CMS-sanitizer). */
+.rg-cta-note::before {
+  content: "";
   flex: 0 0 auto;
   width: 60px;
   height: 42px;
-  color: #a4703b;
+  background-color: #a4703b;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M86 54 C58 52 22 44 12 14'/%3E%3Cpath d='M12 14 l13 7 M12 14 l7 13'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M86 54 C58 52 22 44 12 14'/%3E%3Cpath d='M12 14 l13 7 M12 14 l7 13'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
