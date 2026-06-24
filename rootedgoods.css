@@ -3017,8 +3017,6 @@ body.is-ctl-product {
 
 /* ------------------------------------------------------------
    HERO — content-opmaak (.rg-hero), gebruikt door de landing-header.
-   (Styling voor het losse 'oneliner' cms-block-text-hero is verwijderd —
-   schone lei voor een nieuwe opzet.)
    ------------------------------------------------------------ */
 .rg-hero {
   max-width: 880px;
@@ -3259,26 +3257,64 @@ body.is-ctl-product {
 }
 
 .rg-statement__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: clamp(0.78rem, 0.7rem + 0.35vw, 1rem);
-  color: #a4703b; /* oker accent — gelijk aan hero-eyebrow, AA-veilig op cream */
-  margin: 0 0 1.3rem 0;
-}
-.rg-statement__title {
-  font-size: clamp(2rem, 1.1rem + 2.9vw, 3.4rem);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: #2d4528;
+  font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem);
+  color: #a4703b;
   margin: 0 0 1.5rem 0;
 }
+.rg-statement__kicker::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background-color: currentColor;
+  flex: 0 0 auto;
+}
+.rg-statement__title {
+  font-size: clamp(2.5rem, 1.3rem + 4.3vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: #2d4528;
+  margin: 0 0 1.6rem 0;
+}
 .rg-statement__sub {
-  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
   line-height: 1.6;
   color: #3f4f3a;
   max-width: 46ch;
   margin: 0;
+}
+.rg-statement__cta {
+  margin-top: clamp(1.8rem, 1rem + 1.6vw, 2.8rem);
+}
+
+/* Scroll-reveal: content + kaart komen omhoog/faden in als de sectie in
+   beeld scrollt (CSS scroll-driven; valt terug op reveal-bij-load in
+   browsers zonder view()-timeline). */
+@keyframes rgStatementIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@supports (animation-timeline: view()) {
+  .rg-statement__content,
+  .rg-statement__media {
+    animation: rgStatementIn linear both;
+    animation-timeline: view();
+  }
+  .rg-statement__content { animation-range: entry 0% entry 42%; }
+  .rg-statement__media   { animation-range: entry 8% entry 52%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-statement__content,
+  .rg-statement__media {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Europa-kaart — statisch, puur visueel.
