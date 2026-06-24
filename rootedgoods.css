@@ -3230,6 +3230,34 @@ body.is-ctl-product {
   background-size: 200px 200px;
 }
 
+/* Klikbaar-hover: tegels met een link tonen op hover een donkergroene tint +
+   witte cirkel met terracotta "bekijk"-pijl. Alleen op tegels die echt een
+   <a> bevatten (:has(a)) → geen misleidende hover op niet-gelinkte tegels. */
+.image-row-spotlight .cms-block-element:has(a) {
+  cursor: pointer;
+}
+.image-row-spotlight .cms-image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: rgba(45, 69, 40, 0.42);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23ffffff'/%3E%3Cpath d='M18.5 29.5 L29.5 18.5 M21 18.5 H29.5 V27' fill='none' stroke='%23ad6331' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 46px 46px;
+}
+.image-row-spotlight .cms-block-element:has(a):hover .cms-image-container::before {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-row-spotlight .cms-image-container::before { transition: none !important; }
+}
+
 /* Entree: tiles faden gestaffeld omhoog (transform op block-element zelf
    wordt niet geclipt door z'n eigen overflow:hidden). */
 .cms-section:has(.landing-header) .image-row-spotlight .cms-block-element {
