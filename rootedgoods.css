@@ -2978,8 +2978,8 @@ body.is-ctl-product {
      bovenste linear-gradient) zodat het naadloos overloopt naar de sectie
      eronder. */
   background-image:
-    linear-gradient(to bottom, rgba(247, 245, 242, 0) 45%, #F7F5F2 80%),
-    radial-gradient(60% 55% at 50% 40%, rgba(205, 140, 74, 0.20) 0%, rgba(205, 140, 74, 0) 62%);
+    linear-gradient(to bottom, rgba(247, 245, 242, 0) 48%, #F7F5F2 82%),
+    radial-gradient(85% 70% at 50% 0%, rgba(205, 140, 74, 0.22) 0%, rgba(205, 140, 74, 0) 58%);
 }
 /* Subtiele filmkorrel over de gloed; gemaskeerd zodat 'ie onderaan wegvalt
    en de egale overgang behouden blijft. Achter de content (z-index:-1). */
@@ -3286,12 +3286,13 @@ body.is-ctl-product {
   width: 34px;
   height: 2px;
   background-color: currentColor;
+  opacity: 0.55; /* subtieler, gelijk aan de landing-eyebrow lijntjes */
   flex: 0 0 auto;
 }
 .rg-statement__title {
-  font-size: clamp(3rem, 0.6rem + 7.2vw, 7rem);
+  font-size: clamp(3.2rem, 0.4rem + 8vw, 8rem);
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 1.08; /* iets ruimer → gelijkmatige regelafstand */
   letter-spacing: -0.02em;
   color: #2d4528;
   margin: 0;
@@ -3301,8 +3302,8 @@ body.is-ctl-product {
 .rg-statement__cta {
   margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  align-items: flex-start;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 .rg-statement__cta-btn {
@@ -3340,11 +3341,13 @@ body.is-ctl-product {
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
 }
-/* Handgeschreven annotatie naast de knop, met een gebogen pijl ernaartoe. */
+/* Handgeschreven annotatie naast de knop, met een gebogen pijl ernaartoe.
+   Pijl iets lager dan de knop, tekst nog iets lager (descending feel). */
 .rg-cta-note {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 0.6rem;
   max-width: 250px;
   font-style: italic;
   font-size: 1rem;
@@ -3352,15 +3355,20 @@ body.is-ctl-product {
   color: #6f7e66;
   transform: rotate(-2deg);
 }
-/* Gebogen pijl (CSS-mask, geen inline SVG → overleeft de CMS-sanitizer). */
+/* Gebogen pijl met duidelijke kop (CSS-mask, geen inline SVG → overleeft de
+   CMS-sanitizer). Wijst naar links richting de knop. */
 .rg-cta-note::before {
   content: "";
   flex: 0 0 auto;
-  width: 60px;
-  height: 42px;
+  width: 64px;
+  height: 50px;
+  margin-top: 0.5rem;
   background-color: #a4703b;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M86 54 C58 52 22 44 12 14'/%3E%3Cpath d='M12 14 l13 7 M12 14 l7 13'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M86 54 C58 52 22 44 12 14'/%3E%3Cpath d='M12 14 l13 7 M12 14 l7 13'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M88 16 C64 56 40 62 16 54'/%3E%3Cpath d='M16 54 l16 -7'/%3E%3Cpath d='M16 54 l9 15'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M88 16 C64 56 40 62 16 54'/%3E%3Cpath d='M16 54 l16 -7'/%3E%3Cpath d='M16 54 l9 15'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.rg-cta-note__text {
+  margin-top: 1.4rem; /* tekst nog iets verder naar beneden dan de pijl */
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
