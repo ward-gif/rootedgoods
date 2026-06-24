@@ -3267,7 +3267,10 @@ body.is-ctl-product {
 
 /* Zelfde styling als de landing-eyebrow ("Stay true to your roots"):
    lijntjes flankeren het label aan beide kanten. */
-.rg-statement__kicker {
+/* Hogere specificiteit (.rg-statement ervoor) zodat dit een eventuele
+   theme-regel '.cms-element-text p' verslaat — anders wordt de <p>-kicker
+   dikker gerenderd dan de hero-eyebrow (<h4>). */
+.rg-statement .rg-statement__kicker {
   display: inline-flex;
   align-items: center;
   gap: 0.9rem;
@@ -3357,9 +3360,9 @@ body.is-ctl-product {
 .rg-cta-arrow {
   flex: 0 0 auto;
   align-self: flex-start;
-  width: clamp(56px, 6.5vw, 84px);
+  width: clamp(38px, 4vw, 56px);
   height: auto;
-  margin-top: -0.5rem; /* kop iets boven de knop-top → wijst omhoog naar de knop */
+  margin-top: -0.4rem; /* kop iets boven de knop-top → wijst omhoog naar de knop */
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
