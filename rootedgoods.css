@@ -2974,12 +2974,26 @@ body.is-ctl-product {
   display: flex;
   flex-direction: column;
   background-color: #F7F5F2;
-  /* Warme glow alleen bovenin; alles onder ~60% is volledig #F7F5F2 (geen
-     donkere rand links/onder) → naadloze overgang naar de blokken eronder. */
+  /* Eén warme gloed vanuit het midden; onderkant blijft egaal #F7F5F2 (via de
+     bovenste linear-gradient) zodat het naadloos overloopt naar de sectie
+     eronder. */
   background-image:
-    linear-gradient(to bottom, rgba(247, 245, 242, 0) 26%, #F7F5F2 60%),
-    radial-gradient(70% 46% at 88% 5%, rgba(205, 140, 74, 0.18) 0%, rgba(205, 140, 74, 0) 55%),
-    radial-gradient(46% 30% at 4% 12%, rgba(122, 155, 111, 0.10) 0%, rgba(122, 155, 111, 0) 60%);
+    linear-gradient(to bottom, rgba(247, 245, 242, 0) 45%, #F7F5F2 80%),
+    radial-gradient(60% 55% at 50% 40%, rgba(205, 140, 74, 0.20) 0%, rgba(205, 140, 74, 0) 62%);
+}
+/* Subtiele filmkorrel over de gloed; gemaskeerd zodat 'ie onderaan wegvalt
+   en de egale overgang behouden blijft. Achter de content (z-index:-1). */
+.cms-section:has(.landing-header)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 72%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 72%);
 }
 
 /* Inner wrapper vult de sectie (flex:1) i.p.v. een eigen calc-hoogte →
@@ -3044,11 +3058,11 @@ body.is-ctl-product {
 }
 .rg-hero__eyebrow {
   font-weight: 800 !important;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: clamp(0.78rem, 0.7rem + 0.35vw, 1rem) !important;
-  color: #a4703b !important; /* iets dieper dan #a4703b → haalt WCAG AA op cream */
-  margin: 0 0 clamp(0.9rem, 0.65rem + 0.7vw, 1.4rem) 0 !important;
+  font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem) !important;
+  color: #a4703b !important;
+  margin: 0 0 clamp(1rem, 0.7rem + 0.9vw, 1.5rem) 0 !important;
 }
 .rg-hero__title {
   font-size: clamp(2.4rem, 1.35rem + 3.6vw, 4.75rem) !important;
@@ -3275,36 +3289,39 @@ body.is-ctl-product {
   flex: 0 0 auto;
 }
 .rg-statement__title {
-  font-size: clamp(2.8rem, 1rem + 6vw, 6rem);
+  font-size: clamp(3rem, 0.6rem + 7.2vw, 7rem);
   font-weight: 700;
-  line-height: 1.03;
+  line-height: 1.02;
   letter-spacing: -0.02em;
   color: #2d4528;
   margin: 0;
 }
-/* Inline CTA aan het eind van de statement (Merchery-stijl pill). */
-.rg-statement__inline-cta {
+
+/* CTA-blok: vrijstaande knop + handgeschreven annotatie met pijl ernaartoe. */
+.rg-statement__cta {
+  margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.rg-statement__cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  vertical-align: middle;
-  margin-left: 0.5em;
-  transform: translateY(-0.1em);
+  gap: 0.55rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: clamp(0.9rem, 0.5rem + 0.7vw, 1.1rem);
-  line-height: 1;
-  letter-spacing: 0.01em;
+  font-size: 1.05rem;
   text-decoration: none !important;
   color: #fff !important;
   background-color: #cd8c4a;
-  padding: 0.75em 1.3em;
+  padding: 0.95rem 2.1rem;
   border-radius: 999px;
   box-shadow: 0 12px 26px -12px rgba(205, 140, 74, 0.95);
   transition: transform 0.18s ease, box-shadow 0.22s ease, background-color 0.2s ease;
   white-space: nowrap;
 }
-.rg-statement__inline-cta::after {
+.rg-statement__cta-btn::after {
   content: "";
   width: 1.05em;
   height: 1.05em;
@@ -3313,15 +3330,33 @@ body.is-ctl-product {
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
   transition: transform 0.2s ease;
 }
-.rg-statement__inline-cta:hover {
+.rg-statement__cta-btn:hover {
   background-color: #a4703b;
-  transform: translateY(-0.1em) translateY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 18px 34px -14px rgba(205, 140, 74, 1);
 }
-.rg-statement__inline-cta:hover::after { transform: translateX(4px); }
-.rg-statement__inline-cta:focus-visible {
+.rg-statement__cta-btn:hover::after { transform: translateX(4px); }
+.rg-statement__cta-btn:focus-visible {
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
+}
+/* Handgeschreven annotatie naast de knop, met een gebogen pijl ernaartoe. */
+.rg-cta-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 240px;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #6f7e66;
+  transform: rotate(-2deg);
+}
+.rg-cta-note__arrow {
+  flex: 0 0 auto;
+  width: 60px;
+  height: 42px;
+  color: #a4703b;
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
@@ -3357,6 +3392,40 @@ body.is-ctl-product {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* Desktop: kaart schuift naar links en overlapt deels met de titel.
+   Content boven de kaart (z-index) zodat de tekst leesbaar blijft. */
+@media (min-width: 992px) {
+  .rg-statement__content {
+    position: relative;
+    z-index: 2;
+  }
+  .rg-statement__media {
+    position: relative;
+    z-index: 1;
+    margin-left: clamp(-9rem, -7vw, -3rem);
+  }
+}
+
+/* ------------------------------------------------------------
+   Tekst-accent: nadruk op losse woorden in h1/h2 zonder dat het
+   te druk wordt. .rg-em = oker-kleur; .rg-em--mark = zachte
+   highlighter-veeg eronder. Gebruik op een <span> om een woord.
+   ------------------------------------------------------------ */
+.rg-em {
+  color: #cd8c4a;
+}
+.rg-em--mark {
+  background-image: linear-gradient(transparent 62%, rgba(205, 140, 74, 0.28) 62%);
+  background-repeat: no-repeat;
+  padding: 0 0.05em;
+}
+.rg-em--underline {
+  text-decoration: underline;
+  text-decoration-color: #cd8c4a;
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.12em;
 }
 
 /* Europa-kaart — statisch, puur visueel.
