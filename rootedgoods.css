@@ -3275,8 +3275,9 @@ body.is-ctl-product {
   flex: 0 0 auto;
 }
 .rg-statement__title {
-  font-size: clamp(2.5rem, 1.3rem + 4.3vw, 4.6rem);
-  line-height: 1.06;
+  font-size: clamp(2.6rem, 1.3rem + 4.8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
   letter-spacing: -0.015em;
   color: #2d4528;
   margin: 0 0 1.6rem 0;
