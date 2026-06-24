@@ -3179,7 +3179,7 @@ body.is-ctl-product {
 
 /* Lage/laptop-schermen (breed maar weinig hoogte): titel + ritme + spotlight
    subtieler zodat alles binnen de fold past mét onderruimte. */
-@media (min-width: 992px) and (max-height: 960px) {
+@media (min-width: 992px) and (max-height: 1080px) {
   .rg-hero__title {
     font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem) !important;
     margin: 0 0 clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem) 0 !important;
@@ -3201,7 +3201,7 @@ body.is-ctl-product {
 }
 
 /* Extra krap (kleine laptops): nog een tandje subtieler. */
-@media (min-width: 992px) and (max-height: 820px) {
+@media (min-width: 992px) and (max-height: 880px) {
   .rg-hero__title { font-size: clamp(1.9rem, 0.8rem + 2.2vw, 3.1rem) !important; }
   .image-row-spotlight .cms-image-container,
   .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(12vw, 17vh) !important; }
