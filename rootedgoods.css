@@ -194,6 +194,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .main-navigation-link:hover [itemprop="name"] {
   color: #cd8c4a !important;
 }
+/* Desktop: horizontale link-padding weg en spacing via gap, zodat het
+   nav-blok schoon centreert (geen optische verschuiving) — recht onder de
+   gecentreerde zoekbalk. */
+@media (min-width: 992px) {
+  .nav-main .nav {
+    justify-content: center;
+    gap: 16px;
+  }
+  .nav-main .main-navigation-link {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
 
 /* Navigatie — "Alle categorieën" icoon */
 .main-navigation-link.all-categories .icon-stack {
