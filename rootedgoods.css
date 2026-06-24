@@ -3248,8 +3248,8 @@ body.is-ctl-product {
 
 .rg-statement {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(2.5rem, 5vw, 5rem);
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(2rem, 4vw, 4.5rem);
   align-items: center;
   max-width: 1500px;
   margin: 0 auto;
@@ -3275,12 +3275,53 @@ body.is-ctl-product {
   flex: 0 0 auto;
 }
 .rg-statement__title {
-  font-size: clamp(2.6rem, 1.3rem + 4.8vw, 5rem);
+  font-size: clamp(2.8rem, 1rem + 6vw, 6rem);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
+  line-height: 1.03;
+  letter-spacing: -0.02em;
   color: #2d4528;
-  margin: 0 0 1.6rem 0;
+  margin: 0;
+}
+/* Inline CTA aan het eind van de statement (Merchery-stijl pill). */
+.rg-statement__inline-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  vertical-align: middle;
+  margin-left: 0.5em;
+  transform: translateY(-0.1em);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 0.5rem + 0.7vw, 1.1rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-decoration: none !important;
+  color: #fff !important;
+  background-color: #cd8c4a;
+  padding: 0.75em 1.3em;
+  border-radius: 999px;
+  box-shadow: 0 12px 26px -12px rgba(205, 140, 74, 0.95);
+  transition: transform 0.18s ease, box-shadow 0.22s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+.rg-statement__inline-cta::after {
+  content: "";
+  width: 1.05em;
+  height: 1.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+.rg-statement__inline-cta:hover {
+  background-color: #a4703b;
+  transform: translateY(-0.1em) translateY(-2px);
+  box-shadow: 0 18px 34px -14px rgba(205, 140, 74, 1);
+}
+.rg-statement__inline-cta:hover::after { transform: translateX(4px); }
+.rg-statement__inline-cta:focus-visible {
+  outline: 3px solid rgba(45, 69, 40, 0.55);
+  outline-offset: 3px;
 }
 .rg-statement__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
