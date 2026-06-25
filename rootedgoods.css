@@ -841,11 +841,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow-y: visible !important;
   /* Start op exact dezelfde boxed-rand als .rg-cat-grid (max-width 1600 + 40px),
      zodat de eerste kaart uitlijnt met de titel/categorie-sectie erboven.
-     tns-ovh (overflow-x hidden) clipt hier links -> geen loop-kloon zichtbaar.
      Op <=1600px valt dit terug op 40px; rechts bleedt via margin-right. */
   padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
   padding-bottom: 80px !important;             /* ruimte voor nav-buttons + hun shadow */
   margin-right: -150px !important;
+  /* Zachte fade vlak links van de eerste kaart i.p.v. een harde snede:
+     alles links van de boxed-rand is transparant, met een 56px overgang.
+     De eerste kaart (op de rand) blijft scherp; kaarten 'dissolven' netjes
+     weg als je naar links slidet, en de loop-kloon links blijft onzichtbaar. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 56px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
+  mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 56px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
   box-sizing: border-box !important;
   position: relative;
 }
@@ -854,13 +859,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   overflow: visible !important;
 }
 
-/* TinySlider's clip-containers: horizontaal clippen (clones links/rechts
-   blijven verborgen) maar verticaal toelaten zodat hover-shadow van tiles
-   niet wordt afgesneden. Zonder padding-bottom zou de shadow strak op de
-   bottom-edge geclipt worden. */
+/* TinySlider's clip-containers: horizontaal NIET clippen, zodat kaarten links
+   tot de boxed-rand kunnen doorlopen en daar via de mask-fade op
+   .home-productslider zacht wegvloeien (i.p.v. een harde snede). De
+   schermrand-clip + linker-fade zitten op .home-productslider zelf.
+   Verticaal toelaten zodat hover-shadow van tiles niet wordt afgesneden. */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh {
-  overflow-x: hidden !important;
+  overflow-x: visible !important;
   overflow-y: visible !important;
   padding-bottom: 24px !important;
 }
