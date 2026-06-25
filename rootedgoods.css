@@ -3046,12 +3046,23 @@ body.is-ctl-product {
 }
 .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
   --bs-gutter-x: 4rem;                 /* ruimte tussen beeld en tekst */
-  align-items: center !important;      /* beeld verticaal gecentreerd t.o.v. tekst */
+  align-items: stretch !important;     /* beeld even hoog als de tekstkolom */
 }
-/* Het cover-beeld netjes afgerond, gelijk aan de andere blokken */
+/* Beeld vult de volledige hoogte van de tekstkolom -> lijnt in elk blok
+   identiek uit (boven bij de titel, onder bij de knop), ongeacht hoeveel
+   tekst er staat. Netjes afgerond, gelijk aan de andere blokken. */
+.cms-section:has(.rg-feature-row__content) .cms-element-image {
+  height: 100%;
+}
 .cms-section:has(.rg-feature-row__content) .cms-image-container {
+  height: 100% !important;
   border-radius: 12px;
   overflow: hidden;
+}
+.cms-section:has(.rg-feature-row__content) .cms-image {
+  height: 100% !important;
+  width: 100%;
+  object-fit: cover;
 }
 @media (min-width: 576px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
