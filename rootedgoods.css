@@ -3916,49 +3916,42 @@ img.rg-europe-map__svg {
 /* ============================================================
    28. CTA-SECTIE — "Vraag een offerte aan"
    ============================================================
-   Boxed, afgeronde banner met achtergrondbeeld + groene scrim.
-   Opbouw (CRO/UX): eyebrow -> Playfair-titel -> subline ->
+   Split-opzet: groen tekstpaneel links (gegarandeerd contrast) + beeld
+   rechts. Opbouw (CRO/UX): eyebrow -> Playfair-titel -> subline ->
    primaire + secundaire CTA -> geruststellende microcopy.
-   Plaats in een tekst-blok; vul de <img src> met je beeld. */
+   Breedte lijnt uit met de tegels (1600 - 2x40). Mobiel: gestapeld. */
 .rg-cta {
-  position: relative;
-  isolation: isolate;
-  max-width: 1600px;
+  display: flex;
+  align-items: stretch;
+  max-width: 1520px;
   margin: 3rem auto;
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  min-height: 420px;
+  background: #2d4528;          /* groen paneel = gegarandeerd contrast */
+  color: #ffffff;
+  min-height: clamp(360px, 30vw, 460px);
 }
-.rg-cta__bg {
+@media (max-width: 1599px) { .rg-cta { margin-inline: 40px; } }
+@media (max-width: 575px)  { .rg-cta { margin-inline: 15px; } }
+
+.rg-cta__inner {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 1.4rem + 3vw, 4rem);
+}
+.rg-cta__media {
+  flex: 1 1 50%;
+  position: relative;
+}
+.rg-cta__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  z-index: 0;
-}
-/* Groene scrim — sterker links (waar de tekst staat) voor leesbaarheid,
-   beeld blijft rechts zichtbaar. */
-.rg-cta::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right,
-    rgba(45, 69, 40, 0.88) 0%,
-    rgba(45, 69, 40, 0.66) 42%,
-    rgba(45, 69, 40, 0.20) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-.rg-cta__inner {
-  position: relative;
-  z-index: 2;
-  max-width: 620px;
-  padding: clamp(2rem, 1.4rem + 3vw, 4rem);
-  color: #ffffff;
+  display: block;
 }
 .rg-cta__eyebrow {
   margin: 0 0 0.9rem 0;
@@ -3969,27 +3962,27 @@ img.rg-europe-map__svg {
   font-size: 0.8rem;
   color: #e9c9a9;                 /* lichte terracotta op donker */
 }
-.rg-cta__title {
+/* .rg-cta ervoor -> wint van theme's .cms-element-text h2 (anders groen). */
+.rg-cta .rg-cta__title {
   font-family: 'Playfair Display', serif !important;
   color: #ffffff !important;
-  font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
+  font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
   font-weight: 700;
   line-height: 1.12;
   margin: 0 0 1rem 0;
 }
 .rg-cta__text {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.12rem);
   line-height: 1.55;
   margin: 0 0 1.8rem 0;
-  max-width: 48ch;
 }
 .rg-cta__actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.9rem;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
 }
 .rg-cta__btn {
   display: inline-flex !important;
@@ -4010,29 +4003,19 @@ img.rg-europe-map__svg {
 .rg-cta__note {
   margin: 0;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.72);
 }
 
-/* Mobiel: scrim over de volle breedte, ruimere tap-targets, knoppen vol. */
+/* Mobiel: gestapeld — beeld boven, tekstpaneel onder; knoppen vol-breed. */
 @media (max-width: 767px) {
   .rg-cta {
+    flex-direction: column;
     min-height: 0;
-    margin: 2rem auto;
+    margin: 2rem 15px;
   }
-  .rg-cta::after {
-    background: linear-gradient(to bottom,
-      rgba(45, 69, 40, 0.72) 0%,
-      rgba(45, 69, 40, 0.86) 100%);
-  }
-  .rg-cta__inner {
-    max-width: none;
-    width: 100%;
-    text-align: center;
-  }
-  .rg-cta__text {
-    max-width: none;
-    margin-left: auto;
-    margin-right: auto;
+  .rg-cta__media {
+    order: -1;
+    min-height: 200px;
   }
   .rg-cta__actions {
     flex-direction: column;
