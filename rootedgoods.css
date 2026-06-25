@@ -839,7 +839,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  padding-left: clamp(15px, 1.5vw, 40px) !important;
+  /* Start op exact dezelfde boxed-rand als .rg-cat-grid (max-width 1600 + 40px),
+     zodat de eerste kaart uitlijnt met de titel/categorie-sectie erboven.
+     tns-ovh (overflow-x hidden) clipt hier links -> geen loop-kloon zichtbaar.
+     Op <=1600px valt dit terug op 40px; rechts bleedt via margin-right. */
+  padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
   padding-bottom: 80px !important;             /* ruimte voor nav-buttons + hun shadow */
   margin-right: -150px !important;
   box-sizing: border-box !important;
@@ -2719,23 +2723,14 @@ body.is-ctl-product {
    --rg-edge = afstand van schermrand tot de boxed-content-rand.
    ============================================================ */
 @media (min-width: 992px) {
-  /* Kop + knoppen boven de slider op de boxed-rand */
+  /* Kop + knoppen boven de slider op dezelfde boxed-rand als de
+     categorie-grid (de slider-uitlijning zelf zit in sectie 10 via
+     .home-productslider padding-left). */
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
     max-width: 1600px;
     margin-inline: auto;
     padding-left: 40px !important;
     padding-right: 40px !important;
-  }
-
-  /* De sectie clipt op de schermranden -> rechts bleedt de slider vol-breed. */
-  .home-productslider .cms-block-container { overflow: hidden; }
-
-  /* Het slider-venster begint op de boxed-rand en clipt daar links.
-     Zo is de loop-kloon links on-load weg, maar sliden blijft werken
-     (kaarten verschijnen/verdwijnen netjes op de content-rand). */
-  .home-productslider .tns-ovh {
-    overflow: hidden;
-    margin-left: calc(max((100vw - 1600px) / 2, 0px) + 40px);
   }
 }
 
