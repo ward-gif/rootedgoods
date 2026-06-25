@@ -843,7 +843,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
      zodat de eerste kaart uitlijnt met de titel/categorie-sectie erboven.
      Op <=1600px valt dit terug op 40px; rechts bleedt via margin-right. */
   padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
-  padding-top: 60px !important;                /* band boven de kaarten voor de nav-arrows (binnen de box, niet geclipt) */
   padding-bottom: 40px !important;             /* ruimte voor hover-shadow */
   margin-right: -150px !important;
   /* Geen mask-fade meer nodig: de slider loopt niet (zie rootedgoods.js 2.0),
@@ -898,15 +897,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider .product-slider-container { cursor: grab; }
 .home-productslider .product-slider-container:active { cursor: grabbing; }
 
-/* Custom nav-container rechtsBOVEN de slider (boven de kaarten, in de rij
-   van de categorie-knoppen). right lijnt uit op de boxed-rechterrand:
-   container-rechterrand = schermrand + 150 (margin-right -150), dus
-   150 + boxed-offset terug = de content-rand. */
+/* Het kop-blok boven de slider wordt de positie-context voor de nav
+   (full-width, niet overflow-geclipt). De nav (via JS hierin gehangen)
+   staat op de knoppen-rij rechts, een klein stukje van de schermrand. */
+.cms-block-text:has(+ .home-productslider) {
+  position: relative;
+}
 .rg-slider-nav {
   position: absolute;
-  top: 8px;                /* in de padding-top-band boven de kaarten (binnen de box) */
-  bottom: auto;
-  right: calc(max((100vw - 1600px) / 2, 0px) + 40px + 150px);
+  bottom: 22px;            /* lijnt uit met de categorie-knoppen-rij */
+  right: 40px;             /* klein stukje van de rechterrand */
   display: flex;
   gap: 10px;
   z-index: 10;

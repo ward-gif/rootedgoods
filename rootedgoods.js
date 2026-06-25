@@ -273,7 +273,12 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.home-productslider').forEach(function (slider) {
     var track = slider.querySelector('.product-slider-container');
     if (!track) return;
-    if (slider.querySelector('.rg-slider-nav')) return;
+
+    // Nav in het KOP-blok boven de slider hangen i.p.v. in de slider zelf:
+    // dat blok is full-width én niet overflow-geclipt, dus de arrows kunnen
+    // op één lijn met de categorie-knoppen staan, dicht bij de rechterrand.
+    var host = slider.previousElementSibling || slider;
+    if (host.querySelector('.rg-slider-nav')) return;
 
     var nav = document.createElement('div');
     nav.className = 'rg-slider-nav';
@@ -284,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '<button type="button" class="rg-slider-nav__btn rg-slider-nav__btn--next" aria-label="Volgende producten">' +
         '<span class="rg-slider-nav__chev" aria-hidden="true"></span>' +
       '</button>';
-    slider.appendChild(nav);
+    host.appendChild(nav);
 
     function shiftTransform(direction) {
       var item = track.querySelector('.product-slider-item');
