@@ -2722,6 +2722,110 @@ body.is-ctl-product {
 
 
 /* ============================================================
+   25a2. SPECIALITEITEN-KAARTEN — zelfde look als categorie-tegels,
+         maar gecentreerde Playfair-titel + subtitel.
+   ============================================================
+   3 gelijke kaarten met achtergrondbeeld, donkergroene dim en
+   gecentreerde tekst. Zet .rg-spec-card op een <a> met daarin een
+   <img class="rg-spec-card__img"> + .rg-spec-card__label. */
+.rg-spec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 1600px;
+  margin: 1.25rem auto 2.5rem;
+  padding: 0 15px;
+}
+
+.rg-spec-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;            /* mobiel: liggende kaart */
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none !important;
+  background-color: #EAE3D7;
+  box-shadow: 0 14px 30px -22px rgba(45, 69, 40, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.rg-spec-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 42px -22px rgba(45, 69, 40, 0.6);
+}
+
+.rg-spec-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.rg-spec-card:hover .rg-spec-card__img,
+.rg-spec-card:focus-visible .rg-spec-card__img {
+  transform: scale(1.07);
+}
+
+/* Donkergroene dim — iets sterker in het midden zodat de gecentreerde
+   tekst overal leesbaar blijft, maar het beeld zichtbaar blijft. */
+.rg-spec-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(45, 69, 40, 0.30) 0%,
+    rgba(45, 69, 40, 0.58) 50%,
+    rgba(45, 69, 40, 0.30) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Tekstblok gecentreerd over de image */
+.rg-spec-card__label {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.4rem;
+  padding: 1.5rem;
+  pointer-events: none;
+}
+
+.rg-spec-card__title {
+  font-family: 'Playfair Display', serif !important;
+  color: #ffffff !important;
+  font-size: clamp(1.5rem, 1.2rem + 0.9vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.rg-spec-card__sub {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.35;
+  max-width: 32ch;
+}
+
+/* >= 768px: 3 kolommen naast elkaar, staande kaarten. */
+@media (min-width: 768px) {
+  .rg-spec-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 40px;
+  }
+  .rg-spec-card { aspect-ratio: 3 / 4; }
+}
+
+
+/* ============================================================
    25b. PRODUCT-SLIDER — uitlijnen met de categorie-sectie + bleed
    Op groot scherm: kop + eerste kaart starten op exact dezelfde
    boxed-rand als .rg-cat-grid (max-width 1600 + 40px), zodat de
