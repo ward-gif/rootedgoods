@@ -2842,8 +2842,8 @@ body.is-ctl-product {
        de kop + knoppen exact uitlijnen met de eerste productkaart,
        ongeacht eventuele sectie-padding. */
     max-width: none;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
   }
 }
 
@@ -3925,16 +3925,15 @@ img.rg-europe-map__svg {
 .rg-cta {
   display: flex;
   align-items: stretch;
-  max-width: 1520px;
-  margin: 3rem auto;
+  /* Zelfde linker-/rechterrand als de tegels (calc + 80) -> CTA lijnt
+     exact uit met categorie/specialiteiten/statement. */
+  margin: 3rem calc(max((100vw - 1600px) / 2, 0px) + 80px);
   border-radius: 20px;
   overflow: hidden;
   background: #2d4528;          /* groen paneel = gegarandeerd contrast */
   color: #ffffff;
   min-height: clamp(360px, 30vw, 460px);
 }
-@media (max-width: 1599px) { .rg-cta { margin-inline: 40px; } }
-@media (max-width: 575px)  { .rg-cta { margin-inline: 15px; } }
 
 .rg-cta__inner {
   flex: 1 1 50%;
