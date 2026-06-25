@@ -2711,6 +2711,35 @@ body.is-ctl-product {
 
 
 /* ============================================================
+   25b. PRODUCT-SLIDER — uitlijnen met de categorie-sectie + bleed
+   Op groot scherm: kop + eerste kaart starten op exact dezelfde
+   boxed-rand als .rg-cat-grid (max-width 1600 + 40px), zodat de
+   "breuk" in breedte verdwijnt. De slider bleedt vanaf die rand
+   naar de schermranden zodra je slidet (zoals Bambook).
+   --rg-edge = afstand van schermrand tot de boxed-content-rand.
+   ============================================================ */
+@media (min-width: 992px) {
+  /* Kop + knoppen boven de slider op de boxed-rand */
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
+    max-width: 1600px;
+    margin-inline: auto;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  /* Slider vol-breed laten clippen op de schermranden ... */
+  .home-productslider .cms-block-container { overflow: hidden; }
+  .home-productslider .tns-ovh { overflow: hidden; }
+
+  /* ... maar de track laten starten op de boxed-rand.
+     Sliden schuift kaarten vandaaruit naar links de rand over. */
+  .home-productslider .tns-inner {
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
+  }
+}
+
+
+/* ============================================================
    26. RESPONSIVE TUNING — desktop + split-screen
    ============================================================
    Mobiel wordt later gedaan. Deze sectie vult de gaten tussen
