@@ -843,14 +843,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
      zodat de eerste kaart uitlijnt met de titel/categorie-sectie erboven.
      Op <=1600px valt dit terug op 40px; rechts bleedt via margin-right. */
   padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
-  padding-bottom: 80px !important;             /* ruimte voor nav-buttons + hun shadow */
+  padding-bottom: 40px !important;             /* arrows staan nu boven; alleen nog ruimte voor hover-shadow */
   margin-right: -150px !important;
   /* Zachte fade vlak links van de eerste kaart i.p.v. een harde snede:
      alles links van de boxed-rand is transparant, met een 56px overgang.
      De eerste kaart (op de rand) blijft scherp; kaarten 'dissolven' netjes
      weg als je naar links slidet, en de loop-kloon links blijft onzichtbaar. */
-  -webkit-mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 56px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
-  mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 56px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
+  -webkit-mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 20px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
+  mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 20px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
   box-sizing: border-box !important;
   position: relative;
 }
@@ -899,13 +899,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .home-productslider .product-slider-container { cursor: grab; }
 .home-productslider .product-slider-container:active { cursor: grabbing; }
 
-/* Custom nav-container rechtsonder. Compenseer voor margin-right: -150px
-   peek zodat de knoppen netjes binnen de zichtbare cards-rand vallen.
-   bottom: 24px → shadow heeft 20px+ ruimte onder zichzelf, niet afgesneden. */
+/* Custom nav-container rechtsBOVEN de slider (boven de kaarten, in de rij
+   van de categorie-knoppen). right lijnt uit op de boxed-rechterrand:
+   container-rechterrand = schermrand + 150 (margin-right -150), dus
+   150 + boxed-offset terug = de content-rand. */
 .rg-slider-nav {
   position: absolute;
-  bottom: 24px;
-  right: 165px;
+  top: -64px;
+  bottom: auto;
+  right: calc(max((100vw - 1600px) / 2, 0px) + 40px + 150px);
   display: flex;
   gap: 10px;
   z-index: 10;
