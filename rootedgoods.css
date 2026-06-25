@@ -2727,14 +2727,15 @@ body.is-ctl-product {
     padding-right: 40px !important;
   }
 
-  /* Slider vol-breed laten clippen op de schermranden ... */
+  /* De sectie clipt op de schermranden -> rechts bleedt de slider vol-breed. */
   .home-productslider .cms-block-container { overflow: hidden; }
-  .home-productslider .tns-ovh { overflow: hidden; }
 
-  /* ... maar de track laten starten op de boxed-rand.
-     Sliden schuift kaarten vandaaruit naar links de rand over. */
-  .home-productslider .tns-inner {
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
+  /* Het slider-venster begint op de boxed-rand en clipt daar links.
+     Zo is de loop-kloon links on-load weg, maar sliden blijft werken
+     (kaarten verschijnen/verdwijnen netjes op de content-rand). */
+  .home-productslider .tns-ovh {
+    overflow: hidden;
+    margin-left: calc(max((100vw - 1600px) / 2, 0px) + 40px);
   }
 }
 
