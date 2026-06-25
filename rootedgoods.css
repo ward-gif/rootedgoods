@@ -3124,6 +3124,33 @@ body.is-ctl-product {
   margin-bottom: 0.15rem;
 }
 
+/* ------------------------------------------------------------
+   27d. FEATURE-ROW — subtiele scroll-reveal (puur CSS)
+   ------------------------------------------------------------
+   Scroll-driven animation via animation-timeline: view(). Alleen
+   opacity + transform (compositor) -> geen CLS/LCP-impact, CWV-safe.
+   - @supports: browsers zonder support tonen alles gewoon (geen flits).
+   - prefers-reduced-motion: animatie uit voor wie dat instelt.
+   - Beeld en tekst met kleine stagger voor een rustig reveal. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .cms-section:has(.rg-feature-row__content) .cms-element-image,
+    .cms-section:has(.rg-feature-row__content) .cms-element-text {
+      animation: rg-feature-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    /* Tekst iets later dan het beeld -> subtiele stagger */
+    .cms-section:has(.rg-feature-row__content) .cms-element-text {
+      animation-range: entry 12% entry 70%;
+    }
+    @keyframes rg-feature-reveal {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+
 
 /* ============================================================
    28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
