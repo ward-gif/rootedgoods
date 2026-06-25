@@ -2838,10 +2838,12 @@ body.is-ctl-product {
      categorie-grid (de slider-uitlijning zelf zit in sectie 10 via
      .home-productslider padding-left). */
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
-    max-width: 1600px;
-    margin-inline: auto;
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+    /* Zelfde linkerrand-formule als .home-productslider (sectie 10) zodat
+       de kop + knoppen exact uitlijnen met de eerste productkaart,
+       ongeacht eventuele sectie-padding. */
+    max-width: none;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
   }
 }
 
