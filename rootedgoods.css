@@ -3925,15 +3925,18 @@ img.rg-europe-map__svg {
 .rg-cta {
   display: flex;
   align-items: stretch;
-  /* Zelfde linker-/rechterrand als de tegels (calc + 80) -> CTA lijnt
-     exact uit met categorie/specialiteiten/statement. */
-  margin: 3rem calc(max((100vw - 1600px) / 2, 0px) + 80px);
+  /* margin:auto centreert container-onafhankelijk -> lijnt uit met de tegels.
+     1440 = effectieve content-breedte van de tegels (links op 230 @1900). */
+  max-width: 1440px;
+  margin: 3rem auto;
   border-radius: 20px;
   overflow: hidden;
   background: #2d4528;          /* groen paneel = gegarandeerd contrast */
   color: #ffffff;
   min-height: clamp(360px, 30vw, 460px);
 }
+@media (max-width: 1519px) { .rg-cta { margin-inline: 40px; } }
+@media (max-width: 575px)  { .rg-cta { margin-inline: 15px; } }
 
 .rg-cta__inner {
   flex: 1 1 50%;
