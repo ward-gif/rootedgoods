@@ -843,7 +843,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
      zodat de eerste kaart uitlijnt met de titel/categorie-sectie erboven.
      Op <=1600px valt dit terug op 40px; rechts bleedt via margin-right. */
   padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
-  padding-bottom: 40px !important;             /* arrows staan nu boven; alleen nog ruimte voor hover-shadow */
+  padding-top: 60px !important;                /* band boven de kaarten voor de nav-arrows (binnen de box, niet geclipt) */
+  padding-bottom: 40px !important;             /* ruimte voor hover-shadow */
   margin-right: -150px !important;
   /* Geen mask-fade meer nodig: de slider loopt niet (zie rootedgoods.js 2.0),
      dus er staat geen kloon links van de eerste kaart. De eerste kaart start
@@ -903,7 +904,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    150 + boxed-offset terug = de content-rand. */
 .rg-slider-nav {
   position: absolute;
-  top: -64px;
+  top: 8px;                /* in de padding-top-band boven de kaarten (binnen de box) */
   bottom: auto;
   right: calc(max((100vw - 1600px) / 2, 0px) + 40px + 150px);
   display: flex;
