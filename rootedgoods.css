@@ -3130,12 +3130,12 @@ body.is-ctl-product {
 }
 .rg-hero--center .rg-hero__title {
   max-width: 20ch;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .rg-hero--center .rg-hero__subline {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .rg-hero--center .rg-hero__cta,
 .rg-hero--center .rg-hero__usps {
