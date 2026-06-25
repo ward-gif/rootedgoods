@@ -124,6 +124,53 @@ document.addEventListener('DOMContentLoaded', function () {
  * Op andere pagina's faalt querySelector veilig.
  * ===================================================================== */
 
+/* ---- 2.0 Productslider — loop UIT (Bambook-stijl)
+ * Promidata's TinySlider draait standaard met loop:true → er worden
+ * kloon-tegels toegevoegd, waardoor er links van de eerste kaart altijd
+ * een halve tegel "gluurt". Bambook lost dit op door simpelweg NIET te
+ * loopen (geen clones, prev-knop disabled bij start, schone linkerrand,
+ * echte bleed naar de schermrand).
+ *
+ * Wij doen hetzelfde door de slider-opties te herschrijven naar
+ * loop:false VOORDAT de plugin ze leest. Een MutationObserver vangt het
+ * element zodra het tijdens het parsen in de DOM verschijnt — ruim vóór
+ * de plugin-init op DOMContentLoaded. Idempotent + defensief (niets
+ * crasht als de structuur afwijkt).
+ *
+ * LET OP: dit moet vóór plugin-init draaien, dus GEEN DOMContentLoaded-wrap. */
+(function () {
+  function patchOptions(el) {
+    if (!el || el.dataset.rgLoopPatched) return;
+    var raw = el.getAttribute('data-product-slider-options');
+    if (!raw) return;
+    var opts;
+    try { opts = JSON.parse(raw); } catch (e) { return; }
+    opts.slider = opts.slider || {};
+    opts.slider.loop = false;     // geen clones meer
+    opts.slider.rewind = false;   // niet terugspringen naar begin
+    el.setAttribute('data-product-slider-options', JSON.stringify(opts));
+    el.dataset.rgLoopPatched = '1';
+  }
+
+  function scan() {
+    document
+      .querySelectorAll('.home-productslider [data-product-slider-options]')
+      .forEach(patchOptions);
+  }
+
+  // 1. Direct proberen (als het element al geparsed is).
+  scan();
+
+  // 2. En opvangen zodra het verschijnt, vóór de plugin het leest.
+  if (window.MutationObserver) {
+    var obs = new MutationObserver(scan);
+    obs.observe(document.documentElement, { childList: true, subtree: true });
+    // Na load is de plugin geïnit; observer mag stoppen.
+    window.addEventListener('load', function () { obs.disconnect(); });
+  }
+})();
+
+
 /* ---- 2.1 Logo slider — Shopware carousel vervangen door continue scroll
  * Gebruikt window.load (niet DOMContentLoaded) omdat we img.src van
  * de originele carousel kopiëren. Die moet eerst geladen zijn. */

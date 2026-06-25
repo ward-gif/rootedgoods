@@ -845,12 +845,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
   padding-bottom: 40px !important;             /* arrows staan nu boven; alleen nog ruimte voor hover-shadow */
   margin-right: -150px !important;
-  /* Zachte fade vlak links van de eerste kaart i.p.v. een harde snede:
-     alles links van de boxed-rand is transparant, met een 56px overgang.
-     De eerste kaart (op de rand) blijft scherp; kaarten 'dissolven' netjes
-     weg als je naar links slidet, en de loop-kloon links blijft onzichtbaar. */
-  -webkit-mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 20px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
-  mask-image: linear-gradient(to right, transparent 0, transparent calc(max((100vw - 1600px) / 2, 0px) + 40px - 20px), #000 calc(max((100vw - 1600px) / 2, 0px) + 40px));
+  /* Geen mask-fade meer nodig: de slider loopt niet (zie rootedgoods.js 2.0),
+     dus er staat geen kloon links van de eerste kaart. De eerste kaart start
+     schoon op de boxed-rand (padding-left) en kaarten bleeden bij het sliden
+     gewoon tot de schermrand (overflow-x hidden clipt daar). */
   box-sizing: border-box !important;
   position: relative;
 }
