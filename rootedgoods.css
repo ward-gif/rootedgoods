@@ -3045,8 +3045,8 @@ body.is-ctl-product {
   padding-right: 15px !important;
 }
 .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
-  --bs-gutter-x: 4rem;          /* ruimte tussen beeld en tekst */
-  align-items: center;          /* tekst verticaal gecentreerd t.o.v. beeld */
+  --bs-gutter-x: 4rem;                 /* ruimte tussen beeld en tekst */
+  align-items: center !important;      /* beeld verticaal gecentreerd t.o.v. tekst */
 }
 /* Het cover-beeld netjes afgerond, gelijk aan de andere blokken */
 .cms-section:has(.rg-feature-row__content) .cms-image-container {
@@ -3064,8 +3064,9 @@ body.is-ctl-product {
    "rg-feature-reverse". Op desktop draaien de kolommen om (beeld rechts,
    tekst links); op mobiel blijft de natuurlijke stack (beeld boven). */
 @media (min-width: 992px) {
-  .rg-feature-reverse .cms-block-container-row {
-    flex-direction: row-reverse;
+  .cms-block.rg-feature-reverse .cms-block-container-row,
+  .cms-section.rg-feature-reverse .cms-block-container-row {
+    flex-direction: row-reverse !important;
   }
 }
 
