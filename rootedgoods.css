@@ -3025,6 +3025,41 @@ body.is-ctl-product {
   }
 }
 
+/* ------------------------------------------------------------
+   27b. FEATURE-ROW op basis van THEMA-blokken (image-text-cover)
+   ------------------------------------------------------------
+   Aanbevolen aanpak: gebruik een Promidata "Afbeelding + tekst (cover)"
+   blok en zet alleen .rg-feature-row__content (titel/tekst/CTA) in de
+   tekst-kolom. Onderstaande regels boxen de sectie net als category/
+   statement (max-width 1500 + zij-ruimte), centreren de kolommen
+   verticaal en geven wat lucht tussen beeld en tekst.
+
+   Gescoped op secties die een .rg-feature-row__content bevatten, zodat
+   PDP/listing/checkout volledig onaangeroerd blijven. De !important op
+   padding-left/right overschrijft Promidata's inline padding (bv.
+   style="padding: 20px 0 20px 0"). */
+.cms-section:has(.rg-feature-row__content) .cms-block-container {
+  max-width: 1500px;
+  margin-inline: auto;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.cms-section:has(.rg-feature-row__content) .cms-block-container-row {
+  --bs-gutter-x: 4rem;          /* ruimte tussen beeld en tekst */
+  align-items: center;          /* tekst verticaal gecentreerd t.o.v. beeld */
+}
+/* Het cover-beeld netjes afgerond, gelijk aan de andere blokken */
+.cms-section:has(.rg-feature-row__content) .cms-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+}
+@media (min-width: 576px) {
+  .cms-section:has(.rg-feature-row__content) .cms-block-container {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
 
 /* ============================================================
    28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
