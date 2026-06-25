@@ -3047,7 +3047,7 @@ body.is-ctl-product {
   gap: 4rem;
   align-items: center;
   padding: 4rem 40px;
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -3145,7 +3145,7 @@ body.is-ctl-product {
    padding-left/right overschrijft Promidata's inline padding (bv.
    style="padding: 20px 0 20px 0"). */
 .cms-section:has(.rg-feature-row__content) .cms-block-container {
-  max-width: 1500px;
+  max-width: 1600px;
   margin-inline: auto;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -3629,7 +3629,7 @@ body.is-ctl-product {
   grid-template-columns: 1.35fr 1fr;
   gap: clamp(2rem, 4vw, 4.5rem);
   align-items: center;
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 6rem) 40px;
 }
