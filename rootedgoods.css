@@ -4122,3 +4122,96 @@ img.rg-europe-map__svg {
     width: 100%;
   }
 }
+
+/* ============================================================
+   30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhankelijk)
+   ============================================================
+   Probleem: de Promidata-theme geeft .cms-block-container-row een
+   wisselende max-width + centrering, waardoor secties die daarop leunen
+   (categorie/specialiteiten) per load verspringen. Oplossing: in alle
+   content-secties de HORIZONTALE theme-opmaak neutraliseren en de content
+   op één gedeelde lijn zetten via calc(...+80) (~230px @1900). Verticale
+   spacing blijft intact.
+
+   De product-slider deelt dezelfde linkerlijn, maar z'n track bleedt naar
+   rechts (en links bij sliden) tot de schermrand via overflow-x: clip op
+   het volle-breedte blok — clip i.p.v. hidden zodat de kaart-schaduwen
+   (verticaal) zichtbaar blijven, en zonder negatieve marges dus geen
+   horizontale page-overflow/instabiliteit.
+   Dit blok staat bewust als laatste en overschrijft eerdere losse regels. */
+@media (min-width: 992px) {
+
+  /* 1. Neutraliseer horizontale theme-opmaak in de boxed content-secties */
+  .cms-section:has(.rg-cat-grid) .cms-block-container,
+  .cms-section:has(.rg-cat-grid) .cms-block-container[style],
+  .cms-section:has(.rg-cat-grid) .cms-block-container-row,
+  .cms-section:has(.rg-cat-grid) .col-12,
+  .cms-section:has(.rg-cat-grid) .cms-element-text,
+  .cms-section:has(.rg-spec-grid) .cms-block-container,
+  .cms-section:has(.rg-spec-grid) .cms-block-container[style],
+  .cms-section:has(.rg-spec-grid) .cms-block-container-row,
+  .cms-section:has(.rg-spec-grid) .col-12,
+  .cms-section:has(.rg-spec-grid) .cms-element-text,
+  .cms-section:has(.rg-feature-row__content) .cms-block-container,
+  .cms-section:has(.rg-feature-row__content) .cms-block-container[style],
+  .cms-section:has(.rg-feature-row__content) .cms-block-container-row,
+  .cms-section:has(.rg-feature-row__content) .col-12,
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container,
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style],
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container-row,
+  .cms-section:has(.home-productslider) .cms-block-text .col-12,
+  .cms-section:has(.home-productslider) .cms-block-text .cms-element-text {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 2. Zet de container-content op de gedeelde lijn (links + rechts gelijk) */
+  .cms-section:has(.rg-cat-grid) .cms-block-container,
+  .cms-section:has(.rg-spec-grid) .cms-block-container,
+  .cms-section:has(.rg-feature-row__content) .cms-block-container,
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+  }
+
+  /* 3. Grids/heading vullen de container (geen eigen horizontale opmaak) */
+  .rg-cat-grid,
+  .rg-cat-heading,
+  .rg-spec-grid {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 4. SLIDER: zelfde linkerlijn (calc+80), maar bleedt naar de schermrand.
+     Het blok is volle breedte; padding-left zet de eerste kaart op de lijn,
+     padding-right 0 + overflow-x clip laten de track rechts buiten beeld
+     lopen (en links bij sliden). Geen negatieve marges -> geen page-overflow. */
+  .home-productslider {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-right: 0 !important;
+    padding-bottom: 40px !important;
+    box-sizing: border-box !important;
+  }
+  .home-productslider .cms-block-container,
+  .home-productslider .cms-block-container[style],
+  .home-productslider .cms-block-container-row,
+  .home-productslider .col-12,
+  .home-productslider .cms-element-product-slider,
+  .home-productslider .base-slider,
+  .home-productslider .tns-outer,
+  .home-productslider .tns-ovh,
+  .home-productslider .tns-inner {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+}
