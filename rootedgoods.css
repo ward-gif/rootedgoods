@@ -840,14 +840,6 @@ img {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* Slider-container op een VASTE 1360 + margin auto (zelfde stabiele aanpak als
-   de feature-secties) -> onafhankelijk van de instabiele theme-row, dus de
-   kaarten staan altijd op dezelfde lijn (270–1630) als de rest. */
-.home-productslider .cms-block-container,
-.home-productslider .cms-block-container[style] {
-  max-width: 1360px !important;
-  margin-inline: auto !important;
-}
 
 /* Slider — dubbele clip-strategie:
    1. .home-productslider: padding-left duwt content 100px naar rechts,
@@ -883,7 +875,7 @@ img {
    Verticaal toelaten zodat hover-shadow van tiles niet wordt afgesneden. */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh {
-  overflow-x: hidden !important;            /* clipt netjes binnen de gecentreerde content -> geen page-overflow/instabiliteit */
+  overflow-x: hidden !important;            /* clipt netjes binnen de gecentreerde row */
   overflow-y: visible !important;
   padding-bottom: 24px !important;
 }
@@ -2590,23 +2582,6 @@ body.is-ctl-product {
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
 
-/* Cat-sectie: container op 1360 + margin auto (zelfde stabiele aanpak als de
-   slider, theme-onafhankelijk). Grid + heading vullen die container (geen
-   eigen zij-padding op desktop) -> tegels op 270, gelijk aan slider/feature. */
-.cms-section:has(.rg-cat-grid) .cms-block-container,
-.cms-section:has(.rg-cat-grid) .cms-block-container[style] {
-  max-width: 1360px !important;
-  margin-inline: auto !important;
-}
-@media (min-width: 992px) {
-  .rg-cat-grid,
-  .rg-cat-heading {
-    max-width: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 /* Sectietitel boven de categorie-grid (lijnt uit met de grid). */
 .rg-cat-heading {
   max-width: 1600px;
@@ -2766,12 +2741,6 @@ body.is-ctl-product {
    3 gelijke kaarten met achtergrondbeeld, donkergroene dim en
    gecentreerde tekst. Zet .rg-spec-card op een <a> met daarin een
    <img class="rg-spec-card__img"> + .rg-spec-card__label. */
-/* Spec-sectie: zelfde stabiele 1360-aanpak als slider/cat. */
-.cms-section:has(.rg-spec-grid) .cms-block-container,
-.cms-section:has(.rg-spec-grid) .cms-block-container[style] {
-  max-width: 1360px !important;
-  margin-inline: auto !important;
-}
 .rg-spec-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -2779,9 +2748,6 @@ body.is-ctl-product {
   max-width: 1600px;
   margin: 1.25rem auto 2.5rem;
   padding: 0 15px;
-}
-@media (min-width: 992px) {
-  .rg-spec-grid { max-width: none; }    /* vul de 1360-container -> kaarten op 270 */
 }
 
 .rg-spec-card {
@@ -2882,12 +2848,8 @@ body.is-ctl-product {
    naar de schermranden zodra je slidet (zoals Bambook).
    --rg-edge = afstand van schermrand tot de boxed-content-rand.
    ============================================================ */
-/* Kop + knoppen: zelfde vaste 1360 + margin auto als de slider eronder
-   -> staan op exact dezelfde lijn (270), stabiel. */
-.cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
-  max-width: 1360px;
-  margin-inline: auto;
-}
+/* Kop + knoppen gebruiken de natuurlijke gecentreerde container van de theme
+   (geen custom boxing meer) -> lijnen vanzelf uit met de slider eronder. */
 
 /* Knoppen boven de product-slider: gevuld terracotta met witte tekst + pijl. */
 .cms-section:has(.home-productslider) .cms-element-text .btn {
@@ -3193,9 +3155,7 @@ body.is-ctl-product {
    padding-left/right overschrijft Promidata's inline padding (bv.
    style="padding: 20px 0 20px 0"). */
 .cms-section:has(.rg-feature-row__content) .cms-block-container {
-  /* 1360 = effectieve content-breedte van de rest (270–1630 @1900); margin
-     auto centreert container-onafhankelijk -> lijnt uit met categorie/slider. */
-  max-width: 1360px;
+  max-width: 1600px;
   margin-inline: auto;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -3203,8 +3163,6 @@ body.is-ctl-product {
 .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
   --bs-gutter-x: 4rem;                 /* ruimte tussen beeld en tekst */
   align-items: stretch !important;     /* beeld even hoog als de tekstkolom */
-  max-width: none !important;          /* vul de 1360-container i.p.v. theme-row 1440 (die overliep -> 230) */
-  margin-inline: 0 !important;
 }
 /* Beeld vult de volledige hoogte van de tekstkolom -> lijnt in elk blok
    identiek uit (boven bij de titel, onder bij de knop), ongeacht hoeveel
@@ -3222,19 +3180,19 @@ body.is-ctl-product {
   width: 100%;
   object-fit: cover;
 }
-/* Tablet: zij-padding voor lucht (container nog niet op max-width). */
-@media (min-width: 576px) and (max-width: 1439px) {
+@media (min-width: 576px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
     padding-left: 40px !important;
     padding-right: 40px !important;
   }
 }
-/* Groot scherm: geen padding -> de max-width 1360 + margin auto bepaalt de
-   breedte, content valt exact op de lijn van de rest (270–1630). */
-@media (min-width: 1440px) {
+/* Desktop: zelfde linker-/rechterrand (calc + 80) als de tegels/slider-titel,
+   zodat de feature-blokken exact even breed zijn als de rest (niet te breed). */
+@media (min-width: 992px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    max-width: none;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
   }
 }
 
