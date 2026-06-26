@@ -856,16 +856,10 @@ img {
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  /* Start op exact dezelfde boxed-rand als .rg-cat-grid (max-width 1600 + 40px),
-     zodat de eerste kaart uitlijnt met de titel/categorie-sectie erboven.
-     Op <=1600px valt dit terug op 40px; rechts bleedt via margin-right. */
-  padding-left: calc(max((100vw - 1600px) / 2, 0px) + 40px) !important;
+  /* Geen custom padding-left/margin-right meer: de slider gebruikt de
+     natuurlijke gecentreerde container-breedte van de theme (~1400px),
+     net als de categorie-/specialiteiten-blokken -> lijnt vanzelf uit. */
   padding-bottom: 40px !important;             /* ruimte voor hover-shadow */
-  margin-right: -150px !important;
-  /* Geen mask-fade meer nodig: de slider loopt niet (zie rootedgoods.js 2.0),
-     dus er staat geen kloon links van de eerste kaart. De eerste kaart start
-     schoon op de boxed-rand (padding-left) en kaarten bleeden bij het sliden
-     gewoon tot de schermrand (overflow-x hidden clipt daar). */
   box-sizing: border-box !important;
   position: relative;
 }
@@ -881,7 +875,7 @@ img {
    Verticaal toelaten zodat hover-shadow van tiles niet wordt afgesneden. */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh {
-  overflow-x: visible !important;
+  overflow-x: hidden !important;            /* clipt netjes binnen de gecentreerde row */
   overflow-y: visible !important;
   padding-bottom: 24px !important;
 }
@@ -2854,19 +2848,8 @@ body.is-ctl-product {
    naar de schermranden zodra je slidet (zoals Bambook).
    --rg-edge = afstand van schermrand tot de boxed-content-rand.
    ============================================================ */
-@media (min-width: 992px) {
-  /* Kop + knoppen boven de slider op dezelfde boxed-rand als de
-     categorie-grid (de slider-uitlijning zelf zit in sectie 10 via
-     .home-productslider padding-left). */
-  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
-    /* Zelfde linkerrand-formule als .home-productslider (sectie 10) zodat
-       de kop + knoppen exact uitlijnen met de eerste productkaart,
-       ongeacht eventuele sectie-padding. */
-    max-width: none;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-  }
-}
+/* Kop + knoppen gebruiken de natuurlijke gecentreerde container van de theme
+   (geen custom boxing meer) -> lijnen vanzelf uit met de slider eronder. */
 
 /* Knoppen boven de product-slider: gevuld terracotta met witte tekst + pijl. */
 .cms-section:has(.home-productslider) .cms-element-text .btn {
@@ -3049,15 +3032,8 @@ body.is-ctl-product {
 }
 
 
-/* ---- 26.9 Productslider — margin-right schaalt mee op smal ----
-   Desktop peek = -150px / ~380px tile = ~39% (halve tegel).
-   Op tablet (~350px tile) hetzelfde gevoel met -120px = ~34% peek.
-   Oud was -20px → bijna geen peek, niet consistent met desktop intent. */
-@media (max-width: 1200px) {
-  .home-productslider {
-    margin-right: -120px !important;
-  }
-}
+/* ---- 26.9 Productslider — bleed verwijderd; gebruikt nu de natuurlijke
+   gecentreerde theme-breedte, dus geen negatieve margin-right meer. */
 
 
 /* ---- 26.10 Ultra-wide (1920+) — verwijderd.
