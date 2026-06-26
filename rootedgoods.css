@@ -582,6 +582,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   outline-offset: 3px !important;
 }
 
+/* Horizontale overflow clippen — vangt de full-bleed CTA (100vw) op zodat er
+   geen horizontale scrollbalk/layout-verschuiving ontstaat. 'clip' i.p.v.
+   'hidden' zodat sticky/position niet breekt. */
+html {
+  overflow-x: clip;
+}
+
 /* Afbeeldingen niet selecteerbaar/sleepbaar (site-wide) — voorkomt de blauwe
    selectie-overlay bij het slepen van sliders en bij per ongeluk selecteren.
    Klikken/navigeren blijft gewoon werken. */
