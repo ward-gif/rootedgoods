@@ -3186,6 +3186,8 @@ body.is-ctl-product {
 .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
   --bs-gutter-x: 4rem;                 /* ruimte tussen beeld en tekst */
   align-items: stretch !important;     /* beeld even hoog als de tekstkolom */
+  max-width: none !important;          /* vul de 1360-container i.p.v. theme-row 1440 (die overliep -> 230) */
+  margin-inline: 0 !important;
 }
 /* Beeld vult de volledige hoogte van de tekstkolom -> lijnt in elk blok
    identiek uit (boven bij de titel, onder bij de knop), ongeacht hoeveel
