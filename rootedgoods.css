@@ -2590,6 +2590,23 @@ body.is-ctl-product {
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
 
+/* Cat-sectie: container op 1360 + margin auto (zelfde stabiele aanpak als de
+   slider, theme-onafhankelijk). Grid + heading vullen die container (geen
+   eigen zij-padding op desktop) -> tegels op 270, gelijk aan slider/feature. */
+.cms-section:has(.rg-cat-grid) .cms-block-container,
+.cms-section:has(.rg-cat-grid) .cms-block-container[style] {
+  max-width: 1360px !important;
+  margin-inline: auto !important;
+}
+@media (min-width: 992px) {
+  .rg-cat-grid,
+  .rg-cat-heading {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* Sectietitel boven de categorie-grid (lijnt uit met de grid). */
 .rg-cat-heading {
   max-width: 1600px;
@@ -2749,6 +2766,12 @@ body.is-ctl-product {
    3 gelijke kaarten met achtergrondbeeld, donkergroene dim en
    gecentreerde tekst. Zet .rg-spec-card op een <a> met daarin een
    <img class="rg-spec-card__img"> + .rg-spec-card__label. */
+/* Spec-sectie: zelfde stabiele 1360-aanpak als slider/cat. */
+.cms-section:has(.rg-spec-grid) .cms-block-container,
+.cms-section:has(.rg-spec-grid) .cms-block-container[style] {
+  max-width: 1360px !important;
+  margin-inline: auto !important;
+}
 .rg-spec-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -2756,6 +2779,9 @@ body.is-ctl-product {
   max-width: 1600px;
   margin: 1.25rem auto 2.5rem;
   padding: 0 15px;
+}
+@media (min-width: 992px) {
+  .rg-spec-grid { max-width: none; }    /* vul de 1360-container -> kaarten op 270 */
 }
 
 .rg-spec-card {
