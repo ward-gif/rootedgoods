@@ -840,6 +840,15 @@ img {
   margin: 0 !important;
   padding: 0 !important;
 }
+/* 40px interne padding op de kolom (binnen de natuurlijk-gecentreerde row),
+   net als de categorie-tegels -> kaarten lijnen uit met de cat (270),
+   niet 40px verder links. Werkt mét de theme, geen container-hack. */
+@media (min-width: 992px) {
+  .home-productslider .col-12 {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
 
 /* Slider — dubbele clip-strategie:
    1. .home-productslider: padding-left duwt content 100px naar rechts,
@@ -2832,9 +2841,9 @@ body.is-ctl-product {
 @media (min-width: 768px) {
   .rg-spec-grid {
     grid-template-columns: repeat(3, 1fr);
-    /* Geen zij-padding: de kaarten vullen de grid-box, die al samenvalt
-       met de categorie-tegels (230–1670). Padding zou ze extra inspringen. */
-    padding: 0;
+    /* 40px padding net als de categorie-tegels -> kaarten op 270, gelijk
+       aan cat/slider/feature. */
+    padding: 0 40px;
   }
   .rg-spec-card { aspect-ratio: 3 / 4; }
 }
@@ -3191,8 +3200,9 @@ body.is-ctl-product {
 @media (min-width: 992px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
     max-width: none;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    /* +120 (i.p.v. +80) = 40px extra inspring -> gelijk aan de cat-tegels (270). */
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
   }
 }
 
