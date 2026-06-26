@@ -582,6 +582,23 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   outline-offset: 3px !important;
 }
 
+/* Afbeeldingen niet selecteerbaar/sleepbaar (site-wide) — voorkomt de blauwe
+   selectie-overlay bij het slepen van sliders en bij per ongeluk selecteren.
+   Klikken/navigeren blijft gewoon werken. */
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+/* In de product-slider ook tekst niet selecteerbaar tijdens het slepen. */
+.home-productslider,
+.home-productslider * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 /* Scroll-to-top knop — overschrijf pill-styling; vierkant blokje met
    dezelfde radius als de tiles. Target via :has() op icon-arrow-up
    (alleen scroll-up button heeft die in een btn-primary). */
