@@ -582,13 +582,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   outline-offset: 3px !important;
 }
 
-/* Horizontale overflow clippen — vangt de full-bleed CTA (100vw) op zodat er
-   geen horizontale scrollbalk/layout-verschuiving ontstaat. 'clip' i.p.v.
-   'hidden' zodat sticky/position niet breekt. */
-html {
-  overflow-x: clip;
-}
-
 /* Afbeeldingen niet selecteerbaar/sleepbaar (site-wide) — voorkomt de blauwe
    selectie-overlay bij het slepen van sliders en bij per ongeluk selecteren.
    Klikken/navigeren blijft gewoon werken. */
@@ -3975,31 +3968,23 @@ img.rg-europe-map__svg {
 .rg-cta {
   display: flex;
   align-items: stretch;
-  /* Full-bleed afsluiter: breekt uit de container naar volle viewport-breedte
-     (ook als de container padding heeft), geen afronding, sluit onderaan aan
-     op de footer. De tekst binnenin lijnt wél uit met de rest (zie __inner). */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  margin-top: 3rem;
-  margin-bottom: 0;
+  max-width: 1440px;
+  margin: 3rem auto;
+  border-radius: 20px;
   overflow: hidden;
   background: #2d4528;          /* groen paneel = gegarandeerd contrast */
   color: #ffffff;
   min-height: clamp(460px, 40vw, 620px);
 }
+@media (max-width: 1519px) { .rg-cta { margin-inline: 40px; } }
+@media (max-width: 575px)  { .rg-cta { margin-inline: 15px; } }
 
 .rg-cta__inner {
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Tekst lijnt links uit met de rest van de pagina (zelfde calc als de tegels);
-     het groene paneel loopt links full-bleed door tot de schermrand. */
-  padding: clamp(2.5rem, 2rem + 2vw, 4rem)
-           clamp(2rem, 1.5rem + 2vw, 3.5rem)
-           clamp(2.5rem, 2rem + 2vw, 4rem)
-           calc(max((100vw - 1600px) / 2, 0px) + 80px);
+  padding: clamp(2.5rem, 2rem + 2vw, 4rem) clamp(2rem, 1.5rem + 2vw, 3.5rem);
 }
 .rg-cta__media {
   flex: 1 1 50%;
