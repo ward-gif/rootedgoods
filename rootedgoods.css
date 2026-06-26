@@ -850,6 +850,15 @@ img {
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
   }
+  /* De theme capt de ROW binnen de container (smaller + gecentreerd -> +40px).
+     Laat de row de container vullen zodat content exact op 270 staat. */
+  .home-productslider .cms-block-container-row,
+  .cms-section:has(.rg-cat-grid) .cms-block-container-row,
+  .cms-section:has(.rg-spec-grid) .cms-block-container-row {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 /* Slider — dubbele clip-strategie:
