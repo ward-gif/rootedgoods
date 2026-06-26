@@ -4232,4 +4232,20 @@ img.rg-europe-map__svg {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  /* De slider-container/row centreren de row via FLEX (justify-content:center),
+     wat max-width/margin niet kan stoppen -> daardoor +230. Forceer block-flow
+     zodat de row de container netjes vult (kaarten op 230). */
+  .cms-section:has(.home-productslider) .home-productslider .cms-block-container,
+  .cms-section:has(.home-productslider) .home-productslider .cms-block-container[style] {
+    display: block !important;
+  }
+  .cms-section:has(.home-productslider) .home-productslider .cms-block-container-row {
+    display: block !important;
+    width: 100% !important;
+  }
+  .cms-section:has(.home-productslider) .home-productslider .col-12 {
+    display: block !important;
+    width: 100% !important;
+    flex: none !important;
+  }
 }
