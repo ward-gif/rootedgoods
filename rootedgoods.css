@@ -4220,4 +4220,16 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
+  /* De theme capt + centreert de slider-row met hogere specificiteit dan
+     '.home-productslider .row' (0,2,0) -> daardoor sprong 230->460. Forceer
+     met :has() (0,4,0) zoals de cat-row, zodat de row de container vult en de
+     kaarten op de lijn (230) staan; de track bleedt rechts via overflow. */
+  .cms-section:has(.home-productslider) .home-productslider .cms-block-container-row,
+  .cms-section:has(.home-productslider) .home-productslider .col-12 {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
