@@ -840,13 +840,15 @@ img {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* 40px interne padding op de kolom (binnen de natuurlijk-gecentreerde row),
-   net als de categorie-tegels -> kaarten lijnen uit met de cat (270),
-   niet 40px verder links. Werkt mét de theme, geen container-hack. */
+/* Deterministische uitlijning (zelfde aanpak als de feature): container
+   max-width none + calc-padding. Onafhankelijk van de instabiele theme-row,
+   dus kaarten staan altijd op 270 -> gelijk aan cat/spec/feature. */
 @media (min-width: 992px) {
-  .home-productslider .col-12 {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+  .home-productslider .cms-block-container,
+  .home-productslider .cms-block-container[style] {
+    max-width: none !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
   }
 }
 
@@ -2591,6 +2593,25 @@ body.is-ctl-product {
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
 
+/* Cat-sectie: deterministische uitlijning (zelfde als feature/slider):
+   container max-width none + calc-padding -> los van de instabiele theme-row.
+   Grid + heading vullen de container (geen eigen zij-padding op desktop) ->
+   alles op 270. */
+@media (min-width: 992px) {
+  .cms-section:has(.rg-cat-grid) .cms-block-container,
+  .cms-section:has(.rg-cat-grid) .cms-block-container[style] {
+    max-width: none !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+  }
+  .rg-cat-grid,
+  .rg-cat-heading {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* Sectietitel boven de categorie-grid (lijnt uit met de grid). */
 .rg-cat-heading {
   max-width: 1600px;
@@ -2750,6 +2771,15 @@ body.is-ctl-product {
    3 gelijke kaarten met achtergrondbeeld, donkergroene dim en
    gecentreerde tekst. Zet .rg-spec-card op een <a> met daarin een
    <img class="rg-spec-card__img"> + .rg-spec-card__label. */
+/* Spec-sectie: deterministische uitlijning (zelfde als feature/slider/cat). */
+@media (min-width: 992px) {
+  .cms-section:has(.rg-spec-grid) .cms-block-container,
+  .cms-section:has(.rg-spec-grid) .cms-block-container[style] {
+    max-width: none !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+  }
+}
 .rg-spec-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -2841,9 +2871,10 @@ body.is-ctl-product {
 @media (min-width: 768px) {
   .rg-spec-grid {
     grid-template-columns: repeat(3, 1fr);
-    /* 40px padding net als de categorie-tegels -> kaarten op 270, gelijk
-       aan cat/slider/feature. */
-    padding: 0 40px;
+    /* Vult de container (die op desktop via calc+120 op 270 staat); op tablet
+       de natuurlijke container. Geen eigen padding/max-width meer. */
+    max-width: none;
+    padding: 0;
   }
   .rg-spec-card { aspect-ratio: 3 / 4; }
 }
