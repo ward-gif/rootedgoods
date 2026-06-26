@@ -582,13 +582,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   outline-offset: 3px !important;
 }
 
-/* Vangnet tegen horizontale overflow (bv. brede sliders) -> geen horizontale
-   scrollbalk en geen meeschuivende gecentreerde content. 'clip' i.p.v.
-   'hidden' zodat sticky/position blijft werken. */
-html {
-  overflow-x: clip;
-}
-
 /* Afbeeldingen niet selecteerbaar/sleepbaar (site-wide) — voorkomt de blauwe
    selectie-overlay bij het slepen van sliders en bij per ongeluk selecteren.
    Klikken/navigeren blijft gewoon werken. */
@@ -847,13 +840,12 @@ img {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* Kaarten 40px naar binnen (gelijk aan de categorie-tegels) ZONDER de
-   gecentreerde theme-row scheef te trekken: padding op de kolom (binnen de
-   row), niet op de slider-container. Rechts geen padding -> kaarten bleeden
-   door tot de schermrand (.home-productslider clipt daar via overflow-x). */
-.home-productslider .col-12 {
-  padding-left: 40px !important;
-  padding-right: 40px !important;     /* symmetrisch -> content 270–1630, gelijk aan de rest */
+/* Slider-container op een VASTE 1360 + margin auto (zelfde stabiele aanpak als
+   de feature-secties) -> onafhankelijk van de instabiele theme-row, dus de
+   kaarten staan altijd op dezelfde lijn (270–1630) als de rest. */
+.home-productslider .cms-block-container {
+  max-width: 1360px !important;
+  margin-inline: auto !important;
 }
 
 /* Slider — dubbele clip-strategie:
@@ -2863,11 +2855,11 @@ body.is-ctl-product {
    naar de schermranden zodra je slidet (zoals Bambook).
    --rg-edge = afstand van schermrand tot de boxed-content-rand.
    ============================================================ */
-/* Kop + knoppen gebruiken de natuurlijke gecentreerde container van de theme,
-   met 40px linker-inspring zodat ze exact op de lijn van de slider-kaarten
-   en de categorie-tegels staan (270 @1900). */
-.cms-section:has(.home-productslider) .cms-block-text .cms-element-text {
-  padding-left: 40px;
+/* Kop + knoppen: zelfde vaste 1360 + margin auto als de slider eronder
+   -> staan op exact dezelfde lijn (270), stabiel. */
+.cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
+  max-width: 1360px;
+  margin-inline: auto;
 }
 
 /* Knoppen boven de product-slider: gevuld terracotta met witte tekst + pijl. */
