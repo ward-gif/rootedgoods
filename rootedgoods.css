@@ -4168,11 +4168,17 @@ img.rg-europe-map__svg {
     padding-right: 0 !important;
   }
 
-  /* 2. Zet de container-content op de gedeelde lijn (links + rechts gelijk) */
+  /* 2. Zet de container-content op de gedeelde lijn (links + rechts gelijk).
+     [style] óók hier, anders wint stap 1 (padding 0) op containers met inline
+     style en wordt de sectie full-width. */
   .cms-section:has(.rg-cat-grid) .cms-block-container,
+  .cms-section:has(.rg-cat-grid) .cms-block-container[style],
   .cms-section:has(.rg-spec-grid) .cms-block-container,
+  .cms-section:has(.rg-spec-grid) .cms-block-container[style],
   .cms-section:has(.rg-feature-row__content) .cms-block-container,
-  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container {
+  .cms-section:has(.rg-feature-row__content) .cms-block-container[style],
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container,
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style] {
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
   }
