@@ -2819,7 +2819,9 @@ body.is-ctl-product {
 @media (min-width: 768px) {
   .rg-spec-grid {
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 40px;
+    /* Geen zij-padding: de kaarten vullen de grid-box, die al samenvalt
+       met de categorie-tegels (230–1670). Padding zou ze extra inspringen. */
+    padding: 0;
   }
   .rg-spec-card { aspect-ratio: 3 / 4; }
 }
