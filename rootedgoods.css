@@ -3979,7 +3979,7 @@ img.rg-europe-map__svg {
   overflow: hidden;
   background: #2d4528;          /* groen paneel = gegarandeerd contrast */
   color: #ffffff;
-  min-height: clamp(380px, 32vw, 500px);
+  min-height: clamp(460px, 40vw, 620px);
 }
 
 .rg-cta__inner {
