@@ -3210,6 +3210,15 @@ body.is-ctl-product {
     padding-right: 40px !important;
   }
 }
+/* Desktop: zelfde linker-/rechterrand (calc + 80) als de tegels/slider-titel,
+   zodat de feature-blokken exact even breed zijn als de rest (niet te breed). */
+@media (min-width: 992px) {
+  .cms-section:has(.rg-feature-row__content) .cms-block-container {
+    max-width: none;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+  }
+}
 
 /* Reverse-variant: dupliceer het blok en geef het in de CMS de CSS-class
    "rg-feature-reverse". Op desktop draaien de kolommen om (beeld rechts,
