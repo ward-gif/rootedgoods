@@ -3166,7 +3166,9 @@ body.is-ctl-product {
    padding-left/right overschrijft Promidata's inline padding (bv.
    style="padding: 20px 0 20px 0"). */
 .cms-section:has(.rg-feature-row__content) .cms-block-container {
-  max-width: 1600px;
+  /* 1360 = effectieve content-breedte van de rest (270–1630 @1900); margin
+     auto centreert container-onafhankelijk -> lijnt uit met categorie/slider. */
+  max-width: 1360px;
   margin-inline: auto;
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -3191,19 +3193,19 @@ body.is-ctl-product {
   width: 100%;
   object-fit: cover;
 }
-@media (min-width: 576px) {
+/* Tablet: zij-padding voor lucht (container nog niet op max-width). */
+@media (min-width: 576px) and (max-width: 1439px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
     padding-left: 40px !important;
     padding-right: 40px !important;
   }
 }
-/* Desktop: zelfde linker-/rechterrand (calc + 80) als de tegels/slider-titel,
-   zodat de feature-blokken exact even breed zijn als de rest (niet te breed). */
-@media (min-width: 992px) {
+/* Groot scherm: geen padding -> de max-width 1360 + margin auto bepaalt de
+   breedte, content valt exact op de lijn van de rest (270–1630). */
+@media (min-width: 1440px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
-    max-width: none;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
