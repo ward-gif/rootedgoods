@@ -2847,6 +2847,19 @@ body.is-ctl-product {
   }
 }
 
+/* Knoppen boven de product-slider: gevuld terracotta met witte tekst + pijl. */
+.cms-section:has(.home-productslider) .cms-element-text .btn {
+  background-color: #ad6331 !important;
+  border-color: #ad6331 !important;
+  color: #ffffff !important;
+}
+.cms-section:has(.home-productslider) .cms-element-text .btn:hover,
+.cms-section:has(.home-productslider) .cms-element-text .btn:focus-visible {
+  background-color: #955529 !important;
+  border-color: #955529 !important;
+  color: #ffffff !important;
+}
+
 
 /* ============================================================
    26. RESPONSIVE TUNING — desktop + split-screen
