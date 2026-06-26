@@ -916,20 +916,22 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  background: #ad6331;                       /* terracotta */
+  border: 1px solid #ad6331;
+  box-shadow: 0 4px 16px rgba(45,69,40,0.18);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .rg-slider-nav__btn:hover {
+  background: #955529;                        /* donkerder terracotta */
+  border-color: #955529;
   transform: scale(1.08);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 22px rgba(45,69,40,0.25);
 }
 
 .rg-slider-nav__btn:disabled {
@@ -944,8 +946,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   display: block;
   width: 9px;
   height: 9px;
-  border-top: 2px solid #2d4528;
-  border-right: 2px solid #2d4528;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
 }
 
 .rg-slider-nav__btn--prev .rg-slider-nav__chev {
@@ -3940,25 +3942,31 @@ img.rg-europe-map__svg {
 .rg-cta {
   display: flex;
   align-items: stretch;
-  /* margin:auto centreert container-onafhankelijk -> lijnt uit met de tegels.
-     1440 = effectieve content-breedte van de tegels (links op 230 @1900). */
-  max-width: 1440px;
-  margin: 3rem auto;
-  border-radius: 20px;
+  /* Full-bleed afsluiter: breekt uit de container naar volle viewport-breedte
+     (ook als de container padding heeft), geen afronding, sluit onderaan aan
+     op de footer. De tekst binnenin lijnt wél uit met de rest (zie __inner). */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 3rem;
+  margin-bottom: 0;
   overflow: hidden;
   background: #2d4528;          /* groen paneel = gegarandeerd contrast */
   color: #ffffff;
-  min-height: clamp(360px, 30vw, 460px);
+  min-height: clamp(380px, 32vw, 500px);
 }
-@media (max-width: 1519px) { .rg-cta { margin-inline: 40px; } }
-@media (max-width: 575px)  { .rg-cta { margin-inline: 15px; } }
 
 .rg-cta__inner {
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2rem, 1.4rem + 3vw, 4rem);
+  /* Tekst lijnt links uit met de rest van de pagina (zelfde calc als de tegels);
+     het groene paneel loopt links full-bleed door tot de schermrand. */
+  padding: clamp(2.5rem, 2rem + 2vw, 4rem)
+           clamp(2rem, 1.5rem + 2vw, 3.5rem)
+           clamp(2.5rem, 2rem + 2vw, 4rem)
+           calc(max((100vw - 1600px) / 2, 0px) + 80px);
 }
 .rg-cta__media {
   flex: 1 1 50%;
@@ -4008,16 +4016,21 @@ img.rg-europe-map__svg {
   align-items: center;
   gap: 0.5rem;
 }
-/* Secundaire knop: transparant met witte rand, vult op hover. */
-.rg-cta__btn--ghost {
+/* Secundaire knop: transparant met witte rand, vult op hover.
+   Extra specificiteit + .btn-primary-variant zodat 'ie nooit per ongeluk
+   gevuld terracotta wordt (ook niet als er btn-primary op blijft staan). */
+.rg-cta .rg-cta__btn--ghost,
+.rg-cta .rg-cta__btn--ghost.btn,
+.rg-cta .rg-cta__btn--ghost.btn-primary {
   background: transparent !important;
   border: 1px solid rgba(255, 255, 255, 0.7) !important;
   color: #ffffff !important;
 }
-.rg-cta__btn--ghost:hover,
-.rg-cta__btn--ghost:focus-visible {
+.rg-cta .rg-cta__btn--ghost:hover,
+.rg-cta .rg-cta__btn--ghost:focus-visible {
   background: rgba(255, 255, 255, 0.12) !important;
   border-color: #ffffff !important;
+  color: #ffffff !important;
 }
 .rg-cta__note {
   margin: 0;
@@ -4025,12 +4038,16 @@ img.rg-europe-map__svg {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Mobiel: gestapeld — beeld boven, tekstpaneel onder; knoppen vol-breed. */
+/* Mobiel: gestapeld — beeld boven, tekstpaneel onder; knoppen vol-breed.
+   Full-bleed blijft (geen zij-marge); tekst-padding terug naar normaal. */
 @media (max-width: 767px) {
   .rg-cta {
     flex-direction: column;
     min-height: 0;
-    margin: 2rem 15px;
+    margin-top: 2rem;
+  }
+  .rg-cta__inner {
+    padding: clamp(1.8rem, 1.2rem + 3vw, 2.6rem) 18px;
   }
   .rg-cta__media {
     order: -1;
