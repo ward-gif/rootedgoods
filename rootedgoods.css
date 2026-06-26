@@ -582,6 +582,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   outline-offset: 3px !important;
 }
 
+/* Vangnet tegen horizontale overflow (bv. brede sliders) -> geen horizontale
+   scrollbalk en geen meeschuivende gecentreerde content. 'clip' i.p.v.
+   'hidden' zodat sticky/position blijft werken. */
+html {
+  overflow-x: clip;
+}
+
 /* Afbeeldingen niet selecteerbaar/sleepbaar (site-wide) — voorkomt de blauwe
    selectie-overlay bij het slepen van sliders en bij per ongeluk selecteren.
    Klikken/navigeren blijft gewoon werken. */
@@ -846,6 +853,7 @@ img {
    door tot de schermrand (.home-productslider clipt daar via overflow-x). */
 .home-productslider .col-12 {
   padding-left: 40px !important;
+  padding-right: 40px !important;     /* symmetrisch -> content 270–1630, gelijk aan de rest */
 }
 
 /* Slider — dubbele clip-strategie:
@@ -882,7 +890,7 @@ img {
    Verticaal toelaten zodat hover-shadow van tiles niet wordt afgesneden. */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh {
-  overflow-x: visible !important;           /* kaarten bleeden rechts door; .home-productslider clipt op de schermrand */
+  overflow-x: hidden !important;            /* clipt netjes binnen de gecentreerde content -> geen page-overflow/instabiliteit */
   overflow-y: visible !important;
   padding-bottom: 24px !important;
 }
