@@ -4032,6 +4032,22 @@ img.rg-europe-map__svg {
   border-color: #ffffff !important;
   color: #ffffff !important;
 }
+/* Robuuste fallback: de 2e (laatste) knop in de CTA is ALTIJD secundair,
+   ook als de CMS-editor de ghost-class heeft weggestript. Hogere
+   specificiteit dan de site-brede .btn-primary. */
+.rg-cta .rg-cta__actions .btn:last-child {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.rg-cta .rg-cta__actions .btn:last-child:hover,
+.rg-cta .rg-cta__actions .btn:last-child:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
 .rg-cta__note {
   margin: 0;
   font-size: 0.85rem;
