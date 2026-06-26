@@ -840,6 +840,13 @@ img {
   margin: 0 !important;
   padding: 0 !important;
 }
+/* Kaarten 40px naar binnen (gelijk aan de categorie-tegels) ZONDER de
+   gecentreerde theme-row scheef te trekken: padding op de kolom (binnen de
+   row), niet op de slider-container. Rechts geen padding -> kaarten bleeden
+   door tot de schermrand (.home-productslider clipt daar via overflow-x). */
+.home-productslider .col-12 {
+  padding-left: 40px !important;
+}
 
 /* Slider — dubbele clip-strategie:
    1. .home-productslider: padding-left duwt content 100px naar rechts,
@@ -875,7 +882,7 @@ img {
    Verticaal toelaten zodat hover-shadow van tiles niet wordt afgesneden. */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh {
-  overflow-x: hidden !important;            /* clipt netjes binnen de gecentreerde row */
+  overflow-x: visible !important;           /* kaarten bleeden rechts door; .home-productslider clipt op de schermrand */
   overflow-y: visible !important;
   padding-bottom: 24px !important;
 }
@@ -2848,8 +2855,12 @@ body.is-ctl-product {
    naar de schermranden zodra je slidet (zoals Bambook).
    --rg-edge = afstand van schermrand tot de boxed-content-rand.
    ============================================================ */
-/* Kop + knoppen gebruiken de natuurlijke gecentreerde container van de theme
-   (geen custom boxing meer) -> lijnen vanzelf uit met de slider eronder. */
+/* Kop + knoppen gebruiken de natuurlijke gecentreerde container van de theme,
+   met 40px linker-inspring zodat ze exact op de lijn van de slider-kaarten
+   en de categorie-tegels staan (270 @1900). */
+.cms-section:has(.home-productslider) .cms-block-text .cms-element-text {
+  padding-left: 40px;
+}
 
 /* Knoppen boven de product-slider: gevuld terracotta met witte tekst + pijl. */
 .cms-section:has(.home-productslider) .cms-element-text .btn {
