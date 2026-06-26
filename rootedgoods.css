@@ -843,7 +843,8 @@ img {
 /* Slider-container op een VASTE 1360 + margin auto (zelfde stabiele aanpak als
    de feature-secties) -> onafhankelijk van de instabiele theme-row, dus de
    kaarten staan altijd op dezelfde lijn (270–1630) als de rest. */
-.home-productslider .cms-block-container {
+.home-productslider .cms-block-container,
+.home-productslider .cms-block-container[style] {
   max-width: 1360px !important;
   margin-inline: auto !important;
 }
@@ -2588,6 +2589,15 @@ body.is-ctl-product {
    Nieuwe categorie = gewoon een extra <a> in de container plakken;
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
+
+/* Cat-sectie: container op vaste 1440 + margin auto (stabiel, los van de
+   instabiele theme-row). De cat-grid (1600 + 40px padding) wordt zo gecapt ->
+   tegels op 270, gelijk aan slider/feature/spec. */
+.cms-section:has(.rg-cat-grid) .cms-block-container,
+.cms-section:has(.rg-cat-grid) .cms-block-container[style] {
+  max-width: 1440px;
+  margin-inline: auto;
+}
 
 /* Sectietitel boven de categorie-grid (lijnt uit met de grid). */
 .rg-cat-heading {
