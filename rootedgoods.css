@@ -125,8 +125,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   width: 20px !important;
   height: 20px !important;
 }
-.header-cart-total {
+.header-cart-total,
+.header-cart-total * {
   font-size: 0.8rem !important;
+  color: #556e46 !important; /* status, geen CTA -> mos-groen i.p.v. terracotta */
 }
 
 /* Header — wishlist badge */
@@ -192,7 +194,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .main-navigation-link:hover .main-navigation-link-text,
 .main-navigation-link:hover .main-navigation-link-text span,
 .main-navigation-link:hover [itemprop="name"] {
-  color: #ad6331 !important;
+  color: #556e46 !important; /* hover in mos-groen — terracotta blijft puur voor CTA's */
 }
 /* Desktop: horizontale link-padding weg en spacing via gap, zodat het
    nav-blok schoon centreert (geen optische verschuiving) — recht onder de
@@ -223,21 +225,33 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   fill: #2d4528 !important;
 }
 
-/* Offerte-link in nav-main — accent-CTA in bruine kleur met separator */
+/* Offerte-link in nav-main — primaire nav-CTA als terracotta outline-pill,
+   zodat het onmiskenbaar dé actie in de nav is. */
+.offerte-link .offerte-separator {
+  display: none !important; /* pill vervangt de '|'-separator */
+}
+.offerte-link .main-navigation-link-text {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid #ad6331;
+  border-radius: 999px;
+  padding: 0.34rem 0.95rem;
+  line-height: 1;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
 .offerte-link .main-navigation-link-text,
 .offerte-link .main-navigation-link-text span,
 .offerte-link [itemprop="name"] {
   color: #ad6331 !important;
 }
-.offerte-link:hover .main-navigation-link-text,
-.offerte-link:hover .main-navigation-link-text span {
-  color: #556e46 !important;
+.offerte-link:hover .main-navigation-link-text {
+  background-color: #ad6331;
+  border-color: #ad6331;
 }
-.offerte-link .offerte-separator {
-  color: #000 !important;
-  margin-right: 0.5rem;
-  font-weight: 300;
-  opacity: 0.4;
+.offerte-link:hover .main-navigation-link-text,
+.offerte-link:hover .main-navigation-link-text span,
+.offerte-link:hover [itemprop="name"] {
+  color: #fff !important;
 }
 
 
@@ -257,13 +271,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .top-bar-nav span {
   color: #fff !important;
 }
-/* USP-icoontjes in de topbar in terracotta #ad6331 (tekst blijft wit).
-   Hoge specificiteit zodat het de theme- én de witte-tekst-regel verslaat. */
-.header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container i.fas,
-.header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container i.fa-solid,
-.header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container i {
-  color: #ad6331 !important;
-}
+/* (USP-iconen zijn nu witte inline-SVG-vinkjes via currentColor; de oude
+   terracotta <i>-icoonregel is verwijderd — terracotta blijft puur voor CTA's.) */
 .top-bar-nav a {
   text-decoration: none;
 }
