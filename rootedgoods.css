@@ -4241,19 +4241,23 @@ img.rg-europe-map__svg {
   align-items: center;
   gap: 0.5rem;
 }
-/* Secundaire knop: transparant met witte rand, vult op hover.
-   Extra specificiteit + .btn-primary-variant zodat 'ie nooit per ongeluk
-   gevuld terracotta wordt (ook niet als er btn-primary op blijft staan). */
-.rg-cta .rg-cta__btn--ghost,
-.rg-cta .rg-cta__btn--ghost.btn,
-.rg-cta .rg-cta__btn--ghost.btn-primary {
+/* Ghost-knop: transparant met witte rand, vult licht op hover. Apart van de
+   andere knoppen omdat 'ie op het donkere/beeld-paneel contrast moet houden.
+   GEEN .rg-cta-ancestor vereist (anders pakt 'ie niet als de wrapper-class
+   afwijkt) + .btn-primary/.btn-outline-variant zodat 'ie nooit gevuld wordt. */
+.rg-cta__btn--ghost,
+.rg-cta__btn--ghost.btn,
+.rg-cta__btn--ghost.btn-primary,
+.rg-cta__btn--ghost.btn-outline-primary {
   background: transparent !important;
+  background-color: transparent !important;
   border: 1px solid rgba(255, 255, 255, 0.7) !important;
   color: #ffffff !important;
 }
-.rg-cta .rg-cta__btn--ghost:hover,
-.rg-cta .rg-cta__btn--ghost:focus-visible {
+.rg-cta__btn--ghost:hover,
+.rg-cta__btn--ghost:focus-visible {
   background: rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
   border-color: #ffffff !important;
   color: #ffffff !important;
 }
