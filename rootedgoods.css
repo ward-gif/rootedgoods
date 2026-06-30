@@ -194,7 +194,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .main-navigation-link:hover .main-navigation-link-text,
 .main-navigation-link:hover .main-navigation-link-text span,
 .main-navigation-link:hover [itemprop="name"] {
-  color: #7a9b6f !important; /* hover in mos-groen — terracotta blijft puur voor CTA's */
+  color: #ad6331 !important; /* normale terracotta hover op de menu-links */
 }
 /* Desktop: horizontale link-padding weg en spacing via gap, zodat het
    nav-blok schoon centreert (geen optische verschuiving) — recht onder de
