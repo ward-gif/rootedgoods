@@ -2774,6 +2774,19 @@ body.is-ctl-product {
   border-color: #ad6331 !important;
   color: #ffffff !important;
 }
+/* Pijl-iconen (« ‹ › ») exact centreren: theme zet 'top: 2px' op de svg, dat
+   neutraliseren we en de icon-span centreren we via flex. */
+.page-item .page-link .icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 0 !important;
+}
+.page-item .page-link .icon > svg {
+  position: static !important;
+  top: 0 !important;
+  display: block !important;
+}
 
 /* ------------------------------------------------------------
    25. CATEGORIE-TILES (image met tekst-overlay, klikbaar)
