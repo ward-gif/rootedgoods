@@ -254,6 +254,22 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   color: #fff !important;
 }
 
+/* Desktop: "Offerte op maat" als losse CTA helemaal rechts (visueel onder de
+   header-icons). De overige nav-links blijven gecentreerd doordat de offerte
+   uit de flex-flow wordt gehaald (absolute) -> centrering klopt zonder 'm. */
+@media (min-width: 992px) {
+  .nav-main .nav { position: relative; }
+  .nav-main .nav .nav-item:has(.offerte-link),
+  .nav-main .nav li:has(> .offerte-link),
+  .nav-main .nav > .offerte-link {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+  }
+}
+
 
 /* ------------------------------------------------------------
    5. TOP BAR — alle tekst en iconen in donkergroen
