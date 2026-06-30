@@ -2602,24 +2602,8 @@ body.is-ctl-product {
    de grid herschikt zelf. Landscape tiles, donkere overlay, witte
    titel + subtitel linksboven, lichte zoom on hover. Pure CSS.      */
 
-/* Cat-sectie: deterministische uitlijning (zelfde als feature/slider):
-   container max-width none + calc-padding -> los van de instabiele theme-row.
-   Grid + heading vullen de container (geen eigen zij-padding op desktop) ->
-   alles op 270. */
-@media (min-width: 992px) {
-  .cms-section:has(.rg-cat-grid) .cms-block-container,
-  .cms-section:has(.rg-cat-grid) .cms-block-container[style] {
-    max-width: none !important;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-  }
-  .rg-cat-grid,
-  .rg-cat-heading {
-    max-width: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+/* (Leftover calc+120-blok verwijderd: de cat-uitlijning loopt nu volledig via
+   het deterministische systeem in sectie 30, identiek aan spec/feature/slider.) */
 
 /* Sectietitel boven de categorie-grid (lijnt uit met de grid). */
 .rg-cat-heading {
@@ -4255,8 +4239,11 @@ img.rg-europe-map__svg {
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
      (.row > * padding = gutter/2) aan de BUITENkant gecancelt wordt -> beeld en
-     tekst op de lijn (230). De gutter blijft alleen TUSSEN de kolommen staan. */
-  .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
+     tekst op de lijn (230). De gutter blijft alleen TUSSEN de kolommen staan.
+     LET OP: scope op de row die de feature-content ZELF bevat (:has op de row),
+     niet op sectie-niveau — anders lekt de negatieve marge naar zusterrows
+     (zoals de cat-row) in dezelfde .cms-section en schuift die 32px naar links. */
+  .cms-section:has(.rg-feature-row__content) .cms-block-container-row:has(.rg-feature-row__content) {
     --bs-gutter-x: 4rem;
     margin-left: calc(var(--bs-gutter-x) * -0.5) !important;
     margin-right: calc(var(--bs-gutter-x) * -0.5) !important;
