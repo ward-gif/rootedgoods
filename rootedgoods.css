@@ -4201,7 +4201,11 @@ img.rg-europe-map__svg {
   .home-productslider {
     overflow-x: clip !important;
     overflow-y: visible !important;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    /* GEEN padding-left hier: de content krijgt de calc+80-lijn al via een
+       tussenlaag. Padding-left op het blok zou dubbel tellen (-> 460). Het
+       blok blijft wel volle breedte zodat de track rechts buiten beeld bleedt;
+       overflow-x clip kapt op de schermrand af (geen page-overflow). */
+    padding-left: 0 !important;
     padding-right: 0 !important;
     padding-bottom: 40px !important;
     box-sizing: border-box !important;
