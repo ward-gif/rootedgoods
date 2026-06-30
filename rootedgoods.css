@@ -225,48 +225,21 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   fill: #2d4528 !important;
 }
 
-/* Offerte-link in nav-main — primaire nav-CTA als terracotta outline-pill,
-   zodat het onmiskenbaar dé actie in de nav is. */
-.offerte-link .offerte-separator {
-  display: none !important; /* pill vervangt de '|'-separator */
-}
-.offerte-link .main-navigation-link-text {
-  display: inline-flex;
-  align-items: center;
-  background-color: #ad6331;        /* gevulde terracotta CTA (was outline) */
-  border: 1.5px solid #ad6331;
-  border-radius: 999px;
-  padding: 0.42rem 1.15rem;
-  line-height: 1;
-  box-shadow: 0 8px 18px -10px rgba(173, 99, 49, 0.9);
-  transition: background-color 0.18s ease, box-shadow 0.2s ease, transform 0.15s ease;
-}
+/* Offerte-link in nav-main — accent-CTA in terracotta tekst met separator. */
 .offerte-link .main-navigation-link-text,
 .offerte-link .main-navigation-link-text span,
 .offerte-link [itemprop="name"] {
-  color: #fff !important;
+  color: #ad6331 !important;
 }
-.offerte-link:hover .main-navigation-link-text {
-  background-color: #955529;        /* diepere terracotta op hover */
-  border-color: #955529;
-  box-shadow: 0 10px 22px -10px rgba(149, 85, 41, 0.95);
-  transform: translateY(-1px);
+.offerte-link:hover .main-navigation-link-text,
+.offerte-link:hover .main-navigation-link-text span {
+  color: #556e46 !important;
 }
-
-/* Desktop: "Offerte op maat" als losse CTA helemaal rechts (visueel onder de
-   header-icons). De overige nav-links blijven gecentreerd doordat de offerte
-   uit de flex-flow wordt gehaald (absolute) -> centrering klopt zonder 'm. */
-@media (min-width: 992px) {
-  .nav-main .nav { position: relative; }
-  .nav-main .nav .nav-item:has(.offerte-link),
-  .nav-main .nav li:has(> .offerte-link),
-  .nav-main .nav > .offerte-link {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0 !important;
-  }
+.offerte-link .offerte-separator {
+  color: #000 !important;
+  margin-right: 0.5rem;
+  font-weight: 300;
+  opacity: 0.4;
 }
 
 
