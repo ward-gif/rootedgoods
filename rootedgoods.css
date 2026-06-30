@@ -2555,7 +2555,7 @@ body.is-ctl-product {
 .filter-panel .filter-panel-item-toggle.btn:hover,
 .filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
   border-color: #ad6331 !important;
-  background-color: #FBF7F5 !important;
+  background-color: #ffffff !important; /* witte achtergrond, ook wanneer open */
 }
 
 /* Filter panel — geen sticky, geen achtergrond, normale flow */
@@ -2649,13 +2649,86 @@ body.is-ctl-product {
   color: #ad6331 !important;
 }
 .category-navigation .category-navigation-link.is-active {
-  color: #7a9b6f !important;
+  color: #ad6331 !important; /* actieve/geselecteerde categorie in terracotta */
   font-weight: 600;
 }
 .category-navigation.level-1 {
   margin-left: 1rem;
   padding-left: 0.75rem;
   border-left: 2px solid #EAE3D7;
+}
+
+/* Filter-dropdowns: witte achtergrond + nette ruimte wanneer open (i.p.v. een
+   strakke ongestylde lijst tegen de rand). Geldt voor multi-select én prijs. */
+.filter-panel-item-dropdown {
+  background-color: #ffffff !important;
+  border: 1px solid #EAE3D7 !important;
+  border-radius: 12px !important;
+  margin-top: 0.4rem !important;
+  padding: 0.35rem 0.85rem !important;
+}
+.filter-multi-select-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.filter-multi-select-list-item {
+  padding: 0 !important;
+}
+/* Checkbox-rij: vinkje + label op één lijn, hele rij hoverbaar. */
+.filter-multi-select-list-item .form-check {
+  display: flex !important;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.4rem !important;
+  margin: 0 !important;
+  min-height: auto !important;
+  border-radius: 8px;
+  transition: background-color 0.12s ease;
+}
+.filter-multi-select-list-item .form-check:hover {
+  background-color: #FBF7F5;
+}
+.filter-multi-select-list-item .form-check-input {
+  float: none !important;
+  margin: 0 !important;
+  width: 1.05rem;
+  height: 1.05rem;
+  cursor: pointer;
+  accent-color: #ad6331; /* aangevinkte checkbox in terracotta */
+}
+.filter-multi-select-list-item .form-check-label {
+  cursor: pointer;
+  color: #2d4528 !important;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/* PLP-paginering — ronde page-labels, actieve in terracotta. */
+.page-item .page-link {
+  min-width: 40px;
+  height: 40px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.6rem !important;
+  margin: 0 0.15rem;
+  border: 1px solid #EAE3D7 !important;
+  border-radius: 999px !important;
+  background-color: #ffffff !important;
+  color: #2d4528 !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.page-item .page-link:hover {
+  border-color: #ad6331 !important;
+  color: #ad6331 !important;
+}
+.page-item.active .page-link {
+  background-color: #ad6331 !important;
+  border-color: #ad6331 !important;
+  color: #ffffff !important;
 }
 
 /* ------------------------------------------------------------
