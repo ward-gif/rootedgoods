@@ -2521,17 +2521,23 @@ body.is-ctl-product {
    inline-flex + align-items center voor verticaal uitlijnen van
    tekst, count en chevron-icoon. */
 .filter-panel .filter-panel-item-toggle.btn {
-  display: inline-flex !important;
+  display: flex !important;
+  width: 100% !important;
   align-items: center !important;
   gap: 0.4rem !important;
-  border: 1px solid #EAE3D7 !important;
-  border-radius: 999px !important;
-  background-color: #ffffff !important;
+  border: none !important;
+  border-bottom: 1px solid #EAE3D7 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
   color: #2d4528 !important;
-  padding: 0.5rem 1.25rem !important;
-  font-size: 0.875rem !important;
-  font-weight: 500 !important;
-  line-height: 1 !important;
+  padding: 0.85rem 0.25rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+/* Chevron helemaal rechts (titel + count blijven links samen). */
+.filter-panel .filter-panel-item-toggle.btn .icon-filter-panel-item-toggle {
+  margin-left: auto !important;
 }
 
 /* Chevron-icoon: span en SVG verticaal centreren, kleur on-brand
@@ -2554,8 +2560,9 @@ body.is-ctl-product {
 }
 .filter-panel .filter-panel-item-toggle.btn:hover,
 .filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
-  border-color: #ad6331 !important;
-  background-color: #ffffff !important; /* witte achtergrond, ook wanneer open */
+  border-color: #EAE3D7 !important;        /* separator blijft, geen pill-rand */
+  background-color: transparent !important;
+  color: #ad6331 !important;               /* titel terracotta bij hover/open */
 }
 
 /* Filter panel — geen sticky, geen achtergrond, normale flow */
@@ -2690,10 +2697,15 @@ body.is-ctl-product {
   background-color: #FBF7F5;
 }
 .filter-multi-select-list-item .form-check-input {
+  appearance: auto !important;
+  -webkit-appearance: checkbox !important;
   float: none !important;
+  flex: none !important;
   margin: 0 !important;
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1rem !important;
+  height: 1rem !important;
+  min-height: 0 !important;
+  border-radius: 0.25rem !important;
   cursor: pointer;
   accent-color: #ad6331; /* aangevinkte checkbox in terracotta */
 }
@@ -2702,6 +2714,38 @@ body.is-ctl-product {
   color: #2d4528 !important;
   font-size: 0.9rem;
   line-height: 1.2;
+}
+
+/* "Filters"-kopje boven het sidebar-filterpaneel (desktop). CSS-only via
+   ::before -> geen JS nodig. Op mobiel toont de offcanvas z'n eigen titel. */
+@media (min-width: 992px) {
+  .filter-panel.is--sidebar::before {
+    content: "Filters";
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d4528;
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* Prijs-filter: €-teken netjes in het invoerveld i.p.v. een wit blok dat over
+   de rand valt. Parent relative zodat de unit absoluut gepositioneerd kan. */
+.filter-range-min,
+.filter-range-max {
+  position: relative;
+}
+.filter-range-unit {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 14px;
+  padding: 0 10px;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 /* PLP-paginering — ronde page-labels, actieve in terracotta. */
