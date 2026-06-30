@@ -605,14 +605,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
    de tekst en verticaal gecentreerd. In een .d-grid/.btn-block stretcht de
    grid/blok de knop alsnog naar volle breedte. Icoon-/svg-knoppen uitgesloten. */
 .btn-primary:not(:has(.icon)):not(:has(svg)),
-.btn-outline-primary:not(:has(.icon)):not(:has(svg)) {
+.btn-outline-primary:not(:has(.icon)):not(:has(svg)),
+.cms-section:has(.home-productslider) .cms-element-text .btn:not(:has(.icon)):not(:has(svg)) {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 }
 .btn-primary:not(:has(.icon)):not(:has(svg))::after,
-.btn-outline-primary:not(:has(.icon)):not(:has(svg))::after {
+.btn-outline-primary:not(:has(.icon)):not(:has(svg))::after,
+.cms-section:has(.home-productslider) .cms-element-text .btn:not(:has(.icon)):not(:has(svg))::after {
   content: "";
   flex: none;
   width: 1.05em;
@@ -623,7 +625,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   transition: transform 0.2s ease;
 }
 .btn-primary:not(:has(.icon)):not(:has(svg)):hover::after,
-.btn-outline-primary:not(:has(.icon)):not(:has(svg)):hover::after {
+.btn-outline-primary:not(:has(.icon)):not(:has(svg)):hover::after,
+.cms-section:has(.home-productslider) .cms-element-text .btn:not(:has(.icon)):not(:has(svg)):hover::after {
   transform: translateX(4px);
 }
 
