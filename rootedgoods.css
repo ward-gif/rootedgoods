@@ -1632,6 +1632,13 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .d-grid:has(> #buyButton) #buyButton         { order: 2; }
 .d-grid:has(> #buyButton) #js-request-sample { order: 3; }
 
+/* Wat meer lucht tussen de CTA's en onder het buy-blok (rust rond de
+   primaire actie i.p.v. dichtgepakte knoppen). */
+.d-grid:has(> #buyButton) {
+  gap: 0.85rem !important;
+  margin-bottom: 1.4rem;
+}
+
 /* "Van € X Zonder opdruk" blok bovenaan verbergen — onderaan staat
    al een complete totaal-tabel met dezelfde info. */
 .product-detail-buy .product-price-info {
