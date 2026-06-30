@@ -4252,4 +4252,13 @@ img.rg-europe-map__svg {
     width: 100% !important;
     flex: none !important;
   }
+
+  /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
+     (.row > * padding = gutter/2) aan de BUITENkant gecancelt wordt -> beeld en
+     tekst op de lijn (230). De gutter blijft alleen TUSSEN de kolommen staan. */
+  .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
+    --bs-gutter-x: 4rem;
+    margin-left: calc(var(--bs-gutter-x) * -0.5) !important;
+    margin-right: calc(var(--bs-gutter-x) * -0.5) !important;
+  }
 }
