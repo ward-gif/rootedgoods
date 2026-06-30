@@ -4467,9 +4467,9 @@ img.rg-europe-map__svg {
 }
 .rg-theme-heading {
   font-family: 'Playfair Display', serif;
-  color: #2d4528;
-  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
-  font-weight: 700;
+  color: #2d4528 !important;
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem) !important;
+  font-weight: 700 !important;
   margin: 0 0 0.4rem 0;
 }
 .rg-theme-intro {
@@ -4567,11 +4567,11 @@ img.rg-europe-map__svg {
   margin-bottom: 0.65rem;
 }
 .rg-theme-tile__title {
-  font-family: 'Playfair Display', serif;
-  color: #fff;
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem);
-  font-weight: 700;
-  line-height: 1.1;
+  font-family: 'Playfair Display', serif !important;
+  color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
   margin: 0;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
@@ -4584,7 +4584,15 @@ img.rg-europe-map__svg {
   margin-top: 0.25rem;
 }
 .rg-theme-tile--feature .rg-theme-tile__title {
-  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.6rem);
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.6rem) !important;
+}
+
+/* Sierlijke ampersand: Playfair's romeinse '&' is lelijk; een italic serif-&
+   (Georgia) is een klassieke typografische fix. Wrap 'm: <span class="rg-amp">&amp;</span> */
+.rg-amp {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
 }
 .rg-theme-tile--feature .rg-theme-tile__sub {
   font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
@@ -4619,4 +4627,76 @@ img.rg-europe-map__svg {
   .rg-theme-tile,
   .rg-theme-tile__img,
   .rg-theme-tile__arrow { transition: none !important; }
+}
+
+
+/* ============================================================
+   32. MERKEN-GRID — gelijke logo-tegels op wit, hover-effect
+   ============================================================
+   Voor de "Merken"-pagina. Plak de HTML (zie merken-overzicht.html)
+   in een CMS HTML-blok. Alle tegels gelijk, geen pijl. Logo's
+   staan default in grijswaarden + licht gedimd en kleuren in op
+   hover (+ lift + terracotta rand). Pure CSS, geen JS.
+   ============================================================ */
+.rg-brand-section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 1rem + 2vw, 3rem) clamp(1rem, 4vw, 2.5rem) clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+.rg-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 576px) { .rg-brand-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .rg-brand-grid { grid-template-columns: repeat(4, 1fr); gap: 1.15rem; } }
+@media (min-width: 1200px) { .rg-brand-grid { grid-template-columns: repeat(5, 1fr); gap: 1.25rem; } }
+
+.rg-brand-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #EAE3D7;
+  border-radius: 14px;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.rg-brand-tile__logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+.rg-brand-tile:hover,
+.rg-brand-tile:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px -20px rgba(45, 69, 40, 0.35);
+  border-color: #ad6331;
+}
+.rg-brand-tile:hover .rg-brand-tile__logo,
+.rg-brand-tile:focus-visible .rg-brand-tile__logo {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-brand-tile,
+  .rg-brand-tile__logo { transition: none !important; }
+}
+
+/* Breadcrumb verbergen op de thema- én merken-pagina (CSS-only via :has,
+   geen Twig nodig: de pagina bevat de betreffende grid). */
+body:has(.rg-theme-grid) .cms-breadcrumb,
+body:has(.rg-brand-grid) .cms-breadcrumb {
+  display: none !important;
 }
