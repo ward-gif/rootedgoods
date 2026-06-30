@@ -288,6 +288,30 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   text-align: right !important;
 }
 
+/* Verticale divider vóór de utility-links (Over ons/Cases/Contact) zodat ze
+   visueel losstaan van de USP's links. Subtiele witte lijn op de groene balk.
+   ::before is het eerste inline-item -> staat door text-align:right net links
+   van "Over ons". */
+.top-bar-nav .top-bar-container.container--5::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 0.95em;
+  margin-right: 1.1rem;
+  vertical-align: -0.12em;
+  background-color: rgba(255, 255, 255, 0.30);
+}
+/* Utility-links iets compacter/lichter zodat ze als 'corporate nav' lezen
+   i.p.v. te concurreren met de USP's. */
+.top-bar-nav .top-bar-container.container--5 a {
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+.top-bar-nav .top-bar-container.container--5 a:hover {
+  opacity: 1;
+}
+
 
 /* ------------------------------------------------------------
    6. ZOEKBALK
