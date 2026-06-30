@@ -3080,15 +3080,16 @@ body.is-ctl-product {
    (geen custom boxing meer) -> lijnen vanzelf uit met de slider eronder. */
 
 /* Knoppen boven de product-slider: gevuld terracotta met witte tekst + pijl.
-   :not(.btn-outline-primary) -> outline/secundaire knoppen blijven outline
-   (hero-secondary stijl) en worden hier niet gevuld. */
-.cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary) {
+   :not(.btn-outline-primary) -> outline/secundaire knoppen blijven outline.
+   :not(.rg-cta__btn--ghost) -> de CTA staat in dezelfde .cms-section als de
+   slider; zonder deze uitsluiting zou deze regel (0,5,0) de ghost-knop vullen. */
+.cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):not(.rg-cta__btn--ghost) {
   background-color: #ad6331 !important;
   border-color: #ad6331 !important;
   color: #ffffff !important;
 }
-.cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):hover,
-.cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):focus-visible {
+.cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):not(.rg-cta__btn--ghost):hover,
+.cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):not(.rg-cta__btn--ghost):focus-visible {
   background-color: #955529 !important;
   border-color: #955529 !important;
   color: #ffffff !important;
