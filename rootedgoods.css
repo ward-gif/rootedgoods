@@ -854,7 +854,7 @@ img {
   margin: 0.25rem 0 0.5rem 0;
 }
 .home-productslider .product-name:hover {
-  color: #7a9b6f !important;
+  color: #ad6331 !important;
 }
 
 /* Description: subtiel, max 2 regels */
@@ -2431,8 +2431,8 @@ body.is-ctl-product {
 .cms-listing-row .variant-thumbnail.slider.active .prev:hover,
 .cms-listing-row .variant-thumbnail.slider.active .next:hover {
   background-color: #ffffff !important;
-  border-color: #7a9b6f !important;
-  color: #7a9b6f !important;
+  border-color: #ad6331 !important;
+  color: #ad6331 !important;
 }
 
 /* Product info — naam in donkergroen, regular weight, on-brand */
@@ -2449,7 +2449,7 @@ body.is-ctl-product {
   margin: 0.25rem 0 0.5rem 0;
 }
 .cms-listing-row .product-name:hover {
-  color: #7a9b6f !important;
+  color: #ad6331 !important;
 }
 
 /* Prijs — bold, donkergroen, "Van" iets dimmer als label */
@@ -2505,7 +2505,7 @@ body.is-ctl-product {
 }
 .sorting select.sorting:hover,
 .sorting select.sorting:focus {
-  border-color: #7a9b6f !important;
+  border-color: #ad6331 !important;
   outline: none;
 }
 
@@ -2554,7 +2554,7 @@ body.is-ctl-product {
 }
 .filter-panel .filter-panel-item-toggle.btn:hover,
 .filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
-  border-color: #7a9b6f !important;
+  border-color: #ad6331 !important;
   background-color: #FBF7F5 !important;
 }
 
@@ -2607,16 +2607,16 @@ body.is-ctl-product {
   align-items: center;
 }
 .filter-panel-active-container .filter-active-remove:hover {
-  color: #7a9b6f !important;
+  color: #ad6331 !important;
 }
 
-/* "Alles resetten" knop — on-brand bruin ipv default Bootstrap rood */
+/* "Alles resetten" knop — on-brand terracotta ipv default Bootstrap rood */
 .filter-panel-active-container .filter-reset-all,
 .filter-panel-active-container .btn,
 .filter-panel-active-container button:not(.filter-active-remove) {
   background-color: transparent !important;
-  border: 1px solid #7a9b6f !important;
-  color: #7a9b6f !important;
+  border: 1px solid #ad6331 !important;
+  color: #ad6331 !important;
   padding: 0.35rem 0.95rem !important;
   border-radius: 999px !important;
   font-size: 0.825rem !important;
@@ -2625,7 +2625,7 @@ body.is-ctl-product {
 }
 .filter-panel-active-container .filter-reset-all:hover,
 .filter-panel-active-container button:not(.filter-active-remove):hover {
-  background-color: #7a9b6f !important;
+  background-color: #ad6331 !important;
   color: #ffffff !important;
 }
 
@@ -2646,7 +2646,7 @@ body.is-ctl-product {
   transition: color 0.15s ease;
 }
 .category-navigation .category-navigation-link:hover {
-  color: #7a9b6f !important;
+  color: #ad6331 !important;
 }
 .category-navigation .category-navigation-link.is-active {
   color: #7a9b6f !important;
