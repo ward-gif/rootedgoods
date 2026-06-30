@@ -1595,17 +1595,21 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 #js-print-offer { display: none !important; }
 
-/* Secundair: "In het winkelmandje" → outline-look (was filled). */
+/* Secundair: "In het winkelmandje" → outline-look (was filled).
+   box-shadow expliciet uit: de algemene .btn-primary-regel zet anders een
+   terracotta schaduw op deze outline-knop. */
 #buyButton.btn-primary {
   background-color: transparent !important;
   color: #2d4528 !important;
   border: 2px solid rgba(45, 69, 40, 0.28) !important;
+  box-shadow: none !important;
 }
 #buyButton.btn-primary:hover,
 #buyButton.btn-primary:focus {
   background-color: transparent !important;
   border-color: #ad6331 !important;
   color: #ad6331 !important;
+  box-shadow: none !important;
 }
 
 /* Primair: "Offerte aanvragen" → filled-look (was outline). */
@@ -1642,11 +1646,11 @@ body.is-ctl-product .product-detail-ordernumber-container {
   color: #2d4528 !important;
 }
 
-/* Cijferbolletjes (1, 2, 3, 4, 5) voor de titels in donkergroen */
+/* Cijferbolletjes (1, 2, 3, 4, 5) voor de titels in salie-groen (secundair accent) */
 .product-detail-buy .collapse-title::before,
 .product-detail-buy .product-detail-configurator-group-title::before {
-  background-color: #2d4528 !important;
-  border-color: #2d4528 !important;
+  background-color: #7a9b6f !important;
+  border-color: #7a9b6f !important;
 }
 
 /* Kleurkeuze: toon de naam (uit title-attribuut) onder elke swatch.
