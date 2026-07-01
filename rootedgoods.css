@@ -3877,6 +3877,15 @@ body.is-ctl-product {
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 6rem) 40px;
 }
+/* Zelfde deterministische linkerlijn als de rest (content op 230, breedte 1440)
+   zodat de statement niet breder oogt dan de cat/spec/feature/slider-blokken. */
+@media (min-width: 992px) {
+  .rg-statement {
+    max-width: none;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px);
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px);
+  }
+}
 
 /* Zelfde styling als de landing-eyebrow ("Stay true to your roots"):
    lijntjes flankeren het label aan beide kanten. */
