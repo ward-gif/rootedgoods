@@ -4826,7 +4826,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    ============================================================ */
 .rgh{
   background:#F7F5F2;
-  min-height:calc(100vh - 240px);           /* iets lager -> logo-slider eronder piekt in beeld */
   display:flex;
   font-family:'Montserrat',system-ui,-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased;
@@ -4835,7 +4834,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rgh__inner{
   width:100%; max-width:1440px; margin:auto;
   padding:clamp(2rem,5vh,3.5rem) clamp(1.5rem,5vw,4.5rem);
-  display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:stretch;
+  display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:center;
 }
 
 /* ---- Copy (links, links-uitgelijnd, verticaal gecentreerd in de kolom) ---- */
@@ -4891,12 +4890,15 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 
 /* ---- Visual (rechts): 3 verticale marquee-kolommen ---- */
 .rgh__visual{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;min-height:480px;overflow:hidden;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;overflow:hidden;
+  /* Begrensde hoogte -> overflow clipt écht (kolommen groeien niet mee met de
+     volledige track). Schaalt met viewport binnen min/max. */
+  height:clamp(440px,58vh,640px);
   /* zachte fade boven/onder zodat tegels vervagen i.p.v. hard afsnijden */
   -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
   mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
 }
-.rgh__col{overflow:hidden;position:relative;}
+.rgh__col{overflow:hidden;position:relative;height:100%;}
 .rgh__track{display:flex;flex-direction:column;will-change:transform;}
 /* margin-bottom i.p.v. flex-gap zodat de repeat-unit uniform is -> naadloze -50% loop */
 .rgh__track .rgh__tile{margin-bottom:12px;}
