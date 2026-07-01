@@ -216,7 +216,7 @@ window.addEventListener('load', function () {
 
   // Wrapper transparant — section bg (#F7F5F2) komt door de CSS op .home.productslider.
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 1.25rem 0;';
+  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem);';
   var kicker = document.createElement('p');
   kicker.textContent = 'Een greep uit onze klanten';
   kicker.style.cssText = "text-align:center;margin:0 0 1rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4a5a44;";

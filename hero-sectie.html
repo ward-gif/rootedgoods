@@ -6,13 +6,13 @@
   <style>
     .rgh{background:#F7F5F2;font-family:'Montserrat',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;
       /* Vult (samen met de logo-slider eronder) netjes het scherm; content
-         verticaal gecentreerd voor balans (lucht boven én onder). Pas het
+         verticaal gecentreerd -> lucht rondom gelijk voor balans. Pas het
          aftrekgetal aan als de slider-hoogte afwijkt (hoger = hero korter). */
-      min-height:calc(100vh - 280px);display:flex;align-items:flex-end;}
+      min-height:calc(100vh - 300px);display:flex;align-items:center;}
     .rgh *{box-sizing:border-box;}
     .rgh__inner{
       width:100%;max-width:1440px;margin:0 auto;
-      padding:clamp(1.25rem,3vh,2.5rem) clamp(1.5rem,5vw,4rem) clamp(1rem,2vh,1.5rem);
+      padding:clamp(1.5rem,3vh,2.5rem) clamp(1.5rem,5vw,4rem);
       display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center;
     }
     /* ---- Copy links ---- */
