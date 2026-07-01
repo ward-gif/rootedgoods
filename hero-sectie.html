@@ -1,107 +1,17 @@
-<!-- Rooted Goods — homepage hero (zelfstandig fragment voor Shopware CMS HTML-block).
-     Vervang de twee href="#" in de CTA's (1 = offerteformulier, 2 = collectie).
-     De 6 showcase-tegels linken al naar de merk-zoekpagina's. -->
+<!-- Rooted Goods — homepage hero (editorial split + marquee). Plak in een CMS HTML-block.
+     CSS staat in rootedgoods.css (sectie 34) -> stijl-tweaks lopen live mee, geen re-paste nodig.
+     TE VERVANGEN:
+       - 2x href="#" in de CTA's (1 = offerteformulier, 2 = collectie)
+       - contactpersoon: foto (src), naam ("Sanne"), en href (/contact of calendly)
+     De marquee-tegels linken al naar de merk-zoekpagina's. Dubbele tegels (voor de
+     naadloze loop) staan op aria-hidden/tabindex=-1 zodat SR + tab ze overslaan. -->
 <section class="rgh" aria-labelledby="rgh-title">
-  <style>
-    .rgh{
-      --green:#2d4528; --body:#4a5a44; --terra:#ad6331; --terra-dark:#955529;
-      --accent:#CA853F; --cream:#F7F5F2; --line:#EAE3D7;
-      background:var(--cream);
-      font-family:'Montserrat',system-ui,-apple-system,sans-serif;
-      -webkit-font-smoothing:antialiased;
-      /* Vult het scherm onder de vaste header (~170px) en centreert de content
-         verticaal -> lucht boven, tussen én onder de elementen. */
-      min-height:calc(100vh - 170px);
-      display:flex;
-    }
-    .rgh *{box-sizing:border-box;}
-    .rgh__inner{
-      width:100%; max-width:1320px; margin:auto;
-      padding:clamp(2rem,5vh,4rem) clamp(1.5rem,6vw,5.5rem);
-    }
-
-    /* ---- Copy (gecentreerd, converterend) ---- */
-    .rgh__copy{max-width:46rem;margin:0 auto;text-align:center;}
-    .rgh__eyebrow{
-      display:flex; align-items:center; justify-content:center; gap:.75rem;
-      margin:0 0 clamp(1rem,2vw,1.5rem);
-      font-size:clamp(.78rem,.72rem+.2vw,.9rem); font-weight:700;
-      letter-spacing:.2em; text-transform:uppercase; color:var(--terra-dark);
-    }
-    .rgh__eyebrow::before,.rgh__eyebrow::after{content:"";width:2.2rem;height:2px;background:var(--accent);flex:none;}
-    .rgh__title{
-      font-family:'Playfair Display',Georgia,serif; font-weight:700; color:var(--green);
-      font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem); line-height:1.07;
-      letter-spacing:-.01em; margin:0 auto clamp(1rem,2vw,1.5rem); max-width:20ch; text-wrap:balance;
-    }
-    .rgh__title em{font-style:italic;font-weight:600;} /* editorial nadruk i.p.v. kleur (AA-safe) */
-    .rgh__sub{
-      font-size:clamp(1.05rem,.95rem+.45vw,1.25rem); line-height:1.5; color:var(--body);
-      margin:0 auto clamp(1.6rem,3vw,2.2rem); max-width:48ch;
-    }
-    .rgh__cta{display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; margin:0 0 clamp(1.3rem,2.5vw,1.8rem);}
-    .rgh__btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-      padding:.9rem 1.7rem; border-radius:999px; font-size:1rem; font-weight:700;
-      font-family:'Montserrat',sans-serif; text-decoration:none; cursor:pointer; border:2px solid transparent;
-      transition:transform .18s ease,background-color .2s ease,color .2s ease,box-shadow .25s ease,border-color .2s ease;
-    }
-    .rgh__btn svg{width:1.05em;height:1.05em;flex:none;transition:transform .2s ease;}
-    .rgh__btn--primary{background:var(--terra);color:#fff;box-shadow:0 12px 26px -14px rgba(173,99,49,.9);}
-    .rgh__btn--primary:hover{background:var(--terra-dark);transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(173,99,49,1);}
-    .rgh__btn--primary:hover svg{transform:translateX(4px);}
-    .rgh__btn--secondary{background:transparent;color:var(--green);border-color:rgba(45,69,40,.28);}
-    .rgh__btn--secondary:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px);}
-    .rgh__btn:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:3px;}
-    .rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem;}
-    .rgh__trust li{display:flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:500;color:var(--green);}
-    .rgh__trust svg{width:1rem;height:1rem;flex:none;color:var(--terra-dark);} /* AA-safe icoonkleur */
-
-    /* ---- Showcase (variatie + doorklik): 6 klikbare maker-tegels ---- */
-    .rgh__showcase{margin-top:clamp(2.2rem,4.5vh,3.4rem);}
-    .rgh__over{
-      text-align:center; margin:0 0 clamp(1rem,2vw,1.4rem);
-      font-size:.8rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--body);
-    }
-    .rgh__makers{display:grid; grid-template-columns:repeat(6,1fr); gap:clamp(.6rem,1vw,.9rem);}
-    .rgh__maker{
-      position:relative; display:block; overflow:hidden; border-radius:14px;
-      aspect-ratio:4/5; background:var(--green); text-decoration:none;
-      box-shadow:0 14px 30px -22px rgba(45,69,40,.55); transition:transform .3s ease,box-shadow .3s ease;
-    }
-    .rgh__maker:hover,.rgh__maker:focus-visible{transform:translateY(-4px);box-shadow:0 22px 40px -22px rgba(45,69,40,.6);}
-    .rgh__maker img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;transition:transform .5s ease;}
-    .rgh__maker:hover img,.rgh__maker:focus-visible img{transform:scale(1.06);}
-    .rgh__maker__cap{
-      position:absolute; left:0; right:0; bottom:0; z-index:2;
-      display:flex; align-items:center; justify-content:space-between; gap:.4rem;
-      padding:.85rem .7rem .6rem; color:#fff; font-size:.8rem; font-weight:600; line-height:1.2;
-      background:linear-gradient(to top,rgba(20,30,18,.85) 0%,rgba(20,30,18,.35) 55%,rgba(20,30,18,0) 100%);
-    }
-    .rgh__maker__cap b{font-weight:700;}
-    .rgh__maker__cap span{display:block;font-weight:500;opacity:.85;font-size:.72rem;}
-    .rgh__maker__cap svg{width:1rem;height:1rem;flex:none;transition:transform .2s ease;}
-    .rgh__maker:hover .rgh__maker__cap svg,.rgh__maker:focus-visible .rgh__maker__cap svg{transform:translateX(3px);}
-    .rgh__maker:focus-visible{outline:3px solid var(--terra-dark);outline-offset:2px;}
-
-    @keyframes rghIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-    @media (prefers-reduced-motion:no-preference){
-      .rgh__copy{animation:rghIn .7s cubic-bezier(.16,1,.3,1) both;}
-      .rgh__showcase{animation:rghIn .7s cubic-bezier(.16,1,.3,1) .12s both;}
-    }
-    @media (max-width:992px){ .rgh__makers{grid-template-columns:repeat(3,1fr);} }
-    @media (max-width:560px){
-      .rgh__makers{grid-template-columns:repeat(2,1fr);}
-      .rgh__btn{flex:1 1 100%;}
-    }
-    @media (prefers-reduced-motion:reduce){ .rgh *{animation:none!important;transition:none!important;} }
-  </style>
-
   <div class="rgh__inner">
+
     <div class="rgh__copy">
       <p class="rgh__eyebrow">Geworteld in Europa</p>
       <h1 id="rgh-title" class="rgh__title">Premium geschenken met <em>wortels in Europa</em>.</h1>
-      <p class="rgh__sub">Unieke producten uit Europa, voor jouw merk gepersonaliseerd — verpakt en bezorgd.</p>
+      <p class="rgh__sub">Unieke producten uit Europese makers, gepersonaliseerd voor jouw merk. Wij regelen drukproef, verpakking en bezorging.</p>
 
       <div class="rgh__cta">
         <a class="rgh__btn rgh__btn--primary" href="#">
@@ -116,49 +26,63 @@
         <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Digitaal drukvoorbeeld vooraf</li>
         <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Levering op meerdere locaties</li>
       </ul>
+
+      <a class="rgh__contact" href="/contact" aria-label="Ik ben Sanne — ik help je van idee tot ingepakt. Neem contact op.">
+        <img src="https://via.placeholder.com/88x88.png?text=+" alt="" width="44" height="44">
+        <span>
+          <span class="rgh__contact-name">Ik ben Sanne</span>
+          <span class="rgh__contact-promise">Ik help je van idee tot ingepakt
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </span>
+      </a>
     </div>
 
-    <div class="rgh__showcase">
-      <p class="rgh__over">Een greep uit onze Europese makers</p>
-      <div class="rgh__makers">
+    <!-- Desktop: 3 verticale marquee-kolommen -->
+    <div class="rgh__visual" aria-label="Uitgelichte producten uit Europa">
+      <div class="rgh__col rgh__col--1"><div class="rgh__track">
+        <a class="rgh__tile" href="/search?search=opinel" aria-label="Bekijk Opinel producten"><img src="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg" alt="Opinel zakmes" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Opinel</span><span class="rgh__tile-label">Zakmes uit Frankrijk</span></span></a>
+        <a class="rgh__tile" href="/search?search=bambook" aria-label="Bekijk Bambook producten"><img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" alt="Bambook notitieboek" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Bambook</span><span class="rgh__tile-label">Notitieboek uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=opinel" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg" alt="" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Opinel</span><span class="rgh__tile-label">Zakmes uit Frankrijk</span></span></a>
+        <a class="rgh__tile" href="/search?search=bambook" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" alt="" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Bambook</span><span class="rgh__tile-label">Notitieboek uit Nederland</span></span></a>
+      </div></div>
+      <div class="rgh__col rgh__col--2"><div class="rgh__track">
+        <a class="rgh__tile" href="/search?search=rebottled" aria-label="Bekijk Rebottled producten"><img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" alt="Rebottled gerecycled glas" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Rebottled</span><span class="rgh__tile-label">Gerecycled glas</span></span></a>
+        <a class="rgh__tile" href="/search?search=janzen" aria-label="Bekijk Janzen producten"><img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" alt="Janzen huisgeur" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Janzen</span><span class="rgh__tile-label">Huisgeur uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=rebottled" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" alt="" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Rebottled</span><span class="rgh__tile-label">Gerecycled glas</span></span></a>
+        <a class="rgh__tile" href="/search?search=janzen" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" alt="" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Janzen</span><span class="rgh__tile-label">Huisgeur uit Nederland</span></span></a>
+      </div></div>
+      <div class="rgh__col rgh__col--3"><div class="rgh__track">
+        <a class="rgh__tile" href="/search?search=samsonite" aria-label="Bekijk Samsonite producten"><img src="https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_800x800.jpg" alt="Samsonite koffer" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Samsonite</span><span class="rgh__tile-label">Koffer uit België</span></span></a>
+        <a class="rgh__tile" href="/search?search=mepal" aria-label="Bekijk Mepal producten"><img src="https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_800x800.jpg" alt="Mepal drinkbeker" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Mepal</span><span class="rgh__tile-label">Drinkbeker uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=samsonite" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_800x800.jpg" alt="" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Samsonite</span><span class="rgh__tile-label">Koffer uit België</span></span></a>
+        <a class="rgh__tile" href="/search?search=mepal" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_800x800.jpg" alt="" loading="lazy" width="400" height="533"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Mepal</span><span class="rgh__tile-label">Drinkbeker uit Nederland</span></span></a>
+      </div></div>
+    </div>
 
-        <a class="rgh__maker" href="https://bambook.08.promidata.shop/search?search=opinel" aria-label="Opinel zakmes — bekijk producten">
-          <img src="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg" srcset="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_400x400.jpg 400w, https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg 800w" sizes="(min-width:993px) 16vw,(min-width:561px) 31vw,46vw" alt="Opinel zakmes buiten op een steen" loading="lazy" width="400" height="533">
-          <span class="rgh__maker__cap"><span><b>Opinel</b><span>zakmes</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="rgh__maker" href="https://bambook.08.promidata.shop/search?search=rebottled" aria-label="Rebottled drinkglas — bekijk producten">
-          <img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" srcset="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_400x400.jpg 400w, https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg 800w" sizes="(min-width:993px) 16vw,(min-width:561px) 31vw,46vw" alt="Rebottled drinkglas van gerecycled glas" loading="lazy" width="400" height="533">
-          <span class="rgh__maker__cap"><span><b>Rebottled</b><span>gerecycled glas</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="rgh__maker" href="https://bambook.08.promidata.shop/search?search=bambook" aria-label="Bambook notitieboek — bekijk producten">
-          <img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" srcset="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_400x400.jpg 400w, https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg 800w" sizes="(min-width:993px) 16vw,(min-width:561px) 31vw,46vw" alt="Bambook navulbaar bamboe notitieboek" loading="lazy" width="400" height="533">
-          <span class="rgh__maker__cap"><span><b>Bambook</b><span>notitieboek</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="rgh__maker" href="https://bambook.08.promidata.shop/search?search=janzen" aria-label="Janzen huisgeur — bekijk producten">
-          <img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" srcset="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_400x400.jpg 400w, https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg 800w" sizes="(min-width:993px) 16vw,(min-width:561px) 31vw,46vw" alt="Janzen huisgeur met geurstokjes" loading="lazy" width="400" height="533">
-          <span class="rgh__maker__cap"><span><b>Janzen</b><span>huisgeur</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="rgh__maker" href="https://bambook.08.promidata.shop/search?search=samsonite" aria-label="Samsonite koffer — bekijk producten">
-          <img src="https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_800x800.jpg" srcset="https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_400x400.jpg 400w, https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_800x800.jpg 800w" sizes="(min-width:993px) 16vw,(min-width:561px) 31vw,46vw" alt="Samsonite Proxis koffer in lime" loading="lazy" width="400" height="533">
-          <span class="rgh__maker__cap"><span><b>Samsonite</b><span>koffer</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="rgh__maker" href="https://bambook.08.promidata.shop/search?search=mepal" aria-label="Mepal lunchbox — bekijk producten">
-          <img src="https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_800x800.jpg" srcset="https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_400x400.jpg 400w, https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_800x800.jpg 800w" sizes="(min-width:993px) 16vw,(min-width:561px) 31vw,46vw" alt="Mepal drinkbekers" loading="lazy" width="400" height="533">
-          <span class="rgh__maker__cap"><span><b>Mepal</b><span>drinkbeker</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
+    <!-- Mobiel: één horizontale marquee-band (zelfde producten) -->
+    <div class="rgh__band" aria-label="Uitgelichte producten uit Europa">
+      <div class="rgh__band-track">
+        <a class="rgh__tile" href="/search?search=opinel" aria-label="Bekijk Opinel producten"><img src="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg" alt="Opinel zakmes" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Opinel</span><span class="rgh__tile-label">Zakmes uit Frankrijk</span></span></a>
+        <a class="rgh__tile" href="/search?search=rebottled" aria-label="Bekijk Rebottled producten"><img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" alt="Rebottled gerecycled glas" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Rebottled</span><span class="rgh__tile-label">Gerecycled glas</span></span></a>
+        <a class="rgh__tile" href="/search?search=bambook" aria-label="Bekijk Bambook producten"><img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" alt="Bambook notitieboek" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Bambook</span><span class="rgh__tile-label">Notitieboek uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=janzen" aria-label="Bekijk Janzen producten"><img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" alt="Janzen huisgeur" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Janzen</span><span class="rgh__tile-label">Huisgeur uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=samsonite" aria-label="Bekijk Samsonite producten"><img src="https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_800x800.jpg" alt="Samsonite koffer" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Samsonite</span><span class="rgh__tile-label">Koffer uit België</span></span></a>
+        <a class="rgh__tile" href="/search?search=mepal" aria-label="Bekijk Mepal producten"><img src="https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_800x800.jpg" alt="Mepal drinkbeker" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Mepal</span><span class="rgh__tile-label">Drinkbeker uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=opinel" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg" alt="" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Opinel</span><span class="rgh__tile-label">Zakmes uit Frankrijk</span></span></a>
+        <a class="rgh__tile" href="/search?search=rebottled" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" alt="" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Rebottled</span><span class="rgh__tile-label">Gerecycled glas</span></span></a>
+        <a class="rgh__tile" href="/search?search=bambook" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" alt="" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Bambook</span><span class="rgh__tile-label">Notitieboek uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=janzen" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" alt="" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Janzen</span><span class="rgh__tile-label">Huisgeur uit Nederland</span></span></a>
+        <a class="rgh__tile" href="/search?search=samsonite" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/cb/ec/62/1782214897/Proxis9%20Lime%20300dpi_800x800.jpg" alt="" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Samsonite</span><span class="rgh__tile-label">Koffer uit België</span></span></a>
+        <a class="rgh__tile" href="/search?search=mepal" aria-hidden="true" tabindex="-1"><img src="https://bambook.08.promidata.shop/thumbnail/7c/8f/75/1776773915/Mepal%20drinkbeker%20afbeelding_800x800.jpg" alt="" loading="lazy" width="400" height="500"><span class="rgh__tile-cap"><span class="rgh__tile-brand">Mepal</span><span class="rgh__tile-label">Drinkbeker uit Nederland</span></span></a>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- Keuzes:
-  Variatie + doorklik: alle 6 producten als klikbare tegels (merk + producttype-label) → toont de breedte (zakmes, glas, notitieboek, huisgeur, koffer, beker) en linkt naar de merk-zoekpagina's; caption + hover-zoom + pijl maken de klikbaarheid duidelijk (was een dump-strip zonder haak).
-  CRO: converterende copy blijft de hoofdact (offerte = primaire CTA + trust-rij); de showcase is de "ontdek"-laag eronder voor de secundaire doorklik naar de collectie.
-  A11y: aria-label per tegel, caption wit op donkere gradient (AA), eyebrow/iconen in #955529 (5.3:1), #CA853F alleen decoratief, H1-nadruk via italic; prefers-reduced-motion gerespecteerd; thumbnails via srcset voor performance.
-  Alternatief: de 6 tegels als seizoens-/thema-rotatie (bv. per kwartaal andere makers uitlichten) om terugkerende bezoekers steeds iets nieuws te tonen. -->
+  Kolom-loop: elke kolom bevat de set 2x; de tegels dragen margin-bottom (geen flex-gap) zodat de repeat-unit uniform is en translateY(-50%) exact één set opschuift -> naadloos. Kol 2 draait de keyframe om (van -50% naar 0) voor de tegengestelde richting.
+  JS vs CSS: puur CSS (keyframes + :hover pause + prefers-reduced-motion). Geen JS nodig; scheelt gewicht en werkt zonder afhankelijkheden.
+  Overgang naar logo-slider: geen social-proof/logo's in de hero, bottom-padding klein gehouden, contactpersoon is een menselijk touchpoint (foto+naam+belofte, geen claim) -> de losse logo-slider eronder botst niet.
+  Alternatief als de marquee te druk voelt: animatie standaard 'paused' laten en alleen laten lopen op hover/focus van de visual (rustiger, beweging op intentie) — of de 3 kolommen vervangen door 1 statische bento-mozaïek. -->

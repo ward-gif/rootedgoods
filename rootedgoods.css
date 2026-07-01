@@ -4815,3 +4815,121 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   justify-content: center;
   margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
 }
+
+
+/* ============================================================
+   34. HOMEPAGE HERO — editorial split + marquee-kolommen (.rgh)
+   ============================================================
+   HTML staat in hero-sectie.html (CMS HTML-block); de CSS staat hier
+   zodat stijl-tweaks live meelopen (geen re-paste nodig). Links = copy +
+   contactpersoon, rechts = 3 verticale marquee-kolommen (peek-effect).
+   ============================================================ */
+.rgh{
+  background:#F7F5F2;
+  min-height:calc(100vh - 170px);           /* vult scherm onder de vaste header */
+  display:flex;
+  font-family:'Montserrat',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.rgh *{box-sizing:border-box;}
+.rgh__inner{
+  width:100%; max-width:1440px; margin:auto;
+  padding:clamp(2rem,5vh,3.5rem) clamp(1.5rem,5vw,4.5rem);
+  display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:center;
+}
+
+/* ---- Copy (links, links-uitgelijnd) ---- */
+.rgh__copy{max-width:37rem;}
+.rgh__eyebrow{
+  margin:0 0 clamp(1rem,2vw,1.4rem);
+  font-size:.85rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+  color:#955529;                            /* AA-safe 'oker' op crème (5.3:1); #CA853F zakt door AA */
+}
+.rgh__title{
+  font-family:'Playfair Display',Georgia,serif; font-weight:700; color:#2d4528;
+  font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem); line-height:1.07; letter-spacing:-.01em;
+  margin:0 0 clamp(1rem,2vw,1.4rem); text-wrap:balance;
+}
+.rgh__title em{font-style:italic; font-weight:600;}
+.rgh__sub{
+  font-size:clamp(1.02rem,.95rem+.4vw,1.2rem); line-height:1.55; color:#4a5a44;
+  margin:0 0 clamp(1.5rem,3vw,2rem); max-width:46ch;
+}
+.rgh__cta{display:flex; flex-wrap:wrap; gap:.85rem; margin:0 0 clamp(1.2rem,2.5vw,1.6rem);}
+.rgh__btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.9rem 1.7rem; border-radius:999px; font-size:1rem; font-weight:700;
+  font-family:'Montserrat',sans-serif; text-decoration:none; cursor:pointer; border:2px solid transparent;
+  transition:transform .18s ease,background-color .2s ease,color .2s ease,box-shadow .25s ease,border-color .2s ease;
+}
+.rgh__btn svg{width:1.05em;height:1.05em;flex:none;transition:transform .2s ease;}
+.rgh__btn--primary{background:#ad6331;color:#fff;box-shadow:0 12px 26px -14px rgba(173,99,49,.9);}
+.rgh__btn--primary:hover{background:#955529;transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(173,99,49,1);}
+.rgh__btn--primary:hover svg{transform:translateX(4px);}
+.rgh__btn--secondary{background:transparent;color:#2d4528;border-color:rgba(45,69,40,.28);}
+.rgh__btn--secondary:hover{border-color:#ad6331;color:#ad6331;transform:translateY(-2px);}
+.rgh__btn:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:3px;}
+
+/* Trust-strip */
+.rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem 1.3rem;}
+.rgh__trust li{display:flex;align-items:center;gap:.4rem;font-size:.84rem;font-weight:500;color:#2d4528;}
+.rgh__trust svg{width:1rem;height:1rem;flex:none;color:#955529;}
+
+/* Persoonlijke contactpersoon (menselijk touchpoint, geen social proof) */
+.rgh__contact{
+  display:inline-flex; align-items:center; gap:.8rem; margin-top:1.5rem;
+  padding:.5rem .95rem .5rem .5rem; border-radius:999px; text-decoration:none;
+  border:1px solid transparent; transition:background-color .2s ease,border-color .2s ease;
+}
+.rgh__contact:hover{background:#fff;border-color:#EAE3D7;}
+.rgh__contact:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:2px;}
+.rgh__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
+.rgh__contact-name{display:block;font-size:.8rem;font-weight:600;color:#955529;}
+.rgh__contact-promise{display:flex;align-items:center;gap:.35rem;font-size:.95rem;font-weight:600;color:#2d4528;}
+.rgh__contact-promise svg{width:1em;height:1em;flex:none;transition:transform .2s ease;}
+.rgh__contact:hover .rgh__contact-promise svg{transform:translateX(3px);}
+
+/* ---- Visual (rechts): 3 verticale marquee-kolommen ---- */
+.rgh__visual{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;min-height:620px;max-height:calc(100vh - 210px);overflow:hidden;}
+.rgh__col{overflow:hidden;position:relative;}
+.rgh__track{display:flex;flex-direction:column;will-change:transform;}
+/* margin-bottom i.p.v. flex-gap zodat de repeat-unit uniform is -> naadloze -50% loop */
+.rgh__track .rgh__tile{margin-bottom:12px;}
+.rgh__col--1 .rgh__track{animation:rghUp 40s linear infinite;}
+.rgh__col--2 .rgh__track{animation:rghDown 45s linear infinite;}
+.rgh__col--3 .rgh__track{animation:rghUp 50s linear infinite;}
+.rgh__visual:hover .rgh__track{animation-play-state:paused;}
+@keyframes rghUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes rghDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+
+/* Tile */
+.rgh__tile{position:relative;display:block;border-radius:10px;overflow:hidden;aspect-ratio:3/4;background:#2d4528;text-decoration:none;flex:none;transition:transform .3s ease;}
+.rgh__tile img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;transition:filter .3s ease;}
+.rgh__tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0));}
+.rgh__tile:hover{transform:scale(1.02);}
+.rgh__tile:hover img{filter:brightness(1.06);}
+.rgh__tile-cap{position:absolute;left:.6rem;right:.6rem;bottom:.55rem;z-index:2;}
+.rgh__tile-brand{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e9c9a9;} /* lichte oker op donker = AA */
+.rgh__tile-label{display:block;font-size:.82rem;font-weight:500;color:#fff;}
+.rgh__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
+
+/* Mobiele horizontale band (verborgen op desktop) */
+.rgh__band{display:none;}
+
+@media (max-width:992px){
+  .rgh__inner{grid-template-columns:1fr;gap:2rem;}
+  .rgh__copy{max-width:none;}
+  .rgh__visual{display:none;}
+  .rgh__band{display:block;overflow:hidden;height:190px;}
+  .rgh__band-track{display:flex;height:100%;width:max-content;animation:rghLeft 30s linear infinite;will-change:transform;}
+  .rgh__band-track .rgh__tile{aspect-ratio:4/5;height:100%;margin-right:12px;}
+  .rgh__band:hover .rgh__band-track,.rgh__band:active .rgh__band-track{animation-play-state:paused;}
+  .rgh__contact img{width:36px;height:36px;}
+  .rgh__contact-promise{font-size:.9rem;}
+}
+@keyframes rghLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media (prefers-reduced-motion:reduce){
+  .rgh__track,.rgh__band-track{animation:none!important;transform:none!important;}
+  .rgh *{transition:none!important;}
+}
