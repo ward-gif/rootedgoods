@@ -216,7 +216,7 @@ window.addEventListener('load', function () {
 
   // Wrapper transparant — section bg (#F7F5F2) komt door de CSS op .home.productslider.
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 2rem 0;';
+  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: 1.25rem 0;';
   wrapper.appendChild(track);
 
   // Keyframe animatie inject
