@@ -148,12 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider = opts.slider || {};
     opts.slider.loop = false;     // geen clones meer
     opts.slider.rewind = false;   // niet terugspringen naar begin
-    // Vaste tegelbreedte = de block-instelling (productboxMinWidth) -> rechts
-    // blijft een stukje van de volgende tegel over (peek), en de grootte blijft
-    // bestuurbaar via het block zelf.
-    var boxW = parseInt(opts.productboxMinWidth, 10);
-    opts.slider.fixedWidth = (boxW > 0 ? boxW : 320);
-    delete opts.slider.edgePadding;
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }
