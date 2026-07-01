@@ -193,9 +193,11 @@ window.addEventListener('load', function () {
 
   // Bouw scroll-track. Set is verdubbeld voor naadloze loop.
   var track = document.createElement('div');
-  track.style.cssText = 'display:flex; align-items:center; width:max-content; animation:logoScroll 25s linear infinite;';
+  track.style.cssText = 'display:flex; align-items:center; width:max-content; animation:logoScroll 50s linear infinite;';
 
-  [images, images].forEach(function (set) {
+  // 4 kopieën: de -50%-loop verschuift 2 kopieën -> die vullen altijd de
+  // viewport-breedte, dus geen leeg gat + logo's die "ineens" verschijnen.
+  [images, images, images, images].forEach(function (set) {
     set.forEach(function (img) {
       var div = document.createElement('div');
       div.style.cssText = 'padding: 0 3rem; flex-shrink:0;';

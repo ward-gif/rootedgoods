@@ -4,11 +4,15 @@
      TE VERVANGEN: 2x href="#" in de CTA's (offerteformulier + collectie). -->
 <section class="rgh" aria-labelledby="rgh-title">
   <style>
-    .rgh{background:#F7F5F2;font-family:'Montserrat',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;}
+    .rgh{background:#F7F5F2;font-family:'Montserrat',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;
+      /* Vult (samen met de logo-slider eronder) netjes het scherm; content
+         verticaal gecentreerd voor balans. Pas 300px aan als de slider-hoogte
+         afwijkt (hoger getal = hero korter). */
+      min-height:calc(100vh - 300px);display:flex;}
     .rgh *{box-sizing:border-box;}
     .rgh__inner{
-      width:100%;max-width:1440px;margin:0 auto;
-      padding:clamp(2.5rem,6vh,4rem) clamp(1.5rem,5vw,4rem) clamp(3rem,4vh,3.5rem);
+      width:100%;max-width:1440px;margin:auto;
+      padding:clamp(1.75rem,4vh,3rem) clamp(1.5rem,5vw,4rem);
       display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center;
     }
     /* ---- Copy links ---- */
@@ -18,7 +22,9 @@
     .rgh__title em{font-style:italic;font-weight:600;}
     .rgh__sub{font-size:clamp(1.02rem,.95rem+.4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
     .rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
-    .rgh__cta .btn-outline-primary{padding:.72rem 1.5rem !important;font-size:.88rem !important;} /* secundair compacter -> duidelijke hiërarchie */
+    /* Duidelijke hiërarchie: primair groter, secundair compacter */
+    .rgh__cta .btn-primary{padding:1.02rem 2.3rem !important;font-size:1.04rem !important;}
+    .rgh__cta .btn-outline-primary{padding:.68rem 1.4rem !important;font-size:.85rem !important;}
     /* Trust-strip: verticale stack, altijd 1 item per regel (geen 2+1 wrap) */
     .rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;align-items:flex-start;}
     .rgh__trust li{display:flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:500;color:#2d4528;}
@@ -37,11 +43,11 @@
     .rgh__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
     .rgh__tile{position:relative;display:block;overflow:hidden;border-radius:10px;aspect-ratio:3/4;background:#2d4528;text-decoration:none;box-shadow:0 14px 30px -24px rgba(45,69,40,.5);}
     .rgh__tile img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;}
-    .rgh__tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0));transition:background .25s ease;}
-    .rgh__tile:hover::after,.rgh__tile:focus-visible::after{background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.15) 55%,rgba(0,0,0,0));}
+    .rgh__tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.28) 48%,rgba(0,0,0,0));transition:background .25s ease;}
+    .rgh__tile:hover::after,.rgh__tile:focus-visible::after{background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 55%,rgba(0,0,0,0));}
     .rgh__tile-cap{position:absolute;left:.7rem;right:.7rem;bottom:.6rem;z-index:2;}
-    .rgh__tile-brand{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e9c9a9;} /* oker op donker = AA */
-    .rgh__tile-label{font-size:.85rem;font-weight:500;color:#fff;background-image:linear-gradient(#fff,#fff);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s ease;}
+    .rgh__tile-brand{display:block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e9c9a9;} /* oker op donker = AA */
+    .rgh__tile-label{font-size:.8rem;font-weight:500;color:#fff;background-image:linear-gradient(#fff,#fff);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s ease;}
     .rgh__tile:hover .rgh__tile-label,.rgh__tile:focus-visible .rgh__tile-label{background-size:100% 1px;} /* onderstreping fade-in, geen scale */
     .rgh__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
 
@@ -69,7 +75,6 @@
       <ul class="rgh__trust">
         <li><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"></path></svg>Geassembleerd in Europa</li>
         <li><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"></path></svg>Digitaal drukvoorbeeld vooraf</li>
-        <li><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"></path></svg>Levering op meerdere locaties</li>
       </ul>
 
       <a class="rgh__contact" href="/contact" aria-label="Ik ben Richard — ik help je van idee tot bezorging. Neem contact op.">
