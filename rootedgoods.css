@@ -4819,3 +4819,68 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   justify-content: center;
   margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
 }
+
+
+/* ============================================================
+   35. HOMEPAGE HERO (.rgh) — verplaatst uit inline <style> naar global
+   ============================================================
+   HTML staat in hero-sectie.html (CMS HTML-block, nu zonder <style>).
+   CSS hier zodat stijl-tweaks live meelopen (geen re-paste nodig).
+   Hero-hoogte wordt door rootedgoods.js dynamisch gezet (slider onderaan).
+   ============================================================ */
+.rgh{background:#F7F5F2;font-family:'Montserrat',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;min-height:calc(100vh - 300px);display:flex;align-items:center;}
+.rgh *{box-sizing:border-box;}
+.rgh__inner{
+  width:100%;max-width:none;margin:0 auto;
+  padding:clamp(1.5rem,3vh,2.5rem) calc(max((100vw - 1600px)/2, 0px) + 80px); /* zelfde calc+80-lijn als de rest -> content op 230, breedte 1440 */
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center;
+}
+.rgh__copy{max-width:37rem;}
+.rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem+.4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#CA853F;} /* gelijk aan .rg-statement__kicker */
+.rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#2d4528;font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
+.rgh__title em{font-style:italic;font-weight:600;}
+.rgh__sub{font-size:clamp(1.02rem,.95rem+.4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
+.rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
+.rgh .rgh__cta a.btn-primary{padding:.95rem 2.2rem !important;font-size:1rem !important;}       /* primair groter */
+.rgh .rgh__cta a.btn-outline-primary{padding:.78rem 1.6rem !important;font-size:.9rem !important;} /* secundair compacter */
+.rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:nowrap;gap:.35rem 1.1rem;align-items:center;}
+.rgh__trust li{display:flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:500;color:#2d4528;white-space:nowrap;}
+.rgh__trust svg{width:1rem;height:1rem;flex:none;color:#CA853F;}
+.rgh__sep{display:block;width:min(100%,22rem);height:1px;background:#EAE3D7;margin:1rem 0 .9rem;}
+.rgh__contact{display:inline-flex;align-self:flex-start;align-items:center;gap:.65rem;margin-top:0;padding:.35rem .8rem .35rem .35rem;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:background-color .2s,border-color .2s;}
+.rgh__contact:hover{background:#fff;border-color:#EAE3D7;}
+.rgh__contact:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:2px;}
+.rgh__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
+.rgh__contact-name{display:block;font-size:.72rem;font-weight:600;color:#CA853F;}
+.rgh__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#4a5a44;}
+.rgh__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s;}
+.rgh__contact:hover .rgh__contact-promise svg{transform:translateX(3px);}
+
+.rgh__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.rgh__tile{position:relative;display:block;overflow:hidden;border-radius:10px;aspect-ratio:3/4;background:#2d4528;text-decoration:none;box-shadow:0 14px 30px -24px rgba(45,69,40,.5);}
+.rgh__tile img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;}
+.rgh__tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.28) 48%,rgba(0,0,0,0));transition:background .25s ease;}
+.rgh__tile:hover::after,.rgh__tile:focus-visible::after{background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 55%,rgba(0,0,0,0));}
+.rgh__tile-cap{position:absolute;left:.7rem;right:.7rem;bottom:.6rem;z-index:2;}
+.rgh__tile-brand{display:block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e9c9a9;}
+.rgh__tile-label{font-size:.8rem;font-weight:500;color:#fff;background-image:linear-gradient(#fff,#fff);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s ease;}
+.rgh__tile:hover .rgh__tile-label,.rgh__tile:focus-visible .rgh__tile-label{background-size:100% 1px;}
+.rgh__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
+
+@media (max-width:992px){
+  .rgh__inner{grid-template-columns:1fr;gap:2rem;padding-left:clamp(1.25rem,5vw,2rem);padding-right:clamp(1.25rem,5vw,2rem);}
+  .rgh__copy{max-width:none;}
+  .rgh__grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:640px){ .rgh__trust{flex-direction:column;align-items:flex-start;} }
+@media (max-width:480px){ .rgh__grid{grid-template-columns:1fr;} }
+
+/* Contactpersoon-blok in de CTA (dark-variant: naam lichte terracotta, belofte wit). */
+.rg-cta__contact{display:inline-flex;align-self:flex-start;align-items:center;gap:.65rem;margin-top:1.4rem;padding:.35rem .8rem .35rem .35rem;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:background-color .2s ease,border-color .2s ease;}
+.rg-cta__contact:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);}
+.rg-cta__contact:focus-visible{outline:3px solid rgba(255,255,255,.6);outline-offset:2px;}
+.rg-cta__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
+.rg-cta__contact-name{display:block;font-size:.72rem;font-weight:600;color:#e9c9a9;}
+.rg-cta__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#fff;}
+.rg-cta__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s ease;}
+.rg-cta__contact:hover .rg-cta__contact-promise svg{transform:translateX(3px);}
