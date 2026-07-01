@@ -217,10 +217,6 @@ window.addEventListener('load', function () {
   // Wrapper transparant — section bg (#F7F5F2) komt door de CSS op .home.productslider.
   var wrapper = document.createElement('div');
   wrapper.style.cssText = 'overflow:hidden; width:100%; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem);';
-  var kicker = document.createElement('p');
-  kicker.textContent = 'Een greep uit onze klanten';
-  kicker.style.cssText = "text-align:center;margin:0 0 1rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4a5a44;";
-  wrapper.appendChild(kicker);
   wrapper.appendChild(track);
 
   // Keyframe animatie inject
@@ -230,6 +226,22 @@ window.addEventListener('load', function () {
 
   carousel.style.display = 'none';
   carousel.parentNode.insertBefore(wrapper, carousel);
+
+  // Hero-hoogte dynamisch: de logo-slider komt net boven de onderkant van het
+  // scherm uit (kleine ruimte eronder), hero-content blijft gecentreerd voor
+  // balans. Alleen desktop; herberekent bij resize.
+  var hero = document.querySelector('.rgh');
+  if (hero) {
+    var fitHero = function () {
+      if (window.innerWidth < 993) { hero.style.minHeight = ''; return; }
+      var headerEl = document.querySelector('.header-main');
+      var headerH = headerEl ? headerEl.offsetHeight : 160;
+      var h = window.innerHeight - headerH - wrapper.offsetHeight - 24; // 24px ruimte onder de slider
+      hero.style.minHeight = Math.max(h, 420) + 'px';
+    };
+    fitHero();
+    window.addEventListener('resize', fitHero);
+  }
 });
 
 
