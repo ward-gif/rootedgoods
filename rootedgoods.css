@@ -4894,9 +4894,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   /* Begrensde hoogte -> overflow clipt écht (kolommen groeien niet mee met de
      volledige track). Schaalt met viewport binnen min/max. */
   height:clamp(440px,58vh,640px);
-  /* zachte fade boven/onder zodat tegels vervagen i.p.v. hard afsnijden */
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
+  /* Geen top-fade (het menu scheidt 'm al); alleen onderaan zacht laten
+     vervagen tot de onderkant van de sectie. */
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 86%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 0,#000 86%,transparent 100%);
 }
 .rgh__col{overflow:hidden;position:relative;height:100%;}
 .rgh__track{display:flex;flex-direction:column;will-change:transform;}
