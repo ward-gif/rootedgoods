@@ -4826,6 +4826,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    ============================================================ */
 .rgh{
   background:#F7F5F2;
+  min-height:calc(100vh - 170px);           /* hero vult het scherm onder de vaste header */
   display:flex;
   font-family:'Montserrat',system-ui,-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased;
@@ -4833,12 +4834,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rgh *{box-sizing:border-box;}
 .rgh__inner{
   width:100%; max-width:1440px; margin:auto;
-  padding:clamp(2rem,5vh,3.5rem) clamp(1.5rem,5vw,4.5rem);
+  padding:0 clamp(1.5rem,5vw,4.5rem);       /* geen verticale padding: visual loopt tot boven (onder het menu) en onder */
   display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:center;
 }
 
-/* ---- Copy (links, links-uitgelijnd, verticaal gecentreerd in de kolom) ---- */
-.rgh__copy{max-width:37rem;display:flex;flex-direction:column;justify-content:center;}
+/* ---- Copy (links, links-uitgelijnd, verticaal gecentreerd, met eigen lucht) ---- */
+.rgh__copy{max-width:37rem;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(2rem,5vh,3.5rem);}
 .rgh__eyebrow{
   margin:0 0 clamp(1rem,2vw,1.4rem);
   font-size:.85rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
@@ -4876,7 +4877,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 
 /* Persoonlijke contactpersoon (menselijk touchpoint, geen social proof) */
 .rgh__contact{
-  display:inline-flex; align-items:center; gap:.65rem; margin-top:1.25rem;
+  display:inline-flex; align-self:flex-start; align-items:center; gap:.65rem; margin-top:1.25rem;
   padding:.35rem .8rem .35rem .35rem; border-radius:999px; text-decoration:none;
   border:1px solid transparent; transition:background-color .2s ease,border-color .2s ease;
 }
@@ -4891,9 +4892,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 /* ---- Visual (rechts): 3 verticale marquee-kolommen ---- */
 .rgh__visual{
   display:grid;grid-template-columns:repeat(3,1fr);gap:12px;overflow:hidden;
-  /* Begrensde hoogte -> overflow clipt écht (kolommen groeien niet mee met de
-     volledige track). Schaalt met viewport binnen min/max. */
-  height:clamp(440px,58vh,640px);
+  /* Vult de hoogte van de hero (viewport onder de header) -> beelden lopen tot
+     onder het menu en tot de onderkant. Elke kolom heeft 8 tegels (2 uniek x4)
+     zodat de -50%-loop ook hoge kolommen naadloos vult. */
+  height:calc(100vh - 170px); min-height:440px; max-height:1040px;
   /* Geen top-fade (het menu scheidt 'm al); alleen onderaan zacht laten
      vervagen tot de onderkant van de sectie. */
   -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 86%,transparent 100%);
