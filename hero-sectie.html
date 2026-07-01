@@ -9,33 +9,37 @@
       background:var(--cream);
       font-family:'Montserrat',system-ui,-apple-system,sans-serif;
       -webkit-font-smoothing:antialiased;
+      /* Vult het scherm onder de vaste header (~170px) en centreert de content
+         verticaal -> lucht boven, tussen én onder de elementen. */
+      min-height:calc(100vh - 170px);
+      display:flex;
     }
     .rgh *{box-sizing:border-box;}
     .rgh__inner{
-      max-width:1400px; margin:0 auto;
-      padding:clamp(1.5rem,3.5vh,2.75rem) clamp(1.25rem,5vw,4rem) clamp(1.75rem,3.5vh,2.75rem);
+      width:100%; max-width:1320px; margin:auto;
+      padding:clamp(2rem,5vh,4rem) clamp(1.5rem,6vw,5.5rem);
     }
 
     /* ---- Copy (gecentreerd, converterend) ---- */
     .rgh__copy{max-width:46rem;margin:0 auto;text-align:center;}
     .rgh__eyebrow{
       display:flex; align-items:center; justify-content:center; gap:.75rem;
-      margin:0 0 clamp(.7rem,1.5vw,1rem);
+      margin:0 0 clamp(1rem,2vw,1.5rem);
       font-size:clamp(.78rem,.72rem+.2vw,.9rem); font-weight:700;
       letter-spacing:.2em; text-transform:uppercase; color:var(--terra-dark);
     }
     .rgh__eyebrow::before,.rgh__eyebrow::after{content:"";width:2.2rem;height:2px;background:var(--accent);flex:none;}
     .rgh__title{
       font-family:'Playfair Display',Georgia,serif; font-weight:700; color:var(--green);
-      font-size:clamp(2rem,1.2rem+2.4vw,3.4rem); line-height:1.07;
-      letter-spacing:-.01em; margin:0 auto clamp(.8rem,1.5vw,1.1rem); max-width:20ch; text-wrap:balance;
+      font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem); line-height:1.07;
+      letter-spacing:-.01em; margin:0 auto clamp(1rem,2vw,1.5rem); max-width:20ch; text-wrap:balance;
     }
     .rgh__title em{font-style:italic;font-weight:600;} /* editorial nadruk i.p.v. kleur (AA-safe) */
     .rgh__sub{
-      font-size:clamp(1.02rem,.95rem+.4vw,1.2rem); line-height:1.5; color:var(--body);
-      margin:0 auto clamp(1.1rem,2vw,1.5rem); max-width:48ch;
+      font-size:clamp(1.05rem,.95rem+.45vw,1.25rem); line-height:1.5; color:var(--body);
+      margin:0 auto clamp(1.6rem,3vw,2.2rem); max-width:48ch;
     }
-    .rgh__cta{display:flex; flex-wrap:wrap; gap:.85rem; justify-content:center; margin:0 0 clamp(1rem,2vw,1.4rem);}
+    .rgh__cta{display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; margin:0 0 clamp(1.3rem,2.5vw,1.8rem);}
     .rgh__btn{
       display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
       padding:.9rem 1.7rem; border-radius:999px; font-size:1rem; font-weight:700;
@@ -54,9 +58,9 @@
     .rgh__trust svg{width:1rem;height:1rem;flex:none;color:var(--terra-dark);} /* AA-safe icoonkleur */
 
     /* ---- Showcase (variatie + doorklik): 6 klikbare maker-tegels ---- */
-    .rgh__showcase{margin-top:clamp(1.4rem,3vh,2.2rem);}
+    .rgh__showcase{margin-top:clamp(2.2rem,4.5vh,3.4rem);}
     .rgh__over{
-      text-align:center; margin:0 0 clamp(.7rem,1.5vw,1rem);
+      text-align:center; margin:0 0 clamp(1rem,2vw,1.4rem);
       font-size:.8rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--body);
     }
     .rgh__makers{display:grid; grid-template-columns:repeat(6,1fr); gap:clamp(.6rem,1vw,.9rem);}
