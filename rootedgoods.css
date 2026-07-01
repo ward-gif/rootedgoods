@@ -3877,13 +3877,14 @@ body.is-ctl-product {
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 6rem) 40px;
 }
-/* Zelfde deterministische linkerlijn als de rest (content op 230, breedte 1440)
-   zodat de statement niet breder oogt dan de cat/spec/feature/slider-blokken. */
+/* Statement vult de (via sectie 30) op calc+80 gezette buiten-container; géén
+   eigen zij-padding -> content op 230/breedte 1440, gelijk aan de rest.
+   (calc+80 hier zou dubbel tellen: de container is al full-width + calc+80.) */
 @media (min-width: 992px) {
   .rg-statement {
     max-width: none;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px);
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px);
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -4341,7 +4342,13 @@ img.rg-europe-map__svg {
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style],
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container-row,
   .cms-section:has(.home-productslider) .cms-block-text .col-12,
-  .cms-section:has(.home-productslider) .cms-block-text .cms-element-text {
+  .cms-section:has(.home-productslider) .cms-block-text .cms-element-text,
+  .cms-section:has(.rg-statement) .cms-block-container,
+  .cms-section:has(.rg-statement) .cms-block-container[style],
+  .cms-section:has(.rg-statement) .cms-block-container-row,
+  .cms-section:has(.rg-statement) .col-12,
+  .cms-section:has(.rg-statement) .cms-element-text,
+  .cms-section:has(.rg-statement) .cms-element-html {
     max-width: none !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -4359,7 +4366,9 @@ img.rg-europe-map__svg {
   .cms-section:has(.rg-feature-row__content) .cms-block-container,
   .cms-section:has(.rg-feature-row__content) .cms-block-container[style],
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container,
-  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style] {
+  .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style],
+  .cms-section:has(.rg-statement) .cms-block-container,
+  .cms-section:has(.rg-statement) .cms-block-container[style] {
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
   }
