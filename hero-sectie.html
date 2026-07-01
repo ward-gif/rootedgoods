@@ -1,0 +1,140 @@
+<!-- Rooted Goods — homepage hero (zelfstandig fragment voor Shopware CMS HTML-block).
+     Vervang de twee href="#" (1 = offerteformulier, 2 = collectie/producten). -->
+<section class="rgh" aria-labelledby="rgh-title">
+  <style>
+    .rgh{
+      --green:#2d4528; --body:#4a5a44; --terra:#ad6331; --terra-dark:#955529;
+      --accent:#CA853F; --cream:#F7F5F2; --line:#EAE3D7;
+      background:var(--cream);
+      font-family:'Montserrat',system-ui,-apple-system,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    .rgh *{box-sizing:border-box;}
+    .rgh__inner{
+      max-width:1400px; margin:0 auto;
+      padding:clamp(2.5rem,6vh,5.5rem) clamp(1.25rem,5vw,4rem);
+      display:grid; grid-template-columns:1.05fr 0.95fr;
+      gap:clamp(2rem,4.5vw,4.5rem); align-items:center;
+    }
+    .rgh__copy{max-width:34rem;}
+    /* Eyebrow — tekst in diep terracotta (AA 5.3:1 op crème; #CA853F zelf haalt
+       maar 2.8:1 en zakt door AA), decoratieve streepjes wél in het accent. */
+    .rgh__eyebrow{
+      display:flex; align-items:center; gap:.75rem;
+      margin:0 0 clamp(1rem,2vw,1.4rem);
+      font-size:clamp(.78rem,.72rem+.2vw,.9rem); font-weight:700;
+      letter-spacing:.2em; text-transform:uppercase; color:var(--terra-dark);
+    }
+    .rgh__eyebrow::before{content:"";width:2.2rem;height:2px;background:var(--accent);flex:none;}
+    .rgh__title{
+      font-family:'Playfair Display',Georgia,serif;
+      font-weight:700; color:var(--green);
+      font-size:clamp(2.3rem,1.3rem+3.4vw,4.4rem); line-height:1.06;
+      letter-spacing:-.01em; margin:0 0 clamp(1rem,2vw,1.4rem); text-wrap:balance;
+    }
+    .rgh__title em{font-style:italic;font-weight:600;} /* editorial nadruk i.p.v. kleur (AA-safe) */
+    .rgh__sub{
+      font-size:clamp(1.02rem,.95rem+.4vw,1.25rem); line-height:1.55;
+      color:var(--body); margin:0 0 clamp(1.5rem,3vw,2rem); max-width:46ch;
+    }
+    .rgh__cta{display:flex; flex-wrap:wrap; gap:.85rem; margin:0 0 .9rem;}
+    .rgh__btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:.9rem 1.7rem; border-radius:999px; font-size:1rem; font-weight:700;
+      font-family:'Montserrat',sans-serif; text-decoration:none; cursor:pointer;
+      border:2px solid transparent; transition:transform .18s ease,background-color .2s ease,color .2s ease,box-shadow .25s ease,border-color .2s ease;
+    }
+    .rgh__btn svg{width:1.05em;height:1.05em;flex:none;transition:transform .2s ease;}
+    .rgh__btn--primary{background:var(--terra);color:#fff;box-shadow:0 12px 26px -14px rgba(173,99,49,.9);}
+    .rgh__btn--primary:hover{background:var(--terra-dark);transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(173,99,49,1);}
+    .rgh__btn--primary:hover svg{transform:translateX(4px);}
+    .rgh__btn--secondary{background:transparent;color:var(--green);border-color:rgba(45,69,40,.28);}
+    .rgh__btn--secondary:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px);}
+    .rgh__btn:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:3px;}
+    .rgh__reassure{margin:0 0 clamp(1.4rem,2.5vw,1.8rem);font-size:.85rem;color:var(--body);}
+    /* Trust-rij — onopvallende inline check-signalen (geen gestapelde badges). */
+    .rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;}
+    .rgh__trust li{display:flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:500;color:var(--green);}
+    .rgh__trust svg{width:1rem;height:1rem;flex:none;color:var(--terra-dark);} /* AA-safe icoonkleur */
+
+    /* Visual — gecureerde editorial collage: 1 groot + 2 klein, elk met caption
+       (de "haak": elk beeld is een echt product met herkomst-context). */
+    .rgh__visual{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+    .rgh__fig{position:relative;margin:0;overflow:hidden;border-radius:16px;background:var(--green);
+      box-shadow:0 18px 40px -26px rgba(45,69,40,.55);}
+    .rgh__fig--main{grid-column:1/-1;aspect-ratio:16/10;}
+    .rgh__fig--sm{aspect-ratio:1/1;}
+    .rgh__fig img{width:100%;height:100%;object-fit:cover;display:block;
+      -webkit-user-drag:none;user-select:none;transition:transform .6s ease;}
+    .rgh__fig:hover img{transform:scale(1.05);}
+    .rgh__cap{
+      position:absolute;left:.7rem;bottom:.7rem;
+      background:var(--cream);color:var(--green);
+      font-size:.72rem;font-weight:600;letter-spacing:.01em;
+      padding:.28rem .6rem;border-radius:999px;box-shadow:0 4px 12px -6px rgba(0,0,0,.25);
+    }
+
+    @keyframes rghIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:no-preference){
+      .rgh__copy{animation:rghIn .7s cubic-bezier(.16,1,.3,1) both;}
+      .rgh__visual{animation:rghIn .7s cubic-bezier(.16,1,.3,1) .1s both;}
+    }
+
+    @media (max-width:900px){
+      .rgh__inner{grid-template-columns:1fr;gap:2.2rem;}
+      .rgh__copy{max-width:none;}
+      .rgh__visual{order:2;}
+    }
+    @media (max-width:400px){
+      .rgh__btn{flex:1 1 100%;}
+      .rgh__cap{font-size:.66rem;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .rgh *{animation:none!important;transition:none!important;}
+    }
+  </style>
+
+  <div class="rgh__inner">
+    <div class="rgh__copy">
+      <p class="rgh__eyebrow">Geworteld in Europa</p>
+      <h1 id="rgh-title" class="rgh__title">Premium geschenken met <em>wortels in Europa</em>.</h1>
+      <p class="rgh__sub">Zorgvuldig gekozen producten uit Europese ateliers — gepersonaliseerd voor jouw merk, verpakt en bezorgd. Korte ketens, dus voorspelbare levertijden en een cadeau waar je met trots achter staat.</p>
+
+      <div class="rgh__cta">
+        <a class="rgh__btn rgh__btn--primary" href="#">
+          Vraag een offerte aan
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="rgh__btn rgh__btn--secondary" href="#">Bekijk de collectie</a>
+      </div>
+      <p class="rgh__reassure">Vrijblijvend &middot; reactie binnen 1 werkdag</p>
+
+      <ul class="rgh__trust">
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Geassembleerd in Europa</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Digitaal drukvoorbeeld vooraf</li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Levering op meerdere locaties</li>
+      </ul>
+    </div>
+
+    <div class="rgh__visual">
+      <figure class="rgh__fig rgh__fig--main">
+        <img src="https://bambook.08.promidata.shop/media/77/d7/45/1782215119/Lifestyle%20Image%200747.jpg" alt="Rebottled drinkglas van gerecycled glas in het zonlicht" loading="eager" fetchpriority="high" width="800" height="500">
+        <figcaption class="rgh__cap">Rebottled &middot; gerecycled glas</figcaption>
+      </figure>
+      <figure class="rgh__fig rgh__fig--sm">
+        <img src="https://bambook.08.promidata.shop/media/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook.jpg" alt="Bambook navulbaar notitieboek van bamboe" loading="lazy" width="400" height="400">
+        <figcaption class="rgh__cap">Bambook &middot; notitieboek</figcaption>
+      </figure>
+      <figure class="rgh__fig rgh__fig--sm">
+        <img src="https://bambook.08.promidata.shop/media/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml.jpg" alt="Janzen huisgeur met geurstokjes in een woonkamer" loading="lazy" width="400" height="400">
+        <figcaption class="rgh__cap">Janzen &middot; huisgeur</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Keuzes:
+  Images (3/6): Rebottled (groot) = gerecycled glas, sluit aan op merk-groen + duurzaamheids-/herkomstverhaal; Bambook = de klassieke, goed bedrukbare relatiegeschenk-hero (NL vakwerk); Janzen = premium sfeer die de gepercipieerde kwaliteit optilt. Overgeslagen: Samsonite/Mepal (product-op-wit, minder editorial) en Opinel (outdoor-vibe, minder 'corporate gift').
+  CRO: primaire CTA = "Vraag een offerte aan" (het conversiedoel) i.p.v. de collectie; trust-rij + "vrijblijvend/1 werkdag" halen koopdrempels weg pal bij de CTA; captions geven de beeldenstrip context (herkomst = haak) i.p.v. een dump.
+  A11y: eyebrow/iconen in #955529 (AA 5.3:1), #CA853F alleen decoratief; H1-nadruk via italic i.p.v. kleur.
+  Alternatief om te overwegen: één full-bleed sfeerbeeld met tekst-overlay links (meer Aesop/Kinto, editorialer) — sterker qua sfeer, iets zwakker qua directe product-/herkomstbewijs. -->
