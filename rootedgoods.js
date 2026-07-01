@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider = opts.slider || {};
     opts.slider.loop = false;     // geen clones meer
     opts.slider.rewind = false;   // niet terugspringen naar begin
+    opts.slider.edgePadding = 80;  // peek: stukje van de volgende tegel rechts
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }

@@ -4396,7 +4396,10 @@ img.rg-europe-map__svg {
        100% geforceerd, dus de content vult de content-box vanaf 230 -> geen
        afhankelijkheid meer van de (instabiele) theme-row-centrering, en geen
        dubbeltelling. padding-right 0 + overflow-x clip = bleed naar rechts. */
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    /* padding-left zonder de +80: TinySlider's edgePadding (80, via JS) zet de
+       eerste tegel weer op 230 én toont rechts een stukje van de volgende
+       tegel (peek). padding-right 0 + overflow-x clip = bleed naar de rand. */
+    padding-left: calc(max((100vw - 1600px) / 2, 0px)) !important;
     padding-right: 0 !important;
     padding-bottom: 40px !important;
     box-sizing: border-box !important;
