@@ -4396,10 +4396,10 @@ img.rg-europe-map__svg {
        100% geforceerd, dus de content vult de content-box vanaf 230 -> geen
        afhankelijkheid meer van de (instabiele) theme-row-centrering, en geen
        dubbeltelling. padding-right 0 + overflow-x clip = bleed naar rechts. */
-    /* padding-left zonder de +80: TinySlider's edgePadding (80, via JS) zet de
-       eerste tegel weer op 230 én toont rechts een stukje van de volgende
-       tegel (peek). padding-right 0 + overflow-x clip = bleed naar de rand. */
-    padding-left: calc(max((100vw - 1600px) / 2, 0px)) !important;
+    /* eerste tegel op de calc+80-lijn (230); TinySlider fixedWidth (via JS) laat
+       rechts een stukje van de volgende tegel zien (peek). padding-right 0 +
+       overflow-x clip = bleed naar de schermrand. */
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
     padding-right: 0 !important;
     padding-bottom: 40px !important;
     box-sizing: border-box !important;
@@ -4846,6 +4846,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
 .rgh .rgh__cta a.btn-primary{padding:.95rem 2.2rem !important;font-size:1rem !important;}       /* primair groter */
 .rgh .rgh__cta a.btn-outline-primary{padding:.78rem 1.6rem !important;font-size:.9rem !important;} /* secundair compacter */
+.rgh .rgh__cta a.btn-outline-primary::after{display:none !important;} /* geen pijl op de secundaire hero-knop */
 .rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:nowrap;gap:.35rem 1.1rem;align-items:center;}
 .rgh__trust li{display:flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:500;color:#2d4528;white-space:nowrap;}
 .rgh__trust svg{width:1rem;height:1rem;flex:none;color:#CA853F;}

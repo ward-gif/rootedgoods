@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider = opts.slider || {};
     opts.slider.loop = false;     // geen clones meer
     opts.slider.rewind = false;   // niet terugspringen naar begin
-    opts.slider.edgePadding = 80;  // peek: stukje van de volgende tegel rechts
+    opts.slider.fixedWidth = 320;  // vaste tegelbreedte -> rechts blijft een stukje over (peek)
+    delete opts.slider.edgePadding;
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }
@@ -235,13 +236,15 @@ window.addEventListener('load', function () {
   if (hero) {
     var fitHero = function () {
       if (window.innerWidth < 993) { hero.style.minHeight = ''; return; }
-      var headerEl = document.querySelector('.header-main');
-      var headerH = headerEl ? headerEl.offsetHeight : 160;
-      var h = window.innerHeight - headerH - wrapper.offsetHeight - 24; // 24px ruimte onder de slider
-      hero.style.minHeight = Math.max(h, 420) + 'px';
+      hero.style.minHeight = '0px';                                   // reset -> meet natuurlijke stand
+      var sliderBottom = wrapper.getBoundingClientRect().bottom;      // waar de slider nu eindigt (bij load = vanaf viewport-top)
+      var delta = (window.innerHeight - 24) - sliderBottom;           // 24px ruimte onder de slider
+      var heroH = hero.getBoundingClientRect().height;
+      hero.style.minHeight = Math.max(heroH + delta, 420) + 'px';     // hero groeit/krimpt zodat slider net boven de vouw zit
     };
     fitHero();
     window.addEventListener('resize', fitHero);
+    setTimeout(fitHero, 400);                                         // extra pass nadat de layout volledig gesetteld is
   }
 });
 
