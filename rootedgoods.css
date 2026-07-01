@@ -4833,18 +4833,28 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 .rgh *{box-sizing:border-box;}
 .rgh__inner{
-  width:100%; max-width:1440px; margin:auto;
-  padding:0 clamp(1.5rem,5vw,4.5rem);       /* geen verticale padding: visual loopt tot boven (onder het menu) en onder */
-  display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,4vw,4.5rem); align-items:center;
+  width:100%; margin:0;
+  display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(1.5rem,3vw,3rem); align-items:center;
+  /* geen container-padding/max-width: visual (rechter cel) bleedt tot de
+     schermrand; de copy krijgt z'n eigen padding zodat er links lucht blijft. */
 }
 
 /* ---- Copy (links, links-uitgelijnd, verticaal gecentreerd, met eigen lucht) ---- */
-.rgh__copy{max-width:37rem;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(2rem,5vh,3.5rem);}
-.rgh__eyebrow{
-  margin:0 0 clamp(1rem,2vw,1.4rem);
-  font-size:.85rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
-  color:#CA853F;                            /* licht bruin accent (op verzoek; iets onder AA op crème) */
+.rgh__copy{
+  max-width:40rem; justify-self:end;
+  display:flex; flex-direction:column; justify-content:center;
+  padding-block:clamp(2rem,5vh,3.5rem);
+  padding-left:clamp(1.5rem,5vw,4.5rem);
 }
+.rgh__eyebrow{
+  display:inline-flex; align-items:center; gap:.9rem;
+  margin:0 0 clamp(1rem,2vw,1.5rem);
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase;
+  font-size:clamp(.82rem,.72rem+.4vw,1.05rem);
+  color:#CA853F;                            /* licht bruin accent, zelfde als .rg-statement__kicker */
+}
+.rgh__eyebrow::before{content:"";width:34px;height:2px;background:currentColor;opacity:.55;flex:none;}
 .rgh__title{
   font-family:'Playfair Display',Georgia,serif; font-weight:700; color:#2d4528;
   font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem); line-height:1.07; letter-spacing:-.01em;
