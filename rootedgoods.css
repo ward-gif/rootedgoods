@@ -4353,7 +4353,6 @@ img.rg-europe-map__svg {
   .home-productslider .cms-block-container-row,
   .home-productslider .col-12,
   .home-productslider .cms-element-product-slider,
-  .home-productslider .base-slider,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
     max-width: none !important;
@@ -4361,11 +4360,23 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
+  /* .base-slider krijgt WEL zij-padding (i.p.v. 0): dit is het element
+     waarop de plugin initialiseert en z'n beschikbare breedte op meet, dus
+     de tegels worden hierdoor zelf smaller -> de nav-knoppen (sectie 5
+     verderop) passen zo binnen de boxed rand i.p.v. erbuiten te hangen
+     (bleek instabiel: hing soms tegen de viewport-rand aan). */
+  .home-productslider .base-slider {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 64px !important;
+    overflow: visible !important;
+  }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
      boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
      .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
-     nav-knoppen (sectie 5 verderop) wél buiten de box mogen uitsteken.
+     nav-knoppen wél in de gereserveerde zij-ruimte van .base-slider mogen
+     staan zonder de track zelf te raken.
      LET OP: overflow-x:hidden + overflow-y:visible wordt door de browser
      ivm de spec omgezet naar overflow-y:auto (nooit puur "visible" zodra x
      iets anders dan visible is) -> de hover-shadow van tiles (translateY
@@ -4396,12 +4407,13 @@ img.rg-europe-map__svg {
      .tns-controls (die had hier een custom controlsContainer meegekregen) —
      de echte markup is Promidata's eigen .product-slider-controls-container
      > .base-slider-controls > button.base-slider-controls-prev/-next
-     [data-controls], bevestigd via devtools. De pijlen mogen buiten de
-     boxed rand vallen, in de calc+80-marge (altijd exact >=80px op elke
-     desktop-breedte, zie boven). .home-productslider zelf moet hier ook
-     overflow:visible krijgen — de unconditionele overflow-x:hidden in
-     sectie 10 is page-safety tegen bleed-overflow van de TRACK, niet
-     bedoeld om deze knoppen te clippen. */
+     [data-controls], bevestigd via devtools. De pijlen staan BINNEN de
+     boxed rand, in de zij-padding die .base-slider hierboven claimt (buiten
+     de box hangen bleek instabiel: de knop landde soms tegen de fysieke
+     viewport-rand i.p.v. in de calc+80-marge). .home-productslider zelf
+     moet hier ook overflow:visible krijgen — de unconditionele
+     overflow-x:hidden in sectie 10 is page-safety tegen bleed-overflow van
+     de TRACK, niet bedoeld om deze knoppen te clippen. */
   .home-productslider {
     overflow: visible !important;
   }
@@ -4411,14 +4423,11 @@ img.rg-europe-map__svg {
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
     position: absolute !important;
-    /* left/right buiten de tegel-rand i.p.v. inset:0 + transform op de knop:
-       transform(-100%) bleek onbetrouwbaar zodra de knop een andere
-       computed breedte kreeg dan verwacht (zie geschiedenis) -> nu bepaalt
-       deze offset zelf waar de knop komt, space-between doet de rest. */
-    top: 0 !important;
-    bottom: 0 !important;
-    left: -56px !important;
-    right: -56px !important;
+    /* inset:0 = volledige .base-slider-box (incl. de 64px zij-padding
+       hierboven) -> de knoppen landen dankzij justify-content:space-between
+       vanzelf in die gereserveerde ruimte, tegen de buitenrand van de box,
+       zonder de tegel-track te overlappen en zonder buiten de box te hangen. */
+    inset: 0 !important;
     z-index: 5;
     display: flex !important;
     align-items: center;
