@@ -726,7 +726,7 @@ img {
 .home-productslider .product-box,
 .home-productslider .product-box.box-image,
 .home-productslider .product-slider-item .product-box {
-  border: 1px solid #EAE3D7 !important;
+  border: none !important;
   border-radius: 12px !important;
   background-color: #ffffff !important;
   overflow: hidden;
@@ -1128,10 +1128,14 @@ img {
    afmeting rendert de <img> op natuurlijke (vaak grote) resolutie in het
    korte moment vóórdat JS de vervangende continue-scroll-band bouwt en
    verbergt -> zag eruit als "1 groot logo in zwart" (grayscale-filter over
-   een groot beeld). Puur CSS, dus onafhankelijk van JS-timing. */
+   een groot beeld). Puur CSS, dus onafhankelijk van JS-timing.
+   !important op height is noodzakelijk: elke <img> heeft server-side al een
+   eigen inline style="height:100px" (Shopware-slider-instelling), en een
+   inline style wint altijd van een externe regel zonder !important -> zonder
+   dit bleef de vlam gewoon bestaan, ongeacht deze CSS. */
 .home.productslider .card-img img {
-  height: 34px;
-  width: auto;
+  height: 34px !important;
+  width: auto !important;
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.6;
@@ -2237,9 +2241,10 @@ body.is-ctl-product {
   margin: 0.25rem 0 0.5rem 0;
 }
 
-/* Card styling — rounded, border, lift on hover */
+/* Card styling — rounded, geen border (op verzoek verwijderd, was 1px
+   solid #EAE3D7), lift on hover */
 .cms-listing-row .product-box {
-  border: 1px solid #EAE3D7 !important;
+  border: none !important;
   border-radius: 12px !important;
   background-color: #ffffff;
   overflow: hidden;
@@ -4436,11 +4441,12 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     max-width: none !important;
   }
-  /* Minimalistisch: dunne cirkel, geen zware schaduw. Iets groter dan het
-     theme-default (was klein/onopvallend). all:unset eerst (strip theme-
-     knopstijl), losse eigenschappen daarna MET !important -> anders wint
-     een gelijk-specifieke, later geladen theme-regel (zoals hier gebeurde:
-     container-positionering werkte wel, de knopstijl zelf niet). */
+  /* Minimalistisch: kale pijl, geen cirkel/achtergrond/rand. Iets groter dan
+     het theme-default (was klein/onopvallend) en vlak naast de tegels (niet
+     ver de marge in). all:unset eerst (strip theme-knopstijl), losse
+     eigenschappen daarna MET !important -> anders wint een gelijk-specifieke,
+     later geladen theme-regel (zoals hier gebeurde: container-positionering
+     werkte wel, de knopstijl zelf niet). */
   .home-productslider .base-slider-controls button {
     all: unset !important;
     pointer-events: auto !important;
@@ -4449,44 +4455,35 @@ img.rg-europe-map__svg {
     align-items: center !important;
     justify-content: center !important;
     flex: none !important;
-    width: 52px !important;
-    height: 52px !important;
-    border-radius: 50% !important;
-    background: #fff !important;
-    border: 1px solid #EAE3D7 !important;
     cursor: pointer !important;
-    transition: background-color 0.2s ease, border-color 0.2s ease !important;
   }
   .home-productslider .base-slider-controls button .icon {
     display: flex !important;
-    width: 20px !important;
-    height: 20px !important;
+    width: 30px !important;
+    height: 30px !important;
   }
   .home-productslider .base-slider-controls button svg {
     width: 100% !important;
     height: 100% !important;
   }
+  /* Disabled (start/einde van de rij) blijft vol donkergroen voor
+     zichtbaarheid -> geen opacity-dim, alleen de cursor verandert. */
   .home-productslider .base-slider-controls button svg use {
     fill: #2d4528 !important;
   }
-  /* Buiten de rand: eigen breedte + 16px gap, symmetrisch links/rechts
+  /* Vlak naast de tegels: eigen breedte + 10px gap, symmetrisch links/rechts
      (voorheen alleen links klikbaar -> nu identieke opbouw aan beide kanten,
      los van willekeurige theme-defaults die dat veroorzaakten). */
   .home-productslider .base-slider-controls-prev {
-    transform: translateX(calc(-100% - 16px)) !important;
+    transform: translateX(calc(-100% - 10px)) !important;
   }
   .home-productslider .base-slider-controls-next {
-    transform: translateX(calc(100% + 16px)) !important;
-  }
-  .home-productslider .base-slider-controls button:hover:not(:disabled) {
-    background: #ad6331 !important;
-    border-color: #ad6331 !important;
+    transform: translateX(calc(100% + 10px)) !important;
   }
   .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
-    fill: #fff !important;
+    fill: #ad6331 !important;
   }
   .home-productslider .base-slider-controls button:disabled {
-    opacity: 0.35 !important;
     cursor: default !important;
   }
 
@@ -5054,4 +5051,228 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 @media (max-width: 767px) {
   .rg-block-title { padding: 2rem 20px 0; }
+}
+
+
+/* ============================================================
+   38. HERO V2 (.rg-hero-v2) — verplaatst uit inline <style> naar global
+   ============================================================
+   HTML staat in hero-sectie-v2.html (CMS HTML-block, nu zonder <style>),
+   zelfde aanpak als de oude hero (.rgh, sectie 35) -> stijl-tweaks lopen
+   live mee, geen re-paste nodig. Hero-hoogte wordt door rootedgoods.js
+   dynamisch gezet (sectie 2.4, fit() past 'm aan op de logo-slider eronder).
+   ============================================================ */
+.rg-hero-v2 {
+  /* Brand-tokens (alleen binnen deze scope) */
+  --rg-green: #2d4528;        /* diep bosgroen: koppen */
+  --rg-green-soft: #4a5a44;   /* body-tekst */
+  --rg-cognac: #ad6331;       /* cognac: primaire CTA */
+  --rg-cognac-deep: #955529;  /* cognac hover */
+  --rg-cognac-light: #CA853F; /* accent: kicker, checks */
+  --rg-cream: #F7F5F2;        /* warm crème canvas */
+  --rg-line: #EAE3D7;         /* subtiele lijnen/randen */
+  /* Spacing-ritme: alles in stappen van 8px voor een rustig grid */
+  --rg-s1: .5rem; --rg-s2: 1rem; --rg-s3: 1.5rem; --rg-s4: 2rem; --rg-s5: 3rem;
+
+  background: var(--rg-cream);
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+}
+.rg-hero-v2 * { box-sizing: border-box; }
+
+/* Mobile-first: gestapeld. Beeld direct onder de copy, zelfde gutter. */
+.rg-hero-v2__inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--rg-s4) clamp(1.25rem, 5vw, 2rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--rg-s4);   /* mobiel compacter: beeldblok dichter op de copy */
+  align-items: center;
+}
+
+/* ---- Copy ---- */
+.rg-hero-v2__kicker {
+  margin: 0 0 var(--rg-s2);
+  font-size: clamp(.8rem, .72rem + .3vw, .95rem);
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--rg-cognac-light);
+}
+.rg-hero-v2__title {
+  margin: 0 0 var(--rg-s3);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: var(--rg-green);
+  /* max 3.4rem zodat "met wortels in Europa" op één regel past ->
+     twee gebalanceerde regels i.p.v. een los hangend "met" */
+  font-size: clamp(2.2rem, 1.1rem + 2.6vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+  /* Geen max-width op mobiel/tablet: de 20ch-cap (hieronder, >=992px) was
+     te krap voor de kleinere mobiele letter-grootte en brak elk woord op
+     een eigen regel. Mobiel gebruikt gewoon de volle kolombreedte. */
+}
+.rg-hero-v2__title em { font-style: italic; font-weight: 600; }
+/* Subline met lucht: ruimere regelafstand, leesbare regellengte,
+   duidelijke marge naar headline (boven) en CTA (onder). */
+.rg-hero-v2__sub {
+  margin: 0 0 var(--rg-s4);
+  font-size: clamp(1.05rem, .95rem + .45vw, 1.22rem);
+  line-height: 1.7;
+  color: var(--rg-green-soft);
+  max-width: 48ch;
+}
+.rg-hero-v2__sub b { font-weight: 600; color: var(--rg-green); }
+
+/* ---- CTA's: globale site-knoppen (.btn .btn-primary/-outline-primary)
+   voor identieke styling en hover als de rest van de site. Alleen de
+   secundaire compacter + zonder pijl (hiërarchie), zoals de oude hero. */
+.rg-hero-v2__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--rg-s2); margin: 0 0 var(--rg-s3); }
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary { padding: .72rem 1.5rem !important; font-size: .9rem !important; }
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary::after { display: none !important; }
+
+/* ---- Trust: één rustige regel. Elk item is nowrap en draagt z'n eigen
+   scheidings-middot (::before), zodat bij wrap de middot netjes mee naar
+   de nieuwe regel gaat i.p.v. te blijven hangen aan het regeleinde. ---- */
+.rg-hero-v2__trust {
+  margin: 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 0;
+  font-size: .84rem; font-weight: 500; color: var(--rg-green);
+}
+.rg-hero-v2__trust svg { width: 1rem; height: 1rem; flex: none; color: var(--rg-cognac-light); }
+.rg-hero-v2__trust b { font-weight: 700; }
+.rg-hero-v2__t { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.rg-hero-v2__t + .rg-hero-v2__t::before { content: "\00B7"; color: var(--rg-cognac-light); margin: 0 .6rem; }
+
+/* ---- Contactpersoon ---- */
+.rg-hero-v2__contact {
+  display: inline-flex; align-items: center; gap: .65rem;
+  margin-top: var(--rg-s2); padding: .35rem .8rem .35rem .35rem;
+  border-radius: 999px; text-decoration: none; border: 1px solid transparent;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.rg-hero-v2__contact:hover { background: #fff; border-color: var(--rg-line); }
+.rg-hero-v2__contact:focus-visible { outline: 3px solid rgba(45, 69, 40, .55); outline-offset: 2px; }
+.rg-hero-v2__contact img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex: none; }
+.rg-hero-v2__contact-name { display: block; font-size: .72rem; font-weight: 600; color: var(--rg-cognac-light); }
+.rg-hero-v2__contact-promise { display: flex; align-items: center; gap: .3rem; font-size: .88rem; font-weight: 500; color: var(--rg-green-soft); }
+.rg-hero-v2__contact-promise svg { width: .95em; height: .95em; flex: none; transition: transform .2s ease; }
+.rg-hero-v2__contact:hover .rg-hero-v2__contact-promise svg { transform: translateX(3px); }
+
+/* ---- Beeld: vier product-tegels in gestaffelde 2x2 ----
+   De middenweg: het aanbod tonen (variatie, inspiratie, zoals de oude
+   3x2) maar met rust en hiërarchie (staffel-offset, geen 6 gelijke
+   blokken). Mobiel: compacte 2x2 met liggende tegels (4:3) zodat de
+   sectie niet de halve pagina vreet. */
+.rg-hero-v2__mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.rg-hero-v2__mcol { display: grid; gap: 10px; align-content: start; }
+.rg-hero-v2__tile {
+  position: relative; display: block; overflow: hidden;
+  border-radius: 12px; background: var(--rg-green);
+  text-decoration: none; aspect-ratio: 4/3;   /* mobiel: liggend = compact */
+  box-shadow: 0 16px 34px -26px rgba(45, 69, 40, .55);
+}
+.rg-hero-v2__tile img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  -webkit-user-drag: none; user-select: none;
+  transition: transform .45s ease;
+}
+.rg-hero-v2__tile:hover img, .rg-hero-v2__tile:focus-visible img { transform: scale(1.04); }
+.rg-hero-v2__tile::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 44%;
+  background: linear-gradient(to top, rgba(10, 18, 8, .62), rgba(10, 18, 8, 0));
+}
+.rg-hero-v2__cap { position: absolute; left: .85rem; right: .85rem; bottom: .7rem; z-index: 2; }
+.rg-hero-v2__cap-brand {
+  display: block; font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: #e9c9a9;
+}
+.rg-hero-v2__cap-label { font-size: .84rem; font-weight: 500; color: #fff; }
+.rg-hero-v2__tile:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
+
+/* copy-wrap "lost op" tot mobiel/tablet-breedte (992px): de kinderen
+   (top/bottom) worden dan DIRECTE grid-items van .rg-hero-v2__inner,
+   naast de mozaïek -> order hieronder zet ze weer in titel/beeld/knoppen-
+   volgorde. Op desktop (zie media 992px) wordt copy-wrap weer een echte
+   box: één grid-item met een EIGEN interne flex-gap tussen top/bottom,
+   volledig losgekoppeld van de grid-rij-hoogte (zie die media-comment). */
+.rg-hero-v2__copy-wrap { display: contents; }
+.rg-hero-v2__copy-top { order: 1; }
+.rg-hero-v2__mosaic { order: 2; }
+.rg-hero-v2__copy-bottom { order: 3; }
+
+/* Mobiel: gecentreerd, subline weg (bespaart hoogte -> logo-slider komt
+   eerder in beeld), USP's/Richard weg (staan elders al: topbar-USP's +
+   CTA-blok onderaan met Richard). CTA-knoppen gecentreerd. */
+@media (max-width: 767px) {
+  .rg-hero-v2__copy-top,
+  .rg-hero-v2__copy-bottom { text-align: center; }
+  .rg-hero-v2__kicker,
+  .rg-hero-v2__title { margin-inline: auto; }
+  .rg-hero-v2__sub { display: none; }
+  /* Kolom i.p.v. wrap: anders krijgt de 2e (compactere) knop een eigen
+     auto-breedte -> ongelijke pillen. Stretch maakt ze gelijke breedte. */
+  .rg-hero-v2__cta { flex-direction: column; align-items: stretch; margin-bottom: 0; }
+  .rg-hero-v2__cap-label { display: none; }
+  .rg-hero-v2__trust { display: none; }
+  .rg-hero-v2__contact { display: none; }
+}
+
+/* ---- Tablet (>=768px): tegels vierkant, staffel aan ---- */
+@media (min-width: 768px) {
+  .rg-hero-v2__inner { padding-inline: clamp(2rem, 6vw, 3.5rem); }
+  .rg-hero-v2__mosaic { gap: 12px; }
+  .rg-hero-v2__mcol { gap: 12px; }
+  .rg-hero-v2__tile { aspect-ratio: 1/1; }
+  .rg-hero-v2__mcol--b { margin-top: 2.5rem; }   /* staffel: rechterkolom zakt */
+}
+
+/* ---- Desktop (>=992px): 1 rij, 2 kolommen (copy | beeld).
+   copy-wrap is hier weer een ECHTE box (geen display:contents meer): één
+   grid-item dat top+bottom intern als flex-column stackt met een eigen
+   vaste gap. Dat is de kern van de fix t.o.v. de vorige versie: toen
+   spande de mozaïek 2 aparte grid-RIJEN (top/bottom elk hun eigen rij),
+   en omdat de mozaïek hoger is dan copy-top+copy-bottom samen, werd rij 1
+   door de grid gedwongen hoger te zijn dan de tekst nodig had -> die
+   restruimte viel ná de subline, vóór de cta's (ook mét align-items:
+   start, want de "extra" hoogte zat NA copy-top's inhoud, binnen rij 1).
+   Met copy-wrap als één spanning-vrij grid-item bestaat die rij-hoogte-
+   berekening niet meer: de afstand tussen sub en cta's is nu puur de
+   flex-gap hieronder, altijd exact hetzelfde bedrag. ---- */
+@media (min-width: 992px) {
+  /* Houd de woordspeling bij elkaar: "met wortels in Europa" breekt niet. */
+  .rg-hero-v2__nw { white-space: nowrap; }
+  /* 20ch-cap alleen op desktop: voorkomt dat de titel de volle 34rem
+     copy-kolom in één (te brede) regel opvult. */
+  .rg-hero-v2__title { max-width: 20ch; }
+  .rg-hero-v2__inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-areas: "copy image";
+    column-gap: clamp(3rem, 5vw, 5rem);
+    align-items: center;
+    padding: clamp(1.5rem, 3vh, 2.5rem) calc(max((100vw - 1600px) / 2, 0px) + 80px);
+  }
+  .rg-hero-v2__copy-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-area: copy;
+    max-width: 34rem;
+  }
+  /* Sub had al margin-bottom (nodig voor de mobiele/tablet flow-stack);
+     op desktop bepaalt alleen de flex-gap hierboven de afstand. */
+  .rg-hero-v2__copy-top .rg-hero-v2__sub { margin-bottom: 0; }
+  /* Mozaïek begrensd zodat hero + logo-slider samen in de viewport passen
+     (te grote tegels duwden de slider onder de vouw). */
+  .rg-hero-v2__mosaic { grid-area: image; max-width: 600px; width: 100%; justify-self: end; }
+  .rg-hero-v2__mcol--b { margin-top: 2rem; }
 }

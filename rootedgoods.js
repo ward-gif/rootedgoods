@@ -465,6 +465,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!hero) return;
   function fit() {
     if (window.innerWidth < 992) { hero.style.minHeight = ''; return; }
+    // Alleen (her)berekenen boven aan de pagina: getBoundingClientRect() is
+    // viewport-relatief, dus de formule hieronder gaat er impliciet van uit
+    // dat hero+slider nog bovenaan staan. Op mobiel verbergt/toont de
+    // adresbalk zich tijdens scrollen -> dat vuurt een 'resize' terwijl de
+    // pagina NIET bovenaan staat, en dan bakt fit() een compleet verkeerde
+    // (soms enorme) hoogte die blijft hangen tot de volgende geldige meting.
+    // Dit was de "kapotte hero na heen-en-weer scrollen"-bug. Buiten deze
+    // guard laten we de laatst bekende (goede) hoogte gewoon staan.
+    if ((window.scrollY || document.documentElement.scrollTop) > 4) return;
     var slider = document.querySelector('.logo-slider');
     if (!slider) return;
     hero.style.minHeight = '0px';                                   // reset -> meet natuurlijke stand
