@@ -4362,22 +4362,22 @@ img.rg-europe-map__svg {
 
   /* 4. SLIDER: .cms-block-container blijft EXACT op de gedeelde 80px-lijn
      (zelfde rand als cat/spec/feature) — .base-slider daarbinnen wordt 2x
-     64px smaller gemaakt via een echte WIDTH-reductie (niet padding: een
+     40px smaller gemaakt via een echte WIDTH-reductie (niet padding: een
      eerdere poging gaf .base-slider zélf zij-padding, maar de plugin meet
      kennelijk offsetWidth (incl. padding) om de tegelbreedte te berekenen,
      dus die "gereserveerde" padding werd gewoon meegerekend als bruikbare
      ruimte -> geen effect. Een echte breedte-verkleining kan de plugin niet
-     negeren.) Nav-container (stap 5) hangt aan .cms-block-container (op de
-     gedeelde lijn), niet aan .base-slider (dat ligt er nu 64px binnen) ->
-     knoppen landen op de gedeelde lijn, tegels beginnen 64px verderop:
-     genoeg ruimte ertussen, geen overlap meer. Verder: de theme centreert
-     de ROW zelf via FLEX (justify-content:center), wat max-width/margin
-     niet kan stoppen -> zonder deze fix zou de row toch weer naar binnen
-     springen. Forceer block-flow zodat de row de (nu boxed) container
-     netjes vult. */
+     negeren.) Nav-container (stap 5) hangt aan .cms-element-product-slider
+     (op de gedeelde lijn), niet aan .cms-block-container zelf en niet aan
+     .base-slider (dat ligt er nu 40px binnen) -> knoppen landen op de
+     gedeelde lijn, tegels beginnen 40px verderop: genoeg ruimte ertussen,
+     geen overlap meer (zie stap 5 verderop voor waarom niet gewoon
+     .cms-block-container als anker). Verder: de theme centreert de ROW
+     zelf via FLEX (justify-content:center), wat max-width/margin niet kan
+     stoppen -> zonder deze fix zou de row toch weer naar binnen springen.
+     Forceer block-flow zodat de row de (nu boxed) container netjes vult. */
   .home-productslider .cms-block-container-row,
   .home-productslider .col-12,
-  .home-productslider .cms-element-product-slider,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
     max-width: none !important;
@@ -4385,13 +4385,27 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
-  /* 40px zij-marge (i.p.v. de eerdere 64px): puur voor ademruimte voor de
-     nav-knoppen, GEEN item-count-truc meer (die rol speelde toch niet: de
-     plugin berekent items uit .base-slider's clientWidth via
-     floor(width/(productboxMinWidth+gutter)) = floor(1440/330) = 4 zodra
-     .cms-block-container écht op de calc+80-lijn (1440px max) zit, wat
-     hierboven nu eindelijk klopt. Met -80px totaal (1440-80=1360) blijft
-     floor(1360/330) nog steeds 4 -> ruim binnen de marge, geen 5e tegel. */
+  /* .cms-element-product-slider: eigen regel + position:relative. Dit is de
+     ECHTE ankerpositie voor de nav-knoppen (stap 5): het vult altijd exact
+     de boxed 1440px-lijn (100% van .cms-block-container's CONTENT-box, dus
+     ná diens calc+80-padding). .cms-block-container zelf is daar geen goed
+     anker voor: inset:0 daarop positioneert t.o.v. de PADDING-BOX, die het
+     element z'n volle breedte omvat VOORDAT de calc+80-padding 'm versmalt
+     -> knoppen belandden zo bij de buitenste rand van de rij i.p.v. op de
+     1440px-lijn (te ver van de tegels af, "niet naast" ze). */
+  .home-productslider .cms-element-product-slider {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+  }
+  /* 40px zij-marge: ademruimte voor de nav-knoppen. Geen item-count-rol
+     (die rol speelde toch niet: de plugin berekent items uit .base-slider's
+     clientWidth via floor(width/(productboxMinWidth+gutter)) =
+     floor(1440/330) = 4 zodra .cms-block-container écht op de calc+80-lijn
+     (1440px max) zit, wat nu eindelijk klopt. Met -80px totaal (1440-80=
+     1360) blijft floor(1360/330) nog steeds 4 -> geen 5e tegel.) */
   .home-productslider .base-slider {
     max-width: none !important;
     width: calc(100% - 80px) !important;
@@ -4399,7 +4413,7 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
-  /* .cms-block-container: complete, eigen padding-regel (top 5rem, links/
+  /* .cms-block-container: complete, eigen padding-regel (top 50px, links/
      rechts de gedeelde 80px-lijn, bottom 0) i.p.v. verspreid over meerdere
      stappen -> één plek, geen kans meer dat een latere regel 'm
      stilzwijgend terugzet (dat was precies de padding-top-bug hiervoor). */
@@ -4407,15 +4421,14 @@ img.rg-europe-map__svg {
   .home-productslider .cms-block-container[style] {
     max-width: none !important;
     margin: 0 !important;
-    padding: 5rem calc(max((100vw - 1600px) / 2, 0px) + 80px) 0 !important;
+    padding: 50px calc(max((100vw - 1600px) / 2, 0px) + 80px) 0 !important;
     overflow: visible !important;
-    position: relative !important;
   }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
      boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
      .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
-     nav-knoppen (stap 5 verderop) wél buiten de box mogen uitsteken.
+     nav-knoppen (stap 5 verderop) niet worden afgesneden.
      LET OP: overflow-x:hidden + overflow-y:visible wordt door de browser
      ivm de spec omgezet naar overflow-y:auto (nooit puur "visible" zodra x
      iets anders dan visible is) -> de hover-shadow van tiles (translateY
@@ -4447,11 +4460,18 @@ img.rg-europe-map__svg {
      de echte markup is Promidata's eigen .product-slider-controls-container
      > .base-slider-controls > button.base-slider-controls-prev/-next
      [data-controls], bevestigd via devtools. De nav-container hangt aan
-     .cms-block-container (position:relative, stap 4 hierboven) i.p.v. aan
-     .base-slider: .cms-block-container zit op de gedeelde 80px-lijn,
-     .base-slider ligt daar 64px binnen -> inset:0 hier plaatst de knoppen
-     op de gedeelde lijn, met de tegel-rij (in .base-slider) daar 64px van
-     verwijderd. Geen transform op de knop meer nodig. */
+     .cms-element-product-slider (position:relative, stap 4 hierboven), NIET
+     aan .cms-block-container: inset:0 positioneert t.o.v. de PADDING-BOX
+     van het positioned-ancestor, die de VOLLE breedte van het element omvat
+     VOORDAT diens eigen padding 'm versmalt. .cms-block-container's eigen
+     calc+80-padding zou dus genegeerd worden als HIJ het anker was -> de
+     knoppen belandden bij de buitenste rand van de hele rij, niet op de
+     1440px-boxed-lijn (veel te ver van de tegels af). .cms-element-product-
+     slider vult altijd exact die 1440px-lijn (100% van .cms-block-
+     container's CONTENT-box, dus ná de padding), dus inset:0 daarop klopt
+     wel. .base-slider (de tegel-track) ligt daarbinnen nog 40px extra in
+     (stap 4 hierboven) -> knoppen op de 1440px-lijn, tegels daar 40px van
+     verwijderd: naast elkaar, geen overlap. */
   .home-productslider {
     overflow: visible !important;
   }
