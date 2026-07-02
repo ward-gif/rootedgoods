@@ -499,3 +499,23 @@ document.addEventListener('DOMContentLoaded', function () {
     galleryCol.appendChild(zoomBtn);
   }
 })();
+
+
+/* ---- 2.4 Hero v2 — hoogte passend maken zodat de logo-slider net boven de
+ * vouw eindigt (24px marge). Eigen scope; doet niets zonder .rg-hero-v2 op de
+ * pagina (bijt de oude fitHero voor .rgh dus niet). */
+(function () {
+  var hero = document.querySelector('.rg-hero-v2');
+  if (!hero) return;
+  function fit() {
+    if (window.innerWidth < 992) { hero.style.minHeight = ''; return; }
+    var slider = document.querySelector('.logo-slider');
+    if (!slider) return;
+    hero.style.minHeight = '0px';                                   // reset -> meet natuurlijke stand
+    var delta = (window.innerHeight - 24) - slider.getBoundingClientRect().bottom;
+    var h = hero.getBoundingClientRect().height;
+    hero.style.minHeight = Math.max(h + delta, 440) + 'px';
+  }
+  window.addEventListener('load', function () { fit(); setTimeout(fit, 400); });
+  window.addEventListener('resize', fit);
+})();
