@@ -47,10 +47,10 @@
     .rg-hero-v2__inner{
       width:100%;
       margin:0 auto;
-      padding:var(--rg-s4) clamp(1.25rem,5vw,2rem) var(--rg-s5);
+      padding:var(--rg-s4) clamp(1.25rem,5vw,2rem);
       display:grid;
       grid-template-columns:1fr;
-      gap:var(--rg-s5);
+      gap:var(--rg-s4);   /* mobiel compacter: beeldblok dichter op de copy */
       align-items:center;
     }
 
@@ -137,22 +137,23 @@
     .rg-hero-v2__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s ease;}
     .rg-hero-v2__contact:hover .rg-hero-v2__contact-promise svg{transform:translateX(3px);}
 
-    /* ---- Beeld: editorial drieluik (1 groot portret + 2 vierkant) ----
-       Minder tegels, meer zeggingskracht. Mobiel: liggend focal beeld +
-       twee vierkanten naast elkaar. Desktop: portret links (2 rijen hoog),
-       twee vierkanten gestapeld rechts. */
+    /* ---- Beeld: vier product-tegels in gestaffelde 2x2 ----
+       De middenweg: het aanbod tonen (variatie, inspiratie, zoals de oude
+       3x2) maar met rust en hiërarchie (staffel-offset, geen 6 gelijke
+       blokken). Mobiel: compacte 2x2 met liggende tegels (4:3) zodat de
+       sectie niet de halve pagina vreet. */
     .rg-hero-v2__mosaic{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:12px;
+      gap:10px;
     }
+    .rg-hero-v2__mcol{display:grid;gap:10px;align-content:start;}
     .rg-hero-v2__tile{
       position:relative;display:block;overflow:hidden;
       border-radius:12px;background:var(--rg-green);
-      text-decoration:none;aspect-ratio:1/1;
+      text-decoration:none;aspect-ratio:4/3;   /* mobiel: liggend = compact */
       box-shadow:0 16px 34px -26px rgba(45,69,40,.55);
     }
-    .rg-hero-v2__tile--feature{grid-column:1/-1;aspect-ratio:3/2;}
     .rg-hero-v2__tile img{
       width:100%;height:100%;object-fit:cover;display:block;
       -webkit-user-drag:none;user-select:none;
@@ -163,22 +164,25 @@
       content:"";position:absolute;left:0;right:0;bottom:0;height:44%;
       background:linear-gradient(to top,rgba(10,18,8,.62),rgba(10,18,8,0));
     }
-    .rg-hero-v2__cap{position:absolute;left:.85rem;right:.85rem;bottom:.75rem;z-index:2;}
+    .rg-hero-v2__cap{position:absolute;left:.85rem;right:.85rem;bottom:.7rem;z-index:2;}
     .rg-hero-v2__cap-brand{
       display:block;font-size:.68rem;font-weight:700;
       letter-spacing:.1em;text-transform:uppercase;color:#e9c9a9;
     }
     .rg-hero-v2__cap-label{font-size:.84rem;font-weight:500;color:#fff;}
     .rg-hero-v2__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
+    /* Mobiel: alleen merknaam in de caption (product-regel = ruis op klein) */
+    @media (max-width:767px){
+      .rg-hero-v2__cap-label{display:none;}
+    }
 
-    /* ---- Tablet (>=768px): copy boven, drieluik in 3 kolommen ---- */
+    /* ---- Tablet (>=768px): tegels vierkant, staffel aan ---- */
     @media (min-width:768px){
       .rg-hero-v2__inner{padding-inline:clamp(2rem,6vw,3.5rem);}
-      .rg-hero-v2__mosaic{
-        grid-template-columns:repeat(3,1fr);
-        grid-template-rows:repeat(2,minmax(0,1fr));
-      }
-      .rg-hero-v2__tile--feature{grid-column:1/3;grid-row:1/3;aspect-ratio:auto;}
+      .rg-hero-v2__mosaic{gap:12px;}
+      .rg-hero-v2__mcol{gap:12px;}
+      .rg-hero-v2__tile{aspect-ratio:1/1;}
+      .rg-hero-v2__mcol--b{margin-top:2.5rem;}   /* staffel: rechterkolom zakt */
     }
 
     /* ---- Desktop (>=992px): split op een helder 5/6-grid.
@@ -193,14 +197,6 @@
         padding:clamp(1.5rem,3vh,2.5rem) calc(max((100vw - 1600px)/2, 0px) + 80px);
       }
       .rg-hero-v2__copy{max-width:34rem;}
-      .rg-hero-v2__mosaic{
-        grid-template-columns:1.35fr 1fr;
-        grid-template-rows:repeat(2,minmax(0,1fr));
-      }
-      /* Feature wordt staand portret (~2:3): rijhoogte volgt de twee
-         vierkante tegels rechts, feature vult beide rijen. */
-      .rg-hero-v2__tile--feature{grid-column:1;grid-row:1/3;aspect-ratio:auto;}
-      .rg-hero-v2__tile--sm{aspect-ratio:1/1;}
     }
   </style>
 
@@ -241,38 +237,34 @@
       </a>
     </div>
 
-    <!-- BEELDVOORSTEL (drieluik, elk beeld bewijst één deel van de claim):
-         1. FEATURE (staand ~2:3 desktop, liggend 3:2 mobiel): AMBACHT.
-            Handen van een maker aan het werk (glasblazerij, drukkerij of
-            houtwerkplaats), warm daglicht, groen/crème tinten. Dit beeld
-            bewijst "Europees vakmanschap" letterlijk.
-         2. VIERKANT (1:1): PERSONALISATIE. Stilleven-close-up van een
-            product met logo-detail (bijv. gegraveerd notitieboek of bedrukte
-            fles) op crème ondergrond, zacht strijklicht.
-         3. VIERKANT (1:1): HET GEEFMOMENT. Verpakkingsdetail of overhandiging
-            (geschenkdoos met lint, hand die pakket aanneemt), warm en
-            menselijk. Sluit de belofte "verpakt en bezorgd".
-         De huidige foto's hieronder zijn TIJDELIJKE vulling in de juiste
-         verhouding. Links (href) mogen naar collectie of case-pagina's. -->
-    <div class="rg-hero-v2__mosaic" aria-label="Europees vakmanschap in beeld">
+    <!-- BEELD: vier product-tegels (aanbod + inspiratie, zoals de oude hero)
+         in een gestaffelde 2x2 (rust + hiërarchie, zoals v2). Concrete
+         merk/product-captions want dát maakte de oude versie direct duidelijk.
+         FOTO-UPGRADE (later): vervang tegel 1 door een ambachtsbeeld (maker
+         aan het werk) zodra beschikbaar; de andere drie blijven producten. -->
+    <div class="rg-hero-v2__mosaic" aria-label="Een greep uit onze Europese makers">
 
-      <!-- PLACEHOLDER 1 — vervang door ambachtsbeeld (maker aan het werk, staand bruikbaar) -->
-      <a class="rg-hero-v2__tile rg-hero-v2__tile--feature" href="#" aria-label="Bekijk de collectie">
-        <img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" alt="Gerecycled glas van een Europese maker" loading="eager" width="800" height="1066">
-        <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Vakmanschap</span><span class="rg-hero-v2__cap-label">Gemaakt in Europese werkplaatsen</span></span>
-      </a>
+      <div class="rg-hero-v2__mcol">
+        <a class="rg-hero-v2__tile" href="/search?search=opinel" aria-label="Bekijk Opinel producten">
+          <img src="https://bambook.08.promidata.shop/thumbnail/d6/62/2b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg" alt="Opinel zakmes" loading="eager" width="400" height="400">
+          <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Opinel</span><span class="rg-hero-v2__cap-label">Zakmes uit Frankrijk</span></span>
+        </a>
+        <a class="rg-hero-v2__tile" href="/search?search=bambook" aria-label="Bekijk Bambook producten">
+          <img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" alt="Bambook notitieboek" loading="eager" width="400" height="400">
+          <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Bambook</span><span class="rg-hero-v2__cap-label">Notitieboek uit Nederland</span></span>
+        </a>
+      </div>
 
-      <!-- PLACEHOLDER 2 — vervang door personalisatie-detail (product met logo, 1:1 stilleven) -->
-      <a class="rg-hero-v2__tile rg-hero-v2__tile--sm" href="#" aria-label="Bekijk personalisatie-mogelijkheden">
-        <img src="https://bambook.08.promidata.shop/thumbnail/87/21/14/1782213859/Social%20Ad%20Creation%20Bambook_800x800.jpg" alt="Notitieboek met logo-personalisatie" loading="eager" width="400" height="400">
-        <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Jouw merk</span></span>
-      </a>
-
-      <!-- PLACEHOLDER 3 — vervang door verpakkings-/geefmoment (doos met lint of overhandiging, 1:1) -->
-      <a class="rg-hero-v2__tile rg-hero-v2__tile--sm" href="#" aria-label="Bekijk hoe wij verpakken en bezorgen">
-        <img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" alt="Geschenk klaar om te geven" loading="eager" width="400" height="400">
-        <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Klaar om te geven</span></span>
-      </a>
+      <div class="rg-hero-v2__mcol rg-hero-v2__mcol--b">
+        <a class="rg-hero-v2__tile" href="/search?search=rebottled" aria-label="Bekijk Rebottled producten">
+          <img src="https://bambook.08.promidata.shop/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg" alt="Rebottled drinkglas van gerecycled glas" loading="eager" width="400" height="400">
+          <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Rebottled</span><span class="rg-hero-v2__cap-label">Gerecycled glas</span></span>
+        </a>
+        <a class="rg-hero-v2__tile" href="/search?search=janzen" aria-label="Bekijk Janzen producten">
+          <img src="https://bambook.08.promidata.shop/thumbnail/1a/0a/c8/1782217587/Janzen%20Home%20Fragrance%20Sticks%20Earth%20200ml_800x800.jpg" alt="Janzen huisgeur" loading="eager" width="400" height="400">
+          <span class="rg-hero-v2__cap"><span class="rg-hero-v2__cap-brand">Janzen</span><span class="rg-hero-v2__cap-label">Huisgeur uit Nederland</span></span>
+        </a>
+      </div>
 
     </div>
 
