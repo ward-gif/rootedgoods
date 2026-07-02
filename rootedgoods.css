@@ -4421,7 +4421,7 @@ img.rg-europe-map__svg {
   .home-productslider .cms-block-container[style] {
     max-width: none !important;
     margin: 0 !important;
-    padding: 50px calc(max((100vw - 1600px) / 2, 0px) + 80px) 0 !important;
+    padding: 24px calc(max((100vw - 1600px) / 2, 0px) + 80px) 0 !important;
     overflow: visible !important;
   }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
