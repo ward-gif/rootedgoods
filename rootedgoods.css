@@ -4518,20 +4518,33 @@ img.rg-europe-map__svg {
     flex: none !important;
     cursor: pointer !important;
   }
+  /* Theme-SVG's verborgen: hun chevron-glyph is niet pixel-symmetrisch
+     (links/rechts zijn twee losse, met transform/rotate afgeleide paden),
+     wat als ongelijke ruimte oogde ondanks dat de container/tegel-layout
+     zelf al 2x symmetrisch gemeten was (10px/10px, 15px/15px). Een CSS-only
+     chevron (twee randen van hetzelfde vierkant, 45°/-135° gedraaid) is
+     wél gegarandeerd pixel-symmetrisch: het is exact dezelfde vorm, alleen
+     wiskundig gespiegeld via rotate(), niet met twee losse tekeningen. */
+  .home-productslider .base-slider-controls button .icon svg {
+    display: none !important;
+  }
   .home-productslider .base-slider-controls button .icon {
-    display: flex !important;
-    width: 30px !important;
-    height: 30px !important;
+    display: block !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-top: 3px solid #2d4528 !important;
+    border-right: 3px solid #2d4528 !important;
+    background: none !important;
+    transition: border-color 0.2s ease !important;
   }
-  .home-productslider .base-slider-controls button svg {
-    width: 100% !important;
-    height: 100% !important;
+  .home-productslider .base-slider-controls-prev .icon {
+    transform: rotate(-135deg);
   }
-  .home-productslider .base-slider-controls button svg use {
-    fill: #2d4528 !important;
+  .home-productslider .base-slider-controls-next .icon {
+    transform: rotate(45deg);
   }
-  .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
-    fill: #ad6331 !important;
+  .home-productslider .base-slider-controls button:hover:not(:disabled) .icon {
+    border-color: #ad6331 !important;
   }
   /* Disabled (start/einde van de rij) duidelijk inactief, anders oogt een
      volle donkergroene pijl als "actief maar kapot" i.p.v. "geen vorige/
@@ -4539,8 +4552,8 @@ img.rg-europe-map__svg {
   .home-productslider .base-slider-controls button:disabled {
     cursor: default !important;
   }
-  .home-productslider .base-slider-controls button:disabled svg use {
-    fill: #c7c0b3 !important;
+  .home-productslider .base-slider-controls button:disabled .icon {
+    border-color: #c7c0b3 !important;
   }
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter

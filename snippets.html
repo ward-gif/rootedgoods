@@ -118,3 +118,54 @@
      #F7F5F2  warm crème           canvas/achtergrond
      #EAE3D7  lijn/rand            subtiele scheidingen, borders
      ------------------------------------------------------------ -->
+
+
+<!-- ------------------------------------------------------------
+     8. CIRKEL-KNOP MET PIJL (mask-icon techniek, herbruikbaar)
+     Gebruikt op thema-tegels/feature-cards/service-cards. Icoon is een
+     data-URI SVG als CSS mask i.p.v. een los <svg>-element in de HTML —
+     voordeel: kleur volgt puur background-color (geen los fill/stroke per
+     plek), en de HTML blijft een lege <span>. Zie .rg-theme-tile__arrow
+     in rootedgoods.css voor de volledige stijl (cirkel, hover-schuif +
+     kleurwissel, transparant -> terracotta). -->
+<span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+
+
+<!-- ------------------------------------------------------------
+     9. GEGARANDEERD SYMMETRISCHE CHEVRON (CSS-only, geen SVG)
+     Gebruikt voor de productslider-nav-knoppen (rootedgoods.css, sectie 30
+     stap 5, op .base-slider-controls button .icon). Geen losse HTML-class
+     hiervoor (staat rechtstreeks op de bestaande .icon-span) — dit is de
+     kern-techniek om zelf te hergebruiken als je ooit weer een links/
+     rechts-pijl-paar nodig hebt: twee randen van een vierkant (border-top +
+     border-right), gespiegeld via rotate() i.p.v. twee losse getekende
+     SVG-paden. Daardoor pixel-exact symmetrisch (een kant-en-klare SVG-
+     chevron kan links/rechts net iets ongelijk "wegen" omdat het twee
+     aparte tekeningen zijn). Kleur via border-color, dus ook makkelijk te
+     hoveren/dimmen zonder fill-gedoe.
+
+     CSS om te hergebruiken:
+       .mijn-icoon{width:12px;height:12px;border-top:3px solid currentColor;border-right:3px solid currentColor;display:inline-block;}
+       .mijn-icoon--links{transform:rotate(-135deg);}
+       .mijn-icoon--rechts{transform:rotate(45deg);}
+     -->
+
+
+<!-- ------------------------------------------------------------
+     10. OVERIGE CSS-TYPOGRAFIE/TOEGANKELIJKHEID-TRUCJES (geen HTML nodig,
+     gewoon toe te passen via class/property in nieuwe CSS)
+     ------------------------------------------------------------
+     text-wrap: balance;
+       -> op koppen: verdeelt de laatste regel evenwichtiger i.p.v. één
+          eenzaam woord op de laatste regel. Gebruikt op .rgh__title en
+          .rg-hero-v2__title.
+
+     white-space: nowrap;  (bv. via een utility-class als .rg-hero-v2__nw)
+       -> wrap een woordgroep die NIET los mag breken (bv. een woordspeling
+          als "wortels in Europa") in een <span> met deze class.
+
+     @media (prefers-reduced-motion: reduce) { ...transition: none !important; }
+       -> zet decoratieve hover-transities uit voor bezoekers die "verminder
+          beweging" aan hebben staan in hun OS. Overal waar iets schuift/
+          fade't bij hover (tile-arrows, feature-cards) hoort dit erbij.
+     ------------------------------------------------------------ -->
