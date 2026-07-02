@@ -1106,17 +1106,6 @@ img {
   overflow: visible;
 }
 
-/* Logo slider — continue scroll animatie */
-.home.productslider .carousel-item.active {
-  display: flex !important;
-  gap: 4rem;
-  align-items: center;
-  animation: logoScroll 20s linear infinite;
-}
-@keyframes logoScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 .home.productslider .card {
   border: none !important;
   background: transparent !important;
@@ -3171,15 +3160,6 @@ body.is-ctl-product {
 }
 
 
-/* ---- 26.6 Logo-slider — kleinere gap op smalle desktops ---- */
-@media (max-width: 1400px) {
-  .home.productslider .carousel-item.active { gap: 3rem; }
-}
-@media (max-width: 1100px) {
-  .home.productslider .carousel-item.active { gap: 2rem; }
-}
-
-
 /* ---- 26.7 Top-bar USPs — voorkom dat ze in 2 regels breken ---- */
 /* Wrap van topbar = totale header > 97px = nav-main verdwijnt achter
    header. Daarom topbar agressief schalen op alle desktop-breedtes
@@ -4132,7 +4112,7 @@ img.rg-europe-map__svg {
 
 
 /* ============================================================
-   28. CTA-SECTIE — "Vraag een offerte aan"
+   34. CTA-SECTIE — "Vraag een offerte aan"
    ============================================================
    Split-opzet: groen tekstpaneel links (gegarandeerd contrast) + beeld
    rechts. Opbouw (CRO/UX): eyebrow -> Playfair-titel -> subline ->

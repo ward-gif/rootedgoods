@@ -1,11 +1,11 @@
 /* =====================================================================
  * rootedgoods.js — custom frontend JS voor Rooted Goods (rootedgoods.eu)
  * Geladen via Promidata theme naast hun eigen scripts.
- * Last updated: 2026-04-28
+ * Last updated: 2026-07-02
  *
  * STRUCTUUR:
  *   SECTIE 1 — GLOBAL          : search overlay, sticky header, flyout CTA, offerte link
- *   SECTIE 2 — HOMEPAGE        : logo slider, productslider tegel-click
+ *   SECTIE 2 — HOMEPAGE        : logo slider, productslider tegel-click, hero-v2 hoogte-fit
  *   SECTIE 3 — PDP             : productnaam verplaatsen, accordion default, staffel-tabel, zoom button
  *
  * UITGANGSPUNTEN:
@@ -294,8 +294,10 @@ document.addEventListener('DOMContentLoaded', function () {
  * De custom .rg-slider-nav bottom-right knoppen (en de bijbehorende
  * transform-fallback) zijn eruit. De slider is nu boxed en navigatie loopt
  * terug via Shopware's eigen "controls"-instelling op het blok (admin zet
- * die aan), later apart te stylen. loop:false (sectie 2.0 hierboven) blijft
- * gewoon staan, want dat voorkomt clone-artefacten ongeacht welke nav actief is. */
+ * die aan) — knoppen zijn eigen (.base-slider-controls) gestyled in
+ * rootedgoods.css (sectie 30, stap 5). loop:false (sectie 2.0 hierboven)
+ * blijft gewoon staan, want dat voorkomt clone-artefacten ongeacht welke
+ * nav actief is. */
 
 
 /* =====================================================================
