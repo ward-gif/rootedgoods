@@ -5191,7 +5191,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    duidelijke marge naar headline (boven) en CTA (onder). */
 .rg-hero-v2__sub {
   margin: 0 0 var(--rg-s4);
-  font-size: clamp(1.05rem, .95rem + .45vw, 1.22rem);
+  font-size: clamp(1rem, .9rem + .4vw, 1.12rem);
   line-height: 1.7;
   color: var(--rg-green-soft);
   max-width: 48ch;
