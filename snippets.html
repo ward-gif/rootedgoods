@@ -13,6 +13,12 @@
      Anders breekt de HTML-parser (ziet het als begin van een entity). -->
 &amp;
 
+<!-- Sierlijke ampersand in koppen (bv. "Personalisatie & drukwerk"):
+     Playfair's eigen '&'-glyph is lelijk/romeins, dus die wrappen we in
+     .rg-amp (rootedgoods.css) -> italic Georgia-serif, klassieke fix.
+     Gebruikt in services-overzicht.html en thema-overzicht.html. -->
+<h3>Personalisatie <span class="rg-amp">&amp;</span> drukwerk</h3>
+
 <!-- Non-breaking space: voorkomt regelafbreking tussen bv. "Van" en de prijs,
      of tussen een getal en eenheid (€&nbsp;25,43). -->
 &nbsp;
