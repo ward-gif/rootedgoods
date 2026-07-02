@@ -181,17 +181,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var carousel = document.querySelector('.logo-slider .cms-element-custom-cms-slider');
   if (!carousel) return;
 
-  var firstItem = carousel.querySelector('.carousel-item');
-  if (!firstItem) return;
+  var items = carousel.querySelectorAll('.carousel-item');
+  if (!items.length) return;
 
-  // Verzamel unieke logo afbeeldingen
+  // Verzamel unieke logo afbeeldingen — over ALLE slides, niet alleen de
+  // eerste (elk .carousel-item is hier één los logo, dus scoped op de
+  // eerste items alleen liet alle andere merken weg -> band toonde alsmaar
+  // hetzelfde ene logo herhaald).
   var images = [];
   var seen = [];
-  firstItem.querySelectorAll('.card-img img').forEach(function (img) {
-    if (!seen.includes(img.src)) {
-      seen.push(img.src);
-      images.push({ src: img.src, alt: img.alt });
-    }
+  items.forEach(function (item) {
+    item.querySelectorAll('.card-img img').forEach(function (img) {
+      if (!seen.includes(img.src)) {
+        seen.push(img.src);
+        images.push({ src: img.src, alt: img.alt });
+      }
+    });
   });
 
   // Bouw scroll-track. Set is verdubbeld voor naadloze loop.
