@@ -204,6 +204,10 @@
         padding:clamp(1.5rem,3vh,2.5rem) calc(max((100vw - 1600px)/2, 0px) + 80px);
       }
       .rg-hero-v2__copy-top{grid-area:top;max-width:34rem;}
+      /* Sub had al margin-bottom (nodig voor de mobiele/tablet flow-stack);
+         op desktop komt daar de grid row-gap nog eens bovenop -> dubbele
+         ruimte. Alleen de row-gap laten gelden. */
+      .rg-hero-v2__copy-top .rg-hero-v2__sub{margin-bottom:0;}
       .rg-hero-v2__copy-bottom{grid-area:bottom;max-width:34rem;}
       /* Mozaïek begrensd zodat hero + logo-slider samen in de viewport passen
          (te grote tegels duwden de slider onder de vouw). */

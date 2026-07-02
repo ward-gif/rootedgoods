@@ -172,9 +172,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ---- 2.1 Logo slider — Shopware carousel vervangen door continue scroll
- * Gebruikt window.load (niet DOMContentLoaded) omdat we img.src van
- * de originele carousel kopiëren. Die moet eerst geladen zijn. */
-window.addEventListener('load', function () {
+ * DOMContentLoaded i.p.v. window.load: img.src is de resolved attribuutwaarde
+ * en staat er al zodra het element geparsed is — de afbeelding hoeft niet
+ * gedownload te zijn. window.load wacht op ALLE resources op de pagina
+ * (incl. hero-beelden), waardoor de onbewerkte Shopware-carousel eerst even
+ * zichtbaar flitst voor de swap. Dit haalt die flits weg. */
+document.addEventListener('DOMContentLoaded', function () {
   var carousel = document.querySelector('.logo-slider .cms-element-custom-cms-slider');
   if (!carousel) return;
 
@@ -291,14 +294,20 @@ document.addEventListener('DOMContentLoaded', function () {
  *     op vanaf de huidige positie. */
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.home-productslider').forEach(function (slider) {
+    if (slider.dataset.rgNavInjected) return;   // per-slider vlag i.p.v. host-check (zie hieronder)
     var track = slider.querySelector('.product-slider-container');
     if (!track) return;
 
     // Nav in het KOP-blok boven de slider hangen i.p.v. in de slider zelf:
     // dat blok is full-width én niet overflow-geclipt, dus de arrows kunnen
     // op één lijn met de categorie-knoppen staan, dicht bij de rechterrand.
-    var host = slider.previousElementSibling || slider;
-    if (host.querySelector('.rg-slider-nav')) return;
+    // .cms-block-text binnen dezelfde .cms-section is de robuuste manier om
+    // dat kop-blok te vinden (zelfde patroon als onze CSS gebruikt) —
+    // previousElementSibling alleen breekt zodra er een ander blok tussen
+    // kop en slider komt te staan (bv. bij homepage-herschikking).
+    var section = slider.closest('.cms-section');
+    var host = (section && section.querySelector('.cms-block-text')) || slider.previousElementSibling || slider;
+    slider.dataset.rgNavInjected = '1';
 
     var nav = document.createElement('div');
     nav.className = 'rg-slider-nav';
@@ -503,7 +512,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* ---- 2.4 Hero v2 — hoogte passend maken zodat de logo-slider net boven de
  * vouw eindigt (24px marge). Eigen scope; doet niets zonder .rg-hero-v2 op de
- * pagina (bijt de oude fitHero voor .rgh dus niet). */
+ * pagina (bijt de oude fitHero voor .rgh dus niet).
+ *
+ * Gebruikt ResizeObserver op .logo-slider i.p.v. een eenmalige setTimeout-gok:
+ * één vaste meting (bv. 400ms na load) kan de slider treffen VOORDAT die
+ * script 2.1 'm heeft opgebouwd (of voordat webfonts/afbeeldingen de layout
+ * laten settelen), waardoor fit() een verkeerde hoogte bakt -> een te grote
+ * lege ruimte boven de slider die niet meer herstelt. ResizeObserver
+ * herberekent automatisch zodra de slider daadwerkelijk van grootte
+ * verandert, ongeacht wanneer dat gebeurt. */
 (function () {
   var hero = document.querySelector('.rg-hero-v2');
   if (!hero) return;
@@ -516,6 +533,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var h = hero.getBoundingClientRect().height;
     hero.style.minHeight = Math.max(h + delta, 440) + 'px';
   }
-  window.addEventListener('load', function () { fit(); setTimeout(fit, 400); });
+  window.addEventListener('load', function () {
+    fit();
+    var slider = document.querySelector('.logo-slider');
+    if (slider && window.ResizeObserver) {
+      new ResizeObserver(fit).observe(slider);
+    } else {
+      setTimeout(fit, 400); // fallback zonder ResizeObserver-support
+    }
+  });
   window.addEventListener('resize', fit);
 })();

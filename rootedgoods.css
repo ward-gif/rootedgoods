@@ -2922,6 +2922,26 @@ body.is-ctl-product {
   line-height: 1.3;
 }
 
+/* Mobiel: titel/sub + padding kleiner — de desktop-formaten waren te groot
+   voor de kleinere tegels, met name de vierkante tegels in de --5 variant. */
+@media (max-width: 575px) {
+  .rg-cat-tile__label { padding: 1rem 1.1rem; }
+  .rg-cat-tile__title { font-size: 1.05rem; }
+  .rg-cat-tile--feature .rg-cat-tile__title { font-size: 1.4rem; }
+  .rg-cat-tile__sub { font-size: 0.82rem; }
+  .rg-cat-grid--5 .rg-cat-tile:not(.rg-cat-tile--feature) .rg-cat-tile__label {
+    padding: 0.7rem 0.8rem;
+  }
+  .rg-cat-grid--5 .rg-cat-tile:not(.rg-cat-tile--feature) .rg-cat-tile__title {
+    font-size: 0.92rem;
+    gap: 0.35rem;
+  }
+  .rg-cat-grid--5 .rg-cat-tile:not(.rg-cat-tile--feature) .rg-cat-tile__title::after {
+    width: 0.9em;
+    height: 0.9em;
+  }
+}
+
 /* >= 576px: 2 koloms staande kaarten; uitgelichte kaart over volle breedte. */
 @media (min-width: 576px) {
   .rg-cat-grid {
