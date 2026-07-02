@@ -4424,45 +4424,47 @@ img.rg-europe-map__svg {
     justify-content: space-between;
     pointer-events: none !important;
   }
-  /* all:unset eerst (strip evt. theme-knopstijl), individuele eigenschappen
-     daarna -> die winnen altijd, ongeacht dat "all" een shorthand is. */
+  /* all:unset eerst (strip evt. theme-knopstijl); alle losse eigenschappen
+     daarna MET !important — anders wint een gelijk-specifieke, later
+     geladen theme-regel (zoals hier gebeurde: container-positionering
+     werkte wel, de ronde witte knopstijl zelf niet). */
   .home-productslider .tns-controls button {
-    all: unset;
-    pointer-events: auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #fff;
-    border: 1px solid #EAE3D7;
-    color: #2d4528;
-    font-size: 1.1rem;
-    line-height: 1;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(45, 69, 40, 0.12);
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    all: unset !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: none !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    border: 1px solid #EAE3D7 !important;
+    color: #2d4528 !important;
+    font-size: 1.1rem !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    box-shadow: 0 6px 20px rgba(45, 69, 40, 0.12) !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
   }
   /* Buiten de rand: eigen breedte + 16px gap, symmetrisch links/rechts
      (voorheen alleen links klikbaar -> nu identieke opbouw aan beide kanten,
      los van willekeurige theme-defaults die dat veroorzaakten). */
   .home-productslider .tns-controls button[data-controls="prev"] {
-    transform: translateX(calc(-100% - 16px));
+    transform: translateX(calc(-100% - 16px)) !important;
   }
   .home-productslider .tns-controls button[data-controls="next"] {
-    transform: translateX(calc(100% + 16px));
+    transform: translateX(calc(100% + 16px)) !important;
   }
   .home-productslider .tns-controls button:hover:not(:disabled) {
-    background: #ad6331;
-    border-color: #ad6331;
-    color: #fff;
+    background: #ad6331 !important;
+    border-color: #ad6331 !important;
+    color: #fff !important;
   }
   .home-productslider .tns-controls button:disabled {
-    opacity: 0.35;
-    cursor: default;
+    opacity: 0.35 !important;
+    cursor: default !important;
   }
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
