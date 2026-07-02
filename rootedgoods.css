@@ -758,9 +758,9 @@ img {
   transform: translateY(-2px);
 }
 .home-productslider .product-box .card-body {
-  --bs-card-spacer-y: 1.25rem;
+  --bs-card-spacer-y: 1.75rem;
   --bs-card-spacer-x: 1.5rem;
-  padding: 1.25rem 1.5rem !important;
+  padding: 1.75rem 1.5rem !important;
   display: flex;
   flex-direction: column;
 }
@@ -906,7 +906,7 @@ img {
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
   overflow: visible !important;
-  padding-top: 3rem !important;   /* was Shopware's eigen 1rem, wat krap */
+  padding-top: 5rem !important;   /* was Shopware's eigen 1rem, wat krap */
 }
 
 /* TinySlider's clip-containers: horizontaal NIET clippen, zodat kaarten links
