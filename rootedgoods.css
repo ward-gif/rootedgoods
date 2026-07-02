@@ -941,7 +941,7 @@ img {
 /* Mobiel/tablet (<992px): gewoon een swipe/drag-slider, geen ronde
    knoppen-nav (die is voor de boxed desktop-opzet, zie sectie 30). */
 @media (max-width: 991px) {
-  .home-productslider .tns-controls {
+  .home-productslider .product-slider-controls-container {
     display: none !important;
   }
 }
@@ -4380,12 +4380,16 @@ img.rg-europe-map__svg {
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
      boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
      .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
-     nav-knoppen (sectie 5 verderop, .tns-controls = sibling van .tns-ovh
-     binnen .tns-outer) wél buiten de box mogen uitsteken. */
+     nav-knoppen (sectie 5 verderop) wél buiten de box mogen uitsteken.
+     LET OP: overflow-x:hidden + overflow-y:visible wordt door de browser
+     ivm de spec omgezet naar overflow-y:auto (nooit puur "visible" zodra x
+     iets anders dan visible is) -> de hover-shadow van tiles (translateY
+     -2px + shadow 0 6px 20px) past alleen als de box zelf genoeg
+     padding-bottom heeft om 'm te bevatten. 32px = ruime marge. */
   .home-productslider .tns-ovh {
     max-width: none !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0 32px 0 !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
   }
@@ -4403,19 +4407,24 @@ img.rg-europe-map__svg {
     flex: none !important;
   }
 
-  /* 5. SLIDER — native nav (Shopware's eigen tns-controls, aangezet in de
-     block-instellingen). De pijlen mogen buiten de boxed rand vallen, in de
-     calc+80-marge (altijd exact >=80px op elke desktop-breedte, zie boven).
-     .home-productslider zelf moet hier ook overflow:visible krijgen — de
-     unconditionele overflow-x:hidden in sectie 10 is bedoeld als page-safety
-     tegen bleed-overflow van de TRACK, niet om deze knoppen te clippen. */
+  /* 5. SLIDER — native nav. LET OP: dit is NIET TinySlider's generieke
+     .tns-controls (die had hier een custom controlsContainer meegekregen) —
+     de echte markup is Promidata's eigen .product-slider-controls-container
+     > .base-slider-controls > button.base-slider-controls-prev/-next
+     [data-controls], bevestigd via devtools. De pijlen mogen buiten de
+     boxed rand vallen, in de calc+80-marge (altijd exact >=80px op elke
+     desktop-breedte, zie boven). .home-productslider zelf moet hier ook
+     overflow:visible krijgen — de unconditionele overflow-x:hidden in
+     sectie 10 is page-safety tegen bleed-overflow van de TRACK, niet
+     bedoeld om deze knoppen te clippen. */
   .home-productslider {
     overflow: visible !important;
   }
-  .home-productslider .tns-outer {
+  .home-productslider .base-slider {
     position: relative !important;
   }
-  .home-productslider .tns-controls {
+  .home-productslider .product-slider-controls-container,
+  .home-productslider .base-slider-controls {
     position: absolute !important;
     inset: 0 !important;
     z-index: 5;
@@ -4423,12 +4432,16 @@ img.rg-europe-map__svg {
     align-items: center;
     justify-content: space-between;
     pointer-events: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
   }
-  /* all:unset eerst (strip evt. theme-knopstijl); alle losse eigenschappen
-     daarna MET !important — anders wint een gelijk-specifieke, later
-     geladen theme-regel (zoals hier gebeurde: container-positionering
-     werkte wel, de ronde witte knopstijl zelf niet). */
-  .home-productslider .tns-controls button {
+  /* Minimalistisch: dunne cirkel, geen zware schaduw. Iets groter dan het
+     theme-default (was klein/onopvallend). all:unset eerst (strip theme-
+     knopstijl), losse eigenschappen daarna MET !important -> anders wint
+     een gelijk-specifieke, later geladen theme-regel (zoals hier gebeurde:
+     container-positionering werkte wel, de knopstijl zelf niet). */
+  .home-productslider .base-slider-controls button {
     all: unset !important;
     pointer-events: auto !important;
     position: relative !important;
@@ -4436,33 +4449,43 @@ img.rg-europe-map__svg {
     align-items: center !important;
     justify-content: center !important;
     flex: none !important;
-    width: 44px !important;
-    height: 44px !important;
+    width: 52px !important;
+    height: 52px !important;
     border-radius: 50% !important;
     background: #fff !important;
     border: 1px solid #EAE3D7 !important;
-    color: #2d4528 !important;
-    font-size: 1.1rem !important;
-    line-height: 1 !important;
     cursor: pointer !important;
-    box-shadow: 0 6px 20px rgba(45, 69, 40, 0.12) !important;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+  }
+  .home-productslider .base-slider-controls button .icon {
+    display: flex !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .home-productslider .base-slider-controls button svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .home-productslider .base-slider-controls button svg use {
+    fill: #2d4528 !important;
   }
   /* Buiten de rand: eigen breedte + 16px gap, symmetrisch links/rechts
      (voorheen alleen links klikbaar -> nu identieke opbouw aan beide kanten,
      los van willekeurige theme-defaults die dat veroorzaakten). */
-  .home-productslider .tns-controls button[data-controls="prev"] {
+  .home-productslider .base-slider-controls-prev {
     transform: translateX(calc(-100% - 16px)) !important;
   }
-  .home-productslider .tns-controls button[data-controls="next"] {
+  .home-productslider .base-slider-controls-next {
     transform: translateX(calc(100% + 16px)) !important;
   }
-  .home-productslider .tns-controls button:hover:not(:disabled) {
+  .home-productslider .base-slider-controls button:hover:not(:disabled) {
     background: #ad6331 !important;
     border-color: #ad6331 !important;
-    color: #fff !important;
   }
-  .home-productslider .tns-controls button:disabled {
+  .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
+    fill: #fff !important;
+  }
+  .home-productslider .base-slider-controls button:disabled {
     opacity: 0.35 !important;
     cursor: default !important;
   }
