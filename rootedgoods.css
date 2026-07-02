@@ -924,9 +924,15 @@ img {
 
 
 /* Slider — item-breedte: default Tiny Slider berekening (productboxMinWidth 300).
-   Geen width overrides — dat gaf ongewenste clone-zichtbaarheid links. */
+   Geen width overrides — dat gaf ongewenste clone-zichtbaarheid links.
+   15px links + 15px rechts (i.p.v. alleen 30px rechts) houdt de gutter
+   TUSSEN tegels gelijk (15+15=30) maar maakt 'm ook symmetrisch aan de
+   randen: de eerste tegel krijgt nu ook 15px lucht, en de laatste tegel
+   heeft nog maar 15px "trailing" padding i.p.v. 30px -> de nav-knoppen
+   (die op de gedeelde boxed-lijn staan, los van deze padding) hoeven zo
+   niet meer los gecompenseerd te worden voor een asymmetrische gutter. */
 .home-productslider .product-slider-item {
-  padding-right: 30px !important;
+  padding: 0 15px !important;
 }
 /* (verplaatst naar de productslider-styling sectie hierboven; deze
    regel was redundant en versnipperde de aspect-ratio rules) */
@@ -4511,15 +4517,6 @@ img.rg-europe-map__svg {
     justify-content: center !important;
     flex: none !important;
     cursor: pointer !important;
-  }
-  /* Compensatie: elke .product-slider-item heeft padding-right:30px als
-     tegel-gutter (zie sectie 10) — die padding zit ook nog op de laatst
-     zichtbare tegel (waar geen volgende tegel meer komt), dus de rechter
-     pijl had daardoor optisch 30px meer ruimte dan de linker (bevestigd:
-     beide containers-gaps waren wel degelijk gelijk, 10px). Trek 'm 30px
-     dichterbij om dat exact te compenseren. */
-  .home-productslider .base-slider-controls-next {
-    transform: translateX(-30px);
   }
   .home-productslider .base-slider-controls button .icon {
     display: flex !important;
