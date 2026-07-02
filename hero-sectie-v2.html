@@ -157,15 +157,19 @@
     }
     .rg-hero-v2__cap-label{font-size:.84rem;font-weight:500;color:#fff;}
     .rg-hero-v2__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
-    /* Mobiel: alleen merknaam in de caption (product-regel = ruis op klein),
-       en trust + contactpersoon verbergen: met 2 CTA's erboven wordt de
-       stack anders te lang. Beide komen elders op de pagina terug
-       (topbar-USP's, CTA-blok onderaan met Richard). */
+    /* Mobiel: gecentreerd, subline weg (bespaart hoogte -> logo-slider komt
+       eerder in beeld), USP's/Richard weg (staan elders al: topbar-USP's +
+       CTA-blok onderaan met Richard). CTA-knoppen gecentreerd. */
     @media (max-width:767px){
+      .rg-hero-v2__copy-top,
+      .rg-hero-v2__copy-bottom{text-align:center;}
+      .rg-hero-v2__kicker,
+      .rg-hero-v2__title{margin-inline:auto;}
+      .rg-hero-v2__sub{display:none;}
+      .rg-hero-v2__cta{justify-content:center;margin-bottom:0;}
       .rg-hero-v2__cap-label{display:none;}
       .rg-hero-v2__trust{display:none;}
       .rg-hero-v2__contact{display:none;}
-      .rg-hero-v2__cta{margin-bottom:0;}
     }
 
     /* ---- Tablet (>=768px): tegels vierkant, staffel aan ---- */
@@ -177,63 +181,47 @@
       .rg-hero-v2__mcol--b{margin-top:2.5rem;}   /* staffel: rechterkolom zakt */
     }
 
-    /* ---- Desktop (>=992px): split op een helder 5/6-grid.
-       Copy 5 delen, beeld 6 delen -> het beeld draagt het premium-bewijs.
-       Zelfde calc+80-lijn als de rest van de homepage. ---- */
+    /* ---- Desktop (>=992px): split via named grid-areas. Copy bestaat uit
+       2 blokken (top: kicker/titel/sub, bottom: cta/trust/contact) met de
+       mozaïek als beeld-kolom ernaast -> zelfde 5/6-split als voorheen, maar
+       in de markup staat het beeld nu tussen top en bottom (mobiel-volgorde:
+       titel -> beeld -> cta's). ---- */
     @media (min-width:992px){
       /* Houd de woordspeling bij elkaar: "met wortels in Europa" breekt niet. */
       .rg-hero-v2__nw{white-space:nowrap;}
       .rg-hero-v2__inner{
         grid-template-columns:minmax(0,5fr) minmax(0,6fr);
-        gap:clamp(3rem,5vw,5rem);
+        grid-template-areas:"top image" "bottom image";
+        column-gap:clamp(3rem,5vw,5rem);
+        row-gap:1.5rem;
         padding:clamp(1.5rem,3vh,2.5rem) calc(max((100vw - 1600px)/2, 0px) + 80px);
       }
-      .rg-hero-v2__copy{max-width:34rem;}
+      .rg-hero-v2__copy-top{grid-area:top;max-width:34rem;}
+      .rg-hero-v2__copy-bottom{grid-area:bottom;max-width:34rem;}
       /* Mozaïek begrensd zodat hero + logo-slider samen in de viewport passen
          (te grote tegels duwden de slider onder de vouw). */
-      .rg-hero-v2__mosaic{max-width:600px;width:100%;justify-self:end;}
+      .rg-hero-v2__mosaic{grid-area:image;max-width:600px;width:100%;justify-self:end;}
       .rg-hero-v2__mcol--b{margin-top:2rem;}
     }
   </style>
 
   <div class="rg-hero-v2__inner">
 
-    <div class="rg-hero-v2__copy">
+    <div class="rg-hero-v2__copy-top">
       <!-- Kicker niet "Rooted Goods": het logo staat pal erboven in de header,
            dubbele merknaam is redundant. De knipoog zit in kicker + headline. -->
       <p class="rg-hero-v2__kicker">Geworteld in Europa</p>
       <!-- Gekozen: variant 1. Zie de andere twee varianten in de comment bovenaan. -->
       <h1 class="rg-hero-v2__title" id="rg-hero-v2-title">Premium geschenken met <em>wortels in Europa</em>.</h1>
+      <!-- Verborgen op mobiel (<768px): bespaart hoogte, tekst blijft op desktop. -->
       <p class="rg-hero-v2__sub"><b>Rooted Goods</b> personaliseert premium producten van Europese makers met jouw logo. Drukproef, verpakking en bezorging regelen wij.</p>
-
-      <!-- Pijl op de primaire komt automatisch via de globale button-CSS -->
-      <div class="rg-hero-v2__cta">
-        <a class="btn btn-primary" href="#">Vraag een offerte aan</a>
-        <a class="btn btn-outline-primary" href="#">Bekijk de collectie</a>
-      </div>
-
-      <!-- Bewust "geassembleerd", niet "100% gemaakt": de eerlijke claim uit
-           de brand story (sommige grondstoffen komen van verder weg). -->
-      <p class="rg-hero-v2__trust">
-        <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg><b>Geassembleerd in Europa</b></span>
-        <span class="rg-hero-v2__t">digitale drukproef</span>
-        <span class="rg-hero-v2__t">bezorging geregeld</span>
-      </p>
-
-      <a class="rg-hero-v2__contact" href="/contact" aria-label="Hi, ik ben Richard. Ik help je van idee tot bezorging. Neem contact op.">
-        <img src="https://bambook.08.promidata.shop/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="42" height="42">
-        <span>
-          <span class="rg-hero-v2__contact-name">Hi, ik ben Richard</span>
-          <span class="rg-hero-v2__contact-promise">Ik help je van idee tot bezorging
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </span>
-      </a>
     </div>
 
     <!-- BEELD: vier product-tegels (aanbod + inspiratie, zoals de oude hero)
          in een gestaffelde 2x2 (rust + hiërarchie, zoals v2). Concrete
          merk/product-captions want dát maakte de oude versie direct duidelijk.
+         Staat in de markup tussen titel en CTA's, zodat de volgorde op
+         mobiel (en tablet) titel -> beeld -> knoppen is.
          FOTO-UPGRADE (later): vervang tegel 1 door een ambachtsbeeld (maker
          aan het werk) zodra beschikbaar; de andere drie blijven producten. -->
     <div class="rg-hero-v2__mosaic" aria-label="Een greep uit onze Europese makers">
@@ -260,6 +248,34 @@
         </a>
       </div>
 
+    </div>
+
+    <div class="rg-hero-v2__copy-bottom">
+      <!-- Pijl op de primaire komt automatisch via de globale button-CSS -->
+      <div class="rg-hero-v2__cta">
+        <a class="btn btn-primary" href="#">Vraag een offerte aan</a>
+        <a class="btn btn-outline-primary" href="#">Bekijk de collectie</a>
+      </div>
+
+      <!-- Bewust "geassembleerd", niet "100% gemaakt": de eerlijke claim uit
+           de brand story (sommige grondstoffen komen van verder weg).
+           Verborgen op mobiel: staat al in de topbar-USP's. -->
+      <p class="rg-hero-v2__trust">
+        <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg><b>Geassembleerd in Europa</b></span>
+        <span class="rg-hero-v2__t">digitale drukproef</span>
+        <span class="rg-hero-v2__t">bezorging geregeld</span>
+      </p>
+
+      <!-- Verborgen op mobiel: staat al in het CTA-blok onderaan de pagina. -->
+      <a class="rg-hero-v2__contact" href="/contact" aria-label="Hi, ik ben Richard. Ik help je van idee tot bezorging. Neem contact op.">
+        <img src="https://bambook.08.promidata.shop/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="42" height="42">
+        <span>
+          <span class="rg-hero-v2__contact-name">Hi, ik ben Richard</span>
+          <span class="rg-hero-v2__contact-promise">Ik help je van idee tot bezorging
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </span>
+      </a>
     </div>
 
   </div>

@@ -2951,6 +2951,38 @@ body.is-ctl-product {
   }
 }
 
+/* ---- Variant: 5 tegels (1 uitgelicht + 4 vierkanten) ----
+   Zet class "rg-cat-grid--5" op de container (naast rg-cat-grid), en voeg
+   een 5e <a class="rg-cat-tile"> toe. Eerste <a> houdt rg-cat-tile--feature;
+   de overige 4 worden automatisch als vierkanten geplaatst (geen extra
+   markup/volgorde-logica nodig, puur via CSS Grid auto-placement).
+   Mobiel/tablet: de 4 vierkanten staan al naast elkaar (2x2) i.p.v.
+   gestapeld. Desktop: 1 grote links, 2x2 vierkanten rechts. */
+.rg-cat-grid.rg-cat-grid--5 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.rg-cat-grid--5 .rg-cat-tile--feature {
+  grid-column: 1 / -1;
+}
+.rg-cat-grid--5 .rg-cat-tile:not(.rg-cat-tile--feature) {
+  aspect-ratio: 1 / 1;
+}
+@media (min-width: 992px) {
+  .rg-cat-grid.rg-cat-grid--5 {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    height: clamp(340px, 30vw, 470px);
+  }
+  .rg-cat-grid--5 .rg-cat-tile--feature {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+  .rg-cat-grid--5 .rg-cat-tile:not(.rg-cat-tile--feature) {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+}
+
 
 /* ============================================================
    25a2. SPECIALITEITEN-KAARTEN — zelfde look als categorie-tegels,
