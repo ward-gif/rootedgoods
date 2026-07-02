@@ -758,9 +758,9 @@ img {
   transform: translateY(-2px);
 }
 .home-productslider .product-box .card-body {
-  --bs-card-spacer-y: 2.5rem;
+  --bs-card-spacer-y: 1.25rem;
   --bs-card-spacer-x: 1.5rem;
-  padding: 2.5rem 1.5rem !important;
+  padding: 1.25rem 1.5rem !important;
   display: flex;
   flex-direction: column;
 }
@@ -4365,7 +4365,6 @@ img.rg-europe-map__svg {
   .home-productslider .cms-block-container-row,
   .home-productslider .col-12,
   .home-productslider .cms-element-product-slider,
-  .home-productslider .base-slider,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
     max-width: none !important;
@@ -4373,11 +4372,27 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
+  /* .base-slider krijgt zij-padding i.p.v. 0: dit is het element waarop de
+     plugin initialiseert en z'n beschikbare breedte op meet, dus de 4 vaste
+     tegels (items:4, zie rootedgoods.js 2.0) berekenen zelf een smallere
+     breedte -> ruimte binnen de boxed rand voor de nav-knoppen (stap 5
+     verderop), i.p.v. de knoppen in de calc+80-marge erbuiten te hangen
+     (bleek instabiel, landde soms tegen de fysieke viewport-rand).
+     Eerder werd dit teruggedraaid vanwege een vermoede link met kapotte
+     mouseDrag, maar de echte oorzaak daarvan was de block-instelling
+     "mouseDrag":false (nu gepatcht in JS) — dit is dus een bewuste herkansing. */
+  .home-productslider .base-slider {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 56px !important;
+    overflow: visible !important;
+  }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
      boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
      .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
-     nav-knoppen (sectie 5 verderop) wél buiten de box mogen uitsteken.
+     nav-knoppen wél in de gereserveerde zij-ruimte van .base-slider mogen
+     staan zonder de track zelf te raken.
      LET OP: overflow-x:hidden + overflow-y:visible wordt door de browser
      ivm de spec omgezet naar overflow-y:auto (nooit puur "visible" zodra x
      iets anders dan visible is) -> de hover-shadow van tiles (translateY
@@ -4408,16 +4423,14 @@ img.rg-europe-map__svg {
      .tns-controls (die had hier een custom controlsContainer meegekregen) —
      de echte markup is Promidata's eigen .product-slider-controls-container
      > .base-slider-controls > button.base-slider-controls-prev/-next
-     [data-controls], bevestigd via devtools. De pijlen staan BUITEN de
-     tegel-rand (transform op de KNOP, niet op .base-slider zelf) — een
-     eerdere versie gaf .base-slider zij-padding zodat de plugin er zelf
-     smallere tegels van berekende, maar dat brak de mouseDrag van de
-     slider (de plugin's eigen breedte/drag-berekening raakte in de war van
-     padding op het element waarop 'ie initialiseert). Transform op de knop
-     raakt .base-slider's box model niet aan, dus drag blijft intact.
-     .home-productslider zelf moet hier ook overflow:visible krijgen — de
-     unconditionele overflow-x:hidden in sectie 10 is page-safety tegen
-     bleed-overflow van de TRACK, niet bedoeld om deze knoppen te clippen. */
+     [data-controls], bevestigd via devtools. inset:0 = volledige
+     .base-slider-box (incl. de 56px zij-padding hierboven) -> de knoppen
+     landen dankzij justify-content:space-between vanzelf in die
+     gereserveerde ruimte, tegen de buitenrand van de box, zonder de
+     tegel-track te overlappen. .home-productslider zelf moet hier ook
+     overflow:visible krijgen — de unconditionele overflow-x:hidden in
+     sectie 10 is page-safety tegen bleed-overflow van de TRACK, niet
+     bedoeld om deze knoppen te clippen. */
   .home-productslider {
     overflow: visible !important;
   }
@@ -4463,14 +4476,6 @@ img.rg-europe-map__svg {
   }
   .home-productslider .base-slider-controls button svg use {
     fill: #2d4528 !important;
-  }
-  /* Buiten de tegel-rand: eigen breedte + 6px gap, ruim binnen de
-     gegarandeerde min. 80px calc+80-marge op elke desktop-breedte. */
-  .home-productslider .base-slider-controls-prev {
-    transform: translateX(calc(-100% - 6px)) !important;
-  }
-  .home-productslider .base-slider-controls-next {
-    transform: translateX(calc(100% + 6px)) !important;
   }
   .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
     fill: #ad6331 !important;

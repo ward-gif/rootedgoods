@@ -124,18 +124,24 @@ document.addEventListener('DOMContentLoaded', function () {
  * Op andere pagina's faalt querySelector veilig.
  * ===================================================================== */
 
-/* ---- 2.0 Productslider — loop UIT (Bambook-stijl)
+/* ---- 2.0 Productslider — opties herschrijven vóór plugin-init
  * Promidata's TinySlider draait standaard met loop:true → er worden
  * kloon-tegels toegevoegd, waardoor er links van de eerste kaart altijd
  * een halve tegel "gluurt". Bambook lost dit op door simpelweg NIET te
  * loopen (geen clones, prev-knop disabled bij start, schone linkerrand,
  * echte bleed naar de schermrand).
  *
- * Wij doen hetzelfde door de slider-opties te herschrijven naar
- * loop:false VOORDAT de plugin ze leest. Een MutationObserver vangt het
- * element zodra het tijdens het parsen in de DOM verschijnt — ruim vóór
- * de plugin-init op DOMContentLoaded. Idempotent + defensief (niets
- * crasht als de structuur afwijkt).
+ * Ook hier gepatcht:
+ * - mouseDrag:true — de block-instelling had 'm op false staan (admin-
+ *   config), dus slepen deed nooit iets, los van onze CSS.
+ * - items:4 (alleen ≥992px) — altijd exact 4 tegels in beeld op desktop,
+ *   ongeacht viewport-breedte, i.p.v. de auto-fit op productboxMinWidth
+ *   (die op brede schermen 5 tegels liet zien).
+ *
+ * Wij herschrijven de slider-opties VOORDAT de plugin ze leest. Een
+ * MutationObserver vangt het element zodra het tijdens het parsen in de
+ * DOM verschijnt — ruim vóór de plugin-init op DOMContentLoaded. Idempotent
+ * + defensief (niets crasht als de structuur afwijkt).
  *
  * LET OP: dit moet vóór plugin-init draaien, dus GEEN DOMContentLoaded-wrap. */
 (function () {
@@ -146,8 +152,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var opts;
     try { opts = JSON.parse(raw); } catch (e) { return; }
     opts.slider = opts.slider || {};
-    opts.slider.loop = false;     // geen clones meer
-    opts.slider.rewind = false;   // niet terugspringen naar begin
+    opts.slider.loop = false;       // geen clones meer
+    opts.slider.rewind = false;     // niet terugspringen naar begin
+    opts.slider.mouseDrag = true;   // block-instelling had 'm uit
+    if (window.innerWidth >= 992) {
+      opts.slider.items = 4;        // vaste 4 tegels op desktop
+    }
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }
