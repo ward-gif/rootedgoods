@@ -4335,8 +4335,6 @@ img.rg-europe-map__svg {
   .cms-section:has(.rg-feature-row__content) .cms-block-container[style],
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container,
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style],
-  .cms-section:has(.home-productslider) .cms-block-container,
-  .cms-section:has(.home-productslider) .cms-block-container[style],
   .cms-section:has(.rg-statement) .cms-block-container,
   .cms-section:has(.rg-statement) .cms-block-container[style] {
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
@@ -4354,24 +4352,49 @@ img.rg-europe-map__svg {
     padding-right: 0 !important;
   }
 
-  /* 4. SLIDER: boxed, zelfde lijn als de rest (calc+80 komt al uit stap 1+2
-     hierboven, samen met max-width:none op de container/row/col). Wat nog
-     wél nodig is: de theme centreert de ROW zelf via FLEX
-     (justify-content:center), wat max-width/margin niet kan stoppen ->
-     zonder deze fix zou de row toch weer naar binnen springen. Forceer
-     block-flow zodat de row de (nu boxed) container netjes vult. */
-  .home-productslider .cms-block-container,
-  .home-productslider .cms-block-container[style],
+  /* 4. SLIDER: .cms-block-container blijft EXACT op de gedeelde 80px-lijn
+     (zelfde rand als cat/spec/feature) — .base-slider daarbinnen wordt 2x
+     64px smaller gemaakt via een echte WIDTH-reductie (niet padding: een
+     eerdere poging gaf .base-slider zélf zij-padding, maar de plugin meet
+     kennelijk offsetWidth (incl. padding) om de tegelbreedte te berekenen,
+     dus die "gereserveerde" padding werd gewoon meegerekend als bruikbare
+     ruimte -> geen effect. Een echte breedte-verkleining kan de plugin niet
+     negeren.) Nav-container (stap 5) hangt aan .cms-block-container (op de
+     gedeelde lijn), niet aan .base-slider (dat ligt er nu 64px binnen) ->
+     knoppen landen op de gedeelde lijn, tegels beginnen 64px verderop:
+     genoeg ruimte ertussen, geen overlap meer. Verder: de theme centreert
+     de ROW zelf via FLEX (justify-content:center), wat max-width/margin
+     niet kan stoppen -> zonder deze fix zou de row toch weer naar binnen
+     springen. Forceer block-flow zodat de row de (nu boxed) container
+     netjes vult. */
   .home-productslider .cms-block-container-row,
   .home-productslider .col-12,
   .home-productslider .cms-element-product-slider,
-  .home-productslider .base-slider,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
+  }
+  .home-productslider .base-slider {
+    max-width: none !important;
+    width: calc(100% - 128px) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  /* .cms-block-container: complete, eigen padding-regel (top 5rem, links/
+     rechts de gedeelde 80px-lijn, bottom 0) i.p.v. verspreid over meerdere
+     stappen -> één plek, geen kans meer dat een latere regel 'm
+     stilzwijgend terugzet (dat was precies de padding-top-bug hiervoor). */
+  .home-productslider .cms-block-container,
+  .home-productslider .cms-block-container[style] {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 5rem calc(max((100vw - 1600px) / 2, 0px) + 80px) 0 !important;
+    overflow: visible !important;
+    position: relative !important;
   }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
@@ -4408,21 +4431,14 @@ img.rg-europe-map__svg {
      .tns-controls (die had hier een custom controlsContainer meegekregen) —
      de echte markup is Promidata's eigen .product-slider-controls-container
      > .base-slider-controls > button.base-slider-controls-prev/-next
-     [data-controls], bevestigd via devtools. GEEN padding meer op
-     .base-slider om ruimte te "reserveren": de plugin meet z'n beschikbare
-     breedte blijkbaar via offsetWidth (incl. padding), niet clientWidth
-     (excl. padding) -> padding daar veranderde de berekende tegelbreedte
-     niet, dus dat effect deed niks (2x geprobeerd, 2x zonder resultaat).
-     Positie komt nu puur via transform op de KNOP zelf (verderop), buiten
-     de tegel-rand, in de calc+80-marge. .home-productslider zelf moet hier
-     ook overflow:visible krijgen — de unconditionele overflow-x:hidden in
-     sectie 10 is page-safety tegen bleed-overflow van de TRACK, niet
-     bedoeld om deze knoppen te clippen. */
+     [data-controls], bevestigd via devtools. De nav-container hangt aan
+     .cms-block-container (position:relative, stap 4 hierboven) i.p.v. aan
+     .base-slider: .cms-block-container zit op de gedeelde 80px-lijn,
+     .base-slider ligt daar 64px binnen -> inset:0 hier plaatst de knoppen
+     op de gedeelde lijn, met de tegel-rij (in .base-slider) daar 64px van
+     verwijderd. Geen transform op de knop meer nodig. */
   .home-productslider {
     overflow: visible !important;
-  }
-  .home-productslider .base-slider {
-    position: relative !important;
   }
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
@@ -4463,15 +4479,6 @@ img.rg-europe-map__svg {
   }
   .home-productslider .base-slider-controls button svg use {
     fill: #2d4528 !important;
-  }
-  /* Buiten de tegel-rand: eigen breedte (30px) + 24px gap = 54px marge,
-     ruim binnen de gegarandeerde min. 80px calc+80-marge op elke
-     desktop-breedte (was eerst 6px, oogde nog als "op" de tegel). */
-  .home-productslider .base-slider-controls-prev {
-    transform: translateX(calc(-100% - 24px)) !important;
-  }
-  .home-productslider .base-slider-controls-next {
-    transform: translateX(calc(100% + 24px)) !important;
   }
   .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
     fill: #ad6331 !important;
