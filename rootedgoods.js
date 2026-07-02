@@ -134,9 +134,12 @@ document.addEventListener('DOMContentLoaded', function () {
  * Ook hier gepatcht:
  * - mouseDrag:true — de block-instelling had 'm op false staan (admin-
  *   config), dus slepen deed nooit iets, los van onze CSS.
- * - items:4 (alleen ≥992px) — altijd exact 4 tegels in beeld op desktop,
- *   ongeacht viewport-breedte, i.p.v. de auto-fit op productboxMinWidth
- *   (die op brede schermen 5 tegels liet zien).
+ *
+ * GEEN items:4 (meer): bleek genegeerd door de plugin (getest — de
+ * live-region bleef "1 to 5" tonen ondanks items:4 in de opties). De echte
+ * hendel voor het aantal tegels is .base-slider's clientWidth: de plugin
+ * berekent zelf items = floor(clientWidth / (productboxMinWidth+gutter)),
+ * zie rootedgoods.css sectie 30 stap 4 (.cms-block-container/.base-slider).
  *
  * Wij herschrijven de slider-opties VOORDAT de plugin ze leest. Een
  * MutationObserver vangt het element zodra het tijdens het parsen in de
@@ -155,9 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider.loop = false;       // geen clones meer
     opts.slider.rewind = false;     // niet terugspringen naar begin
     opts.slider.mouseDrag = true;   // block-instelling had 'm uit
-    if (window.innerWidth >= 992) {
-      opts.slider.items = 4;        // vaste 4 tegels op desktop
-    }
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }

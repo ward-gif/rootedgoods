@@ -4306,9 +4306,17 @@ img.rg-europe-map__svg {
   .cms-section:has(.home-productslider) .cms-block-text .cms-element-text,
   /* Slider-blok zelf (was full-width + bleed; nu boxed, dezelfde lijn als
      hierboven). Reuse van hetzelfde bewezen patroon i.p.v. een aparte
-     bespoke bleed-regeling. */
-  .cms-section:has(.home-productslider) .cms-block-container,
-  .cms-section:has(.home-productslider) .cms-block-container[style],
+     bespoke bleed-regeling.
+     LET OP: .cms-block-container/[style] staan HIER BEWUST NIET meer bij.
+     Deze :has()-selector heeft een HOGERE specificiteit (4 class-equivalenten
+     via .cms-section + :has(...) + .cms-block-container + [style]) dan de
+     latere, "eigen" regel voor .home-productslider .cms-block-container
+     (3 class-equivalenten) verderop in dit bestand -> ondanks dat DIE regel
+     later in het bestand staat en ook !important gebruikt, VERLOOR hij altijd
+     van specificiteit. Resultaat: padding-left/right stonden dus stiekem
+     al deze hele tijd op 0 (volle rijbreedte) i.p.v. op de calc+80-lijn,
+     wat verklaart waarom de slider nooit echt boxed leek en de plugin veel
+     meer beschikbare breedte mat dan gedacht (vandaar 5+ i.p.v. 4 tegels). */
   .cms-section:has(.home-productslider) .cms-block-container-row,
   .cms-section:has(.home-productslider) .col-12,
   .cms-section:has(.rg-statement) .cms-block-container,
@@ -4377,9 +4385,16 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
+  /* 40px zij-marge (i.p.v. de eerdere 64px): puur voor ademruimte voor de
+     nav-knoppen, GEEN item-count-truc meer (die rol speelde toch niet: de
+     plugin berekent items uit .base-slider's clientWidth via
+     floor(width/(productboxMinWidth+gutter)) = floor(1440/330) = 4 zodra
+     .cms-block-container écht op de calc+80-lijn (1440px max) zit, wat
+     hierboven nu eindelijk klopt. Met -80px totaal (1440-80=1360) blijft
+     floor(1360/330) nog steeds 4 -> ruim binnen de marge, geen 5e tegel. */
   .home-productslider .base-slider {
     max-width: none !important;
-    width: calc(100% - 128px) !important;
+    width: calc(100% - 80px) !important;
     margin: 0 auto !important;
     padding: 0 !important;
     overflow: visible !important;
