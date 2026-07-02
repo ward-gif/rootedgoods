@@ -4365,6 +4365,7 @@ img.rg-europe-map__svg {
   .home-productslider .cms-block-container-row,
   .home-productslider .col-12,
   .home-productslider .cms-element-product-slider,
+  .home-productslider .base-slider,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
     max-width: none !important;
@@ -4372,27 +4373,11 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
-  /* .base-slider krijgt zij-padding i.p.v. 0: dit is het element waarop de
-     plugin initialiseert en z'n beschikbare breedte op meet, dus de 4 vaste
-     tegels (items:4, zie rootedgoods.js 2.0) berekenen zelf een smallere
-     breedte -> ruimte binnen de boxed rand voor de nav-knoppen (stap 5
-     verderop), i.p.v. de knoppen in de calc+80-marge erbuiten te hangen
-     (bleek instabiel, landde soms tegen de fysieke viewport-rand).
-     Eerder werd dit teruggedraaid vanwege een vermoede link met kapotte
-     mouseDrag, maar de echte oorzaak daarvan was de block-instelling
-     "mouseDrag":false (nu gepatcht in JS) — dit is dus een bewuste herkansing. */
-  .home-productslider .base-slider {
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 56px !important;
-    overflow: visible !important;
-  }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
      boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
      .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
-     nav-knoppen wél in de gereserveerde zij-ruimte van .base-slider mogen
-     staan zonder de track zelf te raken.
+     nav-knoppen (stap 5 verderop) wél buiten de box mogen uitsteken.
      LET OP: overflow-x:hidden + overflow-y:visible wordt door de browser
      ivm de spec omgezet naar overflow-y:auto (nooit puur "visible" zodra x
      iets anders dan visible is) -> de hover-shadow van tiles (translateY
@@ -4423,12 +4408,14 @@ img.rg-europe-map__svg {
      .tns-controls (die had hier een custom controlsContainer meegekregen) —
      de echte markup is Promidata's eigen .product-slider-controls-container
      > .base-slider-controls > button.base-slider-controls-prev/-next
-     [data-controls], bevestigd via devtools. inset:0 = volledige
-     .base-slider-box (incl. de 56px zij-padding hierboven) -> de knoppen
-     landen dankzij justify-content:space-between vanzelf in die
-     gereserveerde ruimte, tegen de buitenrand van de box, zonder de
-     tegel-track te overlappen. .home-productslider zelf moet hier ook
-     overflow:visible krijgen — de unconditionele overflow-x:hidden in
+     [data-controls], bevestigd via devtools. GEEN padding meer op
+     .base-slider om ruimte te "reserveren": de plugin meet z'n beschikbare
+     breedte blijkbaar via offsetWidth (incl. padding), niet clientWidth
+     (excl. padding) -> padding daar veranderde de berekende tegelbreedte
+     niet, dus dat effect deed niks (2x geprobeerd, 2x zonder resultaat).
+     Positie komt nu puur via transform op de KNOP zelf (verderop), buiten
+     de tegel-rand, in de calc+80-marge. .home-productslider zelf moet hier
+     ook overflow:visible krijgen — de unconditionele overflow-x:hidden in
      sectie 10 is page-safety tegen bleed-overflow van de TRACK, niet
      bedoeld om deze knoppen te clippen. */
   .home-productslider {
@@ -4476,6 +4463,15 @@ img.rg-europe-map__svg {
   }
   .home-productslider .base-slider-controls button svg use {
     fill: #2d4528 !important;
+  }
+  /* Buiten de tegel-rand: eigen breedte (30px) + 24px gap = 54px marge,
+     ruim binnen de gegarandeerde min. 80px calc+80-marge op elke
+     desktop-breedte (was eerst 6px, oogde nog als "op" de tegel). */
+  .home-productslider .base-slider-controls-prev {
+    transform: translateX(calc(-100% - 24px)) !important;
+  }
+  .home-productslider .base-slider-controls-next {
+    transform: translateX(calc(100% + 24px)) !important;
   }
   .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
     fill: #ad6331 !important;
