@@ -4411,7 +4411,14 @@ img.rg-europe-map__svg {
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
     position: absolute !important;
-    inset: 0 !important;
+    /* left/right buiten de tegel-rand i.p.v. inset:0 + transform op de knop:
+       transform(-100%) bleek onbetrouwbaar zodra de knop een andere
+       computed breedte kreeg dan verwacht (zie geschiedenis) -> nu bepaalt
+       deze offset zelf waar de knop komt, space-between doet de rest. */
+    top: 0 !important;
+    bottom: 0 !important;
+    left: -56px !important;
+    right: -56px !important;
     z-index: 5;
     display: flex !important;
     align-items: center;
@@ -4446,25 +4453,20 @@ img.rg-europe-map__svg {
     width: 100% !important;
     height: 100% !important;
   }
-  /* Disabled (start/einde van de rij) blijft vol donkergroen voor
-     zichtbaarheid -> geen opacity-dim, alleen de cursor verandert. */
   .home-productslider .base-slider-controls button svg use {
     fill: #2d4528 !important;
-  }
-  /* Vlak naast de tegels: eigen breedte + 10px gap, symmetrisch links/rechts
-     (voorheen alleen links klikbaar -> nu identieke opbouw aan beide kanten,
-     los van willekeurige theme-defaults die dat veroorzaakten). */
-  .home-productslider .base-slider-controls-prev {
-    transform: translateX(calc(-100% - 10px)) !important;
-  }
-  .home-productslider .base-slider-controls-next {
-    transform: translateX(calc(100% + 10px)) !important;
   }
   .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
     fill: #ad6331 !important;
   }
+  /* Disabled (start/einde van de rij) duidelijk inactief, anders oogt een
+     volle donkergroene pijl als "actief maar kapot" i.p.v. "geen vorige/
+     volgende beschikbaar". */
   .home-productslider .base-slider-controls button:disabled {
     cursor: default !important;
+  }
+  .home-productslider .base-slider-controls button:disabled svg use {
+    fill: #c7c0b3 !important;
   }
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
