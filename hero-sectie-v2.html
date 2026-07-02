@@ -88,28 +88,12 @@
     }
     .rg-hero-v2__sub b{font-weight:600;color:var(--rg-green);}
 
-    /* ---- CTA's ---- */
+    /* ---- CTA's: globale site-knoppen (.btn .btn-primary/-outline-primary)
+       voor identieke styling en hover als de rest van de site. Alleen de
+       secundaire compacter + zonder pijl (hiërarchie), zoals de oude hero. */
     .rg-hero-v2__cta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rg-s2);margin:0 0 var(--rg-s3);}
-    .rg-hero-v2__btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-      border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;
-      border:2px solid transparent;
-      transition:transform .18s ease,background-color .2s ease,color .2s ease,box-shadow .25s ease,border-color .2s ease;
-    }
-    .rg-hero-v2__btn:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:3px;}
-    .rg-hero-v2__btn--primary{
-      padding:.95rem 2.2rem;font-size:1rem;color:#fff;
-      background:var(--rg-cognac);
-      box-shadow:0 12px 26px -14px rgba(173,99,49,.9);
-    }
-    .rg-hero-v2__btn--primary:hover{background:var(--rg-cognac-deep);transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(173,99,49,1);}
-    .rg-hero-v2__btn--primary svg{width:1.05em;height:1.05em;flex:none;transition:transform .2s ease;}
-    .rg-hero-v2__btn--primary:hover svg{transform:translateX(4px);}
-    .rg-hero-v2__btn--secondary{
-      padding:.72rem 1.5rem;font-size:.9rem;color:var(--rg-green);
-      background:transparent;border-color:rgba(45,69,40,.28);
-    }
-    .rg-hero-v2__btn--secondary:hover{border-color:var(--rg-cognac);color:var(--rg-cognac);transform:translateY(-2px);}
+    .rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary{padding:.72rem 1.5rem !important;font-size:.9rem !important;}
+    .rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary::after{display:none !important;}
 
     /* ---- Trust: één rustige regel. Elk item is nowrap en draagt z'n eigen
        scheidings-middot (::before), zodat bij wrap de middot netjes mee naar
@@ -173,9 +157,15 @@
     }
     .rg-hero-v2__cap-label{font-size:.84rem;font-weight:500;color:#fff;}
     .rg-hero-v2__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
-    /* Mobiel: alleen merknaam in de caption (product-regel = ruis op klein) */
+    /* Mobiel: alleen merknaam in de caption (product-regel = ruis op klein),
+       en trust + contactpersoon verbergen: met 2 CTA's erboven wordt de
+       stack anders te lang. Beide komen elders op de pagina terug
+       (topbar-USP's, CTA-blok onderaan met Richard). */
     @media (max-width:767px){
       .rg-hero-v2__cap-label{display:none;}
+      .rg-hero-v2__trust{display:none;}
+      .rg-hero-v2__contact{display:none;}
+      .rg-hero-v2__cta{margin-bottom:0;}
     }
 
     /* ---- Tablet (>=768px): tegels vierkant, staffel aan ---- */
@@ -199,6 +189,10 @@
         padding:clamp(1.5rem,3vh,2.5rem) calc(max((100vw - 1600px)/2, 0px) + 80px);
       }
       .rg-hero-v2__copy{max-width:34rem;}
+      /* Mozaïek begrensd zodat hero + logo-slider samen in de viewport passen
+         (te grote tegels duwden de slider onder de vouw). */
+      .rg-hero-v2__mosaic{max-width:600px;width:100%;justify-self:end;}
+      .rg-hero-v2__mcol--b{margin-top:2rem;}
     }
   </style>
 
@@ -209,15 +203,13 @@
            dubbele merknaam is redundant. De knipoog zit in kicker + headline. -->
       <p class="rg-hero-v2__kicker">Geworteld in Europa</p>
       <!-- Gekozen: variant 1. Zie de andere twee varianten in de comment bovenaan. -->
-      <h1 class="rg-hero-v2__title" id="rg-hero-v2-title">Relatiegeschenken <span class="rg-hero-v2__nw">met <em>wortels in Europa</em>.</span></h1>
+      <h1 class="rg-hero-v2__title" id="rg-hero-v2-title">Premium geschenken met <em>wortels in Europa</em>.</h1>
       <p class="rg-hero-v2__sub"><b>Rooted Goods</b> personaliseert premium producten van Europese makers met jouw logo. Drukproef, verpakking en bezorging regelen wij.</p>
 
+      <!-- Pijl op de primaire komt automatisch via de globale button-CSS -->
       <div class="rg-hero-v2__cta">
-        <a class="rg-hero-v2__btn rg-hero-v2__btn--primary" href="#">
-          Vraag een offerte aan
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="rg-hero-v2__btn rg-hero-v2__btn--secondary" href="#">Bekijk de collectie</a>
+        <a class="btn btn-primary" href="#">Vraag een offerte aan</a>
+        <a class="btn btn-outline-primary" href="#">Bekijk de collectie</a>
       </div>
 
       <!-- Bewust "geassembleerd", niet "100% gemaakt": de eerlijke claim uit
