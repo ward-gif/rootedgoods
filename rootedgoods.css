@@ -894,48 +894,14 @@ img {
   margin: 0 !important;
   padding: 0 !important;
 }
-/* Deterministische uitlijning (zelfde aanpak als de feature): container
-   max-width none + calc-padding. Onafhankelijk van de instabiele theme-row,
-   dus kaarten staan altijd op 270 -> gelijk aan cat/spec/feature. */
-@media (min-width: 992px) {
-  .home-productslider .cms-block-container,
-  .home-productslider .cms-block-container[style] {
-    max-width: none !important;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-  }
-  /* De theme capt de ROW binnen de container (smaller + gecentreerd -> +40px).
-     Laat de row de container vullen zodat content exact op 270 staat. */
-  .home-productslider .cms-block-container-row,
-  .cms-section:has(.rg-cat-grid) .cms-block-container-row,
-  .cms-section:has(.rg-spec-grid) .cms-block-container-row {
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-}
-
-/* Slider — dubbele clip-strategie:
-   1. .home-productslider: padding-left duwt content 100px naar rechts,
-      margin-right -60 laat sectie tot +60 buiten viewport doorlopen.
-   2. .cms-block-container: overflow hidden kapt exact op de padding-grens,
-      waardoor gekloonde TinySlider-tegels die links "uitsteken" verborgen
-      worden zonder curtain. */
-/* padding-left schaalt mee met viewport via clamp():
-   - Min 15px op smalle schermen
-   - 1.5vw tussenin
-   - Max 40px op grote schermen (bv. 27" monitor)
-   Zorgt dat de slider op elke laptop/desktop met de juiste offset laadt
-   zonder manual media queries per breakpoint. */
+/* Boxed uitlijning: de slider hangt in de deterministische calc+80-lijn
+   (sectie 30, hieronder) net als cat/spec/feature/statement -> geen bleed
+   meer, gewoon dezelfde linker/rechter rand als de rest van de homepage. */
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  /* Geen custom padding-left/margin-right meer: de slider gebruikt de
-     natuurlijke gecentreerde container-breedte van de theme (~1400px),
-     net als de categorie-/specialiteiten-blokken -> lijnt vanzelf uit. */
   padding-bottom: 40px !important;             /* ruimte voor hover-shadow */
   box-sizing: border-box !important;
-  position: relative;
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
@@ -965,82 +931,12 @@ img {
    regel was redundant en versnipperde de aspect-ratio rules) */
 
 
-/* ------------------------------------------------------------
-   10b. PRODUCTSLIDER NAVIGATION — custom bottom-right arrows
-   ------------------------------------------------------------
-   Admin: controls UIT, mouseDrag AAN → TinySlider doet native drag.
-   Wij injecteren via JS een eigen .rg-slider-nav rechtsonder met
-   prev/next-knoppen die ofwel Promidata's button kliklen (als die
-   tóch nog bestaan) ofwel een drag simuleren. */
-
-.home-productslider {
-  position: relative;
-  z-index: 1;
-}
-
-/* Native cursor — slider is sleepbaar */
+/* Native cursor — slider is sleepbaar (mouseDrag). De custom .rg-slider-nav
+   bottom-right knoppen zijn verwijderd: navigatie gaat terug naar Shopware's
+   eigen controls (aan te zetten in de blok-instellingen), die later een
+   eigen stijl krijgen. */
 .home-productslider .product-slider-container { cursor: grab; }
 .home-productslider .product-slider-container:active { cursor: grabbing; }
-
-/* Het kop-blok boven de slider wordt de positie-context voor de nav
-   (full-width, niet overflow-geclipt). De nav (via JS hierin gehangen)
-   staat op de knoppen-rij rechts, een klein stukje van de schermrand. */
-.cms-block-text:has(+ .home-productslider) {
-  position: relative;
-}
-.rg-slider-nav {
-  position: absolute;
-  bottom: 22px;            /* lijnt uit met de categorie-knoppen-rij */
-  right: 40px;             /* klein stukje van de rechterrand */
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-
-.rg-slider-nav__btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #ad6331;                       /* terracotta */
-  border: 1px solid #ad6331;
-  box-shadow: 0 4px 16px rgba(45,69,40,0.18);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.rg-slider-nav__btn:hover {
-  background: #955529;                        /* donkerder terracotta */
-  border-color: #955529;
-  transform: scale(1.08);
-  box-shadow: 0 6px 22px rgba(45,69,40,0.25);
-}
-
-.rg-slider-nav__btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-/* Chevron via geroteerde border — pixel-perfect gecentreerd want geen
-   margin-offset; de border-rectangle staat in het visuele midden van de
-   button (display:flex + center). */
-.rg-slider-nav__chev {
-  display: block;
-  width: 9px;
-  height: 9px;
-  border-top: 2px solid #ffffff;
-  border-right: 2px solid #ffffff;
-}
-
-.rg-slider-nav__btn--prev .rg-slider-nav__chev {
-  transform: rotate(-135deg) translate(-1px, 1px);  /* visueel optisch midden */
-}
-.rg-slider-nav__btn--next .rg-slider-nav__chev {
-  transform: rotate(45deg) translate(-1px, 1px);
-}
 
 
 /* ------------------------------------------------------------
@@ -1219,8 +1115,16 @@ img {
   flex-shrink: 0;
 }
 
-/* Logo slider — grayscale met hover effect */
+/* Logo slider — grayscale met hover effect.
+   height/width/object-fit hier is de eigenlijke FOUC-fix: zonder expliciete
+   afmeting rendert de <img> op natuurlijke (vaak grote) resolutie in het
+   korte moment vóórdat JS de vervangende continue-scroll-band bouwt en
+   verbergt -> zag eruit als "1 groot logo in zwart" (grayscale-filter over
+   een groot beeld). Puur CSS, dus onafhankelijk van JS-timing. */
 .home.productslider .card-img img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -4395,6 +4299,13 @@ img.rg-europe-map__svg {
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container-row,
   .cms-section:has(.home-productslider) .cms-block-text .col-12,
   .cms-section:has(.home-productslider) .cms-block-text .cms-element-text,
+  /* Slider-blok zelf (was full-width + bleed; nu boxed, dezelfde lijn als
+     hierboven). Reuse van hetzelfde bewezen patroon i.p.v. een aparte
+     bespoke bleed-regeling. */
+  .cms-section:has(.home-productslider) .cms-block-container,
+  .cms-section:has(.home-productslider) .cms-block-container[style],
+  .cms-section:has(.home-productslider) .cms-block-container-row,
+  .cms-section:has(.home-productslider) .col-12,
   .cms-section:has(.rg-statement) .cms-block-container,
   .cms-section:has(.rg-statement) .cms-block-container[style],
   .cms-section:has(.rg-statement) .cms-block-container-row,
@@ -4419,6 +4330,8 @@ img.rg-europe-map__svg {
   .cms-section:has(.rg-feature-row__content) .cms-block-container[style],
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container,
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style],
+  .cms-section:has(.home-productslider) .cms-block-container,
+  .cms-section:has(.home-productslider) .cms-block-container[style],
   .cms-section:has(.rg-statement) .cms-block-container,
   .cms-section:has(.rg-statement) .cms-block-container[style] {
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
@@ -4436,25 +4349,12 @@ img.rg-europe-map__svg {
     padding-right: 0 !important;
   }
 
-  /* 4. SLIDER: zelfde linkerlijn (calc+80), maar bleedt naar de schermrand.
-     Het blok is volle breedte; padding-left zet de eerste kaart op de lijn,
-     padding-right 0 + overflow-x clip laten de track rechts buiten beeld
-     lopen (en links bij sliden). Geen negatieve marges -> geen page-overflow. */
-  .home-productslider {
-    overflow-x: clip !important;
-    overflow-y: visible !important;
-    /* DETERMINISTISCH: de calc+80-lijn staat op het blok zelf (padding-left).
-       Alle binnenlagen worden hieronder op padding 0 + display:block + width
-       100% geforceerd, dus de content vult de content-box vanaf 230 -> geen
-       afhankelijkheid meer van de (instabiele) theme-row-centrering, en geen
-       dubbeltelling. padding-right 0 + overflow-x clip = bleed naar rechts. */
-    /* eerste tegel op de calc+80-lijn (230); padding-right 0 + overflow-x clip
-       = track bleedt naar de schermrand (geen page-overflow). */
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-    padding-right: 0 !important;
-    padding-bottom: 40px !important;
-    box-sizing: border-box !important;
-  }
+  /* 4. SLIDER: boxed, zelfde lijn als de rest (calc+80 komt al uit stap 1+2
+     hierboven, samen met max-width:none op de container/row/col). Wat nog
+     wél nodig is: de theme centreert de ROW zelf via FLEX
+     (justify-content:center), wat max-width/margin niet kan stoppen ->
+     zonder deze fix zou de row toch weer naar binnen springen. Forceer
+     block-flow zodat de row de (nu boxed) container netjes vult. */
   .home-productslider .cms-block-container,
   .home-productslider .cms-block-container[style],
   .home-productslider .cms-block-container-row,
@@ -4469,21 +4369,6 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
-  /* De theme capt + centreert de slider-row met hogere specificiteit dan
-     '.home-productslider .row' (0,2,0) -> daardoor sprong 230->460. Forceer
-     met :has() (0,4,0) zoals de cat-row, zodat de row de container vult en de
-     kaarten op de lijn (230) staan; de track bleedt rechts via overflow. */
-  .cms-section:has(.home-productslider) .home-productslider .cms-block-container-row,
-  .cms-section:has(.home-productslider) .home-productslider .col-12 {
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  /* De slider-container/row centreren de row via FLEX (justify-content:center),
-     wat max-width/margin niet kan stoppen -> daardoor +230. Forceer block-flow
-     zodat de row de container netjes vult (kaarten op 230). */
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container,
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container[style] {
     display: block !important;

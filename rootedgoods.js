@@ -218,8 +218,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Wrapper transparant — section bg (#F7F5F2) komt door de CSS op .home.productslider.
+  // opacity 0 + transition: subtiele fade i.p.v. een abrupte DOM-swap wanneer
+  // de native carousel wordt vervangen door deze continue-scroll-band.
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem);';
+  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem); opacity:0; transition:opacity .35s ease;';
   wrapper.appendChild(track);
 
   // Keyframe animatie inject
@@ -229,6 +231,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   carousel.style.display = 'none';
   carousel.parentNode.insertBefore(wrapper, carousel);
+
+  // Dubbele rAF: zorgt dat de browser opacity:0 eerst schildert vóórdat de
+  // transitie naar 1 start (anders wordt de transitie soms overgeslagen
+  // omdat beide wijzigingen in dezelfde frame vallen).
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { wrapper.style.opacity = '1'; });
+  });
 
   // Hero-hoogte dynamisch: de logo-slider komt net boven de onderkant van het
   // scherm uit (kleine ruimte eronder), hero-content blijft gecentreerd voor
@@ -281,82 +290,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 2.3 Productslider — custom bottom-right nav arrows
- * Admin: controls UIT zodat TinySlider's native mouseDrag werkt
- * (smooth visual feedback tijdens slepen). Wij injecteren een eigen
- * .rg-slider-nav rechtsonder.
- *
- * Click-handler probeert in volgorde:
- *  1. Promidata's eigen prev/next button kliklen (als controls toch aan staat)
- *  2. Directe transform op .product-slider-container schuiven met
- *     1 tile-breedte. TinySlider's interne index loopt dan uit sync,
- *     maar visueel werkt het en bij volgende drag pakt TinySlider weer
- *     op vanaf de huidige positie. */
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.home-productslider').forEach(function (slider) {
-    if (slider.dataset.rgNavInjected) return;   // per-slider vlag i.p.v. host-check (zie hieronder)
-    var track = slider.querySelector('.product-slider-container');
-    if (!track) return;
-
-    // Nav in het KOP-blok boven de slider hangen i.p.v. in de slider zelf:
-    // dat blok is full-width én niet overflow-geclipt, dus de arrows kunnen
-    // op één lijn met de categorie-knoppen staan, dicht bij de rechterrand.
-    // .cms-block-text binnen dezelfde .cms-section is de robuuste manier om
-    // dat kop-blok te vinden (zelfde patroon als onze CSS gebruikt) —
-    // previousElementSibling alleen breekt zodra er een ander blok tussen
-    // kop en slider komt te staan (bv. bij homepage-herschikking).
-    var section = slider.closest('.cms-section');
-    var host = (section && section.querySelector('.cms-block-text')) || slider.previousElementSibling || slider;
-    slider.dataset.rgNavInjected = '1';
-
-    var nav = document.createElement('div');
-    nav.className = 'rg-slider-nav';
-    nav.innerHTML =
-      '<button type="button" class="rg-slider-nav__btn rg-slider-nav__btn--prev" aria-label="Vorige producten">' +
-        '<span class="rg-slider-nav__chev" aria-hidden="true"></span>' +
-      '</button>' +
-      '<button type="button" class="rg-slider-nav__btn rg-slider-nav__btn--next" aria-label="Volgende producten">' +
-        '<span class="rg-slider-nav__chev" aria-hidden="true"></span>' +
-      '</button>';
-    host.appendChild(nav);
-
-    function shiftTransform(direction) {
-      var item = track.querySelector('.product-slider-item');
-      if (!item) return;
-
-      // item.offsetWidth includes onze padding-right: 30px (gutter),
-      // dus dat IS al de full slide-width. Niet nog eens +30 erbij doen.
-      var tileWidth = item.offsetWidth;
-
-      // Lees huidige translateX uit computed transform-matrix
-      var transform = window.getComputedStyle(track).transform;
-      var currentX = 0;
-      if (transform && transform !== 'none') {
-        var matrix = new DOMMatrix(transform);
-        currentX = matrix.m41;
-      }
-
-      // Bounds: maximaal naar links = -(track-content - zichtbaar deel)
-      var visible = track.parentElement ? track.parentElement.offsetWidth : 0;
-      var maxNeg = visible ? -(track.scrollWidth - visible) : -Infinity;
-
-      var delta = direction === 'next' ? -tileWidth : tileWidth;
-      var newX = Math.max(maxNeg, Math.min(0, currentX + delta));
-
-      track.style.transition = 'transform 400ms ease';
-      track.style.transform = 'translate3d(' + newX + 'px, 0px, 0px)';
-    }
-
-    function navigate(direction) {
-      var nativeBtn = slider.querySelector('button[data-controls="' + direction + '"]');
-      if (nativeBtn) { nativeBtn.click(); return; }
-      shiftTransform(direction);
-    }
-
-    nav.querySelector('.rg-slider-nav__btn--prev').addEventListener('click', function () { navigate('prev'); });
-    nav.querySelector('.rg-slider-nav__btn--next').addEventListener('click', function () { navigate('next'); });
-  });
-});
+/* ---- 2.3 Productslider navigatie — VERWIJDERD
+ * De custom .rg-slider-nav bottom-right knoppen (en de bijbehorende
+ * transform-fallback) zijn eruit. De slider is nu boxed en navigatie loopt
+ * terug via Shopware's eigen "controls"-instelling op het blok (admin zet
+ * die aan), later apart te stylen. loop:false (sectie 2.0 hierboven) blijft
+ * gewoon staan, want dat voorkomt clone-artefacten ongeacht welke nav actief is. */
 
 
 /* =====================================================================
@@ -543,4 +482,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   window.addEventListener('resize', fit);
+  // Bij terugnavigeren (browser Back) herstelt Chrome/Safari/Firefox de
+  // pagina soms uit het bfcache: 'load' vuurt dan NIET opnieuw, dus fit()
+  // draaide nooit voor de huidige weergave -> hero houdt de (mogelijk
+  // verouderde) hoogte van vóór het wegnavigeren aan, wat als een grote
+  // lege ruimte oogt. 'pageshow' met persisted=true vangt dat geval af.
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) fit();
+  });
 })();
