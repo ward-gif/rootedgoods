@@ -4405,13 +4405,22 @@ img.rg-europe-map__svg {
      clientWidth via floor(width/(productboxMinWidth+gutter)) =
      floor(1440/330) = 4 zodra .cms-block-container écht op de calc+80-lijn
      (1440px max) zit, wat nu eindelijk klopt. Met -80px totaal (1440-80=
-     1360) blijft floor(1360/330) nog steeds 4 -> geen 5e tegel.) */
+     1360) blijft floor(1360/330) nog steeds 4 -> geen 5e tegel.)
+     position:static !important is CRUCIAAL: de plugin zet zelf (via JS,
+     dus als inline style) position:relative op .base-slider. Omdat
+     .base-slider de DIRECTE parent is van .product-slider-controls-
+     container, werd DAT altijd het "nearest positioned ancestor" voor de
+     nav-knoppen (bevestigd via getBoundingClientRect: nav had exact
+     .base-slider's left/width, niet .cms-element-product-slider's) — mijn
+     .cms-element-product-slider-anker (hierboven) werd dus nooit bereikt.
+     Alleen !important in extern CSS kan een inline JS-style overrulen. */
   .home-productslider .base-slider {
     max-width: none !important;
     width: calc(100% - 80px) !important;
     margin: 0 auto !important;
     padding: 0 !important;
     overflow: visible !important;
+    position: static !important;
   }
   /* .cms-block-container: complete, eigen padding-regel (top 50px, links/
      rechts de gedeelde 80px-lijn, bottom 0) i.p.v. verspreid over meerdere
