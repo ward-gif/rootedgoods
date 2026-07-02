@@ -4512,6 +4512,15 @@ img.rg-europe-map__svg {
     flex: none !important;
     cursor: pointer !important;
   }
+  /* Compensatie: elke .product-slider-item heeft padding-right:30px als
+     tegel-gutter (zie sectie 10) — die padding zit ook nog op de laatst
+     zichtbare tegel (waar geen volgende tegel meer komt), dus de rechter
+     pijl had daardoor optisch 30px meer ruimte dan de linker (bevestigd:
+     beide containers-gaps waren wel degelijk gelijk, 10px). Trek 'm 30px
+     dichterbij om dat exact te compenseren. */
+  .home-productslider .base-slider-controls-next {
+    transform: translateX(-30px);
+  }
   .home-productslider .base-slider-controls button .icon {
     display: flex !important;
     width: 30px !important;
