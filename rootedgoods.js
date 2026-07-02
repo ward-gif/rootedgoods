@@ -470,7 +470,13 @@ document.addEventListener('DOMContentLoaded', function () {
     hero.style.minHeight = '0px';                                   // reset -> meet natuurlijke stand
     var delta = (window.innerHeight - 24) - slider.getBoundingClientRect().bottom;
     var h = hero.getBoundingClientRect().height;
-    hero.style.minHeight = Math.max(h + delta, 440) + 'px';
+    // Veiligheidsmarge: als fit() ooit draait op een tussentijdse/onvolledige
+    // meting (bv. slider nog mid-render), voorkomt deze cap dat een absurde
+    // uitkomst (honderden/duizenden px te veel) blijft hangen tot de volgende
+    // resize. Bovengrens ruim boven een normale hero (1.4x viewport-hoogte).
+    var minH = 440;
+    var maxH = window.innerHeight * 1.4;
+    hero.style.minHeight = Math.min(Math.max(h + delta, minH), maxH) + 'px';
   }
   window.addEventListener('load', function () {
     fit();
