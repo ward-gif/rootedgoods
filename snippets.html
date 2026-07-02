@@ -1,0 +1,114 @@
+<!-- ============================================================
+     SNIPPETS — kopieerbare HTML-onderdelen (iconen, entities, herbruikbare
+     patronen) die al elders op de site gebruikt worden. Geen los CMS-blok,
+     gewoon een naslag-bestand om uit te kopiëren bij nieuwe pagina's.
+     ============================================================ -->
+
+
+<!-- ------------------------------------------------------------
+     1. SPECIALE TEKENS / HTML-ENTITIES
+     ------------------------------------------------------------ -->
+
+<!-- Ampersand in tekst/attributen: altijd &amp; typen, nooit los &.
+     Anders breekt de HTML-parser (ziet het als begin van een entity). -->
+&amp;
+
+<!-- Non-breaking space: voorkomt regelafbreking tussen bv. "Van" en de prijs,
+     of tussen een getal en eenheid (€&nbsp;25,43). -->
+&nbsp;
+
+<!-- Middot/bullet als scheidingsteken tussen inline items (bv. trust-strip:
+     "Geassembleerd in Europa · digitale drukproef · bezorging geregeld").
+     Wordt in de praktijk via CSS ::before content ingevoegd, niet handmatig
+     getypt — zie .rg-hero-v2__t + .rg-hero-v2__t::before in rootedgoods.css. -->
+&middot;
+<!-- of als CSS content-waarde: content: "\00B7"; -->
+
+
+<!-- ------------------------------------------------------------
+     2. HERBRUIKBARE ICOON-SVG'S
+     Allemaal aria-hidden="true" (decoratief) + fill/stroke="currentColor"
+     zodat ze de tekstkleur van hun ouder-element overnemen — geen losse
+     kleur-override nodig per plek.
+     ------------------------------------------------------------ -->
+
+<!-- Vinkje in cirkel — gebruikt voor trust-badges / checklist-items
+     (bv. "Geassembleerd in Europa" in de hero, of feature-lijstjes). -->
+<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>
+
+<!-- Pijl naar rechts — gebruikt in hover-states (bv. het contactpersoon-
+     blok "Ik help je van idee tot bezorging →", schuift op bij hover). -->
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+
+<!-- LET OP: knoppen (.btn.btn-primary / .btn.btn-outline-primary) krijgen
+     hun pijl AUTOMATISCH via CSS (::after in rootedgoods.css, sectie 8) —
+     nooit handmatig een pijl/→ in de knoptekst zetten, dat geeft een
+     dubbele pijl. Alleen als een knop een eigen <svg>/.icon bevat, slaat
+     de auto-pijl vanzelf over (:not(:has(svg)) in de CSS-selector). -->
+
+
+<!-- ------------------------------------------------------------
+     3. KNOPPEN
+     ------------------------------------------------------------ -->
+
+<!-- Primair (gevuld, terracotta) + secundair (outline) — pijl komt vanzelf
+     op de primaire; de secundaire heeft in sommige blokken (hero) een eigen
+     ::after{display:none} override om 'm zonder pijl te tonen. -->
+<div class="rg-page-hero__cta">
+  <a class="btn btn-primary" href="#">Vraag een offerte aan</a>
+  <a class="btn btn-outline-primary" href="#">Bekijk de collectie</a>
+</div>
+
+
+<!-- ------------------------------------------------------------
+     4. TRUST-STRIP (vinkje + bold + middot-gescheiden items)
+     Patroon uit hero-sectie-v2.html — herbruikbaar overal waar je een
+     rustige regel met 2-3 USP's wilt tonen.
+     ------------------------------------------------------------ -->
+<p class="rg-hero-v2__trust">
+  <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg><b>Geassembleerd in Europa</b></span>
+  <span class="rg-hero-v2__t">digitale drukproef</span>
+  <span class="rg-hero-v2__t">bezorging geregeld</span>
+</p>
+
+
+<!-- ------------------------------------------------------------
+     5. CONTACTPERSOON-BLOK (Richard)
+     Patroon uit hero-sectie-v2.html / CTA-sectie. Twee varianten:
+     licht (op crème achtergrond) en donker (op terracotta/groen CTA-vlak,
+     gebruik dan .rg-cta__contact i.p.v. .rg-hero-v2__contact — zelfde markup,
+     andere kleurvariant in rootedgoods.css).
+     ------------------------------------------------------------ -->
+<a class="rg-hero-v2__contact" href="/contact" aria-label="Hi, ik ben Richard. Ik help je van idee tot bezorging. Neem contact op.">
+  <img src="https://bambook.08.promidata.shop/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="42" height="42">
+  <span>
+    <span class="rg-hero-v2__contact-name">Hi, ik ben Richard</span>
+    <span class="rg-hero-v2__contact-promise">Ik help je van idee tot bezorging
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </span>
+</a>
+
+
+<!-- ------------------------------------------------------------
+     6. GECENTREERDE SECTIE-TITEL (boven een los blok)
+     Zie rootedgoods.css sectie 37 (.rg-block-title). Subline is optioneel.
+     ------------------------------------------------------------ -->
+<div class="rg-block-title">
+  <h2 class="rg-block-title__title">Titel van het blok</h2>
+  <p class="rg-block-title__sub">Optionele korte toelichting eronder.</p>
+</div>
+
+
+<!-- ------------------------------------------------------------
+     7. BRAND-KLEUREN (referentie, niet kopiëren als HTML — gewoon de
+     hex-codes bij de hand voor nieuwe custom CSS)
+     ------------------------------------------------------------
+     #2d4528  diep bosgroen        koppen
+     #4a5a44  gedempt groen        body-tekst
+     #ad6331  terracotta           ALLEEN primaire CTA's + hovers
+     #955529  terracotta (hover)   primaire CTA hover-state
+     #CA853F  lichtbruin accent    eyebrows / pins / vinkjes (NIET voor CTA's)
+     #F7F5F2  warm crème           canvas/achtergrond
+     #EAE3D7  lijn/rand            subtiele scheidingen, borders
+     ------------------------------------------------------------ -->
