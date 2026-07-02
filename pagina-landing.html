@@ -1,0 +1,37 @@
+<!-- ============================================================
+     PAGINA-LANDING — titel + subline + 2 cta's + logo's, beeld rechts.
+     Voor de landingssectie bovenaan pagina's als Thema's/Services (dus NIET
+     de homepage-hero). CSS staat al in rootedgoods.css (sectie 36, .rg-page-hero).
+     Plak dit als eerste blok op de pagina, in een CMS HTML-block.
+
+     TE VERVANGEN:
+       - Titel, subline
+       - 2x href="#" in de CTA's
+       - 3 beelden in .rg-page-hero__media (a=klein linksboven,
+         b=klein linksonder, c=groot rechts, volle hoogte)
+       - Logo's in .rg-page-hero__logos (grayscale, kleuren in op hover)
+     ============================================================ -->
+<section class="rg-page-hero">
+  <div class="rg-page-hero__copy">
+    <h1 class="rg-page-hero__title">Titel van deze pagina</h1>
+    <p class="rg-page-hero__sub">Korte, concrete subline die in één of twee zinnen toelicht wat de bezoeker hier vindt of kan doen.</p>
+
+    <div class="rg-page-hero__cta">
+      <a class="btn btn-primary" href="#">Vraag een offerte aan</a>
+      <a class="btn btn-outline-primary" href="#">Bekijk de collectie</a>
+    </div>
+
+    <div class="rg-page-hero__logos" aria-label="Vertrouwd door">
+      <img src="https://via.placeholder.com/120x40?text=Logo+1" alt="Klantlogo 1">
+      <img src="https://via.placeholder.com/120x40?text=Logo+2" alt="Klantlogo 2">
+      <img src="https://via.placeholder.com/120x40?text=Logo+3" alt="Klantlogo 3">
+      <img src="https://via.placeholder.com/120x40?text=Logo+4" alt="Klantlogo 4">
+    </div>
+  </div>
+
+  <div class="rg-page-hero__media" aria-hidden="true">
+    <img class="rg-page-hero__img rg-page-hero__img--a" src="https://via.placeholder.com/400x400" alt="">
+    <img class="rg-page-hero__img rg-page-hero__img--b" src="https://via.placeholder.com/400x300" alt="">
+    <img class="rg-page-hero__img rg-page-hero__img--c" src="https://via.placeholder.com/500x700" alt="">
+  </div>
+</section>
