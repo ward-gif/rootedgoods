@@ -938,6 +938,14 @@ img {
 .home-productslider .product-slider-container { cursor: grab; }
 .home-productslider .product-slider-container:active { cursor: grabbing; }
 
+/* Mobiel/tablet (<992px): gewoon een swipe/drag-slider, geen ronde
+   knoppen-nav (die is voor de boxed desktop-opzet, zie sectie 30). */
+@media (max-width: 991px) {
+  .home-productslider .tns-controls {
+    display: none !important;
+  }
+}
+
 
 /* ------------------------------------------------------------
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
@@ -4362,12 +4370,24 @@ img.rg-europe-map__svg {
   .home-productslider .cms-element-product-slider,
   .home-productslider .base-slider,
   .home-productslider .tns-outer,
-  .home-productslider .tns-ovh,
   .home-productslider .tns-inner {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
+  }
+  /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
+     hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
+     boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
+     .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
+     nav-knoppen (sectie 5 verderop, .tns-controls = sibling van .tns-ovh
+     binnen .tns-outer) wél buiten de box mogen uitsteken. */
+  .home-productslider .tns-ovh {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
   }
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container,
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container[style] {
@@ -4381,6 +4401,68 @@ img.rg-europe-map__svg {
     display: block !important;
     width: 100% !important;
     flex: none !important;
+  }
+
+  /* 5. SLIDER — native nav (Shopware's eigen tns-controls, aangezet in de
+     block-instellingen). De pijlen mogen buiten de boxed rand vallen, in de
+     calc+80-marge (altijd exact >=80px op elke desktop-breedte, zie boven).
+     .home-productslider zelf moet hier ook overflow:visible krijgen — de
+     unconditionele overflow-x:hidden in sectie 10 is bedoeld als page-safety
+     tegen bleed-overflow van de TRACK, niet om deze knoppen te clippen. */
+  .home-productslider {
+    overflow: visible !important;
+  }
+  .home-productslider .tns-outer {
+    position: relative !important;
+  }
+  .home-productslider .tns-controls {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 5;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none !important;
+  }
+  /* all:unset eerst (strip evt. theme-knopstijl), individuele eigenschappen
+     daarna -> die winnen altijd, ongeacht dat "all" een shorthand is. */
+  .home-productslider .tns-controls button {
+    all: unset;
+    pointer-events: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #EAE3D7;
+    color: #2d4528;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(45, 69, 40, 0.12);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  /* Buiten de rand: eigen breedte + 16px gap, symmetrisch links/rechts
+     (voorheen alleen links klikbaar -> nu identieke opbouw aan beide kanten,
+     los van willekeurige theme-defaults die dat veroorzaakten). */
+  .home-productslider .tns-controls button[data-controls="prev"] {
+    transform: translateX(calc(-100% - 16px));
+  }
+  .home-productslider .tns-controls button[data-controls="next"] {
+    transform: translateX(calc(100% + 16px));
+  }
+  .home-productslider .tns-controls button:hover:not(:disabled) {
+    background: #ad6331;
+    border-color: #ad6331;
+    color: #fff;
+  }
+  .home-productslider .tns-controls button:disabled {
+    opacity: 0.35;
+    cursor: default;
   }
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
