@@ -765,7 +765,7 @@ img {
   flex-direction: column;
 }
 
-/* Image-wrapper iets portrait — padding-bottom 110% (5:5.5).
+/* Image-wrapper platter — padding-bottom 85% (was 110%, te portrait).
    Werkt betrouwbaar, niet door Promidata te overschrijven. */
 .home-productslider .product-image-wrapper,
 .home-productslider .product-box .product-image-wrapper {
@@ -776,7 +776,7 @@ img {
   overflow: hidden !important;
   width: 100% !important;
   height: 0 !important;
-  padding-bottom: 110% !important;
+  padding-bottom: 85% !important;
 }
 .home-productslider .product-image-link,
 .home-productslider .product-box .product-image-link {
@@ -906,6 +906,7 @@ img {
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
   overflow: visible !important;
+  padding-top: 3rem !important;   /* was Shopware's eigen 1rem, wat krap */
 }
 
 /* TinySlider's clip-containers: horizontaal NIET clippen, zodat kaarten links
@@ -1096,6 +1097,17 @@ img {
 .cms-section.home.productslider,
 .home.productslider {
   background-color: #F7F5F2 !important;
+}
+
+/* Native Bootstrap-carousel standaard verborgen (i.p.v. proberen 'm klein/
+   grijs te forceren met !important tegen inline styles, zie hieronder) ->
+   geen enkele kans meer op een FOUC-flits (bv. het Adyen-logo, groot/zwart,
+   gecentreerd), ongeacht hoe snel/laat JS draait. rootedgoods.js (2.1) bouwt
+   de vervangende continue-scroll-band en toont die zelf; als JS ooit niet
+   draait blijft dit blok gewoon leeg (bewuste, acceptabele afweging voor
+   een puur decoratieve vertrouwens-strip). */
+.logo-slider .cms-element-custom-cms-slider {
+  display: none !important;
 }
 
 .home.productslider .carousel-control-prev,
@@ -4353,6 +4365,7 @@ img.rg-europe-map__svg {
   .home-productslider .cms-block-container-row,
   .home-productslider .col-12,
   .home-productslider .cms-element-product-slider,
+  .home-productslider .base-slider,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
     max-width: none !important;
@@ -4360,23 +4373,11 @@ img.rg-europe-map__svg {
     padding: 0 !important;
     overflow: visible !important;
   }
-  /* .base-slider krijgt WEL zij-padding (i.p.v. 0): dit is het element
-     waarop de plugin initialiseert en z'n beschikbare breedte op meet, dus
-     de tegels worden hierdoor zelf smaller -> de nav-knoppen (sectie 5
-     verderop) passen zo binnen de boxed rand i.p.v. erbuiten te hangen
-     (bleek instabiel: hing soms tegen de viewport-rand aan). */
-  .home-productslider .base-slider {
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 64px !important;
-    overflow: visible !important;
-  }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
      boxed rand mee (was de reden dat de slider nog niet echt boxed oogde).
      .tns-outer eromheen blijft overflow:visible (hierboven) zodat de
-     nav-knoppen wél in de gereserveerde zij-ruimte van .base-slider mogen
-     staan zonder de track zelf te raken.
+     nav-knoppen (sectie 5 verderop) wél buiten de box mogen uitsteken.
      LET OP: overflow-x:hidden + overflow-y:visible wordt door de browser
      ivm de spec omgezet naar overflow-y:auto (nooit puur "visible" zodra x
      iets anders dan visible is) -> de hover-shadow van tiles (translateY
@@ -4407,13 +4408,16 @@ img.rg-europe-map__svg {
      .tns-controls (die had hier een custom controlsContainer meegekregen) —
      de echte markup is Promidata's eigen .product-slider-controls-container
      > .base-slider-controls > button.base-slider-controls-prev/-next
-     [data-controls], bevestigd via devtools. De pijlen staan BINNEN de
-     boxed rand, in de zij-padding die .base-slider hierboven claimt (buiten
-     de box hangen bleek instabiel: de knop landde soms tegen de fysieke
-     viewport-rand i.p.v. in de calc+80-marge). .home-productslider zelf
-     moet hier ook overflow:visible krijgen — de unconditionele
-     overflow-x:hidden in sectie 10 is page-safety tegen bleed-overflow van
-     de TRACK, niet bedoeld om deze knoppen te clippen. */
+     [data-controls], bevestigd via devtools. De pijlen staan BUITEN de
+     tegel-rand (transform op de KNOP, niet op .base-slider zelf) — een
+     eerdere versie gaf .base-slider zij-padding zodat de plugin er zelf
+     smallere tegels van berekende, maar dat brak de mouseDrag van de
+     slider (de plugin's eigen breedte/drag-berekening raakte in de war van
+     padding op het element waarop 'ie initialiseert). Transform op de knop
+     raakt .base-slider's box model niet aan, dus drag blijft intact.
+     .home-productslider zelf moet hier ook overflow:visible krijgen — de
+     unconditionele overflow-x:hidden in sectie 10 is page-safety tegen
+     bleed-overflow van de TRACK, niet bedoeld om deze knoppen te clippen. */
   .home-productslider {
     overflow: visible !important;
   }
@@ -4423,10 +4427,6 @@ img.rg-europe-map__svg {
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
     position: absolute !important;
-    /* inset:0 = volledige .base-slider-box (incl. de 64px zij-padding
-       hierboven) -> de knoppen landen dankzij justify-content:space-between
-       vanzelf in die gereserveerde ruimte, tegen de buitenrand van de box,
-       zonder de tegel-track te overlappen en zonder buiten de box te hangen. */
     inset: 0 !important;
     z-index: 5;
     display: flex !important;
@@ -4438,11 +4438,10 @@ img.rg-europe-map__svg {
     max-width: none !important;
   }
   /* Minimalistisch: kale pijl, geen cirkel/achtergrond/rand. Iets groter dan
-     het theme-default (was klein/onopvallend) en vlak naast de tegels (niet
-     ver de marge in). all:unset eerst (strip theme-knopstijl), losse
-     eigenschappen daarna MET !important -> anders wint een gelijk-specifieke,
-     later geladen theme-regel (zoals hier gebeurde: container-positionering
-     werkte wel, de knopstijl zelf niet). */
+     het theme-default (was klein/onopvallend). all:unset eerst (strip
+     theme-knopstijl), losse eigenschappen daarna MET !important -> anders
+     wint een gelijk-specifieke, later geladen theme-regel (zoals hier
+     gebeurde: container-positionering werkte wel, de knopstijl zelf niet). */
   .home-productslider .base-slider-controls button {
     all: unset !important;
     pointer-events: auto !important;
@@ -4464,6 +4463,14 @@ img.rg-europe-map__svg {
   }
   .home-productslider .base-slider-controls button svg use {
     fill: #2d4528 !important;
+  }
+  /* Buiten de tegel-rand: eigen breedte + 6px gap, ruim binnen de
+     gegarandeerde min. 80px calc+80-marge op elke desktop-breedte. */
+  .home-productslider .base-slider-controls-prev {
+    transform: translateX(calc(-100% - 6px)) !important;
+  }
+  .home-productslider .base-slider-controls-next {
+    transform: translateX(calc(100% + 6px)) !important;
   }
   .home-productslider .base-slider-controls button:hover:not(:disabled) svg use {
     fill: #ad6331 !important;
