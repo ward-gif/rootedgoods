@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     set.forEach(function (img) {
       var div = document.createElement('div');
       div.style.cssText = 'padding: 0 3rem; flex-shrink:0;';
-      div.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" style="height:34px; opacity:0.6; filter:grayscale(100%); transition:all 0.3s;">';
+      div.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" style="height:44px; opacity:0.6; filter:grayscale(100%); transition:all 0.3s;">';
       div.querySelector('img').addEventListener('mouseover', function () {
         this.style.opacity = '1';
         this.style.filter = 'grayscale(0%)';
