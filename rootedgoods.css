@@ -1141,7 +1141,7 @@ img {
    inline style wint altijd van een externe regel zonder !important -> zonder
    dit bleef de vlam gewoon bestaan, ongeacht deze CSS. */
 .home.productslider .card-img img {
-  height: 44px !important;
+  height: 38px !important;
   width: auto !important;
   object-fit: contain;
   filter: grayscale(100%);
@@ -5341,13 +5341,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      op desktop bepaalt alleen de flex-gap hierboven de afstand. */
   .rg-hero-v2__copy-top .rg-hero-v2__sub { margin-bottom: 0; }
   /* Mozaïek begrensd zodat hero + logo-slider samen in de viewport passen
-     (te grote tegels duwden de slider onder de vouw). 600px bleek op een
-     laptop-viewport (minder verticale ruimte dan een extern beeldscherm)
-     nog steeds te veel: min-height kan de hero niet kleiner maken dan zijn
-     eigen inhoud (de mozaïek) vereist, dus de slider verdween daar
-     volledig onder de vouw i.p.v. 'm gewoon iets te laag te tonen. 460px
-     verkleint de tegels zelf (aspect-ratio 1:1) zodat er weer echt ruimte
-     overblijft, ongeacht viewport-hoogte. */
-  .rg-hero-v2__mosaic { grid-area: image; max-width: 460px; width: 100%; justify-self: end; }
+     (te grote tegels duwden de slider onder de vouw). 600px was op een
+     laptop-viewport te veel (slider verdween onder de vouw, min-height kan
+     de hero niet kleiner maken dan de mozaïek zelf vereist); 460px loste
+     dat op maar oogde te klein/"zielig". 520px is het middenweg-compromis. */
+  .rg-hero-v2__mosaic { grid-area: image; max-width: 520px; width: 100%; justify-self: end; }
   .rg-hero-v2__mcol--b { margin-top: 2rem; }
 }
