@@ -1,7 +1,9 @@
 <!-- ============================================================
      THEMA-OVERZICHT — plak dit in een CMS HTML-blok op de Thema's-pagina.
      - Eén tile met class "rg-theme-tile--feature" = uitgelicht (groot, 2x2).
-       Geef die het seizoens-/actie-thema (bv. WK 2026, Zomer, Kerst).
+       Geef die het seizoens-/actie-thema (bv. Winter & kerst in het najaar).
+       Nu geen enkele tile uitgelicht (7 gelijke tiles) — voeg de class
+       zelf toe aan de gewenste tile zodra je een seizoensthema wil pushen.
      - Vervang de href="#" door de juiste thema-URL.
      - Vervang de src="..." door een sfeerbeeld (liefst liggend, ~1200px breed).
      - Voeg gerust tiles toe/verwijder ze; de grid herschikt zichzelf.
@@ -14,19 +16,6 @@
 
   <div class="rg-theme-grid">
 
-    <!-- UITGELICHT THEMA (groot) -->
-    <a class="rg-theme-tile rg-theme-tile--feature" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/1200x750" alt="WK 2026">
-      <span class="rg-theme-tile__body">
-        <span>
-          <span class="rg-theme-tile__eyebrow">Nu actueel</span>
-          <h3 class="rg-theme-tile__title">WK 2026</h3>
-          <span class="rg-theme-tile__sub">Oranje supporten als de beste</span>
-        </span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
-
     <a class="rg-theme-tile" href="#">
       <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Zomer & zon">
       <span class="rg-theme-tile__body">
@@ -36,9 +25,25 @@
     </a>
 
     <a class="rg-theme-tile" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Onboarding">
+      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Winter & kerst">
       <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Onboarding</h3></span>
+        <span><h3 class="rg-theme-tile__title">Winter <span class="rg-amp">&amp;</span> kerst</h3></span>
+        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+      </span>
+    </a>
+
+    <a class="rg-theme-tile" href="#">
+      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Brievenbus">
+      <span class="rg-theme-tile__body">
+        <span><h3 class="rg-theme-tile__title">Brievenbus</h3></span>
+        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+      </span>
+    </a>
+
+    <a class="rg-theme-tile" href="#">
+      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Made in NL">
+      <span class="rg-theme-tile__body">
+        <span><h3 class="rg-theme-tile__title">Made in NL</h3></span>
         <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
       </span>
     </a>
@@ -52,33 +57,17 @@
     </a>
 
     <a class="rg-theme-tile" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Duurzaam & circulair">
+      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Onboarding & welkomstpakketten">
       <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Duurzaam <span class="rg-amp">&amp;</span> circulair</h3></span>
+        <span><h3 class="rg-theme-tile__title">Onboarding <span class="rg-amp">&amp;</span> welkomstpakketten</h3></span>
         <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
       </span>
     </a>
 
     <a class="rg-theme-tile" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Kerst">
+      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Medewerker Merchandise">
       <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Kerst</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
-
-    <a class="rg-theme-tile" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Wellness & ontspanning">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Wellness <span class="rg-amp">&amp;</span> ontspanning</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
-
-    <a class="rg-theme-tile" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Tech & gadgets">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Tech <span class="rg-amp">&amp;</span> gadgets</h3></span>
+        <span><h3 class="rg-theme-tile__title">Medewerker Merchandise</h3></span>
         <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
       </span>
     </a>

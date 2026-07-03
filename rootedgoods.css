@@ -4793,11 +4793,16 @@ img.rg-europe-map__svg {
 }
 
 /* Sierlijke ampersand: Playfair's romeinse '&' is lelijk; een italic serif-&
-   (Georgia) is een klassieke typografische fix. Wrap 'm: <span class="rg-amp">&amp;</span> */
+   (Georgia) is een klassieke typografische fix. Wrap 'm: <span class="rg-amp">&amp;</span>
+   font-size iets kleiner: bij dezelfde grootte als de bold koptekst eromheen
+   was het verschil (italic vs. romein) te subtiel om op te vallen, vooral
+   klein/wit-op-foto (thema-tegels). Nu leest 'm duidelijk als eigen, bewust
+   gestileerd teken i.p.v. gewoon "een ander lettertype dat je niet meteen ziet". */
 .rg-amp {
   font-family: Georgia, 'Times New Roman', serif !important;
   font-style: italic !important;
   font-weight: 400 !important;
+  font-size: 0.85em !important;
 }
 .rg-theme-tile--feature .rg-theme-tile__sub {
   font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
