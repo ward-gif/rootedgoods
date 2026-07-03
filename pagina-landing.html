@@ -7,8 +7,11 @@
      TE VERVANGEN:
        - Titel, subline
        - 2x href="#" in de CTA's
-       - 3 beelden in .rg-page-hero__media (a=klein linksboven,
-         b=klein linksonder, c=groot rechts, volle hoogte)
+       - 3 beelden (src) in .rg-page-hero__media-item--a/b/c (a=klein
+         linksboven, b=klein linksonder, c=groot rechts, volle hoogte).
+         Elk beeld heeft een losse wrapper (.rg-page-hero__media-item) i.p.v.
+         style rechtstreeks op de <img> — nodig voor de filmkorrel-overlay
+         (::after op de wrapper, niet op de <img> zelf).
        - Logo's in .rg-page-hero__logos (grayscale, kleuren in op hover)
      ============================================================ -->
 <section class="rg-page-hero">
@@ -30,8 +33,14 @@
   </div>
 
   <div class="rg-page-hero__media" aria-hidden="true">
-    <img class="rg-page-hero__img rg-page-hero__img--a" src="https://via.placeholder.com/400x400" alt="">
-    <img class="rg-page-hero__img rg-page-hero__img--b" src="https://via.placeholder.com/400x300" alt="">
-    <img class="rg-page-hero__img rg-page-hero__img--c" src="https://via.placeholder.com/500x700" alt="">
+    <span class="rg-page-hero__media-item rg-page-hero__media-item--a">
+      <img class="rg-page-hero__img" src="https://via.placeholder.com/400x400" alt="">
+    </span>
+    <span class="rg-page-hero__media-item rg-page-hero__media-item--b">
+      <img class="rg-page-hero__img" src="https://via.placeholder.com/400x300" alt="">
+    </span>
+    <span class="rg-page-hero__media-item rg-page-hero__media-item--c">
+      <img class="rg-page-hero__img" src="https://via.placeholder.com/500x700" alt="">
+    </span>
   </div>
 </section>
