@@ -1,9 +1,9 @@
 <!-- ============================================================
      THEMA-OVERZICHT — plak dit in een CMS HTML-blok op de Thema's-pagina.
      - Eén tile met class "rg-theme-tile--feature" = uitgelicht (groot, 2x2).
-       Geef die het seizoens-/actie-thema (bv. Winter & kerst in het najaar).
-       Nu geen enkele tile uitgelicht (7 gelijke tiles) — voeg de class
-       zelf toe aan de gewenste tile zodra je een seizoensthema wil pushen.
+       Nu op "Zomer & zon" (past bij het seizoen) — verplaats de class +
+       .rg-theme-tile__eyebrow/__sub naar een andere tile zodra een ander
+       thema actueel is (bv. Winter & kerst in het najaar).
      - Vervang de href="#" door de juiste thema-URL.
      - Vervang de src="..." door een sfeerbeeld (liefst liggend, ~1200px breed).
      - Voeg gerust tiles toe/verwijder ze; de grid herschikt zichzelf.
@@ -16,10 +16,15 @@
 
   <div class="rg-theme-grid">
 
-    <a class="rg-theme-tile" href="#">
-      <img class="rg-theme-tile__img" src="https://via.placeholder.com/600x600" alt="Zomer & zon">
+    <!-- UITGELICHT THEMA (groot) -->
+    <a class="rg-theme-tile rg-theme-tile--feature" href="#">
+      <img class="rg-theme-tile__img" src="https://via.placeholder.com/1200x750" alt="Zomer & zon">
       <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Zomer <span class="rg-amp">&amp;</span> zon</h3></span>
+        <span>
+          <span class="rg-theme-tile__eyebrow">Nu actueel</span>
+          <h3 class="rg-theme-tile__title">Zomer <span class="rg-amp">&amp;</span> zon</h3>
+          <span class="rg-theme-tile__sub">Cadeaus met een zomerse twist</span>
+        </span>
         <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
       </span>
     </a>
