@@ -1141,7 +1141,7 @@ img {
    inline style wint altijd van een externe regel zonder !important -> zonder
    dit bleef de vlam gewoon bestaan, ongeacht deze CSS. */
 .home.productslider .card-img img {
-  height: 38px !important;
+  height: 32px !important;
   width: auto !important;
   object-fit: contain;
   filter: grayscale(100%);
@@ -5148,6 +5148,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   -webkit-font-smoothing: antialiased;
   display: flex;
   align-items: center;
+  /* Extra lucht vóór de logo-slider eronder: de hero-inhoud staat
+     verticaal gecentreerd (align-items:center), dus zonder dit zit de
+     slider soms net iets te strak tegen de hero-inhoud aan. Vast bedrag,
+     los van de JS-hoogteberekening (die de SLIDER zelf positioneert, niet
+     de ruimte ervoor). */
+  margin-bottom: 32px;
 }
 .rg-hero-v2 * { box-sizing: border-box; }
 
@@ -5341,10 +5347,16 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      op desktop bepaalt alleen de flex-gap hierboven de afstand. */
   .rg-hero-v2__copy-top .rg-hero-v2__sub { margin-bottom: 0; }
   /* Mozaïek begrensd zodat hero + logo-slider samen in de viewport passen
-     (te grote tegels duwden de slider onder de vouw). 600px was op een
-     laptop-viewport te veel (slider verdween onder de vouw, min-height kan
-     de hero niet kleiner maken dan de mozaïek zelf vereist); 460px loste
-     dat op maar oogde te klein/"zielig". 520px is het middenweg-compromis. */
-  .rg-hero-v2__mosaic { grid-area: image; max-width: 520px; width: 100%; justify-self: end; }
+     (te grote tegels duwden de slider onder de vouw). Een VASTE waarde kan
+     dit niet goed oplossen: op een laptop (weinig verticale ruimte) moet
+     'ie klein genoeg zijn om de slider nog boven de vouw te laten passen,
+     maar op een extern beeldscherm (veel verticale ruimte) oogt diezelfde
+     waarde dan "zielig" klein. Vandaar: hoogte-afhankelijk via min-height
+     media query i.p.v. steeds een nieuw vast getal heen-en-weer passen. */
+  .rg-hero-v2__mosaic { grid-area: image; max-width: 460px; width: 100%; justify-self: end; }
   .rg-hero-v2__mcol--b { margin-top: 2rem; }
+}
+@media (min-width: 992px) and (min-height: 950px) {
+  /* Genoeg verticale ruimte (extern beeldscherm) -> mozaïek mag groter. */
+  .rg-hero-v2__mosaic { max-width: 560px; }
 }
