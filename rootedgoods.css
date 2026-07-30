@@ -4069,10 +4069,10 @@ body.is-ctl-product {
   /* Caveat i.p.v. italic Montserrat: echt handschrift bij de
      handgetekende pijl. Groter corps — handschrift-fonts renderen klein. */
   font-family: 'Caveat', cursive;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.15rem;
   line-height: 1.2;
-  color: #6f7e66;
+  color: #5d6d55;   /* was #6f7e66 — net te vaag op crème in Caveat */
   transform: rotate(-2deg);
 }
 /* Pijl (geüpload beeldje): kop bovenaan, wijst omhoog/links naar de knop. */
@@ -5741,7 +5741,7 @@ h2.rg-endcta__title em,
     gap: 0.55rem;
     position: absolute;
     left: calc(50% + 440px);
-    top: 62%;
+    top: 52%;   /* was 62% — pijl wijst nu naar de knoppen i.p.v. de trust-strip */
     width: 215px;
   }
   .rg-endcta__aside-arrow {
@@ -5752,10 +5752,10 @@ h2.rg-endcta__title em,
   }
   .rg-endcta__aside-note {
     font-family: 'Caveat', cursive;   /* zelfde handschrift als de Europa-notitie */
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.15rem;
     line-height: 1.2;
-    color: #6f7e66;
+    color: #5d6d55;   /* was #6f7e66 — net te vaag op crème in Caveat */
     transform: rotate(2deg);
   }
 }
