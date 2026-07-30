@@ -5745,10 +5745,10 @@ h2.rg-endcta__title em,
     width: 215px;
   }
   .rg-endcta__aside-arrow {
-    width: 54px;
+    width: 42px;
     flex: none;
-    transform: scaleX(-1) rotate(12deg);   /* spiegelen -> wijst naar de kaart */
-    margin-top: 0.4rem;
+    margin-top: 0.15rem;
+    color: #5d6d55;   /* zelfde "inkt" als de notitie -> leest als één krabbel */
   }
   .rg-endcta__aside-note {
     font-family: 'Caveat', cursive;   /* zelfde handschrift als de Europa-notitie */
