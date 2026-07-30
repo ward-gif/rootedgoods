@@ -5728,37 +5728,10 @@ h2.rg-endcta__title em,
    sectie 34) — alleen centreren i.p.v. links uitlijnen. */
 .rg-endcta .rg-cta__contact { margin-top: 0; align-self: center; }
 
-/* ---- Handgeschreven kanttekening rechts van de kaart (alleen breed
-   desktop) — zelfde pijl-afbeelding + stijl als bij de Europa-kaart,
-   gespiegeld zodat 'ie naar de kaart wijst. ---- */
-.rg-endcta__aside {
-  display: none;
-}
-@media (min-width: 1240px) {
-  .rg-endcta__aside {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.55rem;
-    position: absolute;
-    left: calc(50% + 440px);
-    top: 52%;   /* was 62% — pijl wijst nu naar de knoppen i.p.v. de trust-strip */
-    width: 215px;
-  }
-  .rg-endcta__aside-arrow {
-    width: 42px;
-    flex: none;
-    margin-top: 0.15rem;
-    color: #5d6d55;   /* zelfde "inkt" als de notitie -> leest als één krabbel */
-  }
-  .rg-endcta__aside-note {
-    font-family: 'Caveat', cursive;   /* zelfde handschrift als de Europa-notitie */
-    font-weight: 600;
-    font-size: 1.15rem;
-    line-height: 1.2;
-    color: #5d6d55;   /* was #6f7e66 — net te vaag op crème in Caveat */
-    transform: rotate(2deg);
-  }
-}
+/* (Een handgeschreven marge-notitie naast de kaart is geprobeerd en bewust
+   verwijderd: oogde zwevend/onaf naast de strakke kaart. De "vrijblijvend"-
+   geruststelling zit al in de subregel. Niet opnieuw toevoegen zonder
+   ander plan voor de verankering.) */
 
 @media (max-width: 767px) {
   .rg-endcta__card { border-radius: 16px; }
