@@ -5568,38 +5568,81 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 
 
 /* ============================================================
-   39. EIND-CTA (.rg-endcta) — afsluitend statement-blok, sitebreed
+   39. EIND-CTA (.rg-endcta) — afsluitend statement, sitebreed
    ============================================================
    HTML in eind-cta.html (CMS HTML-block, als laatste blok vóór de footer).
-   Vervangt de oude split-CTA (.rg-cta, sectie 34): geen foto meer nodig
-   (dus geen stockbeeld dat qua toon botst, en zonder per-pagina beeldkeuze
-   overal herbruikbaar), gecentreerde compositie als "slotakkoord" i.p.v.
-   nóg een split-rij, en bewust dezelfde bouwstenen als de hero (kicker-
-   stijl, trust-strip, Richard) zodat de pagina eindigt waar 'ie begon —
-   een boekensteun-effect dat als einde leest. Diep groen paneel met
-   filmkorrel + zachte lichtval bovenin voor warmte/diepte.
+   Ontwerp-principe: de kop leeft op het crème canvas (typografie als held,
+   zelfde recept als de Europa-statement — de sterkste sectie van de site,
+   inclusief het .rg-em-accent), het groen is gereduceerd tot een compacte
+   actie-kaart eronder i.p.v. een muur van donkergroen. Dat lost drie
+   problemen van de vorige versie op: het massieve blok, het contrast-
+   gevecht van de kop op donkergroen, en de generieke "donker paneel"-look.
+   De handgeschreven kanttekening (zelfde pijl + stijl als bij de Europa-
+   kaart) hangt rechts naast de kaart als menselijke marge-notitie.
    ============================================================ */
 .rg-endcta {
+  position: relative;
   max-width: 1440px;
-  margin: clamp(4rem, 8vh, 6rem) auto 3rem;
+  margin: clamp(4.5rem, 9vh, 7rem) auto 3.5rem;
+  padding: 0 40px;
 }
-@media (max-width: 1519px) { .rg-endcta { margin-inline: 40px; } }
-@media (max-width: 575px)  { .rg-endcta { margin-inline: 15px; } }
+@media (max-width: 575px) { .rg-endcta { padding: 0 15px; } }
 
-.rg-endcta__panel {
+/* ---- Kop op crème ---- */
+.rg-endcta__head {
+  text-align: center;
+  margin: 0 auto 2.6rem;
+}
+.rg-endcta__eyebrow {
+  margin: 0 0 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+/* Dubbel-specifieke selector (h2.class + .cms-element-text h2.class):
+   de globale type-scale gebruikt ".cms-element-text h2 !important"
+   (specificiteit 0,1,1) — een kale class (0,1,0) verliest daar ondanks
+   !important van. Dit was óók waarom de vorige versie z'n titelkleur
+   verloor en de eerste regel vrijwel onzichtbaar donker bleef. */
+h2.rg-endcta__title,
+.cms-element-text h2.rg-endcta__title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  color: #2d4528 !important;
+  font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.2rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.01em;
+  margin: 0 !important;
+  text-wrap: balance;
+}
+/* Accent-regel via .rg-em (#CA853F) — zelfde motief als de Europa-titel. */
+h2.rg-endcta__title em,
+.cms-element-text h2.rg-endcta__title em {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ---- Groene actie-kaart ---- */
+.rg-endcta__card {
   position: relative;
   overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
   background: #2d4528;
-  border-radius: 24px;
-  padding: clamp(3.5rem, 3rem + 4vw, 6.5rem) clamp(1.5rem, 5vw, 4rem);
+  border-radius: 20px;
+  padding: clamp(2.4rem, 2rem + 2vw, 3.4rem) clamp(1.5rem, 4vw, 3rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
 /* Filmkorrel — zelfde techniek als de rest van de site (sectie 28),
    iets zachter (0.25) omdat 'ie hier op een donker vlak ligt. */
-.rg-endcta__panel::before {
+.rg-endcta__card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -5610,73 +5653,48 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
-/* Zachte lichtval bovenin — geeft het vlak diepte zonder beeld. */
-.rg-endcta__panel::after {
+/* Zachte lichtval bovenin — diepte zonder beeld. */
+.rg-endcta__card::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 90% 55% at 50% 0%, rgba(255, 255, 255, 0.10), transparent 70%);
+  background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255, 255, 255, 0.09), transparent 68%);
 }
-.rg-endcta__panel > * { position: relative; z-index: 1; }
+.rg-endcta__card > * { position: relative; z-index: 1; }
 
-.rg-endcta__eyebrow {
-  margin: 0 0 1.1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #CA853F;
-}
-.rg-endcta__title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-weight: 700 !important;
-  color: #ffffff !important;   /* wint van globale h1..h6 color:#2d4528 !important */
-  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.8rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.01em;
-  margin: 0 0 1.2rem !important;
-  text-wrap: balance;
-  max-width: 18ch;
-}
-.rg-endcta__title em {
-  font-style: italic;
-  font-weight: 600;
-  color: #e9c9a9;   /* zelfde warme toon als de cap-brands op donkere tegels */
-}
 .rg-endcta__sub {
-  margin: 0 0 2.2rem;
-  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  margin: 0 0 1.9rem;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.12rem);
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 46ch;
 }
 .rg-endcta__cta {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin: 0 0 2.4rem;
+  margin: 0 0 1.9rem;
 }
 /* Ghost-secundair op donkergroen (btn-outline-primary is voor lichte
    achtergronden). Geen auto-pijl (die rules targeten alleen btn-primary/
    btn-outline-primary) -> zelfde hiërarchie als de hero-secundair. */
 .rg-endcta__ghost {
   background: transparent !important;
-  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
   color: #ffffff !important;
 }
 .rg-endcta__ghost:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
   color: #ffffff !important;
   transform: translateY(-2px);
 }
-/* Trust-strip — spiegelt de hero (boekensteun), maar dan in wit. */
+/* Trust-strip — spiegelt de hero (boekensteun), in wit. */
 .rg-endcta__trust {
-  margin: 0 0 1.8rem;
+  margin: 0 0 1.7rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -5690,12 +5708,50 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-endcta__trust b { font-weight: 700; }
 .rg-endcta__t { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
 .rg-endcta__t + .rg-endcta__t::before { content: "\00B7"; color: #CA853F; margin: 0 0.6rem; }
+
+.rg-endcta__divider {
+  width: min(100%, 21rem);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+  margin: 0 auto 1.5rem;
+}
 /* Richard hergebruikt de bestaande donkere contact-variant (.rg-cta__contact,
    sectie 34) — alleen centreren i.p.v. links uitlijnen. */
 .rg-endcta .rg-cta__contact { margin-top: 0; align-self: center; }
 
+/* ---- Handgeschreven kanttekening rechts van de kaart (alleen breed
+   desktop) — zelfde pijl-afbeelding + stijl als bij de Europa-kaart,
+   gespiegeld zodat 'ie naar de kaart wijst. ---- */
+.rg-endcta__aside {
+  display: none;
+}
+@media (min-width: 1240px) {
+  .rg-endcta__aside {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    position: absolute;
+    left: calc(50% + 440px);
+    top: 62%;
+    width: 215px;
+  }
+  .rg-endcta__aside-arrow {
+    width: 54px;
+    flex: none;
+    transform: scaleX(-1) rotate(12deg);   /* spiegelen -> wijst naar de kaart */
+    margin-top: 0.4rem;
+  }
+  .rg-endcta__aside-note {
+    font-style: italic;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: #6f7e66;
+    transform: rotate(2deg);
+  }
+}
+
 @media (max-width: 767px) {
-  .rg-endcta__panel { border-radius: 18px; }
+  .rg-endcta__card { border-radius: 16px; }
   .rg-endcta__cta { flex-direction: column; align-items: stretch; width: 100%; max-width: 22rem; }
   .rg-endcta__trust { flex-direction: column; gap: 0.55rem; }
   .rg-endcta__t + .rg-endcta__t::before { content: none; }

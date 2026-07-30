@@ -1,19 +1,27 @@
 <!-- ============================================================
      EIND-CTA — afsluitend statement-blok, als LAATSTE blok vóór de footer.
-     Sitebreed herbruikbaar (homepage, thema-, services-, merkenpagina's):
-     geen foto nodig, dus geen per-pagina beeldkeuze en geen stockbeeld dat
-     qua toon kan botsen. CSS staat in rootedgoods.css (sectie 39).
-     Vervangt het oude split-CTA-blok (.rg-cta).
+     Sitebreed herbruikbaar (homepage, thema-, services-, merkenpagina's).
+     CSS staat in rootedgoods.css (sectie 39). Vervangt het oude
+     split-CTA-blok (.rg-cta).
+
+     Opzet: kop op het crème canvas (zelfde typografie-recept als de
+     Europa-statement, incl. .rg-em-accent), daaronder een compacte groene
+     actie-kaart met knoppen + beloftes + Richard, en rechts een
+     handgeschreven kanttekening (zelfde pijl als bij de Europa-kaart).
 
      TE VERVANGEN:
        - 2x href="#" in de knoppen (offerteformulier + afspraak/contact)
-       - Eventueel de eyebrow/kop/subline per pagina (kop mag paginaspecifiek,
-         bv. op de Services-pagina: "Ontzorging nodig? Wij regelen alles.")
+       - Eventueel de kop per pagina (bv. Services-pagina:
+         "Ontzorging nodig? <em class="rg-em">Wij regelen alles.</em>")
      ============================================================ -->
 <section class="rg-endcta" aria-labelledby="rg-endcta-title">
-  <div class="rg-endcta__panel">
+
+  <div class="rg-endcta__head">
     <p class="rg-endcta__eyebrow">Relatiegeschenken zonder gedoe</p>
-    <h2 class="rg-endcta__title" id="rg-endcta-title">Van idee tot ingepakt. <em>Wij regelen alles.</em></h2>
+    <h2 class="rg-endcta__title" id="rg-endcta-title">Van idee tot ingepakt.<br><em class="rg-em">Wij regelen alles.</em></h2>
+  </div>
+
+  <div class="rg-endcta__card">
     <p class="rg-endcta__sub">Vertel ons wat je zoekt — binnen één werkdag ligt er een vrijblijvend voorstel, inclusief digitale drukproef.</p>
 
     <div class="rg-endcta__cta">
@@ -29,6 +37,8 @@
       <span class="rg-endcta__t">bezorging geregeld</span>
     </p>
 
+    <div class="rg-endcta__divider"></div>
+
     <a class="rg-cta__contact" href="/contact" aria-label="Hi, ik ben Richard. Ik help je van idee tot bezorging. Neem contact op.">
       <img src="https://bambook.08.promidata.shop/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="44" height="44">
       <span>
@@ -39,4 +49,11 @@
       </span>
     </a>
   </div>
+
+  <!-- Marge-notitie, alleen op breed desktop zichtbaar (>=1240px). -->
+  <div class="rg-endcta__aside" aria-hidden="true">
+    <img class="rg-endcta__aside-arrow" src="https://bambook.08.promidata.shop/media/1a/80/a8/1782290082/brown%20arrow%20pointing%20right.svg" alt="">
+    <span class="rg-endcta__aside-note">PS: je zit nog nergens aan vast — een voorstel is gratis en vrijblijvend.</span>
+  </div>
+
 </section>
