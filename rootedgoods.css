@@ -2752,6 +2752,72 @@ body.is-ctl-product {
   .rg-cat-heading { padding: 0 40px; }
 }
 
+/* Sectie-kop mét eyebrow + subline + "Alle thema's"-link rechts (zie
+   thema-tegels-home.html). De kop zelf (.rg-cat-heading) zit erin genest en
+   levert dan z'n eigen max-width/marge/padding in — de wrapper neemt die
+   rol over (en wordt op desktop net als de kop door sectie 30 stap 3 op de
+   gedeelde calc+80-lijn gezet). */
+.rg-cat-head {
+  max-width: 1600px;
+  margin: 3rem auto 0;
+  padding: 0 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+@media (min-width: 576px) {
+  .rg-cat-head { padding: 0 40px; }
+}
+.rg-cat-head .rg-cat-heading {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.rg-cat-head__eyebrow {
+  margin: 0 0 0.55rem;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+.rg-cat-head__sub {
+  margin: 0.55rem 0 0;
+  font-size: clamp(0.98rem, 0.92rem + 0.25vw, 1.08rem);
+  line-height: 1.55;
+  color: #4a5a44;
+  max-width: 56ch;
+}
+.rg-cat-head__link {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-bottom: 0.35rem;   /* optisch op de baseline van de subline */
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2d4528 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+.rg-cat-head__link::after {
+  content: "";
+  flex: none;
+  width: 1.05em;
+  height: 1.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+.rg-cat-head__link:hover { color: #ad6331 !important; }
+.rg-cat-head__link:hover::after { transform: translateX(3px); }
+@media (max-width: 767px) {
+  .rg-cat-head { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+  .rg-cat-head__link { padding-bottom: 0; }
+}
+
 /* Mobile-first: 1 kolom. Op desktop wordt het een bento: 1 grote links,
    3 kleine rechts (zie media queries onderaan sectie 25). */
 .rg-cat-grid {
@@ -4432,6 +4498,7 @@ img.rg-europe-map__svg {
   /* 3. Grids/heading vullen de container (geen eigen horizontale opmaak) */
   .rg-cat-grid,
   .rg-cat-heading,
+  .rg-cat-head,
   .rg-spec-grid {
     max-width: none !important;
     margin-left: 0 !important;
@@ -5497,4 +5564,139 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 @media (min-width: 992px) and (min-height: 950px) {
   /* Genoeg verticale ruimte (extern beeldscherm) -> mozaïek mag groter. */
   .rg-hero-v2__mosaic { max-width: 560px; }
+}
+
+
+/* ============================================================
+   39. EIND-CTA (.rg-endcta) — afsluitend statement-blok, sitebreed
+   ============================================================
+   HTML in eind-cta.html (CMS HTML-block, als laatste blok vóór de footer).
+   Vervangt de oude split-CTA (.rg-cta, sectie 34): geen foto meer nodig
+   (dus geen stockbeeld dat qua toon botst, en zonder per-pagina beeldkeuze
+   overal herbruikbaar), gecentreerde compositie als "slotakkoord" i.p.v.
+   nóg een split-rij, en bewust dezelfde bouwstenen als de hero (kicker-
+   stijl, trust-strip, Richard) zodat de pagina eindigt waar 'ie begon —
+   een boekensteun-effect dat als einde leest. Diep groen paneel met
+   filmkorrel + zachte lichtval bovenin voor warmte/diepte.
+   ============================================================ */
+.rg-endcta {
+  max-width: 1440px;
+  margin: clamp(4rem, 8vh, 6rem) auto 3rem;
+}
+@media (max-width: 1519px) { .rg-endcta { margin-inline: 40px; } }
+@media (max-width: 575px)  { .rg-endcta { margin-inline: 15px; } }
+
+.rg-endcta__panel {
+  position: relative;
+  overflow: hidden;
+  background: #2d4528;
+  border-radius: 24px;
+  padding: clamp(3.5rem, 3rem + 4vw, 6.5rem) clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* Filmkorrel — zelfde techniek als de rest van de site (sectie 28),
+   iets zachter (0.25) omdat 'ie hier op een donker vlak ligt. */
+.rg-endcta__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+/* Zachte lichtval bovenin — geeft het vlak diepte zonder beeld. */
+.rg-endcta__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 55% at 50% 0%, rgba(255, 255, 255, 0.10), transparent 70%);
+}
+.rg-endcta__panel > * { position: relative; z-index: 1; }
+
+.rg-endcta__eyebrow {
+  margin: 0 0 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+.rg-endcta__title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;   /* wint van globale h1..h6 color:#2d4528 !important */
+  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.8rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.2rem !important;
+  text-wrap: balance;
+  max-width: 18ch;
+}
+.rg-endcta__title em {
+  font-style: italic;
+  font-weight: 600;
+  color: #e9c9a9;   /* zelfde warme toon als de cap-brands op donkere tegels */
+}
+.rg-endcta__sub {
+  margin: 0 0 2.2rem;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 52ch;
+}
+.rg-endcta__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 0 2.4rem;
+}
+/* Ghost-secundair op donkergroen (btn-outline-primary is voor lichte
+   achtergronden). Geen auto-pijl (die rules targeten alleen btn-primary/
+   btn-outline-primary) -> zelfde hiërarchie als de hero-secundair. */
+.rg-endcta__ghost {
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+}
+.rg-endcta__ghost:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+/* Trust-strip — spiegelt de hero (boekensteun), maar dan in wit. */
+.rg-endcta__trust {
+  margin: 0 0 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.rg-endcta__trust svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
+.rg-endcta__trust b { font-weight: 700; }
+.rg-endcta__t { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+.rg-endcta__t + .rg-endcta__t::before { content: "\00B7"; color: #CA853F; margin: 0 0.6rem; }
+/* Richard hergebruikt de bestaande donkere contact-variant (.rg-cta__contact,
+   sectie 34) — alleen centreren i.p.v. links uitlijnen. */
+.rg-endcta .rg-cta__contact { margin-top: 0; align-self: center; }
+
+@media (max-width: 767px) {
+  .rg-endcta__panel { border-radius: 18px; }
+  .rg-endcta__cta { flex-direction: column; align-items: stretch; width: 100%; max-width: 22rem; }
+  .rg-endcta__trust { flex-direction: column; gap: 0.55rem; }
+  .rg-endcta__t + .rg-endcta__t::before { content: none; }
 }

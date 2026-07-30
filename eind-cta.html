@@ -1,0 +1,42 @@
+<!-- ============================================================
+     EIND-CTA — afsluitend statement-blok, als LAATSTE blok vóór de footer.
+     Sitebreed herbruikbaar (homepage, thema-, services-, merkenpagina's):
+     geen foto nodig, dus geen per-pagina beeldkeuze en geen stockbeeld dat
+     qua toon kan botsen. CSS staat in rootedgoods.css (sectie 39).
+     Vervangt het oude split-CTA-blok (.rg-cta).
+
+     TE VERVANGEN:
+       - 2x href="#" in de knoppen (offerteformulier + afspraak/contact)
+       - Eventueel de eyebrow/kop/subline per pagina (kop mag paginaspecifiek,
+         bv. op de Services-pagina: "Ontzorging nodig? Wij regelen alles.")
+     ============================================================ -->
+<section class="rg-endcta" aria-labelledby="rg-endcta-title">
+  <div class="rg-endcta__panel">
+    <p class="rg-endcta__eyebrow">Relatiegeschenken zonder gedoe</p>
+    <h2 class="rg-endcta__title" id="rg-endcta-title">Van idee tot ingepakt. <em>Wij regelen alles.</em></h2>
+    <p class="rg-endcta__sub">Vertel ons wat je zoekt — binnen één werkdag ligt er een vrijblijvend voorstel, inclusief digitale drukproef.</p>
+
+    <div class="rg-endcta__cta">
+      <a class="btn btn-primary" href="#">Vraag een offerte aan</a>
+      <a class="btn rg-endcta__ghost" href="#">Plan een kennismaking</a>
+    </div>
+
+    <!-- Zelfde drie beloftes als in de hero: de pagina eindigt waar 'ie
+         begon (boekensteun). Bewust "geassembleerd", niet "100% gemaakt". -->
+    <p class="rg-endcta__trust">
+      <span class="rg-endcta__t"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg><b>Geassembleerd in Europa</b></span>
+      <span class="rg-endcta__t">digitale drukproef</span>
+      <span class="rg-endcta__t">bezorging geregeld</span>
+    </p>
+
+    <a class="rg-cta__contact" href="/contact" aria-label="Hi, ik ben Richard. Ik help je van idee tot bezorging. Neem contact op.">
+      <img src="https://bambook.08.promidata.shop/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="44" height="44">
+      <span>
+        <span class="rg-cta__contact-name">Hi, ik ben Richard</span>
+        <span class="rg-cta__contact-promise">Ik help je van idee tot bezorging
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </span>
+    </a>
+  </div>
+</section>
