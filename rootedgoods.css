@@ -9,7 +9,6 @@
    rule in het bestand staan, vandaar hier bovenaan). */
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
 
-
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
    Headings: Libre Baskerville (klassiek serif, weights 400 en 700).
@@ -62,7 +61,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   h5, .cms-element-text h5 { font-size: 1.0625rem !important; }
 }
 
-
 /* ------------------------------------------------------------
    2. LAYOUT & CONTAINER
    ------------------------------------------------------------ */
@@ -75,7 +73,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   padding: 0 !important;
   padding-top: 143px !important; /* = werkelijke fixed-header hoogte (45.19 + 97.64) */
 }
-
 
 /* ------------------------------------------------------------
    3. HEADER
@@ -164,7 +161,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   border-radius: 50px !important;
 }
 
-
 /* ------------------------------------------------------------
    4. NAVIGATIE
    ------------------------------------------------------------ */
@@ -248,7 +244,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   opacity: 0.4;
 }
 
-
 /* ------------------------------------------------------------
    5. TOP BAR — alle tekst en iconen in donkergroen
    ------------------------------------------------------------ */
@@ -314,7 +309,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .top-bar-nav .top-bar-container.container--5 a:hover {
   opacity: 1;
 }
-
 
 /* ------------------------------------------------------------
    6. ZOEKBALK
@@ -475,7 +469,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
   }
 }
 
-
 /* ------------------------------------------------------------
    7. CATEGORY FLYOUT
    ------------------------------------------------------------ */
@@ -564,7 +557,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !impo
 .flyout-cta-col a.btn {
   display: none !important;
 }
-
 
 /* ------------------------------------------------------------
    8. BUTTONS
@@ -701,7 +693,6 @@ img {
   fill: #ffffff !important;
 }
 
-
 /* ------------------------------------------------------------
    9. PRODUCT BOX (algemeen)
    ------------------------------------------------------------ */
@@ -710,7 +701,6 @@ img {
   background-color: #fff;
   border-radius: 10px !important;
 }
-
 
 /* ------------------------------------------------------------
    10. HOMEPAGE PRODUCT SLIDER
@@ -927,8 +917,6 @@ img {
   padding-bottom: 24px !important;
 }
 
-
-
 /* Slider — item-breedte: default Tiny Slider berekening (productboxMinWidth 300).
    Geen width overrides — dat gaf ongewenste clone-zichtbaarheid links.
    15px links + 15px rechts (i.p.v. alleen 30px rechts) houdt de gutter
@@ -942,7 +930,6 @@ img {
 }
 /* (verplaatst naar de productslider-styling sectie hierboven; deze
    regel was redundant en versnipperde de aspect-ratio rules) */
-
 
 /* Native cursor — slider is sleepbaar (mouseDrag). De custom .rg-slider-nav
    bottom-right knoppen zijn verwijderd: navigatie gaat terug naar Shopware's
@@ -958,7 +945,6 @@ img {
     display: none !important;
   }
 }
-
 
 /* ------------------------------------------------------------
    11. HOMEPAGE IMAGE ROW SPOTLIGHT
@@ -1100,7 +1086,6 @@ img {
   }
 }
 
-
 /* ------------------------------------------------------------
    12. LOGO SLIDER
    ------------------------------------------------------------ */
@@ -1158,7 +1143,6 @@ img {
   opacity: 1;
   filter: grayscale(0%);
 }
-
 
 /* ------------------------------------------------------------
    13. CMS IMAGE-TEXT ROW (Specialiteiten blok)
@@ -1222,20 +1206,6 @@ img {
   transform: scale(1.05);
 }
 
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.cms-block-image-text-row .cms-image-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
 /* Donkere overlay via pseudo-element op de image-container */
 .cms-block-image-text-row .cms-image-container::after {
   content: '';
@@ -1310,7 +1280,6 @@ img {
     font-size: 0.95rem !important;
   }
 }
-
 
 /* ------------------------------------------------------------
    14. HERO IMAGE-TEXT (CTA banner met achtergrondafbeelding)
@@ -1401,7 +1370,6 @@ img {
   }
 }
 
-
 /* ------------------------------------------------------------
    15. PDP — PRODUCT DETAIL HEADLINE
    Productnaam wordt op desktop via JS verplaatst naar de top van
@@ -1442,7 +1410,6 @@ img {
     font-size: 1.75rem !important;
   }
 }
-
 
 /* ------------------------------------------------------------
    16. PDP — GALLERY LAYOUT
@@ -1528,7 +1495,6 @@ img {
   }
 }
 
-
 /* ------------------------------------------------------------
    17. PDP — BUY COL: prijs-info en quantity defaults
    - total-price-top-container verbergen (sticky prijs-tabel boven)
@@ -1559,7 +1525,6 @@ body.is-ctl-product .product-detail-ordernumber-container {
     padding-left: 3rem !important;
   }
 }
-
 
 /* ------------------------------------------------------------
    17b. PDP — BUY ACTIONS: primary/secondary swap + reorder
@@ -1805,7 +1770,6 @@ body.is-ctl-product .product-detail-ordernumber-container {
   transition: background-color 0.15s ease;
 }
 
-
 /* ------------------------------------------------------------
    21. PDP — TOTAALPRIJS-TABEL (custom-configurator-table)
    Dezelfde styling als staffel-tabel: wit, donkergroene header,
@@ -1898,7 +1862,6 @@ body.is-ctl-product .product-detail-ordernumber-container {
   background-color: #ffffff !important;
 }
 
-
 /* ------------------------------------------------------------
    22. PDP — FORM CONTROLS (aantallen, opmerkingen)
    Witte achtergrond, ruimer, consistent met de tabel-styling.
@@ -1927,7 +1890,6 @@ body.is-ctl-product .product-detail-ordernumber-container {
   border-color: #CA853F !important;
   box-shadow: 0 0 0 0.2rem rgba(172, 114, 62, 0.15) !important;
 }
-
 
 /* ------------------------------------------------------------
    23. PDP — STEPS SEPARATORS
@@ -2028,7 +1990,6 @@ body.is-ctl-product .product-detail-ordernumber-container {
   background-color: #2d4528;
 }
 
-
 /* ------------------------------------------------------------
    18. PDP — SPLIT BACKGROUND
    PDP achtergrond wit, rechter kolom (buy col, col-lg-5) krijgt
@@ -2083,7 +2044,6 @@ body.is-ctl-product {
   }
 }
 
-
 /* ------------------------------------------------------------
    19. PDP — BUY COL: sample button verbergen
    "Sample voor € 22,04 bestellen" knop weghalen — niet relevant
@@ -2092,7 +2052,6 @@ body.is-ctl-product {
 #js-request-sample {
   display: none !important;
 }
-
 
 /* ------------------------------------------------------------
    20. PDP — TABS SECTIE (Beschrijving / Beoordelingen)
@@ -2232,7 +2191,6 @@ body.is-ctl-product {
   background-color: #EAE3D7 !important;
   color: #000000 !important;
 }
-
 
 /* ------------------------------------------------------------
    24. PLP — PRODUCT LISTING PAGE
@@ -2866,23 +2824,6 @@ body.is-ctl-product {
   transform: scale(1.07);
 }
 
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28), nu sitebreed op
-   niet-productfoto's. ::before (niet ::after, dat is al bezet door de
-   gradient hieronder) — z-index gelijk aan de gradient (1), beide onder
-   het tekstblok (z-index 2). */
-.rg-cat-tile::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
 /* Onderste donkergroene gradient i.p.v. volledige dim → beeld blijft zichtbaar. */
 .rg-cat-tile::after {
   content: '';
@@ -3030,7 +2971,6 @@ body.is-ctl-product {
   }
 }
 
-
 /* ============================================================
    25a2. SPECIALITEITEN-KAARTEN — zelfde look als categorie-tegels,
          maar gecentreerde Playfair-titel + subtitel.
@@ -3087,20 +3027,6 @@ body.is-ctl-product {
   transform: scale(1.07);
 }
 
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.rg-spec-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
 /* Donkergroene dim — iets sterker in het midden zodat de gecentreerde
    tekst overal leesbaar blijft, maar het beeld zichtbaar blijft. */
 .rg-spec-card::after {
@@ -3160,7 +3086,6 @@ body.is-ctl-product {
   .rg-spec-card { aspect-ratio: 3 / 4; }
 }
 
-
 /* ============================================================
    25b. PRODUCT-SLIDER — uitlijnen met de categorie-sectie + bleed
    Op groot scherm: kop + eerste kaart starten op exact dezelfde
@@ -3188,7 +3113,6 @@ body.is-ctl-product {
   color: #ffffff !important;
 }
 
-
 /* ============================================================
    26. RESPONSIVE TUNING — desktop + split-screen
    ============================================================
@@ -3202,7 +3126,6 @@ body.is-ctl-product {
    - 1100px: split-screen-zone — voorkom clipping / te smalle elementen.
    - Alles boven 1500px gebruikt de bestaande desktop styling.
    ============================================================ */
-
 
 /* ---- 26.1 Header zoekbalk — compacter zodat 'ie binnen de row past ---- */
 /* Probleem 1: .header-search is position:absolute met top:50% op .header-row.
@@ -3240,7 +3163,6 @@ body.is-ctl-product {
    de nav-balk. Topbar-wrap pakken we apart aan via compactere padding
    in 26.7 hieronder. */
 
-
 /* ---- 26.2 Image-row spotlight — geen geclipte afbeeldingen ---- */
 /* Tussen 992-1200 stond hij op 5×20% met overflow:hidden, waardoor
    de 6e tegel verdween. Nu: alle 6 zichtbaar op één rij door cols te
@@ -3258,9 +3180,7 @@ body.is-ctl-product {
 /* Margin-top wordt nu in sectie 11 vloeiend geschaald via clamp(),
    dus hier geen breakpoint-overrides meer. */
 
-
 /* ---- 26.3 Categorie-tiles — responsive nu in sectie 25 (staande kaarten) ---- */
-
 
 /* ---- 26.4 Image-text-row (Specialiteiten) — minder hoog op smal ---- */
 /* Tussen 992 en 1200 was de container 520px hoog terwijl de tegels
@@ -3282,7 +3202,6 @@ body.is-ctl-product {
   }
 }
 
-
 /* ---- 26.5 Hero image-text — krappere marges op split-screen ---- */
 @media (min-width: 992px) and (max-width: 1200px) {
   .hero-image-text {
@@ -3293,7 +3212,6 @@ body.is-ctl-product {
     padding: 5rem 1.75rem !important;
   }
 }
-
 
 /* ---- 26.7 Top-bar USPs — voorkom dat ze in 2 regels breken ---- */
 /* Wrap van topbar = totale header > 97px = nav-main verdwijnt achter
@@ -3325,7 +3243,6 @@ body.is-ctl-product {
   }
 }
 
-
 /* ---- 26.7b Nav-main top — schaalt mee met topbar-shrink ---- */
 /* Omdat 26.7 de topbar font + padding verkleint, wordt de header korter
    dan de hardcoded 97px van .nav-main. Resultaat: witte gap. Verlaag
@@ -3337,7 +3254,6 @@ body.is-ctl-product {
   .nav-main { top: 88px; }
 }
 
-
 /* ---- 26.8 Header padding — krimpen op split-screen ---- */
 @media (min-width: 992px) and (max-width: 1100px) {
   .header-row {
@@ -3346,17 +3262,14 @@ body.is-ctl-product {
   }
 }
 
-
 /* ---- 26.9 Productslider — bleed verwijderd; gebruikt nu de natuurlijke
    gecentreerde theme-breedte, dus geen negatieve margin-right meer. */
-
 
 /* ---- 26.10 Ultra-wide (1920+) — verwijderd.
    De max-width: 1700px cap op image-text-row, productslider en spotlight
    zorgde ervoor dat die blokken op brede schermen niet meer tot de
    viewport-rand liepen. Elk blok heeft z'n eigen gutter logic (Promidata
    inline padding of CSS-padding), dus die cap is overbodig én ongewenst. */
-
 
 /* ============================================================
    27. FEATURE ROW — image + tekst naast elkaar
@@ -3389,20 +3302,6 @@ body.is-ctl-product {
   border-radius: 12px;
   overflow: hidden;
   background-color: #EAE3D7;
-}
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.rg-feature-row__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
 }
 
 .rg-feature-row__img {
@@ -3579,7 +3478,6 @@ body.is-ctl-product {
   font-size: 1.05rem;
   margin-bottom: 0.15rem;
 }
-
 
 /* ============================================================
    28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
@@ -3885,20 +3783,6 @@ body.is-ctl-product {
   box-shadow: inset 0 0 0 1px rgba(45, 69, 40, 0.05);
   position: relative;
 }
-/* Lichte filmkorrel over elke tegel — analoge, warme look. Ligt binnen het
-   frame (container heeft overflow:hidden), boven het beeld maar onder hover. */
-.image-row-spotlight .cms-image-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
 
 /* Klikbaar-hover: tegels met een link tonen op hover een donkergroene tint +
    witte cirkel met terracotta "bekijk"-pijl. Alleen op tegels die echt een
@@ -3956,7 +3840,6 @@ body.is-ctl-product {
     transition: none !important;
   }
 }
-
 
 /* ============================================================
    29. BRAND-STATEMENT — typografie links + Europa-kaart rechts
@@ -4263,7 +4146,6 @@ img.rg-europe-map__svg {
   }
 }
 
-
 /* ============================================================
    34. CTA-SECTIE — "Vraag een offerte aan"
    ============================================================
@@ -4295,20 +4177,6 @@ img.rg-europe-map__svg {
 .rg-cta__media {
   flex: 1 1 50%;
   position: relative;
-}
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). Geen eigen
-   border-radius nodig: .rg-cta (de ouder) knipt de hoeken al af. */
-.rg-cta__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
 }
 .rg-cta__img {
   position: absolute;
@@ -4719,7 +4587,6 @@ img.rg-europe-map__svg {
   }
 }
 
-
 /* ============================================================
    31. THEMA-OVERZICHT — bento-grid van thema's (1 uitgelicht)
    ============================================================
@@ -4796,20 +4663,6 @@ img.rg-europe-map__svg {
 .rg-theme-tile:hover .rg-theme-tile__img,
 .rg-theme-tile:focus-visible .rg-theme-tile__img { transform: scale(1.06); }
 
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.rg-theme-tile::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
 /* Leesbaarheids-gradient onderaan. */
 .rg-theme-tile::after {
   content: "";
@@ -4915,7 +4768,6 @@ img.rg-europe-map__svg {
   .rg-theme-tile__arrow { transition: none !important; }
 }
 
-
 /* ============================================================
    32. MERKEN-GRID — gelijke logo-tegels op wit, hover-effect
    ============================================================
@@ -4987,7 +4839,6 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   display: none !important;
 }
 
-
 /* ============================================================
    33. SERVICES-GRID — cards (beeld + titel + omschrijving + link)
    ============================================================
@@ -5031,20 +4882,6 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-}
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.rg-service-card__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
 }
 .rg-service-card__img {
   width: 100%;
@@ -5115,7 +4952,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
 }
 
-
 /* ============================================================
    35. HOMEPAGE HERO (.rgh) — verplaatst uit inline <style> naar global
    ============================================================
@@ -5155,7 +4991,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rgh__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .rgh__tile{position:relative;display:block;overflow:hidden;border-radius:10px;aspect-ratio:3/4;background:#2d4528;text-decoration:none;box-shadow:0 14px 30px -24px rgba(45,69,40,.5);}
 .rgh__tile img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;}
-.rgh__tile::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");background-size:200px 200px;} /* subtiele filmkorrel, zelfde techniek als .image-row-spotlight (sectie 28) */
 .rgh__tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.28) 48%,rgba(0,0,0,0));transition:background .25s ease;}
 .rgh__tile:hover::after,.rgh__tile:focus-visible::after{background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 55%,rgba(0,0,0,0));}
 .rgh__tile-cap{position:absolute;left:.7rem;right:.7rem;bottom:.6rem;z-index:2;}
@@ -5181,7 +5016,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-cta__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#fff;}
 .rg-cta__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s ease;}
 .rg-cta__contact:hover .rg-cta__contact-promise svg{transform:translateX(3px);}
-
 
 /* ============================================================
    36. PAGINA-LANDING — titel + subline + 2 cta's + logo's, beeld rechts
@@ -5251,28 +5085,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   gap: 14px;
   height: clamp(320px, 32vw, 480px);
 }
-/* Losse wrapper per beeld (i.p.v. border-radius/overflow rechtstreeks op de
-   <img>) — nodig als aparte positioned/clipped context voor de filmkorrel
-   hieronder; een ::after op een vervangen element (<img>) rendert niet
-   betrouwbaar. */
+/* Losse wrapper per beeld die de ronde hoeken clipt (border-radius +
+   overflow op de wrapper i.p.v. op de <img> zelf). */
 .rg-page-hero__media-item {
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-}
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.rg-page-hero__media-item::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: inherit;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
 }
 .rg-page-hero__img {
   width: 100%;
@@ -5295,7 +5113,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   .rg-page-hero__media { order: -1; height: clamp(260px, 60vw, 380px); }
   .rg-page-hero__title { font-size: clamp(2rem, 1.3rem + 3vw, 2.8rem); max-width: none; }
 }
-
 
 /* ============================================================
    37. SECTIE-TITEL — gecentreerde kop boven een los blok (bv. feature-row)
@@ -5327,7 +5144,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 @media (max-width: 767px) {
   .rg-block-title { padding: 2rem 20px 0; }
 }
-
 
 /* ============================================================
    38. HERO V2 (.rg-hero-v2) — verplaatst uit inline <style> naar global
@@ -5468,14 +5284,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   transition: transform .45s ease;
 }
 .rg-hero-v2__tile:hover img, .rg-hero-v2__tile:focus-visible img { transform: scale(1.04); }
-/* Subtiele filmkorrel over het beeld — zelfde techniek als
-   .image-row-spotlight .cms-image-container (sectie 28). */
-.rg-hero-v2__tile::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  border-radius: inherit; opacity: .5; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
 .rg-hero-v2__tile::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 44%;
   background: linear-gradient(to top, rgba(10, 18, 8, .62), rgba(10, 18, 8, 0));
@@ -5574,7 +5382,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   /* Genoeg verticale ruimte (extern beeldscherm) -> mozaïek mag groter. */
   .rg-hero-v2__mosaic { max-width: 560px; }
 }
-
 
 /* ============================================================
    39. EIND-CTA (.rg-endcta) — afsluitend statement, sitebreed
