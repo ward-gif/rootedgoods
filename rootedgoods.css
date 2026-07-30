@@ -3,6 +3,12 @@
    rootedgoods.eu | Shopware 6.5 / Promidata thema
    ============================================================ */
 
+/* Caveat = handschrift-font voor de marge-notities (Europa-kaart +
+   eind-CTA). Via @import i.p.v. de <link> in rootedgoods.html zodat er
+   geen CMS-blok opnieuw geplakt hoeft te worden (@import moet als eerste
+   rule in het bestand staan, vandaar hier bovenaan). */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
+
 
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
@@ -4060,9 +4066,12 @@ body.is-ctl-product {
   max-width: 240px;
   margin-top: 4.8rem; /* tekst lager dan de knop */
   margin-left: -3rem; /* naar links, onder de pijl */
-  font-style: italic;
-  font-size: 0.8rem;
-  line-height: 1.25;
+  /* Caveat i.p.v. italic Montserrat: echt handschrift bij de
+     handgetekende pijl. Groter corps — handschrift-fonts renderen klein. */
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.2;
   color: #6f7e66;
   transform: rotate(-2deg);
 }
@@ -5742,9 +5751,10 @@ h2.rg-endcta__title em,
     margin-top: 0.4rem;
   }
   .rg-endcta__aside-note {
-    font-style: italic;
-    font-size: 0.8rem;
-    line-height: 1.35;
+    font-family: 'Caveat', cursive;   /* zelfde handschrift als de Europa-notitie */
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.2;
     color: #6f7e66;
     transform: rotate(2deg);
   }
