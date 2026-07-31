@@ -3520,21 +3520,6 @@ body.is-ctl-product {
   flex-direction: column;
   background-color: #F7F5F2;
 }
-/* Subtiele filmkorrel over de gloed; gemaskeerd zodat 'ie onderaan wegvalt
-   en de egale overgang behouden blijft. Achter de content (z-index:-1). */
-.cms-section:has(.landing-header)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.72;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 72%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 42%, transparent 72%);
-}
-
 /* Inner wrapper vult de sectie (flex:1) i.p.v. een eigen calc-hoogte →
    robuust tegen eventuele sectie-padding (geen dubbele 100vh-berekening). */
 .cms-section:has(.landing-header) > .cms-section-default {
@@ -5455,19 +5440,6 @@ h2.rg-endcta__title em,
   align-items: center;
   text-align: center;
   box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
-}
-/* Filmkorrel — zelfde techniek als de rest van de site (sectie 28),
-   iets zachter (0.25) omdat 'ie hier op een donker vlak ligt. */
-.rg-endcta__card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.34;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
 }
 /* Zachte lichtval bovenin — diepte zonder beeld. */
 .rg-endcta__card::after {
