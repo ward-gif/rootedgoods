@@ -29,11 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Type scale — desktop (modular scale 1.25 / major third).
    Dubbele selector (generiek + .cms-element-text scope) om Promidata
    thema-overrides te verslaan die op class-level staan.
-   Headings op weight 500 (medium) — ideaal voor Playfair Display.
+   Headings op weight 600 (semibold) — één tandje boven medium.
    h4 is uitzondering: Montserrat subtitle-stijl voor top-title / eyebrow. */
-h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 500 !important; }
-h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 500 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 500 !important; }
+h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 600 !important; }
+h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 600 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600 !important; }
 h4, .cms-element-text h4 {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 0.875rem !important;
@@ -42,8 +42,8 @@ h4, .cms-element-text h4 {
   text-transform: uppercase;
   line-height: 1.4;
 }
-h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 500 !important; }
-h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 500 !important; }
+h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 600 !important; }
+h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !important; }
 
 /* Type scale — tablet (<992px). h4 blijft vast op 0.875rem als subtitle. */
 @media (max-width: 991px) {
@@ -2626,7 +2626,7 @@ body.is-ctl-product {
     display: block;
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #2d4528;
     margin-bottom: 0.6rem;
   }
@@ -3061,7 +3061,7 @@ body.is-ctl-product {
   font-family: 'Playfair Display', serif !important;
   color: #ffffff !important;
   font-size: clamp(1.5rem, 1.2rem + 0.9vw, 2rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.15;
   margin: 0;
 }
@@ -4185,7 +4185,7 @@ img.rg-europe-map__svg {
   font-family: 'Playfair Display', serif !important;
   color: #ffffff !important;
   font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.12;
   margin: 0 0 1rem 0;
 }
@@ -4588,7 +4588,7 @@ img.rg-europe-map__svg {
   font-family: 'Playfair Display', serif;
   color: #2d4528 !important;
   font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   margin: 0 0 0.4rem 0;
 }
 .rg-theme-intro {
@@ -4689,7 +4689,7 @@ img.rg-europe-map__svg {
   font-family: 'Playfair Display', serif !important;
   color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   line-height: 1.1 !important;
   margin: 0;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
@@ -4887,7 +4887,7 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   font-family: 'Playfair Display', serif !important;
   color: #2d4528 !important;
   font-size: clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   line-height: 1.15 !important;
   margin: 0 0 0.55rem 0;
 }
@@ -4953,7 +4953,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 .rgh__copy{max-width:37rem;}
 .rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem+.4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#CA853F;} /* gelijk aan .rg-statement__kicker */
-.rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#2d4528;font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
+.rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:800;color:#2d4528;font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
 .rgh__title em{font-style:italic;font-weight:600;}
 .rgh__sub{font-size:clamp(1.02rem,.95rem+.4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
 .rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
@@ -5021,7 +5021,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 .rg-page-hero__title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-weight: 800;
   color: #2d4528;
   font-size: clamp(2.4rem, 1.3rem + 3.2vw, 4.2rem);
   line-height: 1.06;
@@ -5112,7 +5112,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 .rg-block-title__title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-weight: 800;
   color: #2d4528;
   font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem);
   line-height: 1.15;
@@ -5187,7 +5187,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2__title {
   margin: 0 0 var(--rg-s3);
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--rg-green);
   /* max 3.4rem zodat "met wortels in Europa" op één regel past ->
      twee gebalanceerde regels i.p.v. een los hangend "met" */
@@ -5411,7 +5411,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 h2.rg-endcta__title,
 .cms-element-text h2.rg-endcta__title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   color: #2d4528 !important;
   font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.2rem) !important;
   line-height: 1.06 !important;
