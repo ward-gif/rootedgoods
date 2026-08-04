@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!nav || window.innerWidth < 992) return;
 
   var link = document.createElement('a');
-  link.href = '/offerte';
+  link.href = '/poconfigurator/request';   // relatief -> werkt op dev én live
   link.className = 'nav-link main-navigation-link offerte-link';
-  link.title = 'Offerte op maat';
-  link.innerHTML = '<div class="main-navigation-link-text"><span class="offerte-separator">|</span><span>Offerte op maat</span></div>';
+  link.title = 'Offerte aanvragen';
+  link.innerHTML = '<div class="main-navigation-link-text"><span class="offerte-separator">|</span><span>Offerte aanvragen</span></div>';
   nav.appendChild(link);
 });
 
