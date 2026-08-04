@@ -2838,15 +2838,16 @@ body.is-ctl-product {
   transform: scale(1.07);
 }
 
-/* Onderste donkergroene gradient i.p.v. volledige dim → beeld blijft zichtbaar. */
+/* Warme espresso-gradient onderaan (i.p.v. groen) → beeld blijft zichtbaar,
+   zelfde warme tint als de spec-cards zodat de site consistent oogt. */
 .rg-cat-tile::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-    rgba(45, 69, 40, 0.85) 0%,
-    rgba(45, 69, 40, 0.45) 28%,
-    rgba(45, 69, 40, 0) 58%);
+    rgba(45, 30, 16, 0.85) 0%,
+    rgba(45, 30, 16, 0.45) 28%,
+    rgba(45, 30, 16, 0) 58%);
   border-radius: inherit;
   pointer-events: none;
   z-index: 1;
@@ -4664,16 +4665,17 @@ img.rg-europe-map__svg {
 .rg-theme-tile:hover .rg-theme-tile__img,
 .rg-theme-tile:focus-visible .rg-theme-tile__img { transform: scale(1.06); }
 
-/* Leesbaarheids-gradient onderaan. */
+/* Warme espresso-leesbaarheids-gradient onderaan (i.p.v. groen). Iets
+   dieper dan de cat-tiles (moodier bento-look), maar zelfde warme familie. */
 .rg-theme-tile::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20, 30, 18, 0.80) 0%, rgba(20, 30, 18, 0.28) 45%, rgba(20, 30, 18, 0) 78%);
+  background: linear-gradient(to top, rgba(28, 18, 10, 0.80) 0%, rgba(28, 18, 10, 0.28) 45%, rgba(28, 18, 10, 0) 78%);
   transition: background 0.3s ease;
 }
 .rg-theme-tile:hover::after {
-  background: linear-gradient(to top, rgba(20, 30, 18, 0.86) 0%, rgba(20, 30, 18, 0.38) 52%, rgba(20, 30, 18, 0.05) 82%);
+  background: linear-gradient(to top, rgba(28, 18, 10, 0.86) 0%, rgba(28, 18, 10, 0.38) 52%, rgba(28, 18, 10, 0.05) 82%);
 }
 
 .rg-theme-tile__body {
