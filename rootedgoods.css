@@ -5368,7 +5368,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
     flex-direction: column;
     gap: 1.5rem;
     grid-area: copy;
-    max-width: 34rem;
+    /* 38rem (was 34): "Premium geschenken" is bij de grote Playfair-titel
+       nét te breed voor 34rem en brak daardoor woord-per-woord. De subline
+       heeft z'n eigen max-width (48ch) dus die blijft leesbaar smal. */
+    max-width: 38rem;
   }
   /* Sub had al margin-bottom (nodig voor de mobiele/tablet flow-stack);
      op desktop bepaalt alleen de flex-gap hierboven de afstand. */
