@@ -5730,3 +5730,23 @@ h2.rg-endcta__title em,
   margin: 0.25rem 0 0;
   color: #8c857a;
 }
+
+/* ---- Aanvraagformulier: extra polish ---- */
+/* Hover-affordance op velden (subtiel donkerder rand als je erboven zweeft) */
+#request-offer-container .form-control:hover:not(:focus) {
+  border-color: #d8cfc0 !important;
+}
+/* Browser-autofill: geen gele/blauwe vulling maar gewoon wit + groene tekst */
+#request-offer-container input:-webkit-autofill,
+#request-offer-container input:-webkit-autofill:hover,
+#request-offer-container input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #2d4528;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  border: 1px solid #EAE3D7 !important;
+}
+/* Mobiel: verzendknop vol-breed = makkelijker aan te tikken */
+@media (max-width: 575px) {
+  #request-offer-container .button-container { justify-content: stretch; }
+  #request-offer-container .button-container .btn { width: 100%; }
+}
