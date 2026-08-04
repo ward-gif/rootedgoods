@@ -5205,14 +5205,14 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2__title {
   margin: 0 0 var(--rg-s3);
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 800;
+  /* Bewust 700 (niet de globale 800-bump): op dit grote display-formaat is
+     Playfair 800 zó breed dat "Premium geschenken" niet op één regel past en
+     de kop woord-per-woord over 4 regels brak. 700 is smaller én oogt bij
+     display-groot juist eleganter. */
+  font-weight: 700;
   color: var(--rg-green);
-  /* max 3.0rem (was 3.4): bij 3.4 was "Premium geschenken" nét te breed voor
-     de copy-kolom bij normale desktop-viewports, waardoor de kop woord-per-
-     woord over 4 regels brak en de halve hero opvrat. 3.0 laat twee woorden
-     per regel passen -> strakke 2-regel-statement, viewport-onafhankelijk. */
   font-size: clamp(2.2rem, 1.1rem + 2.2vw, 3.0rem);
-  line-height: 1.08;
+  line-height: 1.02;   /* strak: 4 losse regels gaven een te hoog kop-blok */
   letter-spacing: -.01em;
   text-wrap: balance;
   /* Geen max-width op mobiel/tablet: de 20ch-cap (hieronder, >=992px) was
@@ -5370,10 +5370,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
     flex-direction: column;
     gap: 1.5rem;
     grid-area: copy;
-    /* 38rem (was 34): "Premium geschenken" is bij de grote Playfair-titel
-       nét te breed voor 34rem en brak daardoor woord-per-woord. De subline
-       heeft z'n eigen max-width (48ch) dus die blijft leesbaar smal. */
-    max-width: 38rem;
+    /* 40rem: genoeg breedte voor "Premium geschenken" op één regel bij de
+       hero-titel (700, 3.0rem). De subline heeft z'n eigen 48ch-cap dus die
+       blijft leesbaar smal. */
+    max-width: 40rem;
   }
   /* Sub had al margin-bottom (nodig voor de mobiele/tablet flow-stack);
      op desktop bepaalt alleen de flex-gap hierboven de afstand. */
