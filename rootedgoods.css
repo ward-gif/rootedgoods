@@ -5234,9 +5234,31 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 /* ---- CTA's: globale site-knoppen (.btn .btn-primary/-outline-primary)
    voor identieke styling en hover als de rest van de site. Alleen de
    secundaire compacter + zonder pijl (hiërarchie), zoals de oude hero. */
-.rg-hero-v2__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--rg-s2); margin: 0 0 var(--rg-s3); }
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary { padding: .72rem 1.5rem !important; font-size: .9rem !important; }
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary::after { display: none !important; }
+.rg-hero-v2__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; margin: 0 0 var(--rg-s3); }
+/* Secundaire actie = kale tekstlink-met-pijl (geen knop), zodat alleen de
+   cognac primaire knop als CTA leest. Feedback: "cognac knop moet alleen
+   staan als primaire actie". Donkergroen, terracotta op hover, pijl schuift. */
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #2d4528 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover {
+  background: transparent !important;
+  color: #ad6331 !important;
+  transform: none !important;   /* geen knop-lift */
+}
+/* Pijl weer aan (was verborgen); schuift mee op hover. */
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary::after {
+  display: inline-block !important;
+}
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover::after {
+  transform: translateX(3px);
+}
 
 /* ---- Trust: één rustige regel. Elk item is nowrap en draagt z'n eigen
    scheidings-middot (::before), zodat bij wrap de middot netjes mee naar
