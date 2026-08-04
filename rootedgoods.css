@@ -105,10 +105,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   transform: translateY(-100%);
 }
 
-/* Header — logo */
+/* Header — logo. Expliciete HOOGTE i.p.v. alleen max-width: een SVG rekt
+   niet op via max-width (dat begrenst, vergroot niet) — als de SVG van
+   zichzelf smaller/kleiner rendert dan de cap gebeurt er niks. Height
+   forceert de schaal, width volgt de aspect-ratio (max-width blijft als
+   veiligheidsplafond). Pas de 52px aan om groter/kleiner te maken. */
 .header-logo-main-link img,
 .header-logo img {
-  max-width: 300px;   /* tegen de .header-logo-picture-cap (300px) aan */
+  height: 52px !important;
+  width: auto !important;
+  max-width: 300px;
 }
 
 /* Header — actie knoppen (iconen) */
