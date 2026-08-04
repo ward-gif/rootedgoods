@@ -5365,7 +5365,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
        laadt breder -> wrapt). Nu ruimte over, dus geen reflow. */
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: "copy image";
-    column-gap: clamp(3rem, 5vw, 5rem);
+    column-gap: clamp(1.5rem, 2.5vw, 2.5rem);   /* smaller -> copy-kolom breder, "Premium geschenken" op één regel */
     align-items: center;
     padding: clamp(1.5rem, 3vh, 2.5rem) calc(max((100vw - 1600px) / 2, 0px) + 80px);
   }
