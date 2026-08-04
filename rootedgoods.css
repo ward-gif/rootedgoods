@@ -85,8 +85,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   z-index: 500;
   transition: transform 0.3s ease;
 }
+/* Logo verticaal centreren i.p.v. een padding-top-nudge: de zoekbalk is
+   absoluut gepositioneerd (buiten de flow), dus het LOGO bepaalt de hoogte
+   van de header-rij. Een padding-top duwt die hoogte omhoog en dan valt de
+   nav-rij (fixed op top:97px) erachter. Centreren houdt de rij compact. */
 .header-logo-col {
-  padding-top: 10px;
+  display: flex;
+  align-items: center;
 }
 .header-main .container {
   max-width: 100% !important;
@@ -112,7 +117,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    veiligheidsplafond). Pas de 52px aan om groter/kleiner te maken. */
 .header-logo-main-link img,
 .header-logo img {
-  height: 52px !important;
+  height: 44px !important;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
   width: auto !important;
   max-width: 300px;
 }
