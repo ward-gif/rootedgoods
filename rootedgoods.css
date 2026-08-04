@@ -5207,9 +5207,11 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 800;
   color: var(--rg-green);
-  /* max 3.4rem zodat "met wortels in Europa" op één regel past ->
-     twee gebalanceerde regels i.p.v. een los hangend "met" */
-  font-size: clamp(2.2rem, 1.1rem + 2.6vw, 3.4rem);
+  /* max 3.0rem (was 3.4): bij 3.4 was "Premium geschenken" nét te breed voor
+     de copy-kolom bij normale desktop-viewports, waardoor de kop woord-per-
+     woord over 4 regels brak en de halve hero opvrat. 3.0 laat twee woorden
+     per regel passen -> strakke 2-regel-statement, viewport-onafhankelijk. */
+  font-size: clamp(2.2rem, 1.1rem + 2.2vw, 3.0rem);
   line-height: 1.08;
   letter-spacing: -.01em;
   text-wrap: balance;
