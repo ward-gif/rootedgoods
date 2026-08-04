@@ -5359,7 +5359,11 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      balance verdeelt de regels evenwichtig — werkt voor elke copy-lengte. */
   .rg-hero-v2__title { max-width: none; }
   .rg-hero-v2__inner {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    /* Copy-kolom even breed als het beeld (was 5fr/6fr = te smal): daardoor
+       stond "Premium geschenken" precies op de wrap-rand, wat bij het laden
+       een zichtbare flits gaf (smalle fallback-letter past -> Playfair 700
+       laadt breder -> wrapt). Nu ruimte over, dus geen reflow. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: "copy image";
     column-gap: clamp(3rem, 5vw, 5rem);
     align-items: center;
@@ -5370,10 +5374,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
     flex-direction: column;
     gap: 1.5rem;
     grid-area: copy;
-    /* 40rem: genoeg breedte voor "Premium geschenken" op één regel bij de
-       hero-titel (700, 3.0rem). De subline heeft z'n eigen 48ch-cap dus die
-       blijft leesbaar smal. */
-    max-width: 40rem;
+    /* 44rem: ruim genoeg voor "Premium geschenken" op één regel (hero-titel
+       700, 3.0rem, ~622px) mét marge zodat de Playfair-webfont bij het laden
+       niet net over de rand wrapt. Subline blijft smal via eigen 48ch-cap. */
+    max-width: 44rem;
   }
   /* Sub had al margin-bottom (nodig voor de mobiele/tablet flow-stack);
      op desktop bepaalt alleen de flex-gap hierboven de afstand. */
