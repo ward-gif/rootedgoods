@@ -5351,9 +5351,11 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 @media (min-width: 992px) {
   /* Houd de woordspeling bij elkaar: "met wortels in Europa" breekt niet. */
   .rg-hero-v2__nw { white-space: nowrap; }
-  /* 20ch-cap alleen op desktop: voorkomt dat de titel de volle 34rem
-     copy-kolom in één (te brede) regel opvult. */
-  .rg-hero-v2__title { max-width: 20ch; }
+  /* Geen harde ch-cap meer: die kneep de titel in een smalle kolom waardoor
+     'ie in veel magere regels brak met een los woord als wees. De titel
+     gebruikt nu de volle copy-kolom (34rem, via copy-wrap) en text-wrap:
+     balance verdeelt de regels evenwichtig — werkt voor elke copy-lengte. */
+  .rg-hero-v2__title { max-width: none; }
   .rg-hero-v2__inner {
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
     grid-template-areas: "copy image";
