@@ -5585,14 +5585,14 @@ h2.rg-endcta__title em,
   grid-column: 1 / -1;   /* default full-width */
   margin: 0;
 }
-/* Bij elkaar horende velden naast elkaar (via :has op de veldnaam) */
-#request-offer-container .form-group:has([name="request-salutation"]),
+/* Bij elkaar horende velden naast elkaar (via :has op de veldnaam). Alleen
+   de echte paren die óók in de DOM naast elkaar staan — anders ontstaat een
+   half-leeg gat. Voornaam+Achternaam en Postcode+Plaats staan aaneengesloten;
+   Aanhef/Telefoon/Land blijven vol zodat de rijen netjes sluiten. */
 #request-offer-container .form-group:has([name="request-name"]),
 #request-offer-container .form-group:has([name="request-lastName"]),
 #request-offer-container .form-group:has([name="request-zip"]),
-#request-offer-container .form-group:has([name="request-location"]),
-#request-offer-container .form-group:has([name="request-telephone"]),
-#request-offer-container .form-group:has([name="request-country"]) {
+#request-offer-container .form-group:has([name="request-location"]) {
   grid-column: span 1;
 }
 @media (max-width: 575px) {
