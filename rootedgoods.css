@@ -6215,12 +6215,15 @@ h3.rg-sd__journey-title,
   font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem) !important;
   line-height: 1.2 !important;
   margin: 0 0 0.4rem !important;
+  text-wrap: balance;
 }
 .rg-sd__journey-step p {
   color: #4a5a44;
   font-size: 0.9rem;
   line-height: 1.5;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 21ch;   /* nette, gelijke tekstblokjes onder elke bol i.p.v. volle kolombreedte */
+  text-wrap: pretty;
 }
 
 /* ---- Deel-diensten-sectie (hub -> spokes): hergebruikt .rg-service-card ---- */
