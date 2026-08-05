@@ -5913,10 +5913,21 @@ h1.rg-sd__title,
   margin: 0 0 1.1rem !important;
   text-wrap: balance;
 }
+/* Cursief EXACT als de homepage-hero: de RECHTE Playfair schuingetrokken
+   (faux oblique), nooit de echte Playfair-italic (te sierlijk). Een echte
+   italic-face kan in de browser-cache zitten (van een eerdere test) en werd
+   bij font-style: italic tóch gepakt — daar kom je met kleur/stack niet
+   onderuit. Daarom hier deterministisch: de rechte letter (font-style:
+   normal, geen synthese) met dezelfde ~14deg-schuinstand die de browser bij
+   de hero zelf synthetiseert. Geldt voor het titel-accent én de stapnummers. */
 h1.rg-sd__title em,
-.cms-element-text h1.rg-sd__title em {
-  font-style: italic;
-  font-weight: 600;
+.cms-element-text h1.rg-sd__title em,
+.rg-sd__step-nr {
+  font-style: normal !important;
+  font-synthesis: none;
+  font-weight: 600 !important;
+  display: inline-block;
+  transform: skewX(-14deg);
 }
 .rg-sd__sub {
   color: #4a5a44;
