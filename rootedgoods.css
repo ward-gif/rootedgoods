@@ -5873,6 +5873,11 @@ h2.rg-endcta__title em,
   max-width: 1600px;
   margin: 0 auto;
   padding: clamp(1.5rem, 1rem + 2vw, 3rem) clamp(1rem, 4vw, 2.5rem) 0;
+  /* Zelfde Playfair character-variants als de homepage-hero (cv02-04):
+     die bepalen de lettervormen (o.a. van de cursief). Zonder deze zag de
+     service-italic er anders uit dan "gemaakt in Europa" / "Wij weten waar.".
+     font-feature-settings erft door naar alle Playfair-kinderen hieronder. */
+  font-feature-settings: "cv02", "cv03", "cv04";
 }
 body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
 
@@ -5895,7 +5900,11 @@ body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
 }
 h1.rg-sd__title,
 .cms-element-text h1.rg-sd__title {
-  font-family: 'Playfair Display', Georgia, serif !important;
+  /* Geen Georgia in de stack: als Playfair (dat geen italic-face laadt) geen
+     cursief heeft, kan de browser anders naar Georgia's ECHTE cursief vallen
+     i.p.v. de rechte Playfair schuin te trekken. Zonder Georgia -> altijd de
+     gewenste faux-oblique Playfair, net als de hero. */
+  font-family: 'Playfair Display', serif !important;
   font-weight: 700 !important;
   color: #2d4528 !important;
   font-size: clamp(2.2rem, 1.3rem + 2.6vw, 3.4rem) !important;
