@@ -3850,8 +3850,10 @@ body.is-ctl-product {
   /* Design tokens gescoped op deze sectie (zoals .rg-hero-v2 met --rg-s1..5).
      Bestonden nog niet globaal; hier gedefinieerd zodat de sectie via tokens
      werkt i.p.v. losse hardcoded waarden. */
-  --rg-text-display: clamp(3.2rem, 0.4rem + 8vw, 8rem);   /* de bestaande grote titelmaat */
-  --rg-text-h1: clamp(2.4rem, 1.2rem + 2.8vw, 3.6rem);    /* compacter: past een 2-regel-kop */
+  /* Display-maat afgestemd op de langste kopregel ("Europa maakt het nog."):
+     de vw-helling volgt de kolombreedte zodat die regel op élke desktop-
+     breedte op één regel blijft, met marge. */
+  --rg-text-display: clamp(2.5rem, 0.2rem + 3.4vw, 4.25rem);
   --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
   --rg-space-lg: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
   --rg-space-xl: clamp(1.8rem, 1.2rem + 1.8vw, 3rem);
@@ -3893,17 +3895,26 @@ body.is-ctl-product {
   margin: 0 0 1.5rem 0;
 }
 /* (decoratief streepje verwijderd — kicker zonder streepje) */
-.rg-statement__title {
-  font-size: var(--rg-text-h1);   /* max 2 regels op desktop (kop bevat een <br>) */
-  font-weight: 700;
-  line-height: 1.05;
+/* Dubbel-specifiek + !important is hier NODIG: de globale type-scale zet
+   h2 op 3rem/600 mét !important (om Promidata-overrides te verslaan) en
+   won dus stilletjes van de kale class — daarom oogde de kop als een
+   gewone h2 i.p.v. een statement. Zelfde patroon als h2.rg-endcta__title. */
+h2.rg-statement__title,
+.cms-element-text h2.rg-statement__title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: var(--rg-text-display) !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
   letter-spacing: -0.02em;
-  color: #2d4528;
-  margin: 0 0 var(--rg-space-lg);   /* kop -> subkop */
+  color: #2d4528 !important;
+  margin: 0 0 var(--rg-space-lg) !important;   /* kop -> subkop */
 }
-/* Subkop in body-formaat onder de kop. */
+/* Accent-slotregel — zelfde motief als hero/eind-CTA (cognac italic). */
+h2.rg-statement__title em { font-style: italic; font-weight: 600; }
+/* Subkop in body-formaat onder de kop; kleiner dan de kop-maat zodat het
+   contrast de statement draagt. */
 .rg-statement__sub {
-  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.22rem);
+  font-size: clamp(0.98rem, 0.9rem + 0.3vw, 1.08rem);
   line-height: 1.6;
   color: #3f4f3a;
   max-width: 65ch;
@@ -3950,12 +3961,24 @@ body.is-ctl-product {
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
 }
-/* Geruststellende microcopy onder de knop (secundaire tekstkleur). */
+/* Geruststellende microcopy onder de knop: risico-omkering + snelheid,
+   met cognac-vinkje (zelfde idioom als de trust-strips in hero/eind-CTA)
+   zodat 'ie visueel aan de CTA hangt i.p.v. als los zinnetje te zweven. */
 .rg-statement__reassurance {
   margin: var(--rg-space-sm) 0 0;   /* knop -> reassurance */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  font-weight: 500;
   line-height: 1.5;
   color: #5d6d55;
+}
+.rg-statement__reassurance svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  color: #CA853F;
 }
 
 /* Scroll-reveal: content + kaart komen omhoog/faden in als de sectie in
@@ -3983,19 +4006,8 @@ body.is-ctl-product {
   }
 }
 
-/* Desktop: kaart schuift naar links en overlapt deels met de titel.
-   Content boven de kaart (z-index) zodat de tekst leesbaar blijft. */
-@media (min-width: 992px) {
-  .rg-statement__content {
-    position: relative;
-    z-index: 2;
-  }
-  .rg-statement__media {
-    position: relative;
-    z-index: 1;
-    margin-left: clamp(-9rem, -7vw, -3rem);
-  }
-}
+/* (De vroegere negatieve-marge-overlap van de kaart richting de titel is
+   verwijderd — kaart staat gewoon in z'n eigen grid-kolom.) */
 
 /* ------------------------------------------------------------
    Tekst-accent: nadruk op losse woorden in h1/h2 zonder dat het
