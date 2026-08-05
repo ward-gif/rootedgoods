@@ -5851,3 +5851,269 @@ h2.rg-endcta__title em,
   #request-offer-container .button-container { justify-content: stretch; }
   #request-offer-container .button-container .btn { width: 100%; }
 }
+
+/* ============================================================
+   41. SERVICE-DETAIL (.rg-sd) — losse pagina per service
+   ============================================================
+   Template voor de 4 service-pagina's (full-service, personalisatie,
+   warehousing, verzending). Eén CMS HTML-blok per pagina; zie
+   service-detail-warehousing.html als voorbeeld. Opbouw:
+   hero (copy + beeld) -> 3 stappen -> afwisselende beeld/tekst-rijen
+   -> donkergroen checklist-paneel -> FAQ. Daaronder plak je het
+   bestaande eind-CTA-blok (met Richard) als afsluiter.
+   Koppen: dubbel-specifieke selector (h1.class + .cms-element-text
+   h1.class) zodat de globale type-scale ze niet overschrijft. */
+.rg-sd {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 1rem + 2vw, 3rem) clamp(1rem, 4vw, 2.5rem) 0;
+}
+body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
+
+/* ---- Hero: copy links, beeld rechts ---- */
+.rg-sd__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+  align-items: center;
+  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+}
+.rg-sd__eyebrow {
+  margin: 0 0 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+h1.rg-sd__title,
+.cms-element-text h1.rg-sd__title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  color: #2d4528 !important;
+  font-size: clamp(2.2rem, 1.3rem + 2.6vw, 3.4rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.1rem !important;
+  text-wrap: balance;
+}
+h1.rg-sd__title em,
+.cms-element-text h1.rg-sd__title em {
+  font-style: italic;
+  font-weight: 600;
+}
+.rg-sd__sub {
+  color: #4a5a44;
+  font-size: clamp(0.98rem, 0.9rem + 0.3vw, 1.12rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 0 1.9rem;
+}
+.rg-sd__cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+}
+.rg-sd__reassurance {
+  margin: 0.9rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #5d6d55;
+}
+.rg-sd__reassurance svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
+.rg-sd__hero-media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 24px 48px -28px rgba(45, 69, 40, 0.45);
+}
+
+/* ---- Stappen: 3 genummerde kolommen ---- */
+.rg-sd__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(2rem, 2rem + 1.5vw, 3.25rem) 0;
+  border-top: 1px solid #EAE3D7;
+  border-bottom: 1px solid #EAE3D7;
+  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+}
+.rg-sd__step-nr {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 1.5rem + 1vw, 2.6rem);
+  line-height: 1;
+  color: #CA853F;
+  margin-bottom: 0.65rem;
+}
+h3.rg-sd__step-title,
+.cms-element-text h3.rg-sd__step-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.45rem) !important;
+  line-height: 1.2 !important;
+  margin: 0 0 0.5rem !important;
+}
+.rg-sd__step p {
+  color: #4a5a44;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---- Afwisselende beeld/tekst-rijen ---- */
+.rg-sd__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 4.5rem);
+  align-items: center;
+  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+}
+.rg-sd__row-media img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px -28px rgba(45, 69, 40, 0.4);
+}
+/* Gespiegelde rij: beeld rechts. Op mobiel stapelt alles beeld-eerst. */
+.rg-sd__row--flip .rg-sd__row-media { order: 2; }
+.rg-sd__row--flip .rg-sd__row-copy { order: 1; }
+h2.rg-sd__row-title,
+.cms-element-text h2.rg-sd__row-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.3rem) !important;
+  line-height: 1.12 !important;
+  margin: 0 0 0.85rem !important;
+  text-wrap: balance;
+}
+.rg-sd__row-copy p {
+  color: #4a5a44;
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 0 0 1.1rem;
+}
+.rg-sd__checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.rg-sd__checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: #3f4f3a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.rg-sd__checks svg { width: 1.05rem; height: 1.05rem; flex: none; margin-top: 0.2rem; color: #CA853F; }
+
+/* ---- Donkergroen checklist-paneel ---- */
+.rg-sd__panel {
+  background: #2d4528;
+  border-radius: 20px;
+  padding: clamp(2.4rem, 2rem + 2vw, 3.6rem) clamp(1.5rem, 4vw, 3.5rem);
+  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+  text-align: center;
+}
+.rg-sd__panel .rg-sd__eyebrow { color: #e9c9a9; }
+h2.rg-sd__panel-title,
+.cms-element-text h2.rg-sd__panel-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  line-height: 1.12 !important;
+  margin: 0 0 1.9rem !important;
+  text-wrap: balance;
+}
+.rg-sd__panel .rg-sd__checks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 2.5rem;
+  max-width: 680px;
+  margin: 0 auto 2.2rem;
+  text-align: left;
+}
+.rg-sd__panel .rg-sd__checks li { color: #f2efe9; }
+
+/* ---- FAQ (details/summary-accordeon) ---- */
+.rg-sd__faq {
+  max-width: 820px;
+  margin: 0 auto clamp(3rem, 3rem + 2vw, 5rem);
+}
+.rg-sd__faq .rg-theme-heading { text-align: center; }
+.rg-sd__faq .rg-theme-intro { text-align: center; margin-left: auto; margin-right: auto; }
+.rg-sd__faq-item {
+  background: #ffffff;
+  border: 1px solid #EAE3D7;
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.rg-sd__faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #2d4528;
+}
+.rg-sd__faq-item summary::-webkit-details-marker { display: none; }
+/* Plus-teken dat naar een kruis draait bij open */
+.rg-sd__faq-item summary::after {
+  content: "";
+  flex: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #CA853F;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.25s ease;
+}
+.rg-sd__faq-item[open] summary::after { transform: rotate(45deg); }
+.rg-sd__faq-item p {
+  margin: 0;
+  padding: 0 1.4rem 1.2rem;
+  color: #4a5a44;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+/* ---- Mobiel ---- */
+@media (max-width: 991px) {
+  .rg-sd__hero { grid-template-columns: 1fr; }
+  .rg-sd__hero-media { order: -1; }
+  .rg-sd__row,
+  .rg-sd__row--flip { grid-template-columns: 1fr; }
+  .rg-sd__row--flip .rg-sd__row-media { order: 0; }
+  .rg-sd__row--flip .rg-sd__row-copy { order: 1; }
+  .rg-sd__steps { grid-template-columns: 1fr; gap: 1.75rem; }
+  .rg-sd__panel .rg-sd__checks { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-sd__faq-item summary::after { transition: none !important; }
+}
