@@ -6236,14 +6236,13 @@ h3.rg-sd__journey-title,
 .rg-sd__spokes {
   margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
 }
-/* De 3 kaarten niet full-bleed over 1600px, maar als gecentreerde cluster. */
-.rg-sd__spokes .rg-service-grid {
-  max-width: 1120px;
-  margin-inline: auto;
-}
-/* Iets kleinere titels op de smallere spoke-kaarten -> netter, geen rare wrap. */
-.rg-sd__spokes .rg-service-card__title {
-  font-size: clamp(1.2rem, 1.05rem + 0.4vw, 1.4rem) !important;
+/* Spokes gebruiken de home-spec-cards (beeldtegels). Gecentreerde cluster,
+   niet full-bleed over 1600px. De :has()-container-tweaks van de home gelden
+   hier niet, dus expliciet max-width + centreren + geen dubbele padding. */
+.rg-sd__spokes .rg-spec-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* ---- Compacte, toegankelijke afsluit-CTA ----
@@ -6251,31 +6250,27 @@ h3.rg-sd__journey-title,
    te zwaar én zou dubbelen met het groene paneel hierboven. Lichte kaart op
    crème met Richard erbij; laagdrempelig 'vertel wat je zoekt'. */
 .rg-sd__ask {
-  max-width: 1000px;
+  max-width: 820px;
   margin: 0 auto clamp(3rem, 3rem + 3vw, 5.5rem);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: clamp(1.1rem, 2.5vw, 1.75rem);
   background: #ffffff;
   border: 1px solid #EAE3D7;
   border-radius: 20px;
-  padding: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem) clamp(1.5rem, 1.2rem + 1.5vw, 2.75rem);
+  padding: clamp(1.6rem, 1.3rem + 1.5vw, 2.4rem);
   box-shadow: 0 18px 40px -30px rgba(45, 69, 40, 0.4);
 }
-.rg-sd__ask-main {
-  display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  flex: 1 1 24rem;
-}
 .rg-sd__ask-avatar {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   flex: none;
+}
+.rg-sd__ask-body {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .rg-sd__ask-name {
   display: block;
@@ -6284,30 +6279,30 @@ h3.rg-sd__journey-title,
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #CA853F;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 h2.rg-sd__ask-title,
 .cms-element-text h2.rg-sd__ask-title {
   font-family: 'Playfair Display', serif !important;
   font-weight: 800 !important;
   color: #2d4528 !important;
-  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem) !important;
+  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem) !important;
   line-height: 1.15 !important;
-  margin: 0 0 0.4rem !important;
+  margin: 0 0 0.5rem !important;
 }
 .rg-sd__ask-text {
   color: #4a5a44;
   font-size: 0.95rem;
   line-height: 1.55;
-  margin: 0;
-  max-width: 46ch;
+  margin: 0 0 1.3rem;
+  max-width: 48ch;
 }
+/* Inline-knoppen, zelfde ritme als de hero-CTA (pill + tekstlink met pijl). */
 .rg-sd__ask-actions {
-  flex: none;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.55rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
 }
 
 /* ---- Mobiel ---- */
