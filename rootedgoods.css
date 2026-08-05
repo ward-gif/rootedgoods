@@ -590,8 +590,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   transform: translateY(-2px);
   box-shadow: 0 14px 28px -12px rgba(173, 99, 49, 0.95) !important;
 }
-/* Secondary site-wide = zelfde stijl als de hero-secondary (transparant,
-   groene rand, oker op hover) — alleen de maten blijven de site-defaults. */
+/* Basis-outline (rand) — blijft staan voor de captcha-refresh-icoonknop
+   (die is hieronder uitgesloten van de tekstlink-variant). */
 .btn-outline-primary {
   background-color: transparent !important;
   border: 2px solid rgba(45, 69, 40, 0.28) !important;
@@ -602,6 +602,26 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   border-color: #ad6331 !important;
   color: #ad6331 !important;
   transform: translateY(-2px);
+}
+/* Secundaire CTA site-wide = KALE TEKSTLINK-met-pijl (geen omlijnde knop),
+   zoals de hero-secondary. Zo leest alleen de cognac primaire knop als knop
+   -> duidelijk hiërarchisch verschil. Weight 600 (lager dan de 700 van de
+   primair) voor nog groter contrast. Hoge specificiteit (.btn.class + 2x
+   :not) zodat 'ie de .btn-maten verslaat. Uitgesloten: de eind-CTA-ghost
+   (donker vlak) en de captcha-refresh-icoonknop. */
+.btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon) {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #2d4528 !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+}
+.btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover {
+  background: transparent !important;
+  color: #ad6331 !important;
+  transform: none !important;   /* geen knop-lift */
 }
 
 /* Pijl op primaire + secundaire knoppen (zelfde als de landing-CTA), zodat we
@@ -3853,18 +3873,21 @@ body.is-ctl-product {
   /* Display-maat afgestemd op de langste kopregel ("Europa maakt het nog."):
      de vw-helling volgt de kolombreedte zodat die regel op élke desktop-
      breedte op één regel blijft, met marge. */
-  --rg-text-display: clamp(2.5rem, 0.2rem + 3.4vw, 4.25rem);
-  --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
-  --rg-space-lg: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
-  --rg-space-xl: clamp(1.8rem, 1.2rem + 1.8vw, 3rem);
+  --rg-text-display: clamp(2.6rem, 1.4rem + 3.5vw, 4.5rem);
+  /* Spacing-ritme: strak binnen een groep (eyebrow+kop+sub), ruimer als
+     groep-breuk (sub -> actie). Dat groepeert i.p.v. "los zand". */
+  --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);   /* knop -> reassurance */
+  --rg-space-md: clamp(0.8rem, 0.7rem + 0.4vw, 1.05rem);   /* eyebrow -> kop */
+  --rg-space-lg: clamp(1rem, 0.8rem + 0.7vw, 1.35rem);     /* kop -> subkop */
+  --rg-space-xl: clamp(1.75rem, 1.3rem + 1.4vw, 2.6rem);   /* subkop -> knop */
 
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: clamp(2rem, 4vw, 4.5rem);
+  grid-template-columns: 1.2fr 1fr;   /* kaart groter + minder gap = strakkere, minder "losse" compositie */
+  gap: clamp(1.5rem, 2.5vw, 2.75rem);
   align-items: center;
   max-width: 1600px;
   margin: 0 auto;
-  padding: clamp(3rem, 6vw, 6rem) 40px;
+  padding: clamp(2.75rem, 5vw, 5rem) 40px;
 }
 /* Statement vult de (via sectie 30) op calc+80 gezette buiten-container; géén
    eigen zij-padding -> content op 230/breedte 1440, gelijk aan de rest.
@@ -3892,7 +3915,7 @@ body.is-ctl-product {
   text-transform: uppercase;
   font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem);
   color: #CA853F;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 var(--rg-space-md) 0;   /* eyebrow hugt de kop (groepering) */
 }
 /* (decoratief streepje verwijderd — kicker zonder streepje) */
 /* Dubbel-specifiek + !important is hier NODIG: de globale type-scale zet
@@ -3920,11 +3943,14 @@ h2.rg-statement__title em { font-style: italic; font-weight: 600; }
   max-width: 65ch;
   margin: 0 0 var(--rg-space-xl);   /* subkop -> knop */
 }
-/* CTA-blok: vrijstaande cognac pill (ongewijzigd). */
+/* CTA-blok: primaire cognac pill + secundaire tekstlink ernaast (zelfde
+   hiërarchie als de hero). */
 .rg-statement__cta {
   margin: 0;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
 }
 .rg-statement__cta-btn {
   display: inline-flex;
@@ -4145,7 +4171,7 @@ img.rg-europe-map__svg {
     padding-top: 1.375rem;    /* helft van de 2.75rem hierboven */
     padding-bottom: 1.375rem;
   }
-  .rg-statement__cta { display: block; }
+  .rg-statement__cta { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .rg-statement__cta-btn {
     display: flex;
     justify-content: center;
@@ -4983,8 +5009,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rgh__sub{font-size:clamp(1.02rem,.95rem+.4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
 .rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
 .rgh .rgh__cta a.btn-primary{padding:.95rem 2.2rem !important;font-size:1rem !important;}       /* primair groter */
-.rgh .rgh__cta a.btn-outline-primary{padding:.78rem 1.6rem !important;font-size:.9rem !important;} /* secundair compacter */
-.rgh .rgh__cta a.btn-outline-primary::after{display:none !important;} /* geen pijl op de secundaire hero-knop */
+/* (oude-hero secundair volgt nu de site-brede tekstlink-stijl uit sectie 8) */
 .rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:nowrap;gap:.35rem 1.1rem;align-items:center;}
 .rgh__trust li{display:flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:500;color:#2d4528;white-space:nowrap;}
 .rgh__trust svg{width:1rem;height:1rem;flex:none;color:#CA853F;}
@@ -5252,30 +5277,8 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover {
   box-shadow: 0 20px 38px -12px rgba(173, 99, 49, 1) !important;
 }
-/* Secundaire actie = kale tekstlink-met-pijl (geen knop), zodat alleen de
-   cognac primaire knop als CTA leest. Feedback: "cognac knop moet alleen
-   staan als primaire actie". Donkergroen, terracotta op hover, pijl schuift. */
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary {
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: #2d4528 !important;
-  font-size: 0.95rem !important;
-  font-weight: 700 !important;
-}
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover {
-  background: transparent !important;
-  color: #ad6331 !important;
-  transform: none !important;   /* geen knop-lift */
-}
-/* Pijl weer aan (was verborgen); schuift mee op hover. */
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary::after {
-  display: inline-block !important;
-}
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover::after {
-  transform: translateX(3px);
-}
+/* (Secundaire hero-CTA-styling is nu de site-brede .btn.btn-outline-primary
+   tekstlink-regel in sectie 8 — geen hero-specifieke override meer nodig.) */
 
 /* ---- Trust: één rustige regel. Elk item is nowrap en draagt z'n eigen
    scheidings-middot (::before), zodat bij wrap de middot netjes mee naar
