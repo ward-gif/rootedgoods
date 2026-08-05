@@ -3,6 +3,12 @@
    rootedgoods.eu | Shopware 6.5 / Promidata thema
    ============================================================ */
 
+/* Echte Playfair Display Italic bijladen: de font-link in het CMS laadt
+   alleen de rechte stijl, waardoor de browser alle cursief (hero-accent,
+   .rg-em, stapnummers) zelf schuintrok — faux oblique i.p.v. de echte
+   italic-lettervormen. @import moet als eerste regel in het stylesheet. */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
    Headings: Libre Baskerville (klassiek serif, weights 400 en 700).
