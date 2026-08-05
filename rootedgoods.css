@@ -4868,6 +4868,54 @@ img.rg-europe-map__svg {
   .rg-brand-tile__logo { transition: none !important; }
 }
 
+/* Afsluitende CTA-tegel: 'Jouw merk hier?' — zelfde maat/rasterplek als een
+   merktegel, maar gestileerd als uitnodiging (gestippelde rand, geen logo). */
+.rg-brand-tile--cta {
+  flex-direction: column;
+  gap: 0.45rem;
+  text-align: center;
+  background: #F7F5F2;
+  border: 1px dashed rgba(45, 69, 40, 0.3);
+}
+.rg-brand-tile--cta:hover,
+.rg-brand-tile--cta:focus-visible {
+  background: #ffffff;
+  border-style: solid;
+  border-color: #ad6331;
+}
+.rg-brand-tile__cta-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.2 !important;
+  color: #2d4528 !important;
+  margin: 0 !important;
+}
+.rg-brand-tile__cta-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #ad6331;
+  margin: 0;
+}
+.rg-brand-tile__cta-text::after {
+  content: "";
+  width: 1.05em;
+  height: 1.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+.rg-brand-tile--cta:hover .rg-brand-tile__cta-text::after,
+.rg-brand-tile--cta:focus-visible .rg-brand-tile__cta-text::after { transform: translateX(4px); }
+@media (prefers-reduced-motion: reduce) {
+  .rg-brand-tile__cta-text::after { transition: none !important; }
+}
+
 /* Breadcrumb verbergen op de thema- én merken-pagina (CSS-only via :has,
    geen Twig nodig: de pagina bevat de betreffende grid). */
 body:has(.rg-theme-grid) .cms-breadcrumb,
