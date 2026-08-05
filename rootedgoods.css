@@ -6291,6 +6291,14 @@ h3.rg-sd__tech-title,
   margin: 0;
 }
 
+/* ---- Europa-kaart als signatuur (verzending-pagina) ----
+   Hergebruikt .rg-europe-map van de homepage; hier gecentreerd + begrensd
+   als 'distributie-bereik'-showcase i.p.v. de copy+map-grid van het statement. */
+.rg-sd__map {
+  max-width: 720px;
+  margin: 0 auto clamp(3rem, 3rem + 3vw, 6rem);
+}
+
 /* ---- Compacte, toegankelijke afsluit-CTA ----
    Vervangt het grote groene eind-CTA-blok onder service-detailpagina's: dat is
    te zwaar én zou dubbelen met het groene paneel hierboven. Lichte kaart op
