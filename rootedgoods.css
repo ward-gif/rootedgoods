@@ -6245,6 +6245,52 @@ h3.rg-sd__journey-title,
   padding: 0;
 }
 
+/* ---- Techniek-tegels (personalisatie & drukwerk) ----
+   Signatuur-sectie van de personalisatie-pagina: 4 niet-klikbare tegels
+   (beeld + titel + korte uitleg) voor graveren / bedrukken / borduren /
+   foliedruk. Onderscheidt zich van de tijdlijn (full-service) en de 3
+   stappen (warehousing). 2x2 op tablet, gestapeld op klein scherm. */
+.rg-sd__techniques {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin: 0 0 clamp(3rem, 3rem + 3vw, 6rem);
+}
+.rg-sd__tech {
+  display: flex;
+  flex-direction: column;
+}
+.rg-sd__tech-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #EAE3D7;
+}
+.rg-sd__tech-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Klein genummerd/gemarkeerd hoekje niet nodig; label onder het beeld. */
+h3.rg-sd__tech-title,
+.cms-element-text h3.rg-sd__tech-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem) !important;
+  line-height: 1.15 !important;
+  margin: 0 0 0.4rem !important;
+}
+.rg-sd__tech p {
+  color: #4a5a44;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ---- Compacte, toegankelijke afsluit-CTA ----
    Vervangt het grote groene eind-CTA-blok onder service-detailpagina's: dat is
    te zwaar én zou dubbelen met het groene paneel hierboven. Lichte kaart op
@@ -6318,6 +6364,11 @@ h2.rg-sd__ask-title,
   /* Tijdlijn stapelt verticaal; lijn verbergen (insets kloppen dan niet meer) */
   .rg-sd__journey { grid-template-columns: 1fr; gap: 1.75rem; }
   .rg-sd__journey::before { display: none; }
+  /* Techniek-tegels: 2x2 op tablet */
+  .rg-sd__techniques { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 479px) {
+  .rg-sd__techniques { grid-template-columns: 1fr; }
 }
 @media (max-width: 575px) {
   .rg-sd__ask { flex-direction: column; align-items: flex-start; text-align: left; }
