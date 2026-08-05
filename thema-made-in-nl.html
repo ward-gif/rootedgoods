@@ -1,0 +1,115 @@
+<!-- ============================================================
+     THEMA-PAGINA: Made in NL
+     Plak dit als CMS-content op de thema-categoriepagina (/thema-s/made-in-nl/).
+     Opbouw: page-hero -> [Shopware product-slider] -> block-title +
+     feature-row -> 3 services (spec-cards) -> eind-CTA.
+     - Vervang alle src="..." door echte beelden (relatief /media/... pad).
+     - "PRODUCT SLIDER": plaats daar het Shopware product-slider-element
+       (dit HTML-blok bevat het niet; dat is een CMS-element).
+     - Klantlogo's in de hero: vervang de 4 placeholders of verwijder het blok.
+     ============================================================ -->
+<section class="rg-page-hero">
+  <div class="rg-page-hero__copy">
+    <h1 class="rg-page-hero__title">Made in NL</h1>
+    <p class="rg-page-hero__sub">Geschenken van Nederlandse makers. Korte ketens, herkenbare kwaliteit en een verhaal dat dichtbij blijft.</p>
+    <div class="rg-page-hero__cta">
+      <a class="btn btn-primary" href="/poconfigurator/request">Vraag een offerte aan</a>
+      <a class="btn btn-outline-primary" href="/thema-s/made-in-nl/">Bekijk alle producten</a>
+    </div>
+    <div class="rg-page-hero__logos" aria-label="Vertrouwd door">
+      <img src="https://via.placeholder.com/120x40?text=Logo+1" alt="Klantlogo 1">
+      <img src="https://via.placeholder.com/120x40?text=Logo+2" alt="Klantlogo 2">
+      <img src="https://via.placeholder.com/120x40?text=Logo+3" alt="Klantlogo 3">
+      <img src="https://via.placeholder.com/120x40?text=Logo+4" alt="Klantlogo 4">
+    </div>
+  </div>
+  <div class="rg-page-hero__media" aria-hidden="true">
+    <img class="rg-page-hero__img rg-page-hero__img--a" src="https://via.placeholder.com/400x400" alt="">
+    <img class="rg-page-hero__img rg-page-hero__img--b" src="https://via.placeholder.com/400x300" alt="">
+    <img class="rg-page-hero__img rg-page-hero__img--c" src="https://via.placeholder.com/500x700" alt="">
+  </div>
+</section>
+
+<!-- ===== PRODUCT SLIDER: plaats hier het Shopware product-slider-element (thema made-in-nl) ===== -->
+
+<div class="rg-block-title">
+  <h2 class="rg-block-title__title">Dichtbij gemaakt, trots gegeven.</h2>
+  <p class="rg-block-title__sub">Kiezen voor Nederlandse makers is kiezen voor kwaliteit met een verhaal.</p>
+</div>
+
+<div class="rg-feature-row">
+  <div class="rg-feature-row__media">
+    <img class="rg-feature-row__img" src="https://via.placeholder.com/800x600" alt="">
+  </div>
+  <div class="rg-feature-row__content">
+    <h3 class="rg-feature-row__title">Kiezen voor Nederlandse makers betekent:</h3>
+    <ul class="rg-feature-list">
+      <li><strong>Korte ketens</strong>Minder transport, meer grip op kwaliteit en levertijd.</li>
+      <li><strong>Herkenbaar verhaal</strong>Een cadeau met een origine die je trots kunt vertellen.</li>
+      <li><strong>Kwaliteit</strong>Ambachtelijke makers die ergens voor staan.</li>
+    </ul>
+    <a class="btn btn-primary rg-feature-row__cta" href="/poconfigurator/request">Offerte aanvragen</a>
+  </div>
+</div>
+
+  <!-- ===== SERVICES & ONTZORGING (3 spec-cards) ===== -->
+  <div class="rg-block-title">
+    <h2 class="rg-block-title__title">Services <span class="rg-amp">&amp;</span> ontzorging</h2>
+    <p class="rg-block-title__sub">Wat we kunnen doen om het je nog makkelijker te maken.</p>
+  </div>
+  <div class="rg-spec-grid">
+    <a href="/verzending-naar-meerdere-locaties" class="rg-spec-card">
+      <img class="rg-spec-card__img" src="/media/4a/2e/d4/1785831536/Verzending naar locaties doosjes-2.jpg" alt="Verzending naar meerdere locaties">
+      <span class="rg-spec-card__label">
+        <span class="rg-spec-card__title">Verzending naar meerdere locaties</span>
+        <span class="rg-spec-card__sub">Eén bestelling, vele adressen. Wij sturen elk pakket rechtstreeks naar de juiste ontvanger.</span>
+      </span>
+    </a>
+    <a href="/warehousing-fulfillment" class="rg-spec-card">
+      <img class="rg-spec-card__img" src="/media/5d/dd/b7/1785500254/Warehousing-2.jpg" alt="Warehousing en fulfillment">
+      <span class="rg-spec-card__label">
+        <span class="rg-spec-card__title">Warehousing <span class="rg-amp">&amp;</span> fulfillment</span>
+        <span class="rg-spec-card__sub">Wij slaan je geschenken op, beheren de voorraad en verzenden precies wanneer jij dat wilt.</span>
+      </span>
+    </a>
+    <a href="/full-service-ontzorging" class="rg-spec-card">
+      <img class="rg-spec-card__img" src="/media/cd/g0/21/1785500254/full service-2.jpg" alt="Full-service ontzorging">
+      <span class="rg-spec-card__label">
+        <span class="rg-spec-card__title">Full-service ontzorging</span>
+        <span class="rg-spec-card__sub">Vanaf productselectie en ontwerp, tot productie en verzending: het hele traject nemen wij uit handen.</span>
+      </span>
+    </a>
+  </div>
+  <div class="rg-spec-cta">
+    <a href="/services" class="btn btn-outline-primary">Bekijk alle services</a>
+  </div>
+
+  <!-- ===== EIND-CTA ===== -->
+  <section class="rg-endcta" aria-labelledby="rg-endcta-title">
+    <div class="rg-endcta__head">
+      <p class="rg-endcta__eyebrow">Relatiegeschenken zonder gedoe</p>
+      <h2 class="rg-endcta__title" id="rg-endcta-title">Van idee tot ingepakt.<br><em class="rg-em">Wij regelen alles.</em></h2>
+    </div>
+    <div class="rg-endcta__card">
+      <p class="rg-endcta__sub">Vertel ons wat je zoekt — binnen één werkdag ligt er een vrijblijvend voorstel, inclusief digitale drukproef.</p>
+      <div class="rg-endcta__cta">
+        <a class="btn btn-primary" href="/poconfigurator/request">Vraag een offerte aan</a>
+        <a class="btn rg-endcta__ghost" href="/contact">Plan een kennismaking</a>
+      </div>
+      <p class="rg-endcta__trust">
+        <span class="rg-endcta__t"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg><b>Geassembleerd in Europa</b></span>
+        <span class="rg-endcta__t">digitale drukproef</span>
+        <span class="rg-endcta__t">bezorging geregeld</span>
+      </p>
+      <div class="rg-endcta__divider"></div>
+      <a class="rg-cta__contact" href="/contact" aria-label="Hi, ik ben Richard. Ik help je van idee tot bezorging. Neem contact op.">
+        <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="44" height="44">
+        <span>
+          <span class="rg-cta__contact-name">Hi, ik ben Richard</span>
+          <span class="rg-cta__contact-promise">Ik help je van idee tot bezorging
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </span>
+      </a>
+    </div>
+  </section>
