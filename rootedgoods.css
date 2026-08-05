@@ -4896,7 +4896,7 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   list-style: none;
 }
 @media (min-width: 640px) { .rg-service-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 992px) { .rg-service-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+@media (min-width: 992px) { .rg-service-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
 
 .rg-service-card {
   display: flex;
