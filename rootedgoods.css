@@ -3,12 +3,6 @@
    rootedgoods.eu | Shopware 6.5 / Promidata thema
    ============================================================ */
 
-/* Caveat = handschrift-font voor de marge-notities (Europa-kaart +
-   eind-CTA). Via @import i.p.v. de <link> in rootedgoods.html zodat er
-   geen CMS-blok opnieuw geplakt hoeft te worden (@import moet als eerste
-   rule in het bestand staan, vandaar hier bovenaan). */
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap");
-
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
    Headings: Libre Baskerville (klassiek serif, weights 400 en 700).
@@ -3853,6 +3847,15 @@ body.is-ctl-product {
    .rg-statement regelt z'n eigen ruimte (40px zij-gutter). */
 
 .rg-statement {
+  /* Design tokens gescoped op deze sectie (zoals .rg-hero-v2 met --rg-s1..5).
+     Bestonden nog niet globaal; hier gedefinieerd zodat de sectie via tokens
+     werkt i.p.v. losse hardcoded waarden. */
+  --rg-text-display: clamp(3.2rem, 0.4rem + 8vw, 8rem);   /* de bestaande grote titelmaat */
+  --rg-text-h1: clamp(2.4rem, 1.2rem + 2.8vw, 3.6rem);    /* compacter: past een 2-regel-kop */
+  --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
+  --rg-space-lg: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
+  --rg-space-xl: clamp(1.8rem, 1.2rem + 1.8vw, 3rem);
+
   display: grid;
   grid-template-columns: 1.35fr 1fr;
   gap: clamp(2rem, 4vw, 4.5rem);
@@ -3891,20 +3894,25 @@ body.is-ctl-product {
 }
 /* (decoratief streepje verwijderd — kicker zonder streepje) */
 .rg-statement__title {
-  font-size: clamp(3.2rem, 0.4rem + 8vw, 8rem);
+  font-size: var(--rg-text-h1);   /* max 2 regels op desktop (kop bevat een <br>) */
   font-weight: 700;
-  line-height: 1.08; /* iets ruimer → gelijkmatige regelafstand */
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: #2d4528;
-  margin: 0;
+  margin: 0 0 var(--rg-space-lg);   /* kop -> subkop */
 }
-
-/* CTA-blok: vrijstaande knop + handgeschreven annotatie met pijl ernaartoe. */
+/* Subkop in body-formaat onder de kop. */
+.rg-statement__sub {
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.22rem);
+  line-height: 1.6;
+  color: #3f4f3a;
+  max-width: 65ch;
+  margin: 0 0 var(--rg-space-xl);   /* subkop -> knop */
+}
+/* CTA-blok: vrijstaande cognac pill (ongewijzigd). */
 .rg-statement__cta {
-  margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
+  margin: 0;
   display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
   flex-wrap: wrap;
 }
 .rg-statement__cta-btn {
@@ -3942,41 +3950,12 @@ body.is-ctl-product {
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
 }
-/* Handgeschreven annotatie. Tekst zit lager (bij de staart van de pijl), de
-   pijl begint bovenin en wijst omhoog naar de knop. */
-.rg-cta-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  max-width: 240px;
-  margin-top: 4.8rem; /* tekst lager dan de knop */
-  margin-left: -3rem; /* naar links, onder de pijl */
-  /* Caveat i.p.v. italic Montserrat: echt handschrift bij de
-     handgetekende pijl. Groter corps — handschrift-fonts renderen klein. */
-  font-family: 'Caveat', cursive;
-  font-weight: 600;
-  font-size: 1.15rem;
-  line-height: 1.2;
-  color: #5d6d55;   /* was #6f7e66 — net te vaag op crème in Caveat */
-  transform: rotate(-2deg);
-}
-/* Pijl (geüpload beeldje): kop bovenaan, wijst omhoog/links naar de knop. */
-.rg-cta-arrow {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  width: clamp(30px, 3vw, 44px);
-  height: auto;
-  margin-top: 1.6rem;
-}
-.rg-statement__sub {
-  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
-  line-height: 1.6;
-  color: #3f4f3a;
-  max-width: 46ch;
-  margin: 0;
-}
-.rg-statement__cta {
-  margin-top: clamp(1.8rem, 1rem + 1.6vw, 2.8rem);
+/* Geruststellende microcopy onder de knop (secundaire tekstkleur). */
+.rg-statement__reassurance {
+  margin: var(--rg-space-sm) 0 0;   /* knop -> reassurance */
+  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  line-height: 1.5;
+  color: #5d6d55;
 }
 
 /* Scroll-reveal: content + kaart komen omhoog/faden in als de sectie in
@@ -4135,7 +4114,8 @@ img.rg-europe-map__svg {
   .rg-europe-map__pin::after { animation: none !important; opacity: 0 !important; }
 }
 
-/* Mobiel: stack (tekst boven, kaart onder), compact */
+/* Mobiel: stack (tekst boven, kaart onder), compact. DOM-volgorde geeft
+   vanzelf: eyebrow -> kop -> subkop -> knop -> reassurance -> kaart. */
 @media (max-width: 991px) {
   .rg-statement {
     grid-template-columns: 1fr;
@@ -4145,6 +4125,21 @@ img.rg-europe-map__svg {
   .rg-europe-map {
     max-width: 460px;
     margin: 0 auto;
+  }
+}
+/* < 768px: knop vol-breed (min. 48px raakhoogte) + sectie verticaal krapper. */
+@media (max-width: 767px) {
+  .rg-statement {
+    padding-top: 1.375rem;    /* helft van de 2.75rem hierboven */
+    padding-bottom: 1.375rem;
+  }
+  .rg-statement__cta { display: block; }
+  .rg-statement__cta-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
   }
 }
 
