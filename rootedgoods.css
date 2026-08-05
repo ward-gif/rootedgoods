@@ -3987,18 +3987,18 @@ h2.rg-statement__title em { font-style: italic; font-weight: 600; }
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
 }
-/* Geruststellende microcopy onder de knop: risico-omkering + snelheid,
-   met cognac-vinkje (zelfde idioom als de trust-strips in hero/eind-CTA)
-   zodat 'ie visueel aan de CTA hangt i.p.v. als los zinnetje te zweven. */
+/* Geruststellende microcopy onder de knop — exact dezelfde styling als de
+   trust-strip onder de hero-knop (.rg-hero-v2__trust): donkergroen, .84rem,
+   weight 500, cognac-vinkje. */
 .rg-statement__reassurance {
   margin: var(--rg-space-sm) 0 0;   /* knop -> reassurance */
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  gap: 0.4rem;
+  font-size: 0.84rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #5d6d55;
+  color: #2d4528;
 }
 .rg-statement__reassurance svg {
   width: 1rem;
