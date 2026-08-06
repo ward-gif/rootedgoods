@@ -6515,6 +6515,34 @@ h2.rg-sd__ask-title,
   gap: 0.5rem 1.6rem;
 }
 
+/* ---- Losse FAQ-pagina (faq.html): h1 + categorie-koppen tussen de groepen ---- */
+h1.rg-faq-title,
+.cms-element-text h1.rg-faq-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem) !important;
+  line-height: 1.1 !important;
+  margin: 0 0 0.8rem !important;
+  text-wrap: balance;
+}
+h2.rg-faq-cat,
+.cms-element-text h2.rg-faq-cat {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.7rem) !important;
+  line-height: 1.2 !important;
+  margin: 2.6rem 0 1rem !important;
+  padding-top: 1.4rem;
+  border-top: 1px solid #EAE3D7;
+}
+.rg-sd__faq .rg-faq-cat:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0;
+  border-top: none;
+}
+
 /* ---- Mobiel ---- */
 @media (max-width: 991px) {
   .rg-sd__hero { grid-template-columns: 1fr; }
