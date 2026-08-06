@@ -135,11 +135,11 @@ document.addEventListener('DOMContentLoaded', function () {
  * - mouseDrag:true — de block-instelling had 'm op false staan (admin-
  *   config), dus slepen deed nooit iets, los van onze CSS.
  *
- * GEEN items:4 (meer): bleek genegeerd door de plugin (getest — de
- * live-region bleef "1 to 5" tonen ondanks items:4 in de opties). De echte
- * hendel voor het aantal tegels is .base-slider's clientWidth: de plugin
- * berekent zelf items = floor(clientWidth / (productboxMinWidth+gutter)),
- * zie rootedgoods.css sectie 30 stap 4 (.cms-block-container/.base-slider).
+ * Aantal tegels: een kale items:4 werd overschreven door de responsive-
+ * breakpoints in de block-opties (een ervan zette 'm op 5 -> "1 to 5"). We
+ * herschrijven daarom de HELE responsive-config (zie onder): 1/2/3/4 tegels,
+ * met 4 vanaf 992px zodat ook laptops 4 tonen i.p.v. 3. Dit schaalt mee en
+ * kent geen breakpoint meer die 'm op 3 of 5 zet.
  *
  * Wij herschrijven de slider-opties VOORDAT de plugin ze leest. Een
  * MutationObserver vangt het element zodra het tijdens het parsen in de
@@ -158,6 +158,20 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider.loop = false;       // geen clones meer
     opts.slider.rewind = false;     // niet terugspringen naar begin
     opts.slider.mouseDrag = true;   // block-instelling had 'm uit
+
+    /* Altijd 4 tegels op laptop+desktop, meeschalend. De block-opties bevatten
+       responsive-breakpoints (o.a. eentje die 'm op 5 zette -> "1 to 5"). Een
+       vaste items-waarde alleen werd door die breakpoints overschreven, dus we
+       herschrijven de responsive-config zelf: 1 -> 2 -> 3 -> 4 tegels. Vanaf
+       992px staat 'ie op 4 en blijft daar (geen breakpoint die 'm op 5 zet),
+       dus ook op smallere laptops zie je 4 i.p.v. 3. */
+    opts.slider.items = 4;
+    opts.slider.responsive = {
+      0:   { items: 1 },
+      480: { items: 2 },
+      768: { items: 3 },
+      992: { items: 4 }
+    };
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }
