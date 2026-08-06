@@ -3616,6 +3616,54 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
 }
 
 /* ============================================================
+   27c. VERHAAL-BLOK (.rg-story) — warme prose, promoot Europese makers
+   ============================================================
+   Alternatief voor .rg-compare op thema's waar de niet/wel-vorm geforceerd
+   voelt (bv. Dag van de leraar) of waar het herkomst-verhaal juist de haak is
+   (Made in NL). Gecentreerde, leesbare prose: eyebrow -> Playfair-kop ->
+   warme lead -> body. Bewust kort: twee alinea's, geen wall of text. */
+.rg-story {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 2rem + 3vw, 5rem) 20px;
+  text-align: center;
+}
+.rg-story__eyebrow {
+  margin: 0 0 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+h2.rg-story__title,
+.cms-element-text h2.rg-story__title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(1.7rem, 1.3rem + 1.5vw, 2.6rem) !important;
+  line-height: 1.12 !important;
+  margin: 0 0 1.2rem !important;
+  text-wrap: balance;
+}
+h2.rg-story__title em { font-style: italic; font-weight: 600; }
+.rg-story__lead {
+  color: #3f4f3a;
+  font-size: clamp(1.1rem, 1rem + 0.45vw, 1.35rem);
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0 0 1.1rem;
+}
+.rg-story__body {
+  color: #4a5a44;
+  font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* ============================================================
    28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
    ============================================================
    De .cms-section met .landing-header vult de hele viewport (minus
