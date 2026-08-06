@@ -6,7 +6,8 @@
 > **Bewerk hier**, niet in de losse HTML-blokken.
 >
 > **Bron-tags:** `(Ward)` = aangeleverd · `[LIVE: <pagina>]` = staat al op die
-> service-pagina · `[VOORSTEL]` = door Claude toegevoegd · `[LATER]` = geparkeerd.
+> service-pagina · `[LATER]` = geparkeerd (nog niet meebouwen). Alle eerder als
+> voorstel gemarkeerde vragen zijn nu goedgekeurd en opgenomen in de finale set.
 >
 > `→` = voorgestelde pagina('s). Antwoorden bevatten waar natuurlijk één
 > SEO-kernwoord (relatiegeschenken / met logo / duurzaam / Europa / zakelijk /
@@ -38,7 +39,7 @@ Ja, dat kan. Zo weet je zeker hoe het product en jouw logo er in het echt uitzie
 → full-service, algemeen, faq · (Ward)
 Zolang de productie nog niet gestart is, kan dat. Zodra je de digitale drukproef hebt goedgekeurd, gaat de productie van start en is wijzigen of annuleren niet meer mogelijk.
 
-### [VOORSTEL] Kunnen jullie een compleet pakket of geschenkset voor me samenstellen?
+### Kunnen jullie een compleet pakket of geschenkset voor me samenstellen?
 → thema's, full-service, faq
 Graag. Vertel ons het doel, de doelgroep en het budget, dan stellen we een passend **relatiegeschenk of geschenkset** samen — van één product tot een volledig verzorgd pakket.
 
@@ -135,15 +136,15 @@ In overleg is veel mogelijk. Vertel ons wat je wilt opslaan en verzenden, dan ki
 → warehousing, faq · [LIVE: warehousing]
 Meestal verlaten pakketten binnen twee werkdagen ons magazijn. Grotere verzendingen naar meerdere adressen plannen we samen in.
 
-### [VOORSTEL] Verzorgen jullie ook de verpakking en een persoonlijk kaartje?
+### Verzorgen jullie ook de verpakking en een persoonlijk kaartje?
 → verzending, full-service, faq
 Ja. We pakken elk geschenk verzorgd in — desgewenst met een persoonlijk kaartje of boodschap per ontvanger, in duurzame verpakking.
 
-### [VOORSTEL] Krijg ik track & trace van mijn zending?
+### Krijg ik track & trace van mijn zending?
 → verzending, faq
 Ja, elke zending is te volgen tot aan de voordeur.
 
-### [VOORSTEL] Wat als een product beschadigd of verkeerd aankomt?
+### Wat als een product beschadigd of verkeerd aankomt?
 → verzending, algemeen, faq
 Laat het ons weten, dan lossen we het op. We regelen de retour of een vervangend product.
 
@@ -176,7 +177,7 @@ Graag zelfs. Vertel ons voor wie het is en wat je wilt bereiken, dan denken we m
 → eindejaarsgeschenken (thema), algemeen, faq · (Ward)
 Levertijden zijn altijd productafhankelijk. Vraag je bestelling op tijd aan, dan denken we met je mee over wat haalbaar is — hoe eerder, hoe meer keuze en rust. Voor **kerstpakketten** en andere piekmomenten adviseren we ruim van tevoren te starten.
 
-### [VOORSTEL] Heb ik één vast aanspreekpunt?
+### Heb ik één vast aanspreekpunt?
 → full-service, algemeen, faq
 Ja. Van eerste idee tot bezorging heb je één vaste contactpersoon die het hele traject overziet — geen doorschuiven tussen afdelingen.
 
@@ -186,6 +187,7 @@ Ja. Van eerste idee tot bezorging heb je één vaste contactpersoon die het hele
 
 ---
 
-## Open punten
-- **[VOORSTEL]-vragen** (geschenkset, verpakking/kaartje, track & trace, beschadigd, aanspreekpunt) staan aan; zet uit wat je niet wilt.
+## Status
+- **Finale set** (35 vragen) — klaar om te delen ter check met collega. Enige uitzondering: "Kunnen jullie voorbeelden van eerdere projecten laten zien?" staat op `[LATER]`.
 - **FAQ-opbouw** (besloten): aparte FAQ-pagina met alle vragen + per service/thema-pagina de `→ <pagina>`-subset.
+- Nog open ter check: betaalvoorwaarden-formulering en levertijd-richtlijn rond kerst (feitelijk juist?).
