@@ -3517,6 +3517,105 @@ body.is-ctl-product {
 }
 
 /* ============================================================
+   27b. VERGELIJK-BLOK (.rg-compare) — "wat het níet is / wél is"
+   ============================================================
+   Herbruikbaar SEO/positionerings-blok op thema-pagina's. Twee kolommen:
+   links de gedempte "niet"-punten (X), rechts de "wel"-punten (cognac vink).
+   Bewust compact: korte titel + één regel uitleg per punt. */
+.rg-compare {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 2rem + 3vw, 5rem) 20px;
+}
+.rg-compare__head {
+  text-align: center;
+  max-width: 62ch;
+  margin: 0 auto clamp(1.75rem, 1.5rem + 1.5vw, 2.75rem);
+}
+.rg-compare__eyebrow {
+  margin: 0 0 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+h2.rg-compare__title,
+.cms-element-text h2.rg-compare__title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  line-height: 1.12 !important;
+  margin: 0 0 0.9rem !important;
+  text-wrap: balance;
+}
+h2.rg-compare__title em { font-style: italic; font-weight: 600; }
+.rg-compare__intro {
+  color: #4a5a44;
+  font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0;
+}
+.rg-compare__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+.rg-compare__col {
+  background: #ffffff;
+  border: 1px solid #EAE3D7;
+  border-radius: 18px;
+  padding: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+}
+.rg-compare__col-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 1.1rem;
+}
+.rg-compare__col--no .rg-compare__col-title { color: #8a8073; }
+.rg-compare__col--yes .rg-compare__col-title { color: #CA853F; }
+.rg-compare__list { list-style: none; margin: 0; padding: 0; }
+.rg-compare__item {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(45, 69, 40, 0.08);
+}
+.rg-compare__item:first-child { padding-top: 0; border-top: none; }
+.rg-compare__item:last-child { padding-bottom: 0; }
+.rg-compare__ico {
+  flex: none;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.1rem;
+}
+.rg-compare__col--no .rg-compare__ico { color: #b3a898; }   /* gedempt: geen 'fout-rood', past bij de rustige toon */
+.rg-compare__col--yes .rg-compare__ico { color: #CA853F; }  /* cognac vink, zelfde als de rest van de site */
+.rg-compare__ico svg { width: 100%; height: 100%; display: block; }
+.rg-compare__item b {
+  display: block;
+  color: #2d4528;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+.rg-compare__item span {
+  color: #4a5a44;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .rg-compare__cols { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
    ============================================================
    De .cms-section met .landing-header vult de hele viewport (minus
@@ -5138,6 +5237,15 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   letter-spacing: -0.01em;
   margin: 0 0 1.25rem 0;
   max-width: 15ch;
+  /* Lange samengestelde woorden ("Eindejaarsgeschenken") netjes afbreken op
+     lettergreep i.p.v. de thema-brede word-break: break-word (die brak
+     "...schenke|n" af of liet 'm van de kolom vallen). hyphens vereist
+     lang="nl" op <html> — dat zet Shopware. */
+  word-break: normal !important;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  text-wrap: balance;
 }
 .rg-page-hero__sub {
   font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
