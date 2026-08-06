@@ -135,11 +135,12 @@ document.addEventListener('DOMContentLoaded', function () {
  * - mouseDrag:true — de block-instelling had 'm op false staan (admin-
  *   config), dus slepen deed nooit iets, los van onze CSS.
  *
- * Aantal tegels: een kale items:4 werd overschreven door de responsive-
- * breakpoints in de block-opties (een ervan zette 'm op 5 -> "1 to 5"). We
- * herschrijven daarom de HELE responsive-config (zie onder): 1/2/3/4 tegels,
- * met 4 vanaf 992px zodat ook laptops 4 tonen i.p.v. 3. Dit schaalt mee en
- * kent geen breakpoint meer die 'm op 3 of 5 zet.
+ * Aantal tegels: de block-opties hebben GEEN items/responsive (geverifieerd
+ * via console-dump: alleen productboxMinWidth:"300px" + gutter:30). De plugin
+ * rekent items = floor(sliderbreedte / (productboxMinWidth + gutter)). Een
+ * kale items:4 of responsive-config wordt dus genegeerd. De echte hendel is
+ * productboxMinWidth, die we hieronder verlagen naar 250px zodat er ook op
+ * laptop 4 passen (zie de uitleg bij de patch).
  *
  * Wij herschrijven de slider-opties VOORDAT de plugin ze leest. Een
  * MutationObserver vangt het element zodra het tijdens het parsen in de
@@ -159,10 +160,13 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider.rewind = false;     // niet terugspringen naar begin
     opts.slider.mouseDrag = true;   // block-instelling had 'm uit
 
-    /* TIJDELIJKE DIAGNOSE: dump de volledige slider-opties zodat we zien welke
-       sleutel het aantal tegels stuurt (items? responsive-breakpoints?
-       productboxMinWidth?). Verwijderen zodra het aantal-fix definitief is. */
-    try { console.log('[rg] slider-opts:', JSON.stringify(opts)); } catch (e) {}
+    /* 4 tegels op laptop én desktop. De plugin bepaalt het aantal via
+       items = floor(sliderbreedte / (productboxMinWidth + gutter)). Met de
+       standaard 300+30=330px paste er op laptop (~1200-1270px slider) maar 3.
+       Verlaagd naar 250+30=280px: laptop floor(~1230/280)=4, en desktop
+       (geboxed op max ~1360px, nooit breder) floor(1360/280)=4 -> nooit 5.
+       Schaalt daaronder netjes terug naar 3/2/1. */
+    opts.productboxMinWidth = '250px';
 
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
