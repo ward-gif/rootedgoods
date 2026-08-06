@@ -159,19 +159,11 @@ document.addEventListener('DOMContentLoaded', function () {
     opts.slider.rewind = false;     // niet terugspringen naar begin
     opts.slider.mouseDrag = true;   // block-instelling had 'm uit
 
-    /* Altijd 4 tegels op laptop+desktop, meeschalend. De block-opties bevatten
-       responsive-breakpoints (o.a. eentje die 'm op 5 zette -> "1 to 5"). Een
-       vaste items-waarde alleen werd door die breakpoints overschreven, dus we
-       herschrijven de responsive-config zelf: 1 -> 2 -> 3 -> 4 tegels. Vanaf
-       992px staat 'ie op 4 en blijft daar (geen breakpoint die 'm op 5 zet),
-       dus ook op smallere laptops zie je 4 i.p.v. 3. */
-    opts.slider.items = 4;
-    opts.slider.responsive = {
-      0:   { items: 1 },
-      480: { items: 2 },
-      768: { items: 3 },
-      992: { items: 4 }
-    };
+    /* TIJDELIJKE DIAGNOSE: dump de volledige slider-opties zodat we zien welke
+       sleutel het aantal tegels stuurt (items? responsive-breakpoints?
+       productboxMinWidth?). Verwijderen zodra het aantal-fix definitief is. */
+    try { console.log('[rg] slider-opts:', JSON.stringify(opts)); } catch (e) {}
+
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
   }
