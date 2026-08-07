@@ -6790,13 +6790,13 @@ h1.rg-contact-head__title,
 }
 .rg-contact-head__team-avatars { display: inline-flex; flex: none; }
 .rg-contact-head__team-avatars img {
-  width: 44px; height: 44px;
+  width: 56px; height: 56px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffffff;
   box-shadow: 0 1px 5px -2px rgba(45, 69, 40, 0.5);
 }
-.rg-contact-head__team-avatars img + img { margin-left: -14px; }
+.rg-contact-head__team-avatars img + img { margin-left: -18px; }
 .rg-contact-head__team-status {
   display: inline-flex;
   align-items: center;
@@ -6832,13 +6832,13 @@ h1.rg-contact-head__title,
 }
 .rg-contact-head__callcard-avatars { display: inline-flex; flex: none; }
 .rg-contact-head__callcard-avatars img {
-  width: 32px; height: 32px;
+  width: 28px; height: 28px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffffff;
   box-shadow: 0 1px 5px -2px rgba(45, 69, 40, 0.5);
 }
-.rg-contact-head__callcard-avatars img + img { margin-left: -10px; }
+.rg-contact-head__callcard-avatars img + img { margin-left: -9px; }
 
 /* Richard (eerste foto) altijd bovenop, daarachter Ward, dan Marco.
    Geldt voor alle gestapelde avatar-groepen. */
