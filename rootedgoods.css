@@ -7020,3 +7020,105 @@ h1.rg-contact-head__title,
 
 /* Cal.com-triggers hebben geen href (klik = alleen de popup) -> muis-cursor. */
 [data-cal-link] { cursor: pointer; }
+
+/* ============================================================
+   40d. CONTACTFORMULIER-VOORZETJE (.rg-cform) — ontwerp-mockup
+   ============================================================
+   Vriendelijk, strak contactformulier passend bij de contact-kop. Losse,
+   herbruikbare vorm-stijl (kan later op het Shopware/custom-form gemapt
+   worden). Zelfde kaart/velden-taal als het offerteformulier. */
+.rg-cform {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #EAE3D7;
+  border-radius: 18px;
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  box-shadow: 0 24px 55px -35px rgba(45, 69, 40, 0.30);
+}
+.rg-cform__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem 1.25rem;
+}
+.rg-cform__field { display: flex; flex-direction: column; }
+.rg-cform__field--full { grid-column: 1 / -1; }
+.rg-cform__field > label {
+  margin: 0 0 0.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2d4528;
+}
+.rg-cform input,
+.rg-cform select,
+.rg-cform textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #2d4528;
+  background-color: #ffffff;
+  border: 1px solid #EAE3D7;
+  border-radius: 10px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.rg-cform input::placeholder,
+.rg-cform textarea::placeholder { color: #8c857a; }
+.rg-cform input:focus,
+.rg-cform select:focus,
+.rg-cform textarea:focus {
+  border-color: #2d4528;
+  box-shadow: 0 0 0 3px rgba(45, 69, 40, 0.12);
+  outline: none;
+}
+.rg-cform input:hover:not(:focus),
+.rg-cform select:hover:not(:focus),
+.rg-cform textarea:hover:not(:focus) { border-color: #d8cfc0; }
+.rg-cform textarea { min-height: 130px; resize: vertical; line-height: 1.55; }
+.rg-cform select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232d4528' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.9rem center; background-size: 1.05em;
+  padding-right: 2.6rem;
+}
+/* Privacy + verzendknop */
+.rg-cform__privacy {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #4a5a44;
+  font-size: 0.95rem;
+}
+.rg-cform__privacy input { width: 18px; height: 18px; flex: none; accent-color: #2d4528; }
+.rg-cform__privacy a { color: #ad6331; text-decoration: underline; text-underline-offset: 2px; }
+.rg-cform__foot {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.rg-cform__note { font-size: 0.82rem; color: #8c857a; margin: 0; }
+.rg-cform__submit {
+  flex: none;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: #ad6331;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.rg-cform__submit:hover { background: #955529; transform: translateY(-2px); }
+@media (max-width: 575px) {
+  .rg-cform__grid { grid-template-columns: 1fr; }
+  .rg-cform__field { grid-column: 1 / -1 !important; }
+  .rg-cform__submit { width: 100%; }
+}
