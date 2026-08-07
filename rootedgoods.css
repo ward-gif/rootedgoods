@@ -6147,6 +6147,13 @@ h2.rg-sd__head-title,
   max-width: 60ch;
   margin: 0.6rem auto 0;
 }
+.rg-sd__head-sub a {
+  color: #ad6331;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.rg-sd__head-sub a:hover { color: #955529; }
 
 /* ---- Stappen: 3 genummerde kolommen ---- */
 .rg-sd__steps {
