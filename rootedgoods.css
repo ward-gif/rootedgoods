@@ -6780,6 +6780,19 @@ h1.rg-contact-head__title,
 .rg-contact-head .rg-team {
   margin-top: 1.4rem;
 }
+/* Subtiele secundaire route: kennismakingsgesprek plannen (cal.com) */
+.rg-contact-head__alt {
+  margin: 1.1rem auto 0;
+  font-size: 0.9rem;
+  color: #5d6d55;
+}
+.rg-contact-head__alt a {
+  color: #ad6331;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.rg-contact-head__alt a:hover { color: #955529; }
 /* Formulier strak onder de kop: minder ruimte ertussen */
 .cms-block-form:has(#cms-form-contact) .cms-block-container {
   padding-top: 0.5rem !important;
