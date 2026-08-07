@@ -118,42 +118,28 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 1.5 Cal.com kennismakingsgesprek — popup, LUI + programmatisch
- * Links naar cal.com/rootedgoods/kennismakingsgesprek openen een cal.com-popup
- * i.p.v. ernaartoe te navigeren. We gebruiken NIET cal's data-cal-link
- * auto-handler (die opende de popup ÉN volgde de href -> dubbel venster).
- * In plaats daarvan: bij klik zelf preventDefault + de popup programmatisch
- * openen (cal's queue vangt de klik op als embed.js nog laadt). embed.js laadt
- * lui (hover/focus/idle) -> geen CWV-impact. De href blijft als no-JS-fallback
- * (opent dan gewoon de cal.com-pagina). */
+/* ---- 1.5 Cal.com kennismakingsgesprek — standaard element-click pop-up
+ * Cal's standaard embed: elementen met data-cal-link openen de pop-up en cal
+ * onderdrukt de navigatie zelf (het eerdere dubbele venster kwam puur door
+ * target="_blank", die is weg). Enige toevoeging: embed.js LUI laden
+ * (hover/focus/idle) i.p.v. op elke paint, en alleen op pagina's met zo'n knop
+ * -> geen CWV-impact. De href blijft als fallback (opent de cal.com-pagina als
+ * embed.js nog niet geladen is bij de klik). */
 (function () {
-  var NS = "kennismakingsgesprek", SLUG = "rootedgoods/kennismakingsgesprek";
-  var triggers = document.querySelectorAll('a[href*="cal.com/rootedgoods/kennismakingsgesprek"]');
-  if (!triggers.length) return;   // geen cal-knop -> niets laden
+  if (!document.querySelector('[data-cal-link]')) return;
   var started = false;
   function start() {
     if (started) return; started = true;
     (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", NS, { origin: "https://app.cal.com" });
+    Cal("init", "kennismakingsgesprek", { origin: "https://app.cal.com" });
     Cal.config = Cal.config || {};
     Cal.config.forwardQueryParams = true;
-    Cal.ns[NS]("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#ad6331" } }, hideEventTypeDetails: false, layout: "week_view" });
+    Cal.ns.kennismakingsgesprek("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#ad6331" } }, hideEventTypeDetails: false, layout: "week_view" });
   }
-  triggers.forEach(function (el) {
-    // Vroeg initten zodat de popup snel klaarstaat bij klik.
+  document.querySelectorAll('[data-cal-link]').forEach(function (el) {
     el.addEventListener('pointerenter', start, { once: true });
     el.addEventListener('focus', start, { once: true });
-    el.addEventListener('click', function (e) {
-      e.preventDefault();               // géén navigatie -> geen dubbel venster
-      start();
-      try {
-        Cal.ns[NS]("modal", { calLink: SLUG, config: { layout: "week_view", theme: "light" } });
-      } catch (err) {
-        window.location.href = el.href;  // laatste redmiddel
-      }
-    });
   });
-  // Fallback-init op idle (mocht niemand hoveren, bv. mobiel).
   if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 4000 });
   else window.addEventListener('load', function () { setTimeout(start, 1500); });
 })();
