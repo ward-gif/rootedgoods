@@ -1,23 +1,26 @@
 <!-- ============================================================
      CONTACT-KOP — plak dit als CMS HTML-blok BOVEN het contactformulier.
-     Vervangt de losse "Contact"-tekstkop: gecentreerde header met het
-     team-blokje (Richard, Ward & Marco) erin. Strakke ruimte eronder zodat
-     het formulier snel in beeld komt.
+     Twee zones: (1) boodschap (eyebrow + titel + sub met FAQ-link),
+     (2) een afgebakend team-kaartje (Richard, Ward & Marco + status +
+     kennismakingsgesprek). Zo staan de elementen niet meer los gestapeld.
      ============================================================ -->
 <div class="rg-contact-head">
   <p class="rg-contact-head__eyebrow">Wij helpen je graag</p>
   <h1 class="rg-contact-head__title">Neem contact op</h1>
   <p class="rg-contact-head__sub">Stel je vraag via het formulier, of bekijk eerst de <a href="/faq">veelgestelde&nbsp;vragen</a>.</p>
-  <div class="rg-team">
-    <span class="rg-team__avatars">
-      <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="Richard" width="48" height="48">
-      <img src="/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg" alt="Ward" width="48" height="48">
-      <img src="/media/9c/98/c5/1786085851/Marco%20afbeelding.jpg" alt="Marco" width="48" height="48">
-    </span>
-    <span class="rg-team__text">
-      <span class="rg-team__title">Richard, Ward <span class="rg-amp">&amp;</span> Marco</span>
-      <span class="rg-team__status"><span class="rg-team__dot"></span>Meestal binnen 24 uur persoonlijk antwoord</span>
-    </span>
+
+  <div class="rg-contact-head__card">
+    <div class="rg-team">
+      <span class="rg-team__avatars">
+        <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="Richard" width="48" height="48">
+        <img src="/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg" alt="Ward" width="48" height="48">
+        <img src="/media/9c/98/c5/1786085851/Marco%20afbeelding.jpg" alt="Marco" width="48" height="48">
+      </span>
+      <span class="rg-team__text">
+        <span class="rg-team__title">Richard, Ward <span class="rg-amp">&amp;</span> Marco</span>
+        <span class="rg-team__status"><span class="rg-team__dot"></span>Meestal binnen 24 uur persoonlijk antwoord</span>
+      </span>
+    </div>
+    <a class="btn btn-outline-primary" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0">Plan een kennismakingsgesprek</a>
   </div>
-  <p class="rg-contact-head__alt">Liever persoonlijk contact? <a class="btn btn-outline-primary" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0">Plan een kennismakingsgesprek</a></p>
 </div>
