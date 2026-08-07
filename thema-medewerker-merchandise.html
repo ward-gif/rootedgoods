@@ -1,13 +1,15 @@
 <!-- ============================================================
      THEMA-PAGINA: Medewerker Merchandise
      Plak dit als CMS-content op de thema-categoriepagina (/medewerker-merchandise).
-     Opbouw: page-hero -> [Shopware product-slider] -> block-title +
-     feature-row -> 3 services (spec-cards) -> eind-CTA.
+     Opbouw (elke sectie heeft een <!-- ===== NAAM ===== --> marker hieronder):
+     HERO -> [PRODUCT-SLIDER] -> INTRO + FEATURE-RIJ -> VERGELIJK/VERHAAL
+     -> FAQ -> SERVICES -> EIND-CTA.
      - Vervang alle src="..." door echte beelden (relatief /media/... pad).
      - "PRODUCT SLIDER": plaats daar het Shopware product-slider-element
        (dit HTML-blok bevat het niet; dat is een CMS-element).
      - Klantlogo's in de hero: vervang de 4 placeholders of verwijder het blok.
      ============================================================ -->
+<!-- ===== HERO ===== -->
 <section class="rg-page-hero">
   <div class="rg-page-hero__copy">
     <h1 class="rg-page-hero__title">Medewerker Merchandise</h1>
@@ -32,6 +34,7 @@
 
 <!-- ===== PRODUCT SLIDER: plaats hier het Shopware product-slider-element (thema medewerker-merchandise) ===== -->
 
+<!-- ===== INTRO + FEATURE-RIJ ===== -->
 <div class="rg-block-title">
   <h2 class="rg-block-title__title">Merch die mensen echt gebruiken.</h2>
   <p class="rg-block-title__sub">Goede merch is geen weggevertje maar iets waar je team dagelijks plezier van heeft.</p>
@@ -122,7 +125,7 @@
       <summary>Hoe lang duurt de levertijd?</summary>
       <p>Levertijden zijn altijd productafhankelijk. Bij het opstellen van je offerte laten we een realistische levertijd zien en denken we met je mee over wat haalbaar is, zodat je niet voor verrassingen komt te staan.</p>
     </details>
-    <div class="rg-spec-cta"><a href="/algemeen/faq/" class="btn btn-outline-primary">Bekijk alle veelgestelde vragen</a></div>
+    <div class="rg-spec-cta"><a href="/faq" class="btn btn-outline-primary">Bekijk alle veelgestelde vragen</a></div>
   </div>
 
   <!-- ===== SERVICES & ONTZORGING (3 spec-cards) ===== -->
