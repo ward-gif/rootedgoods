@@ -6786,13 +6786,16 @@ h1.rg-contact-head__title,
   font-size: 0.9rem;
   color: #5d6d55;
 }
-.rg-contact-head__alt a {
+/* Plain-link variant (offerte-kop): subtiel onderstreept. De btn-variant
+   (contact-kop) krijgt via :not(.btn) z'n eigen tekstlink-met-pijl-stijl. */
+.rg-contact-head__alt a:not(.btn) {
   color: #ad6331;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.rg-contact-head__alt a:hover { color: #955529; }
+.rg-contact-head__alt a:not(.btn):hover { color: #955529; }
+.rg-contact-head__alt .btn { vertical-align: middle; }
 /* Formulier strak onder de kop: minder ruimte ertussen */
 .cms-block-form:has(#cms-form-contact) .cms-block-container {
   padding-top: 0.5rem !important;
