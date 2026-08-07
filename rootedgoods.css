@@ -6730,3 +6730,50 @@ h2.rg-faq-cat,
   box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.2);
   flex: none;
 }
+
+/* ============================================================
+   CONTACT-KOP (.rg-contact-head) — gecentreerde header + team-avatars
+   ============================================================
+   Eén blok boven het contactformulier: eyebrow + Playfair-kop + sub +
+   gecentreerd team-blokje. Strakke bottom-padding zodat het formulier
+   snel in beeld komt. */
+.rg-contact-head {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.75rem) 20px 0.5rem;
+}
+.rg-contact-head__eyebrow {
+  margin: 0 0 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #CA853F;
+}
+h1.rg-contact-head__title,
+.cms-element-text h1.rg-contact-head__title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 800 !important;
+  color: #2d4528 !important;
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem) !important;
+  line-height: 1.1 !important;
+  margin: 0 0 0.7rem !important;
+}
+.rg-contact-head__sub {
+  color: #4a5a44;
+  font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 48ch;
+}
+.rg-contact-head__sub a { color: #ad6331; text-decoration: underline; text-underline-offset: 2px; }
+/* Team-blok gecentreerd onder de sub (inline-flex centert via text-align) */
+.rg-contact-head .rg-team {
+  margin-top: 1.4rem;
+}
+/* Formulier strak onder de kop: minder ruimte ertussen */
+.cms-block-form:has(#cms-form-contact) .cms-block-container {
+  padding-top: 0.5rem !important;
+}
