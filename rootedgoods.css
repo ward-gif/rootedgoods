@@ -6912,3 +6912,6 @@ h1.rg-contact-head__title,
   border: 1px solid #EAE3D7 !important;
 }
 .block-cioform-container .form-control:hover:not(:focus) { border-color: #d8cfc0 !important; }
+
+/* Cal.com-triggers hebben geen href (klik = alleen de popup) -> muis-cursor. */
+[data-cal-link] { cursor: pointer; }
