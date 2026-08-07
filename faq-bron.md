@@ -21,17 +21,17 @@
 
 ### Hoe kan je een bestelling plaatsen bij Rooted Goods?
 → full-service, algemeen, faq · (Ward)
-Blader door onze **relatiegeschenken** en kies de producten die je aanspreken. Geef je gewenste kleuren door en upload je logo. Vraag je een offerte aan? Dan stelt ons team binnen 24 uur een offerte samen, inclusief een persoonlijk productontwerp. Dit kost je niks, en je kunt je bestelling tot het laatste moment nog aanpassen of annuleren. Bestellen bij Rooted Goods maken we je zo makkelijk mogelijk — zonder gedoe.
+Blader door onze **relatiegeschenken** en kies de producten die je aanspreken. Geef je gewenste kleuren door en upload je logo. Vraag je een offerte aan? Dan stelt ons team binnen 24 uur een offerte samen, inclusief een persoonlijk productontwerp. Dit kost je niks, en je kunt je bestelling tot het laatste moment nog aanpassen of annuleren. Bestellen bij Rooted Goods maken we je zo makkelijk mogelijk, zonder gedoe.
 
 
 ### Moet ik het hele traject afnemen of kan het ook deels?
 → full-service, faq · [LIVE: full-service]
-Beide kan. Wil je alles uit handen geven, dan regelen we het complete traject. Heb je maar één schakel nodig — alleen personalisatie, opslag of verzending — dan kan dat ook los.
+Beide kan. Wil je alles uit handen geven, dan regelen we het complete traject. Heb je maar één schakel nodig, bijvoorbeeld alleen personalisatie, opslag of verzending? Dan kan dat ook los.
 
 
 ### Is er een minimale afname of bestelhoeveelheid?
 → full-service, warehousing, algemeen, faq · [LIVE: warehousing] + (Ward)
-Dat verschilt per product. Er is geen vaste minimale afname — we kijken samen naar je doel, budget en aantallen wat het beste past. Grotere oplages in één productierun zijn wel voordeliger per stuk.
+Dat verschilt per product. Er is geen vaste minimale afname. We kijken samen naar je doel, budget en aantallen wat het beste past. Grotere oplages in één productierun zijn wel voordeliger per stuk.
 
 
 ### Kan ik eerst een sample ontvangen voordat ik besluit?
@@ -46,7 +46,7 @@ Zolang de productie nog niet gestart is, kan dat. Zodra je de digitale drukproef
 
 ### Kunnen jullie een compleet pakket of geschenkset voor me samenstellen?
 → thema's, full-service, faq
-Graag. Vertel ons het doel, de doelgroep en het budget, dan stellen we een passend **relatiegeschenk of geschenkset** samen — van één product tot een volledig verzorgd pakket.
+Graag. Vertel ons het doel, de doelgroep en het budget, dan stellen we een passend **relatiegeschenk of geschenkset** samen, van één product tot een volledig verzorgd pakket.
 
 
 ---
@@ -77,7 +77,7 @@ Dat hangt af van het product, je logo en het gewenste effect. We adviseren je gr
 
 ### Kan mijn logo in meerdere kleuren (PMS-match)?
 → personalisatie, faq · [LIVE: personalisatie]
-Ja. Bij bedrukken werken we in één of meerdere kleuren, met een PMS-match op je huisstijl. Bij gravure en borduren gelden andere mogelijkheden — dat bespreken we vooraf.
+Ja. Bij bedrukken werken we in één of meerdere kleuren, met een PMS-match op je huisstijl. Bij gravure en borduren gelden andere mogelijkheden. Dat bespreken we vooraf.
 
 
 ### Kan mijn logo op elk product?
@@ -115,7 +115,7 @@ Dat hangt af van producten, personalisatie en oplage. Bij je offerte krijg je ee
 
 ### Waar worden jullie producten gemaakt?
 → made-in-nl (thema), full-service, algemeen, faq · (Ward) + [LIVE: full-service]
-Onze **relatiegeschenken** worden geproduceerd bij premium partners in **Europa**. Zo houden we grip op kwaliteit, doorlooptijd en herkomst, in plaats van een schakel te zijn in een lange, onduidelijke keten. We zijn er eerlijk over: waar iets vandaan komt vertellen we transparant — geassembleerd en gepersonaliseerd doen we in Europa.
+Onze **relatiegeschenken** worden geproduceerd bij premium partners in **Europa**. Zo houden we grip op kwaliteit, doorlooptijd en herkomst, in plaats van een schakel te zijn in een lange, onduidelijke keten. We zijn er eerlijk over: waar iets vandaan komt vertellen we transparant. Geassembleerd en gepersonaliseerd doen we in Europa.
 
 
 ### Zijn jullie producten duurzaam of milieuvriendelijk geproduceerd?
@@ -141,7 +141,7 @@ We verzenden door heel Europa. Voor bestemmingen buiten Europa kijken we graag m
 
 ### Kan ik naar individuele huis- én kantooradressen sturen?
 → verzending, faq · [LIVE: verzending] + (Ward)
-Ja. We leveren zowel op kantooradressen als rechtstreeks bij individuele ontvangers — ideaal voor thuiswerkende teams of geschenken die als verrassing thuis mogen komen. Ook internationaal.
+Ja. We leveren zowel op kantooradressen als rechtstreeks bij individuele ontvangers, ideaal voor thuiswerkende teams of geschenken die als verrassing thuis mogen komen. Ook internationaal.
 
 
 ### Hoe lever ik de adressen aan?
@@ -151,12 +151,12 @@ Het makkelijkst met een eenvoudige lijst (bijvoorbeeld Excel) met naam en adres 
 
 ### Bieden jullie opslag aan, zodat ik gespreid kan laten leveren?
 → warehousing, verzending, faq · (Ward) + [LIVE: warehousing/verzending]
-Ja. We kunnen je bestelling voor je opslaan en op momenten die jij aangeeft laten uitleveren — bijvoorbeeld per nieuwe medewerker (onboarding) of per event. Zo hoef je niet alles in één keer af te nemen.
+Ja. We kunnen je bestelling voor je opslaan en op momenten die jij aangeeft laten uitleveren, bijvoorbeeld per nieuwe medewerker (onboarding) of per event. Zo hoef je niet alles in één keer af te nemen.
 
 
 ### Wat kost opslag bij Rooted Goods?
 → warehousing, faq · [LIVE: warehousing]
-Dat hangt af van het volume en hoelang je voorraad bij ons ligt. In je offerte zie je precies wat opslag en verzending kosten — geen verrassingen achteraf.
+Dat hangt af van het volume en hoelang je voorraad bij ons ligt. In je offerte zie je precies wat opslag en verzending kosten. Geen verrassingen achteraf.
 
 
 ### Kan ik ook eigen producten bij jullie laten opslaan?
@@ -171,7 +171,7 @@ Meestal verlaten pakketten binnen twee werkdagen ons magazijn. Grotere verzendin
 
 ### Verzorgen jullie ook de verpakking en een persoonlijk kaartje?
 → verzending, full-service, faq
-Ja. We pakken elk geschenk verzorgd in — desgewenst met een persoonlijk kaartje of boodschap per ontvanger, in duurzame verpakking.
+Ja. We pakken elk geschenk verzorgd in, desgewenst met een persoonlijk kaartje of boodschap per ontvanger, in duurzame verpakking.
 
 
 ### Krijg ik track & trace van mijn zending?
@@ -208,23 +208,23 @@ Ja. We werken altijd op factuur. In je offerte en op de factuur staat alles held
 
 ### Passen jullie ook bij kleinere bestellingen, of alleen bij grote bedrijven?
 → full-service, algemeen, faq · (Ward)
-Beide. We werken net zo goed met een klein team als met grote organisaties aan **zakelijke geschenken** — de aanpak (persoonlijk, full-service) blijft hetzelfde.
+Beide. We werken net zo goed met een klein team als met grote organisaties aan **zakelijke geschenken**. De aanpak (persoonlijk, full-service) blijft hetzelfde.
 
 
-### Ik weet niet welk product bij mijn doelgroep past — kunnen jullie meedenken?
+### Ik weet niet welk product bij mijn doelgroep past, kunnen jullie meedenken?
 → full-service, thema's, algemeen, faq · (Ward) + [LIVE: full-service]
-Graag zelfs. Vertel ons voor wie het is en wat je wilt bereiken, dan denken we met je mee over welk **relatiegeschenk** écht past — in plaats van je een catalogus in te sturen. De keuze maak je samen met ons; niets gaat in productie zonder jouw akkoord.
+Graag zelfs. Vertel ons voor wie het is en wat je wilt bereiken, dan denken we met je mee over welk **relatiegeschenk** écht past, in plaats van je een catalogus in te sturen. De keuze maak je samen met ons; niets gaat in productie zonder jouw akkoord.
 *(Vervangt de losse full-service-vraag "Kan ik meedenken over de productselectie?" — samengevoegd.)*
 
 
 ### Hoe ver van tevoren moet ik bestellen (bijv. voor kerst)?
 → eindejaarsgeschenken (thema), algemeen, faq · (Ward)
-Levertijden zijn altijd productafhankelijk. Vraag je bestelling op tijd aan, dan denken we met je mee over wat haalbaar is — hoe eerder, hoe meer keuze en rust. Voor **kerstpakketten** en andere piekmomenten adviseren we ruim van tevoren te starten.
+Levertijden zijn altijd productafhankelijk. Vraag je bestelling op tijd aan, dan denken we met je mee over wat haalbaar is. Hoe eerder, hoe meer keuze en rust. Voor **kerstpakketten** en andere piekmomenten adviseren we ruim van tevoren te starten.
 
 
 ### Heb ik één vast aanspreekpunt?
 → full-service, algemeen, faq
-Ja. Van eerste idee tot bezorging heb je één vaste contactpersoon die het hele traject overziet — geen doorschuiven tussen afdelingen.
+Ja. Van eerste idee tot bezorging heb je één vaste contactpersoon die het hele traject overziet. Geen doorschuiven tussen afdelingen.
 
 
 ### [LATER] Kunnen jullie voorbeelden van eerdere projecten laten zien?
