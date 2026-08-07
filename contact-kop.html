@@ -1,26 +1,31 @@
 <!-- ============================================================
      CONTACT-KOP — plak dit als CMS HTML-blok BOVEN het contactformulier.
-     Twee zones: (1) boodschap (eyebrow + titel + sub met FAQ-link),
-     (2) een afgebakend team-kaartje (Richard, Ward & Marco + status +
-     kennismakingsgesprek). Zo staan de elementen niet meer los gestapeld.
+     Opbouw: kleine team-chip bovenaan (avatars + reactietijd) -> titel + sub
+     (met FAQ-link) -> belafspraak-kaartje onderaan (hele kaart opent de
+     cal.com-popup). Vervang de 2 placeholder-foto's door echte Ward/Marco.
      ============================================================ -->
 <div class="rg-contact-head">
-  <p class="rg-contact-head__eyebrow">Wij helpen je graag</p>
+  <div class="rg-contact-head__team-chip">
+    <span class="rg-contact-head__team-avatars">
+      <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="Richard" width="34" height="34">
+      <img src="/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg" alt="Ward" width="34" height="34">
+      <img src="/media/9c/98/c5/1786085851/Marco%20afbeelding.jpg" alt="Marco" width="34" height="34">
+    </span>
+    <span class="rg-contact-head__team-status"><span class="rg-team__dot"></span>Meestal binnen 24 uur reactie</span>
+  </div>
+
   <h1 class="rg-contact-head__title">Neem contact op</h1>
   <p class="rg-contact-head__sub">Stel je vraag via het formulier, of bekijk eerst de <a href="/faq">veelgestelde&nbsp;vragen</a>.</p>
 
-  <div class="rg-contact-head__card">
-    <div class="rg-team">
-      <span class="rg-team__avatars">
-        <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="Richard" width="48" height="48">
-        <img src="/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg" alt="Ward" width="48" height="48">
-        <img src="/media/9c/98/c5/1786085851/Marco%20afbeelding.jpg" alt="Marco" width="48" height="48">
-      </span>
-      <span class="rg-team__text">
-        <span class="rg-team__title">Richard, Ward <span class="rg-amp">&amp;</span> Marco</span>
-        <span class="rg-team__status"><span class="rg-team__dot"></span>Meestal binnen 24 uur persoonlijk antwoord</span>
-      </span>
-    </div>
-    <a class="btn btn-outline-primary" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0">Plan een kennismaking</a>
-  </div>
+  <a class="rg-contact-head__callcard" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0" aria-label="Plan een belafspraak">
+    <span class="rg-contact-head__callcard-avatars">
+      <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="40" height="40">
+      <img src="/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg" alt="" width="40" height="40">
+    </span>
+    <span class="rg-contact-head__callcard-body">
+      <span class="rg-contact-head__callcard-title">Plan een belafspraak</span>
+      <span class="rg-contact-head__callcard-sub">Even bellen om te kijken hoe we je kunnen helpen.</span>
+    </span>
+    <span class="rg-contact-head__callcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
 </div>
