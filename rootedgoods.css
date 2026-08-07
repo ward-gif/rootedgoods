@@ -6799,17 +6799,20 @@ h1.rg-contact-head__title,
   box-shadow: 0 12px 32px -26px rgba(45, 69, 40, 0.4);
   text-align: left;
 }
+.rg-contact-head__card { flex-wrap: nowrap; }   /* desktop: team en knop naast elkaar */
 .rg-contact-head__card .rg-team { margin: 0 !important; }
 /* Scheidingslijn tussen team en kennismaking-knop (desktop) */
 .rg-contact-head__card .btn {
+  flex: none;
   align-self: stretch;
   display: inline-flex;
   align-items: center;
   padding-left: 1.5rem !important;
   border-left: 1px solid #EAE3D7;
+  white-space: nowrap;
 }
-@media (max-width: 560px) {
-  .rg-contact-head__card { flex-direction: column; gap: 0.85rem; }
+@media (max-width: 600px) {
+  .rg-contact-head__card { flex-direction: column; flex-wrap: wrap; gap: 0.85rem; }
   .rg-contact-head__card .btn {
     padding-left: 5px !important;
     border-left: none;
