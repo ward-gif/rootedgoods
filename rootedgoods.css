@@ -6766,23 +6766,24 @@ h1.rg-contact-head__title,
   color: #2d4528 !important;
   font-size: clamp(2rem, 1.4rem + 2vw, 3rem) !important;
   line-height: 1.1 !important;
-  margin: 0 0 0.7rem !important;
+  margin: 0 0 0.55rem !important;
 }
 .rg-contact-head__sub {
   color: #4a5a44;
   font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem);
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0 auto;
-  max-width: 48ch;
+  max-width: 42ch;
+  text-wrap: balance;   /* evenwichtige regels i.p.v. rafelig */
 }
 .rg-contact-head__sub a { color: #ad6331; text-decoration: underline; text-underline-offset: 2px; }
 /* Team-blok gecentreerd onder de sub (inline-flex centert via text-align) */
 .rg-contact-head .rg-team {
-  margin-top: 1.4rem;
+  margin-top: 1.1rem;
 }
 /* Subtiele secundaire route: kennismakingsgesprek plannen (cal.com) */
 .rg-contact-head__alt {
-  margin: 1.1rem auto 0;
+  margin: 0.85rem auto 0;
   font-size: 0.9rem;
   color: #5d6d55;
 }
