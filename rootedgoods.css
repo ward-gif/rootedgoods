@@ -7122,3 +7122,119 @@ h1.rg-contact-head__title,
   .rg-cform__field { grid-column: 1 / -1 !important; }
   .rg-cform__submit { width: 100%; }
 }
+
+/* ============================================================
+   41. EDITORIAL SYSTEEM (globaal) — CSS-only, geen re-paste
+   ------------------------------------------------------------
+   Doel: site-breed van 'net-AI' naar redactioneel. Deze sectie staat
+   BEWUST achteraan zodat 'ie via de cascade wint van de oudere,
+   per-component gescopete waarden. Stap 1 = tokens + typografie +
+   eyebrow-signature. Depth (radius/shadow), asymmetrie en de
+   vertakkende-hairline-scheiding volgen in stap 2.
+   ============================================================ */
+:root{
+  --rg-green:#2d4528; --rg-green-soft:#4a5a44; --rg-green-deep:#20301c;
+  --rg-cognac:#ad6331; --rg-cognac-deep:#955529; --rg-cognac-light:#ca853f;
+  --rg-peach:#e9c9a9; --rg-cream:#f7f5f2; --rg-sand:#eae3d7; --rg-soft:#5d6d55;
+  --rg-muted:#8c857a; --rg-ink:#2c2a26;
+  /* radius-schaal (3) */
+  --rg-r-fn:10px; --rg-r-xp:20px; --rg-r-pill:999px;
+  /* shadow-schaal (3), groen-getint */
+  --rg-sh-rest:0 1px 0 rgba(45,69,40,.04);
+  --rg-sh-soft:0 12px 28px -20px rgba(45,69,40,.38);
+  --rg-sh-deep:0 26px 50px -30px rgba(45,69,40,.45);
+  /* niet-lineaire spacing */
+  --rg-e1:.5rem; --rg-e2:.85rem; --rg-e3:1.35rem; --rg-e4:2.25rem;
+  --rg-e5:3.75rem; --rg-e6:6rem;
+  /* cognac hairline (signature) */
+  --rg-hair:rgba(173,99,49,.55);
+}
+
+/* ---- 41.1 DISPLAY-koppen: groot, strak getrackt, optisch gecorrigeerd.
+   Gewicht bewust 700 (Playfair 800 breekt op groot formaat, zie sectie 38);
+   de GROOTTE + tracking doen het editorial-werk. ---- */
+h1.rgh__title, .rgh__title,
+.rg-hero-v2__title, h1.rg-hero-v2__title,
+.rg-hero__title, h1.rg-hero__title,
+.rg-page-hero__title, h1.rg-page-hero__title,
+.rg-sd__title, h1.rg-sd__title,
+.rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title,
+.rg-endcta__title, h2.rg-endcta__title{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  letter-spacing:-.021em !important;
+  line-height:1.0 !important;
+  color:var(--rg-green) !important;
+  text-wrap:balance;
+}
+/* Per-kop groottes: fors editorial, met behoud van nette line-wraps */
+.rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem+3.6vw,4.4rem) !important; }
+.rgh__title, h1.rgh__title{ font-size:clamp(2.6rem,1.2rem+3.6vw,4.4rem) !important; }
+.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.5rem,1.3rem+3.2vw,4.2rem) !important; }
+.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.5rem,1.3rem+3.2vw,4.2rem) !important; }
+.rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title{ font-size:clamp(2.6rem,1.3rem+3.6vw,4.6rem) !important; }
+.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem+3vw,4rem) !important; }
+/* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
+.rg-hero-v2__title em, .rgh__title em, .rg-sd__title em,
+.rg-statement__title em, .rg-endcta__title em, .rg-page-hero__title em{
+  font-style:italic !important; font-weight:600 !important;
+  color:var(--rg-cognac-light) !important; letter-spacing:-.01em !important;
+}
+/* Hero-v2: de 20ch-cap uit sectie 38 knelt bij de grotere letter; ruimer. */
+@media (min-width:992px){
+  .rg-hero-v2__title, h1.rg-hero-v2__title{ max-width:18ch !important; }
+}
+
+/* ---- 41.2 SECTIE-koppen: één maat kleiner dan display, zelfde discipline ---- */
+.rg-sd__head-title, h2.rg-sd__head-title, .cms-element-text h2.rg-sd__head-title,
+.rg-block-title__title,
+.rg-feature-row__title, h2.rg-feature-row__title, .cms-element-text h2.rg-feature-row__title,
+.rg-sd__row-title, h2.rg-sd__row-title, .cms-element-text h2.rg-sd__row-title,
+.rg-compare__title, h2.rg-compare__title,
+.rg-story__title, h2.rg-story__title,
+.rg-cat-head__title, .rg-cat-heading,
+.rg-sd__panel-title, h2.rg-sd__panel-title,
+.rg-sd__ask-title, h2.rg-sd__ask-title,
+.rg-sd__journey-title, h2.rg-sd__journey-title,
+.rg-cta__title, h2.rg-cta__title,
+.rg-faq-title, h2.rg-faq-title{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  letter-spacing:-.018em !important;
+  line-height:1.08 !important;
+  color:var(--rg-green) !important;
+  text-wrap:balance;
+}
+.rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
+.rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em,
+.rg-compare__title em, .rg-cta__title em, .rg-story__title em{
+  font-style:italic !important; font-weight:600 !important; color:var(--rg-cognac-light) !important;
+}
+
+/* ---- 41.3 EYEBROW-signature: consistente kicker + hairline-aanzet ----
+   Universeel: rustige, strak getrackte oker-caps. */
+.rg-cat-head__eyebrow, .rg-compare__eyebrow, .rg-story__eyebrow, .rg-hero__eyebrow,
+.rg-statement__kicker, .rg-cta__eyebrow, .rgh__eyebrow, .rg-hero-v2__kicker,
+.rg-endcta__eyebrow, .rg-sd__eyebrow, .rg-page-hero__eyebrow{
+  font-family:'Montserrat',sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:.24em !important;
+  text-transform:uppercase !important;
+  color:var(--rg-cognac-light) !important;
+  font-size:clamp(.68rem,.62rem+.2vw,.76rem) !important;
+}
+/* Hairline-aanzet ALLEEN op links-uitgelijnde eyebrows (hero's + statement),
+   niet op de gecentreerde sectie-eyebrows (daar zou een linker-lijntje raar staan). */
+.rgh__eyebrow, .rg-hero-v2__kicker, .rg-hero__eyebrow, .rg-statement__kicker{
+  display:inline-flex !important; align-items:center; gap:.7rem;
+}
+.rgh__eyebrow::before, .rg-hero-v2__kicker::before,
+.rg-hero__eyebrow::before, .rg-statement__kicker::before{
+  content:""; width:34px; height:1px; background:var(--rg-cognac);
+  flex:none; display:inline-block;
+}
+/* eind-CTA-eyebrow staat gecentreerd -> hairline aan BEIDE zijden */
+.rg-endcta__eyebrow{ display:inline-flex !important; align-items:center; gap:.7rem; }
+.rg-endcta__eyebrow::before, .rg-endcta__eyebrow::after{
+  content:""; width:28px; height:1px; background:var(--rg-cognac); flex:none;
+}
