@@ -7311,3 +7311,27 @@ h1.rgh__title, .rgh__title,
 }
 .rg-spec-card__sub{ max-width:36ch !important; }
 .rg-spec-card{ border-radius:var(--rg-r-xp) !important; box-shadow:var(--rg-sh-soft) !important; }
+
+/* ---- 41.9 SECTIE-KOPPEN links — GERICHT (geen blanket) ----
+   Alleen links waar de kop direct boven (a) de card-soup/spec-grid staat, of
+   (b) de proces-sectie (steps/journey = de '2e sectie' op service-pagina's).
+   Al het andere (FAQ, techniek-tegels, statement-paneel) blijft gecentreerd
+   als bewust 'moment'. Chirurgisch via :has(+ ...), CSS-only. */
+.rg-sd__head:has(+ .rg-spec-grid),
+.rg-sd__head:has(+ .rg-sd__steps),
+.rg-sd__head:has(+ .rg-sd__journey){
+  text-align:left !important;
+  margin-left:0 !important;
+  max-width:none !important;
+}
+.rg-sd__head:has(+ .rg-spec-grid) .rg-sd__head-sub,
+.rg-sd__head:has(+ .rg-sd__steps) .rg-sd__head-sub,
+.rg-sd__head:has(+ .rg-sd__journey) .rg-sd__head-sub{
+  margin-left:0 !important; margin-right:0 !important;
+}
+/* Thema-pagina's gebruiken .rg-block-title (i.p.v. .rg-sd__head) boven de
+   card-soup -> zelfde linkse behandeling. Titel/sub centreren via margin:auto,
+   dus die expliciet op links zetten. */
+.rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
+.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
+.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
