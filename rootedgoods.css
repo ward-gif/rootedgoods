@@ -7352,3 +7352,19 @@ h1.rgh__title, .rgh__title,
   font-size:clamp(.68rem,.62rem+.2vw,.76rem) !important;
   margin:0 0 .7rem !important;
 }
+/* Zelfde container-rail als de spec-grid (identieke CSS) zodat de home-kop op
+   EXACT dezelfde linkerlijn staat als de tegels eronder — ze zijn aparte
+   CMS-blokken, dus alleen zo lijnen ze deterministisch uit. */
+@media (min-width:992px){
+  .cms-section:has(.rg-block-title--left) .cms-block-container,
+  .cms-section:has(.rg-block-title--left) .cms-block-container[style]{
+    max-width:none !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+  }
+  .rg-block-title--left{
+    max-width:1600px !important;
+    margin-left:auto !important; margin-right:auto !important;
+    padding-left:15px !important; padding-right:15px !important;
+  }
+}
