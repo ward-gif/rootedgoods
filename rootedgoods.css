@@ -7223,18 +7223,30 @@ h1.rgh__title, .rgh__title,
   color:var(--rg-cognac-light) !important;
   font-size:clamp(.68rem,.62rem+.2vw,.76rem) !important;
 }
-/* Hairline-aanzet ALLEEN op links-uitgelijnde eyebrows (hero's + statement),
-   niet op de gecentreerde sectie-eyebrows (daar zou een linker-lijntje raar staan). */
-.rgh__eyebrow, .rg-hero-v2__kicker, .rg-hero__eyebrow, .rg-statement__kicker{
-  display:inline-flex !important; align-items:center; gap:.7rem;
+/* Bewust GEEN lijntje/streepje vóór de eyebrow: dat "hairline + uppercase
+   kicker"-motief is zelf een template/AI-cliché. De eyebrow leunt op strakke
+   tracking + oker-kleur, verder niets. */
+
+/* ---- 41.4 ASYMMETRIE — redactionele kolommen i.p.v. 50/50 ----
+   Alleen >=992px (daaronder stapelt alles al naar 1fr). */
+@media (min-width:992px){
+  /* Service-hero: kop-dominante copy, ondersteunend beeld */
+  .rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr) !important; }
+  /* Feature-rijen: beeld groter dan tekst; flip-bewust omgedraaid zodat het
+     beeld ALTIJD de bredere kolom pakt (media wisselt van kant via order). */
+  .rg-sd__row{ grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr) !important; }
+  .rg-sd__row--flip{ grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr) !important; }
+  .rg-feature-row{ grid-template-columns:1.08fr 0.92fr !important; }
+  .rg-feature-row--reverse{ grid-template-columns:0.92fr 1.08fr !important; }
 }
-.rgh__eyebrow::before, .rg-hero-v2__kicker::before,
-.rg-hero__eyebrow::before, .rg-statement__kicker::before{
-  content:""; width:34px; height:1px; background:var(--rg-cognac);
-  flex:none; display:inline-block;
+
+/* ---- 41.5 DEPTH — lichtere, consistente diepte (hairline > slagschaduw) ---- */
+.rg-sd__hero-media img, .rg-sd__row-media img{
+  box-shadow:var(--rg-sh-soft) !important;
+  border-radius:var(--rg-r-xp) !important;
 }
-/* eind-CTA-eyebrow staat gecentreerd -> hairline aan BEIDE zijden */
-.rg-endcta__eyebrow{ display:inline-flex !important; align-items:center; gap:.7rem; }
-.rg-endcta__eyebrow::before, .rg-endcta__eyebrow::after{
-  content:""; width:28px; height:1px; background:var(--rg-cognac); flex:none;
+.rg-sd__tech-media{
+  box-shadow:none !important;
+  border:1px solid rgba(45,69,40,.10) !important;
+  border-radius:var(--rg-r-xp) !important;
 }
