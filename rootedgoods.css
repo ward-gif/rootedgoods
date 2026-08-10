@@ -7262,3 +7262,17 @@ h1.rgh__title, .rgh__title,
   background:var(--rg-sand);
   padding-block:clamp(2rem,1.5rem+2vw,4rem);
 }
+
+/* ---- 41.7 Opschoning — theme-tile 'pill-badge' eyebrow -> schone caps-label.
+   Een gevulde pill boven een kop is hetzelfde template/AI-cliché als het
+   eyebrow-lijntje; hier weg. Perzik-caps op de donkere tegel (leesbaar), zelfde
+   tracking als het eyebrow-systeem. CSS-only, geen re-paste. */
+.rg-theme-tile__eyebrow{
+  background:transparent !important;
+  padding:0 !important;
+  border-radius:0 !important;
+  color:var(--rg-peach) !important;
+  font-weight:700 !important;
+  letter-spacing:.22em !important;
+  font-size:.68rem !important;
+}
