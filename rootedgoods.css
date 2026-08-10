@@ -7250,3 +7250,15 @@ h1.rgh__title, .rgh__title,
   border:1px solid rgba(45,69,40,.10) !important;
   border-radius:var(--rg-r-xp) !important;
 }
+
+/* ---- 41.6 AARDLAGEN — warme sectie-gronden als signature ----
+   De 'Rooted'-identiteit zit in een ritme van warme lagen (crème basis <->
+   zand-band), niet in een lijn/badge. Full-bleed via .cms-section:has(),
+   het patroon dat de site al gebruikt. CSS-only, geen re-paste.
+   LET OP scope: alleen op homepage-UNIEKE root-klassen (rg-statement,
+   rg-cat-head) -> geen risico dat een single-block pagina (service/thema, waar
+   bv. rg-endcta ín hetzelfde blok zit) per ongeluk helemaal gekleurd wordt. */
+.cms-section:has(.rg-statement){
+  background:var(--rg-sand);
+  padding-block:clamp(2rem,1.5rem+2vw,4rem);
+}
