@@ -7366,6 +7366,9 @@ h1.rgh__title, .rgh__title,
   .rg-block-title--left{
     max-width:1600px !important;
     margin-left:auto !important; margin-right:auto !important;
-    padding-left:15px !important; padding-right:15px !important;
+    /* padding 0: de spec-grid heeft op desktop ook padding 0, dus zo staat de
+       kop-tekst op exact dezelfde lijn (80px) als de tegels + de rest van home.
+       (15px hier zou de kop 15px naar rechts duwen t.o.v. de tegels.) */
+    padding-left:0 !important; padding-right:0 !important;
   }
 }
