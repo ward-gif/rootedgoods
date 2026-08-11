@@ -2743,7 +2743,7 @@ body.is-ctl-product {
   padding: 0 15px;
   color: #2d4528;
   font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
 }
 @media (min-width: 576px) {
@@ -3098,7 +3098,7 @@ body.is-ctl-product {
   font-family: 'Playfair Display', serif !important;
   color: #ffffff !important;
   font-size: clamp(1.5rem, 1.2rem + 0.9vw, 2rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   margin: 0;
 }
@@ -3351,7 +3351,7 @@ body.is-ctl-product {
 
 .rg-feature-row__title {
   font-size: 2.25rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   color: #2d4528;
   margin: 0 0 2rem 0;
@@ -3550,7 +3550,7 @@ body.is-ctl-product {
 h2.rg-compare__title,
 .cms-element-text h2.rg-compare__title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
   line-height: 1.12 !important;
@@ -3646,7 +3646,7 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
 h2.rg-story__title,
 .cms-element-text h2.rg-story__title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.7rem, 1.3rem + 1.5vw, 2.6rem) !important;
   line-height: 1.12 !important;
@@ -4085,7 +4085,7 @@ h2.rg-statement__title,
 .cms-element-text h2.rg-statement__title {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: var(--rg-text-display) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 1.05 !important;
   letter-spacing: -0.02em;
   color: #2d4528 !important;
@@ -4394,7 +4394,7 @@ img.rg-europe-map__svg {
   font-family: 'Playfair Display', serif !important;
   color: #ffffff !important;
   font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.12;
   margin: 0 0 1rem 0;
 }
@@ -4797,7 +4797,7 @@ img.rg-europe-map__svg {
   font-family: 'Playfair Display', serif;
   color: #2d4528 !important;
   font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem) !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   margin: 0 0 0.4rem 0;
 }
 .rg-theme-intro {
@@ -4899,7 +4899,7 @@ img.rg-europe-map__svg {
   font-family: 'Playfair Display', serif !important;
   color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem) !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   line-height: 1.1 !important;
   margin: 0;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
@@ -5145,7 +5145,7 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   font-family: 'Playfair Display', serif !important;
   color: #2d4528 !important;
   font-size: clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem) !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   line-height: 1.15 !important;
   margin: 0 0 0.55rem 0;
   /* Voorkom mid-woord-afbreken ("Personalisat-ie") van de globale
@@ -5384,7 +5384,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 .rg-block-title__title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 800;
+  font-weight: 600;
   color: #2d4528;
   font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem);
   line-height: 1.15;
@@ -5704,7 +5704,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 h2.rg-endcta__title,
 .cms-element-text h2.rg-endcta__title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.2rem) !important;
   line-height: 1.06 !important;
@@ -6140,7 +6140,7 @@ h1.rg-sd__title em,
 h2.rg-sd__head-title,
 .cms-element-text h2.rg-sd__head-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
   line-height: 1.12 !important;
@@ -6184,7 +6184,7 @@ h2.rg-sd__head-title,
 h3.rg-sd__step-title,
 .cms-element-text h3.rg-sd__step-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.15rem, 1rem + 0.5vw, 1.45rem) !important;
   line-height: 1.2 !important;
@@ -6218,7 +6218,7 @@ h3.rg-sd__step-title,
 h2.rg-sd__row-title,
 .cms-element-text h2.rg-sd__row-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.3rem) !important;
   line-height: 1.12 !important;
@@ -6266,7 +6266,7 @@ h2.rg-sd__row-title,
 h2.rg-sd__panel-title,
 .cms-element-text h2.rg-sd__panel-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #ffffff !important;
   font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
   line-height: 1.12 !important;
@@ -6385,7 +6385,7 @@ h2.rg-sd__panel-title,
 h3.rg-sd__journey-title,
 .cms-element-text h3.rg-sd__journey-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem) !important;
   line-height: 1.2 !important;
@@ -6447,7 +6447,7 @@ h3.rg-sd__journey-title,
 h3.rg-sd__tech-title,
 .cms-element-text h3.rg-sd__tech-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem) !important;
   line-height: 1.15 !important;
@@ -6507,7 +6507,7 @@ h3.rg-sd__tech-title,
 h2.rg-sd__ask-title,
 .cms-element-text h2.rg-sd__ask-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem) !important;
   line-height: 1.15 !important;
@@ -6542,7 +6542,7 @@ h1.rg-faq-title,
 h2.rg-faq-cat,
 .cms-element-text h2.rg-faq-cat {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 600 !important;
   color: #2d4528 !important;
   font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.7rem) !important;
   line-height: 1.2 !important;
@@ -7205,7 +7205,7 @@ h1.rgh__title, .rgh__title,
 .rg-cta__title, h2.rg-cta__title,
 .rg-faq-title, h2.rg-faq-title{
   font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-weight:600 !important;
   letter-spacing:-.018em !important;
   line-height:1.08 !important;
   color:var(--rg-green) !important;
