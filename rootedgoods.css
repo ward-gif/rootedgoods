@@ -7335,6 +7335,12 @@ h1.rgh__title, .rgh__title,
 .rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
 .rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
 .rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
+/* Kop-padding op 0 zodat de kop-tekst op dezelfde lijn staat als de tegels
+   (spec-grid heeft op desktop padding 0). Geldt ook op thema, ook zonder de
+   --left-variant/eyebrow te plakken. */
+@media (min-width:992px){
+  .rg-block-title:has(+ .rg-spec-grid){ padding-left:0 !important; padding-right:0 !important; }
+}
 
 /* Home-variant: daar staat de spec-grid in een APART CMS-blok (geen adjacency),
    dus links via expliciete modifier + een eyebrow-class die de kop compleet
@@ -7357,8 +7363,10 @@ h1.rgh__title, .rgh__title,
    Kop + tegels zitten in dezelfde container -> beide schuiven mee en blijven
    onderling uitgelijnd. Wint van de +120-spec-regel omdat 'ie later staat. */
 @media (min-width:992px){
-  .cms-section:has(.rg-block-title--left) .cms-block-container,
-  .cms-section:has(.rg-block-title--left) .cms-block-container[style]{
+  /* +80 alleen op HOME (body.is-act-home): daar moet de sectie op de standaard
+     homepage-rail. Op thema/service houdt de sectie z'n eigen (spec-)rail. */
+  body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container,
+  body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container[style]{
     max-width:none !important;
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
