@@ -117,7 +117,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    veiligheidsplafond). Pas de 52px aan om groter/kleiner te maken. */
 .header-logo-main-link img,
 .header-logo img {
-  height: 52px !important;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
+  height: 45px !important;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
   width: auto !important;
   max-width: 340px;
 }
@@ -3321,7 +3321,7 @@ body.is-ctl-product {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding: 7rem 40px;   /* verticale padding: 2 opeenvolgende blokken -> ~14rem lucht ertussen */
+  padding: 4rem 40px;   /* alleen voor het losse .rg-feature-row-template (pagina-feature-blok.html); de homepage-blokken zijn native CMS -> zie sectie 30 */
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -3460,6 +3460,12 @@ body.is-ctl-product {
     /* +120 (i.p.v. +80) = 40px extra inspring -> gelijk aan de cat-tegels (270). */
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
+    /* Verticale padding fors omhoog t.o.v. Promidata's inline 50px 0 50px 0:
+       2 opeenvolgende feature-blokken -> ~180px lucht ertussen i.p.v. 100px.
+       Dit is de ECHTE hendel — deze homepage-blokken zijn native CMS-blokken
+       (.cms-block-container), niet het losse .rg-feature-row-grid. */
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
   }
 }
 
