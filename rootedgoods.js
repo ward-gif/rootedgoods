@@ -621,15 +621,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var copy = about.querySelector('.rg-about__hero2-copy');
   if (zoomWrap && map) zoomWrap.classList.add('is-zoom');
 
-  var paths = [].slice.call(about.querySelectorAll('.rg-about__seg path'));
-  paths.forEach(function (p) {
-    // pathLength=1 normaliseert: dash/offset werken dan ook correct bij
-    // preserveAspectRatio="none" (niet-uniforme schaling fragmenteerde de
-    // dash-pattern toen we getTotalLength gebruikten).
-    p.setAttribute('pathLength', '1');
-    p.style.strokeDasharray = '1 1';
-    p.style.strokeDashoffset = '1';
-  });
+  // Lijn-onthulling via clip-path op de svg (top -> bottom). Dash-technieken
+  // fragmenteren hier: non-scaling-stroke laat Chrome dashes in schermruimte
+  // interpreteren, wat botst met preserveAspectRatio="none".
+  var segs = [].slice.call(about.querySelectorAll('.rg-about__seg'));
+  segs.forEach(function (sv) { sv.style.clipPath = 'inset(0 0 100% 0)'; });
   var dots = [].slice.call(about.querySelectorAll('.rg-about__dot'));
   var bands = [].slice.call(about.querySelectorAll('.rg-about__band img'));
 
@@ -655,12 +651,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 2. route-lijn + stops
     var trigger = vh * 0.85;
-    paths.forEach(function (p) {
-      var r = p.closest('svg').getBoundingClientRect();
+    segs.forEach(function (sv) {
+      var r = sv.getBoundingClientRect();
       if (r.height === 0) return;
       var prog2 = (trigger - r.top) / r.height;
       prog2 = Math.max(0, Math.min(1, prog2));
-      p.style.strokeDashoffset = String(1 - prog2);
+      sv.style.clipPath = 'inset(0 0 ' + ((1 - prog2) * 100) + '% 0)';
     });
     dots.forEach(function (d) {
       if (d.getBoundingClientRect().top < trigger) d.classList.add('is-on');
