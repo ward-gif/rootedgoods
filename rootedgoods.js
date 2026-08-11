@@ -315,6 +315,39 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 2.1b Topbar USP-marquee (mobiel)
+ * Bouwt uit de 4 .top-bar-container USP's één scroll-track met een dubbele
+ * set (naadloze -50%-loop, zie .rg-usp-marquee in de CSS). Op mobiel (<992px)
+ * verbergt de CSS de statische containers en toont/animate de track; op
+ * desktop blijft de track verborgen en gebruiken we de statische rij.
+ * Idempotent + defensief: niets crasht als de topbar/USP's ontbreken. */
+document.addEventListener('DOMContentLoaded', function () {
+  var ext = document.querySelector('.top-bar-nav .top-bar-nav-extension');
+  if (!ext || document.querySelector('.rg-usp-marquee')) return;
+
+  // USP-inhoud uit container--1..4 (container--5 = utility-links, overslaan).
+  var usps = [];
+  ext.querySelectorAll('.top-bar-container').forEach(function (c) {
+    if (c.classList.contains('container--5')) return;
+    var html = c.innerHTML.trim();
+    if (html) usps.push(html);
+  });
+  if (!usps.length) return;
+
+  var track = document.createElement('div');
+  track.className = 'rg-usp-marquee';
+  track.setAttribute('aria-hidden', 'true');   // duplicaat van de statische rij -> uit de a11y-boom
+  // 2 kopieën: bij -50% valt kopie 2 exact op de startpositie van kopie 1.
+  usps.concat(usps).forEach(function (h) {
+    var span = document.createElement('span');
+    span.className = 'rg-usp-marquee__item';
+    span.innerHTML = h;
+    track.appendChild(span);
+  });
+  ext.parentNode.appendChild(track);   // in .top-bar-nav, naast de extension
+});
+
+
 /* ---- 2.2 Productslider — hele tegel klikbaar
  * Onderscheidt klik vs swipe via mousedown/click delta zodat sliden niet
  * per ongeluk navigatie triggert. */
@@ -563,4 +596,54 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) fit();
   });
+})();
+
+/* ============================================================
+   1.6 OVER ONS — "De Route van Rooted" (scroll-tekening)
+   ------------------------------------------------------------
+   Tekent de slinger-segmenten (.rg-about__seg path) terwijl je
+   scrolt (stroke-dashoffset) en zet stops (.rg-about__dot) 'aan'
+   zodra de lijn ze bereikt. Doet niets op pagina's zonder
+   .rg-about__route. Bij prefers-reduced-motion (of oude browsers)
+   blijft alles gewoon volledig getekend (de CSS-default).
+   ============================================================ */
+(function () {
+  var route = document.querySelector('.rg-about__route');
+  if (!route) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('requestAnimationFrame' in window)) return;
+
+  var paths = [].slice.call(route.querySelectorAll('.rg-about__seg path'));
+  var dots = [].slice.call(route.querySelectorAll('.rg-about__dot'));
+
+  // init: lijnen "oprollen" zodat ze getekend kunnen worden
+  paths.forEach(function (p) {
+    var L = p.getTotalLength();
+    p.style.strokeDasharray = L + ' ' + L;
+    p.style.strokeDashoffset = L;
+  });
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight;
+    var trigger = vh * 0.85; // lijn tekent tot ~85% van de viewport
+    paths.forEach(function (p) {
+      var r = p.closest('svg').getBoundingClientRect();
+      if (r.height === 0) return;
+      var prog = (trigger - r.top) / r.height;
+      prog = Math.max(0, Math.min(1, prog));
+      var L = p.getTotalLength();
+      p.style.strokeDashoffset = String(L * (1 - prog));
+    });
+    dots.forEach(function (d) {
+      if (d.getBoundingClientRect().top < trigger) d.classList.add('is-on');
+    });
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
 })();

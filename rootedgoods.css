@@ -289,7 +289,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 /* USP's + utility-links op één nette rij: de 4 USP-containers links bij
    elkaar met een gelijke tussenruimte (gap), de utility-links (container--5)
    naar de rechterrand geduwd. Vervangt de theme-default die de 5 containers
-   over de volle breedte uit elkaar trok (de "scheve" spacing). */
+   elk op 1/5 van de breedte zette (de "scheve"/uitgetrokken spacing). */
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
   padding: 0rem 2rem;
   display: flex !important;
@@ -298,11 +298,55 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   gap: clamp(1rem, 2.2vw, 2.4rem);   /* tussenruimte tussen de USP's; krimpt mee op smallere desktops */
   flex-wrap: nowrap;
 }
+/* DE ECHTE FIX: de theme geeft elke container 1/5 (grid/flex met gelijke
+   kolommen). flex:0 0 auto + width:auto dwingt ze op contentbreedte, zodat
+   de USP's netjes tegen elkaar staan met alleen de gap ertussen. */
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container {
-  padding: 3px 0;   /* horizontale ruimte komt nu volledig uit de gap hierboven */
+  padding: 3px 0;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
 }
 .top-bar-nav .top-bar-container.container--5 {
   margin-left: auto !important;   /* duwt Over ons / FAQ / Contact naar de rechterrand */
+}
+
+/* ---- Mobiel/tablet (<992px): topbar tonen als doorlopende USP-marquee ----
+   De topbar is standaard verborgen (.top-bar.d-none.d-lg-block). Op mobiel
+   tonen we 'm wél, maar de 5 statische containers passen niet -> we verbergen
+   die en laten een door JS gebouwde track (.rg-usp-marquee, dubbele set voor
+   een naadloze loop) automatisch scrollen. Utility-links (Over ons/FAQ/
+   Contact) vervallen op mobiel; die staan al in het menu. */
+.rg-usp-marquee { display: none; }   /* desktop: JS-track ongebruikt/verborgen */
+@media (max-width: 991px) {
+  .top-bar.d-none.d-lg-block { display: block !important; }   /* topbar un-hide */
+  .top-bar .container { max-width: 100% !important; padding: 0 !important; }
+  .top-bar-nav { overflow: hidden; }                          /* clipt de scrollende track */
+  .top-bar-nav .top-bar-nav-extension { display: none !important; }  /* statische containers weg */
+  .rg-usp-marquee {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 2.5rem;                     /* afstand tussen de USP's in de track */
+    padding: 6px 1rem;
+    animation: uspScroll 24s linear infinite;
+    will-change: transform;
+  }
+  .rg-usp-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    color: #fff;
+  }
+}
+@keyframes uspScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }   /* 2 kopieën -> -50% = naadloze loop */
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-usp-marquee { animation: none !important; }
 }
 
 /* Container 5 (Over ons / Cases / Contact links) rechts uitlijnen
@@ -7359,90 +7403,170 @@ h1.rgh__title, .rgh__title,
 }
 
 /* ============================================================
-   42. OVER ONS (.rg-about) — "De Route van Rooted"
+   42. OVER ONS (.rg-about) — "De Route van Rooted" v2
    ------------------------------------------------------------
-   Hero + verticale route-lijn met 5 genummerde stops. De lijn is de
-   signature (wortel die door het verhaal groeit); JS tekent 'm straks
-   al scrollend (sectie in rootedgoods.js). Zonder JS / met
-   prefers-reduced-motion staat de lijn volledig getekend.
+   Flyward-geinspireerd: hero met Europa-silhouet als uitsparing
+   (CSS-mask, europa-vlak.svg via jsDelivr), daarna een slingerende
+   cognac route-lijn (SVG-segmenten) langs genummerde stops, met
+   landcontouren (europa-contour.svg) als stille achtergrond.
+   JS (rootedgoods.js 1.6) tekent de lijn al scrollend; zonder JS of
+   met prefers-reduced-motion staat alles volledig getekend.
+   TE VERVANGEN bij echte beelden: het hero-beeld hieronder
+   (.rg-about__hero2-map background-image, nu dev-URL dummy).
    ============================================================ */
 .rg-about{
-  max-width:1600px;
-  margin:0 auto;
-  padding:clamp(1.5rem,1rem + 2vw,3rem) clamp(1rem,4vw,2.5rem) clamp(2.5rem,2rem + 2vw,4rem);
   font-family:'Montserrat',sans-serif;
   color:var(--rg-green-soft);
+  overflow:hidden; /* contour-bleed niet laten scrollen */
+}
+
+/* ---- HERO: Europa-uitsparing ---- */
+.rg-about__hero2{
+  position:relative;
+  min-height:clamp(30rem, 88vh, 52rem);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:clamp(2rem, 4vw, 4rem) clamp(1rem, 4vw, 2.5rem);
+}
+/* subtiel kaartraster over het hele hero-vlak */
+.rg-about__hero2::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    repeating-linear-gradient(to right, rgba(45,69,40,.05) 0 1px, transparent 1px 160px),
+    repeating-linear-gradient(to bottom, rgba(45,69,40,.05) 0 1px, transparent 1px 160px);
+  pointer-events:none;
+}
+/* het beeld in de Europa-vorm */
+.rg-about__hero2-map{
+  position:absolute;
+  inset:clamp(.5rem, 3vw, 2.5rem);
+  background:url("https://bambook.08.promidata.shop/media/5d/dd/b7/1785500254/Warehousing-2.jpg") center/cover no-repeat;
+  -webkit-mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-vlak.svg");
+          mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-vlak.svg");
+  -webkit-mask-size:contain; mask-size:contain;
+  -webkit-mask-position:center; mask-position:center;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  opacity:.9;
+}
+/* zachte overlay in de vorm zodat de titel leesbaar blijft */
+.rg-about__hero2-map::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(45,30,16,.28);
+}
+.rg-about__hero2-copy{
+  position:relative;
+  z-index:2;
+  max-width:34ch;
 }
 .rg-about__eyebrow{
-  font-family:'Montserrat',sans-serif;
-  font-weight:700;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--rg-cognac-light);
-  font-size:clamp(.68rem,.62rem + .2vw,.76rem);
-  margin:0 0 .9rem;
+  font-family:'Montserrat',sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:.24em !important;
+  text-transform:uppercase !important;
+  color:var(--rg-cognac-light) !important;
+  font-size:clamp(.68rem, .62rem + .2vw, .76rem) !important;
+  margin:0 0 .9rem !important;
 }
-.rg-about__hero{ padding:clamp(1.5rem,3vw,3.5rem) 0 clamp(3rem,6vw,5.5rem); max-width:62ch; }
 h1.rg-about__title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
   letter-spacing:-.021em !important;
-  line-height:1.0 !important;
+  line-height:1.02 !important;
   color:var(--rg-green) !important;
-  font-size:clamp(2.5rem,1.3rem + 3.4vw,4.3rem) !important;
+  font-size:clamp(2.6rem, 1.3rem + 3.8vw, 4.6rem) !important;
   margin:0 0 1.1rem !important;
   text-wrap:balance;
+  /* leesbaar over het beeld in de uitsparing */
+  text-shadow:0 1px 2px rgba(247,245,242,.9), 0 2px 28px rgba(247,245,242,.85);
 }
-h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac-light); letter-spacing:-.01em; }
-.rg-about__lede{ font-size:clamp(1.02rem,0.98rem + 0.25vw,1.15rem); line-height:1.6; margin:0; }
+h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac-light) !important; letter-spacing:-.01em; }
+.rg-about__lede{
+  font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
+  line-height:1.6 !important;
+  color:var(--rg-green) !important;
+  font-weight:500;
+  margin:0;
+  text-shadow:0 1px 2px rgba(247,245,242,.9), 0 2px 20px rgba(247,245,242,.85);
+}
 
-/* ---- Route-rail ---- */
+/* ---- ROUTE-container + landcontouren ---- */
 .rg-about__route{
-  --route-pad:clamp(3rem,6vw,5rem);
   position:relative;
-  padding-left:var(--route-pad);
+  padding:clamp(1rem, 2vw, 2rem) 0 clamp(2.5rem, 4vw, 4rem);
 }
-/* De lijn: statische hairline + een 'groei'-laag die JS straks schaalt.
-   .rg-about__line-fill krijgt via JS transform:scaleY(0->1). */
-.rg-about__route::before{
-  content:"";
+.rg-about__contour{
   position:absolute;
-  left:17px; top:8px; bottom:2rem;
-  width:1px;
-  background:rgba(173,99,49,.22);
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
 }
-.rg-about__line-fill{
-  position:absolute;
-  left:17px; top:8px; bottom:2rem;
-  width:1px;
-  background:var(--rg-cognac);
-  transform-origin:top;
-  transform:scaleY(1); /* zonder JS: volledig getekend */
+.rg-about__contour--a{ top:4%; left:-12%; width:64%; }
+.rg-about__contour--b{ bottom:8%; right:-18%; width:78%; }
+
+/* ---- Slinger-segmenten ---- */
+.rg-about__seg{
+  display:block;
+  width:min(1100px, 92%);
+  margin:0 auto;
+  height:clamp(110px, 20vw, 210px);
+  position:relative;
+  z-index:1;
+  overflow:visible;
 }
+.rg-about__seg path{
+  fill:none;
+  stroke:var(--rg-cognac);
+  stroke-width:2px;
+  stroke-linecap:round;
+  vector-effect:non-scaling-stroke;
+  opacity:.85;
+}
+
 /* ---- Stops ---- */
-.rg-about__stop{ position:relative; margin-bottom:clamp(4rem,8vw,7.5rem); }
-.rg-about__stop--last{ margin-bottom:clamp(1.5rem,3vw,3rem); }
-.rg-about__marker{
-  position:absolute;
-  left:calc(17px - var(--route-pad));
-  transform:translateX(-50%);
-  top:.1rem;
-  width:34px; height:34px;
-  border-radius:50%;
-  border:1px solid var(--rg-cognac);
-  background:var(--rg-cream);
-  color:var(--rg-cognac);
-  font-weight:700; font-size:.9rem;
-  display:flex; align-items:center; justify-content:center;
+.rg-about__stop{
+  position:relative;
+  width:min(1100px, 92%);
+  margin:0 auto;
+  z-index:1;
 }
-.rg-about__stop-eyebrow{
-  font-family:'Montserrat',sans-serif;
+.rg-about__dot{
+  position:absolute;
+  top:0; left:22%;
+  transform:translate(-50%,-50%);
+  width:44px; height:44px;
+  border-radius:50%;
+  background:var(--rg-green);
+  color:#fff;
   font-weight:700;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--rg-cognac-light);
-  font-size:clamp(.68rem,.62rem + .2vw,.76rem);
-  margin:0 0 .8rem;
+  font-size:1rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 0 6px var(--rg-cream);
+  transition:transform .35s ease, background .35s ease;
+}
+.rg-about__stop--right .rg-about__dot{ left:78%; }
+.rg-about__stop--wide .rg-about__dot{ left:50%; }
+/* JS zet .is-on zodra de lijn de stop bereikt */
+.rg-about__dot.is-on{ background:var(--rg-cognac); transform:translate(-50%,-50%) scale(1.12); }
+
+.rg-about__stop-inner{ max-width:560px; padding-top:2.4rem; }
+.rg-about__stop--right .rg-about__stop-inner{ margin-left:auto; text-align:left; }
+.rg-about__stop--wide .rg-about__stop-inner{ max-width:none; padding-top:3rem; }
+.rg-about__stop--wide .rg-about__stop-eyebrow,
+.rg-about__stop--wide > .rg-about__stop-inner > .rg-about__stop-title{ text-align:center; }
+.rg-about__stop--last{ margin-bottom:0; }
+
+.rg-about__stop-eyebrow{
+  font-family:'Montserrat',sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:.24em !important;
+  text-transform:uppercase !important;
+  color:var(--rg-cognac-light) !important;
+  font-size:clamp(.68rem, .62rem + .2vw, .76rem) !important;
+  margin:0 0 .8rem !important;
 }
 h2.rg-about__stop-title{
   font-family:'Playfair Display',Georgia,serif !important;
@@ -7450,44 +7574,33 @@ h2.rg-about__stop-title{
   letter-spacing:-.018em !important;
   line-height:1.08 !important;
   color:var(--rg-green) !important;
-  font-size:clamp(1.8rem,1.3rem + 1.8vw,2.8rem) !important;
+  font-size:clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem) !important;
   margin:0 0 1.1rem !important;
   text-wrap:balance;
 }
-.rg-about__stop p{ font-size:clamp(1rem,0.97rem + 0.12vw,1.0625rem); line-height:1.6; max-width:62ch; margin:0 0 1rem; }
+.rg-about__stop p{ font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem); line-height:1.6; max-width:62ch; margin:0 0 1rem; }
 .rg-about__stop p:last-child{ margin-bottom:0; }
 
-/* ---- Stop 1: foto's, licht gestaffeld ---- */
-.rg-about__photos{ display:grid; grid-template-columns:1.15fr .85fr; gap:1.15rem; margin-top:clamp(1.5rem,3vw,2.5rem); }
+/* ---- Stop 1: foto's ---- */
+.rg-about__photos{ display:grid; grid-template-columns:1.15fr .85fr; gap:1rem; margin-top:clamp(1.25rem, 2.5vw, 2rem); }
 .rg-about__photos img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--rg-r-xp); box-shadow:var(--rg-sh-soft); }
-.rg-about__photos img:nth-child(2){ margin-top:2.5rem; }
+.rg-about__photos img:nth-child(2){ margin-top:1.75rem; }
 
-/* ---- Stop 2: twee kolommen + quote ---- */
-.rg-about__cols{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,3vw,3rem); margin-top:.5rem; }
-.rg-about__col h3{
-  font-family:'Montserrat',sans-serif !important;
-  font-weight:700 !important;
-  letter-spacing:.18em !important;
-  text-transform:uppercase;
-  font-size:.72rem !important;
-  color:var(--rg-green) !important;
-  margin:0 0 .6rem !important;
-  line-height:1.4 !important;
-}
+/* ---- Stop 2: quote ---- */
 .rg-about__quote{
-  font-family:'Playfair Display',Georgia,serif;
+  font-family:'Playfair Display',Georgia,serif !important;
   font-weight:600;
-  color:var(--rg-green);
-  font-size:clamp(1.4rem,1.1rem + 1.2vw,2rem) !important;
+  color:var(--rg-green) !important;
+  font-size:clamp(1.4rem, 1.1rem + 1.2vw, 2rem) !important;
   line-height:1.25 !important;
   max-width:26ch !important;
-  margin-top:clamp(1.75rem,3vw,2.75rem) !important;
+  margin-top:clamp(1.5rem, 2.5vw, 2.25rem) !important;
   text-wrap:balance;
 }
-.rg-about__quote em{ font-style:italic; color:var(--rg-cognac-light); }
+.rg-about__quote em{ font-style:italic; color:var(--rg-cognac-light) !important; }
 
-/* ---- Stop 3: drie wortels als hairline-kolommen (geen kaartjes) ---- */
-.rg-about__roots{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.25rem,2.5vw,2.5rem); margin-top:clamp(1.25rem,2.5vw,2rem); }
+/* ---- Stop 3: drie wortels als hairline-kolommen ---- */
+.rg-about__roots{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.25rem, 2.5vw, 2.5rem); margin-top:clamp(1.5rem, 3vw, 2.5rem); }
 .rg-about__root{ border-top:2px solid var(--rg-cognac); padding-top:1.1rem; }
 .rg-about__root h3{
   font-family:'Playfair Display',Georgia,serif !important;
@@ -7499,15 +7612,16 @@ h2.rg-about__stop-title{
 }
 .rg-about__root p{ font-size:.98rem; line-height:1.6; margin:0; }
 
-/* ---- Stop 4: belofte-paneel (donkergroen) ---- */
+/* ---- Stop 4: belofte-paneel ---- */
 .rg-about__panel{
   background:var(--rg-green);
   border-radius:var(--rg-r-xp);
-  padding:clamp(1.75rem,4vw,3.25rem);
+  padding:clamp(1.75rem, 4vw, 3.25rem);
   color:#fff;
+  margin-top:.5rem;
 }
-.rg-about__panel .rg-about__stop-eyebrow{ color:var(--rg-peach); }
-.rg-about__panel .rg-about__stop-title{ color:#fff !important; }
+.rg-about__panel .rg-about__stop-eyebrow{ color:var(--rg-peach) !important; text-align:left; }
+.rg-about__panel .rg-about__stop-title{ color:#fff !important; text-align:left; }
 .rg-about__panel p{ color:rgba(255,255,255,.88); }
 .rg-about__checks{
   list-style:none; margin:1.4rem 0; padding:0;
@@ -7519,130 +7633,40 @@ h2.rg-about__stop-title{
 }
 .rg-about__checks svg{ width:1.1rem; height:1.1rem; flex:none; color:var(--rg-cognac-light); margin-top:.15rem; }
 .rg-about__holdus{
-  font-family:'Playfair Display',Georgia,serif;
+  font-family:'Playfair Display',Georgia,serif !important;
   font-style:italic;
   font-weight:600;
   color:var(--rg-peach) !important;
-  font-size:clamp(1.15rem,1rem + .6vw,1.45rem) !important;
+  font-size:clamp(1.15rem, 1rem + .6vw, 1.45rem) !important;
 }
 
 /* ---- Stop 5: team ---- */
-.rg-about__team{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(1.5rem,3vw,3rem); align-items:center; margin-top:.5rem; }
+.rg-about__team{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(1.5rem, 3vw, 3rem); align-items:center; margin-top:1rem; }
 .rg-about__teamphoto{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--rg-r-xp); box-shadow:var(--rg-sh-soft); }
 .rg-about__team-copy .rg-contact-head__callcard{ margin-top:1.25rem; }
 
 /* ---- Mobiel ---- */
-@media (max-width:991px){
-  .rg-about__route{ --route-pad:2.4rem; }
-  .rg-about__marker{ width:28px; height:28px; font-size:.8rem; }
+@media (max-width:767px){
+  .rg-about__hero2{ min-height:70vh; }
+  /* route versimpelt: geen slinger, nummers boven het hoofdstuk */
+  .rg-about__seg{ display:none; }
+  .rg-about__dot,
+  .rg-about__stop--right .rg-about__dot,
+  .rg-about__stop--wide .rg-about__dot{
+    position:static;
+    transform:none;
+    margin:2.25rem 0 .9rem;
+  }
+  .rg-about__dot.is-on{ transform:scale(1.06); }
+  .rg-about__stop-inner,
+  .rg-about__stop--wide .rg-about__stop-inner{ padding-top:0; }
+  .rg-about__stop--wide .rg-about__stop-eyebrow,
+  .rg-about__stop--wide > .rg-about__stop-inner > .rg-about__stop-title{ text-align:left; }
   .rg-about__photos{ grid-template-columns:1fr; }
   .rg-about__photos img:nth-child(2){ margin-top:0; }
-  .rg-about__cols,
   .rg-about__roots,
   .rg-about__team{ grid-template-columns:1fr; }
   .rg-about__checks{ grid-template-columns:1fr; }
-}
-
-/* ---- 41.8 CARD-SOUP -> redactioneel ----
-   De 3 gelijke, gecentreerde spec-tegels ('Ook los af te nemen' / 'Services &
-   ontzorging') hergebruiken nu de EIGEN thema-overzicht-taal: asymmetrisch
-   (1 groot + 2 gestapeld) met label LINKSONDER. Zelf-gebouwd gevoel, geen
-   3-op-een-rij-template. CSS-only op de bestaande 3 <a>'s (geen re-paste). */
-@media (min-width:992px){
-  .rg-spec-grid{
-    grid-template-columns:1.5fr 1fr !important;
-    grid-template-rows:1fr 1fr !important;
-    gap:1.15rem !important;
-  }
-  .rg-spec-card{ aspect-ratio:auto !important; height:100%; min-height:250px; }
-  .rg-spec-card:nth-child(1){ grid-row:1 / 3 !important; }
-  .rg-spec-card:nth-child(2){ grid-column:2 !important; grid-row:1 !important; }
-  .rg-spec-card:nth-child(3){ grid-column:2 !important; grid-row:2 !important; }
-  /* De grote feature-tegel krijgt een grotere kop */
-  .rg-spec-card:nth-child(1) .rg-spec-card__title{
-    font-size:clamp(2rem,1.5rem + 1.2vw,2.9rem) !important;
-  }
-}
-/* Label linksonder i.p.v. gecentreerd (thema-tile-idioom) */
-.rg-spec-card__label{
-  align-items:flex-start !important;
-  justify-content:flex-end !important;
-  text-align:left !important;
-  padding:1.5rem !important;
-}
-/* Gradient onderzwaar zodat de linksonder-tekst leest (i.p.v. midden-dim) */
-.rg-spec-card::after{
-  background:linear-gradient(to top,
-    rgba(32,22,12,.85) 0%, rgba(32,22,12,.32) 46%, rgba(32,22,12,.04) 100%) !important;
-}
-.rg-spec-card__sub{ max-width:36ch !important; }
-.rg-spec-card{ border-radius:var(--rg-r-xp) !important; box-shadow:var(--rg-sh-soft) !important; }
-
-/* ---- 41.9 SECTIE-KOPPEN links — GERICHT (geen blanket) ----
-   Alleen links waar de kop direct boven (a) de card-soup/spec-grid staat, of
-   (b) de proces-sectie (steps/journey = de '2e sectie' op service-pagina's).
-   Al het andere (FAQ, techniek-tegels, statement-paneel) blijft gecentreerd
-   als bewust 'moment'. Chirurgisch via :has(+ ...), CSS-only. */
-.rg-sd__head:has(+ .rg-spec-grid),
-.rg-sd__head:has(+ .rg-sd__steps),
-.rg-sd__head:has(+ .rg-sd__journey){
-  text-align:left !important;
-  margin-left:0 !important;
-  max-width:none !important;
-}
-.rg-sd__head:has(+ .rg-spec-grid) .rg-sd__head-sub,
-.rg-sd__head:has(+ .rg-sd__steps) .rg-sd__head-sub,
-.rg-sd__head:has(+ .rg-sd__journey) .rg-sd__head-sub{
-  margin-left:0 !important; margin-right:0 !important;
-}
-/* Thema-pagina's gebruiken .rg-block-title (i.p.v. .rg-sd__head) boven de
-   card-soup -> zelfde linkse behandeling. Titel/sub centreren via margin:auto,
-   dus die expliciet op links zetten. */
-.rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
-.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
-.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
-/* Kop-padding op 0 zodat de kop-tekst op dezelfde lijn staat als de tegels
-   (spec-grid heeft op desktop padding 0). Geldt ook op thema, ook zonder de
-   --left-variant/eyebrow te plakken. */
-@media (min-width:992px){
-  .rg-block-title:has(+ .rg-spec-grid){ padding-left:0 !important; padding-right:0 !important; }
-}
-
-/* Home-variant: daar staat de spec-grid in een APART CMS-blok (geen adjacency),
-   dus links via expliciete modifier + een eyebrow-class die de kop compleet
-   maakt zoals op full-service. */
-.rg-block-title--left{ text-align:left !important; }
-.rg-block-title--left .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
-.rg-block-title--left .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
-.rg-block-title__eyebrow{
-  display:block;
-  font-family:'Montserrat',sans-serif !important;
-  font-weight:700 !important;
-  letter-spacing:.24em !important;
-  text-transform:uppercase !important;
-  color:var(--rg-cognac-light) !important;
-  font-size:clamp(.68rem,.62rem + .2vw,.76rem) !important;
-  margin:0 0 .7rem !important;
-}
-/* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
-   zelfde als hero-v2 en de rest van home), niet op de spec-grid-rail (+120px).
-   Kop + tegels zitten in dezelfde container -> beide schuiven mee en blijven
-   onderling uitgelijnd. Wint van de +120-spec-regel omdat 'ie later staat. */
-@media (min-width:992px){
-  /* +80 alleen op HOME (body.is-act-home): daar moet de sectie op de standaard
-     homepage-rail. Op thema/service houdt de sectie z'n eigen (spec-)rail. */
-  body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container,
-  body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container[style]{
-    max-width:none !important;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-  }
-  .rg-block-title--left{
-    max-width:1600px !important;
-    margin-left:auto !important; margin-right:auto !important;
-    /* padding 0: de spec-grid heeft op desktop ook padding 0, dus zo staat de
-       kop-tekst op exact dezelfde lijn (80px) als de tegels + de rest van home.
-       (15px hier zou de kop 15px naar rechts duwen t.o.v. de tegels.) */
-    padding-left:0 !important; padding-right:0 !important;
-  }
+  .rg-about__contour--a{ width:120%; opacity:.7; }
+  .rg-about__contour--b{ display:none; }
 }
