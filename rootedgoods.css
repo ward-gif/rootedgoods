@@ -3321,7 +3321,7 @@ body.is-ctl-product {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding: 4rem 40px;
+  padding: 5.5rem 40px;   /* verticale padding: 2 opeenvolgende blokken -> ~11rem lucht ertussen */
   max-width: 1600px;
   margin: 0 auto;
 }
