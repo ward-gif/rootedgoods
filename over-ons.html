@@ -21,7 +21,8 @@
      ============================================================ -->
 <section class="rg-about">
 
-  <!-- ===== HERO: Europa-uitsparing ===== -->
+  <!-- ===== HERO: Europa-uitsparing met scroll-zoom (JS 1.6) ===== -->
+  <div class="rg-about__heroZoom">
   <div class="rg-about__hero2">
     <div class="rg-about__hero2-map" aria-hidden="true"></div>
     <div class="rg-about__hero2-copy">
@@ -30,14 +31,12 @@
       <p class="rg-about__lede">Rooted Goods begon met een vraag: kan merchandise gewoon in Europa in elkaar worden gezet? We gingen kijken.</p>
     </div>
   </div>
+  </div>
 
   <!-- ===== DE ROUTE ===== -->
   <div class="rg-about__route">
-    <img class="rg-about__contour rg-about__contour--a" src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-contour.svg" alt="" aria-hidden="true" loading="lazy">
-    <img class="rg-about__contour rg-about__contour--b" src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-contour.svg" alt="" aria-hidden="true" loading="lazy">
-
     <!-- segment hero -> stop 1 (midden -> links) -->
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C50,55 22,45 22,100"/></svg>
+    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C53,14 44,20 47,32 C50,44 34,48 33,60 C32,74 23,82 22,100"/></svg>
 
     <!-- STOP 1: HET BEGIN (links) -->
     <section class="rg-about__stop">
@@ -55,7 +54,7 @@
     </section>
 
     <!-- segment stop 1 -> stop 2 (links -> rechts) -->
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M22,0 C22,60 78,40 78,100"/></svg>
+    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M22,0 C24,16 34,22 40,34 C46,46 37,54 50,62 C63,70 75,80 78,100"/></svg>
 
     <!-- STOP 2: WAAROM EUROPA (rechts) -->
     <section class="rg-about__stop rg-about__stop--right">
@@ -69,8 +68,16 @@
       </div>
     </section>
 
+
+    <!-- KUSTLIJN-BEELDBAND (full-width; randen organisch afgesneden) -->
+    <div class="rg-about__band">
+      <svg class="rg-about__band-edge rg-about__band-edge--top" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 H100 V3.5 C95,6.5 91,3 87,5.2 C83,7.4 79,4 74,6 C70,7.6 66,3.6 61,5.5 C57,7 53,4 48,6.2 C44,8 40,4.4 35,6.4 C31,8 27,4 22,6 C18,7.6 14,4.4 9,6.6 C6,7.8 3,5 0,6.5 Z"/></svg>
+      <img src="/media/b4/43/ed/1785854400/Made in NL-2.jpg" alt="">
+      <svg class="rg-about__band-edge rg-about__band-edge--bottom" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0,10 H100 V6.5 C96,3.5 92,7 88,4.8 C84,2.6 80,6 75,4 C71,2.4 67,6.4 62,4.5 C58,3 54,6 49,3.8 C45,2 41,5.6 36,3.6 C32,2 28,6 23,4 C19,2.4 15,5.6 10,3.4 C7,2.2 3,5 0,3.5 Z"/></svg>
+    </div>
+
     <!-- segment stop 2 -> stop 3 (rechts -> midden) -->
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M78,0 C78,55 50,45 50,100"/></svg>
+    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M78,0 C74,14 83,26 76,38 C69,50 56,54 55,68 C54,82 51,88 50,100"/></svg>
 
     <!-- STOP 3: ONZE NAAM (breed hoofdstuk) -->
     <section class="rg-about__stop rg-about__stop--wide">
@@ -96,7 +103,7 @@
     </section>
 
     <!-- segment stop 3 -> stop 4 (midden, lichte s-bocht) -->
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C58,50 42,50 50,100"/></svg>
+    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C56,14 42,24 46,38 C50,52 59,60 52,72 C45,84 52,90 50,100"/></svg>
 
     <!-- STOP 4: ONZE BELOFTE (breed hoofdstuk, paneel) -->
     <section class="rg-about__stop rg-about__stop--wide">
@@ -118,8 +125,16 @@
       </div>
     </section>
 
+
+    <!-- KUSTLIJN-BEELDBAND (full-width; randen organisch afgesneden) -->
+    <div class="rg-about__band">
+      <svg class="rg-about__band-edge rg-about__band-edge--top" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 H100 V3.5 C95,6.5 91,3 87,5.2 C83,7.4 79,4 74,6 C70,7.6 66,3.6 61,5.5 C57,7 53,4 48,6.2 C44,8 40,4.4 35,6.4 C31,8 27,4 22,6 C18,7.6 14,4.4 9,6.6 C6,7.8 3,5 0,6.5 Z"/></svg>
+      <img src="/media/c0/ba/fe/1785442349/Events-2.jpg" alt="">
+      <svg class="rg-about__band-edge rg-about__band-edge--bottom" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0,10 H100 V6.5 C96,3.5 92,7 88,4.8 C84,2.6 80,6 75,4 C71,2.4 67,6.4 62,4.5 C58,3 54,6 49,3.8 C45,2 41,5.6 36,3.6 C32,2 28,6 23,4 C19,2.4 15,5.6 10,3.4 C7,2.2 3,5 0,3.5 Z"/></svg>
+    </div>
+
     <!-- segment stop 4 -> stop 5 (midden, lichte s-bocht andersom) -->
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C42,50 58,50 50,100"/></svg>
+    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C44,12 56,26 51,40 C46,54 40,64 46,76 C52,88 48,92 50,100"/></svg>
 
     <!-- STOP 5: HET TEAM (breed hoofdstuk) -->
     <section class="rg-about__stop rg-about__stop--wide rg-about__stop--last">

@@ -599,45 +599,77 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 /* ============================================================
-   1.6 OVER ONS — "De Route van Rooted" (scroll-tekening)
+   1.6 OVER ONS — "De Route van Rooted" (scroll-regie)
    ------------------------------------------------------------
-   Tekent de slinger-segmenten (.rg-about__seg path) terwijl je
-   scrolt (stroke-dashoffset) en zet stops (.rg-about__dot) 'aan'
-   zodra de lijn ze bereikt. Doet niets op pagina's zonder
-   .rg-about__route. Bij prefers-reduced-motion (of oude browsers)
-   blijft alles gewoon volledig getekend (de CSS-default).
+   Drie effecten in een rAF-loop, alleen op pagina's met .rg-about:
+   1. Hero-zoom: sticky hero; de Europa-maskerlaag schaalt 1 -> ~3.2
+      terwijl je scrolt (je zoomt de kaart in), titel vervaagt.
+   2. Route-lijn: segmenten tekenen zichzelf (stroke-dashoffset),
+      stops kleuren om zodra de lijn ze bereikt.
+   3. Beeldbanden: lichte parallax.
+   Bij prefers-reduced-motion of zonder JS: geen zoom (hero statisch,
+   wrapper krijgt geen .is-zoom) en de lijn staat volledig getekend.
    ============================================================ */
 (function () {
-  var route = document.querySelector('.rg-about__route');
-  if (!route) return;
+  var about = document.querySelector('.rg-about');
+  if (!about) return;
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('requestAnimationFrame' in window)) return;
 
-  var paths = [].slice.call(route.querySelectorAll('.rg-about__seg path'));
-  var dots = [].slice.call(route.querySelectorAll('.rg-about__dot'));
+  var zoomWrap = about.querySelector('.rg-about__heroZoom');
+  var map = about.querySelector('.rg-about__hero2-map');
+  var copy = about.querySelector('.rg-about__hero2-copy');
+  if (zoomWrap && map) zoomWrap.classList.add('is-zoom');
 
-  // init: lijnen "oprollen" zodat ze getekend kunnen worden
+  var paths = [].slice.call(about.querySelectorAll('.rg-about__seg path'));
   paths.forEach(function (p) {
     var L = p.getTotalLength();
     p.style.strokeDasharray = L + ' ' + L;
     p.style.strokeDashoffset = L;
   });
+  var dots = [].slice.call(about.querySelectorAll('.rg-about__dot'));
+  var bands = [].slice.call(about.querySelectorAll('.rg-about__band img'));
 
   var ticking = false;
   function update() {
     ticking = false;
     var vh = window.innerHeight;
-    var trigger = vh * 0.85; // lijn tekent tot ~85% van de viewport
+
+    // 1. hero-zoom (scrub over de wrapper-hoogte)
+    if (zoomWrap && map) {
+      var zr = zoomWrap.getBoundingClientRect();
+      var span = zr.height - vh;
+      if (span > 0) {
+        var prog = Math.max(0, Math.min(1, -zr.top / span));
+        var sc = 1 + prog * 2.2;
+        map.style.transform = 'scale(' + sc + ')';
+        if (copy) {
+          copy.style.opacity = String(Math.max(0, 1 - prog * 1.7));
+          copy.style.transform = 'translateY(' + (-prog * 46) + 'px)';
+        }
+      }
+    }
+
+    // 2. route-lijn + stops
+    var trigger = vh * 0.85;
     paths.forEach(function (p) {
       var r = p.closest('svg').getBoundingClientRect();
       if (r.height === 0) return;
-      var prog = (trigger - r.top) / r.height;
-      prog = Math.max(0, Math.min(1, prog));
+      var prog2 = (trigger - r.top) / r.height;
+      prog2 = Math.max(0, Math.min(1, prog2));
       var L = p.getTotalLength();
-      p.style.strokeDashoffset = String(L * (1 - prog));
+      p.style.strokeDashoffset = String(L * (1 - prog2));
     });
     dots.forEach(function (d) {
       if (d.getBoundingClientRect().top < trigger) d.classList.add('is-on');
+    });
+
+    // 3. band-parallax
+    bands.forEach(function (img) {
+      var r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      var mid = r.top + r.height / 2 - vh / 2;
+      img.style.transform = 'translateY(' + (mid * -0.12) + 'px)';
     });
   }
   function onScroll() {
