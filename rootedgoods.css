@@ -294,21 +294,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   padding: 0rem 2rem;
   display: flex !important;
   align-items: center;
-  justify-content: flex-start !important;
-  gap: clamp(1rem, 2.2vw, 2.4rem);   /* tussenruimte tussen de USP's; krimpt mee op smallere desktops */
+  justify-content: center !important;   /* alles gecentreerd als één groep */
+  gap: clamp(0.9rem, 2vw, 2.2rem);      /* tussenruimte tussen de items; krimpt mee op smallere desktops */
   flex-wrap: nowrap;
+  font-size: 0.8rem;                    /* kleiner dan de theme-default (14px) */
 }
 /* DE ECHTE FIX: de theme geeft elke container 1/5 (grid/flex met gelijke
    kolommen). flex:0 0 auto + width:auto dwingt ze op contentbreedte, zodat
-   de USP's netjes tegen elkaar staan met alleen de gap ertussen. */
+   de items netjes tegen elkaar staan met alleen de gap ertussen. */
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container {
   padding: 3px 0;
   flex: 0 0 auto !important;
   width: auto !important;
   max-width: none !important;
-}
-.top-bar-nav .top-bar-container.container--5 {
-  margin-left: auto !important;   /* duwt Over ons / FAQ / Contact naar de rechterrand */
 }
 
 /* ---- Mobiel/tablet (<992px): topbar tonen als doorlopende USP-marquee ----
@@ -327,23 +325,28 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     display: flex;
     width: max-content;
     align-items: center;
-    gap: 2.5rem;                     /* afstand tussen de USP's in de track */
-    padding: 6px 1rem;
-    animation: uspScroll 24s linear infinite;
+    padding: 6px 0;
+    animation: uspScroll 26s linear infinite;
     will-change: transform;
   }
+  /* De tussenruimte zit BEWUST in elk item (margin-right), NIET als flex-gap:
+     bij een flex-gap valt het -50%-omslagpunt niet op een itemgrens, waardoor
+     de loop een sprong/ongelijke ruimte krijgt bij de naad (leek of 'ie maar
+     1x schoof). Met margin-right is -50% exact één kopie -> naadloos rond,
+     overal dezelfde ruimte. */
   .rg-usp-marquee__item {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     white-space: nowrap;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: #fff;
+    margin-right: 2.6rem;
   }
 }
 @keyframes uspScroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }   /* 2 kopieën -> -50% = naadloze loop */
+  to   { transform: translateX(-50%); }   /* 2 kopieën + gelijke margin per item -> naadloze loop */
 }
 @media (prefers-reduced-motion: reduce) {
   .rg-usp-marquee { animation: none !important; }
@@ -7460,7 +7463,16 @@ h1.rgh__title, .rgh__title,
 .rg-about__hero2-copy{
   position:relative;
   z-index:2;
-  max-width:34ch;
+  max-width:46ch;
+}
+/* zachte creme gloed achter de copy zodat de titel leest over het beeld */
+.rg-about__hero2-copy::before{
+  content:"";
+  position:absolute;
+  inset:-4rem -5rem;
+  background:radial-gradient(closest-side, rgba(247,245,242,.95), rgba(247,245,242,.6) 55%, transparent 78%);
+  z-index:-1;
+  pointer-events:none;
 }
 .rg-about__eyebrow{
   font-family:'Montserrat',sans-serif !important;
@@ -7555,8 +7567,8 @@ h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac
 .rg-about__stop-inner{ max-width:560px; padding-top:2.4rem; }
 .rg-about__stop--right .rg-about__stop-inner{ margin-left:auto; text-align:left; }
 .rg-about__stop--wide .rg-about__stop-inner{ max-width:none; padding-top:3rem; }
-.rg-about__stop--wide .rg-about__stop-eyebrow,
-.rg-about__stop--wide > .rg-about__stop-inner > .rg-about__stop-title{ text-align:center; }
+.rg-about__stop--wide .rg-about__stop-inner > .rg-about__stop-eyebrow{ text-align:center !important; }
+.rg-about__stop--wide .rg-about__stop-inner > .rg-about__stop-title{ text-align:center !important; }
 .rg-about__stop--last{ margin-bottom:0; }
 
 .rg-about__stop-eyebrow{
@@ -7660,8 +7672,8 @@ h2.rg-about__stop-title{
   .rg-about__dot.is-on{ transform:scale(1.06); }
   .rg-about__stop-inner,
   .rg-about__stop--wide .rg-about__stop-inner{ padding-top:0; }
-  .rg-about__stop--wide .rg-about__stop-eyebrow,
-  .rg-about__stop--wide > .rg-about__stop-inner > .rg-about__stop-title{ text-align:left; }
+  .rg-about__stop--wide .rg-about__stop-inner > .rg-about__stop-eyebrow,
+  .rg-about__stop--wide .rg-about__stop-inner > .rg-about__stop-title{ text-align:left !important; }
   .rg-about__photos{ grid-template-columns:1fr; }
   .rg-about__photos img:nth-child(2){ margin-top:0; }
   .rg-about__roots,
