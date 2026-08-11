@@ -617,10 +617,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!('requestAnimationFrame' in window)) return;
 
   var zoomWrap = about.querySelector('.rg-about__heroZoom');
-  var map = about.querySelector('.rg-about__hero2-map');
+  var frame = about.querySelector('.rg-about__hero2-frame');
+  var photo = about.querySelector('.rg-about__hero2-photo');
   var copy = about.querySelector('.rg-about__hero2-copy');
-  var opener = about.querySelector('.rg-about__hero2-open');
-  if (zoomWrap && map) zoomWrap.classList.add('is-zoom');
+  var begincopy = about.querySelector('.rg-about__hero2-begincopy');
+  if (zoomWrap && frame) zoomWrap.classList.add('is-zoom');
 
   // Lijn-onthulling via clip-path op de svg (top -> bottom). Dash-technieken
   // fragmenteren hier: non-scaling-stroke laat Chrome dashes in schermruimte
@@ -635,22 +636,25 @@ document.addEventListener('DOMContentLoaded', function () {
     ticking = false;
     var vh = window.innerHeight;
 
-    // 1. hero-zoom (scrub over de wrapper-hoogte)
-    if (zoomWrap && map) {
+    // 1. hero-zoom: het creme frame (met Europa-gat) zoomt WEG zodat het
+    // gat zich opent en je de foto in vliegt; de foto zelf drukt subtiel
+    // mee (parallax). 'Het begin' verschijnt op de foto aan het eind.
+    if (zoomWrap && frame) {
       var zr = zoomWrap.getBoundingClientRect();
       var span = zr.height - vh;
       if (span > 0) {
         var prog = Math.max(0, Math.min(1, -zr.top / span));
-        // vlucht: blijven schalen tot ~4x; de kaart 'opent' in de laatste
-        // fase doordat de full-bleed laag (opener) de zeeen vult
-        var sc = 1 + prog * 3;
-        map.style.transform = 'scale(' + sc + ')';
-        if (opener) {
-          opener.style.opacity = String(Math.max(0, Math.min(1, (prog - 0.62) / 0.3)));
-        }
+        frame.style.transform = 'scale(' + (1 + prog * 6) + ')';
+        frame.style.opacity = String(prog > 0.9 ? Math.max(0, 1 - (prog - 0.9) / 0.1) : 1);
+        if (photo) photo.style.transform = 'scale(' + (1 + prog * 0.12) + ')';
         if (copy) {
-          copy.style.opacity = String(Math.max(0, 1 - prog * 2.2));
+          copy.style.opacity = String(Math.max(0, 1 - prog * 2.4));
           copy.style.transform = 'translateY(' + (-prog * 46) + 'px)';
+        }
+        if (begincopy) {
+          var bp = Math.max(0, Math.min(1, (prog - 0.62) / 0.28));
+          begincopy.style.opacity = String(bp);
+          begincopy.style.transform = 'translateY(' + ((1 - bp) * 30) + 'px)';
         }
       }
     }

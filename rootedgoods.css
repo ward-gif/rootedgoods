@@ -7449,37 +7449,28 @@ h1.rgh__title, .rgh__title,
   text-align:center;
   padding:clamp(2rem, 4vw, 4rem) clamp(1rem, 4vw, 2.5rem);
 }
-.rg-about__hero2-map{
-  position:absolute;
-  inset:clamp(.5rem, 3vw, 2.5rem);
-  background:url("https://bambook.08.promidata.shop/media/5d/dd/b7/1785500254/Warehousing-2.jpg") center/cover no-repeat;
-  -webkit-mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-vlak.svg");
-          mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-vlak.svg");
-  -webkit-mask-size:contain; mask-size:contain;
-  -webkit-mask-position:center; mask-position:center;
-  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
-  opacity:.94;
+.rg-about__hero2-photo{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
   will-change:transform;
-  transform-origin:50% 42%;
 }
-.rg-about__hero2-map::after{
-  content:"";
+.rg-about__hero2-shade{
   position:absolute; inset:0;
-  background:rgba(45,30,16,.24);
+  background:rgba(45,30,16,.22);
 }
-/* de 'opening': full-bleed laag met hetzelfde beeld die in de laatste
-   zoomfase infadet, zodat de kaart zich helemaal opent en je erin vliegt */
-.rg-about__hero2-open{
+/* de creme cutout-laag: vlak met Europa-gat (alpha-mask europa-frame.svg).
+   JS schaalt deze laag weg zodat het gat zich opent en je de foto in vliegt. */
+.rg-about__hero2-frame{
   position:absolute; inset:0;
-  background:url("https://bambook.08.promidata.shop/media/5d/dd/b7/1785500254/Warehousing-2.jpg") center/cover no-repeat;
-  opacity:0;
-  pointer-events:none;
-  z-index:1;
-}
-.rg-about__hero2-open::after{
-  content:"";
-  position:absolute; inset:0;
-  background:rgba(45,30,16,.24);
+  background:var(--rg-cream);
+  -webkit-mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-frame.svg");
+          mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-frame.svg");
+  -webkit-mask-size:cover; mask-size:cover;
+  -webkit-mask-position:center 42%; mask-position:center 42%;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  will-change:transform;
+  transform-origin:50% 45%;
 }
 .rg-about__hero2-copy{ position:relative; z-index:2; max-width:46ch; }
 .rg-about__hero2-copy::before{
@@ -7489,6 +7480,24 @@ h1.rgh__title, .rgh__title,
   background:radial-gradient(closest-side, rgba(247,245,242,.95), rgba(247,245,242,.6) 55%, transparent 78%);
   z-index:-1;
   pointer-events:none;
+}
+/* 'Het begin' verschijnt op dezelfde foto zodra het frame is weggezoomd */
+.rg-about__hero2-begincopy{
+  position:absolute;
+  left:0; bottom:0;
+  z-index:2;
+  max-width:56ch;
+  padding:0 clamp(1.25rem, 6vw, 6rem) clamp(3rem, 7vw, 6rem);
+  text-align:left;
+  color:#fff;
+  opacity:0;
+  will-change:opacity, transform;
+}
+.rg-about__hero2-begincopy p{
+  font-size:clamp(1rem, 0.97rem + 0.2vw, 1.15rem);
+  line-height:1.65;
+  color:rgba(255,255,255,.92);
+  margin:0;
 }
 
 /* ---- Gedeelde typografie ---- */
@@ -7576,8 +7585,7 @@ h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac
 }
 /* belofte-band: content gecentreerd, band nog hoger */
 .rg-about__full--belofte{ align-items:center; justify-content:center; min-height:125vh; text-align:center; }
-/* begin-sectie sluit naadloos op de zoom aan: geen top-scheur, beeld identiek */
-.rg-about__full--begin{ margin-top:-1px; }
+
 .rg-about__full--belofte::before{
   background:rgba(32,26,14,.62);
 }
