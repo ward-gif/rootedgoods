@@ -286,11 +286,23 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   margin-top: 5px;
   margin-bottom: 5px;
 }
+/* USP's + utility-links op één nette rij: de 4 USP-containers links bij
+   elkaar met een gelijke tussenruimte (gap), de utility-links (container--5)
+   naar de rechterrand geduwd. Vervangt de theme-default die de 5 containers
+   over de volle breedte uit elkaar trok (de "scheve" spacing). */
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
   padding: 0rem 2rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  gap: clamp(1rem, 2.2vw, 2.4rem);   /* tussenruimte tussen de USP's; krimpt mee op smallere desktops */
+  flex-wrap: nowrap;
 }
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container {
-  padding: 3px 10px;
+  padding: 3px 0;   /* horizontale ruimte komt nu volledig uit de gap hierboven */
+}
+.top-bar-nav .top-bar-container.container--5 {
+  margin-left: auto !important;   /* duwt Over ons / FAQ / Contact naar de rechterrand */
 }
 
 /* Container 5 (Over ons / Cases / Contact links) rechts uitlijnen
@@ -5216,10 +5228,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center;
 }
 .rgh__copy{max-width:37rem;}
-.rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem+.4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#CA853F;} /* gelijk aan .rg-statement__kicker */
-.rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:800;color:#2d4528;font-size:clamp(2.1rem,1.2rem+2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
+.rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem + .4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#CA853F;} /* gelijk aan .rg-statement__kicker */
+.rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:800;color:#2d4528;font-size:clamp(2.1rem,1.2rem + 2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
 .rgh__title em{font-style:italic;font-weight:600;}
-.rgh__sub{font-size:clamp(1.02rem,.95rem+.4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
+.rgh__sub{font-size:clamp(1.02rem,.95rem + .4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
 .rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
 .rgh .rgh__cta a.btn-primary{padding:.95rem 2.2rem !important;font-size:1rem !important;}       /* primair groter */
 /* (oude-hero secundair volgt nu de site-brede tekstlink-stijl uit sectie 8) */
@@ -7174,12 +7186,12 @@ h1.rgh__title, .rgh__title,
   text-wrap:balance;
 }
 /* Per-kop groottes: fors editorial, met behoud van nette line-wraps */
-.rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem+3.6vw,4.4rem) !important; }
-.rgh__title, h1.rgh__title{ font-size:clamp(2.6rem,1.2rem+3.6vw,4.4rem) !important; }
-.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.5rem,1.3rem+3.2vw,4.2rem) !important; }
-.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.5rem,1.3rem+3.2vw,4.2rem) !important; }
-.rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title{ font-size:clamp(2.6rem,1.3rem+3.6vw,4.6rem) !important; }
-.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem+3vw,4rem) !important; }
+.rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
+.rgh__title, h1.rgh__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
+.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.5rem,1.3rem + 3.2vw,4.2rem) !important; }
+.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.5rem,1.3rem + 3.2vw,4.2rem) !important; }
+.rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title{ font-size:clamp(2.6rem,1.3rem + 3.6vw,4.6rem) !important; }
+.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem) !important; }
 /* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
 .rg-hero-v2__title em, .rgh__title em, .rg-sd__title em,
 .rg-statement__title em, .rg-endcta__title em, .rg-page-hero__title em{
@@ -7227,7 +7239,7 @@ h1.rgh__title, .rgh__title,
   letter-spacing:.24em !important;
   text-transform:uppercase !important;
   color:var(--rg-cognac-light) !important;
-  font-size:clamp(.68rem,.62rem+.2vw,.76rem) !important;
+  font-size:clamp(.68rem,.62rem + .2vw,.76rem) !important;
 }
 /* Bewust GEEN lijntje/streepje vóór de eyebrow: dat "hairline + uppercase
    kicker"-motief is zelf een template/AI-cliché. De eyebrow leunt op strakke
@@ -7266,7 +7278,7 @@ h1.rgh__title, .rgh__title,
    bv. rg-endcta ín hetzelfde blok zit) per ongeluk helemaal gekleurd wordt. */
 .cms-section:has(.rg-statement){
   background:var(--rg-sand);
-  padding-block:clamp(2rem,1.5rem+2vw,4rem);
+  padding-block:clamp(2rem,1.5rem + 2vw,4rem);
 }
 
 /* ---- 41.7 Opschoning — theme-tile 'pill-badge' eyebrow -> schone caps-label.
@@ -7307,7 +7319,7 @@ h1.rgh__title, .rgh__title,
   .rg-theme-row4 .rg-theme-tile{ aspect-ratio:4/3 !important; height:auto !important; }
 }
 /* CTA-ruimte onder de rij */
-.rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem+2vw,2.5rem); }
+.rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem + 2vw,2.5rem); }
 
 /* ---- 41.11 Eyebrow boven de overzicht-koppen (thema- + services-overzicht),
    zelfde look als het service-blok. ---- */
@@ -7318,7 +7330,7 @@ h1.rgh__title, .rgh__title,
   letter-spacing:.24em;
   text-transform:uppercase;
   color:var(--rg-cognac-light);
-  font-size:clamp(.68rem,.62rem+.2vw,.76rem);
+  font-size:clamp(.68rem,.62rem + .2vw,.76rem);
   margin:0 0 .7rem;
 }
 
@@ -7346,6 +7358,191 @@ h1.rgh__title, .rgh__title,
   font-size:0.85rem !important;
 }
 
+/* ============================================================
+   42. OVER ONS (.rg-about) — "De Route van Rooted"
+   ------------------------------------------------------------
+   Hero + verticale route-lijn met 5 genummerde stops. De lijn is de
+   signature (wortel die door het verhaal groeit); JS tekent 'm straks
+   al scrollend (sectie in rootedgoods.js). Zonder JS / met
+   prefers-reduced-motion staat de lijn volledig getekend.
+   ============================================================ */
+.rg-about{
+  max-width:1600px;
+  margin:0 auto;
+  padding:clamp(1.5rem,1rem + 2vw,3rem) clamp(1rem,4vw,2.5rem) clamp(2.5rem,2rem + 2vw,4rem);
+  font-family:'Montserrat',sans-serif;
+  color:var(--rg-green-soft);
+}
+.rg-about__eyebrow{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--rg-cognac-light);
+  font-size:clamp(.68rem,.62rem + .2vw,.76rem);
+  margin:0 0 .9rem;
+}
+.rg-about__hero{ padding:clamp(1.5rem,3vw,3.5rem) 0 clamp(3rem,6vw,5.5rem); max-width:62ch; }
+h1.rg-about__title{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  letter-spacing:-.021em !important;
+  line-height:1.0 !important;
+  color:var(--rg-green) !important;
+  font-size:clamp(2.5rem,1.3rem + 3.4vw,4.3rem) !important;
+  margin:0 0 1.1rem !important;
+  text-wrap:balance;
+}
+h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac-light); letter-spacing:-.01em; }
+.rg-about__lede{ font-size:clamp(1.02rem,0.98rem + 0.25vw,1.15rem); line-height:1.6; margin:0; }
+
+/* ---- Route-rail ---- */
+.rg-about__route{
+  --route-pad:clamp(3rem,6vw,5rem);
+  position:relative;
+  padding-left:var(--route-pad);
+}
+/* De lijn: statische hairline + een 'groei'-laag die JS straks schaalt.
+   .rg-about__line-fill krijgt via JS transform:scaleY(0->1). */
+.rg-about__route::before{
+  content:"";
+  position:absolute;
+  left:17px; top:8px; bottom:2rem;
+  width:1px;
+  background:rgba(173,99,49,.22);
+}
+.rg-about__line-fill{
+  position:absolute;
+  left:17px; top:8px; bottom:2rem;
+  width:1px;
+  background:var(--rg-cognac);
+  transform-origin:top;
+  transform:scaleY(1); /* zonder JS: volledig getekend */
+}
+/* ---- Stops ---- */
+.rg-about__stop{ position:relative; margin-bottom:clamp(4rem,8vw,7.5rem); }
+.rg-about__stop--last{ margin-bottom:clamp(1.5rem,3vw,3rem); }
+.rg-about__marker{
+  position:absolute;
+  left:calc(17px - var(--route-pad));
+  transform:translateX(-50%);
+  top:.1rem;
+  width:34px; height:34px;
+  border-radius:50%;
+  border:1px solid var(--rg-cognac);
+  background:var(--rg-cream);
+  color:var(--rg-cognac);
+  font-weight:700; font-size:.9rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.rg-about__stop-eyebrow{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--rg-cognac-light);
+  font-size:clamp(.68rem,.62rem + .2vw,.76rem);
+  margin:0 0 .8rem;
+}
+h2.rg-about__stop-title{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  letter-spacing:-.018em !important;
+  line-height:1.08 !important;
+  color:var(--rg-green) !important;
+  font-size:clamp(1.8rem,1.3rem + 1.8vw,2.8rem) !important;
+  margin:0 0 1.1rem !important;
+  text-wrap:balance;
+}
+.rg-about__stop p{ font-size:clamp(1rem,0.97rem + 0.12vw,1.0625rem); line-height:1.6; max-width:62ch; margin:0 0 1rem; }
+.rg-about__stop p:last-child{ margin-bottom:0; }
+
+/* ---- Stop 1: foto's, licht gestaffeld ---- */
+.rg-about__photos{ display:grid; grid-template-columns:1.15fr .85fr; gap:1.15rem; margin-top:clamp(1.5rem,3vw,2.5rem); }
+.rg-about__photos img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--rg-r-xp); box-shadow:var(--rg-sh-soft); }
+.rg-about__photos img:nth-child(2){ margin-top:2.5rem; }
+
+/* ---- Stop 2: twee kolommen + quote ---- */
+.rg-about__cols{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,3vw,3rem); margin-top:.5rem; }
+.rg-about__col h3{
+  font-family:'Montserrat',sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:.18em !important;
+  text-transform:uppercase;
+  font-size:.72rem !important;
+  color:var(--rg-green) !important;
+  margin:0 0 .6rem !important;
+  line-height:1.4 !important;
+}
+.rg-about__quote{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:600;
+  color:var(--rg-green);
+  font-size:clamp(1.4rem,1.1rem + 1.2vw,2rem) !important;
+  line-height:1.25 !important;
+  max-width:26ch !important;
+  margin-top:clamp(1.75rem,3vw,2.75rem) !important;
+  text-wrap:balance;
+}
+.rg-about__quote em{ font-style:italic; color:var(--rg-cognac-light); }
+
+/* ---- Stop 3: drie wortels als hairline-kolommen (geen kaartjes) ---- */
+.rg-about__roots{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.25rem,2.5vw,2.5rem); margin-top:clamp(1.25rem,2.5vw,2rem); }
+.rg-about__root{ border-top:2px solid var(--rg-cognac); padding-top:1.1rem; }
+.rg-about__root h3{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  color:var(--rg-green) !important;
+  font-size:1.25rem !important;
+  line-height:1.2 !important;
+  margin:0 0 .55rem !important;
+}
+.rg-about__root p{ font-size:.98rem; line-height:1.6; margin:0; }
+
+/* ---- Stop 4: belofte-paneel (donkergroen) ---- */
+.rg-about__panel{
+  background:var(--rg-green);
+  border-radius:var(--rg-r-xp);
+  padding:clamp(1.75rem,4vw,3.25rem);
+  color:#fff;
+}
+.rg-about__panel .rg-about__stop-eyebrow{ color:var(--rg-peach); }
+.rg-about__panel .rg-about__stop-title{ color:#fff !important; }
+.rg-about__panel p{ color:rgba(255,255,255,.88); }
+.rg-about__checks{
+  list-style:none; margin:1.4rem 0; padding:0;
+  display:grid; grid-template-columns:1fr 1fr; gap:.8rem 2rem;
+}
+.rg-about__checks li{
+  display:flex; gap:.6rem; align-items:flex-start;
+  font-size:.98rem; line-height:1.5; color:#fff; font-weight:600;
+}
+.rg-about__checks svg{ width:1.1rem; height:1.1rem; flex:none; color:var(--rg-cognac-light); margin-top:.15rem; }
+.rg-about__holdus{
+  font-family:'Playfair Display',Georgia,serif;
+  font-style:italic;
+  font-weight:600;
+  color:var(--rg-peach) !important;
+  font-size:clamp(1.15rem,1rem + .6vw,1.45rem) !important;
+}
+
+/* ---- Stop 5: team ---- */
+.rg-about__team{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(1.5rem,3vw,3rem); align-items:center; margin-top:.5rem; }
+.rg-about__teamphoto{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--rg-r-xp); box-shadow:var(--rg-sh-soft); }
+.rg-about__team-copy .rg-contact-head__callcard{ margin-top:1.25rem; }
+
+/* ---- Mobiel ---- */
+@media (max-width:991px){
+  .rg-about__route{ --route-pad:2.4rem; }
+  .rg-about__marker{ width:28px; height:28px; font-size:.8rem; }
+  .rg-about__photos{ grid-template-columns:1fr; }
+  .rg-about__photos img:nth-child(2){ margin-top:0; }
+  .rg-about__cols,
+  .rg-about__roots,
+  .rg-about__team{ grid-template-columns:1fr; }
+  .rg-about__checks{ grid-template-columns:1fr; }
+}
+
 /* ---- 41.8 CARD-SOUP -> redactioneel ----
    De 3 gelijke, gecentreerde spec-tegels ('Ook los af te nemen' / 'Services &
    ontzorging') hergebruiken nu de EIGEN thema-overzicht-taal: asymmetrisch
@@ -7363,7 +7560,7 @@ h1.rgh__title, .rgh__title,
   .rg-spec-card:nth-child(3){ grid-column:2 !important; grid-row:2 !important; }
   /* De grote feature-tegel krijgt een grotere kop */
   .rg-spec-card:nth-child(1) .rg-spec-card__title{
-    font-size:clamp(2rem,1.5rem+1.2vw,2.9rem) !important;
+    font-size:clamp(2rem,1.5rem + 1.2vw,2.9rem) !important;
   }
 }
 /* Label linksonder i.p.v. gecentreerd (thema-tile-idioom) */
@@ -7424,7 +7621,7 @@ h1.rgh__title, .rgh__title,
   letter-spacing:.24em !important;
   text-transform:uppercase !important;
   color:var(--rg-cognac-light) !important;
-  font-size:clamp(.68rem,.62rem+.2vw,.76rem) !important;
+  font-size:clamp(.68rem,.62rem + .2vw,.76rem) !important;
   margin:0 0 .7rem !important;
 }
 /* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
