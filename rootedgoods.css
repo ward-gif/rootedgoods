@@ -7434,7 +7434,7 @@ h1.rgh__title, .rgh__title,
 }
 
 /* ---- 1. HERO-ZOOM ---- */
-.rg-about__heroZoom.is-zoom{ height:220vh; position:relative; }
+.rg-about__heroZoom.is-zoom{ height:260vh; position:relative; }
 .rg-about__heroZoom.is-zoom .rg-about__hero2{
   position:sticky; top:0;
   height:100vh; min-height:0;
@@ -7463,6 +7463,20 @@ h1.rgh__title, .rgh__title,
   transform-origin:50% 42%;
 }
 .rg-about__hero2-map::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(45,30,16,.24);
+}
+/* de 'opening': full-bleed laag met hetzelfde beeld die in de laatste
+   zoomfase infadet, zodat de kaart zich helemaal opent en je erin vliegt */
+.rg-about__hero2-open{
+  position:absolute; inset:0;
+  background:url("https://bambook.08.promidata.shop/media/5d/dd/b7/1785500254/Warehousing-2.jpg") center/cover no-repeat;
+  opacity:0;
+  pointer-events:none;
+  z-index:1;
+}
+.rg-about__hero2-open::after{
   content:"";
   position:absolute; inset:0;
   background:rgba(45,30,16,.24);
@@ -7519,7 +7533,7 @@ h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac
   position:relative;
   width:100vw;
   margin-left:calc(50% - 50vw);
-  min-height:100vh;
+  min-height:115vh;
   display:flex;
   align-items:flex-end;
   overflow:hidden;
@@ -7561,7 +7575,9 @@ h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac
   text-wrap:balance;
 }
 /* belofte-band: content gecentreerd, band nog hoger */
-.rg-about__full--belofte{ align-items:center; justify-content:center; min-height:110vh; text-align:center; }
+.rg-about__full--belofte{ align-items:center; justify-content:center; min-height:125vh; text-align:center; }
+/* begin-sectie sluit naadloos op de zoom aan: geen top-scheur, beeld identiek */
+.rg-about__full--begin{ margin-top:-1px; }
 .rg-about__full--belofte::before{
   background:rgba(32,26,14,.62);
 }

@@ -619,6 +619,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var zoomWrap = about.querySelector('.rg-about__heroZoom');
   var map = about.querySelector('.rg-about__hero2-map');
   var copy = about.querySelector('.rg-about__hero2-copy');
+  var opener = about.querySelector('.rg-about__hero2-open');
   if (zoomWrap && map) zoomWrap.classList.add('is-zoom');
 
   // Lijn-onthulling via clip-path op de svg (top -> bottom). Dash-technieken
@@ -640,10 +641,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var span = zr.height - vh;
       if (span > 0) {
         var prog = Math.max(0, Math.min(1, -zr.top / span));
-        var sc = 1 + prog * 2.2;
+        // vlucht: blijven schalen tot ~4x; de kaart 'opent' in de laatste
+        // fase doordat de full-bleed laag (opener) de zeeen vult
+        var sc = 1 + prog * 3;
         map.style.transform = 'scale(' + sc + ')';
+        if (opener) {
+          opener.style.opacity = String(Math.max(0, Math.min(1, (prog - 0.62) / 0.3)));
+        }
         if (copy) {
-          copy.style.opacity = String(Math.max(0, 1 - prog * 1.7));
+          copy.style.opacity = String(Math.max(0, 1 - prog * 2.2));
           copy.style.transform = 'translateY(' + (-prog * 46) + 'px)';
         }
       }
