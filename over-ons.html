@@ -1,0 +1,123 @@
+<!-- ============================================================
+     OVER ONS — "De Route van Rooted". Plak dit in een CMS HTML-blok
+     op de Over ons-pagina (/over-ons). CSS: rootedgoods.css sectie 42.
+     JS (route-animatie) volgt in rootedgoods.js; zonder JS staat de
+     lijn gewoon volledig getekend (dat is ook de reduced-motion-staat).
+
+     Opbouw: hero -> route met 5 stops (Het begin / Waarom Europa /
+     Onze naam / Onze belofte / Het team). Sluit de pagina af met het
+     bestaande EIND-CTA-blok (eind-cta.html) als volgend CMS-blok.
+
+     TE VERVANGEN (dummy-beelden uit andere blokken):
+       - 2x werkplaatsfoto bij stop 1 (nu warehousing/verzending)
+       - 1x teamfoto bij stop 5 (nu Kerst en eindejaar.jpg)
+     ============================================================ -->
+<section class="rg-about">
+
+  <!-- ===== HERO ===== -->
+  <div class="rg-about__hero">
+    <p class="rg-about__eyebrow">Over ons</p>
+    <h1 class="rg-about__title">Geworteld in <em>Europees vakmanschap</em>.</h1>
+    <p class="rg-about__lede">Rooted Goods begon met een vraag: kan merchandise gewoon in Europa in elkaar worden gezet? We gingen kijken. Dit is wat we vonden, en waar je ons aan mag houden.</p>
+  </div>
+
+  <!-- ===== DE ROUTE ===== -->
+  <div class="rg-about__route">
+    <div class="rg-about__line-fill" aria-hidden="true"></div>
+
+    <!-- STOP 1: HET BEGIN -->
+    <section class="rg-about__stop">
+      <span class="rg-about__marker" aria-hidden="true">1</span>
+      <p class="rg-about__stop-eyebrow">Het begin</p>
+      <h2 class="rg-about__stop-title">We gingen kijken of het kon.</h2>
+      <p>We wilden weten of het kon: merchandise die gewoon in Europa in elkaar wordt gezet. Dus gingen we kijken. Bij werkplaatsen, ateliers en assemblagelijnen, van Porto tot de Achterhoek. We belden, reden en dronken koffie tussen de machines, op zoek naar de kracht van onze Europese maakindustrie.</p>
+      <p>Het antwoord was volmondig ja. De vakmensen zijn er nog, de kwaliteit is er nog. Ze verdienen alleen weer de orders. Daarom zijn we Rooted Goods gestart.</p>
+      <div class="rg-about__photos">
+        <img src="/media/5d/dd/b7/1785500254/Warehousing-2.jpg" alt="In de werkplaats">
+        <img src="/media/4a/2e/d4/1785831536/Verzending naar locaties doosjes-2.jpg" alt="Aan de assemblagelijn">
+      </div>
+    </section>
+
+    <!-- STOP 2: WAAROM EUROPA -->
+    <section class="rg-about__stop">
+      <span class="rg-about__marker" aria-hidden="true">2</span>
+      <p class="rg-about__stop-eyebrow">Waarom Europa</p>
+      <h2 class="rg-about__stop-title">De wereld werd grilliger.<br>Wij kozen dichtbij.</h2>
+      <div class="rg-about__cols">
+        <div class="rg-about__col">
+          <h3>De wereld</h3>
+          <p>Handelsoorlogen, tarieven die per verkiezing veranderen, containerschepen die ergens stilliggen. Wie zijn keten aan de andere kant van de wereld heeft liggen, voelt elke schok mee.</p>
+        </div>
+        <div class="rg-about__col">
+          <h3>Onze keuze</h3>
+          <p>Wij kiezen voor werkplaatsen die je kunt bellen, bezoeken en bij naam kunt noemen. En ja, ook uit overtuiging: Europa kan dit en heeft dit in huis. De vakmensen zijn er, de kwaliteit is er.</p>
+        </div>
+      </div>
+      <p class="rg-about__quote">Elke bestelling is een stem voor maakindustrie op <em>eigen bodem</em>.</p>
+    </section>
+
+    <!-- STOP 3: ONZE NAAM -->
+    <section class="rg-about__stop">
+      <span class="rg-about__marker" aria-hidden="true">3</span>
+      <p class="rg-about__stop-eyebrow">Onze naam</p>
+      <h2 class="rg-about__stop-title">Wortels doen drie dingen.<br>Alle drie zijn ze ons merk.</h2>
+      <div class="rg-about__roots">
+        <div class="rg-about__root">
+          <h3>Wortels geven stevigheid</h3>
+          <p>Als het stormt, blijft staan wat geworteld is. Onze ketens zijn kort, onze partners zitten dichtbij. Dat merk je in voorspelbare levertijden en in een nachtrust zonder containernieuws.</p>
+        </div>
+        <div class="rg-about__root">
+          <h3>Wortels vertellen waar je vandaan komt</h3>
+          <p>Elk product heeft een traceerbare herkomst: een plaats, een werkplaats, een maker. Die informatie staat gewoon bij het product, naast de maten en de drukopties.</p>
+        </div>
+        <div class="rg-about__root">
+          <h3>Wortels voeden wat groeit</h3>
+          <p>Elke bestelling is voeding voor een Europese werkplaats. Zo groeit er iets dat groter is dan een stapel bedrukte truien: een maakindustrie die weer toekomst heeft.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STOP 4: ONZE BELOFTE -->
+    <section class="rg-about__stop">
+      <span class="rg-about__marker" aria-hidden="true">4</span>
+      <div class="rg-about__panel">
+        <p class="rg-about__stop-eyebrow">Eerlijk over onze claim</p>
+        <h2 class="rg-about__stop-title">Geassembleerd in Europa.<br>Op dat woord zijn we precies.</h2>
+        <p>Assemblage is waar materiaal, vakmanschap en afwerking samenkomen, en dat gebeurt hier, in werkplaatsen die we kennen. Sommige grondstoffen en onderdelen reizen van verder. Per product laten we zien wat waar gebeurt, want eerlijkheid is het stevigste fundament dat een merk kan hebben.</p>
+        <ul class="rg-about__checks">
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Geassembleerd in Europa, in werkplaatsen die we kennen</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Traceerbare herkomst bij elk product: plaats, werkplaats, maker</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Digitale drukproef vooraf, productie pas na jouw akkoord</li>
+          <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Eén aanspreekpunt, persoonlijk antwoord binnen 24 uur</li>
+        </ul>
+        <p>Dit is ons beginpunt. Elk jaar wortelen we dieper: meer Europese onderdelen, meer partners dichtbij, kortere ketens. Die voortgang maken we openbaar.</p>
+        <p class="rg-about__holdus">Houd ons eraan, daar worden we beter van.</p>
+      </div>
+    </section>
+
+    <!-- STOP 5: HET TEAM -->
+    <section class="rg-about__stop rg-about__stop--last">
+      <span class="rg-about__marker" aria-hidden="true">5</span>
+      <p class="rg-about__stop-eyebrow">Het team</p>
+      <h2 class="rg-about__stop-title">De mensen die je belt.</h2>
+      <div class="rg-about__team">
+        <img class="rg-about__teamphoto" src="/media/d8/96/ae/1786435459/Kerst en eindejaar.jpg" alt="Het team van Rooted Goods">
+        <div class="rg-about__team-copy">
+          <p>Wij zijn Richard, Ward en Marco. Geen accountteams of ticketsystemen: je krijgt gewoon een van ons. We denken mee van eerste idee tot bezorging, en meestal heb je binnen 24 uur persoonlijk antwoord.</p>
+          <a class="rg-contact-head__callcard" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0" aria-label="Plan een belafspraak">
+            <span class="rg-contact-head__callcard-avatars">
+              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="28" height="28">
+              <img src="/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg" alt="" width="28" height="28">
+            </span>
+            <span class="rg-contact-head__callcard-body">
+              <span class="rg-contact-head__callcard-title">Plan een belafspraak</span>
+              <span class="rg-contact-head__callcard-sub">Liever even kennismaken in een call? We zien je graag daar!</span>
+            </span>
+            <span class="rg-contact-head__callcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>
