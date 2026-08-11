@@ -623,9 +623,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var paths = [].slice.call(about.querySelectorAll('.rg-about__seg path'));
   paths.forEach(function (p) {
-    var L = p.getTotalLength();
-    p.style.strokeDasharray = L + ' ' + L;
-    p.style.strokeDashoffset = L;
+    // pathLength=1 normaliseert: dash/offset werken dan ook correct bij
+    // preserveAspectRatio="none" (niet-uniforme schaling fragmenteerde de
+    // dash-pattern toen we getTotalLength gebruikten).
+    p.setAttribute('pathLength', '1');
+    p.style.strokeDasharray = '1 1';
+    p.style.strokeDashoffset = '1';
   });
   var dots = [].slice.call(about.querySelectorAll('.rg-about__dot'));
   var bands = [].slice.call(about.querySelectorAll('.rg-about__band img'));
@@ -657,8 +660,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (r.height === 0) return;
       var prog2 = (trigger - r.top) / r.height;
       prog2 = Math.max(0, Math.min(1, prog2));
-      var L = p.getTotalLength();
-      p.style.strokeDashoffset = String(L * (1 - prog2));
+      p.style.strokeDashoffset = String(1 - prog2);
     });
     dots.forEach(function (d) {
       if (d.getBoundingClientRect().top < trigger) d.classList.add('is-on');
