@@ -117,9 +117,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    veiligheidsplafond). Pas de 52px aan om groter/kleiner te maken. */
 .header-logo-main-link img,
 .header-logo img {
-  height: 44px !important;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
+  height: 52px !important;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
   width: auto !important;
-  max-width: 300px;
+  max-width: 340px;
 }
 
 /* Header — actie knoppen (iconen) */
