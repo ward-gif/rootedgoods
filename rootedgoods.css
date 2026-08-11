@@ -7303,6 +7303,43 @@ h1.rgh__title, .rgh__title,
 /* CTA-ruimte onder de rij */
 .rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem+2vw,2.5rem); }
 
+/* ---- 41.11 Eyebrow boven de overzicht-koppen (thema- + services-overzicht),
+   zelfde look als het service-blok. ---- */
+.rg-theme-eyebrow{
+  display:block;
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--rg-cognac-light);
+  font-size:clamp(.68rem,.62rem+.2vw,.76rem);
+  margin:0 0 .7rem;
+}
+
+/* ---- 41.12 TYPE-CONSOLIDATIE — sub-/bodytekst naar vaste rollen ----
+   Verwijdert de font-size-drift tussen componenten. Drie rollen:
+   lead/intro (~1.15rem), body (~1.06rem), small (~0.85rem). Koppen houden hun
+   eigen schaal (ongemoeid). CSS-only. */
+/* LEAD / INTRO — de subregel onder een sectie-kop */
+.rg-hero-v2__sub, .rg-statement__sub, .rg-page-hero__sub, .rg-block-title__sub,
+.rg-sd__head-sub, .rg-sd__sub, .rg-endcta__sub, .rg-theme-intro,
+.rg-cat-head__sub, .rg-compare__intro, .rg-hero__sub, .rg-contact-head__sub{
+  font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
+  line-height:1.6 !important;
+}
+/* BODY — lopende paragraaf-copy */
+.rg-service-card__text, .rg-cta__text,
+.rg-sd__row-copy p, .rg-feature-row__content p, .rg-sd__panel p,
+.rg-sd__faq-item p{
+  font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem) !important;
+  line-height:1.6 !important;
+}
+/* SMALL — noten, reassurance, trust-strips */
+.rg-cform__note, .rg-cta__note, .rg-sd__reassurance,
+.rg-hero-v2__trust, .rg-endcta__trust, .rg-statement__reassurance{
+  font-size:0.85rem !important;
+}
+
 /* ---- 41.8 CARD-SOUP -> redactioneel ----
    De 3 gelijke, gecentreerde spec-tegels ('Ook los af te nemen' / 'Services &
    ontzorging') hergebruiken nu de EIGEN thema-overzicht-taal: asymmetrisch
