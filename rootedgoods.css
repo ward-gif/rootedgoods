@@ -7277,6 +7277,32 @@ h1.rgh__title, .rgh__title,
   font-size:.68rem !important;
 }
 
+/* ---- 41.10 THEMA-OVERZICHT — services-stijl hero (1 groot + 2 platter) +
+   daaronder een rij van 4 + CTA. Hergebruikt .rg-theme-tile (beeld/label/pijl);
+   alleen de grid-indeling is nieuw. ---- */
+.rg-theme-hero{ display:grid; grid-template-columns:1fr; gap:1.15rem; margin:0 0 1.15rem; }
+.rg-theme-row4{ display:grid; grid-template-columns:1fr; gap:1.15rem; }
+/* Mobiel/tablet: alles gestapeld, tiles op eigen verhouding (overschrijft de
+   globale >=768 .rg-theme-tile{aspect-ratio:auto;height:100%}). */
+.rg-theme-hero .rg-theme-tile{ aspect-ratio:16/10 !important; height:auto !important; }
+.rg-theme-hero .rg-theme-tile--feature{ grid-column:auto !important; grid-row:auto !important; }
+.rg-theme-row4 .rg-theme-tile{ aspect-ratio:4/3 !important; height:auto !important; }
+
+@media (min-width:600px){
+  .rg-theme-row4{ grid-template-columns:repeat(2,1fr); }
+}
+@media (min-width:992px){
+  /* Hero: grote tegel links (2 rijen), 2 plattere gestapeld rechts */
+  .rg-theme-hero{ grid-template-columns:1.5fr 1fr; grid-template-rows:1fr 1fr; }
+  .rg-theme-hero .rg-theme-tile{ aspect-ratio:auto !important; height:100% !important; min-height:250px; }
+  .rg-theme-hero .rg-theme-tile--feature{ grid-column:1 !important; grid-row:1 / 3 !important; }
+  /* Rij van 4 */
+  .rg-theme-row4{ grid-template-columns:repeat(4,1fr); }
+  .rg-theme-row4 .rg-theme-tile{ aspect-ratio:4/3 !important; height:auto !important; }
+}
+/* CTA-ruimte onder de rij */
+.rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem+2vw,2.5rem); }
+
 /* ---- 41.8 CARD-SOUP -> redactioneel ----
    De 3 gelijke, gecentreerde spec-tegels ('Ook los af te nemen' / 'Services &
    ontzorging') hergebruiken nu de EIGEN thema-overzicht-taal: asymmetrisch
