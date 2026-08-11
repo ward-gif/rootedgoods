@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var segs = [].slice.call(about.querySelectorAll('.rg-about__seg'));
   segs.forEach(function (sv) { sv.style.clipPath = 'inset(0 0 100% 0)'; });
   var dots = [].slice.call(about.querySelectorAll('.rg-about__dot'));
-  var bands = [].slice.call(about.querySelectorAll('.rg-about__band img'));
+  var bands = [].slice.call(about.querySelectorAll('.rg-about__full-img'));
 
   var ticking = false;
   function update() {
