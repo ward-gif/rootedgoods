@@ -765,17 +765,21 @@ document.addEventListener('DOMContentLoaded', function () {
        bijna 0 (lijn vrijwel recht), op andere naar 1. Zonder dit beweegt de
        lijn overal even veel en leest dat als ruis ipv als route. */
     function sterkte(yy) {
-      var m = (Math.sin(yy / 2050 * 6.283 + f4) * 0.5 + 0.5);
-      /* ondergrens: ook op de rustige trajecten blijft er beweging, anders
-         valt alleen de bocht bij een nummer op en oogt dat weer ritmisch */
-      return 0.34 + 0.66 * Math.pow(m, 1.3);
+      /* twee modulatoren met verschillende periodes: de afwisseling tussen
+         rustige en onrustige stukken wordt daardoor zelf niet periodiek */
+      var a = (Math.sin(yy / 2050 * 6.283 + f4) * 0.5 + 0.5);
+      var b = (Math.sin(yy / 3310 * 6.283 + f4 * 2.3) * 0.5 + 0.5);
+      var m = (a * 0.6 + b * 0.4);
+      /* lage ondergrens: sommige trajecten lopen daardoor echt bijna recht,
+         andere kronkelen flink. Dat contrast maakt het organisch. */
+      return 0.16 + 0.84 * Math.pow(m, 1.5);
     }
     function offset(yy) {
       /* trage golf: periode 2600 -> hooguit een richtingswissel per 1300px */
-      var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 96;
-      var midden = Math.sin(yy / 151  * 6.283 + f2) * 10
-                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 5;
-      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 1.6;
+      var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 118;
+      var midden = Math.sin(yy / 151  * 6.283 + f2) * 18
+                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 9;
+      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 3;
       return traag * (0.45 + 0.55 * sterkte(yy)) + (midden + fijn) * sterkte(yy);
     }
     /* GEEN demping rond markers meer: die liet de lijn precies op het
