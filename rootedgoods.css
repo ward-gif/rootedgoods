@@ -7644,8 +7644,12 @@ h1.rg-route__title em{
    beelden (z-index 0 binnen de track). */
 .rg-route__line{
   position:absolute;
-  inset:0;
-  width:100%;
+  /* over de VOLLE schermbreedte, niet alleen de contentkolom: bij de brede
+     stops vult de tekst de hele kolom, en zonder marge kan de lijn er niet
+     omheen */
+  top:0;
+  left:calc(50% - 50vw);
+  width:100vw;
   height:100%;
   overflow:visible;
   z-index:0;
@@ -7820,7 +7824,13 @@ h1.rg-route__title em{
   font-size:clamp(1.8rem, 1.2rem + 1.5vw, 2.4rem) !important;
 }
 .rg-route__stop--right .rg-route__body{ margin-left:auto; }
-.rg-route__stop--wide .rg-route__body{ max-width:none; text-align:center; }
+.rg-route__stop--wide .rg-route__body{
+  /* niet de volle kolombreedte: zo houdt de routelijn links en rechts een
+     vrije baan om de tekst heen. Leest bovendien rustiger. */
+  max-width:min(880px, 78%);
+  margin-inline:auto;
+  text-align:center;
+}
 .rg-route__stop--wide .rg-route__body > p:not(.rg-route__place):not(.rg-route__punch){
   max-width:52ch; margin-left:auto; margin-right:auto;
 }

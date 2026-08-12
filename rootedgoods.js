@@ -649,7 +649,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var routeStart = { x: 0, y: 0 }, routeEind = 0;
 
   function bouwRoute() {
-    var tr = track.getBoundingClientRect();
+    /* origin = de SVG-box (schermbreed), niet de track: alleen zo is er naast
+       de contentkolom ruimte om tekst te ontwijken */
+    var tr = svg.getBoundingClientRect();
     var breedte = tr.width, hoogte = track.offsetHeight;
     if (!breedte || !hoogte) return;
 
@@ -685,6 +687,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     markers = vol.filter(function (p) { return p.marker; }).map(function (p) { return p.y; });
+
+    /* Omwegen om tekstblokken IN DE SPINE zetten: een waypoint ruim voor en na
+       het blok, aan de kant met de meeste ruimte. Daardoor zwenkt de lijn er
+       geleidelijk omheen. Per punt forceren gaf een rechthoekige omweg met
+       haakse hoeken, wat er als een kabelgoot uitzag. */
+    var blokken = [].slice.call(
+      root.querySelectorAll('.rg-route__body, .rg-route__panel, .rg-route__team-copy')
+    ).map(function (el) {
+      var r = el.getBoundingClientRect();
+      return { l: r.left - tr.left, r: r.right - tr.left, t: r.top - tr.top, b: r.bottom - tr.top };
+    }).filter(function (o) { return o.b - o.t > 40; });
+
+    blokken.forEach(function (o) {
+      var ruimteLinks = o.l, ruimteRechts = breedte - o.r;
+      var baan = ruimteLinks > ruimteRechts
+        ? Math.max(26, o.l * 0.45)
+        : Math.min(breedte - 26, o.r + (breedte - o.r) * 0.55);
+      /* niet vlak bij een marker ingrijpen: daar moet de lijn exact aankomen */
+      [{ y: o.t - 130 }, { y: (o.t + o.b) / 2 }, { y: o.b + 130 }].forEach(function (w) {
+        var dichtbijMarker = markers.some(function (my) { return Math.abs(my - w.y) < 120; });
+        if (dichtbijMarker) return;
+        vol.push({ x: baan, y: w.y, marker: false, omweg: true });
+      });
+    });
+    vol.sort(function (a, b) { return a.y - b.y; });
+    /* dubbele y's wegwerken: y moet strikt oplopen */
+    for (var v = 1; v < vol.length; v++) {
+      if (vol[v].y <= vol[v - 1].y) vol[v].y = vol[v - 1].y + 1;
+    }
 
     /* x als functie van y, monotoon geinterpoleerd (Fritsch-Carlson):
        voorkomt doorschieten, dus geen slingers buiten de spine om */
@@ -743,32 +774,8 @@ document.addEventListener('DOMContentLoaded', function () {
       return { x: xBijY(yy) + offset(yy) * demping(yy), y: yy };
     });
 
-    /* Tekstblokken ontwijken. Omdat y vaststaat en we alleen x verschuiven,
-       blijft de lijn monotoon in y en dus lusvrij. Rond een marker (<40px)
-       niet ontwijken: daar moet de lijn exact op het middelpunt uitkomen. */
-    var obstakels = [].slice.call(
-      root.querySelectorAll('.rg-route__body, .rg-route__panel, .rg-route__team-copy')
-    ).map(function (el) {
-      var r = el.getBoundingClientRect();
-      return { l: r.left - tr.left - 30, r: r.right - tr.left + 30,
-               t: r.top - tr.top - 14, b: r.bottom - tr.top + 14 };
-    });
-    function ontwijk(x, y) {
-      if (demping(y) < 0.35) return x;            /* vlak bij een marker: niet sturen */
-      for (var o, i = 0; i < obstakels.length; i++) {
-        o = obstakels[i];
-        if (y < o.t || y > o.b || x <= o.l || x >= o.r) continue;
-        x = (x - o.l < o.r - x) ? o.l : o.r;       /* naar de dichtstbijzijnde vrije kant */
-      }
-      return Math.max(10, Math.min(breedte - 10, x));
-    }
-    /* afwisselend gladstrijken en opnieuw ontwijken -> vloeiende omweg ipv sprong */
-    for (var pass = 0; pass < 4; pass++) {
-      for (var q1 = 1; q1 < pts.length - 1; q1++) {
-        pts[q1].x = (pts[q1 - 1].x + pts[q1].x * 2 + pts[q1 + 1].x) / 4;
-      }
-      for (var q2 = 0; q2 < pts.length; q2++) pts[q2].x = ontwijk(pts[q2].x, pts[q2].y);
-    }
+    /* De omweg zit nu in de spine (zie boven), dus geen harde per-punt
+       correctie meer: die gaf haakse hoeken. */
 
     /* controle: y moet strikt oplopen, anders klopt de generator niet */
     for (var c = 1; c < pts.length; c++) {
@@ -784,8 +791,9 @@ document.addEventListener('DOMContentLoaded', function () {
     /* de hint hoort pal boven het startpunt van de route te staan */
     var hintEl = root.querySelector('.rg-route__hint');
     if (hintEl) {
+      var trackR = track.getBoundingClientRect();
       hintEl.style.position = 'absolute';
-      hintEl.style.left = routeStart.x + 'px';
+      hintEl.style.left = (routeStart.x + tr.left - trackR.left) + 'px';
       hintEl.style.top = (routeStart.y - hintEl.offsetHeight - 18) + 'px';
       hintEl.style.transform = 'translateX(-50%)';
       hintEl.style.margin = '0';
@@ -811,8 +819,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var h = p1.y - p0.y;
       var m0 = (p1.x - vorige.x) / Math.max(1, p1.y - vorige.y);
       var m1 = (volgende.x - p0.x) / Math.max(1, volgende.y - p0.y);
-      d += 'C' + f(p0.x + m0 * h / 3) + ',' + f(p0.y + h / 3) +
-           ' ' + f(p1.x - m1 * h / 3) + ',' + f(p1.y - h / 3) +
+      /* Controlepunten in x klemmen tussen de twee eindpunten: zonder dit
+         schiet de curve zijwaarts door en bolt hij alsnog een tekstblok in
+         (gemeten: tot 50px voorbij het ontweken punt). Dit maakt de curve
+         ook monotoon in x tussen twee punten, precies zoals bedoeld. */
+      var lo = Math.min(p0.x, p1.x), hi = Math.max(p0.x, p1.x);
+      var c1 = Math.max(lo, Math.min(hi, p0.x + m0 * h / 3));
+      var c2 = Math.max(lo, Math.min(hi, p1.x - m1 * h / 3));
+      d += 'C' + f(c1) + ',' + f(p0.y + h / 3) +
+           ' ' + f(c2) + ',' + f(p1.y - h / 3) +
            ' ' + f(p1.x) + ',' + f(p1.y);
     }
     return d;
@@ -862,7 +877,7 @@ document.addEventListener('DOMContentLoaded', function () {
       /* exact van het startpunt van de route tot het laatste marker-punt:
          zo staat er bij het landen niets getekend en komt de lijn precies
          bij stop 4 aan (eerder liep hij achter en verdween hij uit beeld) */
-      start: function () { return 'top+=' + routeStart.y + ' 62%'; },
+      start: function () { return 'top+=' + routeStart.y + ' 46%'; },
       end: function () { return 'top+=' + routeEind + ' 58%'; },
       scrub: 0.8,
       invalidateOnRefresh: true,
@@ -945,7 +960,19 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Beelden veranderen de paginahoogte. Zonder deze herberekening staan de
        triggers op de (kortere) beginlayout en zijn ze al afgevuurd voordat je
        scrolt: dan is bij het landen al tekst en beeld zichtbaar. */
-    function herbereken() { bouwRoute(); ST.refresh(); }
+    function herbereken() {
+      bouwRoute();
+      /* het pad is nieuw: lengte opnieuw meten en merkteken terugzetten op de
+         huidige voortgang, anders blijft het op zijn oude plek hangen */
+      L = draw.getTotalLength();
+      gsap.set(draw, { strokeDasharray: L });
+      ST.refresh();
+      var t = ST.getAll().find(function (x) { return x.vars && x.vars.scrub; });
+      var p = t ? t.progress : 0;
+      gsap.set(draw, { strokeDashoffset: L * (1 - p) });
+      zetMerkteken(p);
+      zetKm(p);
+    }
     if (document.readyState === 'complete') herbereken();
     else window.addEventListener('load', herbereken);
     var beelden = root.querySelectorAll('img');
