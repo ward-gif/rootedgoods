@@ -7486,12 +7486,20 @@ h1.rg-route__title em{
   position:absolute;
   top:50%; right:calc(50% - 50vw);
   transform:translateY(-50%);
-  width:min(96vw, 1250px);
+  width:min(88vw, 1100px);
+  margin-right:-6vw;          /* deels buiten beeld */
   z-index:1;
-  opacity:.5;
+  opacity:.55;
   pointer-events:none;
 }
 .rg-route__intro-map img{ width:100%; height:auto; display:block; }
+/* laat de kaart naar links uitvloeien zodat de kop leesbaar blijft */
+.rg-route__intro-map::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(to right,
+    var(--rg-cream) 0%, rgba(247,245,242,.92) 26%, rgba(247,245,242,.45) 48%, transparent 72%);
+}
 
 /* ---- TRACK: het reisgebied ---- */
 .rg-route__track{
@@ -7792,7 +7800,7 @@ h2.rg-route__team-title{
 }
 .rg-route__team-grid{
   display:grid;
-  grid-template-columns:1.05fr .95fr;
+  grid-template-columns:.85fr 1.15fr;
   gap:clamp(1.5rem, 3vw, 3rem);
   align-items:center;
   margin-top:clamp(1.5rem, 3vw, 2.5rem);
@@ -7800,7 +7808,8 @@ h2.rg-route__team-title{
 }
 .rg-route__teamphoto{
   width:100%;
-  aspect-ratio:3/4;
+  aspect-ratio:4/5;
+  object-position:50% 30%;
   object-fit:cover;
   border-radius:var(--rg-r-xp);
   box-shadow:var(--rg-sh-soft);
