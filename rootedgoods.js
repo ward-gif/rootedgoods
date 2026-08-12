@@ -720,33 +720,62 @@ document.addEventListener('DOMContentLoaded', function () {
         onLeaveBack: function () { dot.classList.remove('is-on'); }
       });
     });
-    gsap.utils.toArray('.rg-route__place').forEach(function (el) {
+    /* ---- 4. tekst komt in beeld: opschalen + fade (Independent Brewers-gevoel).
+       Per stop lopen label, kop en tekst kort na elkaar, zodat het leest als
+       aankomen op een plek in plaats van een blok dat verschijnt. ---- */
+    gsap.utils.toArray('.rg-route__body, .rg-route__contact, .rg-route__team-copy').forEach(function (body) {
+      var delen = body.querySelectorAll(
+        '.rg-route__place, .rg-route__stop-title, p, .rg-route__roots, .rg-route__panel, .rg-route__contact-map'
+      );
+      gsap.from(delen.length ? delen : body, {
+        opacity: 0,
+        y: 42,
+        scale: .965,
+        duration: .85,
+        ease: 'power3.out',
+        stagger: .08,
+        scrollTrigger: { trigger: body, start: 'top 86%' }
+      });
+    });
+    gsap.utils.toArray('.rg-route__team-title, .rg-route__route-title, .rg-route__logo').forEach(function (el) {
       gsap.from(el, {
-        opacity: 0, y: 14, duration: .6, ease: 'power2.out',
+        opacity: 0, y: 34, scale: .96, duration: .8, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 88%' }
       });
     });
 
-    /* ---- 4. copy per stop rustig in beeld ---- */
-    gsap.utils.toArray('.rg-route__body').forEach(function (body) {
-      gsap.from(body, {
-        opacity: 0, y: 22, duration: .7, ease: 'power2.out',
-        scrollTrigger: { trigger: body, start: 'top 85%' }
+    /* ---- 5. sfeerbeelden: opkomen en meebewegen, elk met een eigen snelheid ---- */
+    gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
+      var draai = parseFloat((shot.style.getPropertyValue('--r') || '0').replace('deg', '')) || 0;
+      gsap.from(shot, {
+        opacity: 0, scale: .82, y: 34, rotate: draai - 6,
+        duration: .9, ease: 'power3.out',
+        scrollTrigger: { trigger: shot, start: 'top 94%' }
+      });
+      gsap.to(shot, {
+        yPercent: -16 - (i % 3) * 9,   /* uiteenlopende snelheden -> diepte */
+        ease: 'none',
+        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 }
       });
     });
 
-    /* ---- 5. sfeerbeelden: fade-in + lichte parallax, elk eigen snelheid ---- */
-    gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
-      gsap.from(shot, {
-        opacity: 0, scale: .94, duration: .7, ease: 'power2.out',
-        scrollTrigger: { trigger: shot, start: 'top 92%' }
+    /* de founders-foto zweeft rustiger mee dan de kleine beelden */
+    var hoofdfoto = root.querySelector('.rg-route__collage-main');
+    if (hoofdfoto) {
+      gsap.to(hoofdfoto, {
+        yPercent: -7, ease: 'none',
+        scrollTrigger: { trigger: hoofdfoto, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
       });
-      gsap.to(shot, {
-        yPercent: -8 - (i % 3) * 5,   /* verschillende snelheden -> diepte */
-        ease: 'none',
-        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
+    }
+
+    /* scroll-hint verdwijnt zodra de reis begint */
+    var hint = root.querySelector('.rg-route__hint');
+    if (hint) {
+      gsap.to(hint, {
+        opacity: 0, y: -10, ease: 'none',
+        scrollTrigger: { trigger: hint, start: 'top 55%', end: 'top 25%', scrub: true }
       });
-    });
+    }
 
     /* ---- 6. thuiskomst: logo verschijnt ---- */
     var logo = root.querySelector('.rg-route__logo');
