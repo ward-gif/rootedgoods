@@ -7873,17 +7873,17 @@ h2.rg-route__stop-title{
 .rg-route__roots{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:clamp(1.25rem, 2.5vw, 2.5rem);
-  margin-top:clamp(1.5rem, 3vw, 2.5rem);
-  text-align:left;
+  gap:clamp(1.75rem, 3.5vw, 3.5rem);
+  margin-top:clamp(2rem, 4vw, 3.25rem);
+  text-align:center;
 }
 .rg-route__root{ padding-top:.25rem; }
 /* icoon boven elke wortel, in plaats van het hairline-streepje */
 .rg-route__root-icon{
   display:block;
-  width:clamp(34px, 3.4vw, 44px);
+  width:clamp(38px, 3.8vw, 50px);
   height:auto;
-  margin:0 0 .9rem;
+  margin:0 auto 1rem;
 }
 .rg-route__root h3{
   font-family:'Playfair Display',Georgia,serif !important;
@@ -7893,7 +7893,12 @@ h2.rg-route__stop-title{
   line-height:1.2 !important;
   margin:0 0 .55rem !important;
 }
-.rg-route__root p{ font-size:.98rem !important; line-height:1.6; margin:0 !important; }
+.rg-route__root p{
+  font-size:.98rem !important;
+  line-height:1.6;
+  margin:0 auto !important;
+  max-width:30ch;
+}
 
 /* ---- Belofte-paneel (stop 4) ---- */
 .rg-route__panel{
