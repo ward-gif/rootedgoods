@@ -7630,8 +7630,13 @@ h1.rg-route__title em{
 .rg-route__body{
   position:relative;
   z-index:2;
-  max-width:44ch;
+  max-width:34rem;
   padding-top:2rem;
+}
+/* In de halve kolommen (stop 1/2) is de display-maat een slag kleiner, anders
+   wrapt een kopregel als "De wereld werd grilliger." ongewenst af. */
+.rg-route__stop:not(.rg-route__stop--wide) h2.rg-route__stop-title{
+  font-size:clamp(1.8rem, 1.2rem + 1.5vw, 2.4rem) !important;
 }
 .rg-route__stop--right .rg-route__body{ margin-left:auto; }
 .rg-route__stop--wide .rg-route__body{ max-width:none; text-align:center; }
