@@ -7736,15 +7736,20 @@ h1.rg-route__title em{
   transform:translate(-50%,-50%);
   width:46px; height:46px;
   border-radius:50%;
-  background:var(--rg-cognac);
+  /* nog niet bereikt: gedempt groen. De lijn 'ontsteekt' de stop pas als hij
+     er is (.is-on); stond de dot meteen op cognac, dan zag je het niet. */
+  background:var(--rg-green-soft);
   color:#fff;
   font-weight:700;
   font-size:1.05rem;
   display:flex; align-items:center; justify-content:center;
   box-shadow:0 0 0 6px var(--rg-cream);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1), background .35s ease;
   z-index:3;
 }
-.rg-route__dot--home{ background:var(--rg-green); }
+.rg-route__dot.is-on{ background:var(--rg-cognac); transform:translate(-50%,-50%) scale(1.12); }
+/* thuiskomst: diepgroen ipv cognac, dat markeert het einde van de reis */
+.rg-route__dot--home.is-on{ background:var(--rg-green); }
 
 /* ---- Zwevende sfeerbeelden per stop ----
    Klein en verspreid: ze geven sfeer, de tekst houdt de focus en de
@@ -8041,6 +8046,7 @@ h2.rg-route__team-title{
   .rg-route__stop--right,
   .rg-route__stop--wide{ --x:28px; }
   .rg-route__dot{ width:40px; height:40px; font-size:.95rem; }
+  .rg-route__dot.is-on{ transform:scale(1.12); }
   .rg-route__body,
   .rg-route__stop--right .rg-route__body{ max-width:none; margin-left:0; padding-top:1.5rem; }
   .rg-route__stop--wide .rg-route__body{ text-align:left; }
