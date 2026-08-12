@@ -679,7 +679,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var n = dy > 700 ? 2 : 1;
         for (var k = 1; k <= n; k++) {
           var t = k / (n + 1);
-          var zij = (r1() - 0.5) * Math.min(breedte * 0.30, 340);
+          var zij = (r1() - 0.5) * Math.min(breedte * 0.12, 130);
           vol.push({ x: a.x + (b.x - a.x) * t + zij, y: a.y + dy * t, marker: false });
         }
       }
@@ -688,34 +688,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     markers = vol.filter(function (p) { return p.marker; }).map(function (p) { return p.y; });
 
-    /* Omwegen om tekstblokken IN DE SPINE zetten: een waypoint ruim voor en na
-       het blok, aan de kant met de meeste ruimte. Daardoor zwenkt de lijn er
-       geleidelijk omheen. Per punt forceren gaf een rechthoekige omweg met
-       haakse hoeken, wat er als een kabelgoot uitzag. */
-    var blokken = [].slice.call(
-      root.querySelectorAll('.rg-route__body, .rg-route__panel, .rg-route__team-copy')
-    ).map(function (el) {
-      var r = el.getBoundingClientRect();
-      return { l: r.left - tr.left, r: r.right - tr.left, t: r.top - tr.top, b: r.bottom - tr.top };
-    }).filter(function (o) { return o.b - o.t > 40; });
-
-    blokken.forEach(function (o) {
-      var ruimteLinks = o.l, ruimteRechts = breedte - o.r;
-      var baan = ruimteLinks > ruimteRechts
-        ? Math.max(26, o.l * 0.45)
-        : Math.min(breedte - 26, o.r + (breedte - o.r) * 0.55);
-      /* niet vlak bij een marker ingrijpen: daar moet de lijn exact aankomen */
-      [{ y: o.t - 130 }, { y: (o.t + o.b) / 2 }, { y: o.b + 130 }].forEach(function (w) {
-        var dichtbijMarker = markers.some(function (my) { return Math.abs(my - w.y) < 120; });
-        if (dichtbijMarker) return;
-        vol.push({ x: baan, y: w.y, marker: false, omweg: true });
-      });
-    });
-    vol.sort(function (a, b) { return a.y - b.y; });
-    /* dubbele y's wegwerken: y moet strikt oplopen */
-    for (var v = 1; v < vol.length; v++) {
-      if (vol[v].y <= vol[v - 1].y) vol[v].y = vol[v - 1].y + 1;
-    }
+    /* GEEN tekstontwijking. Elke vorm van ontwijken dwingt de lijn tot
+       bewegingen die niets met de route te maken hebben; op een echte kaart
+       loopt een grens ook gewoon door een label heen. In plaats daarvan zakt
+       de lijn achter tekstblokken naar 30% via een mask (zie hieronder). */
 
     /* x als functie van y, monotoon geinterpoleerd (Fritsch-Carlson):
        voorkomt doorschieten, dus geen slingers buiten de spine om */
@@ -752,13 +728,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* drie gestapelde golven in x; irrationele verhoudingen zodat er geen
        patroon ontstaat (pure ruis per punt zou rafelig worden) */
-    var f1 = rng(31337)() * 6.283, f2 = rng(90210)() * 6.283, f3 = rng(4242)() * 6.283;
+    var f1 = rng(31337)() * 6.283, f2 = rng(90210)() * 6.283,
+        f3 = rng(4242)() * 6.283,  f4 = rng(5150)() * 6.283;
+    /* Amplitude-modulatie over de lengte: op sommige trajecten zakt dit naar
+       bijna 0 (lijn vrijwel recht), op andere naar 1. Zonder dit beweegt de
+       lijn overal even veel en leest dat als ruis ipv als route. */
+    function sterkte(yy) {
+      var m = (Math.sin(yy / 2050 * 6.283 + f4) * 0.5 + 0.5);
+      return Math.pow(m, 1.7);
+    }
     function offset(yy) {
-      var traag  = Math.sin(yy / 803  * 6.283 + f1) * 92;
-      var midden = Math.sin(yy / 151  * 6.283 + f2) * 22
-                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 11;
-      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 4;
-      return traag + midden + fijn;
+      /* trage golf: periode 2600 -> hooguit een richtingswissel per 1300px */
+      var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 96;
+      var midden = Math.sin(yy / 151  * 6.283 + f2) * 7
+                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 3;
+      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 1.5;
+      return traag * (0.45 + 0.55 * sterkte(yy)) + (midden + fijn) * sterkte(yy);
     }
     /* binnen 40px van een marker naar 0 uitfaden: de lijn komt exact in het
        middelpunt aan en vertrekt daar ook weer */
@@ -806,6 +791,42 @@ document.addEventListener('DOMContentLoaded', function () {
     var d2 = padVan(pts);
     base.setAttribute('d', d2);
     draw.setAttribute('d', d2);
+
+    /* Mask: achter tekstblokken zakt de lijn naar 30%. De vorm verandert niet,
+       alleen de zichtbaarheid. */
+    var defs = svg.querySelector('defs') || svg.insertBefore(
+      document.createElementNS('http://www.w3.org/2000/svg', 'defs'), svg.firstChild);
+    defs.innerHTML = '';
+    var NS = 'http://www.w3.org/2000/svg';
+    var mask = document.createElementNS(NS, 'mask');
+    mask.setAttribute('id', 'rg-route-mask');
+    mask.setAttribute('maskUnits', 'userSpaceOnUse');
+    var vlak = document.createElementNS(NS, 'rect');
+    vlak.setAttribute('width', breedte); vlak.setAttribute('height', hoogte);
+    vlak.setAttribute('fill', '#fff');
+    mask.appendChild(vlak);
+    [].slice.call(root.querySelectorAll(
+      '.rg-route__body, .rg-route__panel, .rg-route__team-copy, .rg-route__roots'
+    )).forEach(function (el) {
+      var b = el.getBoundingClientRect();
+      var re = document.createElementNS(NS, 'rect');
+      re.setAttribute('x', b.left - tr.left - 6);
+      re.setAttribute('y', b.top - tr.top - 6);
+      re.setAttribute('width', b.width + 12);
+      re.setAttribute('height', b.height + 12);
+      re.setAttribute('fill', '#4d4d4d');   /* ~30% */
+      mask.appendChild(re);
+    });
+    defs.appendChild(mask);
+    base.setAttribute('mask', 'url(#rg-route-mask)');
+    draw.setAttribute('mask', 'url(#rg-route-mask)');
+
+    /* meetlat: padlengte mag hooguit 1,2x de verticale afstand zijn */
+    var vert = pts[pts.length - 1].y - pts[0].y;
+    var padL = draw.getTotalLength();
+    console.log('[rg-route] padlengte ' + Math.round(padL) + 'px / verticaal ' +
+                Math.round(vert) + 'px = ' + (padL / vert).toFixed(2) + 'x' +
+                (padL / vert > 1.2 ? '  TE HOOG' : ''));
   }
 
   /* bezier met controlepunten die altijd TUSSEN de y van hun eindpunten
@@ -895,8 +916,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function zetMerkteken(p) {
       if (!mark) return;
-      var punt = draw.getPointAtLength(L * Math.min(1, p + 12 / Math.max(1, L)));
-      gsap.set(mark, { x: punt.x, y: punt.y, xPercent: -50, yPercent: -50 });
+      var afstand = L * Math.min(1, p + 12 / Math.max(1, L));
+      var punt = draw.getPointAtLength(afstand);
+      /* de lijn-SVG is schermbreed, het merkteken staat in de track: het
+         verschil tussen beide linkerranden moet erbij, anders zit hij ernaast */
+      var verschil = svg.getBoundingClientRect().left - track.getBoundingClientRect().left;
+      gsap.set(mark, {
+        x: punt.x + verschil, y: punt.y, xPercent: -50, yPercent: -50,
+        rotation: afstand * 0.9          /* rolt de route af */
+      });
     }
     if (mark) gsap.set(mark, { top: 0, left: 0 });
     zetMerkteken(0);

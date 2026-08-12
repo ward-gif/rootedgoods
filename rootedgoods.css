@@ -7665,14 +7665,14 @@ h1.rg-route__title em{
 }
 .rg-route__line-base{
   stroke:var(--rg-cognac);
-  stroke-width:2.5;
-  stroke-dasharray:1 10;
-  opacity:.34;
+  stroke-width:1.5;
+  stroke-dasharray:1 9;
+  opacity:.16;
 }
 .rg-route__line-draw{
   stroke:var(--rg-cognac);
-  stroke-width:8;
-  opacity:.92;
+  stroke-width:1.5;
+  opacity:.4;
 }
 
 /* ---- Het reizende merkteken (fase 2: reist op de punt van de lijn) ---- */
@@ -7824,13 +7824,7 @@ h1.rg-route__title em{
   font-size:clamp(1.8rem, 1.2rem + 1.5vw, 2.4rem) !important;
 }
 .rg-route__stop--right .rg-route__body{ margin-left:auto; }
-.rg-route__stop--wide .rg-route__body{
-  /* niet de volle kolombreedte: zo houdt de routelijn links en rechts een
-     vrije baan om de tekst heen. Leest bovendien rustiger. */
-  max-width:min(880px, 78%);
-  margin-inline:auto;
-  text-align:center;
-}
+.rg-route__stop--wide .rg-route__body{ max-width:none; text-align:center; }
 .rg-route__stop--wide .rg-route__body > p:not(.rg-route__place):not(.rg-route__punch){
   max-width:52ch; margin-left:auto; margin-right:auto;
 }
