@@ -759,37 +759,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* drie gestapelde golven in x; irrationele verhoudingen zodat er geen
        patroon ontstaat (pure ruis per punt zou rafelig worden) */
-    var f1 = rng(31337)() * 6.283, f2 = rng(90210)() * 6.283,
-        f3 = rng(4242)() * 6.283,  f4 = rng(5150)() * 6.283;
-    /* Amplitude-modulatie over de lengte: op sommige trajecten zakt dit naar
-       bijna 0 (lijn vrijwel recht), op andere naar 1. Zonder dit beweegt de
-       lijn overal even veel en leest dat als ruis ipv als route. */
-    function sterkte(yy) {
-      /* twee modulatoren met verschillende periodes: de afwisseling tussen
-         rustige en onrustige stukken wordt daardoor zelf niet periodiek */
-      var a = (Math.sin(yy / 2050 * 6.283 + f4) * 0.5 + 0.5);
-      var b = (Math.sin(yy / 3310 * 6.283 + f4 * 2.3) * 0.5 + 0.5);
-      var m = (a * 0.6 + b * 0.4);
-      /* lage ondergrens: sommige trajecten lopen daardoor echt bijna recht,
-         andere kronkelen flink. Dat contrast maakt het organisch. */
-      return 0.16 + 0.84 * Math.pow(m, 1.5);
+    /* ---- Ruis: value-noise met ONREGELMATIGE knooppunten ----
+       Gestapelde sinussen zijn periodiek; daardoor kreeg elk traject dezelfde
+       boog van nummer naar nummer. Hier liggen de knooppunten op willekeurige
+       afstanden (180-620px) met willekeurige amplitudes, en af en toe een
+       uitschieter. Zo varieert zowel de grootte van een bocht als de ruimte
+       ertussen, precies wat een echte route doet. */
+    function maakRuis(seed, vanY, totY, minStap, maxStap, kansGroot) {
+      var r = rng(seed), knopen = [{ y: vanY, v: 0 }], y = vanY;
+      while (y < totY) {
+        y += minStap + r() * (maxStap - minStap);
+        var v = (r() * 2 - 1);
+        v *= (r() < kansGroot ? 1 : 0.35);      /* meestal klein, soms fors */
+        knopen.push({ y: y, v: v });
+      }
+      knopen.push({ y: totY + 1, v: 0 });
+      return function (yy) {
+        var lo = 0, hi = knopen.length - 1;
+        if (yy <= knopen[0].y) return knopen[0].v;
+        if (yy >= knopen[hi].y) return knopen[hi].v;
+        while (hi - lo > 1) { var m = (lo + hi) >> 1; if (knopen[m].y < yy) lo = m; else hi = m; }
+        var t = (yy - knopen[lo].y) / Math.max(1, knopen[hi].y - knopen[lo].y);
+        t = t * t * (3 - 2 * t);                /* smoothstep: geen doorschot */
+        return knopen[lo].v + (knopen[hi].v - knopen[lo].v) * t;
+      };
     }
+
+    var yVan = vol[0].y, yTot = vol[vol.length - 1].y;
+    var ruisBreed = maakRuis(8814, yVan, yTot, 260, 620, 0.30);   /* grote zwenken */
+    var ruisMid   = maakRuis(2277, yVan, yTot, 110, 260, 0.22);   /* tussenbochten */
+    var ruisFijn  = maakRuis(9051, yVan, yTot,  38,  95, 0.18);   /* lichte oneffenheid */
+
     function offset(yy) {
-      /* Twee brede lagen bepalen het beeld: de route maakt af en toe een
-         echte uitstap naar links of rechts. De fijne wiebel is bewust klein
-         gehouden; die las als ruis in plaats van als route. */
-      var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 205;   /* grote zwenk */
-      var breed  = Math.sin(yy / 1040 * 6.283 + f1 * 2.7) * 105;
-      var midden = Math.sin(yy / 151  * 6.283 + f2) * 6
-                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 3;
-      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 1;
-      var st = sterkte(yy);
-      return (traag + breed) * (0.5 + 0.5 * st) + (midden + fijn) * st;
+      /* aan het begin naar 0: de route start exact in het midden */
+      var inloop = Math.min(1, Math.max(0, (yy - yVan) / 300));
+      inloop = inloop * inloop * (3 - 2 * inloop);
+      return (ruisBreed(yy) * 230 + ruisMid(yy) * 78 + ruisFijn(yy) * 16) * inloop;
     }
-    /* GEEN demping rond markers meer: die liet de lijn precies op het
-       nummer aankomen en daarna weer wegdraaien, wat een zichtbaar uitstapje
-       heen-en-terug gaf. De route loopt nu ononderbroken door; de nummers
-       worden er straks op gelegd (zie legNummersOpDeRoute). */
 
     var pts = punten.map(function (yy) {
       /* binnen het doek houden nu de uitstappen fors zijn */
