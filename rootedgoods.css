@@ -7615,7 +7615,7 @@ h1.rg-route__title em{
   align-items:center;
   justify-content:center;
   gap:.7rem;
-  margin:clamp(1rem, 3vw, 2.5rem) 0 0;
+  margin:0 0 clamp(.5rem, 1.5vw, 1.25rem);
   font-family:'Montserrat',sans-serif;
   font-weight:700;
   letter-spacing:.24em;
