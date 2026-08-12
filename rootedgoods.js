@@ -693,11 +693,23 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!svg.getClientRects().length) return;
             km.waarde = vak[0] + (vak[1] - vak[0]) * self.progress;
             toonKm();
-            zetMerkteken(lijn, L, self.progress);
+            /* het merkteken loopt een halve merkteken-breedte voor de lijn uit,
+               zodat de lijn er netjes achteraan komt en er nooit lijn onder
+               of voor het logo zit */
+            zetMerkteken(lijn, L, self.progress + voorsprong(svg, L));
           }
         }
       });
     });
+
+    /* hoeveel padlengte is een halve merkteken-breedte, in padeenheden? */
+    function voorsprong(svg, L) {
+      var vb = svg.viewBox && svg.viewBox.baseVal;
+      var breedte = svg.getBoundingClientRect().width;
+      if (!vb || !vb.width || !breedte) return 0;
+      var schaal = breedte / vb.width;          /* px per padeenheid */
+      return (22 / schaal) / L;                 /* 22px = straal + beetje lucht */
+    }
 
     /* het merkteken op de punt van de getekende lijn zetten */
     function zetMerkteken(lijn, L, p) {
@@ -711,7 +723,24 @@ document.addEventListener('DOMContentLoaded', function () {
       var t = track.getBoundingClientRect();
       gsap.set(mark, { x: scherm.x - t.left, y: scherm.y - t.top, xPercent: -50, yPercent: -50 });
     }
-    if (mark) gsap.set(mark, { top: 0, left: 0 });
+    /* Bij het laden heeft nog geen segment gedraaid; zonder dit staat het
+       merkteken in de hoek van de track ipv aan het begin van de route. */
+    function parkeerBijStart() {
+      if (!mark) return;
+      var eerste = root.querySelector('.rg-route__seg');
+      /* het zichtbare segment pakken (desktop of mobiel) */
+      gsap.utils.toArray('.rg-route__seg').some(function (sv) {
+        if (sv.getClientRects().length) { eerste = sv; return true; }
+        return false;
+      });
+      var lijn = eerste && eerste.querySelector('.rg-route__seg-line');
+      if (!lijn) return;
+      gsap.set(mark, { top: 0, left: 0 });
+      zetMerkteken(lijn, lijn.getTotalLength(), 0);
+    }
+    parkeerBijStart();
+    ST.addEventListener('refresh', parkeerBijStart);
+    window.addEventListener('resize', parkeerBijStart);
 
     /* ---- 3. dots + plaatslabels ---- */
     gsap.utils.toArray('.rg-route__dot').forEach(function (dot) {
@@ -775,7 +804,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (hint) {
       gsap.to(hint, {
         opacity: 0, y: -10, ease: 'none',
-        scrollTrigger: { trigger: hint, start: 'top 55%', end: 'top 25%', scrub: true }
+        scrollTrigger: { trigger: hint, start: 'top 28%', end: 'top 2%', scrub: true }
       });
     }
 
