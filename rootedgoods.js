@@ -646,6 +646,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- de route opbouwen ---------- */
   var markers = [];      /* y-posities van de stops, voor de km-teller */
+  var routeStart = { x: 0, y: 0 }, routeEind = 0;
 
   function bouwRoute() {
     var tr = track.getBoundingClientRect();
@@ -742,12 +743,52 @@ document.addEventListener('DOMContentLoaded', function () {
       return { x: xBijY(yy) + offset(yy) * demping(yy), y: yy };
     });
 
+    /* Tekstblokken ontwijken. Omdat y vaststaat en we alleen x verschuiven,
+       blijft de lijn monotoon in y en dus lusvrij. Rond een marker (<40px)
+       niet ontwijken: daar moet de lijn exact op het middelpunt uitkomen. */
+    var obstakels = [].slice.call(
+      root.querySelectorAll('.rg-route__body, .rg-route__panel, .rg-route__team-copy')
+    ).map(function (el) {
+      var r = el.getBoundingClientRect();
+      return { l: r.left - tr.left - 30, r: r.right - tr.left + 30,
+               t: r.top - tr.top - 14, b: r.bottom - tr.top + 14 };
+    });
+    function ontwijk(x, y) {
+      if (demping(y) < 0.35) return x;            /* vlak bij een marker: niet sturen */
+      for (var o, i = 0; i < obstakels.length; i++) {
+        o = obstakels[i];
+        if (y < o.t || y > o.b || x <= o.l || x >= o.r) continue;
+        x = (x - o.l < o.r - x) ? o.l : o.r;       /* naar de dichtstbijzijnde vrije kant */
+      }
+      return Math.max(10, Math.min(breedte - 10, x));
+    }
+    /* afwisselend gladstrijken en opnieuw ontwijken -> vloeiende omweg ipv sprong */
+    for (var pass = 0; pass < 4; pass++) {
+      for (var q1 = 1; q1 < pts.length - 1; q1++) {
+        pts[q1].x = (pts[q1 - 1].x + pts[q1].x * 2 + pts[q1 + 1].x) / 4;
+      }
+      for (var q2 = 0; q2 < pts.length; q2++) pts[q2].x = ontwijk(pts[q2].x, pts[q2].y);
+    }
+
     /* controle: y moet strikt oplopen, anders klopt de generator niet */
     for (var c = 1; c < pts.length; c++) {
       if (pts[c].y <= pts[c - 1].y) {
         console.warn('[rg-route] y niet strikt oplopend bij index', c);
         pts[c].y = pts[c - 1].y + 1;
       }
+    }
+
+    routeStart = { x: pts[0].x, y: pts[0].y };
+    routeEind = pts[pts.length - 1].y;
+
+    /* de hint hoort pal boven het startpunt van de route te staan */
+    var hintEl = root.querySelector('.rg-route__hint');
+    if (hintEl) {
+      hintEl.style.position = 'absolute';
+      hintEl.style.left = routeStart.x + 'px';
+      hintEl.style.top = (routeStart.y - hintEl.offsetHeight - 18) + 'px';
+      hintEl.style.transform = 'translateX(-50%)';
+      hintEl.style.margin = '0';
     }
 
     svg.setAttribute('viewBox', '0 0 ' + breedte + ' ' + hoogte);
@@ -818,9 +859,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     ST.create({
       trigger: track,
-      start: 'top 60%',
-      end: 'bottom 75%',
+      /* exact van het startpunt van de route tot het laatste marker-punt:
+         zo staat er bij het landen niets getekend en komt de lijn precies
+         bij stop 4 aan (eerder liep hij achter en verdween hij uit beeld) */
+      start: function () { return 'top+=' + routeStart.y + ' 62%'; },
+      end: function () { return 'top+=' + routeEind + ' 58%'; },
       scrub: 0.8,
+      invalidateOnRefresh: true,
       onUpdate: function (self) {
         var p = self.progress;
         gsap.set(draw, { strokeDashoffset: L * (1 - p) });
@@ -896,5 +941,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     ST.addEventListener('refresh', function () { bouwRoute(); });
     ST.refresh();
+
+    /* Beelden veranderen de paginahoogte. Zonder deze herberekening staan de
+       triggers op de (kortere) beginlayout en zijn ze al afgevuurd voordat je
+       scrolt: dan is bij het landen al tekst en beeld zichtbaar. */
+    function herbereken() { bouwRoute(); ST.refresh(); }
+    if (document.readyState === 'complete') herbereken();
+    else window.addEventListener('load', herbereken);
+    var beelden = root.querySelectorAll('img');
+    var klaar = 0;
+    beelden.forEach(function (im) {
+      if (im.complete) { klaar++; return; }
+      im.addEventListener('load', function () { if (++klaar === beelden.length) herbereken(); }, { once: true });
+      im.addEventListener('error', function () { if (++klaar === beelden.length) herbereken(); }, { once: true });
+    });
   }
 })();
