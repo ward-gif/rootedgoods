@@ -7641,7 +7641,7 @@ h1.rg-route__title em{
   max-width:1200px;
   margin:0 auto;
   /* de reis begint bewust ruim onder de proloog */
-  padding:clamp(9rem, 22vw, 18rem) clamp(1.25rem, 4vw, 2rem) 0;
+  padding:clamp(11rem, 26vw, 22rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
 /* ---- Segmenten (de routelijn) ---- */
