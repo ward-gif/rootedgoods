@@ -7416,6 +7416,110 @@ h1.rgh__title, .rgh__title,
   font-size:0.85rem !important;
 }
 
+/* ---- 41.8 CARD-SOUP -> redactioneel ----
+   De 3 gelijke, gecentreerde spec-tegels ('Ook los af te nemen' / 'Services &
+   ontzorging') hergebruiken nu de EIGEN thema-overzicht-taal: asymmetrisch
+   (1 groot + 2 gestapeld) met label LINKSONDER. Zelf-gebouwd gevoel, geen
+   3-op-een-rij-template. CSS-only op de bestaande 3 <a>'s (geen re-paste). */
+@media (min-width:992px){
+  .rg-spec-grid{
+    grid-template-columns:1.5fr 1fr !important;
+    grid-template-rows:1fr 1fr !important;
+    gap:1.15rem !important;
+  }
+  .rg-spec-card{ aspect-ratio:auto !important; height:100%; min-height:250px; }
+  .rg-spec-card:nth-child(1){ grid-row:1 / 3 !important; }
+  .rg-spec-card:nth-child(2){ grid-column:2 !important; grid-row:1 !important; }
+  .rg-spec-card:nth-child(3){ grid-column:2 !important; grid-row:2 !important; }
+  /* De grote feature-tegel krijgt een grotere kop */
+  .rg-spec-card:nth-child(1) .rg-spec-card__title{
+    font-size:clamp(2rem,1.5rem + 1.2vw,2.9rem) !important;
+  }
+}
+/* Label linksonder i.p.v. gecentreerd (thema-tile-idioom) */
+.rg-spec-card__label{
+  align-items:flex-start !important;
+  justify-content:flex-end !important;
+  text-align:left !important;
+  padding:1.5rem !important;
+}
+/* Gradient onderzwaar zodat de linksonder-tekst leest (i.p.v. midden-dim) */
+.rg-spec-card::after{
+  background:linear-gradient(to top,
+    rgba(32,22,12,.85) 0%, rgba(32,22,12,.32) 46%, rgba(32,22,12,.04) 100%) !important;
+}
+.rg-spec-card__sub{ max-width:36ch !important; }
+.rg-spec-card{ border-radius:var(--rg-r-xp) !important; box-shadow:var(--rg-sh-soft) !important; }
+
+/* ---- 41.9 SECTIE-KOPPEN links — GERICHT (geen blanket) ----
+   Alleen links waar de kop direct boven (a) de card-soup/spec-grid staat, of
+   (b) de proces-sectie (steps/journey = de '2e sectie' op service-pagina's).
+   Al het andere (FAQ, techniek-tegels, statement-paneel) blijft gecentreerd
+   als bewust 'moment'. Chirurgisch via :has(+ ...), CSS-only. */
+.rg-sd__head:has(+ .rg-spec-grid),
+.rg-sd__head:has(+ .rg-sd__steps),
+.rg-sd__head:has(+ .rg-sd__journey){
+  text-align:left !important;
+  margin-left:0 !important;
+  max-width:none !important;
+}
+.rg-sd__head:has(+ .rg-spec-grid) .rg-sd__head-sub,
+.rg-sd__head:has(+ .rg-sd__steps) .rg-sd__head-sub,
+.rg-sd__head:has(+ .rg-sd__journey) .rg-sd__head-sub{
+  margin-left:0 !important; margin-right:0 !important;
+}
+/* Thema-pagina's gebruiken .rg-block-title (i.p.v. .rg-sd__head) boven de
+   card-soup -> zelfde linkse behandeling. Titel/sub centreren via margin:auto,
+   dus die expliciet op links zetten. */
+.rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
+.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
+.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
+/* Kop-padding op 0 zodat de kop-tekst op dezelfde lijn staat als de tegels
+   (spec-grid heeft op desktop padding 0). Geldt ook op thema, ook zonder de
+   --left-variant/eyebrow te plakken. */
+@media (min-width:992px){
+  .rg-block-title:has(+ .rg-spec-grid){ padding-left:0 !important; padding-right:0 !important; }
+}
+
+/* Home-variant: daar staat de spec-grid in een APART CMS-blok (geen adjacency),
+   dus links via expliciete modifier + een eyebrow-class die de kop compleet
+   maakt zoals op full-service. */
+.rg-block-title--left{ text-align:left !important; }
+.rg-block-title--left .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
+.rg-block-title--left .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
+.rg-block-title__eyebrow{
+  display:block;
+  font-family:'Montserrat',sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:.24em !important;
+  text-transform:uppercase !important;
+  color:var(--rg-cognac-light) !important;
+  font-size:clamp(.68rem,.62rem + .2vw,.76rem) !important;
+  margin:0 0 .7rem !important;
+}
+/* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
+   zelfde als hero-v2 en de rest van home), niet op de spec-grid-rail (+120px).
+   Kop + tegels zitten in dezelfde container -> beide schuiven mee en blijven
+   onderling uitgelijnd. Wint van de +120-spec-regel omdat 'ie later staat. */
+@media (min-width:992px){
+  /* +80 alleen op HOME (body.is-act-home): daar moet de sectie op de standaard
+     homepage-rail. Op thema/service houdt de sectie z'n eigen (spec-)rail. */
+  body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container,
+  body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container[style]{
+    max-width:none !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+  }
+  .rg-block-title--left{
+    max-width:1600px !important;
+    margin-left:auto !important; margin-right:auto !important;
+    /* padding 0: de spec-grid heeft op desktop ook padding 0, dus zo staat de
+       kop-tekst op exact dezelfde lijn (80px) als de tegels + de rest van home.
+       (15px hier zou de kop 15px naar rechts duwen t.o.v. de tegels.) */
+    padding-left:0 !important; padding-right:0 !important;
+  }
+}
+
 /* ============================================================
    42. OVER ONS (.rg-route) — "De Route van Rooted"
    ------------------------------------------------------------
