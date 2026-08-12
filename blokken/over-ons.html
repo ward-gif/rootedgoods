@@ -3,7 +3,7 @@
      Plak dit in een CMS HTML-blok op de Over ons-pagina (/over-ons).
      CSS: rootedgoods.css sectie 42 (.rg-route). JS volgt in fase 2.
 
-     LET OP - assets (kaarten/ en merk/) staan op een VASTE commit-SHA in de
+     LET OP - assets (svg/ en beeld/) staan op een VASTE commit-SHA in de
      jsDelivr-URL, niet op @main. Reden: @main wordt door de CDN gecached en
      een purge komt niet altijd door, waardoor kaarten onderling inconsistent
      renderen (oude en nieuwe versie door elkaar). Een SHA-URL is
@@ -21,16 +21,16 @@
      Desktop- en mobielsegmenten zijn aparte SVG's met een VASTE aspect-ratio
      (geen preserveAspectRatio="none", zie plan) zodat de lijn-animatie klopt.
 
-     Kaartlagen: echte land-outlines uit kaarten/ (via jsDelivr). Hoogte per
+     Kaartlagen: echte land-outlines uit svg/ (via jsDelivr). Hoogte per
      stop via --map-h; ze bloeden naar de schermrand. Andere landen zijn
-     beschikbaar in kaarten/ (zie kaarten/README.md).
+     beschikbaar in svg/ (zie docs/kaart-assets.md).
      ============================================================ -->
 <section class="rg-route">
 
   <!-- ===== PROLOOG ===== -->
   <header class="rg-route__intro">
     <div class="rg-route__intro-map" aria-hidden="true">
-      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/kaarten/land-europa.svg" alt="">
+      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/land-europa.svg" alt="">
     </div>
     <div class="rg-route__intro-copy">
       <p class="rg-route__eyebrow">Over ons</p>
@@ -50,7 +50,7 @@
     <!-- het reizende merkteken (fase 2: reist mee op de punt van de lijn en
          lost bij thuiskomst op in het volledige logo) -->
     <span class="rg-route__mark" aria-hidden="true">
-      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/merk/rooted-beeldmerk.svg" alt="">
+      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/rooted-beeldmerk.svg" alt="">
     </span>
 
     <!-- segment: proloog -> stop 1 -->
@@ -66,7 +66,7 @@
     <!-- ===== STOP 1: PORTO ===== -->
     <section class="rg-route__stop rg-route__stop--left" style="--map-h:88vh">
       <div class="rg-route__map rg-route__map--right" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/kaarten/land-portugal.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/land-portugal.svg" alt="">
       </div>
       <span class="rg-route__dot" aria-hidden="true">1</span>
       <div class="rg-route__body">
@@ -90,7 +90,7 @@
     <!-- ===== STOP 2: SAVOIE ===== -->
     <section class="rg-route__stop rg-route__stop--right" style="--map-h:104vh">
       <div class="rg-route__map rg-route__map--left" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/kaarten/land-frankrijk.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/land-frankrijk.svg" alt="">
       </div>
       <span class="rg-route__dot" aria-hidden="true">2</span>
       <div class="rg-route__body">
@@ -115,7 +115,7 @@
     <!-- ===== STOP 3: ZWARTE WOUD (onze naam) ===== -->
     <section class="rg-route__stop rg-route__stop--wide" style="--map-h:120vh">
       <div class="rg-route__map rg-route__map--right" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/kaarten/land-duitsland.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/land-duitsland.svg" alt="">
       </div>
       <span class="rg-route__dot" aria-hidden="true">3</span>
       <div class="rg-route__body">
@@ -151,7 +151,7 @@
     <!-- ===== STOP 4: EDE (thuis, de belofte) ===== -->
     <section class="rg-route__stop rg-route__stop--wide rg-route__stop--last" style="--map-h:140vh">
       <div class="rg-route__map rg-route__map--left" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/kaarten/land-nederland.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/land-nederland.svg" alt="">
       </div>
       <span class="rg-route__dot rg-route__dot--home" aria-hidden="true">4</span>
       <div class="rg-route__body">
@@ -169,7 +169,7 @@
           </ul>
           <p class="rg-route__holdus">Houd ons eraan, daar worden we beter van.</p>
         </div>
-        <img class="rg-route__logo" src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/merk/rooted-logo.svg" alt="Rooted Goods">
+        <img class="rg-route__logo" src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/svg/rooted-logo.svg" alt="Rooted Goods">
       </div>
     </section>
 
@@ -180,7 +180,7 @@
     <p class="rg-route__eyebrow">Het team</p>
     <h2 class="rg-route__team-title">De mensen die je belt.</h2>
     <div class="rg-route__team-grid">
-      <img class="rg-route__teamphoto" src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/merk/founders.jpg" alt="Richard, Ward en Marco van Rooted Goods">
+      <img class="rg-route__teamphoto" src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/beeld/founders.jpg" alt="Richard, Ward en Marco van Rooted Goods">
       <div class="rg-route__team-copy">
         <p>Wij zijn Richard, Ward en Marco. Je krijgt gewoon een van ons, van eerste idee tot bezorging. Binnen 24 uur persoonlijk antwoord.</p>
         <a class="rg-contact-head__callcard" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0" aria-label="Plan een belafspraak">

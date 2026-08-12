@@ -10,7 +10,7 @@ laden (dus go-live-proof: geen dev-URL's in de code).
 Verwijs naar een **vaste commit-SHA**, niet naar `@main`:
 
 ```html
-<img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@<sha>/kaarten/land-frankrijk.svg" alt="">
+<img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@<sha>/svg/land-frankrijk.svg" alt="">
 ```
 
 Waarom een SHA: `@main` wordt door jsDelivr gecached en een purge komt niet
@@ -26,11 +26,11 @@ asynchroon; hij komt niet altijd meteen door, en dan serveert de CDN per
 bestand nog de oude versie (kaarten zien er dan onderling inconsistent uit):
 
 ```bash
-for f in kaarten/land-*.svg; do
+for f in svg/land-*.svg; do
   curl -s "https://purge.jsdelivr.net/gh/ward-gif/rootedgoods@main/$f" -o /dev/null
 done
 sleep 12
-for f in kaarten/land-*.svg; do
+for f in svg/land-*.svg; do
   curl -s "https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/$f" | head -c 900 \
     | grep -q 'non-scaling-stroke' || echo "NOG STALE: $f"
 done
@@ -89,5 +89,5 @@ done
   is 6-55KB. Bij gebruik boven de vouw meewegen in de performance-check.
 - `land-europa.svg` (met eilanden) wordt gebruikt in de proloog van /over-ons;
   `land-europa-zonder-eilanden.svg` is de rustigere variant.
-- In `merk/` staan het Rooted-beeldmerk, het woordmerk en de founders-foto
+- In `svg/` staan ook het Rooted-beeldmerk en woordmerk; de founders-foto staat in `beeld/`
   (van 23,5MB PNG teruggebracht naar ~500KB JPEG).

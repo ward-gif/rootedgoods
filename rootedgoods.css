@@ -7600,9 +7600,9 @@ h1.rg-route__title em{
 .rg-route__stop--right{ --x:74%; }
 .rg-route__stop--wide{ --x:50%; }
 
-/* kaartlaag per stop: een echte land-outline (kaarten/), op hoogte geschaald
+/* kaartlaag per stop: een echte land-outline (svg/), op hoogte geschaald
    en deels buiten de schermrand. --map-h per stop in de HTML.
-   De lijndikte is in de assets zelf genormaliseerd (zie kaarten/README.md),
+   De lijndikte is in de assets zelf genormaliseerd (zie docs/kaart-assets.md),
    dus alle landen ogen even zwaar ongeacht hun viewBox. */
 .rg-route__map{
   position:absolute;

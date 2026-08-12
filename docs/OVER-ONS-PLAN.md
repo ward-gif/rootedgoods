@@ -136,10 +136,10 @@ Specificaties per land (zelfde stijl als Europa map.svg):
   verwijderen. Nieuwe namespace: **`.rg-route`**.
 - `rootedgoods.js`: sectie 1.6 volledig vervangen door de nieuwe
   GSAP-loader + route-regie.
-- Verwijderen uit repo: `europa-frame.svg`, `kaarttextuur-tijdelijk.svg`
+- Verwijderen uit repo: `svg/europa-frame.svg`, `kaarttextuur-tijdelijk.svg`
   (Flyward-asset, licentie!), `europa-contour-licht.svg` (tenzij hergebruikt).
-  `europa-vlak.svg`/`europa-contour.svg` blijven (elders bruikbaar).
-- `over-ons.html` volledig herschrijven.
+  `svg/europa-vlak.svg`/`svg/europa-contour.svg` blijven (elders bruikbaar).
+- `blokken/over-ons.html` volledig herschrijven.
 
 ## 6. Extra's die de pagina optillen (voorstel, keuze Ward)
 1. **Kilometerteller** (aanrader): klein vast element dat de afgelegde
