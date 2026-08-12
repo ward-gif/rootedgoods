@@ -786,15 +786,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var yVan = vol[0].y, yTot = vol[vol.length - 1].y;
-    var ruisBreed = maakRuis(8814, yVan, yTot, 260, 620, 0.30);   /* grote zwenken */
-    var ruisMid   = maakRuis(2277, yVan, yTot, 110, 260, 0.22);   /* tussenbochten */
-    var ruisFijn  = maakRuis(9051, yVan, yTot,  38,  95, 0.18);   /* lichte oneffenheid */
+    var ruisBreed = maakRuis(8814, yVan, yTot, 210, 540, 0.38);   /* grote zwenken */
+    var ruisMid   = maakRuis(2277, yVan, yTot,  85, 205, 0.30);   /* tussenbochten */
+    var ruisFijn  = maakRuis(9051, yVan, yTot,  30,  78, 0.24);   /* lichte oneffenheid */
 
     function offset(yy) {
       /* aan het begin naar 0: de route start exact in het midden */
       var inloop = Math.min(1, Math.max(0, (yy - yVan) / 300));
       inloop = inloop * inloop * (3 - 2 * inloop);
-      return (ruisBreed(yy) * 230 + ruisMid(yy) * 78 + ruisFijn(yy) * 16) * inloop;
+      return (ruisBreed(yy) * 265 + ruisMid(yy) * 104 + ruisFijn(yy) * 15) * inloop;
     }
 
     var pts = punten.map(function (yy) {
