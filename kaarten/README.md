@@ -7,9 +7,19 @@ laden (dus go-live-proof: geen dev-URL's in de code).
 
 ## Gebruik
 
+Verwijs naar een **vaste commit-SHA**, niet naar `@main`:
+
 ```html
-<img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-frankrijk.svg" alt="">
+<img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@<sha>/kaarten/land-frankrijk.svg" alt="">
 ```
+
+Waarom een SHA: `@main` wordt door jsDelivr gecached en een purge komt niet
+altijd door. Dan serveert de CDN per bestand nog de oude versie en renderen
+kaarten onderling inconsistent (oude en nieuwe lijndikte/kleur door elkaar).
+Dit is in de praktijk twee keer misgegaan. Een SHA-URL is onveranderlijk en
+dus altijd meteen correct. Prijs: wijzig je een asset, dan moet de SHA in de
+CMS-blokken mee (opnieuw plakken). Huidige SHA staat bovenin `over-ons.html`.
+Nieuwe SHA ophalen: `git rev-parse HEAD` (na het pushen van de asset).
 
 Na een wijziging aan een kaart: purgen **en verifieren**. De purge is
 asynchroon; hij komt niet altijd meteen door, en dan serveert de CDN per
