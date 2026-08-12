@@ -28,7 +28,9 @@ def genereer(seed, start, eind, box, n_seg, lengte_bereik, marge=10):
         # het eind toe, zodat de route uitkomt zonder per stap hard te sturen
         gewenst = math.atan2(ey - y, ex - x)
         verschil = (gewenst - heading + math.pi) % (2 * math.pi) - math.pi
-        pull = 0.08 + 0.55 * voortgang ** 3
+        # Sterkere pull dan een vrije random walk: het doek is maar ~340px hoog,
+        # dus zonder dit maakt de wandeling lussen en knopen ipv een route.
+        pull = 0.30 + 0.55 * voortgang ** 3
         heading += verschil * pull
 
         # zachte containment: buiten de marge duwt de rand terug naar binnen
@@ -72,18 +74,20 @@ def naar_pad(punten, rng, afronding=(0.0, 4.0)):
     d.append(f'L{f(punten[-1][0])},{f(punten[-1][1])}')
     return ''.join(d)
 
-# seed, start, eind, viewBox, aantal segmenten, lengtebereik
+# seed, start, eind, viewBox, aantal stappen, lengtebereik
+# Aantal stappen x gemiddelde lengte is afgestemd op de af te leggen afstand:
+# de padlengte blijft ~1,3-1,6x de rechte lijn. Daarboven ontstaan lussen.
 DESKTOP = {
-    0: (2114, (600, 0),  (312, 340), (1200, 340), 86,  (6, 90)),
-    1: (5501, (312, 0),  (888, 380), (1200, 380), 104, (6, 90)),
-    2: (7723, (888, 0),  (600, 340), (1200, 340), 92,  (6, 90)),
-    3: (3391, (600, 0),  (600, 300), (1200, 300), 74,  (6, 80)),
+    0: (2114, (600, 0),  (312, 340), (1200, 340), 34, (6, 46)),
+    1: (5501, (312, 0),  (888, 380), (1200, 380), 44, (6, 54)),
+    2: (7723, (888, 0),  (600, 340), (1200, 340), 38, (6, 50)),
+    3: (3391, (600, 0),  (600, 300), (1200, 300), 30, (6, 42)),
 }
 MOBIEL = {
-    0: (9137, (28, 0), (28, 320), (60, 320), 72, (3, 26)),
-    1: (4409, (28, 0), (28, 320), (60, 320), 78, (3, 26)),
-    2: (6620, (28, 0), (28, 320), (60, 320), 70, (3, 26)),
-    3: (1806, (28, 0), (28, 260), (60, 260), 62, (3, 24)),
+    0: (9137, (28, 0), (28, 320), (60, 320), 30, (4, 26)),
+    1: (4409, (28, 0), (28, 320), (60, 320), 32, (4, 26)),
+    2: (6620, (28, 0), (28, 320), (60, 320), 28, (4, 26)),
+    3: (1806, (28, 0), (28, 260), (60, 260), 26, (4, 24)),
 }
 
 if __name__ == '__main__':
