@@ -7655,7 +7655,11 @@ h1.rg-route__title em{
   fill:none;
   stroke-linecap:round;
   stroke-linejoin:round;
-  vector-effect:non-scaling-stroke;
+  /* BEWUST GEEN vector-effect:non-scaling-stroke: Chrome rekent dash-lengtes
+     dan in schermruimte terwijl stroke-dashoffset in padeenheden staat. Het
+     patroon herhaalt zich dan en er verschijnen lijnstukken op plekken waar
+     nog niets getekend hoort te zijn. De segmenten hebben een vaste
+     aspect-ratio, dus de lijn schaalt hier vanzelf goed mee. */
 }
 /* nog af te leggen: zwakke stippellijn (vooruitblik + scroll-cue) */
 .rg-route__seg-base{
