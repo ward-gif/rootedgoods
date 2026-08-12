@@ -95,7 +95,12 @@ Wat animeert (alles scrub-gebonden, geen autonome animaties):
    moment dat de lijn ze bereikt.
 4. **Copy**: rustige fade/slide-in per stop (1 beweging, geen fade-cascade).
 5. **Kilometerteller** (zie §6): telt op met de scroll.
-6. **Het reizende blad** (BESLOTEN): het Rooted-bladlogo reist als klein
+6. **Zwevende sfeerbeelden** (`.rg-route__shot`, `.rg-route__collage-shot`):
+   moeten in fase 2 meebewegen. Voorstel: subtiele parallax per beeld (elk een
+   eigen snelheid via de bestaande inline-variabelen) plus een rustige
+   fade/scale-in zodra de stop in beeld komt. Ze mogen de tekst nooit
+   overstemmen: kleine verplaatsing, geen rotatie-animatie.
+7. **Het reizende blad** (BESLOTEN): het Rooted-bladlogo reist als klein
    element mee op de punt van de getekende lijn (GSAP MotionPathPlugin,
    gratis onderdeel). Het kantelt subtiel mee met de bochtrichting. Geen
    gebounce: rustig meereizen, als de reiziger van het verhaal. Bij de

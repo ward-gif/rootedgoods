@@ -7913,7 +7913,7 @@ h3.rg-route__panel-title{
   margin-bottom:0 !important;
 }
 
-/* ---- EPILOOG: team ---- */
+/* ---- EPILOOG: team als collage + contactkaart ---- */
 .rg-route__team{
   max-width:1100px;
   margin:0 auto;
@@ -7931,25 +7931,100 @@ h2.rg-route__team-title{
 }
 .rg-route__team-grid{
   display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns:1fr 1fr;
+  gap:clamp(2rem, 5vw, 4.5rem);
   align-items:center;
-  margin-top:clamp(1.5rem, 3vw, 2.5rem);
+  margin-top:clamp(2.5rem, 5vw, 4rem);
   text-align:left;
 }
-.rg-route__teamphoto{
-  width:100%;
+
+/* collage: de founders-foto zweeft (rotatie + schaduw), kleine beelden eromheen */
+.rg-route__collage{ position:relative; padding:2.5rem 2rem; }
+.rg-route__collage-main{
+  width:86%;
   aspect-ratio:4/5;
-  object-position:50% 30%;
   object-fit:cover;
-  border-radius:var(--rg-r-xp);
-  box-shadow:var(--rg-sh-soft);
+  border-radius:14px;
+  transform:rotate(-2deg);
+  box-shadow:0 26px 50px -26px rgba(45,69,40,.5);
+  display:block;
+  position:relative;
+  z-index:1;
+}
+.rg-route__collage-shot{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:var(--w, 130px);
+  aspect-ratio:var(--ar, 4/5);
+  object-fit:cover;
+  border-radius:10px;
+  transform:rotate(var(--r, 0deg));
+  box-shadow:0 16px 32px -18px rgba(45,69,40,.45);
+  z-index:2;
+  background:var(--rg-sand);
 }
 .rg-route__team-copy p{
   font-size:clamp(1rem, .97rem + .12vw, 1.0625rem);
   line-height:1.6;
-  margin:0 0 1rem;
+  margin:0 0 clamp(1.5rem, 3vw, 2rem);
 }
+
+/* contactkaart: ingezoomd Nederland met een pin op Ede */
+.rg-route__contact{
+  position:relative;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:clamp(1rem, 2.5vw, 2rem);
+  align-items:center;
+}
+.rg-route__contact-map{
+  position:relative;
+  width:clamp(120px, 15vw, 168px);
+  flex:none;
+}
+.rg-route__contact-map img{ width:100%; height:auto; display:block; }
+/* pin op Ede: percentages van de kaart (Gelderland, midden-oost) */
+.rg-route__pin{
+  position:absolute;
+  left:59.6%; top:53.7%;
+  width:13px; height:13px;
+  border-radius:50%;
+  background:var(--rg-cognac);
+  box-shadow:0 0 0 4px rgba(173,99,49,.18);
+  transform:translate(-50%,-50%);
+}
+.rg-route__pin b{
+  position:absolute;
+  left:50%; top:-1.55rem;
+  transform:translateX(-50%);
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--rg-green);
+  white-space:nowrap;
+}
+.rg-route__contact-body .rg-route__place{ display:block; margin-bottom:.7rem; }
+.rg-route__contact-body .rg-route__place span{ display:inline; }
+/* belafspraak over de volle breedte, anders wordt hij in de smalle kolom geperst */
+.rg-route__contact > .rg-contact-head__callcard{ grid-column:1 / -1; max-width:none; }
+.rg-route__contact-link{
+  display:block;
+  font-weight:600;
+  font-size:1rem;
+  color:var(--rg-green) !important;
+  text-decoration:none;
+  border-bottom:1px solid var(--rg-sand);
+  width:max-content;
+  max-width:100%;
+  padding-bottom:2px;
+  margin-bottom:.55rem;
+  transition:border-color .18s ease, color .18s ease;
+}
+.rg-route__contact-link:hover{ color:var(--rg-cognac) !important; border-color:var(--rg-cognac); }
+.rg-route__contact > .rg-contact-head__callcard{ margin-top:.5rem; }
 
 /* ---- MOBIEL / TABLET: verticale rail ---- */
 @media (max-width:991px){
@@ -7968,6 +8043,11 @@ h2.rg-route__team-title{
   .rg-route__roots{ grid-template-columns:1fr; }
   .rg-route__checks{ grid-template-columns:1fr; }
   .rg-route__team-grid{ grid-template-columns:1fr; }
+  .rg-route__collage{ padding:1.5rem 1rem 3rem; }
+  .rg-route__collage-main{ width:100%; }
+  .rg-route__collage-shot{ width:calc(var(--w, 130px) * .8); }
+  .rg-route__contact{ grid-template-columns:1fr; }
+  .rg-route__contact-map{ width:130px; }
   .rg-route__map img{ height:calc(var(--map-h, 58vh) * .5); }
   .rg-route__map{ opacity:.75; }
   .rg-route__intro-map{ width:100vw; opacity:.32; }
