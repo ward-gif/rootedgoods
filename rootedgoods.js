@@ -677,7 +677,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     dots.forEach(function (d) {
       var r = d.getBoundingClientRect();
-      spine.push({ x: r.left + r.width / 2 - tr.left, y: r.top + r.height / 2 - tr.top, marker: true });
+      /* x uit de BEDOELDE kant van de stop, niet uit de gemeten dot-positie:
+         de dots worden zelf op de route gelegd, dus meten zou een
+         terugkoppeling geven waarbij de route zijn eigen vorige vorm volgt. */
+      var stop = d.parentElement;
+      var deel = stop.classList.contains('rg-route__stop--right') ? 0.66
+               : stop.classList.contains('rg-route__stop--wide')  ? 0.50
+               : 0.34;
+      var kolom = track.getBoundingClientRect();
+      spine.push({
+        x: kolom.left - tr.left + kolom.width * deel,
+        y: r.top + r.height / 2 - tr.top,
+        marker: true
+      });
     });
 
     /* De reis eindigt niet bij stop 4 maar loopt door naar het team: daar
@@ -698,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var n = dy > 700 ? 2 : 1;
         for (var k = 1; k <= n; k++) {
           var t = k / (n + 1);
-          var zij = (r1() - 0.5) * Math.min(breedte * 0.20, 220);
+          var zij = (r1() - 0.5) * Math.min(breedte * 0.17, 190);
           vol.push({ x: a.x + (b.x - a.x) * t + zij, y: a.y + dy * t, marker: false });
         }
       }
@@ -761,23 +773,18 @@ document.addEventListener('DOMContentLoaded', function () {
     function offset(yy) {
       /* trage golf: periode 2600 -> hooguit een richtingswissel per 1300px */
       var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 96;
-      var midden = Math.sin(yy / 151  * 6.283 + f2) * 12
-                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 6;
-      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 2.5;
+      var midden = Math.sin(yy / 151  * 6.283 + f2) * 10
+                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 5;
+      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 1.6;
       return traag * (0.45 + 0.55 * sterkte(yy)) + (midden + fijn) * sterkte(yy);
     }
-    /* binnen 40px van een marker naar 0 uitfaden: de lijn komt exact in het
-       middelpunt aan en vertrekt daar ook weer */
-    function demping(yy) {
-      var d = Infinity;
-      for (var q = 0; q < markers.length; q++) d = Math.min(d, Math.abs(yy - markers[q]));
-      if (d >= 40) return 1;
-      var t = d / 40;
-      return t * t * (3 - 2 * t);
-    }
+    /* GEEN demping rond markers meer: die liet de lijn precies op het
+       nummer aankomen en daarna weer wegdraaien, wat een zichtbaar uitstapje
+       heen-en-terug gaf. De route loopt nu ononderbroken door; de nummers
+       worden er straks op gelegd (zie legNummersOpDeRoute). */
 
     var pts = punten.map(function (yy) {
-      return { x: xBijY(yy) + offset(yy) * demping(yy), y: yy };
+      return { x: xBijY(yy) + offset(yy), y: yy };
     });
 
     /* De omweg zit nu in de spine (zie boven), dus geen harde per-punt
@@ -814,6 +821,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var d2 = padVan(pts);
     base.setAttribute('d', d2);
     draw.setAttribute('d', d2);
+
+    /* De nummers volgen de route, niet andersom: zoek per dot de x waar het
+       pad zijn hoogte kruist en zet hem daar neer. Zo ligt elk nummer exact
+       op de lijn en hoeft de route geen omweg te maken. */
+    function routeXbijY(yy) {
+      var lo = 0, hi = pts.length - 1;
+      if (yy <= pts[0].y) return pts[0].x;
+      if (yy >= pts[hi].y) return pts[hi].x;
+      while (hi - lo > 1) { var mid = (lo + hi) >> 1; if (pts[mid].y < yy) lo = mid; else hi = mid; }
+      var t = (yy - pts[lo].y) / Math.max(1, pts[hi].y - pts[lo].y);
+      return pts[lo].x + (pts[hi].x - pts[lo].x) * t;
+    }
+    dots.forEach(function (d) {
+      var dr = d.getBoundingClientRect();
+      var stop = d.parentElement.getBoundingClientRect();
+      var midY = dr.top + dr.height / 2 - tr.top;
+      var x = routeXbijY(midY);
+      d.style.left = (x + tr.left - stop.left) + 'px';
+    });
 
     /* Mask: achter tekstblokken zakt de lijn naar 30%. De vorm verandert niet,
        alleen de zichtbaarheid. */
