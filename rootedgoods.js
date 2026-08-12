@@ -685,9 +685,11 @@ document.addEventListener('DOMContentLoaded', function () {
           trigger: svg,
           /* pas tekenen als het segment echt in beeld is: anders staat er bij
              het landen al een stuk lijn vóór het merkteken uit */
-          start: 'top 68%',
-          end: 'bottom 55%',
-          scrub: 0.4,
+          /* ruim bereik: het segment tekent van binnenkomst tot bijna
+             uit beeld. Korter voelde gejaagd en ongecontroleerd. */
+          start: 'top 82%',
+          end: 'bottom 30%',
+          scrub: 0.8,
           onUpdate: function (self) {
             /* alleen het zichtbare segment (desktop of mobiel) stuurt aan */
             if (!svg.getClientRects().length) return;

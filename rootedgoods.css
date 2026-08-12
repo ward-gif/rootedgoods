@@ -7607,6 +7607,10 @@ h1.rg-route__title em{
 
 /* ---- Scroll-hint: benoemt de reis, nodigt uit om te scrollen ---- */
 .rg-route__hint{
+  /* boven de creme-uitvloeier van de proloogkaart: die is absoluut met
+     z-index 1 en waste de hint anders weg */
+  position:relative;
+  z-index:2;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -7637,7 +7641,7 @@ h1.rg-route__title em{
   max-width:1200px;
   margin:0 auto;
   /* de reis begint bewust ruim onder de proloog */
-  padding:clamp(6rem, 16vw, 13rem) clamp(1.25rem, 4vw, 2rem) 0;
+  padding:clamp(9rem, 22vw, 18rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
 /* ---- Segmenten (de routelijn) ---- */
