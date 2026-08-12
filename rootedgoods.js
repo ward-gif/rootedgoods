@@ -633,7 +633,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var base  = root.querySelector('.rg-route__line-base');
   var draw  = root.querySelector('.rg-route__line-draw');
   var mark  = root.querySelector('.rg-route__mark');
-  var teller = root.querySelector('.rg-route__meter-num');
   if (!track || !svg || !base || !draw) return;
 
   /* ---------- kleine deterministische generator (vaste seed) ---------- */
@@ -645,7 +644,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------- de route opbouwen ---------- */
-  var markers = [];      /* y-posities van de stops, voor de km-teller */
   var routeStart = { x: 0, y: 0 }, routeEind = 0;
 
   function bouwRoute() {
@@ -717,7 +715,6 @@ document.addEventListener('DOMContentLoaded', function () {
       vol.push(b);
     }
 
-    markers = vol.filter(function (p) { return p.marker; }).map(function (p) { return p.y; });
 
     /* GEEN tekstontwijking. Elke vorm van ontwijken dwingt de lijn tot
        bewegingen die niets met de route te maken hebben; op een echte kaart
@@ -952,9 +949,6 @@ document.addEventListener('DOMContentLoaded', function () {
       gsap.ticker.lagSmoothing(0);
     }
 
-    /* km-ijkpunten: de reis begint bij Porto (marker 0) */
-    var KM = [0, 1150, 1500, 2100];
-
     var L = draw.getTotalLength();
     gsap.set(draw, { strokeDasharray: L, strokeDashoffset: L });
 
@@ -977,7 +971,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var p = self.progress;
         gsap.set(draw, { strokeDashoffset: L * (1 - p) });
         zetMerkteken(p);
-        zetKm(p);
       },
       onRefresh: function () {
         L = draw.getTotalLength();
@@ -1001,21 +994,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (mark) gsap.set(mark, { top: 0, left: 0 });
     zetMerkteken(0);
-
-    /* km volgt de y-positie van het merkteken t.o.v. de markers */
-    function zetKm(p) {
-      if (!teller || !markers.length) return;
-      var y = draw.getPointAtLength(L * p).y, km = 0;
-      if (y >= markers[markers.length - 1]) km = KM[KM.length - 1];
-      else for (var i = 0; i < markers.length - 1; i++) {
-        if (y >= markers[i] && y < markers[i + 1]) {
-          var t = (y - markers[i]) / Math.max(1, markers[i + 1] - markers[i]);
-          km = KM[i] + (KM[i + 1] - KM[i]) * t;
-          break;
-        }
-      }
-      teller.textContent = Math.round(km).toLocaleString('nl-NL');
-    }
 
     /* dots lichten op zodra ze in beeld zijn */
     gsap.utils.toArray('.rg-route__dot').forEach(function (dot) {
@@ -1085,7 +1063,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var p = t ? t.progress : 0;
       gsap.set(draw, { strokeDashoffset: L * (1 - p) });
       zetMerkteken(p);
-      zetKm(p);
     }
     if (document.readyState === 'complete') herbereken();
     else window.addEventListener('load', herbereken);
