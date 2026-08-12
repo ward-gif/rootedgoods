@@ -11,18 +11,32 @@ laden (dus go-live-proof: geen dev-URL's in de code).
 <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-frankrijk.svg" alt="">
 ```
 
-Na een wijziging aan een kaart: purgen met
-`https://purge.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-<naam>.svg`
+Na een wijziging aan een kaart: purgen **en verifieren**. De purge is
+asynchroon; hij komt niet altijd meteen door, en dan serveert de CDN per
+bestand nog de oude versie (kaarten zien er dan onderling inconsistent uit):
+
+```bash
+for f in kaarten/land-*.svg; do
+  curl -s "https://purge.jsdelivr.net/gh/ward-gif/rootedgoods@main/$f" -o /dev/null
+done
+sleep 12
+for f in kaarten/land-*.svg; do
+  curl -s "https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/$f" | head -c 900 \
+    | grep -q 'non-scaling-stroke' || echo "NOG STALE: $f"
+done
+```
 
 ## Normalisatie (wat er is aangepast t.o.v. de originelen)
 
-1. **Lijndikte gelijkgetrokken.** De originelen hadden allemaal
-   `stroke-width: .5px`, maar hun viewBox-breedtes liepen van 22 (Slovenie)
-   tot 720 (Europa). Op gelijke weergavegrootte was Slovenie daardoor ~32x
-   dikker dan Europa. De stroke is nu per bestand herrekend als
-   `1.2 * (viewBoxBreedte / 600)`: elke kaart heeft exact dezelfde lijn
-   (1,2px) bij een weergavebreedte van 600px, en blijft onderling
-   consistent op elke andere breedte.
+1. **Lijndikte gelijkgetrokken via `vector-effect: non-scaling-stroke`**
+   (`stroke-width: 1.1px`). De originelen hadden allemaal `stroke-width:
+   .5px`, maar hun viewBox-breedtes liepen van 22 (Slovenie) tot 720
+   (Europa), waardoor de lijn na schaling tot 32x kon verschillen.
+   Non-scaling-stroke negeert alle schaling: de lijn is altijd exact 1,1px,
+   ongeacht viewBox en weergavegrootte. Dat is belangrijk omdat kaarten op
+   de pagina soms op *hoogte* worden geschaald: een smal-en-hoog land als
+   Portugal is dan veel minder breed dan een brede kaart als Europa.
+   (Getest: werkt in `<img>`-context.)
 2. **Kleur** `#C9C2B5` (warm zandgrijs). Dim verder met CSS `opacity` per
    gebruik.
 3. **Gevulde lagen verborgen.** De Europa-bestanden hebben naast de

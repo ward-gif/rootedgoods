@@ -13,3 +13,5 @@ mock-editorial*.png
 *step*.png
 *.png
 _kaarten-test.html
+_*.svg
+_*.html
