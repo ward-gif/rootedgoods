@@ -775,12 +775,16 @@ document.addEventListener('DOMContentLoaded', function () {
       return 0.16 + 0.84 * Math.pow(m, 1.5);
     }
     function offset(yy) {
-      /* trage golf: periode 2600 -> hooguit een richtingswissel per 1300px */
-      var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 118;
-      var midden = Math.sin(yy / 151  * 6.283 + f2) * 18
-                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 9;
-      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 3;
-      return traag * (0.45 + 0.55 * sterkte(yy)) + (midden + fijn) * sterkte(yy);
+      /* Twee brede lagen bepalen het beeld: de route maakt af en toe een
+         echte uitstap naar links of rechts. De fijne wiebel is bewust klein
+         gehouden; die las als ruis in plaats van als route. */
+      var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 205;   /* grote zwenk */
+      var breed  = Math.sin(yy / 1040 * 6.283 + f1 * 2.7) * 105;
+      var midden = Math.sin(yy / 151  * 6.283 + f2) * 6
+                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 3;
+      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 1;
+      var st = sterkte(yy);
+      return (traag + breed) * (0.5 + 0.5 * st) + (midden + fijn) * st;
     }
     /* GEEN demping rond markers meer: die liet de lijn precies op het
        nummer aankomen en daarna weer wegdraaien, wat een zichtbaar uitstapje
@@ -788,7 +792,9 @@ document.addEventListener('DOMContentLoaded', function () {
        worden er straks op gelegd (zie legNummersOpDeRoute). */
 
     var pts = punten.map(function (yy) {
-      return { x: xBijY(yy) + offset(yy), y: yy };
+      /* binnen het doek houden nu de uitstappen fors zijn */
+      var xx = xBijY(yy) + offset(yy);
+      return { x: Math.max(40, Math.min(breedte - 40, xx)), y: yy };
     });
 
     /* De omweg zit nu in de spine (zie boven), dus geen harde per-punt
