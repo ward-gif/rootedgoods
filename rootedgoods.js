@@ -915,11 +915,17 @@ document.addEventListener('DOMContentLoaded', function () {
     gsap.set(draw, { strokeDasharray: L, strokeDashoffset: L });
 
     ST.create({
-      trigger: track,
+      /* de sectie als trigger, niet de track: routeStart/routeEind staan in
+         sectiecoordinaten sinds de lijn op sectieniveau hangt. Met de track
+         als anker begon alles ~390px (de proloog) te laat. */
+      trigger: root,
       /* exact van het startpunt van de route tot het laatste marker-punt:
          zo staat er bij het landen niets getekend en komt de lijn precies
          bij stop 4 aan (eerder liep hij achter en verdween hij uit beeld) */
-      start: function () { return 'top+=' + routeStart.y + ' 46%'; },
+      /* Startpunt staat op ~72vh; op 46% moest je eerst 260px scrollen voordat
+         er iets gebeurde, en zolang bleef het merkteken stilstaan en uit beeld
+         lopen. Op 68% begint de lijn vrijwel meteen mee te lopen. */
+      start: function () { return 'top+=' + routeStart.y + ' 68%'; },
       end: function () { return 'top+=' + routeEind + ' 58%'; },
       scrub: 0.8,
       invalidateOnRefresh: true,
