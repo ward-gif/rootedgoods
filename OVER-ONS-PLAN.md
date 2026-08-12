@@ -95,6 +95,11 @@ Wat animeert (alles scrub-gebonden, geen autonome animaties):
    moment dat de lijn ze bereikt.
 4. **Copy**: rustige fade/slide-in per stop (1 beweging, geen fade-cascade).
 5. **Kilometerteller** (zie §6): telt op met de scroll.
+6. **Het reizende blad** (BESLOTEN): het Rooted-bladlogo reist als klein
+   element mee op de punt van de getekende lijn (GSAP MotionPathPlugin,
+   gratis onderdeel). Het kantelt subtiel mee met de bochtrichting. Geen
+   gebounce: rustig meereizen, als de reiziger van het verhaal. Bij de
+   laatste stop 'landt' het blad naast de belofte.
 
 **Technische les uit v1-v6 (belangrijk voor de uitvoerder):** gebruik GEEN
 `preserveAspectRatio="none"` op de route-SVG's. Non-uniforme rek maakte
@@ -164,13 +169,20 @@ Specificaties per land (zelfde stijl als Europa map.svg):
 5. **Copy-fijnslijp + echte teamfoto + JSON-LD.** Ward plakt het blok in het
    CMS; live natuning.
 
-## 8. Open vragen aan Ward
-1. **Route/landen**: akkoord met Porto → Savoie (FR) → Duitsland (optioneel) →
-   Achterhoek (NL)? En mogen we merknamen noemen bij stops (Opinel, Bambook)?
-2. **Lijnstijl**: doorgetrokken cognac (Flyward) met het nog af te leggen deel
-   als zwakke stippellijn, of volledig gestippeld (klassieke kaartroute)?
-3. **GSAP + ScrollTrigger akkoord?** En Lenis (smooth scroll, alleen deze
-   pagina): ja/nee?
-4. **Extra's**: kilometerteller en plaatslabels doen? Merk-chips en/of
-   stempels?
-5. **Teamfoto**: is er al een echte, of blijft de dummy tot de fotoshoot?
+## 8. Besluiten (vastgelegd met Ward, 12 aug)
+1. **Route**: verhaal is leidend, exacte plekken vrij. Gekozen route:
+   Porto (PT) -> Savoie (FR) -> tussenstop naar keuze van de bouwer
+   (bv. Zwarte Woud, DE) -> De Achterhoek (NL). Het gaat erom dat Europa
+   wordt uitgelicht met stops die het verhaal dragen. Geen merknamen nodig.
+2. **Lijnstijl**: getekend deel solide cognac; nog af te leggen deel als
+   zwakke stippellijn (vooruitblik + scroll-cue).
+3. **Libraries**: GSAP + ScrollTrigger + MotionPathPlugin + Lenis, alleen op
+   deze pagina geladen (detectie op `.rg-route` in rootedgoods.js).
+4. **Extra's**: kilometerteller JA (punchline "2.100 km. Geen 19.000."),
+   coordinaten-plaatslabels JA, JSON-LD (AboutPage + Organization) JA,
+   paspoort-stempels NEE. In plaats daarvan: het reizende blad (zie §3.6).
+5. **Land-outlines**: Ward levert ze aan volgens de specs in §4. Tot die er
+   zijn kan fase 1 (sloop + skelet + typografie) alvast gebouwd worden met
+   de bestaande Europa map.svg; Plan B (zelf genereren uit Natural Earth)
+   blijft de fallback als aanleveren niet lukt.
+6. **Teamfoto**: dummy blijft tot er een echte is.
