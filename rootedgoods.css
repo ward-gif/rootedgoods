@@ -7711,7 +7711,10 @@ h1.rg-route__title em{
 .rg-route__map{
   position:absolute;
   top:50%;
-  transform:translateY(-50%);
+  /* --map-shift verschuift een kaartlaag verticaal, zodat hij niet tegen de
+     kaart van de vorige sectie aanplakt (Portugal leek anders vast te zitten
+     aan Turkije uit de Europa-kaart erboven). */
+  transform:translateY(calc(-50% + var(--map-shift, 0px)));
   z-index:0;
   opacity:1;   /* de zandkleur in het asset dimt al; extra opacity maakt modderig */
   pointer-events:none;
