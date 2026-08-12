@@ -5,8 +5,9 @@
       .cls-1 {
         fill: none;
         fill-rule: evenodd;
-        stroke: #C9C2B5;
-        stroke-width: 0.2046px;
+        stroke: #D8CFC0;
+        stroke-width: 1.1px;
+        vector-effect: non-scaling-stroke;
         stroke-miterlimit: 10;
         stroke-linejoin: round;
       }

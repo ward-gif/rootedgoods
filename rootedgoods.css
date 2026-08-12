@@ -7489,7 +7489,7 @@ h1.rg-route__title em{
   width:min(88vw, 1100px);
   margin-right:-6vw;          /* deels buiten beeld */
   z-index:1;
-  opacity:.55;
+  opacity:1;
   pointer-events:none;
 }
 .rg-route__intro-map img{ width:100%; height:auto; display:block; }
@@ -7609,7 +7609,7 @@ h1.rg-route__title em{
   top:50%;
   transform:translateY(-50%);
   z-index:0;
-  opacity:.42;
+  opacity:1;   /* de zandkleur in het asset dimt al; extra opacity maakt modderig */
   pointer-events:none;
   line-height:0;
 }
@@ -7837,7 +7837,7 @@ h2.rg-route__team-title{
   .rg-route__checks{ grid-template-columns:1fr; }
   .rg-route__team-grid{ grid-template-columns:1fr; }
   .rg-route__map img{ height:calc(var(--map-h, 58vh) * .5); }
-  .rg-route__map{ opacity:.22; }
+  .rg-route__map{ opacity:.75; }
   .rg-route__intro-map{ width:100vw; opacity:.32; }
   .rg-route__meter{ top:calc(100vh - 4.5rem); }
   .rg-route__mark{ left:28px; }
