@@ -1,134 +1,180 @@
 <!-- ============================================================
-     OVER ONS v4 — "De Route van Rooted" (Flyward-flow).
+     OVER ONS v7 — "De Route van Rooted" (FASE 1: skelet, nog geen animatie)
      Plak dit in een CMS HTML-blok op de Over ons-pagina (/over-ons).
-     CSS: rootedgoods.css sectie 42. JS: rootedgoods.js sectie 1.6.
+     CSS: rootedgoods.css sectie 42 (.rg-route). JS volgt in fase 2.
 
-     Flow: hero-zoom (Europa-uitsparing) -> full-screen beeld met content
-     (Het begin) -> donkergroene sectie met gescheurde randen (Waarom
-     Europa) -> route-sectie (de drie wortels als stops, dikke hoekige
-     lijn, kaart-textuur) -> full-screen belofte-band met checks ->
-     team. Sluit af met het bestaande EIND-CTA-blok als volgend blok.
+     Opzet: een doorlopende kaartreis. De routelijn verbindt vier stops
+     (Porto -> Savoie -> Zwarte Woud -> Achterhoek). Per stop schuift een
+     kaartlaag mee op de achtergrond. Sluit de pagina af met het bestaande
+     EIND-CTA-blok als volgend CMS-blok.
 
-     TE VERVANGEN (dummy-beelden): hero/begin-beeld (CSS + hieronder),
-     3 stop-foto's, belofte-band-beeld, teamfoto.
+     STRUCTUUR PER SEGMENT: elke routelijn bestaat uit twee identieke paden:
+       .rg-route__seg-base = zwakke stippellijn (nog af te leggen)
+       .rg-route__seg-line = solide cognac (afgelegd; fase 2 animeert deze)
+     Desktop- en mobielsegmenten zijn aparte SVG's met een VASTE aspect-ratio
+     (geen preserveAspectRatio="none", zie plan) zodat de lijn-animatie klopt.
+
+     TE VERVANGEN:
+       - kaartlagen: nu ingezoomde uitsnedes van europa-outline.svg; worden
+         vervangen door de losse land-SVG's (land-portugal.svg etc.) zodra
+         die er zijn. Per stop staan --map-* variabelen ingesteld.
+       - teamfoto (nu dummy)
      ============================================================ -->
-<section class="rg-about">
+<section class="rg-route">
 
-  <!-- ===== 1. HERO-ZOOM: Europa-uitsparing ===== -->
-  <div class="rg-about__heroZoom">
-  <div class="rg-about__hero2">
-    <img class="rg-about__hero2-photo" src="/media/5d/dd/b7/1785500254/Warehousing-2.jpg" alt="">
-    <div class="rg-about__hero2-shade" aria-hidden="true"></div>
-    <div class="rg-about__hero2-frame" aria-hidden="true"></div>
-    <div class="rg-about__hero2-copy">
-      <p class="rg-about__eyebrow">Over ons</p>
-      <h1 class="rg-about__title">Geworteld in <em>Europees vakmanschap</em>.</h1>
+  <!-- ===== PROLOOG ===== -->
+  <header class="rg-route__intro">
+    <div class="rg-route__intro-map" aria-hidden="true">
+      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
     </div>
-    <div class="rg-about__hero2-begincopy">
-      <p class="rg-about__eyebrow rg-about__eyebrow--light">Het begin</p>
-      <h2 class="rg-about__full-title">We gingen kijken of het kon.</h2>
-      <p>Kan merchandise gewoon in Europa in elkaar worden gezet? Van Porto tot de Achterhoek belden we, reden we en dronken we koffie tussen de machines.</p>
+    <div class="rg-route__intro-copy">
+      <p class="rg-route__eyebrow">Over ons</p>
+      <h1 class="rg-route__title">Geworteld in <em>Europees vakmanschap</em>.</h1>
+      <p class="rg-route__lede">Kan merchandise gewoon in Europa in elkaar worden gezet? We gingen kijken. Van Porto tot de Achterhoek, dit is de route die we aflegden.</p>
     </div>
-  </div>
-  </div>
+  </header>
 
-  <!-- ===== 2b. FULL-SCREEN: HET ANTWOORD ===== -->
-  <section class="rg-about__full rg-about__full--antwoord">
-    <img class="rg-about__full-img" src="/media/4a/2e/d4/1785831536/Verzending naar locaties doosjes-2.jpg" alt="">
-    <svg class="rg-about__edge rg-about__edge--top" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L0,5.7 L2.4,5.7 L4.7,4.7 L7.1,5.6 L8.5,4.3 L11.5,2.9 L14.8,3.3 L17.4,1.8 L19.7,1.5 L21.5,1.5 L23.6,1.6 L26.3,2.1 L28.5,3.7 L31.8,4.3 L33.7,3.7 L35.1,3.3 L38.2,4.8 L41.2,2.2 L44.4,3.7 L46.5,4.9 L49.4,3.6 L51.3,4.4 L52.8,3.1 L54.1,2.1 L56.6,1.5 L59.4,2.8 L60.8,1.9 L62.6,2.8 L64.5,1.9 L66.6,2.4 L68.0,1.5 L69.8,1.5 L71.6,1.5 L74.1,1.8 L76.1,3.3 L78.4,4.5 L80.0,5.8 L83.0,4.8 L85.8,3.8 L89.1,4.1 L91.2,1.5 L94.5,2.2 L96.3,2.5 L98.1,3.2 L99.5,3.4 L100.0,2.7 L100,0 Z"/></svg>
-    <div class="rg-about__full-copy">
-      <h2 class="rg-about__full-title">Het antwoord was volmondig ja.</h2>
-      <p>De vakmensen zijn er nog, de kwaliteit is er nog. Ze verdienen alleen weer de orders. Daarom zijn we Rooted Goods gestart.</p>
-    </div>
-    <svg class="rg-about__edge rg-about__edge--bottom" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0,12 L0,6.0 L2.3,6.0 L4.0,7.4 L6.1,8.1 L8.5,8.4 L10.5,8.1 L13.9,6.6 L15.6,7.6 L17.2,7.1 L20.1,8.0 L21.8,7.8 L24.8,9.1 L28.2,10.1 L31.2,9.1 L34.5,7.5 L36.7,6.6 L40.0,10.2 L42.4,9.8 L44.6,10.5 L47.2,10.5 L50.2,10.5 L52.8,10.5 L55.8,10.5 L58.8,9.8 L60.2,10.0 L62.7,9.2 L65.5,8.2 L68.8,7.9 L71.2,9.5 L73.6,8.8 L75.9,9.3 L78.0,8.0 L80.2,6.5 L82.9,7.2 L85.3,8.6 L87.1,9.2 L89.9,7.6 L92.8,8.5 L96.2,8.2 L99.3,7.7 L100.0,8.3 L100,12 Z"/></svg>
-  </section>
+  <!-- ===== DE ROUTE ===== -->
+  <div class="rg-route__track">
 
-  <!-- ===== 3. DONKER: WAAROM EUROPA ===== -->
-  <section class="rg-about__dark">
-    <div class="rg-about__dark-inner">
-      <h2 class="rg-about__dark-title">De wereld werd grilliger.<br><em>Wij kozen dichtbij.</em></h2>
-      <div class="rg-about__cols">
-        <div class="rg-about__col">
-          <h3>De wereld</h3>
-          <p>Handelsoorlogen, tarieven die per verkiezing veranderen, containerschepen die stilliggen. Een keten ver weg voelt elke schok mee.</p>
+    <!-- kilometerteller (sticky; fase 2 telt op met de scroll) -->
+    <div class="rg-route__meter-rail" aria-hidden="true">
+      <p class="rg-route__meter"><span class="rg-route__meter-num">0</span> km afgelegd</p>
+    </div>
+
+    <!-- het reizende blad (fase 2: reist mee op de punt van de lijn) -->
+    <span class="rg-route__leaf" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3C10 3 3 10 3 21c11 0 18-7 18-18z"/><path d="M3 21L21 3" stroke="#fff" stroke-width="1.4" fill="none" opacity=".55"/></svg>
+    </span>
+
+    <!-- segment: proloog -> stop 1 -->
+    <svg class="rg-route__seg rg-route__seg--desk" viewBox="0 0 1200 340" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M600,0 C601,24 594,42 580,58 C562,79 552,96 556,118 C560,144 542,158 518,172 C490,188 462,196 442,214 C420,234 410,254 392,276 C374,298 342,318 312,340"/>
+      <path class="rg-route__seg-line" d="M600,0 C601,24 594,42 580,58 C562,79 552,96 556,118 C560,144 542,158 518,172 C490,188 462,196 442,214 C420,234 410,254 392,276 C374,298 342,318 312,340"/>
+    </svg>
+    <svg class="rg-route__seg rg-route__seg--mob" viewBox="0 0 60 320" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M28,0 C28,28 34,42 32,60 C30,80 20,92 22,112 C24,136 36,146 36,168 C36,192 24,204 26,228 C28,254 33,272 30,292 C29,304 28,312 28,320"/>
+      <path class="rg-route__seg-line" d="M28,0 C28,28 34,42 32,60 C30,80 20,92 22,112 C24,136 36,146 36,168 C36,192 24,204 26,228 C28,254 33,272 30,292 C29,304 28,312 28,320"/>
+    </svg>
+
+    <!-- ===== STOP 1: PORTO ===== -->
+    <section class="rg-route__stop rg-route__stop--left" style="--map-scale:3.4; --map-x:14%; --map-y:62%">
+      <div class="rg-route__map rg-route__map--right" aria-hidden="true">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+      </div>
+      <span class="rg-route__dot" aria-hidden="true">1</span>
+      <div class="rg-route__body">
+        <p class="rg-route__place">Porto, Portugal <span>41.1&deg; N, 8.6&deg; W</span></p>
+        <h2 class="rg-route__stop-title">We gingen kijken of het kon.</h2>
+        <p>Bij werkplaatsen, ateliers en assemblagelijnen. We belden, reden en dronken koffie tussen de machines.</p>
+        <p><b>Het antwoord was volmondig ja.</b> De vakmensen zijn er nog, de kwaliteit is er nog. Ze verdienen alleen weer de orders.</p>
+      </div>
+    </section>
+
+    <!-- segment: stop 1 -> stop 2 -->
+    <svg class="rg-route__seg rg-route__seg--desk" viewBox="0 0 1200 380" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M312,0 C312,26 320,44 338,60 C360,80 388,88 408,106 C430,126 428,152 450,172 C476,196 518,198 552,212 C594,229 620,246 646,268 C678,294 714,302 750,314 C798,330 844,344 868,360 C878,367 884,374 888,380"/>
+      <path class="rg-route__seg-line" d="M312,0 C312,26 320,44 338,60 C360,80 388,88 408,106 C430,126 428,152 450,172 C476,196 518,198 552,212 C594,229 620,246 646,268 C678,294 714,302 750,314 C798,330 844,344 868,360 C878,367 884,374 888,380"/>
+    </svg>
+    <svg class="rg-route__seg rg-route__seg--mob" viewBox="0 0 60 320" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M28,0 C28,26 22,42 24,62 C26,84 38,94 36,116 C34,140 22,150 24,172 C26,196 38,208 36,232 C34,256 27,274 30,294 C31,306 28,313 28,320"/>
+      <path class="rg-route__seg-line" d="M28,0 C28,26 22,42 24,62 C26,84 38,94 36,116 C34,140 22,150 24,172 C26,196 38,208 36,232 C34,256 27,274 30,294 C31,306 28,313 28,320"/>
+    </svg>
+
+    <!-- ===== STOP 2: SAVOIE ===== -->
+    <section class="rg-route__stop rg-route__stop--right" style="--map-scale:3.2; --map-x:44%; --map-y:56%">
+      <div class="rg-route__map rg-route__map--left" aria-hidden="true">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+      </div>
+      <span class="rg-route__dot" aria-hidden="true">2</span>
+      <div class="rg-route__body">
+        <p class="rg-route__place">Savoie, Frankrijk <span>45.6&deg; N, 5.9&deg; E</span></p>
+        <h2 class="rg-route__stop-title">De wereld werd grilliger.<br>Wij kozen dichtbij.</h2>
+        <p>Handelsoorlogen, tarieven die per verkiezing veranderen, containerschepen die stilliggen. Een keten ver weg voelt elke schok mee.</p>
+        <p>Wij kiezen voor werkplaatsen die je kunt bellen, bezoeken en bij naam kunt noemen.</p>
+        <p class="rg-route__quote">Elke bestelling is een stem voor maakindustrie op <em>eigen bodem</em>.</p>
+      </div>
+    </section>
+
+    <!-- segment: stop 2 -> stop 3 -->
+    <svg class="rg-route__seg rg-route__seg--desk" viewBox="0 0 1200 340" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M888,0 C888,26 878,44 860,60 C836,82 800,92 772,108 C740,126 726,148 704,170 C678,196 648,208 626,228 C604,248 596,272 594,296 C593,316 596,330 600,340"/>
+      <path class="rg-route__seg-line" d="M888,0 C888,26 878,44 860,60 C836,82 800,92 772,108 C740,126 726,148 704,170 C678,196 648,208 626,228 C604,248 596,272 594,296 C593,316 596,330 600,340"/>
+    </svg>
+    <svg class="rg-route__seg rg-route__seg--mob" viewBox="0 0 60 320" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M28,0 C28,28 36,44 34,64 C32,86 20,96 22,118 C24,142 36,152 34,174 C32,198 24,210 26,234 C28,258 32,276 29,296 C28,308 28,314 28,320"/>
+      <path class="rg-route__seg-line" d="M28,0 C28,28 36,44 34,64 C32,86 20,96 22,118 C24,142 36,152 34,174 C32,198 24,210 26,234 C28,258 32,276 29,296 C28,308 28,314 28,320"/>
+    </svg>
+
+    <!-- ===== STOP 3: ZWARTE WOUD (onze naam) ===== -->
+    <section class="rg-route__stop rg-route__stop--wide" style="--map-scale:3.6; --map-x:54%; --map-y:50%">
+      <div class="rg-route__map rg-route__map--right" aria-hidden="true">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+      </div>
+      <span class="rg-route__dot" aria-hidden="true">3</span>
+      <div class="rg-route__body">
+        <p class="rg-route__place">Zwarte Woud, Duitsland <span>48.0&deg; N, 7.8&deg; E</span></p>
+        <h2 class="rg-route__stop-title">Wortels doen drie dingen.<br>Alle drie zijn ze ons merk.</h2>
+        <div class="rg-route__roots">
+          <div class="rg-route__root">
+            <h3>Stevigheid</h3>
+            <p>Als het stormt, blijft staan wat geworteld is. Korte ketens, partners dichtbij, voorspelbare levertijden.</p>
+          </div>
+          <div class="rg-route__root">
+            <h3>Herkomst</h3>
+            <p>Elk product heeft een traceerbare herkomst: een plaats, een werkplaats, een maker.</p>
+          </div>
+          <div class="rg-route__root">
+            <h3>Voeding</h3>
+            <p>Elke bestelling voedt een Europese werkplaats. Zo krijgt een maakindustrie weer toekomst.</p>
+          </div>
         </div>
-        <div class="rg-about__col">
-          <h3>Onze keuze</h3>
-          <p>Werkplaatsen die je kunt bellen, bezoeken en bij naam kunt noemen. Europa kan dit, en heeft dit in huis.</p>
+      </div>
+    </section>
+
+    <!-- segment: stop 3 -> stop 4 (thuiskomst) -->
+    <svg class="rg-route__seg rg-route__seg--desk" viewBox="0 0 1200 300" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M600,0 C600,22 610,38 622,52 C638,70 646,88 640,110 C634,134 610,144 592,158 C572,174 562,194 566,216 C570,240 586,254 596,272 C601,282 601,292 600,300"/>
+      <path class="rg-route__seg-line" d="M600,0 C600,22 610,38 622,52 C638,70 646,88 640,110 C634,134 610,144 592,158 C572,174 562,194 566,216 C570,240 586,254 596,272 C601,282 601,292 600,300"/>
+    </svg>
+    <svg class="rg-route__seg rg-route__seg--mob" viewBox="0 0 60 260" fill="none" aria-hidden="true">
+      <path class="rg-route__seg-base" d="M28,0 C28,24 34,38 32,56 C30,76 22,88 24,108 C26,130 34,142 32,162 C30,184 26,200 28,220 C29,236 28,250 28,260"/>
+      <path class="rg-route__seg-line" d="M28,0 C28,24 34,38 32,56 C30,76 22,88 24,108 C26,130 34,142 32,162 C30,184 26,200 28,220 C29,236 28,250 28,260"/>
+    </svg>
+
+    <!-- ===== STOP 4: DE ACHTERHOEK (thuis, de belofte) ===== -->
+    <section class="rg-route__stop rg-route__stop--wide rg-route__stop--last" style="--map-scale:4.2; --map-x:50%; --map-y:40%">
+      <div class="rg-route__map rg-route__map--left" aria-hidden="true">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+      </div>
+      <span class="rg-route__dot rg-route__dot--home" aria-hidden="true">4</span>
+      <div class="rg-route__body">
+        <p class="rg-route__place">De Achterhoek, Nederland <span>52.0&deg; N, 6.7&deg; E</span></p>
+        <h2 class="rg-route__stop-title">Thuis. En eerlijk over wat we beloven.</h2>
+        <p class="rg-route__punch">2.100 km afgelegd. <em>Geen 19.000.</em></p>
+        <div class="rg-route__panel">
+          <h3 class="rg-route__panel-title">Geassembleerd in Europa.<br>Op dat woord zijn we precies.</h3>
+          <p>Assemblage gebeurt hier, in werkplaatsen die we kennen. Sommige onderdelen reizen van verder, en per product laten we zien wat waar gebeurt.</p>
+          <ul class="rg-route__checks">
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Geassembleerd in werkplaatsen die we kennen</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Traceerbare herkomst bij elk product</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Drukproef vooraf, productie na jouw akkoord</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Persoonlijk antwoord binnen 24 uur</li>
+          </ul>
+          <p class="rg-route__holdus">Houd ons eraan, daar worden we beter van.</p>
         </div>
       </div>
-      <p class="rg-about__quote">Elke bestelling is een stem voor maakindustrie op <em>eigen bodem</em>.</p>
-    </div>
-    <svg class="rg-about__edge rg-about__edge--bottom rg-about__edge--dark" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0,12 L0,6.0 L2.3,6.0 L4.0,7.4 L6.1,8.1 L8.5,8.4 L10.5,8.1 L13.9,6.6 L15.6,7.6 L17.2,7.1 L20.1,8.0 L21.8,7.8 L24.8,9.1 L28.2,10.1 L31.2,9.1 L34.5,7.5 L36.7,6.6 L40.0,10.2 L42.4,9.8 L44.6,10.5 L47.2,10.5 L50.2,10.5 L52.8,10.5 L55.8,10.5 L58.8,9.8 L60.2,10.0 L62.7,9.2 L65.5,8.2 L68.8,7.9 L71.2,9.5 L73.6,8.8 L75.9,9.3 L78.0,8.0 L80.2,6.5 L82.9,7.2 L85.3,8.6 L87.1,9.2 L89.9,7.6 L92.8,8.5 L96.2,8.2 L99.3,7.7 L100.0,8.3 L100,12 Z"/></svg>
-  </section>
-
-  <!-- ===== 4. ROUTE: ONZE NAAM (drie wortels als stops) ===== -->
-  <div class="rg-about__route">
-    <div class="rg-about__route-head">
-      <p class="rg-about__eyebrow">Onze naam</p>
-      <h2 class="rg-about__route-title">Wortels doen drie dingen.<br>Alle drie zijn ze ons merk.</h2>
-    </div>
-
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 C50,6 48.5,10 49,16 L50.5,22 C51,30 49,34 51,40 L53,46 C54,54 57,58 58,64 L56,70 C57,78 61,82 63,86 L66,91 C68,95 71,97 74,100"/></svg>
-
-    <section class="rg-about__stop rg-about__stop--right">
-      <span class="rg-about__dot" aria-hidden="true">1</span>
-      <div class="rg-about__card">
-        <img src="/media/5d/dd/b7/1785500254/Warehousing-2.jpg" alt="Korte ketens">
-        <h3>Wortels geven stevigheid</h3>
-        <p>Als het stormt, blijft staan wat geworteld is. Korte ketens en partners dichtbij: voorspelbare levertijden, geen containernieuws.</p>
-      </div>
     </section>
 
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M74,0 C73,6 75,10 73,15 L70,21 C67,28 64,32 62,38 L63,44 C60,50 56,54 54,59 L51,64 C47,70 44,74 42,79 L39,84 C35,89 32,93 28,100"/></svg>
-
-    <section class="rg-about__stop">
-      <span class="rg-about__dot" aria-hidden="true">2</span>
-      <div class="rg-about__card">
-        <img src="/media/4a/2e/d4/1785831536/Verzending naar locaties doosjes-2.jpg" alt="Traceerbare herkomst">
-        <h3>Wortels vertellen waar je vandaan komt</h3>
-        <p>Elk product heeft een traceerbare herkomst: een plaats, een werkplaats, een maker. Die informatie staat gewoon bij het product.</p>
-      </div>
-    </section>
-
-    <svg class="rg-about__seg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M28,0 C29,6 27,11 29,16 L32,22 C35,28 39,32 41,38 L40,44 C44,50 48,54 50,59 L53,64 C57,70 60,74 63,79 L61,84 C65,90 69,94 72,100"/></svg>
-
-    <section class="rg-about__stop rg-about__stop--right rg-about__stop--last">
-      <span class="rg-about__dot" aria-hidden="true">3</span>
-      <div class="rg-about__card">
-        <img src="/media/b4/43/ed/1785854400/Made in NL-2.jpg" alt="Europese makers">
-        <h3>Wortels voeden wat groeit</h3>
-        <p>Elke bestelling voedt een Europese werkplaats. Zo krijgt een maakindustrie weer toekomst.</p>
-      </div>
-    </section>
   </div>
 
-  <!-- ===== 5. FULL-SCREEN BAND: ONZE BELOFTE ===== -->
-  <section class="rg-about__full rg-about__full--belofte">
-    <img class="rg-about__full-img" src="/media/d8/96/ae/1786435459/Kerst en eindejaar.jpg" alt="">
-    <svg class="rg-about__edge rg-about__edge--top" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L0,7.8 L1.4,7.8 L4.4,8.2 L6.4,7.0 L9.2,6.3 L11.2,6.1 L14.5,7.2 L15.9,5.3 L17.9,6.3 L20.3,6.6 L21.6,5.7 L23.7,7.1 L26.9,7.8 L28.2,6.7 L31.3,8.0 L32.9,8.6 L35.3,9.0 L37.1,8.9 L38.8,7.5 L41.0,5.9 L43.6,7.2 L45.5,10.5 L46.9,10.5 L48.6,10.4 L51.1,9.8 L52.7,9.5 L55.1,8.0 L56.9,6.5 L59.8,5.9 L61.4,4.5 L64.4,5.8 L67.1,5.9 L70.4,9.1 L73.0,10.5 L74.9,8.4 L77.2,9.2 L79.4,10.1 L82.0,10.5 L85.1,10.5 L87.3,10.0 L89.9,10.5 L92.4,10.5 L93.6,9.0 L96.5,9.3 L97.8,8.3 L100.0,9.7 L100,0 Z"/></svg>
-    <div class="rg-about__full-copy rg-about__full-copy--center">
-      <p class="rg-about__eyebrow rg-about__eyebrow--light">Eerlijk over onze claim</p>
-      <h2 class="rg-about__full-title">Geassembleerd in Europa.<br>Op dat woord zijn we precies.</h2>
-      <p>Assemblage gebeurt hier, in werkplaatsen die we kennen. Sommige onderdelen reizen van verder, en per product laten we zien wat waar gebeurt.</p>
-      <ul class="rg-about__checks">
-        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Geassembleerd in werkplaatsen die we kennen</li>
-        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Traceerbare herkomst bij elk product</li>
-        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Drukproef vooraf, productie na jouw akkoord</li>
-        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2L6.5 11.9l1.4-1.4 2.9 2.9 5.3-5.3 1.4 1.4z"/></svg>Persoonlijk antwoord binnen 24 uur</li>
-      </ul>
-      <p class="rg-about__holdus">Houd ons eraan, daar worden we beter van.</p>
-    </div>
-    <svg class="rg-about__edge rg-about__edge--bottom" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0,12 L0,6.4 L3.3,6.4 L5.8,6.5 L7.3,6.3 L9.0,4.8 L10.4,4.5 L12.7,4.1 L14.0,4.3 L16.7,5.9 L18.7,5.4 L21.1,4.8 L22.5,5.5 L25.0,6.0 L26.6,5.4 L29.6,4.2 L31.0,2.2 L33.5,1.6 L35.5,1.5 L38.4,1.5 L39.8,2.2 L42.9,2.3 L46.1,3.7 L47.6,2.3 L49.8,5.1 L52.5,6.1 L55.8,7.6 L58.6,9.2 L60.6,7.8 L62.9,9.2 L66.1,7.9 L68.5,8.1 L71.5,7.8 L74.7,7.3 L77.8,8.6 L80.6,9.2 L83.6,8.3 L85.4,9.2 L87.9,10.3 L89.3,9.7 L91.7,8.9 L95.0,9.5 L97.4,9.7 L99.7,10.4 L100.0,10.5 L100,12 Z"/></svg>
-  </section>
-
-  <!-- ===== 6. TEAM ===== -->
-  <section class="rg-about__teamsec">
-    <p class="rg-about__eyebrow">Het team</p>
-    <h2 class="rg-about__route-title">De mensen die je belt.</h2>
-    <div class="rg-about__team">
-      <img class="rg-about__teamphoto" src="/media/d8/96/ae/1786435459/Kerst en eindejaar.jpg" alt="Het team van Rooted Goods">
-      <div class="rg-about__team-copy">
+  <!-- ===== EPILOOG: HET TEAM ===== -->
+  <section class="rg-route__team">
+    <p class="rg-route__eyebrow">Het team</p>
+    <h2 class="rg-route__team-title">De mensen die je belt.</h2>
+    <div class="rg-route__team-grid">
+      <img class="rg-route__teamphoto" src="/media/d8/96/ae/1786435459/Kerst en eindejaar.jpg" alt="Het team van Rooted Goods">
+      <div class="rg-route__team-copy">
         <p>Wij zijn Richard, Ward en Marco. Je krijgt gewoon een van ons, van eerste idee tot bezorging. Binnen 24 uur persoonlijk antwoord.</p>
         <a class="rg-contact-head__callcard" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0" aria-label="Plan een belafspraak">
           <span class="rg-contact-head__callcard-avatars">

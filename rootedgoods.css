@@ -7417,91 +7417,32 @@ h1.rgh__title, .rgh__title,
 }
 
 /* ============================================================
-   42. OVER ONS (.rg-about) — "De Route van Rooted" v4 (Flyward-flow)
+   42. OVER ONS (.rg-route) — "De Route van Rooted"
    ------------------------------------------------------------
-   Hero-zoom (Europa-uitsparing) -> full-screen beeldsecties met content
-   en GESCHEURDE randen (jagged edges, landgrens-karakter) -> donkere
-   tussensectie -> route-sectie (drie wortels als stops, dikke hoekige
-   lijn, kaart-textuur ALLEEN hier) -> belofte-band -> team.
-   JS: rootedgoods.js 1.6 (zoom-scrub, lijn-reveal, parallax).
-   TIJDELIJK: kaarttextuur-tijdelijk.svg (Flyward) -> voor go-live
-   vervangen door eigen textuur. Beeld-URLs zijn dev-dummies.
+   Een doorlopende kaartreis: een cognac routelijn verbindt vier stops
+   (Porto -> Savoie -> Zwarte Woud -> Achterhoek), met per stop een
+   ingezoomde kaartlaag op de achtergrond. HTML: over-ons.html.
+
+   FASE 1 = skelet: alles staat in de eindstand (lijn volledig getekend,
+   lagen statisch). Fase 2 voegt de scroll-regie toe (GSAP/ScrollTrigger);
+   die overschrijft alleen transforms/dashoffset. Deze CSS-eindstand IS
+   meteen de fallback voor no-JS en prefers-reduced-motion.
+
+   Lijnsysteem: elk segment is een SVG met VASTE aspect-ratio (viewBox +
+   width:100%, height:auto). Geen preserveAspectRatio="none": niet-uniforme
+   rek sloopte eerder de dash-technieken. Desktop en mobiel hebben elk een
+   eigen segment-SVG (andere verhouding, ander pad).
    ============================================================ */
-.rg-about{
+.rg-route{
   font-family:'Montserrat',sans-serif;
   color:var(--rg-green-soft);
-  overflow:clip; /* clip, geen hidden: hidden breekt de sticky zoom-hero */
-}
-
-/* ---- 1. HERO-ZOOM ---- */
-.rg-about__heroZoom.is-zoom{ height:260vh; position:relative; }
-.rg-about__heroZoom.is-zoom .rg-about__hero2{
-  position:sticky; top:0;
-  height:100vh; min-height:0;
-  overflow:clip;
-}
-.rg-about__hero2{
-  position:relative;
-  min-height:clamp(30rem, 88vh, 52rem);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:clamp(2rem, 4vw, 4rem) clamp(1rem, 4vw, 2.5rem);
-}
-.rg-about__hero2-photo{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  will-change:transform;
-}
-.rg-about__hero2-shade{
-  position:absolute; inset:0;
-  background:rgba(45,30,16,.22);
-}
-/* de creme cutout-laag: vlak met Europa-gat (alpha-mask europa-frame.svg).
-   JS schaalt deze laag weg zodat het gat zich opent en je de foto in vliegt. */
-.rg-about__hero2-frame{
-  position:absolute; inset:0;
   background:var(--rg-cream);
-  -webkit-mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-frame.svg");
-          mask-image:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-frame.svg");
-  -webkit-mask-size:cover; mask-size:cover;
-  -webkit-mask-position:center 42%; mask-position:center 42%;
-  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
-  will-change:transform;
-  transform-origin:50% 45%;
-}
-.rg-about__hero2-copy{ position:relative; z-index:2; max-width:46ch; }
-.rg-about__hero2-copy::before{
-  content:"";
-  position:absolute;
-  inset:-4rem -5rem;
-  background:radial-gradient(closest-side, rgba(247,245,242,.95), rgba(247,245,242,.6) 55%, transparent 78%);
-  z-index:-1;
-  pointer-events:none;
-}
-/* 'Het begin' verschijnt op dezelfde foto zodra het frame is weggezoomd */
-.rg-about__hero2-begincopy{
-  position:absolute;
-  left:0; bottom:0;
-  z-index:2;
-  max-width:56ch;
-  padding:0 clamp(1.25rem, 6vw, 6rem) clamp(3rem, 7vw, 6rem);
-  text-align:left;
-  color:#fff;
-  opacity:0;
-  will-change:opacity, transform;
-}
-.rg-about__hero2-begincopy p{
-  font-size:clamp(1rem, 0.97rem + 0.2vw, 1.15rem);
-  line-height:1.65;
-  color:rgba(255,255,255,.92);
-  margin:0;
+  overflow-x:clip; /* clip (niet hidden): houdt position:sticky werkend */
+  padding-bottom:clamp(2rem, 5vw, 4rem);
 }
 
 /* ---- Gedeelde typografie ---- */
-.rg-about__eyebrow{
+.rg-route__eyebrow{
   font-family:'Montserrat',sans-serif !important;
   font-weight:700 !important;
   letter-spacing:.24em !important;
@@ -7510,197 +7451,327 @@ h1.rgh__title, .rgh__title,
   font-size:clamp(.68rem, .62rem + .2vw, .76rem) !important;
   margin:0 0 .9rem !important;
 }
-.rg-about__eyebrow--light{ color:var(--rg-peach) !important; }
-h1.rg-about__title{
+h1.rg-route__title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
   letter-spacing:-.021em !important;
   line-height:1.02 !important;
   color:var(--rg-green) !important;
   font-size:clamp(2.6rem, 1.3rem + 3.8vw, 4.6rem) !important;
-  margin:0 !important;
+  margin:0 0 1.2rem !important;
   text-wrap:balance;
 }
-h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac-light) !important; letter-spacing:-.01em; }
+h1.rg-route__title em{
+  font-style:italic; font-weight:600;
+  color:var(--rg-cognac-light) !important;
+  letter-spacing:-.01em;
+}
+.rg-route__lede{
+  font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
+  line-height:1.6 !important;
+  max-width:46ch;
+  margin:0;
+}
 
-/* ---- Gescheurde randen (jagged edges) ---- */
-.rg-about__edge{
-  position:absolute; left:0; width:100%;
-  height:clamp(60px, 9vw, 130px);
-  z-index:3;
-  display:block;
+/* ---- PROLOOG ---- */
+.rg-route__intro{
+  position:relative;
+  max-width:1200px;
+  margin:0 auto;
+  padding:clamp(3rem, 8vw, 7rem) clamp(1.25rem, 4vw, 2rem) clamp(1rem, 3vw, 2.5rem);
+}
+.rg-route__intro-copy{ position:relative; z-index:2; }
+/* Europa-outline groot en ingezoomd achter de kop */
+.rg-route__intro-map{
+  position:absolute;
+  top:50%; right:calc(50% - 50vw);
+  transform:translateY(-50%);
+  width:min(72vw, 900px);
+  z-index:1;
+  opacity:.5;
   pointer-events:none;
 }
-.rg-about__edge--top{ top:-1px; }
-.rg-about__edge--bottom{ bottom:-1px; }
-.rg-about__edge path{ fill:var(--rg-cream); }
-/* variant: scheur naar de donkere sectie toe (vulling = diepgroen) */
-.rg-about__edge--dark path{ fill:var(--rg-cream); }
+.rg-route__intro-map img{ width:100%; height:auto; display:block; }
 
-/* ---- 2/5. FULL-SCREEN beeldsecties met content ---- */
-.rg-about__full{
+/* ---- TRACK: het reisgebied ---- */
+.rg-route__track{
   position:relative;
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-  min-height:115vh;
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 clamp(1.25rem, 4vw, 2rem);
 }
-.rg-about__full-img{
-  position:absolute; left:0; top:-12%;
-  width:100%; height:124%;
-  object-fit:cover;
-  will-change:transform;
-}
-.rg-about__full::before{ /* dim voor leesbaarheid */
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(to top, rgba(32,22,12,.72) 0%, rgba(32,22,12,.32) 45%, rgba(32,22,12,.18) 100%);
-  z-index:1;
-}
-.rg-about__full-copy{
+
+/* ---- Segmenten (de routelijn) ---- */
+.rg-route__seg{
+  display:block;
+  width:100%;
+  height:auto;
   position:relative;
   z-index:2;
-  max-width:56ch;
-  padding:clamp(2rem, 5vw, 5rem) clamp(1.25rem, 6vw, 6rem) clamp(6rem, 12vw, 10rem);
+  overflow:visible;
+}
+.rg-route__seg--mob{ display:none; }
+.rg-route__seg-base,
+.rg-route__seg-line{
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+}
+/* nog af te leggen: zwakke stippellijn (vooruitblik + scroll-cue) */
+.rg-route__seg-base{
+  stroke:var(--rg-cognac);
+  stroke-width:2px;
+  stroke-dasharray:1 9;
+  opacity:.32;
+}
+/* afgelegd: solide cognac (fase 2 animeert dit pad) */
+.rg-route__seg-line{
+  stroke:var(--rg-cognac);
+  stroke-width:6px;
+  opacity:.9;
+}
+
+/* ---- Het reizende blad (fase 2: reist op de punt van de lijn) ---- */
+.rg-route__leaf{
+  position:absolute;
+  top:0; left:50%;
+  transform:translate(-50%,-50%) rotate(-18deg);
+  width:26px; height:26px;
+  color:var(--rg-cognac);
+  z-index:4;
+  pointer-events:none;
+}
+.rg-route__leaf svg{ width:100%; height:100%; display:block; }
+
+/* ---- Kilometerteller (sticky in een absolute rail: telt geen hoogte) ---- */
+.rg-route__meter-rail{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  pointer-events:none;
+}
+.rg-route__meter{
+  position:sticky;
+  top:calc(100vh - 5rem);
+  width:max-content;
+  margin:0;
+  padding:.5rem .9rem;
+  border-radius:var(--rg-r-pill);
+  background:rgba(247,245,242,.86);
+  border:1px solid var(--rg-sand);
+  backdrop-filter:blur(6px);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--rg-green-soft);
+}
+.rg-route__meter-num{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--rg-green);
+  letter-spacing:-.01em;
+}
+
+/* ---- STOPS ---- */
+.rg-route__stop{
+  position:relative;
+  z-index:2;
+  --x:50%;
+  padding-top:clamp(1.5rem, 3vw, 2.5rem);
+}
+.rg-route__stop--left{ --x:26%; }
+.rg-route__stop--right{ --x:74%; }
+.rg-route__stop--wide{ --x:50%; }
+
+/* kaartlaag per stop: ingezoomde uitsnede, bloedt naar de schermrand */
+.rg-route__map{
+  position:absolute;
+  top:-8%;
+  width:52vw;
+  height:116%;
+  overflow:hidden;
+  z-index:0;
+  opacity:.38;
+  pointer-events:none;
+}
+.rg-route__map--left{ left:calc(50% - 50vw); }
+.rg-route__map--right{ right:calc(50% - 50vw); }
+.rg-route__map img{
+  position:absolute;
+  top:50%; left:50%;
+  width:100%;
+  height:auto;
+  transform:translate(-50%,-50%) scale(var(--map-scale,3)) translate(calc(var(--map-x,50%) - 50%), calc(var(--map-y,50%) - 50%));
+  transform-origin:center;
+  display:block;
+}
+
+/* de genummerde dot op de routelijn */
+.rg-route__dot{
+  position:absolute;
+  top:0; left:var(--x);
+  transform:translate(-50%,-50%);
+  width:46px; height:46px;
+  border-radius:50%;
+  background:var(--rg-cognac);
   color:#fff;
+  font-weight:700;
+  font-size:1.05rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 0 6px var(--rg-cream);
+  z-index:3;
 }
-.rg-about__full-copy p{
-  font-size:clamp(1rem, 0.97rem + 0.2vw, 1.15rem);
-  line-height:1.65;
-  color:rgba(255,255,255,.92);
-  margin:0 0 1rem;
+.rg-route__dot--home{ background:var(--rg-green); }
+
+/* het tekstblok van een stop */
+.rg-route__body{
+  position:relative;
+  z-index:2;
+  max-width:44ch;
+  padding-top:2rem;
 }
-.rg-about__full-copy p b{ color:#fff; }
-.rg-about__full-title{
+.rg-route__stop--right .rg-route__body{ margin-left:auto; }
+.rg-route__stop--wide .rg-route__body{ max-width:none; text-align:center; }
+.rg-route__stop--wide .rg-route__body > p:not(.rg-route__place):not(.rg-route__punch){
+  max-width:52ch; margin-left:auto; margin-right:auto;
+}
+
+/* kaartlabel met coordinaten */
+.rg-route__place{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:.7rem;
+  color:var(--rg-green);
+  margin:0 0 .8rem;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  flex-wrap:wrap;
+}
+.rg-route__stop--wide .rg-route__place{ justify-content:center; }
+.rg-route__place span{
+  font-weight:600;
+  letter-spacing:.12em;
+  color:var(--rg-muted);
+}
+.rg-route__place span::before{ content:"· "; }
+
+h2.rg-route__stop-title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
   letter-spacing:-.018em !important;
-  line-height:1.06 !important;
-  color:#fff !important;
-  font-size:clamp(2rem, 1.3rem + 2.6vw, 3.6rem) !important;
+  line-height:1.08 !important;
+  color:var(--rg-green) !important;
+  font-size:clamp(1.9rem, 1.3rem + 2vw, 3rem) !important;
   margin:0 0 1.1rem !important;
   text-wrap:balance;
 }
-/* belofte-band: content gecentreerd, band nog hoger */
-.rg-about__full--belofte{ align-items:center; justify-content:center; min-height:125vh; text-align:center; }
-
-.rg-about__full--belofte::before{
-  background:rgba(32,26,14,.62);
+.rg-route__stop p{
+  font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
+  line-height:1.65;
+  margin:0 0 1rem;
 }
-.rg-about__full-copy--center{
-  max-width:64ch;
-  padding:clamp(8rem, 14vw, 12rem) clamp(1.25rem, 5vw, 4rem);
+.rg-route__stop p:last-child{ margin-bottom:0; }
+.rg-route__stop p b{ color:var(--rg-green); font-weight:600; }
+
+/* quote-moment */
+.rg-route__quote{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:600;
+  color:var(--rg-green) !important;
+  font-size:clamp(1.4rem, 1.1rem + 1.2vw, 2rem) !important;
+  line-height:1.25 !important;
+  max-width:26ch;
+  margin-top:clamp(1.5rem, 3vw, 2.25rem) !important;
+  text-wrap:balance;
+}
+.rg-route__quote em{ font-style:italic; color:var(--rg-cognac-light) !important; }
+
+/* de km-punchline bij thuiskomst */
+.rg-route__punch{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700;
+  color:var(--rg-green) !important;
+  font-size:clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem) !important;
+  line-height:1.2 !important;
+  margin:0 0 clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+.rg-route__punch em{ font-style:italic; color:var(--rg-cognac-light) !important; }
+
+/* ---- Drie wortels (stop 3) ---- */
+.rg-route__roots{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(1.25rem, 2.5vw, 2.5rem);
+  margin-top:clamp(1.5rem, 3vw, 2.5rem);
+  text-align:left;
+}
+.rg-route__root{ border-top:2px solid var(--rg-cognac); padding-top:1.1rem; }
+.rg-route__root h3{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  color:var(--rg-green) !important;
+  font-size:1.3rem !important;
+  line-height:1.2 !important;
+  margin:0 0 .55rem !important;
+}
+.rg-route__root p{ font-size:.98rem !important; line-height:1.6; margin:0 !important; }
+
+/* ---- Belofte-paneel (stop 4) ---- */
+.rg-route__panel{
+  background:var(--rg-green);
+  border-radius:var(--rg-r-xp);
+  padding:clamp(1.75rem, 4vw, 3.25rem);
+  color:#fff;
+  text-align:left;
+  max-width:60rem;
   margin:0 auto;
 }
-.rg-about__full-copy--center p{ margin-left:auto; margin-right:auto; max-width:52ch; }
-
-/* checks op de band */
-.rg-about__checks{
+h3.rg-route__panel-title{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:700 !important;
+  letter-spacing:-.018em !important;
+  line-height:1.1 !important;
+  color:#fff !important;
+  font-size:clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem) !important;
+  margin:0 0 1rem !important;
+}
+.rg-route__panel p{ color:rgba(255,255,255,.88); max-width:56ch; }
+.rg-route__checks{
   list-style:none;
-  margin:1.6rem auto;
+  margin:1.5rem 0;
   padding:0;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:.85rem 2.25rem;
-  max-width:44rem;
-  text-align:left;
 }
-.rg-about__checks li{
+.rg-route__checks li{
   display:flex; gap:.6rem; align-items:flex-start;
   font-size:.98rem; line-height:1.5; color:#fff; font-weight:600;
 }
-.rg-about__checks svg{ width:1.1rem; height:1.1rem; flex:none; color:var(--rg-cognac-light); margin-top:.15rem; }
-.rg-about__holdus{
+.rg-route__checks svg{ width:1.1rem; height:1.1rem; flex:none; color:var(--rg-cognac-light); margin-top:.15rem; }
+.rg-route__holdus{
   font-family:'Playfair Display',Georgia,serif !important;
   font-style:italic;
   font-weight:600;
   color:var(--rg-peach) !important;
   font-size:clamp(1.15rem, 1rem + .6vw, 1.5rem) !important;
+  margin-bottom:0 !important;
 }
 
-/* ---- 3. DONKERE SECTIE: Waarom Europa ---- */
-.rg-about__dark{
-  position:relative;
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-  background:var(--rg-green-deep) url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-contour-licht.svg") center/120% auto no-repeat;
-  min-height:95vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:clamp(7rem, 13vw, 11rem) clamp(1.25rem, 5vw, 4rem);
-}
-.rg-about__dark-inner{ max-width:60rem; text-align:center; }
-.rg-about__dark-title{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
-  letter-spacing:-.02em !important;
-  line-height:1.04 !important;
-  color:#fff !important;
-  font-size:clamp(2.2rem, 1.3rem + 3vw, 4rem) !important;
-  margin:0 0 clamp(1.5rem, 3vw, 2.5rem) !important;
-  text-wrap:balance;
-}
-.rg-about__dark-title em{ font-style:italic; font-weight:600; color:var(--rg-peach) !important; }
-.rg-about__cols{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(1.5rem, 4vw, 4rem);
-  text-align:left;
-  max-width:52rem;
+/* ---- EPILOOG: team ---- */
+.rg-route__team{
+  max-width:1100px;
   margin:0 auto;
-}
-.rg-about__col h3{
-  font-family:'Montserrat',sans-serif !important;
-  font-weight:700 !important;
-  letter-spacing:.18em !important;
-  text-transform:uppercase;
-  font-size:.72rem !important;
-  color:var(--rg-peach) !important;
-  margin:0 0 .6rem !important;
-  line-height:1.4 !important;
-}
-.rg-about__col p{
-  font-size:clamp(.98rem, .95rem + .15vw, 1.0625rem);
-  line-height:1.65;
-  color:rgba(255,255,255,.88);
-  margin:0;
-}
-.rg-about__quote{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:600;
-  color:#fff !important;
-  font-size:clamp(1.4rem, 1.1rem + 1.2vw, 2rem) !important;
-  line-height:1.25 !important;
-  max-width:26ch !important;
-  margin:clamp(2rem, 4vw, 3rem) auto 0 !important;
-  text-wrap:balance;
-}
-.rg-about__quote em{ font-style:italic; color:var(--rg-peach) !important; }
-
-/* ---- 4. ROUTE-sectie (alleen hier textuur + lijn) ---- */
-.rg-about__route{
-  position:relative;
-  padding:clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3.5rem);
-}
-.rg-about__route::before{
-  content:"";
-  position:absolute; inset:0;
-  background:url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarttextuur-tijdelijk.svg") top center / 100% auto repeat-y;
-  opacity:.5;
-  pointer-events:none;
-  z-index:0;
-}
-.rg-about__route-head{
-  position:relative; z-index:1;
+  padding:clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 4vw, 3rem);
   text-align:center;
-  max-width:40rem;
-  margin:0 auto clamp(1rem, 2vw, 2rem);
-  padding:0 1.25rem;
 }
-.rg-about__route-title{
+h2.rg-route__team-title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
   letter-spacing:-.018em !important;
@@ -7708,83 +7779,8 @@ h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac
   color:var(--rg-green) !important;
   font-size:clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem) !important;
   margin:0 !important;
-  text-wrap:balance;
 }
-.rg-about__seg{
-  display:block;
-  width:min(1100px, 92%);
-  margin:0 auto;
-  height:clamp(150px, 26vw, 280px);
-  position:relative;
-  z-index:1;
-  overflow:visible;
-}
-.rg-about__seg path{
-  fill:none;
-  stroke:var(--rg-cognac);
-  stroke-width:7px;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  vector-effect:non-scaling-stroke;
-  opacity:.8;
-}
-.rg-about__stop{
-  position:relative;
-  width:min(1100px, 92%);
-  margin:0 auto;
-  z-index:1;
-}
-.rg-about__dot{
-  position:absolute;
-  top:-6px; left:28%;
-  transform:translate(-50%,-50%);
-  width:46px; height:46px;
-  border-radius:50%;
-  background:var(--rg-green);
-  color:#fff;
-  font-weight:700;
-  font-size:1.05rem;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 0 0 6px var(--rg-cream);
-  transition:transform .35s ease, background .35s ease;
-  z-index:2;
-}
-.rg-about__stop--right .rg-about__dot{ left:74%; }
-.rg-about__dot.is-on{ background:var(--rg-cognac); transform:translate(-50%,-50%) scale(1.1); }
-.rg-about__card{ max-width:400px; padding-top:1.25rem; }
-.rg-about__stop--right .rg-about__card{ margin-left:auto; }
-.rg-about__card img{
-  width:100%;
-  aspect-ratio:4/5;
-  object-fit:cover;
-  border-radius:var(--rg-r-fn);
-  box-shadow:var(--rg-sh-soft);
-  display:block;
-  margin-bottom:1.1rem;
-}
-.rg-about__card h3{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
-  color:var(--rg-green) !important;
-  font-size:clamp(1.2rem, 1.05rem + .55vw, 1.55rem) !important;
-  line-height:1.2 !important;
-  margin:0 0 .5rem !important;
-}
-.rg-about__card p{
-  font-size:clamp(.98rem, .95rem + .15vw, 1.0625rem);
-  line-height:1.6;
-  margin:0;
-}
-.rg-about__stop--last{ padding-bottom:clamp(2rem, 4vw, 3rem); }
-
-/* ---- 6. TEAM ---- */
-.rg-about__teamsec{
-  max-width:1100px;
-  margin:0 auto;
-  padding:clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2rem);
-  text-align:center;
-}
-.rg-about__team{
+.rg-route__team-grid{
   display:grid;
   grid-template-columns:1.05fr .95fr;
   gap:clamp(1.5rem, 3vw, 3rem);
@@ -7792,38 +7788,37 @@ h1.rg-about__title em{ font-style:italic; font-weight:600; color:var(--rg-cognac
   margin-top:clamp(1.5rem, 3vw, 2.5rem);
   text-align:left;
 }
-.rg-about__teamphoto{
+.rg-route__teamphoto{
   width:100%;
   aspect-ratio:4/3;
   object-fit:cover;
   border-radius:var(--rg-r-xp);
   box-shadow:var(--rg-sh-soft);
 }
-.rg-about__team-copy p{
+.rg-route__team-copy p{
   font-size:clamp(1rem, .97rem + .12vw, 1.0625rem);
   line-height:1.6;
   margin:0 0 1rem;
 }
-.rg-about__team-copy .rg-contact-head__callcard{ margin-top:.5rem; }
 
-/* ---- Mobiel ---- */
-@media (max-width:767px){
-  .rg-about__heroZoom.is-zoom{ height:170vh; }
-  .rg-about__full{ min-height:88vh; }
-  .rg-about__full--belofte{ min-height:100vh; }
-  .rg-about__edge{ height:clamp(36px, 9vw, 60px); }
-  .rg-about__dark{ min-height:0; padding:clamp(5rem, 16vw, 7rem) 1.25rem; }
-  .rg-about__cols{ grid-template-columns:1fr; }
-  .rg-about__checks{ grid-template-columns:1fr; }
-  .rg-about__seg{ display:none; }
-  .rg-about__dot,
-  .rg-about__stop--right .rg-about__dot{
-    position:static;
-    transform:none;
-    margin:2.25rem auto .9rem;
-  }
-  .rg-about__dot.is-on{ transform:scale(1.06); }
-  .rg-about__card,
-  .rg-about__stop--right .rg-about__card{ margin:0 auto; padding-top:0; }
-  .rg-about__team{ grid-template-columns:1fr; }
+/* ---- MOBIEL / TABLET: verticale rail ---- */
+@media (max-width:991px){
+  .rg-route__seg--desk{ display:none; }
+  .rg-route__seg--mob{ display:block; width:60px; margin-left:0; }
+  .rg-route__stop{ --x:28px; padding-left:68px; }
+  .rg-route__stop--left,
+  .rg-route__stop--right,
+  .rg-route__stop--wide{ --x:28px; }
+  .rg-route__dot{ width:40px; height:40px; font-size:.95rem; }
+  .rg-route__body,
+  .rg-route__stop--right .rg-route__body{ max-width:none; margin-left:0; padding-top:1.5rem; }
+  .rg-route__stop--wide .rg-route__body{ text-align:left; }
+  .rg-route__stop--wide .rg-route__place{ justify-content:flex-start; }
+  .rg-route__roots{ grid-template-columns:1fr; }
+  .rg-route__checks{ grid-template-columns:1fr; }
+  .rg-route__team-grid{ grid-template-columns:1fr; }
+  .rg-route__map{ width:78vw; opacity:.26; }
+  .rg-route__intro-map{ width:100vw; opacity:.32; }
+  .rg-route__meter{ top:calc(100vh - 4.5rem); }
+  .rg-route__leaf{ left:28px; }
 }
