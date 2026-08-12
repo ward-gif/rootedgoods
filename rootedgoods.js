@@ -683,8 +683,10 @@ document.addEventListener('DOMContentLoaded', function () {
         ease: 'none',
         scrollTrigger: {
           trigger: svg,
-          start: 'top 82%',
-          end: 'bottom 58%',
+          /* pas tekenen als het segment echt in beeld is: anders staat er bij
+             het landen al een stuk lijn vóór het merkteken uit */
+          start: 'top 68%',
+          end: 'bottom 55%',
           scrub: 0.4,
           onUpdate: function (self) {
             /* alleen het zichtbare segment (desktop of mobiel) stuurt aan */
@@ -723,7 +725,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ---- 4. tekst komt in beeld: opschalen + fade (Independent Brewers-gevoel).
        Per stop lopen label, kop en tekst kort na elkaar, zodat het leest als
        aankomen op een plek in plaats van een blok dat verschijnt. ---- */
-    gsap.utils.toArray('.rg-route__body, .rg-route__contact, .rg-route__team-copy').forEach(function (body) {
+    gsap.utils.toArray('.rg-route__body, .rg-route__team-copy').forEach(function (body) {
       var delen = body.querySelectorAll(
         '.rg-route__place, .rg-route__stop-title, p, .rg-route__roots, .rg-route__panel, .rg-route__contact-map'
       );
