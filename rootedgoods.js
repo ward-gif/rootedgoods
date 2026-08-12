@@ -662,8 +662,18 @@ document.addEventListener('DOMContentLoaded', function () {
     /* spine: startpunt boven de eerste stop + alle markermiddelpunten */
     var spine = [];
     var eerste = dots[0].getBoundingClientRect();
-    var startX = eerste.left + eerste.width / 2 - tr.left;
-    spine.push({ x: startX, y: Math.max(0, eerste.top - tr.top - 260), marker: false });
+    /* De route begint gecentreerd en net boven de vouw: horizontaal in het
+       midden van de sectie, verticaal op ~72% van de viewporthoogte (maar
+       altijd onder de proloog en boven de eerste stop). */
+    var eersteY = eerste.top - tr.top;
+    var introEl = root.querySelector('.rg-route__intro');
+    var introOnder = introEl ? (introEl.getBoundingClientRect().bottom - tr.top) : 0;
+    var startY = Math.min(eersteY - 140, Math.max(introOnder + 60, window.innerHeight * 0.72));
+    /* centreren op de contentkolom, niet op de schermbrede SVG: dat is wat
+       het oog als midden leest */
+    var trackC = track.getBoundingClientRect();
+    var startX = trackC.left + trackC.width / 2 - tr.left;
+    spine.push({ x: startX, y: Math.max(0, startY), marker: false });
 
     dots.forEach(function (d) {
       var r = d.getBoundingClientRect();
@@ -964,24 +974,37 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    /* tekst komt op met schaal + fade, per onderdeel kort na elkaar */
-    gsap.utils.toArray('.rg-route__body, .rg-route__team-copy').forEach(function (body) {
-      var delen = body.querySelectorAll('.rg-route__place, .rg-route__stop-title, p, .rg-route__roots, .rg-route__panel, .rg-route__contact-map');
-      gsap.from(delen.length ? delen : body, {
-        opacity: 0, y: 42, scale: .965, duration: .85, ease: 'power3.out', stagger: .08,
-        scrollTrigger: { trigger: body, start: 'top 86%' }
+    /* ---- Tekst en beeld komen in beeld ----
+       Met ScrollTrigger.batch i.p.v. from-tweens: die laatste renderen hun
+       beginstand meteen en botsen met de herberekening na het laden van de
+       beelden (elementen bleven dan onzichtbaar of stonden er al). batch zet
+       de beginstand hard en animeert pas bij binnenkomst. */
+    function onthul(selector, opties) {
+      var els = gsap.utils.toArray(selector).filter(function (e) { return e; });
+      if (!els.length) return;
+      gsap.set(els, { opacity: 0, y: opties.y, scale: opties.scale });
+      ST.batch(els, {
+        start: 'top 88%',
+        onEnter: function (groep) {
+          gsap.to(groep, {
+            opacity: 1, y: 0, scale: 1,
+            duration: opties.duur, ease: 'power3.out',
+            stagger: opties.stagger, overwrite: true
+          });
+        }
       });
-    });
-    gsap.utils.toArray('.rg-route__team-title, .rg-route__logo').forEach(function (el) {
-      gsap.from(el, { opacity: 0, y: 34, scale: .96, duration: .8, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' } });
-    });
+    }
 
-    /* sfeerbeelden: opkomen en meebewegen, elk eigen snelheid */
+    onthul('.rg-route__place, .rg-route__stop-title, .rg-route__stop p, ' +
+           '.rg-route__roots, .rg-route__panel, .rg-route__team-title, ' +
+           '.rg-route__team-copy > p, .rg-route__contact, .rg-route__logo',
+           { y: 40, scale: .97, duur: .8, stagger: .07 });
+
+    onthul('.rg-route__shot, .rg-route__collage-shot, .rg-route__collage-main',
+           { y: 34, scale: .86, duur: .9, stagger: .06 });
+
+    /* sfeerbeelden bewegen mee, elk met een eigen snelheid */
     gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
-      var draai = parseFloat((shot.style.getPropertyValue('--r') || '0').replace('deg', '')) || 0;
-      gsap.from(shot, { opacity: 0, scale: .82, y: 34, rotate: draai - 6, duration: .9, ease: 'power3.out',
-        scrollTrigger: { trigger: shot, start: 'top 94%' } });
       gsap.to(shot, { yPercent: -16 - (i % 3) * 9, ease: 'none',
         scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
     });
