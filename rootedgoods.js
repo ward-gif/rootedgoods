@@ -698,7 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var n = dy > 700 ? 2 : 1;
         for (var k = 1; k <= n; k++) {
           var t = k / (n + 1);
-          var zij = (r1() - 0.5) * Math.min(breedte * 0.12, 130);
+          var zij = (r1() - 0.5) * Math.min(breedte * 0.20, 220);
           vol.push({ x: a.x + (b.x - a.x) * t + zij, y: a.y + dy * t, marker: false });
         }
       }
@@ -754,14 +754,16 @@ document.addEventListener('DOMContentLoaded', function () {
        lijn overal even veel en leest dat als ruis ipv als route. */
     function sterkte(yy) {
       var m = (Math.sin(yy / 2050 * 6.283 + f4) * 0.5 + 0.5);
-      return Math.pow(m, 1.7);
+      /* ondergrens: ook op de rustige trajecten blijft er beweging, anders
+         valt alleen de bocht bij een nummer op en oogt dat weer ritmisch */
+      return 0.34 + 0.66 * Math.pow(m, 1.3);
     }
     function offset(yy) {
       /* trage golf: periode 2600 -> hooguit een richtingswissel per 1300px */
       var traag  = Math.sin(yy / 2600 * 6.283 + f1) * 96;
-      var midden = Math.sin(yy / 151  * 6.283 + f2) * 7
-                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 3;
-      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 1.5;
+      var midden = Math.sin(yy / 151  * 6.283 + f2) * 12
+                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 6;
+      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 2.5;
       return traag * (0.45 + 0.55 * sterkte(yy)) + (midden + fijn) * sterkte(yy);
     }
     /* binnen 40px van een marker naar 0 uitfaden: de lijn komt exact in het
@@ -950,7 +952,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var verschil = svg.getBoundingClientRect().left - root.getBoundingClientRect().left;
       gsap.set(mark, {
         x: punt.x + verschil, y: punt.y, xPercent: -50, yPercent: -50,
-        rotation: afstand * 0.9          /* rolt de route af */
+        /* rotatie vanaf het startpunt, zodat het merkteken bovenaan
+           kaarsrecht staat en pas gaat rollen als de reis begint */
+        rotation: Math.max(0, afstand - 12) * 0.9
       });
     }
     if (mark) gsap.set(mark, { top: 0, left: 0 });
