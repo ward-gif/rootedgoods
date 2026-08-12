@@ -7746,6 +7746,30 @@ h1.rg-route__title em{
 }
 .rg-route__dot--home{ background:var(--rg-green); }
 
+/* ---- Zwevende sfeerbeelden per stop ----
+   Klein en verspreid: ze geven sfeer, de tekst houdt de focus en de
+   kaart-outlines blijven zichtbaar. Positie/grootte/rotatie per beeld via
+   inline --x/--y/--w/--r in de HTML, zodat tunen geen CSS-wijziging kost.
+   Onder 992px verdwijnen ze: daar is de kolom te smal om ze te laten zweven. */
+.rg-route__shots{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+.rg-route__shot{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:var(--w, 150px);
+  aspect-ratio:var(--ar, 4/5);
+  object-fit:cover;
+  border-radius:10px;
+  transform:rotate(var(--r, 0deg));
+  box-shadow:0 14px 30px -18px rgba(45,69,40,.45);
+  background:var(--rg-sand);
+}
+
 /* het tekstblok van een stop */
 .rg-route__body{
   position:relative;
@@ -7940,6 +7964,7 @@ h2.rg-route__team-title{
   .rg-route__stop--right .rg-route__body{ max-width:none; margin-left:0; padding-top:1.5rem; }
   .rg-route__stop--wide .rg-route__body{ text-align:left; }
   .rg-route__stop--wide .rg-route__place{ justify-content:flex-start; }
+  .rg-route__shots{ display:none; }
   .rg-route__roots{ grid-template-columns:1fr; }
   .rg-route__checks{ grid-template-columns:1fr; }
   .rg-route__team-grid{ grid-template-columns:1fr; }
