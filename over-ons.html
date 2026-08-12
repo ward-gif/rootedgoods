@@ -14,18 +14,17 @@
      Desktop- en mobielsegmenten zijn aparte SVG's met een VASTE aspect-ratio
      (geen preserveAspectRatio="none", zie plan) zodat de lijn-animatie klopt.
 
-     TE VERVANGEN:
-       - kaartlagen: nu ingezoomde uitsnedes van europa-outline.svg; worden
-         vervangen door de losse land-SVG's (land-portugal.svg etc.) zodra
-         die er zijn. Per stop staan --map-* variabelen ingesteld.
-       - teamfoto (nu dummy)
+     Kaartlagen: echte land-outlines uit kaarten/ (via jsDelivr). Hoogte per
+     stop via --map-h; ze bloeden naar de schermrand. Andere landen zijn
+     beschikbaar in kaarten/ (zie kaarten/README.md).
+     TE VERVANGEN: teamfoto (nu dummy)
      ============================================================ -->
 <section class="rg-route">
 
   <!-- ===== PROLOOG ===== -->
   <header class="rg-route__intro">
     <div class="rg-route__intro-map" aria-hidden="true">
-      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-europa.svg" alt="">
     </div>
     <div class="rg-route__intro-copy">
       <p class="rg-route__eyebrow">Over ons</p>
@@ -58,9 +57,9 @@
     </svg>
 
     <!-- ===== STOP 1: PORTO ===== -->
-    <section class="rg-route__stop rg-route__stop--left" style="--map-scale:3.4; --map-x:14%; --map-y:62%">
+    <section class="rg-route__stop rg-route__stop--left" style="--map-h:64vh">
       <div class="rg-route__map rg-route__map--right" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-portugal.svg" alt="">
       </div>
       <span class="rg-route__dot" aria-hidden="true">1</span>
       <div class="rg-route__body">
@@ -82,9 +81,9 @@
     </svg>
 
     <!-- ===== STOP 2: SAVOIE ===== -->
-    <section class="rg-route__stop rg-route__stop--right" style="--map-scale:3.2; --map-x:44%; --map-y:56%">
+    <section class="rg-route__stop rg-route__stop--right" style="--map-h:58vh">
       <div class="rg-route__map rg-route__map--left" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-frankrijk.svg" alt="">
       </div>
       <span class="rg-route__dot" aria-hidden="true">2</span>
       <div class="rg-route__body">
@@ -107,9 +106,9 @@
     </svg>
 
     <!-- ===== STOP 3: ZWARTE WOUD (onze naam) ===== -->
-    <section class="rg-route__stop rg-route__stop--wide" style="--map-scale:3.6; --map-x:54%; --map-y:50%">
+    <section class="rg-route__stop rg-route__stop--wide" style="--map-h:60vh">
       <div class="rg-route__map rg-route__map--right" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-duitsland.svg" alt="">
       </div>
       <span class="rg-route__dot" aria-hidden="true">3</span>
       <div class="rg-route__body">
@@ -143,9 +142,9 @@
     </svg>
 
     <!-- ===== STOP 4: DE ACHTERHOEK (thuis, de belofte) ===== -->
-    <section class="rg-route__stop rg-route__stop--wide rg-route__stop--last" style="--map-scale:4.2; --map-x:50%; --map-y:40%">
+    <section class="rg-route__stop rg-route__stop--wide rg-route__stop--last" style="--map-h:56vh">
       <div class="rg-route__map rg-route__map--left" aria-hidden="true">
-        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/europa-outline.svg" alt="">
+        <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/kaarten/land-nederland.svg" alt="">
       </div>
       <span class="rg-route__dot rg-route__dot--home" aria-hidden="true">4</span>
       <div class="rg-route__body">

@@ -7586,26 +7586,25 @@ h1.rg-route__title em{
 .rg-route__stop--right{ --x:74%; }
 .rg-route__stop--wide{ --x:50%; }
 
-/* kaartlaag per stop: ingezoomde uitsnede, bloedt naar de schermrand */
+/* kaartlaag per stop: een echte land-outline (kaarten/), op hoogte geschaald
+   en deels buiten de schermrand. --map-h per stop in de HTML.
+   De lijndikte is in de assets zelf genormaliseerd (zie kaarten/README.md),
+   dus alle landen ogen even zwaar ongeacht hun viewBox. */
 .rg-route__map{
   position:absolute;
-  top:-8%;
-  width:52vw;
-  height:116%;
-  overflow:hidden;
+  top:50%;
+  transform:translateY(-50%);
   z-index:0;
-  opacity:.38;
+  opacity:.42;
   pointer-events:none;
+  line-height:0;
 }
-.rg-route__map--left{ left:calc(50% - 50vw); }
-.rg-route__map--right{ right:calc(50% - 50vw); }
+.rg-route__map--left{ left:calc(50% - 50vw); margin-left:-5vw; }
+.rg-route__map--right{ right:calc(50% - 50vw); margin-right:-5vw; }
 .rg-route__map img{
-  position:absolute;
-  top:50%; left:50%;
-  width:100%;
-  height:auto;
-  transform:translate(-50%,-50%) scale(var(--map-scale,3)) translate(calc(var(--map-x,50%) - 50%), calc(var(--map-y,50%) - 50%));
-  transform-origin:center;
+  height:var(--map-h, 58vh);
+  width:auto;
+  max-width:none;
   display:block;
 }
 
@@ -7822,7 +7821,8 @@ h2.rg-route__team-title{
   .rg-route__roots{ grid-template-columns:1fr; }
   .rg-route__checks{ grid-template-columns:1fr; }
   .rg-route__team-grid{ grid-template-columns:1fr; }
-  .rg-route__map{ width:78vw; opacity:.26; }
+  .rg-route__map img{ height:calc(var(--map-h, 58vh) * .62); }
+  .rg-route__map{ opacity:.22; }
   .rg-route__intro-map{ width:100vw; opacity:.32; }
   .rg-route__meter{ top:calc(100vh - 4.5rem); }
   .rg-route__leaf{ left:28px; }
