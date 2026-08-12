@@ -598,3 +598,166 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 
+
+/* ============================================================
+   1.6 OVER ONS — "De Route van Rooted" (scroll-regie)
+   ------------------------------------------------------------
+   Doet niets buiten /over-ons: alles hangt aan .rg-route. De
+   libraries (GSAP + ScrollTrigger + Lenis) worden pas geladen als
+   die sectie bestaat, dus de rest van de site betaalt er niets voor.
+
+   Wat er beweegt, allemaal scrub-gebonden aan de scroll:
+   1. de routelijn tekent zichzelf per segment
+   2. het Rooted-merkteken reist mee op de punt van de lijn
+   3. dots + plaatslabels lichten op zodra de lijn ze bereikt
+   4. de kilometerteller telt op naar 2.100
+   5. sfeerbeelden komen rustig in beeld met lichte parallax
+   6. het logo verschijnt bij thuiskomst
+
+   Bij prefers-reduced-motion gebeurt er niets: de CSS-eindstand
+   (lijn volledig getekend, alles zichtbaar) is dan meteen goed.
+   ============================================================ */
+(function () {
+  var root = document.querySelector('.rg-route');
+  if (!root) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var CDN = 'https://cdn.jsdelivr.net/';
+  var LIBS = [
+    CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
+    CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
+    CDN + 'npm/lenis@1.1.18/dist/lenis.min.js'
+  ];
+
+  function laad(src) {
+    return new Promise(function (ok, fout) {
+      var s = document.createElement('script');
+      s.src = src; s.async = false;
+      s.onload = ok; s.onerror = fout;
+      document.head.appendChild(s);
+    });
+  }
+
+  // sequentieel: ScrollTrigger heeft gsap nodig
+  LIBS.reduce(function (p, src) { return p.then(function () { return laad(src); }); }, Promise.resolve())
+      .then(start)
+      .catch(function () { /* zonder libs blijft de CSS-eindstand staan */ });
+
+  function start() {
+    var gsap = window.gsap;
+    if (!gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(window.ScrollTrigger);
+    var ST = window.ScrollTrigger;
+
+    /* ---- Lenis: zachte scroll, gekoppeld aan de GSAP-ticker ---- */
+    if (window.Lenis) {
+      var lenis = new window.Lenis({ duration: 1.05, smoothWheel: true });
+      lenis.on('scroll', ST.update);
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    var track = root.querySelector('.rg-route__track');
+    var mark  = root.querySelector('.rg-route__mark');
+    var teller = root.querySelector('.rg-route__meter-num');
+    /* km per segment: de reis begint bij Porto (stop 1), dus segment 0 telt niet mee */
+    var KM = [[0, 0], [0, 1150], [1150, 1500], [1500, 2100]];
+    var km = { waarde: 0 };
+
+    function toonKm() {
+      if (teller) teller.textContent = Math.round(km.waarde).toLocaleString('nl-NL');
+    }
+
+    /* ---- 1 + 2. lijn tekenen, met het merkteken op de punt ---- */
+    gsap.utils.toArray('.rg-route__seg').forEach(function (svg) {
+      var lijn = svg.querySelector('.rg-route__seg-line');
+      if (!lijn) return;
+      var L = lijn.getTotalLength();
+      gsap.set(lijn, { strokeDasharray: L, strokeDashoffset: L });
+
+      var idx = +svg.getAttribute('data-seg') || 0;
+      var vak = KM[idx] || [0, 0];
+
+      gsap.to(lijn, {
+        strokeDashoffset: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: svg,
+          start: 'top 82%',
+          end: 'bottom 58%',
+          scrub: 0.4,
+          onUpdate: function (self) {
+            /* alleen het zichtbare segment (desktop of mobiel) stuurt aan */
+            if (!svg.getClientRects().length) return;
+            km.waarde = vak[0] + (vak[1] - vak[0]) * self.progress;
+            toonKm();
+            zetMerkteken(lijn, L, self.progress);
+          }
+        }
+      });
+    });
+
+    /* het merkteken op de punt van de getekende lijn zetten */
+    function zetMerkteken(lijn, L, p) {
+      if (!mark || !track) return;
+      var punt = lijn.getPointAtLength(L * Math.max(0, Math.min(1, p)));
+      var ctm = lijn.getScreenCTM();
+      if (!ctm) return;
+      var sp = lijn.ownerSVGElement.createSVGPoint();
+      sp.x = punt.x; sp.y = punt.y;
+      var scherm = sp.matrixTransform(ctm);
+      var t = track.getBoundingClientRect();
+      gsap.set(mark, { x: scherm.x - t.left, y: scherm.y - t.top, xPercent: -50, yPercent: -50 });
+    }
+    if (mark) gsap.set(mark, { top: 0, left: 0 });
+
+    /* ---- 3. dots + plaatslabels ---- */
+    gsap.utils.toArray('.rg-route__dot').forEach(function (dot) {
+      ST.create({
+        trigger: dot,
+        start: 'top 78%',
+        onEnter: function () { dot.classList.add('is-on'); },
+        onLeaveBack: function () { dot.classList.remove('is-on'); }
+      });
+    });
+    gsap.utils.toArray('.rg-route__place').forEach(function (el) {
+      gsap.from(el, {
+        opacity: 0, y: 14, duration: .6, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' }
+      });
+    });
+
+    /* ---- 4. copy per stop rustig in beeld ---- */
+    gsap.utils.toArray('.rg-route__body').forEach(function (body) {
+      gsap.from(body, {
+        opacity: 0, y: 22, duration: .7, ease: 'power2.out',
+        scrollTrigger: { trigger: body, start: 'top 85%' }
+      });
+    });
+
+    /* ---- 5. sfeerbeelden: fade-in + lichte parallax, elk eigen snelheid ---- */
+    gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
+      gsap.from(shot, {
+        opacity: 0, scale: .94, duration: .7, ease: 'power2.out',
+        scrollTrigger: { trigger: shot, start: 'top 92%' }
+      });
+      gsap.to(shot, {
+        yPercent: -8 - (i % 3) * 5,   /* verschillende snelheden -> diepte */
+        ease: 'none',
+        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
+      });
+    });
+
+    /* ---- 6. thuiskomst: logo verschijnt ---- */
+    var logo = root.querySelector('.rg-route__logo');
+    if (logo) {
+      gsap.from(logo, {
+        opacity: 0, y: 18, duration: .8, ease: 'power2.out',
+        scrollTrigger: { trigger: logo, start: 'top 88%' }
+      });
+    }
+
+    toonKm();
+    ST.refresh();
+  }
+})();
