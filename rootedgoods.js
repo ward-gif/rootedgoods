@@ -600,56 +600,209 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ============================================================
-   1.6 OVER ONS — "De Route van Rooted" (scroll-regie)
+   1.6 OVER ONS — "De Route van Rooted" (route + scroll-regie)
    ------------------------------------------------------------
-   Doet niets buiten /over-ons: alles hangt aan .rg-route. De
-   libraries (GSAP + ScrollTrigger + Lenis) worden pas geladen als
-   die sectie bestaat, dus de rest van de site betaalt er niets voor.
+   Doet niets buiten /over-ons: alles hangt aan .rg-route. GSAP +
+   ScrollTrigger + Lenis worden pas geladen als die sectie bestaat.
 
-   Wat er beweegt, allemaal scrub-gebonden aan de scroll:
-   1. de routelijn tekent zichzelf per segment
-   2. het Rooted-merkteken reist mee op de punt van de lijn
-   3. dots + plaatslabels lichten op zodra de lijn ze bereikt
-   4. de kilometerteller telt op naar 2.100
-   5. sfeerbeelden komen rustig in beeld met lichte parallax
-   6. het logo verschijnt bij thuiskomst
+   DE ROUTELIJN is EEN doorlopend pad over de volle hoogte van de
+   track, at runtime opgebouwd uit de werkelijke posities van de
+   stopmarkers (en opnieuw bij resize). Opbouw:
 
-   Bij prefers-reduced-motion gebeurt er niets: de CSS-eindstand
-   (lijn volledig getekend, alles zichtbaar) is dan meteen goed.
+     spine  = startpunt + markerposities + tussenpunten per traject
+     sample = vaste verticale stap van 6-14px langs die spine
+     offset = drie gestapelde golven in x (traag/midden/fijn)
+     fade   = offset naar 0 binnen 40px van een marker
+
+   Twee harde regels maken lussen onmogelijk:
+     1. y is STRIKT oplopend (elk punt minimaal +1px t.o.v. het vorige)
+     2. alle variatie zit uitsluitend in x; y wordt nooit door ruis geraakt
+   De bezier-controlepunten liggen bovendien altijd tussen de y van hun
+   eindpunten, dus ook de curve zelf blijft monotoon in y. Een pad dat
+   monotoon in y is kan zichzelf per definitie niet snijden.
+
+   Bij prefers-reduced-motion wordt er niets geladen: de lijn wordt dan
+   wel getekend, maar meteen volledig zichtbaar.
    ============================================================ */
 (function () {
   var root = document.querySelector('.rg-route');
   if (!root) return;
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  var CDN = 'https://cdn.jsdelivr.net/';
-  var LIBS = [
-    CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
-    CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
-    CDN + 'npm/lenis@1.1.18/dist/lenis.min.js'
-  ];
+  var track = root.querySelector('.rg-route__track');
+  var svg   = root.querySelector('.rg-route__line');
+  var base  = root.querySelector('.rg-route__line-base');
+  var draw  = root.querySelector('.rg-route__line-draw');
+  var mark  = root.querySelector('.rg-route__mark');
+  var teller = root.querySelector('.rg-route__meter-num');
+  if (!track || !svg || !base || !draw) return;
 
-  function laad(src) {
-    return new Promise(function (ok, fout) {
-      var s = document.createElement('script');
-      s.src = src; s.async = false;
-      s.onload = ok; s.onerror = fout;
-      document.head.appendChild(s);
-    });
+  /* ---------- kleine deterministische generator (vaste seed) ---------- */
+  function rng(seed) {
+    return function () {
+      seed = (seed * 1664525 + 1013904223) % 4294967296;
+      return seed / 4294967296;
+    };
   }
 
-  // sequentieel: ScrollTrigger heeft gsap nodig
-  LIBS.reduce(function (p, src) { return p.then(function () { return laad(src); }); }, Promise.resolve())
-      .then(start)
-      .catch(function () { /* zonder libs blijft de CSS-eindstand staan */ });
+  /* ---------- de route opbouwen ---------- */
+  var markers = [];      /* y-posities van de stops, voor de km-teller */
+
+  function bouwRoute() {
+    var tr = track.getBoundingClientRect();
+    var breedte = tr.width, hoogte = track.offsetHeight;
+    if (!breedte || !hoogte) return;
+
+    var dots = [].slice.call(root.querySelectorAll('.rg-route__dot'))
+                 .filter(function (d) { return d.getClientRects().length; });
+    if (!dots.length) return;
+
+    /* spine: startpunt boven de eerste stop + alle markermiddelpunten */
+    var spine = [];
+    var eerste = dots[0].getBoundingClientRect();
+    var startX = eerste.left + eerste.width / 2 - tr.left;
+    spine.push({ x: startX, y: Math.max(0, eerste.top - tr.top - 260), marker: false });
+
+    dots.forEach(function (d) {
+      var r = d.getBoundingClientRect();
+      spine.push({ x: r.left + r.width / 2 - tr.left, y: r.top + r.height / 2 - tr.top, marker: true });
+    });
+
+    /* tussenpunten per traject: sturen de zijwaartse sweep, met een vaste seed */
+    var r1 = rng(20250812);
+    var vol = [spine[0]];
+    for (var i = 1; i < spine.length; i++) {
+      var a = spine[i - 1], b = spine[i], dy = b.y - a.y;
+      if (dy > 320) {
+        var n = dy > 700 ? 2 : 1;
+        for (var k = 1; k <= n; k++) {
+          var t = k / (n + 1);
+          var zij = (r1() - 0.5) * Math.min(breedte * 0.30, 340);
+          vol.push({ x: a.x + (b.x - a.x) * t + zij, y: a.y + dy * t, marker: false });
+        }
+      }
+      vol.push(b);
+    }
+
+    markers = vol.filter(function (p) { return p.marker; }).map(function (p) { return p.y; });
+
+    /* x als functie van y, monotoon geinterpoleerd (Fritsch-Carlson):
+       voorkomt doorschieten, dus geen slingers buiten de spine om */
+    var ys = vol.map(function (p) { return p.y; });
+    var xs = vol.map(function (p) { return p.x; });
+    var hell = [], m = [];
+    for (var j = 0; j < ys.length - 1; j++) hell.push((xs[j + 1] - xs[j]) / Math.max(1, ys[j + 1] - ys[j]));
+    m.push(hell[0]);
+    for (var j2 = 1; j2 < hell.length; j2++) {
+      m.push(hell[j2 - 1] * hell[j2] <= 0 ? 0 : (hell[j2 - 1] + hell[j2]) / 2);
+    }
+    m.push(hell[hell.length - 1]);
+    for (var j3 = 0; j3 < hell.length; j3++) {
+      if (hell[j3] === 0) { m[j3] = 0; m[j3 + 1] = 0; continue; }
+      var a1 = m[j3] / hell[j3], b1 = m[j3 + 1] / hell[j3], sq = a1 * a1 + b1 * b1;
+      if (sq > 9) { var tau = 3 / Math.sqrt(sq); m[j3] = tau * a1 * hell[j3]; m[j3 + 1] = tau * b1 * hell[j3]; }
+    }
+    function xBijY(y) {
+      var k2 = 0;
+      while (k2 < ys.length - 2 && y > ys[k2 + 1]) k2++;
+      var h = Math.max(1, ys[k2 + 1] - ys[k2]), t = (y - ys[k2]) / h, t2 = t * t, t3 = t2 * t;
+      return (2 * t3 - 3 * t2 + 1) * xs[k2] + (t3 - 2 * t2 + t) * h * m[k2] +
+             (-2 * t3 + 3 * t2) * xs[k2 + 1] + (t3 - t2) * h * m[k2 + 1];
+    }
+
+    /* bemonsteren met een vaste verticale stap; y dus altijd oplopend */
+    var r2 = rng(777001), yStart = vol[0].y, yEind = vol[vol.length - 1].y;
+    var punten = [], y = yStart;
+    while (y < yEind) {
+      punten.push(y);
+      y += 6 + r2() * 8;              /* 6-14px */
+    }
+    punten.push(yEind);
+
+    /* drie gestapelde golven in x; irrationele verhoudingen zodat er geen
+       patroon ontstaat (pure ruis per punt zou rafelig worden) */
+    var f1 = rng(31337)() * 6.283, f2 = rng(90210)() * 6.283, f3 = rng(4242)() * 6.283;
+    function offset(yy) {
+      var traag  = Math.sin(yy / 803  * 6.283 + f1) * 92;
+      var midden = Math.sin(yy / 151  * 6.283 + f2) * 22
+                 + Math.sin(yy / 233  * 6.283 + f2 * 1.7) * 11;
+      var fijn   = Math.sin(yy / 26.3 * 6.283 + f3) * 4;
+      return traag + midden + fijn;
+    }
+    /* binnen 40px van een marker naar 0 uitfaden: de lijn komt exact in het
+       middelpunt aan en vertrekt daar ook weer */
+    function demping(yy) {
+      var d = Infinity;
+      for (var q = 0; q < markers.length; q++) d = Math.min(d, Math.abs(yy - markers[q]));
+      if (d >= 40) return 1;
+      var t = d / 40;
+      return t * t * (3 - 2 * t);
+    }
+
+    var pts = punten.map(function (yy) {
+      return { x: xBijY(yy) + offset(yy) * demping(yy), y: yy };
+    });
+
+    /* controle: y moet strikt oplopen, anders klopt de generator niet */
+    for (var c = 1; c < pts.length; c++) {
+      if (pts[c].y <= pts[c - 1].y) {
+        console.warn('[rg-route] y niet strikt oplopend bij index', c);
+        pts[c].y = pts[c - 1].y + 1;
+      }
+    }
+
+    svg.setAttribute('viewBox', '0 0 ' + breedte + ' ' + hoogte);
+    svg.setAttribute('width', breedte);
+    svg.setAttribute('height', hoogte);
+
+    var d2 = padVan(pts);
+    base.setAttribute('d', d2);
+    draw.setAttribute('d', d2);
+  }
+
+  /* bezier met controlepunten die altijd TUSSEN de y van hun eindpunten
+     liggen -> de curve blijft monotoon in y, dus lusvrij */
+  function padVan(pts) {
+    var f = function (v) { return Math.round(v * 10) / 10; };
+    var d = 'M' + f(pts[0].x) + ',' + f(pts[0].y);
+    for (var i = 1; i < pts.length; i++) {
+      var p0 = pts[i - 1], p1 = pts[i];
+      var vorige = pts[i - 2] || p0, volgende = pts[i + 1] || p1;
+      var h = p1.y - p0.y;
+      var m0 = (p1.x - vorige.x) / Math.max(1, p1.y - vorige.y);
+      var m1 = (volgende.x - p0.x) / Math.max(1, volgende.y - p0.y);
+      d += 'C' + f(p0.x + m0 * h / 3) + ',' + f(p0.y + h / 3) +
+           ' ' + f(p1.x - m1 * h / 3) + ',' + f(p1.y - h / 3) +
+           ' ' + f(p1.x) + ',' + f(p1.y);
+    }
+    return d;
+  }
+
+  bouwRoute();
+  window.addEventListener('resize', function () { bouwRoute(); });
+
+  /* ---------- animatie ---------- */
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('requestAnimationFrame' in window)) return;
+
+  var CDN = 'https://cdn.jsdelivr.net/';
+  [CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
+   CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
+   CDN + 'npm/lenis@1.1.18/dist/lenis.min.js']
+    .reduce(function (p, src) {
+      return p.then(function () {
+        return new Promise(function (ok, fout) {
+          var sc = document.createElement('script');
+          sc.src = src; sc.async = false; sc.onload = ok; sc.onerror = fout;
+          document.head.appendChild(sc);
+        });
+      });
+    }, Promise.resolve()).then(start).catch(function () {});
 
   function start() {
-    var gsap = window.gsap;
-    if (!gsap || !window.ScrollTrigger) return;
-    gsap.registerPlugin(window.ScrollTrigger);
-    var ST = window.ScrollTrigger;
+    var gsap = window.gsap, ST = window.ScrollTrigger;
+    if (!gsap || !ST) return;
+    gsap.registerPlugin(ST);
 
-    /* ---- Lenis: zachte scroll, gekoppeld aan de GSAP-ticker ---- */
     if (window.Lenis) {
       var lenis = new window.Lenis({ duration: 1.05, smoothWheel: true });
       lenis.on('scroll', ST.update);
@@ -657,169 +810,91 @@ document.addEventListener('DOMContentLoaded', function () {
       gsap.ticker.lagSmoothing(0);
     }
 
-    var track = root.querySelector('.rg-route__track');
-    var mark  = root.querySelector('.rg-route__mark');
-    var teller = root.querySelector('.rg-route__meter-num');
-    /* km per segment: de reis begint bij Porto (stop 1), dus segment 0 telt niet mee */
-    var KM = [[0, 0], [0, 1150], [1150, 1500], [1500, 2100]];
-    var km = { waarde: 0 };
+    /* km-ijkpunten: de reis begint bij Porto (marker 0) */
+    var KM = [0, 1150, 1500, 2100];
 
-    function toonKm() {
-      if (teller) teller.textContent = Math.round(km.waarde).toLocaleString('nl-NL');
-    }
+    var L = draw.getTotalLength();
+    gsap.set(draw, { strokeDasharray: L, strokeDashoffset: L });
 
-    /* ---- 1 + 2. lijn tekenen, met het merkteken op de punt ---- */
-    gsap.utils.toArray('.rg-route__seg').forEach(function (svg) {
-      var lijn = svg.querySelector('.rg-route__seg-line');
-      if (!lijn) return;
-      var L = lijn.getTotalLength();
-      gsap.set(lijn, { strokeDasharray: L, strokeDashoffset: L });
-
-      var idx = +svg.getAttribute('data-seg') || 0;
-      var vak = KM[idx] || [0, 0];
-
-      gsap.to(lijn, {
-        strokeDashoffset: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: svg,
-          /* pas tekenen als het segment echt in beeld is: anders staat er bij
-             het landen al een stuk lijn vóór het merkteken uit */
-          /* ruim bereik: het segment tekent van binnenkomst tot bijna
-             uit beeld. Korter voelde gejaagd en ongecontroleerd. */
-          start: 'top 82%',
-          end: 'bottom 30%',
-          scrub: 0.8,
-          onUpdate: function (self) {
-            /* alleen het zichtbare segment (desktop of mobiel) stuurt aan */
-            if (!svg.getClientRects().length) return;
-            km.waarde = vak[0] + (vak[1] - vak[0]) * self.progress;
-            toonKm();
-            /* het merkteken loopt een halve merkteken-breedte voor de lijn uit,
-               zodat de lijn er netjes achteraan komt en er nooit lijn onder
-               of voor het logo zit */
-            zetMerkteken(lijn, L, self.progress + voorsprong(svg, L));
-          }
-        }
-      });
+    ST.create({
+      trigger: track,
+      start: 'top 60%',
+      end: 'bottom 75%',
+      scrub: 0.8,
+      onUpdate: function (self) {
+        var p = self.progress;
+        gsap.set(draw, { strokeDashoffset: L * (1 - p) });
+        zetMerkteken(p);
+        zetKm(p);
+      },
+      onRefresh: function () {
+        L = draw.getTotalLength();
+        gsap.set(draw, { strokeDasharray: L });
+      }
     });
 
-    /* hoeveel padlengte is een halve merkteken-breedte, in padeenheden? */
-    function voorsprong(svg, L) {
-      var vb = svg.viewBox && svg.viewBox.baseVal;
-      var breedte = svg.getBoundingClientRect().width;
-      if (!vb || !vb.width || !breedte) return 0;
-      var schaal = breedte / vb.width;          /* px per padeenheid */
-      return (22 / schaal) / L;                 /* 22px = straal + beetje lucht */
-    }
-
-    /* het merkteken op de punt van de getekende lijn zetten */
-    function zetMerkteken(lijn, L, p) {
-      if (!mark || !track) return;
-      var punt = lijn.getPointAtLength(L * Math.max(0, Math.min(1, p)));
-      var ctm = lijn.getScreenCTM();
-      if (!ctm) return;
-      var sp = lijn.ownerSVGElement.createSVGPoint();
-      sp.x = punt.x; sp.y = punt.y;
-      var scherm = sp.matrixTransform(ctm);
-      var t = track.getBoundingClientRect();
-      gsap.set(mark, { x: scherm.x - t.left, y: scherm.y - t.top, xPercent: -50, yPercent: -50 });
-    }
-    /* Bij het laden heeft nog geen segment gedraaid; zonder dit staat het
-       merkteken in de hoek van de track ipv aan het begin van de route. */
-    function parkeerBijStart() {
+    function zetMerkteken(p) {
       if (!mark) return;
-      var eerste = root.querySelector('.rg-route__seg');
-      /* het zichtbare segment pakken (desktop of mobiel) */
-      gsap.utils.toArray('.rg-route__seg').some(function (sv) {
-        if (sv.getClientRects().length) { eerste = sv; return true; }
-        return false;
-      });
-      var lijn = eerste && eerste.querySelector('.rg-route__seg-line');
-      if (!lijn) return;
-      gsap.set(mark, { top: 0, left: 0 });
-      zetMerkteken(lijn, lijn.getTotalLength(), 0);
+      var punt = draw.getPointAtLength(L * Math.min(1, p + 12 / Math.max(1, L)));
+      gsap.set(mark, { x: punt.x, y: punt.y, xPercent: -50, yPercent: -50 });
     }
-    parkeerBijStart();
-    ST.addEventListener('refresh', parkeerBijStart);
-    window.addEventListener('resize', parkeerBijStart);
+    if (mark) gsap.set(mark, { top: 0, left: 0 });
+    zetMerkteken(0);
 
-    /* ---- 3. dots + plaatslabels ---- */
+    /* km volgt de y-positie van het merkteken t.o.v. de markers */
+    function zetKm(p) {
+      if (!teller || !markers.length) return;
+      var y = draw.getPointAtLength(L * p).y, km = 0;
+      if (y >= markers[markers.length - 1]) km = KM[KM.length - 1];
+      else for (var i = 0; i < markers.length - 1; i++) {
+        if (y >= markers[i] && y < markers[i + 1]) {
+          var t = (y - markers[i]) / Math.max(1, markers[i + 1] - markers[i]);
+          km = KM[i] + (KM[i + 1] - KM[i]) * t;
+          break;
+        }
+      }
+      teller.textContent = Math.round(km).toLocaleString('nl-NL');
+    }
+
+    /* dots lichten op zodra ze in beeld zijn */
     gsap.utils.toArray('.rg-route__dot').forEach(function (dot) {
       ST.create({
-        trigger: dot,
-        start: 'top 78%',
+        trigger: dot, start: 'top 78%',
         onEnter: function () { dot.classList.add('is-on'); },
         onLeaveBack: function () { dot.classList.remove('is-on'); }
       });
     });
-    /* ---- 4. tekst komt in beeld: opschalen + fade (Independent Brewers-gevoel).
-       Per stop lopen label, kop en tekst kort na elkaar, zodat het leest als
-       aankomen op een plek in plaats van een blok dat verschijnt. ---- */
+
+    /* tekst komt op met schaal + fade, per onderdeel kort na elkaar */
     gsap.utils.toArray('.rg-route__body, .rg-route__team-copy').forEach(function (body) {
-      var delen = body.querySelectorAll(
-        '.rg-route__place, .rg-route__stop-title, p, .rg-route__roots, .rg-route__panel, .rg-route__contact-map'
-      );
+      var delen = body.querySelectorAll('.rg-route__place, .rg-route__stop-title, p, .rg-route__roots, .rg-route__panel, .rg-route__contact-map');
       gsap.from(delen.length ? delen : body, {
-        opacity: 0,
-        y: 42,
-        scale: .965,
-        duration: .85,
-        ease: 'power3.out',
-        stagger: .08,
+        opacity: 0, y: 42, scale: .965, duration: .85, ease: 'power3.out', stagger: .08,
         scrollTrigger: { trigger: body, start: 'top 86%' }
       });
     });
-    gsap.utils.toArray('.rg-route__team-title, .rg-route__route-title, .rg-route__logo').forEach(function (el) {
-      gsap.from(el, {
-        opacity: 0, y: 34, scale: .96, duration: .8, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' }
-      });
+    gsap.utils.toArray('.rg-route__team-title, .rg-route__logo').forEach(function (el) {
+      gsap.from(el, { opacity: 0, y: 34, scale: .96, duration: .8, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' } });
     });
 
-    /* ---- 5. sfeerbeelden: opkomen en meebewegen, elk met een eigen snelheid ---- */
+    /* sfeerbeelden: opkomen en meebewegen, elk eigen snelheid */
     gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
       var draai = parseFloat((shot.style.getPropertyValue('--r') || '0').replace('deg', '')) || 0;
-      gsap.from(shot, {
-        opacity: 0, scale: .82, y: 34, rotate: draai - 6,
-        duration: .9, ease: 'power3.out',
-        scrollTrigger: { trigger: shot, start: 'top 94%' }
-      });
-      gsap.to(shot, {
-        yPercent: -16 - (i % 3) * 9,   /* uiteenlopende snelheden -> diepte */
-        ease: 'none',
-        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 }
-      });
+      gsap.from(shot, { opacity: 0, scale: .82, y: 34, rotate: draai - 6, duration: .9, ease: 'power3.out',
+        scrollTrigger: { trigger: shot, start: 'top 94%' } });
+      gsap.to(shot, { yPercent: -16 - (i % 3) * 9, ease: 'none',
+        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
     });
-
-    /* de founders-foto zweeft rustiger mee dan de kleine beelden */
     var hoofdfoto = root.querySelector('.rg-route__collage-main');
-    if (hoofdfoto) {
-      gsap.to(hoofdfoto, {
-        yPercent: -7, ease: 'none',
-        scrollTrigger: { trigger: hoofdfoto, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
-      });
-    }
+    if (hoofdfoto) gsap.to(hoofdfoto, { yPercent: -7, ease: 'none',
+      scrollTrigger: { trigger: hoofdfoto, start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
 
-    /* scroll-hint verdwijnt zodra de reis begint */
     var hint = root.querySelector('.rg-route__hint');
-    if (hint) {
-      gsap.to(hint, {
-        opacity: 0, y: -10, ease: 'none',
-        scrollTrigger: { trigger: hint, start: 'top 28%', end: 'top 2%', scrub: true }
-      });
-    }
+    if (hint) gsap.to(hint, { opacity: 0, y: -10, ease: 'none',
+      scrollTrigger: { trigger: hint, start: 'top 28%', end: 'top 2%', scrub: true } });
 
-    /* ---- 6. thuiskomst: logo verschijnt ---- */
-    var logo = root.querySelector('.rg-route__logo');
-    if (logo) {
-      gsap.from(logo, {
-        opacity: 0, y: 18, duration: .8, ease: 'power2.out',
-        scrollTrigger: { trigger: logo, start: 'top 88%' }
-      });
-    }
-
-    toonKm();
+    ST.addEventListener('refresh', function () { bouwRoute(); });
     ST.refresh();
   }
 })();

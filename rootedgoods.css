@@ -7588,22 +7588,15 @@ h1.rg-route__title em{
 /* Europa-outline groot en ingezoomd achter de kop */
 .rg-route__intro-map{
   position:absolute;
-  top:50%; right:calc(50% - 50vw);
+  top:46%; right:calc(50% - 50vw);
   transform:translateY(-50%);
-  width:min(88vw, 1100px);
-  margin-right:-6vw;          /* deels buiten beeld */
+  width:min(108vw, 1380px);
+  margin-right:-10vw;         /* deels buiten beeld */
   z-index:1;
   opacity:1;
   pointer-events:none;
 }
 .rg-route__intro-map img{ width:100%; height:auto; display:block; }
-/* laat de kaart naar links uitvloeien zodat de kop leesbaar blijft */
-.rg-route__intro-map::after{
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(to right,
-    var(--rg-cream) 0%, rgba(247,245,242,.92) 26%, rgba(247,245,242,.45) 48%, transparent 72%);
-}
 
 /* ---- Scroll-hint: benoemt de reis, nodigt uit om te scrollen ---- */
 .rg-route__hint{
@@ -7620,11 +7613,11 @@ h1.rg-route__title em{
   font-weight:700;
   letter-spacing:.24em;
   text-transform:uppercase;
-  font-size:clamp(.66rem, .6rem + .2vw, .74rem);
+  font-size:clamp(.8rem, .72rem + .3vw, .95rem);
   color:var(--rg-cognac-light);
 }
 .rg-route__hint svg{
-  width:1.1rem; height:1.1rem;
+  width:1.35rem; height:1.35rem;
   animation:rg-route-wenk 2.4s ease-in-out infinite;
 }
 @keyframes rg-route-wenk{
@@ -7644,38 +7637,37 @@ h1.rg-route__title em{
   padding:clamp(11rem, 26vw, 22rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
-/* ---- Segmenten (de routelijn) ---- */
-.rg-route__seg{
-  display:block;
+/* ---- De routelijn: EEN doorlopend pad over de volle hoogte ----
+   Het pad wordt door JS opgebouwd uit de werkelijke markerposities. y is
+   strikt oplopend en alle variatie zit in x, waardoor de lijn zichzelf niet
+   kan kruisen en er nooit een lus ontstaat. De lijn ligt achter tekst en
+   beelden (z-index 0 binnen de track). */
+.rg-route__line{
+  position:absolute;
+  inset:0;
   width:100%;
-  height:auto;
-  position:relative;
-  z-index:2;
+  height:100%;
   overflow:visible;
+  z-index:0;
+  pointer-events:none;
 }
-.rg-route__seg--mob{ display:none; }
-.rg-route__seg-base,
-.rg-route__seg-line{
+.rg-route__line-base,
+.rg-route__line-draw{
   fill:none;
   stroke-linecap:round;
   stroke-linejoin:round;
-  /* BEWUST GEEN vector-effect:non-scaling-stroke: Chrome rekent dash-lengtes
-     dan in schermruimte terwijl stroke-dashoffset in padeenheden staat. Het
-     patroon herhaalt zich dan en er verschijnen lijnstukken op plekken waar
-     nog niets getekend hoort te zijn. De segmenten hebben een vaste
-     aspect-ratio, dus de lijn schaalt hier vanzelf goed mee. */
+  /* GEEN vector-effect:non-scaling-stroke: Chrome rekent dash-lengtes dan in
+     schermruimte terwijl stroke-dashoffset in padeenheden staat. */
 }
-/* nog af te leggen: zwakke stippellijn (vooruitblik + scroll-cue) */
-.rg-route__seg-base{
+.rg-route__line-base{
   stroke:var(--rg-cognac);
-  stroke-width:2.5px;
+  stroke-width:2.5;
   stroke-dasharray:1 10;
   opacity:.34;
 }
-/* afgelegd: solide cognac (fase 2 animeert dit pad) */
-.rg-route__seg-line{
+.rg-route__line-draw{
   stroke:var(--rg-cognac);
-  stroke-width:8px;
+  stroke-width:8;
   opacity:.92;
 }
 
@@ -7735,8 +7727,11 @@ h1.rg-route__title em{
   z-index:2;
   --x:50%;
   padding-top:clamp(2.5rem, 5vw, 4.5rem);
-  padding-bottom:clamp(1.5rem, 4vw, 3.5rem);
+  /* de losse segment-SVG's maakten voorheen de ruimte tussen de stops; nu de
+     lijn een doorlopend pad is, moet die ruimte hier vandaan komen */
+  padding-bottom:clamp(20rem, 30vw, 30rem);
 }
+.rg-route__stop--last{ padding-bottom:clamp(4rem, 8vw, 7rem); }
 .rg-route__stop--left{ --x:26%; }
 .rg-route__stop--right{ --x:74%; }
 .rg-route__stop--wide{ --x:50%; }
@@ -8076,8 +8071,6 @@ h2.rg-route__team-title{
 
 /* ---- MOBIEL / TABLET: verticale rail ---- */
 @media (max-width:991px){
-  .rg-route__seg--desk{ display:none; }
-  .rg-route__seg--mob{ display:block; width:60px; margin-left:0; }
   .rg-route__stop{ --x:28px; padding-left:68px; }
   .rg-route__stop--left,
   .rg-route__stop--right,
