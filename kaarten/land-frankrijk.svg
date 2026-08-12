@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Laag_2" data-name="Laag 2" xmlns="http://www.w3.org/2000/svg" viewBox="-1.79 -1.63 105.91 101.53">
+<svg id="Laag_2" data-name="Laag 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.32 98.1">
   <defs>
     <style>
       .cls-1 {
         fill: none;
         fill-rule: evenodd;
-        stroke: #2d4528;
-        stroke-width: 0.2118px;
+        stroke: #C9C2B5;
+        stroke-width: 0.2046px;
         stroke-miterlimit: 10;
         stroke-linejoin: round;
       }
