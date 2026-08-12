@@ -5497,6 +5497,9 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   -webkit-font-smoothing: antialiased;
   display: flex;
   align-items: center;
+  /* nodig voor de Europa-kaartlaag hieronder */
+  position: relative;
+  overflow: clip;
   /* Extra lucht vóór de logo-slider eronder: de hero-inhoud staat
      verticaal gecentreerd (align-items:center), dus zonder dit zit de
      slider soms net iets te strak tegen de hero-inhoud aan. Vast bedrag,
@@ -5505,6 +5508,32 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin-bottom: 32px;
 }
 .rg-hero-v2 * { box-sizing: border-box; }
+
+/* ---- Europa-outline als stille achtergrondlaag (zelfde taal als /over-ons).
+   CSS-only zodat het CMS-blok niet opnieuw geplakt hoeft te worden. De kaart
+   is naar rechts verankerd en vloeit met een mask naar links uit, zodat de
+   copy-kolom vrij blijft. Asset staat op een vaste commit-SHA: @main wordt
+   door jsDelivr gecached en levert dan soms een oude versie. ---- */
+.rg-hero-v2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6vw;
+  transform: translateY(-50%);
+  width: min(78vw, 1000px);
+  aspect-ratio: 527.542 / 513.168;
+  background: url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@827cf45bbd4fa3ff31203901fab8133d8449d1bb/kaarten/land-europa.svg") center / contain no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.35) 26%, rgba(0,0,0,.85) 52%, #000 74%);
+          mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.35) 26%, rgba(0,0,0,.85) 52%, #000 74%);
+  pointer-events: none;
+  z-index: 0;
+}
+/* hero-inhoud boven de kaart */
+.rg-hero-v2__inner { position: relative; z-index: 1; }
+
+@media (max-width: 767px) {
+  .rg-hero-v2::before { width: 128vw; right: -34vw; opacity: .7; }
+}
 
 /* Mobile-first: gestapeld. Beeld direct onder de copy, zelfde gutter. */
 .rg-hero-v2__inner {
