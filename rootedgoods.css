@@ -7538,6 +7538,9 @@ h1.rgh__title, .rgh__title,
    eigen segment-SVG (andere verhouding, ander pad).
    ============================================================ */
 .rg-route{
+  /* anker voor de routelijn en het merkteken, die over de VOLLE sectie lopen
+     (dus ook over de teamsectie, die buiten de track valt) */
+  position:relative;
   font-family:'Montserrat',sans-serif;
   color:var(--rg-green-soft);
   background:var(--rg-cream);
@@ -7634,7 +7637,9 @@ h1.rg-route__title em{
   max-width:1200px;
   margin:0 auto;
   /* de reis begint bewust ruim onder de proloog */
-  padding:clamp(11rem, 26vw, 22rem) clamp(1.25rem, 4vw, 2rem) 0;
+  /* viewport-gebonden: alleen de proloog plus het begin van de route (hint +
+     merkteken) staat boven de vouw, de eerste stop valt er net onder */
+  padding:clamp(16rem, 68vh, 46rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
 /* ---- De routelijn: EEN doorlopend pad over de volle hoogte ----

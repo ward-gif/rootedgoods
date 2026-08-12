@@ -29,6 +29,22 @@
      ============================================================ -->
 <section class="rg-route">
 
+  <!-- Eén doorlopende routelijn over de volle hoogte. Het pad wordt door
+         rootedgoods.js (sectie 1.6) opgebouwd uit de werkelijke posities van
+         de stopmarkers: y strikt oplopend, alle variatie in x, dus de lijn
+         kan zichzelf niet kruisen. Loopt achter tekst en beelden langs. -->
+  <svg class="rg-route__line" aria-hidden="true" preserveAspectRatio="none">
+    <path class="rg-route__line-base" d=""></path>
+    <path class="rg-route__line-draw" d=""></path>
+  </svg>
+
+  <!-- het reizende merkteken (fase 2: reist mee op de punt van de lijn en
+         lost bij thuiskomst op in het volledige logo) -->
+  <span class="rg-route__mark" aria-hidden="true">
+    <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@7f5f6c0688837d585f3bc9d0cb6fc17773a465a7/svg/rooted-beeldmerk.svg" alt="">
+  </span>
+
+
   <!-- ===== PROLOOG ===== -->
   <header class="rg-route__intro">
     <div class="rg-route__intro-map" aria-hidden="true">
@@ -49,20 +65,7 @@
       <p class="rg-route__meter"><span class="rg-route__meter-num">0</span> km afgelegd</p>
     </div>
 
-    <!-- Eén doorlopende routelijn over de volle hoogte. Het pad wordt door
-         rootedgoods.js (sectie 1.6) opgebouwd uit de werkelijke posities van
-         de stopmarkers: y strikt oplopend, alle variatie in x, dus de lijn
-         kan zichzelf niet kruisen. Loopt achter tekst en beelden langs. -->
-    <svg class="rg-route__line" aria-hidden="true" preserveAspectRatio="none">
-      <path class="rg-route__line-base" d=""></path>
-      <path class="rg-route__line-draw" d=""></path>
-    </svg>
 
-    <!-- het reizende merkteken (fase 2: reist mee op de punt van de lijn en
-         lost bij thuiskomst op in het volledige logo) -->
-    <span class="rg-route__mark" aria-hidden="true">
-      <img src="https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@7f5f6c0688837d585f3bc9d0cb6fc17773a465a7/svg/rooted-beeldmerk.svg" alt="">
-    </span>
 
     <!-- scroll-hint: staat pal boven het startpunt van de route -->
     <p class="rg-route__hint"><span>De Route van Rooted</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></p>

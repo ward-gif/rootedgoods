@@ -652,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* origin = de SVG-box (schermbreed), niet de track: alleen zo is er naast
        de contentkolom ruimte om tekst te ontwijken */
     var tr = svg.getBoundingClientRect();
-    var breedte = tr.width, hoogte = track.offsetHeight;
+    var breedte = tr.width, hoogte = root.offsetHeight;
     if (!breedte || !hoogte) return;
 
     var dots = [].slice.call(root.querySelectorAll('.rg-route__dot'))
@@ -669,6 +669,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var r = d.getBoundingClientRect();
       spine.push({ x: r.left + r.width / 2 - tr.left, y: r.top + r.height / 2 - tr.top, marker: true });
     });
+
+    /* De reis eindigt niet bij stop 4 maar loopt door naar het team: daar
+       komt het merkteken aan bij de mensen achter de route. */
+    var slot = root.querySelector('.rg-route__collage-main') || root.querySelector('.rg-route__team');
+    if (slot) {
+      var sr = slot.getBoundingClientRect();
+      spine.push({ x: sr.left + sr.width / 2 - tr.left,
+                   y: sr.top + sr.height * 0.42 - tr.top, marker: false });
+    }
 
     /* tussenpunten per traject: sturen de zijwaartse sweep, met een vaste seed */
     var r1 = rng(20250812);
@@ -779,7 +788,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var trackR = track.getBoundingClientRect();
       hintEl.style.position = 'absolute';
       hintEl.style.left = (routeStart.x + tr.left - trackR.left) + 'px';
-      hintEl.style.top = (routeStart.y - hintEl.offsetHeight - 18) + 'px';
+      /* routeStart is in sectiecoordinaten, de hint staat in de track:
+         het hoogteverschil tussen beide moet eraf */
+      hintEl.style.top = (routeStart.y + (tr.top - trackR.top) - hintEl.offsetHeight - 18) + 'px';
       hintEl.style.transform = 'translateX(-50%)';
       hintEl.style.margin = '0';
     }
@@ -920,7 +931,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var punt = draw.getPointAtLength(afstand);
       /* de lijn-SVG is schermbreed, het merkteken staat in de track: het
          verschil tussen beide linkerranden moet erbij, anders zit hij ernaast */
-      var verschil = svg.getBoundingClientRect().left - track.getBoundingClientRect().left;
+      var verschil = svg.getBoundingClientRect().left - root.getBoundingClientRect().left;
       gsap.set(mark, {
         x: punt.x + verschil, y: punt.y, xPercent: -50, yPercent: -50,
         rotation: afstand * 0.9          /* rolt de route af */
