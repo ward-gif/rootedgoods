@@ -7915,6 +7915,10 @@ h3.rg-route__panel-title{
 
 /* ---- EPILOOG: team als collage + contactkaart ---- */
 .rg-route__team{
+  /* boven de kaartlagen van de route: stop 4 (Nederland, 140vh) bloedt hier
+     overheen en liep anders over de kop 'De mensen die je belt' */
+  position:relative;
+  z-index:3;
   max-width:1100px;
   margin:0 auto;
   padding:clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 4vw, 3rem);
@@ -8006,8 +8010,10 @@ h2.rg-route__team-title{
   color:var(--rg-green);
   white-space:nowrap;
 }
-.rg-route__contact-body .rg-route__place{ display:block; margin-bottom:.7rem; }
-.rg-route__contact-body .rg-route__place span{ display:inline; }
+.rg-route__contact-body .rg-route__place{ display:block; margin-bottom:.9rem; }
+/* coordinaten op een eigen regel: anders breekt "52.0 N, 5.7 E" middenin af */
+.rg-route__contact-body .rg-route__place span{ display:block; margin-top:.25rem; }
+.rg-route__contact-body .rg-route__place span::before{ content:none; }
 /* belafspraak over de volle breedte, anders wordt hij in de smalle kolom geperst */
 .rg-route__contact > .rg-contact-head__callcard{ grid-column:1 / -1; max-width:none; }
 .rg-route__contact-link{
