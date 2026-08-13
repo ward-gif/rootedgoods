@@ -7601,34 +7601,86 @@ h1.rg-route__title em{
 }
 .rg-route__intro-map img{ width:100%; height:auto; display:block; }
 
-/* ---- Scroll-hint: benoemt de reis, nodigt uit om te scrollen ---- */
+/* ---- Scroll-hint: nodigt uit om te scrollen ----
+   Geen generiek pijltje: de hint toont de mechaniek van de pagina zelf. Het
+   cognac lijntje tekent zichzelf herhaald naar beneden, precies zoals de
+   route dat straks doet onder de scroll, en loopt het merkteken in dat op
+   het startpunt staat. De stippellijn eronder verraadt de weg die nog komt.
+   De typografie rijmt bewust op de kop erboven: rechte Playfair in groen
+   met het merkaccent faux-oblique in cognac. */
 .rg-route__hint{
   /* boven de creme-uitvloeier van de proloogkaart: die is absoluut met
      z-index 1 en waste de hint anders weg */
   position:relative;
   z-index:2;
   display:flex;
+  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  gap:.7rem;
+  gap:clamp(.6rem, 1.2vw, 1rem);
   margin:0 0 clamp(.5rem, 1.5vw, 1.25rem);
-  font-family:'Montserrat',sans-serif;
-  font-weight:700;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  font-size:clamp(.8rem, .72rem + .3vw, .95rem);
-  color:var(--rg-cognac-light);
+  text-align:center;
 }
-.rg-route__hint svg{
-  width:1.35rem; height:1.35rem;
-  animation:rg-route-wenk 2.4s ease-in-out infinite;
+.rg-route__hint-label{
+  font-family:'Playfair Display',Georgia,serif !important;
+  font-weight:600 !important;
+  font-size:clamp(1.2rem, 1.02rem + .7vw, 1.7rem) !important;
+  line-height:1.25 !important;
+  letter-spacing:-.01em;
+  color:var(--rg-green) !important;
+  margin:0 !important;
 }
-@keyframes rg-route-wenk{
-  0%, 100% { transform:translateY(0); opacity:.55; }
-  50%      { transform:translateY(5px); opacity:1; }
+/* cursief = de RECHTE Playfair schuingetrokken, nooit de echte italic-face */
+.rg-route__hint-label em{
+  font-style:normal !important;
+  font-synthesis:none;
+  display:inline-block;
+  transform:skewX(-14deg);
+  color:var(--rg-cognac-light) !important;
+}
+.rg-route__hint-line{
+  display:block;
+  width:14px;
+  height:clamp(78px, 8.5vw, 110px);
+  overflow:visible;
+}
+.rg-route__hint-line path{
+  fill:none;
+  stroke:var(--rg-cognac-light);
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+/* de weg die nog komt: zelfde stippelmaat als de routelijn */
+.rg-route__hint-track{ stroke-dasharray:1 6; opacity:.32; }
+/* een kort segment reist over de stippellijn naar beneden, zoals de route
+   straks onder de scroll doorloopt. Bewust reizend en niet tekenend-en-
+   blijven-staan: er is altijd beweging in beeld, ook in een stilstaand
+   ogenblik, zonder dat er iets bij komt te staan. */
+.rg-route__hint-draw{
+  stroke-width:2;
+  stroke-dasharray:20 110;
+  stroke-dashoffset:20;
+  animation:rg-hint-reis 2.2s cubic-bezier(.45,0,.3,1) infinite;
+}
+.rg-route__hint-tip{
+  opacity:.45;
+  animation:rg-hint-punt 2.2s cubic-bezier(.45,0,.3,1) infinite;
+}
+@keyframes rg-hint-reis{
+  0%       { stroke-dashoffset:20;  opacity:0; }
+  12%      { opacity:1; }
+  72%      { stroke-dashoffset:-94; opacity:1; }
+  73%,100% { stroke-dashoffset:-94; opacity:0; }
+}
+@keyframes rg-hint-punt{
+  0%, 52%  { opacity:.45; transform:translateY(0); }
+  72%      { opacity:1;   transform:translateY(2px); }
+  90%,100% { opacity:.45; transform:translateY(0); }
 }
 @media (prefers-reduced-motion: reduce){
-  .rg-route__hint svg{ animation:none; }
+  /* geen beweging: de lijn staat er gewoon, compleet met punt */
+  .rg-route__hint-draw{ animation:none; stroke-dasharray:none; stroke-dashoffset:0; }
+  .rg-route__hint-tip{ animation:none; opacity:1; }
 }
 
 /* ---- TRACK: het reisgebied ---- */
@@ -7950,7 +8002,9 @@ h3.rg-route__panel-title{
   z-index:3;
   max-width:1100px;
   margin:0 auto;
-  padding:clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 4vw, 3rem);
+  /* dicht op het groene beloftepaneel: de epiloog hoort bij die belofte,
+     niet als losse sectie erna */
+  padding:clamp(2rem, 4.5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 4vw, 3rem);
   text-align:center;
 }
 h2.rg-route__team-title{
