@@ -5079,8 +5079,8 @@ img.rg-europe-map__svg {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .rg-brand-tile__logo {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 62%;
+  max-height: 52%;
   width: auto;
   height: auto;
   object-fit: contain;
