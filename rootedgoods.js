@@ -645,6 +645,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- de route opbouwen ---------- */
   var routeStart = { x: 0, y: 0 }, routeEind = 0;
+  /* Vooraf bemonsterde (lengte -> x/y)-tabel, gebruikt tijdens het scrollen
+     i.p.v. draw.getPointAtLength() bij elk scroll-frame. Dat laatste bleek
+     op deze lange, sterk bemonsterde route (honderden bezier-segmenten)
+     merkbaar zwaar: elke scroll-tick een native SVG-geometrieopzoeking op
+     een groot pad. De tabel wordt EENMALIG per bouwRoute()-aanroep gevuld
+     (bij load/resize/beeld-load/font-ready, dus zelden), en tijdens het
+     scrollen is het alleen nog een binaire zoektocht + lineaire interpolatie
+     in platte JS -- orden van grootte goedkoper, met verwaarloosbaar
+     verschil in nauwkeurigheid (400 samples over de hele route).*/
+  var lengteTabel = [];
+  /* zie de toelichting bij zetMerkteken/puntOpLengte verderop: het
+     linkerrand-verschil tussen de schermbrede lijn-SVG en de sectie, nodig
+     om het merkteken te positioneren. Wordt in bouwRoute() bijgewerkt (dus
+     ook na een rebuild door resize/beeld-load), niet bij elke scroll-tick. */
+  var svgRootVerschil = 0;
   /* de tekstblokken in SVG-coordinaten: hiermee zakt niet alleen de lijn maar
      ook het merkteken naar 30% zodra het achter tekst doorloopt */
   var tekstVlakken = [];
@@ -653,6 +668,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* origin = de SVG-box (schermbreed), niet de track: alleen zo is er naast
        de contentkolom ruimte om tekst te ontwijken */
     var tr = svg.getBoundingClientRect();
+    svgRootVerschil = tr.left - root.getBoundingClientRect().left;
     var breedte = tr.width, hoogte = root.offsetHeight;
     if (!breedte || !hoogte) return;
 
@@ -844,6 +860,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var d2 = padVan(pts);
     base.setAttribute('d', d2);
     draw.setAttribute('d', d2);
+
+    /* opzoektabel vullen -- eenmalig hier, niet per scroll-frame (zie de
+       toelichting bij de deklaratie van lengteTabel) */
+    (function () {
+      var totaal = draw.getTotalLength();
+      var STAPPEN = 400;
+      var tabel = [];
+      for (var i = 0; i <= STAPPEN; i++) {
+        var len = totaal * i / STAPPEN;
+        var p = draw.getPointAtLength(len);
+        tabel.push({ len: len, x: p.x, y: p.y });
+      }
+      lengteTabel = tabel;
+    })();
 
     /* De nummers volgen de route, niet andersom: zoek per dot de x waar het
        pad zijn hoogte kruist en zet hem daar neer. Zo ligt elk nummer exact
@@ -1047,15 +1077,26 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+    /* binaire zoektocht + lineaire interpolatie in lengteTabel, i.p.v.
+       draw.getPointAtLength() -- zie de toelichting bij lengteTabel */
+    function puntOpLengte(len) {
+      var tabel = lengteTabel;
+      var lo = 0, hi = tabel.length - 1;
+      if (!hi) return { x: 0, y: 0 };
+      if (len <= tabel[0].len) return tabel[0];
+      if (len >= tabel[hi].len) return tabel[hi];
+      while (hi - lo > 1) { var m = (lo + hi) >> 1; if (tabel[m].len < len) lo = m; else hi = m; }
+      var a = tabel[lo], b = tabel[hi];
+      var t = (len - a.len) / Math.max(1, b.len - a.len);
+      return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+    }
+
     function zetMerkteken(p) {
       if (!mark) return;
       var afstand = L * Math.min(1, p + 12 / Math.max(1, L));
-      var punt = draw.getPointAtLength(afstand);
-      /* de lijn-SVG is schermbreed, het merkteken staat in de track: het
-         verschil tussen beide linkerranden moet erbij, anders zit hij ernaast */
-      var verschil = svg.getBoundingClientRect().left - root.getBoundingClientRect().left;
+      var punt = puntOpLengte(afstand);
       gsap.set(mark, {
-        x: punt.x + verschil, y: punt.y, xPercent: -50, yPercent: -50,
+        x: punt.x + svgRootVerschil, y: punt.y, xPercent: -50, yPercent: -50,
         /* rotatie vanaf het startpunt, zodat het merkteken bovenaan
            kaarsrecht staat en pas gaat rollen als de reis begint */
         rotation: Math.max(0, afstand - 12) * 0.9
