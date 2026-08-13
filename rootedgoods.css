@@ -7691,7 +7691,7 @@ h1.rg-route__title em{
   /* de reis begint bewust ruim onder de proloog */
   /* viewport-gebonden: alleen de proloog plus het begin van de route (hint +
      merkteken) staat boven de vouw, de eerste stop valt er net onder */
-  padding:clamp(8rem, 36vh, 24rem) clamp(1.25rem, 4vw, 2rem) 0;
+  padding:clamp(16rem, 68vh, 46rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
 /* ---- De routelijn: EEN doorlopend pad over de volle hoogte ----

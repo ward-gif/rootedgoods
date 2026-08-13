@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
       /* aan het begin naar 0: de route start exact in het midden */
       var inloop = Math.min(1, Math.max(0, (yy - yVan - RECHT) / 300));
       inloop = inloop * inloop * (3 - 2 * inloop);
-      return (ruisBreed(yy) * 239 + ruisMid(yy) * 94 + ruisFijn(yy) * 14) * inloop;
+      return (ruisBreed(yy) * 265 + ruisMid(yy) * 104 + ruisFijn(yy) * 15) * inloop;
     }
 
     var pts = punten.map(function (yy) {
@@ -870,25 +870,53 @@ document.addEventListener('DOMContentLoaded', function () {
        lijn ook naast de tekst al vervaagde. Per tekstelement wordt daarom het
        werkelijke regelbereik gemeten (Range.getClientRects, samengevoegd tot
        een strak kader). Dezelfde vlakken bepalen de zichtbaarheid van het
-       merkteken, zodat lijn en reiziger altijd samen vervagen. */
+       merkteken, zodat lijn en reiziger altijd samen vervagen.
+
+       BOUWROUTE DRAAIT OOK OPNIEUW NA ST.refresh() EN NA HET LADEN VAN
+       BEELDEN -- op dat moment heeft de onthul-animatie de tekst al een
+       tijdelijke transform gegeven (y:40 scale:.97, de verborgen staat vlak
+       voor hij in beeld reveal't). getBoundingClientRect/getClientRects
+       tellen die transform mee, dus zonder correctie werd het maskervlak
+       ~40px verschoven van de echte, onthulde tekstpositie gemeten -- de
+       lijn faadde dan naast de tekst i.p.v. erachter (of juist niet als hij
+       er wel achter zat). zonderTransform meet daarom altijd de originele,
+       niet-getransformeerde layoutpositie. */
+    function zonderTransform(el, fn) {
+      var vorige = el.style.transform;
+      el.style.transform = 'none';
+      var resultaat = fn();
+      el.style.transform = vorige;
+      return resultaat;
+    }
+
     var defs = svg.querySelector('defs') || svg.insertBefore(
       document.createElementNS('http://www.w3.org/2000/svg', 'defs'), svg.firstChild);
     defs.innerHTML = '';
     tekstVlakken = [];
     var NS = 'http://www.w3.org/2000/svg';
     var bereik = document.createRange();
-    [].slice.call(root.querySelectorAll(
-      '.rg-route__body, .rg-route__panel, .rg-route__team-copy, .rg-route__roots'
-    )).forEach(function (el) {
-      /* het groene paneel is een gevulde grond: daar gaat alles achter langs,
-         ook tussen de regels door */
-      if (el.classList.contains('rg-route__panel')) {
-        var b = el.getBoundingClientRect();
+
+    /* gevulde-grond-elementen: een volledig rechthoekig vlak, geen
+       regelbereik. Het groene paneel (tekst tussen de regels ook bedekt) en
+       het thuiskomst-logo (de reiziger lost hier letterlijk in op, moet dus
+       nooit zichtbaar overlappen). */
+    [].slice.call(root.querySelectorAll('.rg-route__panel, .rg-route__logo'))
+      .forEach(function (el) {
+        var b = zonderTransform(el, function () { return el.getBoundingClientRect(); });
         tekstVlakken.push({ x1: b.left - tr.left - 10, y1: b.top - tr.top - 10,
                             x2: b.right - tr.left + 10, y2: b.bottom - tr.top + 10 });
-        return;
-      }
-      [].slice.call(el.querySelectorAll('h2, h3, p, li')).forEach(function (t) {
+      });
+
+    /* tekstregels: elk element krijgt zijn eigen, strakke regelkaders */
+    [].slice.call(root.querySelectorAll(
+      /* .rg-route__panel-tekst zit al in het volledige paneelvlak hierboven;
+         die hoeft hier niet nog eens los gemeten te worden */
+      '.rg-route__body h2, .rg-route__body h3, .rg-route__body p, ' +
+      '.rg-route__roots h3, .rg-route__roots p, ' +
+      '.rg-route__team-title, .rg-route__team-copy > p'
+    )).forEach(function (t) {
+      if (t.closest('.rg-route__panel')) return;
+      zonderTransform(t, function () {
         bereik.selectNodeContents(t);
         var x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
         [].slice.call(bereik.getClientRects()).forEach(function (rr) {
@@ -1124,6 +1152,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (document.readyState === 'complete') herbereken();
     else window.addEventListener('load', herbereken);
+    /* Playfair Display kan nog niet geladen zijn op het moment dat de
+       maskervlakken gemeten worden -- de koppen renderen dan tijdelijk in
+       de fallback-serif (Georgia), die andere letterbreedtes heeft. Zonder
+       deze herberekening bleef het maskervlak op de smallere/bredere
+       fallback-maat staan, ook nadat het echte lettertype was ingeladen. */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(herbereken);
     var beelden = root.querySelectorAll('img');
     var klaar = 0;
     beelden.forEach(function (im) {
