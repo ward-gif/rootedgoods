@@ -5264,6 +5264,24 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
 
 body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 
+/* Gelijke ruimte tussen header en eyebrow op thema's/merken/services:
+   negeer wat er per pagina toevallig aan blok-spacing in de CMS
+   page-builder staat en laat alleen onze eigen sectie-padding tellen. */
+.cms-section:has(.rg-theme-grid),
+.cms-section:has(.rg-brand-grid),
+.cms-section:has(.rg-service-grid),
+.cms-section:has(.rg-theme-grid) .cms-block,
+.cms-section:has(.rg-brand-grid) .cms-block,
+.cms-section:has(.rg-service-grid) .cms-block {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.rg-theme-section,
+.rg-brand-section,
+.rg-service-section {
+  padding-top: clamp(1.5rem, 1rem + 2vw, 3rem) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rg-service-card,
   .rg-service-card__img,
