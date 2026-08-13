@@ -8399,19 +8399,28 @@ h2.rg-route__team-title{
 /* ---- 47.1 De vorige ronde trok deze regel in met de aanname dat een
    Shopware-instelling het al afdekte. De formule in sectie 46 (calc(max(
    (100vw-1600px)/2,0)+80px)) gaat ervanuit dat .rg-route__intro's
-   containing block de VOLLE 100vw is; elke resterende padding op de
+   containing block de VOLLE 100vw is; elke resterende padding/marge op de
    omringende CMS-wrapper schuift de tekst dan alsnog verder naar rechts dan
    bedoeld. Eerdere stand miste .cms-block-container-row (de Bootstrap-achtige
    rij-wrapper TUSSEN .cms-block-container en .col-12) -- die extra laag zat
    niet in de lokale bare-block-preview, dus leek de fix daar al compleet
-   terwijl er op de echte pagina nog restpadding overbleef. Nu dezelfde
-   volledige keten als elders in dit bestand (zie o.a. sectie op regel 4591,
-   .rg-feature-row__content). Zonder risico om opnieuw in te stellen: is er
-   al geen padding meer, dan is dit een no-op. ---- */
+   terwijl er op de echte pagina nog restpadding overbleef.
+   TWEEDE ronde: alleen padding:0 was niet genoeg. --bs-gutter-x:80px (regel
+   72) geeft .cms-block-container-row een margin-left/right:-40px (Bootstrap-
+   gutter), die normaal gecanceld wordt door .col-12's eigen +40px padding.
+   Door DIE padding hierboven al op 0 te zetten zonder ook de rij-marge te
+   neutraliseren, bleef er per saldo 40px onbedoelde extra breedte over --
+   precies het verschil dat live in DevTools zichtbaar was (.rg-route__intro
+   1940px vs .rg-hero-v2 1900px op dezelfde pagina). Nu dezelfde volledige
+   neutralisatie als het bewezen patroon in sectie 30 (regel 4580+, stap 1):
+   ook max-width en margin mee op nul. ---- */
 .cms-section:has(.rg-route) .cms-block-container,
 .cms-section:has(.rg-route) .cms-block-container[style],
 .cms-section:has(.rg-route) .cms-block-container-row,
 .cms-section:has(.rg-route) .col-12 {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   padding: 0 !important;
 }
 
