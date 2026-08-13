@@ -7626,7 +7626,19 @@ h1.rg-route__title em{
     padding-right:calc(max((100vw - 1600px) / 2, 0px) + 80px);
   }
 }
-.rg-route__intro-copy{ position:relative; z-index:2; }
+/* flex:1 + justify-content:center: de kop/eyebrow/vraag centreren verticaal
+   in de ruimte BOVEN de scroll-cue (die zelf onderaan blijft hangen via
+   margin-top:auto op .rg-route__hint) -- i.p.v. tegen de bovenkant te
+   plakken met alle overgebleven lucht eronder. Sectie 48, samen met de
+   JS-hoogtefit (rootedgoods.js), analoog aan de home-hero (sectie 2.4). */
+.rg-route__intro-copy{
+  position:relative;
+  z-index:2;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
 /* Europa-outline groot en ingezoomd achter de kop */
 .rg-route__intro-map{
   position:absolute;

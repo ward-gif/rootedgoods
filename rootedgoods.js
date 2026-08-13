@@ -1251,3 +1251,57 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 })();
+
+
+/* ---- 1.6b Over-ons hero — hoogte passend maken zodat de scroll-cue net
+ * boven de vouw eindigt (40px ruimte), zelfde patroon als de home-hero
+ * (sectie 2.4): min-height dynamisch berekend i.p.v. een vaste vh-gok, die
+ * geen rekening kan houden met de werkelijke header-hoogte. .rg-route__intro-
+ * copy (CSS) centreert de kop/eyebrow/vraag verticaal in de ruimte die dat
+ * oplevert. DOMContentLoaded + ResizeObserver, geen window.load: zelfde
+ * reden als sectie 2.4, geen onnodige wachttijd op de rest van de pagina.
+ *
+ * bouwRoute() (sectie 1.6 hierboven) draait synchroon bij het parsen van dit
+ * bestand, dus VOORDAT deze fit() draait -- de routelijn wordt dan nog tegen
+ * .rg-route__track's ONgefitte positie gebouwd. Een synthetic 'resize'-event
+ * ná het aanpassen van min-height hergebruikt de bestaande gedebouncete
+ * resize -> bouwRoute()-listener (sectie 1.6) om de lijn opnieuw te bouwen
+ * tegen de juiste, definitieve positie -- geen directe toegang tot bouwRoute
+ * nodig (zit in die IIFE's eigen scope). */
+(function () {
+  var intro = document.querySelector('.rg-route__intro');
+  var hint = intro && intro.querySelector('.rg-route__hint');
+  if (!intro || !hint) return;
+  function fit() {
+    if (window.innerWidth < 992) { intro.style.minHeight = ''; return; }
+    // Zelfde scroll-guard als sectie 2.4: getBoundingClientRect() is
+    // viewport-relatief, dus alleen geldig zolang de hero nog bovenaan staat.
+    if ((window.scrollY || document.documentElement.scrollTop) > 4) return;
+    var vorige = intro.style.minHeight;
+    var minH = 480;
+    var maxH = window.innerHeight * 1.4;
+    intro.style.minHeight = '0px';                                  // reset -> meet natuurlijke stand
+    var poging = Math.min(Math.max(intro.getBoundingClientRect().height, minH), maxH);
+    // .rg-route__intro-copy (flex:1) en .rg-route__hint (margin-top:auto)
+    // verdelen de vrije ruimte niet voorspelbaar 1-op-1 -- converge daarom
+    // met een paar correctiestappen i.p.v. één blinde berekening.
+    for (var i = 0; i < 5; i++) {
+      intro.style.minHeight = poging + 'px';
+      var fout = (window.innerHeight - 40) - hint.getBoundingClientRect().bottom;
+      if (Math.abs(fout) < 1) break;
+      poging = Math.min(Math.max(poging + fout, minH), maxH);
+    }
+    var nieuwe = intro.style.minHeight;
+    if (nieuwe !== vorige) window.dispatchEvent(new Event('resize'));
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    fit();
+    if (window.ResizeObserver) {
+      new ResizeObserver(fit).observe(hint);
+    } else {
+      setTimeout(fit, 400); // fallback zonder ResizeObserver-support
+    }
+  });
+  window.addEventListener('resize', fit);
+  window.addEventListener('pageshow', function (e) { if (e.persisted) fit(); });
+})();
