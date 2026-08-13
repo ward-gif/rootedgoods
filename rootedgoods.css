@@ -8327,10 +8327,9 @@ h2.rg-route__team-title{
    stand (was clamp(8rem,36vh,24rem)). De ruisamplitude van de routelijn is
    naar verhouding opnieuw meegeschaald in rootedgoods.js, anders komt een
    kortere route weer boven de 1,2x-padlengte-grens uit. */
-/* iets meer dan hiervoor: de pijl en het merkteken raakten elkaar bijna
-   (0px ruimte gemeten) */
+/* was clamp(6rem,22vh,14rem) -> 40px ruimte; op verzoek terug naar ~10px */
 .rg-route__track{
-  padding-top:clamp(6rem, 22vh, 14rem);
+  padding-top:clamp(4.5rem, 19vh, 12.5rem);
 }
 
 /* ---- 45.3 Hero-hoogte verlaagd: 85vh hield geen rekening met de echte
