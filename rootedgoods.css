@@ -73,11 +73,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .content-main {
   padding: 0 !important;
-  /* was 143px (45.19+97.64) -- header is inmiddels korter (logo 45px i.p.v.
-     eerdere 52px). Live gemeten op 2026-08-13: 131,39px totaal. .container-
-     main's eigen 20px padding is hier los van: dat is interne ruimte NA
-     deze reserve, niet dubbelop met de header-vrijstelling zelf. */
-  padding-top: 131.39px !important;
+  /* Compenseert de fixed header (.header-main), zodat contentna niet
+     eronder verdwijnt. Live opnieuw gemeten op 2026-08-13: 102px -- eerdere
+     waarden (143px, toen 131,39px) waren stale t.o.v. de werkelijke
+     headerhoogte. .container-main's eigen 20px padding is hier los van: dat
+     is interne ruimte NA deze reserve, niet dubbelop met de
+     header-vrijstelling zelf. */
+  padding-top: 102px !important;
 }
 
 /* ------------------------------------------------------------
@@ -8398,16 +8400,19 @@ h2.rg-route__team-title{
    Shopware-instelling het al afdekte. De formule in sectie 46 (calc(max(
    (100vw-1600px)/2,0)+80px)) gaat ervanuit dat .rg-route__intro's
    containing block de VOLLE 100vw is; elke resterende padding op de
-   omringende CMS-wrapper (.cms-block-container/.col-12) schuift de tekst
-   dan alsnog verder naar rechts dan bedoeld. Zonder risico om opnieuw in te
-   stellen: is er al geen padding meer, dan is dit een no-op. ---- */
+   omringende CMS-wrapper schuift de tekst dan alsnog verder naar rechts dan
+   bedoeld. Eerdere stand miste .cms-block-container-row (de Bootstrap-achtige
+   rij-wrapper TUSSEN .cms-block-container en .col-12) -- die extra laag zat
+   niet in de lokale bare-block-preview, dus leek de fix daar al compleet
+   terwijl er op de echte pagina nog restpadding overbleef. Nu dezelfde
+   volledige keten als elders in dit bestand (zie o.a. sectie op regel 4591,
+   .rg-feature-row__content). Zonder risico om opnieuw in te stellen: is er
+   al geen padding meer, dan is dit een no-op. ---- */
 .cms-section:has(.rg-route) .cms-block-container,
-.cms-section:has(.rg-route) .cms-block-container[style] {
-  padding: 0 !important;
-}
+.cms-section:has(.rg-route) .cms-block-container[style],
+.cms-section:has(.rg-route) .cms-block-container-row,
 .cms-section:has(.rg-route) .col-12 {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding: 0 !important;
 }
 
 /* ---- 47.2 De homepage-hero (.rg-hero-v2) centreert zijn copy verticaal
