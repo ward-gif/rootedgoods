@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
       /* aan het begin naar 0: de route start exact in het midden */
       var inloop = Math.min(1, Math.max(0, (yy - yVan - RECHT) / 300));
       inloop = inloop * inloop * (3 - 2 * inloop);
-      return (ruisBreed(yy) * 265 + ruisMid(yy) * 104 + ruisFijn(yy) * 15) * inloop;
+      return (ruisBreed(yy) * 239 + ruisMid(yy) * 94 + ruisFijn(yy) * 14) * inloop;
     }
 
     var pts = punten.map(function (yy) {
@@ -823,19 +823,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     routeStart = { x: pts[0].x, y: pts[0].y };
     routeEind = pts[pts.length - 1].y;
-
-    /* de hint hoort pal boven het startpunt van de route te staan */
-    var hintEl = root.querySelector('.rg-route__hint');
-    if (hintEl) {
-      var trackR = track.getBoundingClientRect();
-      hintEl.style.position = 'absolute';
-      hintEl.style.left = (routeStart.x + tr.left - trackR.left) + 'px';
-      /* routeStart is in sectiecoordinaten, de hint staat in de track:
-         het hoogteverschil tussen beide moet eraf */
-      hintEl.style.top = (routeStart.y + (tr.top - trackR.top) - hintEl.offsetHeight - 18) + 'px';
-      hintEl.style.transform = 'translateX(-50%)';
-      hintEl.style.margin = '0';
-    }
+    /* de scroll-cue (.rg-route__hint) hing hier voorheen via JS boven het
+       startpunt van de route -- nu een vast, links uitgelijnd onderdeel van
+       het intro-blok (CSS, sectie 46.4), losgekoppeld van de route/het
+       merkteken. */
 
     svg.setAttribute('viewBox', '0 0 ' + breedte + ' ' + hoogte);
     svg.setAttribute('width', breedte);

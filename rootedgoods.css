@@ -7222,6 +7222,17 @@ h1.rg-contact-head__title,
   /* niet-lineaire spacing */
   --rg-e1:.5rem; --rg-e2:.85rem; --rg-e3:1.35rem; --rg-e4:2.25rem;
   --rg-e5:3.75rem; --rg-e6:6rem;
+  /* Spacing-ritme xs-xl: was alleen gescoped op .rg-statement (sectie 29),
+     maar wordt inmiddels ook buiten die sectie aangeroepen (o.a. .rg-route)
+     -- daar loste var(--rg-space-lg) dus naar niets op. Hier globaal
+     gemaakt met dezelfde waarden, plus xs erbij. .rg-statement's eigen
+     kopie blijft gewoon staan en wint lokaal (gelijke specificiteit, maar
+     dichter bij het element in de boom via scoping op de class zelf). */
+  --rg-space-xs: clamp(0.3rem, 0.25rem + 0.2vw, 0.5rem);
+  --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
+  --rg-space-md: clamp(0.8rem, 0.7rem + 0.4vw, 1.05rem);
+  --rg-space-lg: clamp(1rem, 0.8rem + 0.7vw, 1.35rem);
+  --rg-space-xl: clamp(1.75rem, 1.3rem + 1.4vw, 2.6rem);
   /* cognac hairline (signature) */
   --rg-hair:rgba(173,99,49,.55);
 }
@@ -7565,7 +7576,7 @@ h1.rg-route__title{
   line-height:1.02 !important;
   color:var(--rg-green) !important;
   font-size:clamp(2.6rem, 1.3rem + 3.8vw, 4.6rem) !important;
-  margin:0 0 1.2rem !important;
+  margin:0 0 var(--rg-space-lg) !important;
   text-wrap:balance;
 }
 h1.rg-route__title em{
@@ -8312,17 +8323,80 @@ h2.rg-route__team-title{
    :first-child. 2.1 = intrekken van 44.1 hierboven, geen nieuwe regel nodig.
    3 = tekstwijziging in de bestaande .rg-route__end-link, geen CSS.) */
 
-/* ---- 45.1 Openingsvraag: de haak van de pagina, los van de rest van de
-   subkop en zichtbaar zwaarder. Zelfde groen als de koppen (var(--rg-green))
-   i.p.v. het gedempte groen dat lede-tekst elders al draagt. */
+/* ---- 45.1 [HERZIEN, zie sectie 46] Openingsvraag als eigen element --
+   deze basis staat er nog, sectie 46 herschikt de volledige intro naar drie
+   duidelijk onderscheiden niveaus (aanloop/vraag/antwoord) met een aparte
+   aanloopregel ervoor en herschaalde afmetingen. */
 .rg-route__question{
-  font-size:clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
-  line-height:1.4;
   max-width:46ch;
   color:var(--rg-green);
-  margin:0 0 .75rem;
 }
-/* expliciet secundair, i.p.v. impliciet via overerving */
 .rg-route__lede{
   color:var(--rg-green-soft);
+}
+
+/* ============================================================
+   46. OVER ONS — hero herzien: drie duidelijke niveaus + scroll-cue
+   ------------------------------------------------------------
+   Losse override-laag bovenop sectie 42-45, zelfde reden: in zijn geheel
+   terug te draaien zonder eerdere secties aan te raken.
+     46.1  Aanloopregel ("Onze reis begon met een vraag.")
+     46.2  De vraag: nu duidelijk de op-één-na-grootste stap na de H1
+     46.3  Het antwoord: terug naar body-formaat, breder blok
+     46.4  Scroll-cue: links uitgelijnd, vast onderdeel van het intro-blok
+     46.5  Gat tussen hero en stop 1 gehalveerd
+   ============================================================ */
+
+/* ---- 46.1 Aanloop: klein en secundair, de opmaat naar de vraag ---- */
+.rg-route__intro-lead{
+  font-size:.85rem;
+  color:var(--rg-green-soft);
+  margin:0 0 var(--rg-space-xs);
+}
+
+/* ---- 46.2 De vraag: duidelijk de op-één-na-grootste stap na de H1, zodat
+   hij niet wegvalt tegen de rest van het blok bij het scannen. Cursief =
+   dezelfde faux-oblique rechte Playfair als overal elders op deze pagina
+   (het merkaccent, de stapnummers): nooit de echte italic-face, die staat
+   hier te sierlijk naast de rest van het systeem. Fraunces is bewust niet
+   gebruikt -- dat zou een tweede display-font naast Playfair introduceren,
+   een eerder gemaakte keuze op deze site (zie eerdere commits), en een
+   lettertype dat nu nergens anders geladen wordt. */
+.rg-route__question{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:600;
+  font-style:normal;
+  font-synthesis:none;
+  transform:skewX(-14deg);
+  transform-origin:left center;
+  font-size:clamp(1.6rem, 1.3rem + 1.6vw, 2.35rem);
+  line-height:1.3;
+  max-width:30ch;
+  margin:0 0 var(--rg-space-md);
+  text-wrap:balance;
+}
+
+/* ---- 46.3 Het antwoord: terug naar gewoon bodyformaat, breder blok dan
+   de vraag zodat het duidelijk een ander (rustiger) register is. ---- */
+.rg-route__lede{
+  font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem) !important;
+  max-width:55ch;
+  margin:0 0 var(--rg-space-xl);
+}
+
+/* ---- 46.4 Scroll-cue: nu een vast, links uitgelijnd onderdeel van het
+   intro-blok i.p.v. een element dat via JS boven het startpunt van de
+   route werd gepositioneerd. Het merkteken op de route blijft op zijn
+   eigen plek staan; er is geen visuele koppeling meer tussen de twee. */
+.rg-route__hint{
+  align-items:flex-start;
+  text-align:left;
+  margin:0;
+}
+
+/* ---- 46.5 Gat tussen hero en stop 1 gehalveerd. Dezelfde ruisamplitude-
+   compensatie als eerder toegepast (nu de scroll-cue niet meer aan het
+   routestartpunt hangt, kan dit zonder de vreemde hoek van toen). ---- */
+.rg-route__track{
+  padding-top:clamp(8rem, 36vh, 24rem);
 }
