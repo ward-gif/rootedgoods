@@ -578,7 +578,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var maxH = window.innerHeight * 1.4;
     hero.style.minHeight = Math.min(Math.max(h + delta, minH), maxH) + 'px';
   }
-  window.addEventListener('load', function () {
+  // DOMContentLoaded i.p.v. window.load: die laatste wacht op ALLE
+  // resources op de pagina (incl. hero- en productafbeeldingen verderop),
+  // waardoor de hero eerst zichtbaar op zijn ongefitte hoogte staat en pas
+  // ver daarna springt naar de juiste maat. De logo-slider (sectie 2.1)
+  // bouwt zijn track al synchroon op DOMContentLoaded met een vaste
+  // beeldhoogte (32px inline), dus die is dan al betrouwbaar meetbaar -- de
+  // ResizeObserver blijft als vangnet staan voor eventuele latere afwijking.
+  document.addEventListener('DOMContentLoaded', function () {
     fit();
     var slider = document.querySelector('.logo-slider');
     if (slider && window.ResizeObserver) {
