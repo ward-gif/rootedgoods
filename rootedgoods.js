@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
       /* aan het begin naar 0: de route start exact in het midden */
       var inloop = Math.min(1, Math.max(0, (yy - yVan - RECHT) / 300));
       inloop = inloop * inloop * (3 - 2 * inloop);
-      return (ruisBreed(yy) * 265 + ruisMid(yy) * 104 + ruisFijn(yy) * 15) * inloop;
+      return (ruisBreed(yy) * 239 + ruisMid(yy) * 94 + ruisFijn(yy) * 14) * inloop;
     }
 
     var pts = punten.map(function (yy) {
@@ -1059,11 +1059,17 @@ document.addEventListener('DOMContentLoaded', function () {
        Met ScrollTrigger.batch i.p.v. from-tweens: die laatste renderen hun
        beginstand meteen en botsen met de herberekening na het laden van de
        beelden (elementen bleven dan onzichtbaar of stonden er al). batch zet
-       de beginstand hard en animeert pas bij binnenkomst. */
+       de beginstand hard en animeert pas bij binnenkomst.
+       Op mobiel (5.3) alleen fade: geen y/scale-verschuiving en geen
+       parallax. Op een lange pagina met veel elementen voelt dat stroer op
+       mid-range toestellen, en de beeldclusters zijn er toch al vervangen
+       door 1 statisch beeld. */
+    var mobiel = window.matchMedia('(max-width:991px)').matches;
     function onthul(selector, opties) {
       var els = gsap.utils.toArray(selector).filter(function (e) { return e; });
       if (!els.length) return;
-      gsap.set(els, { opacity: 0, y: opties.y, scale: opties.scale });
+      var y = mobiel ? 0 : opties.y, scale = mobiel ? 1 : opties.scale;
+      gsap.set(els, { opacity: 0, y: y, scale: scale });
       ST.batch(els, {
         start: 'top 88%',
         onEnter: function (groep) {
@@ -1082,16 +1088,19 @@ document.addEventListener('DOMContentLoaded', function () {
            { y: 40, scale: .97, duur: .8, stagger: .07 });
 
     onthul('.rg-route__shot, .rg-route__collage-shot, .rg-route__collage-main',
-           { y: 34, scale: .86, duur: .9, stagger: .06 });
+           { y: 34, scale: .86, duur: .9, stagger: .08 });
 
-    /* sfeerbeelden bewegen mee, elk met een eigen snelheid */
-    gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
-      gsap.to(shot, { yPercent: -16 - (i % 3) * 9, ease: 'none',
-        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
-    });
-    var hoofdfoto = root.querySelector('.rg-route__collage-main');
-    if (hoofdfoto) gsap.to(hoofdfoto, { yPercent: -7, ease: 'none',
-      scrollTrigger: { trigger: hoofdfoto, start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+    /* sfeerbeelden bewegen mee, elk met een eigen snelheid — niet op mobiel:
+       daar staat het beeld statisch onder de tekst, geen positieverschuiving */
+    if (!mobiel) {
+      gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
+        gsap.to(shot, { yPercent: -16 - (i % 3) * 9, ease: 'none',
+          scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
+      });
+      var hoofdfoto = root.querySelector('.rg-route__collage-main');
+      if (hoofdfoto) gsap.to(hoofdfoto, { yPercent: -7, ease: 'none',
+        scrollTrigger: { trigger: hoofdfoto, start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+    }
 
     var hint = root.querySelector('.rg-route__hint');
     if (hint) gsap.to(hint, { opacity: 0, y: -10, ease: 'none',

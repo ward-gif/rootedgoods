@@ -7399,7 +7399,8 @@ h1.rgh__title, .rgh__title,
 /* LEAD / INTRO — de subregel onder een sectie-kop */
 .rg-hero-v2__sub, .rg-statement__sub, .rg-page-hero__sub, .rg-block-title__sub,
 .rg-sd__head-sub, .rg-sd__sub, .rg-endcta__sub, .rg-theme-intro,
-.rg-cat-head__sub, .rg-compare__intro, .rg-hero__sub, .rg-contact-head__sub{
+.rg-cat-head__sub, .rg-compare__intro, .rg-hero__sub, .rg-contact-head__sub,
+.rg-route__lede{
   font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
   line-height:1.6 !important;
 }
@@ -7565,7 +7566,7 @@ h1.rg-route__title{
   line-height:1.02 !important;
   color:var(--rg-green) !important;
   font-size:clamp(2.6rem, 1.3rem + 3.8vw, 4.6rem) !important;
-  margin:0 0 1.2rem !important;
+  margin:0 0 var(--rg-space-lg) !important;
   text-wrap:balance;
 }
 h1.rg-route__title em{
@@ -7574,11 +7575,10 @@ h1.rg-route__title em{
   letter-spacing:-.01em;
 }
 .rg-route__lede{
-  font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
-  line-height:1.6 !important;
-  max-width:46ch;
+  max-width:65ch;
   margin:0;
 }
+/* font-size/line-height komen uit de LEAD-groep hierboven (41.12) */
 
 /* ---- PROLOOG ---- */
 .rg-route__intro{
@@ -7691,7 +7691,7 @@ h1.rg-route__title em{
   /* de reis begint bewust ruim onder de proloog */
   /* viewport-gebonden: alleen de proloog plus het begin van de route (hint +
      merkteken) staat boven de vouw, de eerste stop valt er net onder */
-  padding:clamp(16rem, 68vh, 46rem) clamp(1.25rem, 4vw, 2rem) 0;
+  padding:clamp(10rem, 42vh, 28rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
 /* ---- De routelijn: EEN doorlopend pad over de volle hoogte ----
@@ -7822,7 +7822,8 @@ h1.rg-route__title em{
    Onder 992px verdwijnen ze: daar is de kolom te smal om ze te laten zweven. */
 .rg-route__shots{
   position:absolute;
-  inset:0;
+  top:0; left:0; right:0;
+  height:clamp(24rem, 40vw, 34rem);
   pointer-events:none;
   z-index:1;
 }
@@ -7830,14 +7831,18 @@ h1.rg-route__title em{
   position:absolute;
   left:var(--x);
   top:var(--y);
-  width:var(--w, 150px);
+  width:var(--w, 180px);
   aspect-ratio:var(--ar, 4/5);
   object-fit:cover;
-  border-radius:10px;
+  border-radius:var(--rg-r-fn);
   transform:rotate(var(--r, 0deg));
-  box-shadow:0 14px 30px -18px rgba(45,69,40,.45);
+  box-shadow:var(--rg-sh-soft);
   background:var(--rg-sand);
 }
+/* het grote beeld ligt onder het kleine, zodat de overlap als een tastbaar
+   stapeltje leest i.p.v. twee beelden die toevallig naast elkaar zweven */
+.rg-route__shot--groot{ z-index:1; }
+.rg-route__shot--klein{ z-index:2; }
 
 /* het tekstblok van een stop */
 .rg-route__body{
@@ -7928,14 +7933,6 @@ h2.rg-route__stop-title{
   gap:clamp(1.75rem, 3.5vw, 3.5rem);
   margin-top:clamp(2rem, 4vw, 3.25rem);
   text-align:center;
-}
-.rg-route__root{ padding-top:.25rem; }
-/* icoon boven elke wortel, in plaats van het hairline-streepje */
-.rg-route__root-icon{
-  display:block;
-  width:clamp(38px, 3.8vw, 50px);
-  height:auto;
-  margin:0 auto 1rem;
 }
 .rg-route__root h3{
   font-family:'Playfair Display',Georgia,serif !important;
@@ -8056,6 +8053,18 @@ h2.rg-route__team-title{
   line-height:1.6;
   margin:0 0 clamp(1.5rem, 3vw, 2rem);
 }
+.rg-route__collage-names{
+  position:relative;
+  z-index:1;
+  margin:1.5rem 0 0;
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color:var(--rg-muted);
+  text-align:center;
+}
 
 /* contactkaart: ingezoomd Nederland met een pin op Ede */
 .rg-route__contact{
@@ -8097,8 +8106,34 @@ h2.rg-route__team-title{
 /* coordinaten op een eigen regel: anders breekt "52.0 N, 5.7 E" middenin af */
 .rg-route__contact-body .rg-route__place span{ display:block; margin-top:.25rem; }
 .rg-route__contact-body .rg-route__place span::before{ content:none; }
-/* belafspraak over de volle breedte, anders wordt hij in de smalle kolom geperst */
-.rg-route__contact > .rg-contact-head__callcard{ grid-column:1 / -1; max-width:none; }
+/* belafspraak over de volle breedte, anders wordt hij in de smalle kolom geperst.
+   Dit is hier de primaire actie: cognac pill i.p.v. de neutrale witte kaart
+   die de callcard elders (contactpagina) heeft. Alleen hier overschreven,
+   de gedeelde class blijft daar ongemoeid. */
+.rg-route__contact > .rg-contact-head__callcard{
+  grid-column:1 / -1; max-width:none;
+  background:var(--rg-cognac) !important;
+  border-color:var(--rg-cognac) !important;
+  border-radius:var(--rg-r-pill) !important;
+  min-height:48px;
+  padding:.7rem 1.15rem !important;
+}
+.rg-route__contact > .rg-contact-head__callcard:hover,
+.rg-route__contact > .rg-contact-head__callcard:focus-visible{
+  border-color:var(--rg-cognac-deep) !important;
+  background:var(--rg-cognac-deep) !important;
+}
+.rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-title,
+.rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{
+  color:#fff !important;
+}
+.rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{ color:rgba(255,255,255,.82) !important; }
+.rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-arrow{
+  background:rgba(255,255,255,.2); color:#fff;
+}
+.rg-route__contact > .rg-contact-head__callcard:hover .rg-contact-head__callcard-arrow{
+  background:#fff; color:var(--rg-cognac);
+}
 .rg-route__contact-link{
   display:block;
   font-weight:600;
@@ -8117,17 +8152,42 @@ h2.rg-route__team-title{
 
 /* ---- MOBIEL / TABLET: verticale rail ---- */
 @media (max-width:991px){
-  .rg-route__stop{ --x:28px; padding-left:68px; }
+  /* 5.1: lijn strak links, alle content in 1 kolom rechts ervan */
+  .rg-route__stop{ --x:24px; padding-left:64px; }
   .rg-route__stop--left,
   .rg-route__stop--right,
-  .rg-route__stop--wide{ --x:28px; }
+  .rg-route__stop--wide{ --x:24px; }
   .rg-route__dot{ width:40px; height:40px; font-size:.95rem; }
   .rg-route__dot.is-on{ transform:scale(1.12); }
   .rg-route__body,
   .rg-route__stop--right .rg-route__body{ max-width:none; margin-left:0; padding-top:1.5rem; }
   .rg-route__stop--wide .rg-route__body{ text-align:left; }
   .rg-route__stop--wide .rg-route__place{ justify-content:flex-start; }
-  .rg-route__shots{ display:none; }
+
+  /* 5.4: sectiepadding ongeveer gehalveerd t.o.v. desktop (was clamp(20rem,30vw,30rem):
+     dat is de scroll-spacer voor de routelijn, geen typografische marge, maar
+     de lijn wordt runtime uit de echte dot-posities opgebouwd en past zich
+     dus vanzelf aan een kortere pagina aan) */
+  .rg-route__stop{ padding-top:clamp(1.75rem, 4vw, 2.5rem); padding-bottom:clamp(9rem, 30vw, 14rem); }
+  .rg-route__stop--last{ padding-bottom:clamp(2rem, 5vw, 3.5rem); }
+
+  /* 5.2: clusters werken niet op smalle schermen — 1 beeld per stop (het
+     grote van het cluster), volle kolombreedte, onder de tekst, geen
+     rotatie/overlap. .rg-route__shots verlaat de absolute overlay en wordt
+     een gewoon blok ná de tekst (flex-order i.p.v. herschikken in de HTML). */
+  .rg-route__stop{ display:flex; flex-direction:column; }
+  .rg-route__body{ order:1; }
+  .rg-route__shots{
+    order:2; position:static; inset:auto; height:auto;
+    margin-top:1.5rem;
+  }
+  .rg-route__shot{ display:none; }
+  .rg-route__shot--groot{
+    display:block; position:static;
+    width:100%; aspect-ratio:4/3;
+    transform:none;
+  }
+
   .rg-route__roots{ grid-template-columns:1fr; }
   .rg-route__checks{ grid-template-columns:1fr; }
   .rg-route__team-grid{ grid-template-columns:1fr; }
@@ -8140,5 +8200,15 @@ h2.rg-route__team-title{
   .rg-route__map{ opacity:.75; }
   .rg-route__intro-map{ width:100vw; opacity:.32; }
   .rg-route__meter{ top:calc(100vh - 4.5rem); }
-  .rg-route__mark{ left:28px; }
+  .rg-route__mark{ left:24px; }
+
+  /* 5.4: groen belofte-paneel edge-to-edge i.p.v. gerond kaartje */
+  .rg-route__panel{
+    border-radius:0;
+    max-width:none;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    padding-left:var(--rg-space-lg);
+    padding-right:var(--rg-space-lg);
+  }
 }
