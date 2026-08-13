@@ -1340,15 +1340,20 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', fit);
   window.addEventListener('pageshow', function (e) { if (e.persisted) fit(); });
 
-  /* Kop/eyebrow/vraag + scroll-cue blijven onzichtbaar (CSS: .rg-route__intro-
-     copy, .rg-route__hint) tot webfonts geladen zijn: renderen ze eerst in de
-     fallback-serif/sans, dan wijkt de tekst-/regelhoogte af van de uiteindelijke
-     Playfair/Montserrat-metriek, en verspringt zowel de tekst zelf als (via
-     ResizeObserver hierboven) de fit() -- exact het soort sprong die dit
-     bestand net probeert te voorkomen. Eén laatste fit()-pas vlak vóór het
-     onthullen vangt die eventuele verschuiving af terwijl alles nog onzichtbaar
-     is. Vangnet-timeout: nooit permanent onzichtbaar laten hangen als fonts.
-     ready om wat voor reden dan ook niet resolvet. */
+  /* Kop/eyebrow/vraag blijven onzichtbaar (CSS: .rg-route__intro-copy) tot
+     webfonts geladen zijn: renderen ze eerst in de fallback-serif/sans, dan
+     wijkt de tekst-/regelhoogte af van de uiteindelijke Playfair/Montserrat-
+     metriek, en verspringt zowel de tekst zelf als (via ResizeObserver
+     hierboven) de fit() -- exact het soort sprong die dit bestand net
+     probeert te voorkomen. Eén laatste fit()-pas vlak vóór het onthullen
+     vangt die eventuele verschuiving af terwijl alles nog onzichtbaar is.
+     Vangnet-timeout: nooit permanent onzichtbaar laten hangen als fonts.
+     ready om wat voor reden dan ook niet resolvet.
+     .rg-route__hint zit BEWUST niet in deze gate (CSS-comment legt uit
+     waarom): die botst met zijn eigen GSAP-scroll-fade (sectie 1.6) als
+     GSAP eerder laadt dan fonts.ready hier resolvet. fit()'s eigen
+     ResizeObserver + de laatste fit()-pas hieronder houden 'm hoe dan ook al
+     goed gepositioneerd. */
   var onthuld = false;
   function toonHero() {
     if (onthuld) return;

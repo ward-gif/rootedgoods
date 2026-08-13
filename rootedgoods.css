@@ -7657,24 +7657,27 @@ h1.rg-route__title em{
 }
 /* Onzichtbaar tot webfonts geladen zijn EN de hoogtefit (rootedgoods.js,
    sectie 1.6b) definitief is. Zonder dit: kop/vraag renderen eerst in de
-   fallback-serif/sans (ander lettermetriek -> andere hoogte), .rg-route__hint
-   staat dan nog niet op zijn eindpositie, en zodra de echte fonts laden
-   verspringt alles alsnog -- zelfde soort "sprong" als .is-klaar hierboven
-   al oplost voor de routelijn, nu ook voor de hero-tekst zelf. .is-hero-klaar
-   wordt gezet zodra fonts.ready + één definitieve fit()-pas klaar zijn (met
-   een vangnet-timeout, zie rootedgoods.js). */
-.rg-route__intro-copy,
-.rg-route__hint{
+   fallback-serif/sans (ander lettermetriek -> andere hoogte), en zodra de
+   echte fonts laden verspringt de tekst alsnog -- zelfde soort "sprong" als
+   .is-klaar hierboven al oplost voor de routelijn, nu ook voor de hero-tekst
+   zelf. .is-hero-klaar wordt gezet zodra fonts.ready + één definitieve
+   fit()-pas klaar zijn (met een vangnet-timeout, zie rootedgoods.js).
+   .rg-route__hint zit BEWUST niet in deze gate: die heeft al zijn eigen
+   scroll-gekoppelde opacity-tween (GSAP, sectie 1.6, "top 28%"/"top 2%").
+   Twee losse systemen die tegelijk opacity claimen botst -- als GSAP zijn
+   tween aanmaakt terwijl de cue hier nog op opacity:0 stond (fonts nog niet
+   klaar), pakt GSAP dat als STARTWAARDE en zet 'm blijvend via inline style
+   vast op 0 (een class-based CSS-regel kan een inline style nooit
+   overschrijven), dus de cue kwam nooit meer terug. */
+.rg-route__intro-copy{
   opacity:0;
 }
-.rg-route.is-hero-klaar .rg-route__intro-copy,
-.rg-route.is-hero-klaar .rg-route__hint{
+.rg-route.is-hero-klaar .rg-route__intro-copy{
   opacity:1;
   transition:opacity .3s ease;
 }
 @media (prefers-reduced-motion: reduce){
-  .rg-route.is-hero-klaar .rg-route__intro-copy,
-  .rg-route.is-hero-klaar .rg-route__hint{
+  .rg-route.is-hero-klaar .rg-route__intro-copy{
     transition:none;
   }
 }
