@@ -1253,21 +1253,34 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 
-/* ---- 1.6b Over-ons hero — hoogte passend maken zodat de scroll-cue net
- * boven de vouw eindigt (40px ruimte), zelfde patroon als de home-hero
- * (sectie 2.4): min-height dynamisch berekend i.p.v. een vaste vh-gok, die
- * geen rekening kan houden met de werkelijke header-hoogte. .rg-route__intro-
- * copy (CSS) centreert de kop/eyebrow/vraag verticaal in de ruimte die dat
- * oplevert. DOMContentLoaded + ResizeObserver, geen window.load: zelfde
- * reden als sectie 2.4, geen onnodige wachttijd op de rest van de pagina.
+/* ---- 1.6b Over-ons hero — hoogte passend maken zodat het reismerkteken
+ * (.rg-route__mark, dat net onder de scroll-cue verschijnt) met ~40px lucht
+ * boven de vouw eindigt, zelfde patroon als de home-hero (sectie 2.4):
+ * min-height dynamisch berekend i.p.v. een vaste vh-gok, die geen rekening
+ * kan houden met de werkelijke header-hoogte. .rg-route__intro-copy (CSS)
+ * centreert de kop/eyebrow/vraag verticaal in de ruimte die dat oplevert.
  *
- * bouwRoute() (sectie 1.6 hierboven) draait synchroon bij het parsen van dit
- * bestand, dus VOORDAT deze fit() draait -- de routelijn wordt dan nog tegen
- * .rg-route__track's ONgefitte positie gebouwd. Een synthetic 'resize'-event
- * ná het aanpassen van min-height hergebruikt de bestaande gedebouncete
- * resize -> bouwRoute()-listener (sectie 1.6) om de lijn opnieuw te bouwen
- * tegen de juiste, definitieve positie -- geen directe toegang tot bouwRoute
- * nodig (zit in die IIFE's eigen scope). */
+ * SYNCHROON i.p.v. DOMContentLoaded: dat laatste gaf nog net genoeg vertraging
+ * om de eerste (ongefitte) hoogte zichtbaar te laten verspringen naar de
+ * gefitte hoogte. bouwRoute() hierboven draait ook al synchroon bij het
+ * parsen (geen zichtbare flits), dus fit() volgt hetzelfde patroon: .rg-route
+ * bestaat al (dit script staat na de HTML), dus er hoeft niet gewacht te
+ * worden op DOMContentLoaded.
+ *
+ * Marge is 80px, niet 40: het merkteken zelf hangt 27-58px ONDER de
+ * scroll-cue (afhankelijk van viewporthoogte, via .rg-route__track's eigen
+ * padding-top-clamp) -- richten op enkel de cue liet het merkteken aan de
+ * onderkant afgesneden. 80px geeft in alle gevallen nog child ~20-50px
+ * lucht ONDER het merkteken zelf.
+ *
+ * bouwRoute() draait synchroon VOORDAT deze fit() draait, dus tegen
+ * .rg-route__track's ONgefitte positie. Een synthetic 'resize'-event ná het
+ * aanpassen van min-height hergebruikt de bestaande gedebouncete resize ->
+ * bouwRoute()-listener (sectie 1.6) om de lijn opnieuw te bouwen tegen de
+ * juiste, definitieve positie -- geen directe toegang tot bouwRoute nodig
+ * (zit in die IIFE's eigen scope). Dat gebeurt via een 150ms-debounce, dus
+ * NA de eerste paint -- onzichtbaar, want lijn/merkteken staan tot die
+ * herbouw sowieso nog op opacity:0 (.rg-route.is-klaar, sectie 1.6). */
 (function () {
   var intro = document.querySelector('.rg-route__intro');
   var hint = intro && intro.querySelector('.rg-route__hint');
@@ -1287,21 +1300,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // met een paar correctiestappen i.p.v. één blinde berekening.
     for (var i = 0; i < 5; i++) {
       intro.style.minHeight = poging + 'px';
-      var fout = (window.innerHeight - 40) - hint.getBoundingClientRect().bottom;
+      var fout = (window.innerHeight - 80) - hint.getBoundingClientRect().bottom;
       if (Math.abs(fout) < 1) break;
       poging = Math.min(Math.max(poging + fout, minH), maxH);
     }
     var nieuwe = intro.style.minHeight;
     if (nieuwe !== vorige) window.dispatchEvent(new Event('resize'));
   }
-  document.addEventListener('DOMContentLoaded', function () {
-    fit();
-    if (window.ResizeObserver) {
-      new ResizeObserver(fit).observe(hint);
-    } else {
-      setTimeout(fit, 400); // fallback zonder ResizeObserver-support
-    }
-  });
+  fit();
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(hint);
+  } else {
+    setTimeout(fit, 400); // fallback zonder ResizeObserver-support
+  }
   window.addEventListener('resize', fit);
   window.addEventListener('pageshow', function (e) { if (e.persisted) fit(); });
 })();
