@@ -1025,8 +1025,13 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', function () { bouwRoute(); });
 
   /* ---------- animatie ---------- */
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!('requestAnimationFrame' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    /* lijn+merkteken staan al goed (bouwRoute() hierboven) -- meteen tonen,
+       er komt toch geen scroll-animatie overheen */
+    root.classList.add('is-klaar');
+    return;
+  }
+  if (!('requestAnimationFrame' in window)) { root.classList.add('is-klaar'); return; }
 
   var CDN = 'https://cdn.jsdelivr.net/';
   [CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
@@ -1039,7 +1044,11 @@ document.addEventListener('DOMContentLoaded', function () {
           document.head.appendChild(sc);
         });
       });
-    }, Promise.resolve()).then(start).catch(function () {});
+    }, Promise.resolve()).then(start).catch(function () {
+      /* GSAP kon niet laden -- lijn/merkteken alsnog tonen (statisch, zonder
+         scroll-animatie) i.p.v. ze voorgoed onzichtbaar te laten */
+      root.classList.add('is-klaar');
+    });
 
   function start() {
     var gsap = window.gsap, ST = window.ScrollTrigger;
@@ -1119,6 +1128,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var markVaag = false;
     if (mark) gsap.set(mark, { top: 0, left: 0 });
     zetMerkteken(0);
+    /* pas nu tonen: de dash-array/-offset van de lijn en de positie van het
+       merkteken staan beide vast, dus dit toont meteen de juiste staat i.p.v.
+       een korte flits van de volledige lijn + een merkteken dat naar zijn
+       plek springt */
+    root.classList.add('is-klaar');
 
     /* dots lichten op zodra ze in beeld zijn */
     gsap.utils.toArray('.rg-route__dot').forEach(function (dot) {

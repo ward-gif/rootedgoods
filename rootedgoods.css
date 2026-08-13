@@ -7715,6 +7715,19 @@ h1.rg-route__title em{
   z-index:2;
   pointer-events:none;
 }
+/* Onzichtbaar tot JS de lijn heeft getekend en het merkteken correct heeft
+   gepositioneerd. Zonder dit zag je bij het laden even de VOLLEDIGE lijn
+   (stroke-dasharray/-offset staan pas na het laden van GSAP) en het
+   merkteken op zijn CSS-standaardplek bovenaan de sectie, die dan naar de
+   echte positie "sprong" zodra het script klaar was. .is-klaar wordt gezet
+   zodra alles staat (of meteen bij prefers-reduced-motion / als GSAP niet
+   laadt, zie rootedgoods.js). */
+.rg-route__line, .rg-route__mark{ opacity:0; }
+.rg-route.is-klaar .rg-route__line,
+.rg-route.is-klaar .rg-route__mark{
+  opacity:1;
+  transition:opacity .25s ease;
+}
 .rg-route__mark img{ width:100%; height:100%; display:block; }
 /* het volledige logo bij thuiskomst: hier lost het merkteken in op (fase 3) */
 .rg-route__logo{
@@ -8351,4 +8364,25 @@ h2.rg-route__team-title{
 @keyframes rg-hint-bounce{
   0%, 100% { transform:translateY(0); }
   50%      { transform:translateY(9px); }
+}
+
+/* ============================================================
+   46. OVER ONS — CMS-blokranden op nul (bleed-fix)
+   ------------------------------------------------------------
+   .rg-route__intro-map/.rg-route__line/.rg-route__map--left/--right bloeden
+   met left:calc(50% - 50vw) / width:100vw naar de viewportrand. Die truc
+   werkt alleen als het omringende blok (.cms-block-container met
+   Promidata's inline padding, .col-12 met de Bootstrap-gutter) zelf ook op
+   de volle breedte staat -- anders is het "containing block" waar de 50%
+   vandaan komt smaller dan de viewport, en bloedt de kaart niet helemaal
+   door (leek "afgesneden" aan de zijkanten). Zelfde patroon als elders in
+   dit bestand voor andere full-bleed blokken (bv. .rg-feature-row__content),
+   hier gescoped op :has(.rg-route) zodat andere pagina's ongemoeid blijven. */
+.cms-section:has(.rg-route) .cms-block-container,
+.cms-section:has(.rg-route) .cms-block-container[style] {
+  padding: 0 !important;
+}
+.cms-section:has(.rg-route) .col-12 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
