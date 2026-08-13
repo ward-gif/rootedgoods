@@ -8386,3 +8386,38 @@ h2.rg-route__team-title{
   0%, 100% { transform:translateY(0); }
   50%      { transform:translateY(9px); }
 }
+
+/* ============================================================
+   47. OVER ONS — hero, tweede afstemmingsronde
+   ------------------------------------------------------------
+     47.1  Ancestor-padding op nul, opnieuw ingesteld (defensief)
+     47.2  Meer verticale lucht boven de eyebrow
+   ============================================================ */
+
+/* ---- 47.1 De vorige ronde trok deze regel in met de aanname dat een
+   Shopware-instelling het al afdekte. De formule in sectie 46 (calc(max(
+   (100vw-1600px)/2,0)+80px)) gaat ervanuit dat .rg-route__intro's
+   containing block de VOLLE 100vw is; elke resterende padding op de
+   omringende CMS-wrapper (.cms-block-container/.col-12) schuift de tekst
+   dan alsnog verder naar rechts dan bedoeld. Zonder risico om opnieuw in te
+   stellen: is er al geen padding meer, dan is dit een no-op. ---- */
+.cms-section:has(.rg-route) .cms-block-container,
+.cms-section:has(.rg-route) .cms-block-container[style] {
+  padding: 0 !important;
+}
+.cms-section:has(.rg-route) .col-12 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ---- 47.2 De homepage-hero (.rg-hero-v2) centreert zijn copy verticaal
+   binnen een op de content afgestemde hoogte (align-items:center, geen
+   vaste vh), dus de kop staat daar nooit vlak tegen de bovenkant. Die exacte
+   centrering 1-op-1 overnemen conflicteert met margin-top:auto op de
+   scroll-cue (sectie 46), dus hier in plaats daarvan gewoon meer eigen
+   ademruimte boven de eyebrow -- ruimer dan de vorige stand (clamp(1rem,
+   2vw,2rem), max 32px), dichter bij wat de homepage-hero's eigen top-
+   padding oplevert wanneer de content daar niet extra gecentreerd wordt. */
+.rg-route__intro{
+  padding-top:clamp(3rem, 6vw, 5rem);
+}
