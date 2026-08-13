@@ -3,18 +3,13 @@
    rootedgoods.eu | Shopware 6.5 / Promidata thema
    ============================================================ */
 
-/* LET OP — cursief is SITE-BREED een bewuste keuze: de font-link laadt
-   ALLEEN de rechte Playfair, en alle cursief daarbuiten (hero-accent, .rg-em,
-   stapnummers) is dus faux oblique (browser trekt de rechte letter schuin).
-   De echte Playfair Display Italic is te sierlijk bevonden — NIET "fixen"
-   door die ital-as toe te voegen.
-   UITZONDERING: de hero van de Over ons-pagina (.rg-route__title,
-   .rg-route__question-ask, sectie 45) gebruikt bewust een tweede display-
-   font, Fraunces, met zijn ECHTE cursief-as (@import hieronder). Dat is
-   hier expliciet gevraagd en herbevestigd nadat eerst de Playfair-lijn was
-   aangehouden -- geen incident, geen los initiatief van hier uitbreiden
-   naar de rest van de site. */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500;1,600&display=swap');
+/* LET OP — cursief is hier een bewuste keuze: de font-link laadt ALLEEN de
+   rechte Playfair. Alle cursief (hero-accent, .rg-em, stapnummers) is dus
+   faux oblique (browser trekt de rechte letter schuin) en dat is precies de
+   gewenste look. De echte Playfair Display Italic is te sierlijk bevonden —
+   NIET "fixen" door de ital-as of een @import toe te voegen.
+   (Fraunces is hier kort geprobeerd voor de Over ons-hero en weer
+   teruggedraaid: gewoon de site-brede Playfair-stijl aanhouden.) */
 
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
@@ -7578,11 +7573,8 @@ h1.rgh__title, .rgh__title,
   font-size:clamp(.68rem, .62rem + .2vw, .76rem) !important;
   margin:0 0 .9rem !important;
 }
-/* Fraunces i.p.v. Playfair -- zie de uitzondering bovenaan dit bestand.
-   Weight 700 ("regular" Fraunces oogt bij dit gewicht vergelijkbaar zwaar
-   als de vorige Playfair 700). */
 h1.rg-route__title{
-  font-family:'Fraunces',Georgia,serif !important;
+  font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
   letter-spacing:-.01em !important;
   line-height:1.05 !important;
@@ -7592,9 +7584,14 @@ h1.rg-route__title{
   margin:0 0 var(--rg-space-lg) !important;
   text-wrap:balance;
 }
+/* cursief = de RECHTE Playfair schuingetrokken, zelfde techniek als overal
+   elders op de site (nooit de echte italic-face/synthese) */
 h1.rg-route__title em{
-  font-family:'Fraunces',Georgia,serif;
-  font-style:italic; font-weight:600;
+  font-style:normal !important;
+  font-synthesis:none;
+  display:inline-block;
+  transform:skewX(-14deg);
+  font-weight:700;
   color:var(--rg-cognac) !important;
   letter-spacing:-.01em;
 }
@@ -8281,10 +8278,7 @@ h2.rg-route__team-title{
    45. OVER ONS — HERO (huidige stand)
    ------------------------------------------------------------
    Losse override-laag bovenop sectie 42-44, zelfde reden: in zijn geheel
-   terug te draaien zonder sectie 42 aan te raken. Vervangt de eerdere
-   45/46-rondes (aanloopregel + apart antwoordblok + lijn-animatie op de
-   scroll-cue) volledig -- die tussenstappen zijn hierin opgegaan i.p.v.
-   er nog los bovenop te liggen.
+   terug te draaien zonder sectie 42 aan te raken.
      45.1  De subtekst: aanloop + vraag in EEN alinea, vraag op eigen regel
      45.2  Gat tussen hero en stop 1 verder gehalveerd
    ============================================================ */
@@ -8294,10 +8288,9 @@ h2.rg-route__team-title{
    bodytekst; de vraag zelf breekt naar een eigen regel via het blok-element
    hieronder en is duidelijk de op-één-na-grootste stap na de H1 -- groot
    genoeg om als tweede ding op te vallen bij het scannen, maar met genoeg
-   afstand tot de H1-maat om er niet mee te concurreren. Cursief = Fraunces
-   (zie de uitzondering bovenaan het bestand), niet de Playfair faux-oblique
-   die de rest van de pagina gebruikt: hier bewust een tweede, herkenbaar
-   ander register om de vraag als citaat/moment te laten voelen. */
+   afstand tot de H1-maat om er niet mee te concurreren. Cursief = de
+   RECHTE Playfair schuingetrokken, zelfde techniek als de H1 en de rest van
+   de site (Fraunces is hier geprobeerd en weer teruggedraaid). */
 .rg-route__question{
   font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
   color:var(--rg-green-soft);
@@ -8306,9 +8299,12 @@ h2.rg-route__team-title{
 }
 .rg-route__question-ask{
   display:block;
-  font-family:'Fraunces',Georgia,serif;
-  font-style:italic;
-  font-weight:500;
+  font-family:'Playfair Display',Georgia,serif;
+  font-style:normal;
+  font-synthesis:none;
+  transform:skewX(-14deg);
+  transform-origin:left center;
+  font-weight:600;
   color:var(--rg-green);
   font-size:clamp(1.6rem, 1.3rem + 1.6vw, 2.35rem);
   line-height:1.3;
@@ -8323,4 +8319,23 @@ h2.rg-route__team-title{
    kortere route weer boven de 1,2x-padlengte-grens uit. */
 .rg-route__track{
   padding-top:clamp(4rem, 18vh, 12rem);
+}
+
+/* ---- 45.3 Hero-hoogte verlaagd: 85vh hield geen rekening met de echte
+   site-header (top-bar + header-main) die er in het echte thema nog bovenop
+   komt, waardoor de scroll-cue onder de vouw viel. 75vh laat daar ruimte
+   voor. ---- */
+.rg-route__intro{
+  min-height:75vh;
+}
+
+/* ---- 45.4 Scroll-cue: groter en duidelijker animerend pijltje. ---- */
+.rg-route__hint-arrow{
+  width:1.75rem;
+  height:1.75rem;
+  animation-duration:1.6s;
+}
+@keyframes rg-hint-bounce{
+  0%, 100% { transform:translateY(0); }
+  50%      { transform:translateY(9px); }
 }

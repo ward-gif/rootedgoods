@@ -669,7 +669,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var eersteY = eerste.top - tr.top;
     var introEl = root.querySelector('.rg-route__intro');
     var introOnder = introEl ? (introEl.getBoundingClientRect().bottom - tr.top) : 0;
-    var startY = Math.min(eersteY - 140, Math.max(introOnder + 60, window.innerHeight * 0.72));
+    /* 190px reserve i.p.v. 140: bij de huidige, veel kortere afstand tot
+       stop 1 liet 140 (min RECHT) maar 20px over voor de zijwaartse bocht
+       naar de dot -- een bijna haakse knik. Met 190px blijft er na de rechte
+       aanloop genoeg ruimte om er een vloeiende "lichte kronkel" van te
+       maken i.p.v. recht-dan-plotseling-opzij. */
+    var startY = Math.min(eersteY - 190, Math.max(introOnder + 60, window.innerHeight * 0.72));
     /* centreren op de contentkolom, niet op de schermbrede SVG: dat is wat
        het oog als midden leest */
     var trackC = track.getBoundingClientRect();
@@ -680,7 +685,11 @@ document.addEventListener('DOMContentLoaded', function () {
        route kaarsrecht naar beneden in plaats van meteen onder een hoek weg
        te schieten. Het merkteken staat daardoor recht onder het pijltje van
        de scroll-hint voordat de reis zijwaarts begint. */
-    var RECHT = 120;
+    /* was 120: bij de kortere hero-tot-stop-1-afstand van nu liet dat te
+       weinig ruimte over voor de bocht erna. 40px is genoeg om het merkteken
+       nog kaarsrecht te laten starten, zonder de rest van de route (die
+       richting stop 1 moet buigen) klem te zetten. */
+    var RECHT = 40;
     spine.push({ x: startX, y: Math.max(0, startY) + RECHT, marker: false });
 
     dots.forEach(function (d) {
