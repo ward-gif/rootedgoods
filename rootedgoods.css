@@ -8180,3 +8180,77 @@ h2.rg-route__team-title{
   .rg-route__meter{ top:calc(100vh - 4.5rem); }
   .rg-route__mark{ left:28px; }
 }
+
+/* ============================================================
+   43. OVER ONS — verbeterronde v2 (copy / beeldclusters / ruimte)
+   ------------------------------------------------------------
+   Losse override-laag bovenop sectie 42 (.rg-route), zodat dit blok in zijn
+   geheel terug te draaien is zonder sectie 42 zelf aan te raken.
+     43.1  Stop-labels: alleen coördinaten, geen plaatsnaam meer
+     43.2  Beeldcluster stop 1 + 2 (stop 3/4 hebben geen beeld meer)
+     43.3  Hero lager in het vlak
+     43.4  Afstand tussen stop 1-2-3 gelijkgetrokken
+   ============================================================ */
+
+/* ---- 43.1 Stop-labels: alleen coördinaten, klein en terloops ----
+   Was "Porto, Portugal · 41.1° N..." — de plaatsnaam trok de aandacht en
+   liet de route als een feitelijk reisverslag lezen. Nu alleen de
+   coördinaten, in de bestaande gedempte span-stijl (kleiner, minder
+   letter-spacing dan de hoofdtekst). Het "· "-voorvoegsel (::before) hoort
+   bij een span die op een plaatsnaam volgt; zonder die naam ervoor moet die
+   weg. Ede blijft gewoon staan in het contactblok onderaan
+   (.rg-route__contact-body .rg-route__place), dat blok is hier niet geraakt. */
+.rg-route__place span:only-child::before{ content:none; }
+
+/* ---- 43.2 Beeldcluster stop 1 + 2 — stop 3, stop 4 en het groene blok
+   hebben geen beeld meer (minder afleiding rond de kernclaim). De
+   shots-box was voorheen inset:0 (even groot als de hele stop, inclusief de
+   scroll-spacer padding-bottom), waardoor procentuele posities ver van de
+   tekst konden landen. Nu een box die alleen het kopgebied dekt, zodat een
+   cluster ook echt een cluster is. */
+.rg-route__shots{
+  position:absolute;
+  top:0; left:0; right:0;
+  height:clamp(24rem, 40vw, 34rem);
+  pointer-events:none;
+  z-index:1;
+}
+.rg-route__shot{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:var(--w, 180px);
+  aspect-ratio:var(--ar, 4/5);
+  object-fit:cover;
+  border-radius:var(--rg-r-fn);
+  transform:rotate(var(--r, 0deg));
+  box-shadow:var(--rg-sh-soft);
+  background:var(--rg-sand);
+}
+/* het grote beeld ligt onder het kleine: leest als een tastbaar stapeltje
+   i.p.v. twee beelden die toevallig naast elkaar zweven */
+.rg-route__shot--groot{ z-index:1; }
+.rg-route__shot--klein{ z-index:2; }
+
+/* ---- 43.3 Hero lager in het vlak — los van de route/track, dus zonder
+   effect op de padlengte/verticale-afstand-verhouding van de routelijn. ---- */
+.rg-route__intro{
+  padding-top:clamp(7rem, calc(8vw + 4rem), 11rem);
+}
+
+/* ---- 43.4 Afstand tussen stop 1-2-3 gelijkgetrokken — padding-bottom was
+   voor alle stops identiek (clamp(20rem,30vw,30rem)), maar doordat de
+   content per stop in hoogte verschilt (3-4 alinea's vs titel+wortels-grid)
+   liep de zichtbare dot-tot-dot-afstand toch uiteen: gemeten 815 / 1001 /
+   963px op 1600px breed. Hieronder per stop gecorrigeerd naar ~930px, met
+   behoud van dezelfde vw-gebaseerde responsiviteit. Stop 4 (--last) blijft
+   ongemoeid: die vloeit door naar het teamblok, geen "tussen stops"-afstand. */
+.rg-route__stop--left{
+  padding-bottom:clamp(27.2rem, calc(30vw + 7.2rem), 37.2rem);
+}
+.rg-route__stop--right{
+  padding-bottom:clamp(15.6rem, calc(30vw - 4.4rem), 25.6rem);
+}
+.rg-route__stop--wide:not(.rg-route__stop--last){
+  padding-bottom:clamp(17.9rem, calc(30vw - 2.1rem), 27.9rem);
+}

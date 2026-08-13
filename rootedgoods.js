@@ -1082,7 +1082,7 @@ document.addEventListener('DOMContentLoaded', function () {
            { y: 40, scale: .97, duur: .8, stagger: .07 });
 
     onthul('.rg-route__shot, .rg-route__collage-shot, .rg-route__collage-main',
-           { y: 34, scale: .86, duur: .9, stagger: .06 });
+           { y: 34, scale: .86, duur: .9, stagger: .08 });
 
     /* sfeerbeelden bewegen mee, elk met een eigen snelheid */
     gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
