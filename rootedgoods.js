@@ -1282,9 +1282,10 @@ document.addEventListener('DOMContentLoaded', function () {
  * NA de eerste paint -- onzichtbaar, want lijn/merkteken staan tot die
  * herbouw sowieso nog op opacity:0 (.rg-route.is-klaar, sectie 1.6). */
 (function () {
+  var root = document.querySelector('.rg-route');
   var intro = document.querySelector('.rg-route__intro');
   var hint = intro && intro.querySelector('.rg-route__hint');
-  if (!intro || !hint) return;
+  if (!root || !intro || !hint) return;
   function fit() {
     if (window.innerWidth < 992) { intro.style.minHeight = ''; return; }
     // Zelfde scroll-guard als sectie 2.4: getBoundingClientRect() is
@@ -1315,4 +1316,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.addEventListener('resize', fit);
   window.addEventListener('pageshow', function (e) { if (e.persisted) fit(); });
+
+  /* Kop/eyebrow/vraag + scroll-cue blijven onzichtbaar (CSS: .rg-route__intro-
+     copy, .rg-route__hint) tot webfonts geladen zijn: renderen ze eerst in de
+     fallback-serif/sans, dan wijkt de tekst-/regelhoogte af van de uiteindelijke
+     Playfair/Montserrat-metriek, en verspringt zowel de tekst zelf als (via
+     ResizeObserver hierboven) de fit() -- exact het soort sprong die dit
+     bestand net probeert te voorkomen. Eén laatste fit()-pas vlak vóór het
+     onthullen vangt die eventuele verschuiving af terwijl alles nog onzichtbaar
+     is. Vangnet-timeout: nooit permanent onzichtbaar laten hangen als fonts.
+     ready om wat voor reden dan ook niet resolvet. */
+  var onthuld = false;
+  function toonHero() {
+    if (onthuld) return;
+    onthuld = true;
+    fit();
+    root.classList.add('is-hero-klaar');
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(toonHero);
+    setTimeout(toonHero, 1500);
+  } else {
+    toonHero();
+  }
 })();

@@ -7639,6 +7639,29 @@ h1.rg-route__title em{
   flex-direction:column;
   justify-content:center;
 }
+/* Onzichtbaar tot webfonts geladen zijn EN de hoogtefit (rootedgoods.js,
+   sectie 1.6b) definitief is. Zonder dit: kop/vraag renderen eerst in de
+   fallback-serif/sans (ander lettermetriek -> andere hoogte), .rg-route__hint
+   staat dan nog niet op zijn eindpositie, en zodra de echte fonts laden
+   verspringt alles alsnog -- zelfde soort "sprong" als .is-klaar hierboven
+   al oplost voor de routelijn, nu ook voor de hero-tekst zelf. .is-hero-klaar
+   wordt gezet zodra fonts.ready + één definitieve fit()-pas klaar zijn (met
+   een vangnet-timeout, zie rootedgoods.js). */
+.rg-route__intro-copy,
+.rg-route__hint{
+  opacity:0;
+}
+.rg-route.is-hero-klaar .rg-route__intro-copy,
+.rg-route.is-hero-klaar .rg-route__hint{
+  opacity:1;
+  transition:opacity .3s ease;
+}
+@media (prefers-reduced-motion: reduce){
+  .rg-route.is-hero-klaar .rg-route__intro-copy,
+  .rg-route.is-hero-klaar .rg-route__hint{
+    transition:none;
+  }
+}
 /* Europa-outline groot en ingezoomd achter de kop */
 .rg-route__intro-map{
   position:absolute;
