@@ -7592,7 +7592,7 @@ h1.rg-route__title em{
   display:inline-block;
   transform:skewX(-14deg);
   font-weight:700;
-  color:var(--rg-cognac) !important;
+  color:var(--rg-cognac-light) !important;
   letter-spacing:-.01em;
 }
 
@@ -8323,10 +8323,12 @@ h2.rg-route__team-title{
 
 /* ---- 45.3 Hero-hoogte verlaagd: 85vh hield geen rekening met de echte
    site-header (top-bar + header-main) die er in het echte thema nog bovenop
-   komt, waardoor de scroll-cue onder de vouw viel. 75vh laat daar ruimte
-   voor. ---- */
+   komt, waardoor de scroll-cue onder de vouw viel. Verder verlaagd naar 70vh
+   en de padding-bottom verkleind, zodat de cue een stukje hoger komt te
+   staan met nog ~40px lucht eronder (was ~48px op 75vh/3rem). ---- */
 .rg-route__intro{
-  min-height:75vh;
+  min-height:70vh;
+  padding-bottom:clamp(1.5rem, 3vw, 2.5rem);
 }
 
 /* ---- 45.4 Scroll-cue: groter en duidelijker animerend pijltje. ---- */
