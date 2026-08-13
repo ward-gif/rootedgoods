@@ -864,13 +864,46 @@ document.addEventListener('DOMContentLoaded', function () {
       d.style.left = (x + tr.left - stop.left) + 'px';
     });
 
-    /* Mask: achter tekstblokken zakt de lijn naar 30%. De vorm verandert niet,
-       alleen de zichtbaarheid. */
+    /* Mask: achter tekst zakt de lijn naar 30%. De vorm verandert niet,
+       alleen de zichtbaarheid. De vlakken komen NIET uit de containerbox:
+       die is zo breed als de kolom terwijl de regels korter zijn, waardoor de
+       lijn ook naast de tekst al vervaagde. Per tekstelement wordt daarom het
+       werkelijke regelbereik gemeten (Range.getClientRects, samengevoegd tot
+       een strak kader). Dezelfde vlakken bepalen de zichtbaarheid van het
+       merkteken, zodat lijn en reiziger altijd samen vervagen. */
     var defs = svg.querySelector('defs') || svg.insertBefore(
       document.createElementNS('http://www.w3.org/2000/svg', 'defs'), svg.firstChild);
     defs.innerHTML = '';
     tekstVlakken = [];
     var NS = 'http://www.w3.org/2000/svg';
+    var bereik = document.createRange();
+    [].slice.call(root.querySelectorAll(
+      '.rg-route__body, .rg-route__panel, .rg-route__team-copy, .rg-route__roots'
+    )).forEach(function (el) {
+      /* het groene paneel is een gevulde grond: daar gaat alles achter langs,
+         ook tussen de regels door */
+      if (el.classList.contains('rg-route__panel')) {
+        var b = el.getBoundingClientRect();
+        tekstVlakken.push({ x1: b.left - tr.left - 6, y1: b.top - tr.top - 6,
+                            x2: b.right - tr.left + 6, y2: b.bottom - tr.top + 6 });
+        return;
+      }
+      [].slice.call(el.querySelectorAll('h2, h3, p, li')).forEach(function (t) {
+        bereik.selectNodeContents(t);
+        var x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
+        [].slice.call(bereik.getClientRects()).forEach(function (rr) {
+          if (rr.width < 4 || rr.height < 4) return;   /* lege regels overslaan */
+          if (rr.left < x1) x1 = rr.left;
+          if (rr.top < y1) y1 = rr.top;
+          if (rr.right > x2) x2 = rr.right;
+          if (rr.bottom > y2) y2 = rr.bottom;
+        });
+        if (x1 === Infinity) return;
+        tekstVlakken.push({ x1: x1 - tr.left - 8, y1: y1 - tr.top - 5,
+                            x2: x2 - tr.left + 8, y2: y2 - tr.top + 5 });
+      });
+    });
+
     var mask = document.createElementNS(NS, 'mask');
     mask.setAttribute('id', 'rg-route-mask');
     mask.setAttribute('maskUnits', 'userSpaceOnUse');
@@ -878,39 +911,14 @@ document.addEventListener('DOMContentLoaded', function () {
     vlak.setAttribute('width', breedte); vlak.setAttribute('height', hoogte);
     vlak.setAttribute('fill', '#fff');
     mask.appendChild(vlak);
-    [].slice.call(root.querySelectorAll(
-      '.rg-route__body, .rg-route__panel, .rg-route__team-copy, .rg-route__roots'
-    )).forEach(function (el) {
-      var b = el.getBoundingClientRect();
+    tekstVlakken.forEach(function (v) {
       var re = document.createElementNS(NS, 'rect');
-      var x1 = b.left - tr.left - 6, y1 = b.top - tr.top - 6;
-      re.setAttribute('x', x1);
-      re.setAttribute('y', y1);
-      re.setAttribute('width', b.width + 12);
-      re.setAttribute('height', b.height + 12);
+      re.setAttribute('x', v.x1);
+      re.setAttribute('y', v.y1);
+      re.setAttribute('width', v.x2 - v.x1);
+      re.setAttribute('height', v.y2 - v.y1);
       re.setAttribute('fill', '#4d4d4d');   /* ~30% */
       mask.appendChild(re);
-
-      /* Voor het merkteken gelden krappere vlakken dan voor de lijn. Het
-         groene paneel is een gevulde grond: daar gaat alles achter langs.
-         Bij een los tekstblok telt alleen waar werkelijk letters staan; met
-         de containerbox vervaagde het merkteken bij stop 1 terwijl het daar
-         gewoon naast de kolom langs loopt. */
-      if (el.classList.contains('rg-route__panel')) {
-        tekstVlakken.push({ x1: x1, y1: y1, x2: x1 + b.width + 12, y2: y1 + b.height + 12 });
-        return;
-      }
-      var bereik = document.createRange();
-      [].slice.call(el.querySelectorAll('h2, h3, p, li')).forEach(function (t) {
-        bereik.selectNodeContents(t);
-        [].slice.call(bereik.getClientRects()).forEach(function (rr) {
-          if (rr.width < 4 || rr.height < 4) return;   /* lege regels overslaan */
-          tekstVlakken.push({
-            x1: rr.left  - tr.left - 8, y1: rr.top    - tr.top - 4,
-            x2: rr.right - tr.left + 8, y2: rr.bottom - tr.top + 4
-          });
-        });
-      });
     });
     defs.appendChild(mask);
     base.setAttribute('mask', 'url(#rg-route-mask)');
