@@ -917,13 +917,30 @@ document.addEventListener('DOMContentLoaded', function () {
        lijn faadde dan naast de tekst i.p.v. erachter (of juist niet als hij
        er wel achter zat). zonderTransform meet daarom altijd de originele,
        niet-getransformeerde layoutpositie. */
-    function zonderTransform(el, fn) {
-      var vorige = el.style.transform;
-      el.style.transform = 'none';
-      var resultaat = fn();
-      el.style.transform = vorige;
-      return resultaat;
-    }
+    /* Batched i.p.v. per element schrijven-lezen-terugschrijven: dat laatste
+       forceert bij ELK element een synchrone reflow ("layout thrashing"),
+       tientallen keren per rebuild. Hier eerst ALLE transforms in één klap
+       uit (fase 1), dan ALLE metingen (fase 2, geen enkele write ertussen dus
+       geen extra reflow), dan ALLE transforms in één klap terug (fase 3). */
+    var teMeten = [].slice.call(root.querySelectorAll(
+      '.rg-route__panel, .rg-route__logo, .rg-route__root-icon, ' +
+      '.rg-route__body h2, .rg-route__body h3, .rg-route__body p, ' +
+      '.rg-route__roots h3, .rg-route__roots p, ' +
+      '.rg-route__team-title, .rg-route__team-copy > p'
+    )).filter(function (el) {
+      return !el.closest('.rg-route__panel') || el.classList.contains('rg-route__panel');
+    });
+    /* .rg-route__root-icon krijgt zelf NOOIT een onthul-transform (alleen
+       zijn voorouder .rg-route__roots, als geheel container, staat in die
+       lijst) -- zonderTransform op het icoon zelf was dus een no-op en de
+       vervormde positie van de voorouder telde nog gewoon mee. Die voorouder
+       moet daarom ook meedoen in de neutralisatie, ook al heeft hij zelf
+       geen eigen maskervlak nodig. */
+    var rootsEl = root.querySelector('.rg-route__roots');
+    if (rootsEl && teMeten.indexOf(rootsEl) === -1) teMeten.push(rootsEl);
+
+    var vorigeTransforms = teMeten.map(function (el) { return el.style.transform; });
+    teMeten.forEach(function (el) { el.style.transform = 'none'; });   /* fase 1: alle writes */
 
     var defs = svg.querySelector('defs') || svg.insertBefore(
       document.createElementNS('http://www.w3.org/2000/svg', 'defs'), svg.firstChild);
@@ -932,41 +949,42 @@ document.addEventListener('DOMContentLoaded', function () {
     var NS = 'http://www.w3.org/2000/svg';
     var bereik = document.createRange();
 
-    /* gevulde-grond-elementen: een volledig rechthoekig vlak, geen
-       regelbereik. Het groene paneel (tekst tussen de regels ook bedekt) en
-       het thuiskomst-logo (de reiziger lost hier letterlijk in op, moet dus
-       nooit zichtbaar overlappen). */
-    [].slice.call(root.querySelectorAll('.rg-route__panel, .rg-route__logo'))
-      .forEach(function (el) {
-        var b = zonderTransform(el, function () { return el.getBoundingClientRect(); });
+    /* fase 2: alle metingen, geen writes ertussen */
+    teMeten.forEach(function (el) {
+      /* .rg-route__roots staat alleen in de lijst om zijn transform
+         (van onthul) te neutraliseren zodat zijn kind .rg-route__root-icon
+         correct gemeten wordt -- de container zelf heeft geen eigen
+         maskervlak nodig */
+      if (el === rootsEl) return;
+      /* gevulde-grond-elementen: een volledig rechthoekig vlak, geen
+         regelbereik. Het groene paneel (tekst tussen de regels ook bedekt),
+         het thuiskomst-logo (de reiziger lost hier letterlijk in op, moet
+         dus nooit zichtbaar overlappen) EN de root-iconen bij stop 3 -- die
+         zijn zelf ook het beeldmerk, dus zonder dit vlak kon het reizende
+         merkteken er ongemaskeerd overheen lopen en leek het even te
+         "verdubbelen". */
+      if (el.matches('.rg-route__panel, .rg-route__logo, .rg-route__root-icon')) {
+        var b = el.getBoundingClientRect();
         tekstVlakken.push({ x1: b.left - tr.left - 10, y1: b.top - tr.top - 10,
                             x2: b.right - tr.left + 10, y2: b.bottom - tr.top + 10 });
+        return;
+      }
+      /* tekstregels: elk element krijgt zijn eigen, strakke regelkaders */
+      bereik.selectNodeContents(el);
+      var x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
+      [].slice.call(bereik.getClientRects()).forEach(function (rr) {
+        if (rr.width < 4 || rr.height < 4) return;   /* lege regels overslaan */
+        if (rr.left < x1) x1 = rr.left;
+        if (rr.top < y1) y1 = rr.top;
+        if (rr.right > x2) x2 = rr.right;
+        if (rr.bottom > y2) y2 = rr.bottom;
       });
-
-    /* tekstregels: elk element krijgt zijn eigen, strakke regelkaders */
-    [].slice.call(root.querySelectorAll(
-      /* .rg-route__panel-tekst zit al in het volledige paneelvlak hierboven;
-         die hoeft hier niet nog eens los gemeten te worden */
-      '.rg-route__body h2, .rg-route__body h3, .rg-route__body p, ' +
-      '.rg-route__roots h3, .rg-route__roots p, ' +
-      '.rg-route__team-title, .rg-route__team-copy > p'
-    )).forEach(function (t) {
-      if (t.closest('.rg-route__panel')) return;
-      zonderTransform(t, function () {
-        bereik.selectNodeContents(t);
-        var x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
-        [].slice.call(bereik.getClientRects()).forEach(function (rr) {
-          if (rr.width < 4 || rr.height < 4) return;   /* lege regels overslaan */
-          if (rr.left < x1) x1 = rr.left;
-          if (rr.top < y1) y1 = rr.top;
-          if (rr.right > x2) x2 = rr.right;
-          if (rr.bottom > y2) y2 = rr.bottom;
-        });
-        if (x1 === Infinity) return;
-        tekstVlakken.push({ x1: x1 - tr.left - 13, y1: y1 - tr.top - 9,
-                            x2: x2 - tr.left + 13, y2: y2 - tr.top + 9 });
-      });
+      if (x1 === Infinity) return;
+      tekstVlakken.push({ x1: x1 - tr.left - 13, y1: y1 - tr.top - 9,
+                          x2: x2 - tr.left + 13, y2: y2 - tr.top + 9 });
     });
+
+    teMeten.forEach(function (el, i) { el.style.transform = vorigeTransforms[i]; });  /* fase 3 */
 
     var mask = document.createElementNS(NS, 'mask');
     mask.setAttribute('id', 'rg-route-mask');
@@ -1022,7 +1040,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   bouwRoute();
-  window.addEventListener('resize', function () { bouwRoute(); });
+  /* gedebouncet: resize-events kunnen tijdens het slepen aan een vensterrand
+     tientallen keren per seconde vuren, en bouwRoute() is een dure operatie
+     (spine + honderden samples + tekstmeting + opzoektabel). Zonder debounce
+     zou elke tick een volledige rebuild triggeren; nu pas 150ms na de
+     laatste resize, als het slepen klaar is. */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(bouwRoute, 150);
+  });
 
   /* ---------- animatie ---------- */
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
