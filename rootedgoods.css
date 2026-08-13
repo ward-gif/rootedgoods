@@ -7691,7 +7691,7 @@ h1.rg-route__title em{
   /* de reis begint bewust ruim onder de proloog */
   /* viewport-gebonden: alleen de proloog plus het begin van de route (hint +
      merkteken) staat boven de vouw, de eerste stop valt er net onder */
-  padding:clamp(16rem, 68vh, 46rem) clamp(1.25rem, 4vw, 2rem) 0;
+  padding:clamp(8rem, 36vh, 24rem) clamp(1.25rem, 4vw, 2rem) 0;
 }
 
 /* ---- De routelijn: EEN doorlopend pad over de volle hoogte ----
@@ -7893,6 +7893,7 @@ h2.rg-route__stop-title{
   font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
   line-height:1.65;
   margin:0 0 1rem;
+  text-wrap:pretty;   /* voorkomt weesregels als een los "Ze" op de laatste regel */
 }
 .rg-route__stop p:last-child{ margin-bottom:0; }
 .rg-route__stop p b{ color:var(--rg-green); font-weight:600; }

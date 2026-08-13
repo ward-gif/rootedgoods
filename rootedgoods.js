@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
       /* aan het begin naar 0: de route start exact in het midden */
       var inloop = Math.min(1, Math.max(0, (yy - yVan - RECHT) / 300));
       inloop = inloop * inloop * (3 - 2 * inloop);
-      return (ruisBreed(yy) * 265 + ruisMid(yy) * 104 + ruisFijn(yy) * 15) * inloop;
+      return (ruisBreed(yy) * 239 + ruisMid(yy) * 94 + ruisFijn(yy) * 14) * inloop;
     }
 
     var pts = punten.map(function (yy) {
@@ -884,8 +884,8 @@ document.addEventListener('DOMContentLoaded', function () {
          ook tussen de regels door */
       if (el.classList.contains('rg-route__panel')) {
         var b = el.getBoundingClientRect();
-        tekstVlakken.push({ x1: b.left - tr.left - 6, y1: b.top - tr.top - 6,
-                            x2: b.right - tr.left + 6, y2: b.bottom - tr.top + 6 });
+        tekstVlakken.push({ x1: b.left - tr.left - 10, y1: b.top - tr.top - 10,
+                            x2: b.right - tr.left + 10, y2: b.bottom - tr.top + 10 });
         return;
       }
       [].slice.call(el.querySelectorAll('h2, h3, p, li')).forEach(function (t) {
@@ -899,8 +899,8 @@ document.addEventListener('DOMContentLoaded', function () {
           if (rr.bottom > y2) y2 = rr.bottom;
         });
         if (x1 === Infinity) return;
-        tekstVlakken.push({ x1: x1 - tr.left - 8, y1: y1 - tr.top - 5,
-                            x2: x2 - tr.left + 8, y2: y2 - tr.top + 5 });
+        tekstVlakken.push({ x1: x1 - tr.left - 13, y1: y1 - tr.top - 9,
+                            x2: x2 - tr.left + 13, y2: y2 - tr.top + 9 });
       });
     });
 
@@ -1033,9 +1033,16 @@ document.addEventListener('DOMContentLoaded', function () {
         rotation: Math.max(0, afstand - 12) * 0.9
       });
       /* achter tekst zakt het merkteken mee naar 30%, net als de lijn: de
-         reiziger verdwijnt onder het verhaal door in plaats van eroverheen */
+         reiziger verdwijnt onder het verhaal door in plaats van eroverheen.
+         De check test een enkel punt, maar het merkteken zelf is 38px breed
+         -- zonder buffer kon de rand van het icoon nog zichtbaar over tekst
+         hangen (of eraf) terwijl het middelpunt net wel/niet in het vlak
+         viel. MERK_MARGE compenseert dat met de halve iconmaat plus wat
+         speling. */
+      var MERK_MARGE = 22;
       var achter = tekstVlakken.some(function (v) {
-        return punt.x > v.x1 && punt.x < v.x2 && punt.y > v.y1 && punt.y < v.y2;
+        return punt.x > v.x1 - MERK_MARGE && punt.x < v.x2 + MERK_MARGE &&
+               punt.y > v.y1 - MERK_MARGE && punt.y < v.y2 + MERK_MARGE;
       });
       if (achter !== markVaag) {
         markVaag = achter;
