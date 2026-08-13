@@ -603,7 +603,13 @@ document.addEventListener('DOMContentLoaded', function () {
    1.6 OVER ONS — "De Route van Rooted" (route + scroll-regie)
    ------------------------------------------------------------
    Doet niets buiten /over-ons: alles hangt aan .rg-route. GSAP +
-   ScrollTrigger + Lenis worden pas geladen als die sectie bestaat.
+   ScrollTrigger worden pas geladen als die sectie bestaat. Was ook Lenis
+   (smooth scroll), verwijderd wegens performance: dat kaapt het scrollen
+   van de VOLLE pagina en zet dat om in een JS-gestuurde animatielus die elk
+   frame opnieuw rendert, i.p.v. het vrijwel gratis, hardware-versnelde
+   native scrollen. Op een pagina met meer eromheen (theme-nav, overige
+   CMS-blokken) telde dat continu mee. ScrollTrigger werkt prima op native
+   scroll, dat is zijn standaardwerking.
 
    DE ROUTELIJN is EEN doorlopend pad over de volle hoogte van de
    track, at runtime opgebouwd uit de werkelijke posities van de
@@ -1024,8 +1030,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var CDN = 'https://cdn.jsdelivr.net/';
   [CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
-   CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
-   CDN + 'npm/lenis@1.1.18/dist/lenis.min.js']
+   CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js']
     .reduce(function (p, src) {
       return p.then(function () {
         return new Promise(function (ok, fout) {
@@ -1040,13 +1045,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var gsap = window.gsap, ST = window.ScrollTrigger;
     if (!gsap || !ST) return;
     gsap.registerPlugin(ST);
-
-    if (window.Lenis) {
-      var lenis = new window.Lenis({ duration: 1.05, smoothWheel: true });
-      lenis.on('scroll', ST.update);
-      gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    }
 
     var L = draw.getTotalLength();
     gsap.set(draw, { strokeDasharray: L, strokeDashoffset: L });
@@ -1160,14 +1158,11 @@ document.addEventListener('DOMContentLoaded', function () {
     onthul('.rg-route__shot, .rg-route__collage-shot, .rg-route__collage-main',
            { y: 34, scale: .86, duur: .9, stagger: .08 });
 
-    /* sfeerbeelden bewegen mee, elk met een eigen snelheid */
-    gsap.utils.toArray('.rg-route__shot, .rg-route__collage-shot').forEach(function (shot, i) {
-      gsap.to(shot, { yPercent: -16 - (i % 3) * 9, ease: 'none',
-        scrollTrigger: { trigger: shot, start: 'top bottom', end: 'bottom top', scrub: 0.5 } });
-    });
-    var hoofdfoto = root.querySelector('.rg-route__collage-main');
-    if (hoofdfoto) gsap.to(hoofdfoto, { yPercent: -7, ease: 'none',
-      scrollTrigger: { trigger: hoofdfoto, start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+    /* Losse parallax per sfeerbeeld (was 8 individuele scrub-ScrollTriggers,
+       elk met eigen per-frame werk) verwijderd wegens performance. De
+       onthul()-reveal hierboven laat elk beeld nog steeds mooi in beeld
+       schuiven/schalen bij binnenkomst -- dat gebeurt eenmalig, niet
+       continu tijdens het hele scrollen. */
 
     var hint = root.querySelector('.rg-route__hint');
     if (hint) gsap.to(hint, { opacity: 0, y: -10, ease: 'none',
