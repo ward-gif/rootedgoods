@@ -890,7 +890,27 @@ document.addEventListener('DOMContentLoaded', function () {
       re.setAttribute('height', b.height + 12);
       re.setAttribute('fill', '#4d4d4d');   /* ~30% */
       mask.appendChild(re);
-      tekstVlakken.push({ x1: x1, y1: y1, x2: x1 + b.width + 12, y2: y1 + b.height + 12 });
+
+      /* Voor het merkteken gelden krappere vlakken dan voor de lijn. Het
+         groene paneel is een gevulde grond: daar gaat alles achter langs.
+         Bij een los tekstblok telt alleen waar werkelijk letters staan; met
+         de containerbox vervaagde het merkteken bij stop 1 terwijl het daar
+         gewoon naast de kolom langs loopt. */
+      if (el.classList.contains('rg-route__panel')) {
+        tekstVlakken.push({ x1: x1, y1: y1, x2: x1 + b.width + 12, y2: y1 + b.height + 12 });
+        return;
+      }
+      var bereik = document.createRange();
+      [].slice.call(el.querySelectorAll('h2, h3, p, li')).forEach(function (t) {
+        bereik.selectNodeContents(t);
+        [].slice.call(bereik.getClientRects()).forEach(function (rr) {
+          if (rr.width < 4 || rr.height < 4) return;   /* lege regels overslaan */
+          tekstVlakken.push({
+            x1: rr.left  - tr.left - 8, y1: rr.top    - tr.top - 4,
+            x2: rr.right - tr.left + 8, y2: rr.bottom - tr.top + 4
+          });
+        });
+      });
     });
     defs.appendChild(mask);
     base.setAttribute('mask', 'url(#rg-route-mask)');
