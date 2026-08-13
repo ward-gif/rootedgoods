@@ -5654,6 +5654,22 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2__mosaic { order: 2; }
 .rg-hero-v2__copy-bottom { order: 3; }
 
+/* Onzichtbaar tot webfonts geladen zijn -- zelfde patroon als .is-hero-klaar
+   bij de Over-ons-hero: fallback-serif/sans heeft andere lettermetriek dan
+   Playfair/Montserrat, dus zonder dit kan de copy na de font-swap alsnog
+   verspringen t.o.v. waar rootedgoods.js (sectie 2.4) 'm al op gefit had.
+   Op mobiel is .rg-hero-v2__copy-wrap zelf display:contents (genereert geen
+   eigen box, hierboven), dus opacity daar heeft geen effect -- geen probleem:
+   de hoogtefit is toch alleen een desktop-mechanisme (zie fit() in JS). */
+.rg-hero-v2__copy-wrap { opacity: 0; }
+.rg-hero-v2.is-hero-klaar .rg-hero-v2__copy-wrap {
+  opacity: 1;
+  transition: opacity .3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-hero-v2.is-hero-klaar .rg-hero-v2__copy-wrap { transition: none; }
+}
+
 /* Mobiel: gecentreerd, subline weg (bespaart hoogte -> logo-slider komt
    eerder in beeld), USP's/Richard weg (staan elders al: topbar-USP's +
    CTA-blok onderaan met Richard). CTA-knoppen gecentreerd. */

@@ -603,6 +603,29 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) fit();
   });
+
+  /* .rg-hero-v2__copy-wrap (CSS) blijft onzichtbaar tot webfonts geladen
+     zijn: Playfair (titel) en Montserrat (kicker/sub/cta) renderen anders
+     eerst in de fallback-serif/sans -- andere lettermetriek, dus een andere
+     content-hoogte dan waar fit() hierboven al op gemeten heeft. Zonder dit
+     kan de copy-kolom na de font-swap alsnog verspringen (of, subtieler, de
+     slider net niet meer exact boven de vouw laten eindigen). Zelfde patroon
+     als .is-hero-klaar bij de Over-ons-hero (sectie 1.6b): één laatste
+     fit()-pas vlak vóór het onthullen, met een vangnet-timeout zodat er
+     nooit permanent niets te zien is. */
+  var onthuld = false;
+  function toonHero() {
+    if (onthuld) return;
+    onthuld = true;
+    fit();
+    hero.classList.add('is-hero-klaar');
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(toonHero);
+    setTimeout(toonHero, 1500);
+  } else {
+    toonHero();
+  }
 })();
 
 
