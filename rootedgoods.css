@@ -73,7 +73,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .content-main {
   padding: 0 !important;
-  padding-top: 143px !important; /* = werkelijke fixed-header hoogte (45.19 + 97.64) */
+  /* was 143px (45.19+97.64) -- header is inmiddels korter (logo 45px i.p.v.
+     eerdere 52px). Live gemeten op 2026-08-13: 131,39px totaal. .container-
+     main's eigen 20px padding is hier los van: dat is interne ruimte NA
+     deze reserve, niet dubbelop met de header-vrijstelling zelf. */
+  padding-top: 131.39px !important;
 }
 
 /* ------------------------------------------------------------
@@ -7603,13 +7607,22 @@ h1.rg-route__title em{
   display:flex;
   flex-direction:column;
   min-height:85vh;
-  max-width:1200px;
-  margin:0 auto;
+  width:100%;
   /* padding-top was clamp(3rem,8vw,7rem) -- dubbelop met .content-main's
-     eigen padding-top van 143px, die al de ruimte voor de fixed header
-     reserveert. Hier nog maar een klein beetje eigen lucht, geen tweede
-     grote reserve. */
-  padding:clamp(1rem, 2vw, 2rem) clamp(1.25rem, 4vw, 2rem) clamp(1.5rem, 4vw, 3rem);
+     eigen padding-top, die al de ruimte voor de fixed header reserveert.
+     Hier nog maar een klein beetje eigen lucht, geen tweede grote reserve.
+     Zijkanten: was max-width:1200px + margin:auto + eigen (kleinere) clamp
+     -- nu dezelfde opbouw als de homepage-hero (.rg-hero-v2__inner, sectie
+     38), zodat de tekst op precies dezelfde as begint. Alleen hier, niet op
+     .rg-route__track: de rest van de pagina (stops/team) blijft zijn eigen,
+     smallere 1200px-kolom houden -- dat vroeg de gebruiker expliciet. */
+  padding:clamp(1rem, 2vw, 2rem) clamp(1.25rem, 5vw, 2rem) clamp(1.5rem, 4vw, 3rem);
+}
+@media (min-width:992px){
+  .rg-route__intro{
+    padding-left:calc(max((100vw - 1600px) / 2, 0px) + 80px);
+    padding-right:calc(max((100vw - 1600px) / 2, 0px) + 80px);
+  }
 }
 .rg-route__intro-copy{ position:relative; z-index:2; }
 /* Europa-outline groot en ingezoomd achter de kop */
