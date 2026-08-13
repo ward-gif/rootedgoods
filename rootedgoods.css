@@ -8238,19 +8238,77 @@ h2.rg-route__team-title{
   padding-top:clamp(7rem, calc(8vw + 4rem), 11rem);
 }
 
-/* ---- 43.4 Afstand tussen stop 1-2-3 gelijkgetrokken — padding-bottom was
-   voor alle stops identiek (clamp(20rem,30vw,30rem)), maar doordat de
-   content per stop in hoogte verschilt (3-4 alinea's vs titel+wortels-grid)
-   liep de zichtbare dot-tot-dot-afstand toch uiteen: gemeten 815 / 1001 /
-   963px op 1600px breed. Hieronder per stop gecorrigeerd naar ~930px, met
-   behoud van dezelfde vw-gebaseerde responsiviteit. Stop 4 (--last) blijft
-   ongemoeid: die vloeit door naar het teamblok, geen "tussen stops"-afstand. */
-.rg-route__stop--left{
-  padding-bottom:clamp(27.2rem, calc(30vw + 7.2rem), 37.2rem);
+/* ---- 43.4 [INGETROKKEN, zie sectie 44 inleiding] Dit blok verschilde
+   padding-bottom per stop om de dot-tot-dot-afstand gelijk te trekken
+   (815/1001/963px -> ~930px overal). Bleek de verkeerde maatstaf: de
+   ZICHTBARE ruimte tussen twee stops is onderkant-vorige-content tot
+   bovenkant-volgende-content = padding-bottom(vorige) + padding-top(volgende).
+   Omdat padding-top voor elke stop al gelijk was, was de zichtbare ruimte
+   VOOR deze wijziging al overal gelijk (uniforme padding-bottom in sectie 42)
+   -- door hem hier per stop te laten verschillen brak dit blok die
+   gelijkheid juist, met een 2x verschil tussen stop 1-2 en stop 3-4 als
+   gevolg. Verwijderd; de basisregel in sectie 42 (.rg-route__stop{
+   padding-bottom:clamp(20rem,30vw,30rem) }) doet dit al goed voor alle
+   stops. Zie 44.3 voor de gecorrigeerde (niet-)wijziging. */
+
+/* ============================================================
+   44. OVER ONS — verbeterronde v3 (copy / uitlijning / ruimte)
+   ------------------------------------------------------------
+   Losse override-laag bovenop sectie 42 en 43, zelfde reden: in zijn geheel
+   terug te draaien zonder eerdere secties aan te raken.
+     44.1  Stop 3 links uitgelijnd (was gecentreerd, brak het ritme)
+     44.2  Teamnamen: leesbaarder (grotere, gedempte caption)
+     44.3  Afsluitende link naar de collectie
+   (3.1 uit v3 = intrekken van 43.4 hierboven, geen nieuwe regel nodig)
+   ============================================================ */
+
+/* ---- 44.1 Stop 3 links uitgelijnd, op dezelfde as als stop 1 ----
+   Stop 3 deelt de class --wide met stop 4 (voor de --x:50% dot-positie op de
+   route, die blijft ongemoeid: de route raakt hier niet aan). Alleen de
+   TEKST breekt naar links af; :not(--last) houdt stop 4 gecentreerd. */
+.rg-route__stop--wide:not(.rg-route__stop--last) .rg-route__body{
+  max-width:52rem;   /* breed genoeg voor de 3-koloms wortels-grid */
+  text-align:left;
 }
-.rg-route__stop--right{
-  padding-bottom:clamp(15.6rem, calc(30vw - 4.4rem), 25.6rem);
+.rg-route__stop--wide:not(.rg-route__stop--last) .rg-route__place{
+  justify-content:flex-start;
 }
-.rg-route__stop--wide:not(.rg-route__stop--last){
-  padding-bottom:clamp(17.9rem, calc(30vw - 2.1rem), 27.9rem);
+.rg-route__stop--wide:not(.rg-route__stop--last) .rg-route__body > p:not(.rg-route__place):not(.rg-route__punch){
+  max-width:none;
+  margin-left:0;
+  margin-right:0;
+}
+.rg-route__stop--wide:not(.rg-route__stop--last) .rg-route__roots{
+  text-align:left;
+}
+.rg-route__stop--wide:not(.rg-route__stop--last) .rg-route__root p{
+  margin-left:0;
+  margin-right:0;
+}
+
+/* ---- 44.2 Teamnamen leesbaarder — was .72rem (te klein om te lezen).
+   Naar de bestaande SMALL-tekstrol (41.12, .85rem) en het gedempte groen dat
+   elders al voor bijschriften/coördinaten dient. */
+.rg-route__collage-names{
+  font-size:.85rem;
+  color:var(--rg-muted);
+}
+
+/* ---- 44.3 Afsluitende link naar de collectie — secundair, geen knop. De
+   belafspraak blijft de enige primaire actie in dit blok. */
+.rg-route__end-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-top:clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight:600;
+  font-size:1rem;
+  color:var(--rg-cognac) !important;   /* Shopware-linkstijl overschrijft anders, zie .rg-route__contact-link hierboven */
+  text-decoration:none;
+  transition:gap .18s ease, color .18s ease;
+}
+.rg-route__end-link span{ transition:transform .18s ease; }
+.rg-route__end-link:hover{
+  gap:.6rem;
+  color:var(--rg-cognac-deep) !important;
 }

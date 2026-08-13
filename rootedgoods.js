@@ -1078,7 +1078,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     onthul('.rg-route__place, .rg-route__stop-title, .rg-route__stop p, ' +
            '.rg-route__roots, .rg-route__panel, .rg-route__team-title, ' +
-           '.rg-route__team-copy > p, .rg-route__contact, .rg-route__logo',
+           '.rg-route__team-copy > p, .rg-route__contact, .rg-route__logo, .rg-route__end-link',
            { y: 40, scale: .97, duur: .8, stagger: .07 });
 
     onthul('.rg-route__shot, .rg-route__collage-shot, .rg-route__collage-main',
