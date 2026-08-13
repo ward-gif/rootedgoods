@@ -645,6 +645,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- de route opbouwen ---------- */
   var routeStart = { x: 0, y: 0 }, routeEind = 0;
+  /* de tekstblokken in SVG-coordinaten: hiermee zakt niet alleen de lijn maar
+     ook het merkteken naar 30% zodra het achter tekst doorloopt */
+  var tekstVlakken = [];
 
   function bouwRoute() {
     /* origin = de SVG-box (schermbreed), niet de track: alleen zo is er naast
@@ -672,6 +675,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var trackC = track.getBoundingClientRect();
     var startX = trackC.left + trackC.width / 2 - tr.left;
     spine.push({ x: startX, y: Math.max(0, startY), marker: false });
+    /* Rechte aanloop: twee punten met dezelfde x geven in de monotone
+       interpolatie hellling 0 (zie hell[j]===0 hieronder), dus vertrekt de
+       route kaarsrecht naar beneden in plaats van meteen onder een hoek weg
+       te schieten. Het merkteken staat daardoor recht onder het pijltje van
+       de scroll-hint voordat de reis zijwaarts begint. */
+    var RECHT = 120;
+    spine.push({ x: startX, y: Math.max(0, startY) + RECHT, marker: false });
 
     dots.forEach(function (d) {
       var r = d.getBoundingClientRect();
@@ -789,7 +799,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function offset(yy) {
       /* aan het begin naar 0: de route start exact in het midden */
-      var inloop = Math.min(1, Math.max(0, (yy - yVan) / 300));
+      var inloop = Math.min(1, Math.max(0, (yy - yVan - RECHT) / 300));
       inloop = inloop * inloop * (3 - 2 * inloop);
       return (ruisBreed(yy) * 265 + ruisMid(yy) * 104 + ruisFijn(yy) * 15) * inloop;
     }
@@ -859,6 +869,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var defs = svg.querySelector('defs') || svg.insertBefore(
       document.createElementNS('http://www.w3.org/2000/svg', 'defs'), svg.firstChild);
     defs.innerHTML = '';
+    tekstVlakken = [];
     var NS = 'http://www.w3.org/2000/svg';
     var mask = document.createElementNS(NS, 'mask');
     mask.setAttribute('id', 'rg-route-mask');
@@ -872,12 +883,14 @@ document.addEventListener('DOMContentLoaded', function () {
     )).forEach(function (el) {
       var b = el.getBoundingClientRect();
       var re = document.createElementNS(NS, 'rect');
-      re.setAttribute('x', b.left - tr.left - 6);
-      re.setAttribute('y', b.top - tr.top - 6);
+      var x1 = b.left - tr.left - 6, y1 = b.top - tr.top - 6;
+      re.setAttribute('x', x1);
+      re.setAttribute('y', y1);
       re.setAttribute('width', b.width + 12);
       re.setAttribute('height', b.height + 12);
       re.setAttribute('fill', '#4d4d4d');   /* ~30% */
       mask.appendChild(re);
+      tekstVlakken.push({ x1: x1, y1: y1, x2: x1 + b.width + 12, y2: y1 + b.height + 12 });
     });
     defs.appendChild(mask);
     base.setAttribute('mask', 'url(#rg-route-mask)');
@@ -991,7 +1004,17 @@ document.addEventListener('DOMContentLoaded', function () {
            kaarsrecht staat en pas gaat rollen als de reis begint */
         rotation: Math.max(0, afstand - 12) * 0.9
       });
+      /* achter tekst zakt het merkteken mee naar 30%, net als de lijn: de
+         reiziger verdwijnt onder het verhaal door in plaats van eroverheen */
+      var achter = tekstVlakken.some(function (v) {
+        return punt.x > v.x1 && punt.x < v.x2 && punt.y > v.y1 && punt.y < v.y2;
+      });
+      if (achter !== markVaag) {
+        markVaag = achter;
+        gsap.to(mark, { opacity: achter ? 0.3 : 1, duration: 0.25, ease: 'power2.out' });
+      }
     }
+    var markVaag = false;
     if (mark) gsap.set(mark, { top: 0, left: 0 });
     zetMerkteken(0);
 
