@@ -5072,6 +5072,7 @@ img.rg-europe-map__svg {
   align-items: center;
   justify-content: center;
   aspect-ratio: 3 / 2;
+  min-width: 0;
   padding: 1.5rem;
   background: #ffffff;
   border: 1px solid #EAE3D7;
@@ -5082,6 +5083,7 @@ img.rg-europe-map__svg {
 .rg-brand-tile__logo {
   max-width: 62%;
   max-height: 52%;
+  min-width: 0;
   width: auto;
   height: auto;
   object-fit: contain;
