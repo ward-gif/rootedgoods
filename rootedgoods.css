@@ -2967,6 +2967,7 @@ body.is-ctl-product {
 
 .rg-cat-tile__title {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
   color: #ffffff !important;
