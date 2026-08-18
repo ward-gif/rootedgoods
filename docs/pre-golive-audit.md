@@ -34,7 +34,7 @@
 - **Contrast**: cognac `#CA853F` op crème `#F7F5F2` ≈ 2.8:1 → zakt onder WCAG AA (4.5:1) voor tekst-eyebrows (site-breed). Donkerder oker of groter/vetter overwegen.
 
 ## 🧩 CMS-content (gevonden tijdens mobile-audit 14 aug 2026)
-1. **Dubbel contentblok op `/onboarding-welkomstpakket`**: de sectie "Services & ontzorging" + de donkergroene "Van idee tot ingepakt"-CTA staat twee keer achter elkaar onderaan de pagina (de andere 6 thema-pagina's hebben dit niet). Lijkt een CMS-plak-fout op deze ene pagina — losse check/opschoning in Shopware.
+1. ~~Dubbel contentblok op `/onboarding-welkomstpakket`~~ — **opgelost** (18 aug, Ward heeft het dubbele blok uit het CMS verwijderd).
 2. **Verouderde links in het "Services & ontzorging"-blok op de homepage**: linkt naar `/fulfillment-warehousing` en `/verzending-meerdere-locaties`; de echte pagina's heten `/warehousing-fulfillment` en `/verzending-naar-meerdere-locaties` (bevestigd via de `/services/`-pagina). `home-services-blok.html` in de repo heeft al de juiste links — het live CMS-blok op de homepage is een oudere versie die opnieuw geplakt moet worden.
 
 ## 📊 Prioritering
