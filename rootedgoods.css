@@ -3643,16 +3643,31 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
   line-height: 1.6;
   margin: 0;
 }
+/* Herzien (aug 2026): geen twee gelijke witte kaarten meer. Links kaal
+   (crème, geen achtergrond) en rechts een donkergroen "boslicht"-paneel
+   (grain-gradient-beeld, zie sectie BOSLICHT verderop) -- ongelijk
+   gewicht i.p.v. twee identieke dozen. Zelfde bestaande HTML-structuur
+   (.rg-compare__list/__item/b/span), alleen de iconen in de <li>'s
+   moeten opnieuw geplakt worden (dunne lijn-iconen i.p.v. cirkel+kruis/
+   vink), en er komt één "Ontdek de producten"-link onderaan de wél-kolom. */
 .rg-compare__cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: stretch;
 }
-.rg-compare__col {
-  background: #ffffff;
-  border: 1px solid #EAE3D7;
-  border-radius: 18px;
-  padding: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+.rg-compare__col--no {
+  padding: clamp(.5rem, 1.5vw, 1.25rem) 0;
+  align-self: center;
+}
+.rg-compare__col--yes {
+  background-image: url('/media/17/9e/cb/1787064499/rg-panel-grain4%20small.jpg');
+  padding: clamp(1.75rem, 2vw + 1rem, 2.75rem) clamp(1.75rem, 3vw, 2.5rem);
+  margin: clamp(-1.5rem, -2vw, -1rem) 0;   /* reikt iets boven/onder de kale kant uit */
+  border-radius: var(--rg-r-xp, 20px);
+  box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
+  overflow: hidden;
+  isolation: isolate;
 }
 .rg-compare__col-title {
   font-family: 'Montserrat', sans-serif;
@@ -3663,7 +3678,7 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
   margin: 0 0 1.1rem;
 }
 .rg-compare__col--no .rg-compare__col-title { color: #8a8073; }
-.rg-compare__col--yes .rg-compare__col-title { color: #CA853F; }
+.rg-compare__col--yes .rg-compare__col-title { color: var(--rg-peach); }
 .rg-compare__list { list-style: none; margin: 0; padding: 0; }
 .rg-compare__item {
   display: flex;
@@ -3671,16 +3686,17 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
   padding: 0.9rem 0;
   border-top: 1px solid rgba(45, 69, 40, 0.08);
 }
+.rg-compare__col--yes .rg-compare__item { border-top-color: rgba(247, 245, 242, .16); }
 .rg-compare__item:first-child { padding-top: 0; border-top: none; }
 .rg-compare__item:last-child { padding-bottom: 0; }
 .rg-compare__ico {
   flex: none;
-  width: 1.35rem;
-  height: 1.35rem;
   margin-top: 0.1rem;
 }
-.rg-compare__col--no .rg-compare__ico { color: #b3a898; }   /* gedempt: geen 'fout-rood', past bij de rustige toon */
-.rg-compare__col--yes .rg-compare__ico { color: #CA853F; }  /* cognac vink, zelfde als de rest van de site */
+/* Kruis en vink kregen expres een ander gewicht i.p.v. dezelfde cirkel
+   met ander icoontje: kruis klein/dun/grijs, vink groter/dikker/warm. */
+.rg-compare__col--no .rg-compare__ico { width: 1.1rem; height: 1.1rem; margin-top: .28rem; color: #b3a898; }
+.rg-compare__col--yes .rg-compare__ico { width: 1.4rem; height: 1.4rem; margin-top: .2rem; color: var(--rg-peach); }
 .rg-compare__ico svg { width: 100%; height: 100%; display: block; }
 .rg-compare__item b {
   display: block;
@@ -3691,13 +3707,66 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
   line-height: 1.2;
   margin-bottom: 0.15rem;
 }
+.rg-compare__col--yes .rg-compare__item b { color: #fff; font-size: 1.12rem; }
 .rg-compare__item span {
   color: #4a5a44;
   font-size: 0.92rem;
   line-height: 1.5;
 }
+.rg-compare__col--yes .rg-compare__item span { color: rgba(247, 245, 242, .85); }
+
+/* Eén subtiele CTA in het paneel zelf i.p.v. losse knoppen onder de
+   sectie -- hairline erboven, zelfde stijl als de item-scheiding. Link
+   is de bestaande .btn.btn-outline-primary ("kale tekstlink + auto-pijl",
+   ook onder het services-blok), alleen de kleur overruled voor het
+   donkere paneel (die knop is standaard donkergroen/cognac-op-hover,
+   bedoeld voor een crème achtergrond). */
+.rg-compare__panel-foot {
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(247, 245, 242, .16);
+}
+.rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon) {
+  color: var(--rg-peach) !important;
+}
+.rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover {
+  color: var(--rg-cognac-light) !important;
+}
 @media (max-width: 700px) {
-  .rg-compare__cols { grid-template-columns: 1fr; }
+  .rg-compare__cols { grid-template-columns: 1fr; row-gap: 1.75rem; }
+  .rg-compare__col--yes { margin: 0; }
+}
+
+/* ============================================================
+   27d. BOSLICHT — grain-gradient-beeld op de donkere panelen
+   ============================================================
+   Vervangt de vlakke groene achtergrond/radial-gradient-truc op de vier
+   donkere panelen (eind-CTA, over-ons-belofte, service-paneel, de wél-
+   kolom hierboven) door een echt grain-gradient-beeld (aangeleverd,
+   Shopware-media). Elk paneel z'n eigen variant, bewust niet overal
+   dezelfde: eind-CTA en service-paneel staan namelijk samen op elke
+   service-detailpagina en zouden als kopieën ogen met identiek beeld.
+   Beeld regelt zelf licht + korrel, dus geen aparte CSS-gradient/noise-
+   laag meer nodig. Trage, oneindige drift via background-position
+   (CSS-only, geen JS, GPU-vriendelijk). Reduced-motion: stilstaand. */
+.rg-endcta__card,
+.rg-route__panel,
+.rg-sd__panel,
+.rg-compare__col--yes {
+  background-size: 118% 118%;
+  background-position: 28% 42%;
+  background-repeat: no-repeat;
+  animation: rgBoslichtDrift 32s ease-in-out infinite alternate;
+}
+@keyframes rgBoslichtDrift {
+  from { background-position: 24% 38%; background-size: 118% 118%; }
+  to   { background-position: 34% 48%; background-size: 126% 126%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-endcta__card,
+  .rg-route__panel,
+  .rg-sd__panel,
+  .rg-compare__col--yes { animation: none !important; }
 }
 
 /* ============================================================
@@ -5822,9 +5891,11 @@ h2.rg-endcta__title em,
 .rg-endcta__card {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   max-width: 860px;
   margin: 0 auto;
-  background: #2d4528;
+  background-color: #2d4528;   /* fallback zolang het beeld nog laadt */
+  background-image: url('/media/eb/70/18/1787064499/rg-panel-grain5.jpg');
   border-radius: 20px;
   padding: clamp(2.4rem, 2rem + 2vw, 3.4rem) clamp(1.5rem, 4vw, 3rem);
   display: flex;
@@ -5833,15 +5904,9 @@ h2.rg-endcta__title em,
   text-align: center;
   box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
-/* Zachte lichtval bovenin — diepte zonder beeld. */
-.rg-endcta__card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(255, 255, 255, 0.09), transparent 68%);
-}
+/* De oude fake-lichtval-overlay (radial-gradient(...rgba(255,255,255,.09))
+   is vervangen door het echte grain-gradient-beeld hierboven -- het beeld
+   regelt zelf licht + diepte, een tweede laag erboven zou dubbelop komen. */
 .rg-endcta__card > * { position: relative; z-index: 1; }
 
 .rg-endcta__sub {
@@ -6352,14 +6417,21 @@ h2.rg-sd__row-title,
 
 /* ---- Donkergroen checklist-paneel ----
    Compacter dan de sectie-breedte (zelfde gedachte als de eind-CTA-
-   kaart) + zachte lichtgradient bovenin voor diepte op het egale vlak. */
+   kaart). Was een radial-gradient-truc voor diepte, nu het echte
+   grain-gradient-beeld (zie sectie BOSLICHT) -- eigen variant, want
+   dit paneel staat op dezelfde pagina als de eind-CTA. */
 .rg-sd__panel {
-  background: radial-gradient(120% 90% at 50% -10%, #3a5533 0%, #2d4528 60%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #2d4528;
+  background-image: url('/media/ff/d1/c7/1787064499/rg-panel-grain2%20small.jpg');
   border-radius: 20px;
   padding: clamp(2.4rem, 2rem + 2vw, 3.6rem) clamp(1.5rem, 4vw, 3.5rem);
   max-width: 1000px;
   margin: 0 auto clamp(3rem, 3rem + 3vw, 6rem);
   text-align: center;
+  box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
 .rg-sd__panel .rg-sd__eyebrow { color: #e9c9a9; }
 h2.rg-sd__panel-title,
@@ -8021,15 +8093,23 @@ h2.rg-route__stop-title{
   max-width:30ch;
 }
 
-/* ---- Belofte-paneel (stop 4) ---- */
+/* ---- Belofte-paneel (stop 4) ----
+   Was een vlakke var(--rg-green), nu het echte grain-gradient-beeld
+   (zie sectie BOSLICHT), eigen variant (zelfde familie als de wél-
+   kolom van .rg-compare -- allebei tekst-linksboven). */
 .rg-route__panel{
-  background:var(--rg-green);
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background-color:var(--rg-green);
+  background-image:url('/media/49/c2/fa/1787064499/rg-panel-grain4.jpg');
   border-radius:var(--rg-r-xp);
   padding:clamp(1.75rem, 4vw, 3.25rem);
   color:#fff;
   text-align:left;
   max-width:60rem;
   margin:0 auto;
+  box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
 h3.rg-route__panel-title{
   font-family:'Playfair Display',Georgia,serif !important;
