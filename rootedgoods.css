@@ -4296,9 +4296,10 @@ h2.rg-statement__title em { font-style: italic; font-weight: 600; }
 }
 /* Geruststellende microcopy onder de knop — exact dezelfde styling als de
    trust-strip onder de hero-knop (.rg-hero-v2__trust): donkergroen, .84rem,
-   weight 500, cognac-vinkje. */
+   weight 500, cognac-vinkje. Marge onder de knop ook gelijk aan de hero
+   (1.5rem, zelfde als --rg-s3 in .rg-hero-v2__cta). */
 .rg-statement__reassurance {
-  margin: var(--rg-space-sm) 0 0;   /* knop -> reassurance */
+  margin: 1.5rem 0 0;   /* knop -> reassurance */
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -5663,7 +5664,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   font-size: .84rem; font-weight: 500; color: #5d6d55;
 }
 .rg-hero-v2__trust svg { width: 1rem; height: 1rem; flex: none; color: var(--rg-cognac-light); }
-.rg-hero-v2__trust b { font-weight: 700; }
 .rg-hero-v2__t { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
 .rg-hero-v2__t + .rg-hero-v2__t::before { content: "\00B7"; color: var(--rg-cognac-light); margin: 0 .6rem; }
 
