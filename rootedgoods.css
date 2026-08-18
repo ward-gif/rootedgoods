@@ -5950,7 +5950,6 @@ h2.rg-endcta__title em,
   color: #ffffff;
 }
 .rg-endcta__trust svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
-.rg-endcta__trust b { font-weight: 700; }
 .rg-endcta__t { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
 .rg-endcta__t + .rg-endcta__t::before { content: "\00B7"; color: #CA853F; margin: 0 0.6rem; }
 
