@@ -6891,7 +6891,7 @@ h2.rg-faq-cat,
   box-shadow: 0 2px 6px -2px rgba(45, 69, 40, 0.4);
 }
 .rg-team__avatars img + img { margin-left: -14px; }
-.rg-team__text { display: flex; flex-direction: column; }
+.rg-team__text { display: flex; flex-direction: column; text-align: left; }
 .rg-team__title {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
