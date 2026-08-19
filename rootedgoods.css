@@ -6083,7 +6083,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    ============================================================ */
 .rg-endcta {
   position: relative;
-  max-width: 1440px;
+  max-width: 1600px;   /* was 1440px -- alle andere secties op de pagina gebruiken 1600px, dit stond er meetbaar 40px naast */
   margin: clamp(4.5rem, 9vh, 7rem) auto 3.5rem;
   padding: 0 40px;
 }
@@ -6698,10 +6698,16 @@ h2.rg-sd__panel-title,
    kolommen vragen naast elkaar, net als de rest van de site-brede
    links-uitlijn-voorkeur. .rg-sd__head en .rg-faq-cat (categorie-koppen
    op de volledige /faq-pagina) spannen de volle breedte, de losse
-   .rg-sd__faq-item-vragen vloeien vanzelf 2-per-rij in de grid. */
+   .rg-sd__faq-item-vragen vloeien vanzelf 2-per-rij in de grid.
+   Max-width/padding hier bewust GELIJK aan .rg-page-hero/.rg-block-title/
+   .rg-feature-row/.rg-compare (1600px + 40px) -- op thema-pagina's staat
+   dit blok los (geen .rg-sd-wrapper eromheen), dus zonder eigen breedte-
+   systeem viel de linkerrand niet gelijk met de rest van de pagina. */
 .rg-sd__faq {
-  max-width: none;
-  margin: 0 0 clamp(3rem, 3rem + 2vw, 5rem);
+  max-width: 1600px;
+  margin: 0 auto clamp(3rem, 3rem + 2vw, 5rem);
+  padding: 0 40px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 2rem;

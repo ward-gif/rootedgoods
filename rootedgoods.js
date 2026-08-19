@@ -196,8 +196,11 @@ document.addEventListener('DOMContentLoaded', function () {
        standaard 300+30=330px paste er op laptop (~1200-1270px slider) maar 3.
        Verlaagd naar 250+30=280px: laptop floor(~1230/280)=4, en desktop
        (geboxed op max ~1360px, nooit breder) floor(1360/280)=4 -> nooit 5.
-       Schaalt daaronder netjes terug naar 3/2/1. */
-    opts.productboxMinWidth = '250px';
+       Schaalt daaronder netjes terug naar 3/2/1. Op telefoonbreedte gaf dat
+       exact 1 volle-breedte tegel -- geen enkele hint dat het een slider is.
+       Kleinere waarde specifiek onder 576px: 2 tegels zichtbaar (met de nu
+       ook zichtbare pijl duidelijk genoeg dat er meer te zien is). */
+    opts.productboxMinWidth = window.innerWidth < 576 ? '130px' : '250px';
 
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
