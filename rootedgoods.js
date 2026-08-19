@@ -1091,21 +1091,32 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!('requestAnimationFrame' in window)) { root.classList.add('is-klaar'); return; }
 
   var CDN = 'https://cdn.jsdelivr.net/';
-  [CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
-   CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js']
-    .reduce(function (p, src) {
-      return p.then(function () {
-        return new Promise(function (ok, fout) {
-          var sc = document.createElement('script');
-          sc.src = src; sc.async = false; sc.onload = ok; sc.onerror = fout;
-          document.head.appendChild(sc);
-        });
-      });
-    }, Promise.resolve()).then(start).catch(function () {
+  /* PERF: beide scripts meteen toevoegen (async=false bewaart de
+     uitvoervolgorde) i.p.v. via een reduce-keten waarbij ScrollTrigger pas
+     ging laden ná gsap's onload -- dat maakte er twee sequentiële
+     netwerk-round-trips van i.p.v. één parallelle, met name merkbaar op
+     mobiele verbindingen met hogere latency. */
+  var gsapScripts = [
+    CDN + 'npm/gsap@3.13.0/dist/gsap.min.js',
+    CDN + 'npm/gsap@3.13.0/dist/ScrollTrigger.min.js'
+  ];
+  var gsapGeladen = 0, gsapFout = false;
+  gsapScripts.forEach(function (src) {
+    var sc = document.createElement('script');
+    sc.src = src; sc.async = false;
+    sc.onload = function () {
+      if (gsapFout) return;
+      if (++gsapGeladen === gsapScripts.length) start();
+    };
+    sc.onerror = function () {
+      if (gsapFout) return;
+      gsapFout = true;
       /* GSAP kon niet laden -- lijn/merkteken alsnog tonen (statisch, zonder
          scroll-animatie) i.p.v. ze voorgoed onzichtbaar te laten */
       root.classList.add('is-klaar');
-    });
+    };
+    document.head.appendChild(sc);
+  });
 
   function start() {
     var gsap = window.gsap, ST = window.ScrollTrigger;
@@ -1244,33 +1255,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* Beelden veranderen de paginahoogte. Zonder deze herberekening staan de
        triggers op de (kortere) beginlayout en zijn ze al afgevuurd voordat je
-       scrolt: dan is bij het landen al tekst en beeld zichtbaar. */
+       scrolt: dan is bij het landen al tekst en beeld zichtbaar.
+
+       PERF: bouwRoute() (400x getPointAtLength voor de opzoektabel) niet
+       hier direct aanroepen -- ST.refresh() hieronder triggert 'm toch al
+       via de 'refresh'-listener (regel hierboven), dus een directe aanroep
+       erbovenop bouwde de tabel twee keer per herberekening. Met 3
+       onafhankelijke triggers (fonts, load, alle beelden) die vaak vlak na
+       elkaar afgaan op mobiel liep dit snel op tot een merkbare hapering
+       vlak na het laden, precies wanneer iemand meteen begint te scrollen. */
     function herbereken() {
-      bouwRoute();
+      ST.refresh();
       /* het pad is nieuw: lengte opnieuw meten en merkteken terugzetten op de
          huidige voortgang, anders blijft het op zijn oude plek hangen */
       L = draw.getTotalLength();
       gsap.set(draw, { strokeDasharray: L });
-      ST.refresh();
       var t = ST.getAll().find(function (x) { return x.vars && x.vars.scrub; });
       var p = t ? t.progress : 0;
       gsap.set(draw, { strokeDashoffset: L * (1 - p) });
       zetMerkteken(p);
     }
-    if (document.readyState === 'complete') herbereken();
-    else window.addEventListener('load', herbereken);
+    /* PERF: debounce zodat meerdere triggers die vlak na elkaar afgaan
+       (fonts.ready, window load, laatste beeld klaar -- vaak binnen
+       dezelfde tick op een snel netwerk) in één herbereken() landen i.p.v.
+       elk apart de opzoektabel opnieuw te bouwen. */
+    var herberekenGepland = false;
+    function herberekenGedebounced() {
+      if (herberekenGepland) return;
+      herberekenGepland = true;
+      requestAnimationFrame(function () { herberekenGepland = false; herbereken(); });
+    }
+    if (document.readyState === 'complete') herberekenGedebounced();
+    else window.addEventListener('load', herberekenGedebounced);
     /* Playfair Display kan nog niet geladen zijn op het moment dat de
        maskervlakken gemeten worden -- de koppen renderen dan tijdelijk in
        de fallback-serif (Georgia), die andere letterbreedtes heeft. Zonder
        deze herberekening bleef het maskervlak op de smallere/bredere
        fallback-maat staan, ook nadat het echte lettertype was ingeladen. */
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(herbereken);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(herberekenGedebounced);
     var beelden = root.querySelectorAll('img');
     var klaar = 0;
     beelden.forEach(function (im) {
       if (im.complete) { klaar++; return; }
-      im.addEventListener('load', function () { if (++klaar === beelden.length) herbereken(); }, { once: true });
-      im.addEventListener('error', function () { if (++klaar === beelden.length) herbereken(); }, { once: true });
+      im.addEventListener('load', function () { if (++klaar === beelden.length) herberekenGedebounced(); }, { once: true });
+      im.addEventListener('error', function () { if (++klaar === beelden.length) herberekenGedebounced(); }, { once: true });
     });
   }
 })();
