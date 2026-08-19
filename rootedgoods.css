@@ -626,21 +626,21 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     display: flex;
     flex-direction: column;
   }
-  .navigation-offcanvas-list-item:has(a[title="Thema's"]) {
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) {
     order: -1;
     margin-bottom: 0.5rem;
   }
-  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link {
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link {
     background: linear-gradient(135deg, #2d4528, #3a5533);
     color: #fff !important;
     border-radius: 14px;
     padding: 1rem 1.1rem !important;
     font-weight: 700;
   }
-  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link [itemprop="name"] {
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link [itemprop="name"] {
     color: #fff !important;
   }
-  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link::after {
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link::after {
     content: "Ontdek cadeaus per gelegenheid";
     display: block;
     font-size: 0.78rem;
@@ -648,11 +648,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     color: var(--rg-peach, #e9c9a9);
     margin-top: 0.2rem;
   }
-  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link-icon svg use {
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link-icon svg use {
     fill: #fff !important;
   }
-  /* Shopware's categorieboom bevat Thema's dubbel (zelfde link 2x) --
-     backend-configuratie, geen CSS-fix hiervoor; gemeld bij Ward. */
+  /* "Thema's" komt bewust 2x voor, met verschillend doel: /alle-thema-s
+     is onze eigen thema-overzichtpagina (linkt naar de custom LP's,
+     hierboven uitgelicht), /thema-s/ is een gewone Shopware-productcategorie
+     (submenu, blijft gewoon tussen de andere categorieën staan). Voor
+     duidelijkheid krijgt de uitgelichte kaart een ander label, zie
+     rootedgoods.js 2.1c. */
 
   /* ---- Snelkoppelingen (FAQ/Contact/Offerte) -- JS vult deze nav,
      hier alleen de styling. Zie rootedgoods.js 2.1c. ---- */
@@ -672,6 +676,48 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     font-weight: 600;
     color: #ad6331 !important;
     text-decoration: none !important;
+  }
+
+  /* ---- Categorieën-toggle (JS bouwt de knop, zie rootedgoods.js 2.1c) ----
+     Ingeklapt: alleen de Thema's-kaart zichtbaar, niet meteen alle 13
+     productcategorieën. */
+  .rg-offcanvas-cats-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+    margin: 0.4rem 0 0.2rem;
+    padding: 0.7rem 0.2rem;
+    background: none;
+    border: none;
+    border-top: 1px solid #EAE3D7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2d4528;
+    text-align: left;
+    cursor: pointer;
+  }
+  .rg-offcanvas-cats-toggle::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+    transition: transform 0.2s ease;
+  }
+  .rg-offcanvas-cats-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+  .navigation-offcanvas-list.rg-cats-collapsed .navigation-offcanvas-list-item:not(:has(a[href$="/alle-thema-s"])) {
+    display: none;
+  }
+  /* .navigation-offcanvas-headline is een sibling van de lijst, geen kind
+     -- via de gedeelde ouder verbergen zolang de lijst is ingeklapt. */
+  .navigation-offcanvas-overlay-content:has(.navigation-offcanvas-list.rg-cats-collapsed) .navigation-offcanvas-headline {
+    display: none;
   }
 }
 
@@ -693,12 +739,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 
 /* Flyout — categorie afbeeldingen met overlay.
    Tile is een <a> met background-image (geen <img>), dus we sturen
-   via background-size: cover en een vaste 10:3 verhouding voor de
-   400x120 layout. Afgeronde hoeken + subtiele hover-zoom. */
+   via background-size: cover. Was 10:3 (brede banner-stroken) op een
+   col-3-grid (4 per rij); dat sneed veel van elke foto weg en oogde
+   leeg bij tegels zonder achtergrondbeeld. Nu vierkant op 5 per rij:
+   meer tegels tegelijk in beeld, en een vierkant kader toont
+   verhoudingsgewijs meer van de bronfoto dan een brede banner. */
+.navigation-flyout-category {
+  flex: 0 0 20% !important;
+  max-width: 20% !important;
+}
 .navigation-flyout-category .navigation-item {
   position: relative;
   display: block;
-  aspect-ratio: 10 / 3;
+  aspect-ratio: 1 / 1;
   border-radius: 10px;
   overflow: hidden;
   background-size: cover !important;
@@ -743,8 +796,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .navigation-flyout-content::after {
   content: '';
   display: block;
-  flex: 0 0 25%;
-  max-width: 25%;
+  flex: 0 0 20%;   /* zelfde breedte als .navigation-flyout-category, i.v.m. 5-per-rij hierboven */
+  max-width: 20%;
 }
 .navigation-flyout .row.navigation-flyout-content {
   position: relative;
@@ -8459,11 +8512,15 @@ h2.rg-route__team-title{
 
 /* ---- MOBIEL / TABLET: verticale rail ---- */
 @media (max-width:991px){
-  .rg-route__stop{ --x:28px; padding-left:68px; }
+  /* Was --x:28px + padding-left:68px: de dot+rail eiste zoveel ruimte dat
+     de tekst duidelijk naar rechts verschoof t.o.v. de rest van de pagina
+     (proloog/team staan wel gewoon symmetrisch). Kleinere dot + veel minder
+     padding -> bijna gelijke marge links/rechts, rail blijft zichtbaar. */
+  .rg-route__stop{ --x:16px; padding-left:32px; }
   .rg-route__stop--left,
   .rg-route__stop--right,
-  .rg-route__stop--wide{ --x:28px; }
-  .rg-route__dot{ width:40px; height:40px; font-size:.95rem; }
+  .rg-route__stop--wide{ --x:16px; }
+  .rg-route__dot{ width:30px; height:30px; font-size:.8rem; box-shadow:0 0 0 4px var(--rg-cream); }
   .rg-route__dot.is-on{ transform:scale(1.12); }
   .rg-route__body,
   .rg-route__stop--right .rg-route__body{ max-width:none; margin-left:0; padding-top:1.5rem; }

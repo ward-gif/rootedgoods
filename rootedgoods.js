@@ -181,11 +181,11 @@ document.addEventListener('DOMContentLoaded', function () {
  * LET OP: dit moet vóór plugin-init draaien, dus GEEN DOMContentLoaded-wrap. */
 (function () {
   function patchOptions(el) {
-    if (!el || el.dataset.rgLoopPatched) return;
+    if (!el || el.dataset.rgLoopPatched) return false;
     var raw = el.getAttribute('data-product-slider-options');
-    if (!raw) return;
+    if (!raw) return false;
     var opts;
-    try { opts = JSON.parse(raw); } catch (e) { return; }
+    try { opts = JSON.parse(raw); } catch (e) { return false; }
     opts.slider = opts.slider || {};
     opts.slider.loop = false;       // geen clones meer
     opts.slider.rewind = false;     // niet terugspringen naar begin
@@ -201,22 +201,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
+    return true;
   }
 
-  function scan() {
-    document
-      .querySelectorAll('.home-productslider [data-product-slider-options]')
-      .forEach(patchOptions);
+  var SELECTOR = '.home-productslider [data-product-slider-options]';
+
+  function scanNode(root, hits) {
+    if (root.nodeType !== 1) return;
+    if (root.matches && root.matches(SELECTOR) && patchOptions(root)) hits.push(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll(SELECTOR).forEach(function (el) {
+        if (patchOptions(el)) hits.push(el);
+      });
+    }
   }
 
   // 1. Direct proberen (als het element al geparsed is).
-  scan();
+  var hits = [];
+  document.querySelectorAll(SELECTOR).forEach(function (el) {
+    if (patchOptions(el)) hits.push(el);
+  });
 
-  // 2. En opvangen zodra het verschijnt, vóór de plugin het leest.
-  if (window.MutationObserver) {
-    var obs = new MutationObserver(scan);
+  /* 2. En opvangen zodra het verschijnt, vóór de plugin het leest.
+     PERF: dit draaide voorheen op ELKE pagina (niet alleen de homepage,
+     waar het element daadwerkelijk voorkomt) en deed bij ELKE DOM-mutatie
+     tijdens het parsen een volledige document-brede querySelectorAll --
+     tientallen/honderden keren tijdens een normale pageload, precies het
+     patroon dat de pre-golive-audit als zwaarste INP-post aanmerkte. Nu:
+     alleen de daadwerkelijk toegevoegde nodes per mutatie checken, en de
+     observer meteen stoppen zodra het element gevonden is (bestaat max 1x
+     per pagina) i.p.v. te wachten tot window.load. */
+  if (!hits.length && window.MutationObserver) {
+    var obs = new MutationObserver(function (mutations) {
+      var found = [];
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) { scanNode(node, found); });
+      });
+      if (found.length) obs.disconnect();
+    });
     obs.observe(document.documentElement, { childList: true, subtree: true });
-    // Na load is de plugin geïnit; observer mag stoppen.
     window.addEventListener('load', function () { obs.disconnect(); });
   }
 })();
@@ -376,9 +399,51 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-  vulSnelkoppelingen();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
+  /* "Thema's" komt 2x voor met verschillend doel (zie CSS-comment bij
+     .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"])) --
+     alleen de uitgelichte kaart (onze eigen overzichtpagina) krijgt hier
+     een ander label, zodat 'ie niet verward wordt met de gewone
+     productcategorie "Thema's" verderop in de lijst. */
+  function labelThemaKaart() {
+    var link = document.querySelector('.navigation-offcanvas-list-item a[href$="/alle-thema-s"] [itemprop="name"]');
+    if (link && !link.dataset.rgRelabeled) {
+      link.dataset.rgRelabeled = '1';
+      link.textContent = 'Shop op thema';
+    }
+  }
+
+  /* Categorieën standaard ingeklapt: alleen de thema-kaart + een toggle
+     zichtbaar, niet meteen alle 13 productcategorieën uitgestald. Puur een
+     class-toggle op de bestaande <ul> (niets verplaatst/herbouwd) zodat
+     Shopware's eigen submenu-navigatie (data-href, laadt een volgend
+     niveau in dezelfde lijst) intact blijft. */
+  function bouwCategorieToggle() {
+    document.querySelectorAll('.navigation-offcanvas-list').forEach(function (list) {
+      if (list.dataset.rgToggle) return;
+      list.dataset.rgToggle = '1';
+      list.classList.add('rg-cats-collapsed');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'rg-offcanvas-cats-toggle';
+      btn.textContent = 'Alle categorieën';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var open = list.classList.toggle('rg-cats-collapsed') === false;
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Verberg categorieën' : 'Alle categorieën';
+      });
+      list.parentNode.insertBefore(btn, list);
+    });
+  }
+
+  function offcanvasKlaar() {
+    vulSnelkoppelingen();
+    labelThemaKaart();
+    bouwCategorieToggle();
+  }
+  offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
   document.querySelectorAll('[data-offcanvas-menu="true"]').forEach(function (btn) {
-    btn.addEventListener('click', function () { setTimeout(vulSnelkoppelingen, 0); });
+    btn.addEventListener('click', function () { setTimeout(offcanvasKlaar, 0); });
   });
 
   var zoekCollapse = document.getElementById('searchCollapse');
