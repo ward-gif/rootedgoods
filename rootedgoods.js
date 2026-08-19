@@ -482,6 +482,45 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 2.1d Header <576px: hamburger / logo / zoeken+mandje op één rij
+ * Bootstrap's kolommen (.header-logo-col, .header-search-col,
+ * .header-actions-col) hebben de hamburger-knop, het logo en de zoek-/
+ * mandje-iconen elk in een ANDERE kolom, meerdere niveaus diep genest --
+ * met puur CSS (grid/order) is het logo niet echt CENTREREN mogelijk
+ * zonder de knoppen letterlijk te verplaatsen (de linker- en rechtergroep
+ * zijn niet even breed, dus margin:auto-centrering klopt niet echt).
+ * Verplaatst daarom knopreferenties (niet klonen: click-handlers/data-
+ * attributen blijven intact, alleen de positie in de DOM verandert) in
+ * een nieuwe, kale flex-rij. De zoek-collapse (het formulier zelf) blijft
+ * op z'n oude plek staan -- klapt daar nog steeds netjes open/dicht, de
+ * knop hoeft er niet naast te staan om 'm te bedienen. */
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth >= 576) return;
+  var headerRow = document.querySelector('.header-row');
+  if (!headerRow || headerRow.dataset.rgRebuilt) return;
+  var hamburger = headerRow.querySelector('.header-actions-col .menu-button');
+  var logo = headerRow.querySelector('.header-logo-col');
+  var searchToggle = headerRow.querySelector('.header-actions-col .search-toggle');
+  var cart = headerRow.querySelector('.header-actions-col .header-cart');
+  if (!hamburger || !logo || !searchToggle || !cart) return;
+  headerRow.dataset.rgRebuilt = '1';
+
+  var row = document.createElement('div');
+  row.className = 'rg-mobile-header-row';
+  var left = document.createElement('div');
+  left.className = 'rg-mobile-header-row__side';
+  var right = document.createElement('div');
+  right.className = 'rg-mobile-header-row__side';
+  left.appendChild(hamburger);
+  right.appendChild(searchToggle);
+  right.appendChild(cart);
+  row.appendChild(left);
+  row.appendChild(logo);
+  row.appendChild(right);
+  headerRow.parentNode.insertBefore(row, headerRow);
+});
+
+
 /* ---- 2.2 Productslider — hele tegel klikbaar
  * Onderscheidt klik vs swipe via mousedown/click delta zodat sliden niet
  * per ongeluk navigatie triggert. */

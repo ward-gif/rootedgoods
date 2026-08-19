@@ -591,28 +591,37 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
 }
 
-/* Onder 576px (Bootstrap sm): logo, hamburger, zoek-icoon en winkelmandje
-   op ÉÉN rij i.p.v. logo op een eigen volle-breedte-rij erboven -- dat
-   maakte de header onnodig hoog. .header-logo-col en .header-actions-col
-   zijn standaard col-12 (elk een eigen rij); hier smal + naast elkaar.
-   .header-search-col blijft col-12 (nodig voor de volle-breedte zoekbalk
-   zodra die opent) en staat al op order-2, dus komt vanzelf op een eigen
-   rij ONDER logo+acties zodra 'ie open klapt -- niets aan de order-
-   waardes hoeft te veranderen. */
+/* Onder 576px (Bootstrap sm): hamburger / logo / zoeken+mandje op één rij,
+   logo ECHT gecentreerd (niet alleen "links + rechts opgevuld" -- de linker-
+   en rechtergroep zijn niet even breed, dus margin/flex-auto-trucs zouden
+   het logo niet precies in het midden zetten). rootedgoods.js (2.1d)
+   verplaatst de knoppen zelf (geen kloon, click-handlers blijven intact)
+   in een nieuwe .rg-mobile-header-row vóór de originele .header-row.
+   .header-logo-col/.header-actions-col raken daardoor leeg -> verbergen.
+   .header-search-col blijft staan (bevat het zoek-formulier zelf, dat
+   nog steeds op z'n oude plek open/dicht klapt). */
 @media (max-width: 575.98px) {
-  .header-row {
-    display: flex !important;
-    align-items: center;
-    flex-wrap: wrap;
-  }
   .header-logo-col,
   .header-actions-col {
-    flex: 0 0 auto !important;
-    width: auto !important;
-    max-width: none !important;
+    display: none !important;
   }
-  .header-logo-col { margin-right: auto; }
-  .header-actions-col .row.g-0 { flex-wrap: nowrap; }
+  .rg-mobile-header-row {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1rem;
+  }
+  .rg-mobile-header-row__side {
+    flex: 0 0 84px;
+    display: flex;
+    align-items: center;
+  }
+  .rg-mobile-header-row__side:first-child { justify-content: flex-start; }
+  .rg-mobile-header-row__side:last-child { justify-content: flex-end; }
+  .rg-mobile-header-row .header-logo-col {
+    display: block !important;
+    flex: 1 1 auto;
+    text-align: center;
+  }
 }
 
 @media (max-width: 991px) {
@@ -6747,8 +6756,13 @@ h2.rg-sd__panel-title,
   align-items: start;
 }
 .rg-sd__faq > .rg-sd__head,
-.rg-sd__faq > h2.rg-faq-cat {
+.rg-sd__faq > h2.rg-faq-cat,
+.rg-sd__faq > .rg-spec-cta {
   grid-column: 1 / -1;
+}
+.rg-sd__faq > .rg-spec-cta {
+  justify-content: flex-start;
+  margin-top: 0.75rem;
 }
 @media (max-width: 767px) {
   .rg-sd__faq { grid-template-columns: 1fr; }
