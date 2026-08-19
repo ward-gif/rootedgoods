@@ -1125,6 +1125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var L = draw.getTotalLength();
     gsap.set(draw, { strokeDasharray: L, strokeDashoffset: L });
+    var laatsteP = -1;   // zie PERF-comment bij onUpdate
 
     ST.create({
       /* de sectie als trigger, niet de track: routeStart/routeEind staan in
@@ -1141,9 +1142,19 @@ document.addEventListener('DOMContentLoaded', function () {
       end: function () { return 'top+=' + routeEind + ' 58%'; },
       scrub: 0.8,
       invalidateOnRefresh: true,
+      /* PERF: strokeDashoffset triggert een repaint van de hele path (geen
+         compositor-only property zoals transform) -- op mobiel gemeten
+         ~20-23ms per frame tijdens scrubben, boven het 16.7ms-budget voor
+         60fps. Touch-scroll vuurt veel scroll-events met verwaarloosbare
+         delta; een submicroscopische verandering (< 0.05% van de padlengte)
+         negeren scheelt een deel van die onnodige repaints zonder dat de
+         animatie zichtbaar minder vloeiend wordt. */
       onUpdate: function (self) {
         var p = self.progress;
-        gsap.set(draw, { strokeDashoffset: L * (1 - p) });
+        if (Math.abs(p - laatsteP) > 0.0005) {
+          laatsteP = p;
+          gsap.set(draw, { strokeDashoffset: L * (1 - p) });
+        }
         zetMerkteken(p);
       },
       onRefresh: function () {
