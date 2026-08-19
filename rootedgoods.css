@@ -562,6 +562,120 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 
 /* ------------------------------------------------------------
+   6b. MOBIEL HEADER + MENU (<992px)
+   ------------------------------------------------------------
+   Was volledig kaal Shopware-default: forse header-balk, hamburgermenu
+   een platte opsomming van alle 13 productcategorieën met Thema's
+   (de eigenlijke ingang voor de meeste bezoekers) als een na laatste
+   regel. Herzien: kleiner logo, alleen zoeken + winkelmandje in de
+   actie-rij (wishlist/account weg -- weinig gebruikt op mobiel, minder
+   drukte), Thema's naar boven en als eigen kaart, categorieën
+   gedempt eronder. Reordering via :has()+order, geen JS nodig. */
+@media (max-width: 991px) {
+  /* ---- Logo kleiner ---- */
+  .header-logo-main-link img,
+  .header-logo img {
+    height: 26px !important;
+  }
+
+  /* ---- Actie-rij: alleen zoeken + winkelmandje ---- */
+  .header-actions-col .header-wishlist,
+  .header-actions-col .account-menu {
+    display: none !important;
+  }
+
+  /* ---- Zoek-collapse: ademruimte boven/onder als open (was 0) ---- */
+  .header-search-col .collapse.show,
+  .header-search-col .collapsing {
+    padding: 1rem 0 1.25rem;
+  }
+
+  /* ---- Offcanvas-menu: merk-typografie i.p.v. theme-default ---- */
+  .navigation-offcanvas .offcanvas-header {
+    border-bottom: 1px solid #EAE3D7;
+  }
+  .navigation-offcanvas .navigation-offcanvas-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8c857a;
+    margin: 1.4rem 0 0.6rem;
+  }
+  .navigation-offcanvas-link,
+  .navigation-offcanvas-link [itemprop="name"] {
+    color: #2d4528 !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+  /* Categorieën gedempt en compacter: Thema's (hieronder uitgelicht)
+     moet duidelijk de hoofdingang blijven, dit is de browse-route
+     voor wie al weet wat ze zoeken. */
+  .navigation-offcanvas-list-item {
+    font-size: 0.92rem;
+  }
+  .navigation-offcanvas-list-item .navigation-offcanvas-link {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+
+  /* ---- Thema's naar boven + als kaart i.p.v. platte regel ----
+     :has() i.p.v. JS-herordering: title="Thema's" matcht het <a>,
+     order verplaatst het hele <li> naar de top van de flex-lijst. */
+  .navigation-offcanvas-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .navigation-offcanvas-list-item:has(a[title="Thema's"]) {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link {
+    background: linear-gradient(135deg, #2d4528, #3a5533);
+    color: #fff !important;
+    border-radius: 14px;
+    padding: 1rem 1.1rem !important;
+    font-weight: 700;
+  }
+  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link [itemprop="name"] {
+    color: #fff !important;
+  }
+  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link::after {
+    content: "Ontdek cadeaus per gelegenheid";
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--rg-peach, #e9c9a9);
+    margin-top: 0.2rem;
+  }
+  .navigation-offcanvas-list-item:has(a[title="Thema's"]) .navigation-offcanvas-link-icon svg use {
+    fill: #fff !important;
+  }
+  /* Shopware's categorieboom bevat Thema's dubbel (zelfde link 2x) --
+     backend-configuratie, geen CSS-fix hiervoor; gemeld bij Ward. */
+
+  /* ---- Snelkoppelingen (FAQ/Contact/Offerte) -- JS vult deze nav,
+     hier alleen de styling. Zie rootedgoods.js 2.1c. ---- */
+  .navigation-offcanvas-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0 0 0.75rem;
+    border-bottom: 1px solid #EAE3D7;
+    margin-bottom: 0.25rem;
+  }
+  .rg-offcanvas-quicklink {
+    display: block;
+    padding: 0.5rem 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #ad6331 !important;
+    text-decoration: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
    7. CATEGORY FLYOUT
    ------------------------------------------------------------ */
 .navigation-flyout {
@@ -8360,8 +8474,11 @@ h2.rg-route__team-title{
   .rg-route__checks{ grid-template-columns:1fr; }
   .rg-route__team-grid{ grid-template-columns:1fr; }
   .rg-route__collage{ padding:1.5rem 1rem 3rem; }
-  .rg-route__collage-main{ width:100%; }
-  .rg-route__collage-shot{ width:calc(var(--w, 130px) * .8); }
+  .rg-route__collage-main{ width:100%; transform:none; }
+  /* De 3 losse sfeerfoto's rond de teamfoto vielen op mobiel deels buiten
+     beeld (te weinig ruimte voor het collage-effect) en oogden rommelig
+     op een klein scherm -- alleen de teamfoto blijft staan. */
+  .rg-route__collage-shot{ display:none; }
   .rg-route__contact{ grid-template-columns:1fr; }
   .rg-route__contact-map{ width:130px; }
   .rg-route__map img{ height:calc(var(--map-h, 58vh) * .5); }

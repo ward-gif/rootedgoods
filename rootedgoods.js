@@ -348,6 +348,49 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 2.1c Offcanvas-menu: snelkoppelingen + zoek-autofocus (mobiel)
+ * FAQ/Contact/Offerte staan niet in Shopware's categorieboom (Blog/Merken/
+ * Services/Over ons wel) -- hier alsnog toegevoegd in de lege
+ * .navigation-offcanvas-actions-nav die het theme daarvoor al reserveert.
+ * Kan op elk moment meerdere offcanvas-instanties tegelijk in de DOM
+ * hebben (twee triggers voor verschillende breakpoints) -> alle instanties
+ * vullen, elk apart idempotent. Zoekbalk krijgt focus zodra de collapse
+ * open is, zodat je meteen kunt typen. */
+document.addEventListener('DOMContentLoaded', function () {
+  var QUICKLINKS = [
+    { href: '/faq', label: 'Veelgestelde vragen' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/offerte', label: 'Offerte aanvragen' }
+  ];
+
+  function vulSnelkoppelingen() {
+    document.querySelectorAll('.navigation-offcanvas-actions').forEach(function (nav) {
+      if (nav.dataset.rgQuicklinks) return;
+      nav.dataset.rgQuicklinks = '1';
+      QUICKLINKS.forEach(function (l) {
+        var a = document.createElement('a');
+        a.href = l.href;
+        a.className = 'rg-offcanvas-quicklink';
+        a.textContent = l.label;
+        nav.appendChild(a);
+      });
+    });
+  }
+  vulSnelkoppelingen();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
+  document.querySelectorAll('[data-offcanvas-menu="true"]').forEach(function (btn) {
+    btn.addEventListener('click', function () { setTimeout(vulSnelkoppelingen, 0); });
+  });
+
+  var zoekCollapse = document.getElementById('searchCollapse');
+  if (zoekCollapse) {
+    zoekCollapse.addEventListener('shown.bs.collapse', function () {
+      var input = zoekCollapse.querySelector('.header-search-input');
+      if (input) input.focus();
+    });
+  }
+});
+
+
 /* ---- 2.2 Productslider — hele tegel klikbaar
  * Onderscheidt klik vs swipe via mousedown/click delta zodat sliden niet
  * per ongeluk navigatie triggert. */
