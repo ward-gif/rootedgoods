@@ -8037,12 +8037,9 @@ h1.rgh__title, .rgh__title,
 .rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
 .rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
 .rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
-/* Kop-padding op 0 zodat de kop-tekst op dezelfde lijn staat als de tegels
-   (spec-grid heeft op desktop padding 0). Geldt ook op thema, ook zonder de
-   --left-variant/eyebrow te plakken. */
-@media (min-width:992px){
-  .rg-block-title:has(+ .rg-spec-grid){ padding-left:0 !important; padding-right:0 !important; }
-}
+/* Kop-padding NIET meer op 0: .rg-spec-grid kreeg inmiddels zelf 40px
+   padding (sectie 30, "kaal-rand"-fix), gelijk aan .rg-block-title's eigen
+   default 40px -- dus geen override meer nodig, ze staan nu vanzelf gelijk. */
 
 /* Home-variant: daar staat de spec-grid in een APART CMS-blok (geen adjacency),
    dus links via expliciete modifier + een eyebrow-class die de kop compleet
