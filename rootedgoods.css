@@ -6337,7 +6337,8 @@ h2.rg-sd__head-title,
 .rg-sd__step-nr {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-style: italic;
+  /* font-style/synthese/skew komen van de gedeelde deterministische regel
+     hierboven (sectie met h1.rg-sd__title em) -- niet hier dupliceren. */
   font-weight: 600;
   font-size: clamp(1.9rem, 1.5rem + 1vw, 2.6rem);
   line-height: 1;
@@ -7361,7 +7362,11 @@ h1.rgh__title, .rgh__title,
 /* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
 .rg-hero-v2__title em, .rgh__title em, .rg-sd__title em,
 .rg-statement__title em, .rg-endcta__title em, .rg-page-hero__title em{
-  font-style:italic !important; font-weight:600 !important;
+  font-style: normal !important;
+  font-synthesis: none;
+  display: inline-block;
+  transform: skewX(-14deg);
+  font-weight:600 !important;
   color:var(--rg-cognac-light) !important; letter-spacing:-.01em !important;
 }
 /* Hero-v2: de 20ch-cap uit sectie 38 knelt bij de grotere letter; ruimer. */
@@ -7392,7 +7397,11 @@ h1.rgh__title, .rgh__title,
 .rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
 .rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em,
 .rg-compare__title em, .rg-cta__title em, .rg-story__title em{
-  font-style:italic !important; font-weight:600 !important; color:var(--rg-cognac-light) !important;
+  font-style: normal !important;
+  font-synthesis: none;
+  display: inline-block;
+  transform: skewX(-14deg);
+  font-weight:600 !important; color:var(--rg-cognac-light) !important;
 }
 
 /* ---- 41.3 EYEBROW-signature: consistente kicker + hairline-aanzet ----
@@ -8043,7 +8052,13 @@ h2.rg-route__stop-title{
   margin-top:clamp(1.5rem, 3vw, 2.25rem) !important;
   text-wrap:balance;
 }
-.rg-route__quote em{ font-style:italic; color:var(--rg-cognac-light) !important; }
+.rg-route__quote em{
+  font-style: normal !important;
+  font-synthesis: none;
+  display: inline-block;
+  transform: skewX(-14deg);
+  color: var(--rg-cognac-light) !important;
+}
 
 /* de km-punchline bij thuiskomst */
 .rg-route__punch{
@@ -8054,7 +8069,13 @@ h2.rg-route__stop-title{
   line-height:1.2 !important;
   margin:0 0 clamp(1.5rem, 3vw, 2.5rem) !important;
 }
-.rg-route__punch em{ font-style:italic; color:var(--rg-cognac-light) !important; }
+.rg-route__punch em{
+  font-style: normal !important;
+  font-synthesis: none;
+  display: inline-block;
+  transform: skewX(-14deg);
+  color: var(--rg-cognac-light) !important;
+}
 
 /* ---- Drie wortels (stop 3) ---- */
 .rg-route__roots{
@@ -8130,7 +8151,9 @@ h3.rg-route__panel-title{
 .rg-route__checks svg{ width:1.1rem; height:1.1rem; flex:none; color:var(--rg-cognac-light); margin-top:.15rem; }
 .rg-route__holdus{
   font-family:'Playfair Display',Georgia,serif !important;
-  font-style:italic;
+  font-style: normal !important;
+  font-synthesis: none;
+  transform: skewX(-14deg);
   font-weight:600;
   color:var(--rg-peach) !important;
   font-size:clamp(1.15rem, 1rem + .6vw, 1.5rem) !important;
