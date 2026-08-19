@@ -4891,10 +4891,10 @@ img.rg-europe-map__svg {
   }
   .home-productslider .base-slider-controls button .icon {
     display: block !important;
-    width: 12px !important;
-    height: 12px !important;
-    border-top: 3px solid #2d4528 !important;
-    border-right: 3px solid #2d4528 !important;
+    width: 18px !important;
+    height: 18px !important;
+    border-top: 4.5px solid #2d4528 !important;
+    border-right: 4.5px solid #2d4528 !important;
     background: none !important;
     transition: border-color 0.2s ease !important;
   }
