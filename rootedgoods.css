@@ -3661,7 +3661,7 @@ h2.rg-compare__title em { font-style: italic; font-weight: 600; }
   align-self: center;
 }
 .rg-compare__col--yes {
-  background-image: url('/media/17/9e/cb/1787064499/rg-panel-grain4%20small.jpg');
+  background-image: url('https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain4%20small.jpg');
   padding: clamp(1.75rem, 2vw + 1rem, 2.75rem) clamp(1.75rem, 3vw, 2.5rem);
   margin: clamp(-1.5rem, -2vw, -1rem) 0;   /* reikt iets boven/onder de kale kant uit */
   border-radius: var(--rg-r-xp, 20px);
@@ -5895,7 +5895,7 @@ h2.rg-endcta__title em,
   max-width: 860px;
   margin: 0 auto;
   background-color: #2d4528;   /* fallback zolang het beeld nog laadt */
-  background-image: url('/media/eb/70/18/1787064499/rg-panel-grain5.jpg');
+  background-image: url('https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain5.jpg');
   border-radius: 20px;
   padding: clamp(2.4rem, 2rem + 2vw, 3.4rem) clamp(1.5rem, 4vw, 3rem);
   display: flex;
@@ -6425,7 +6425,7 @@ h2.rg-sd__row-title,
   overflow: hidden;
   isolation: isolate;
   background-color: #2d4528;
-  background-image: url('/media/ff/d1/c7/1787064499/rg-panel-grain2%20small.jpg');
+  background-image: url('https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain2%20small.jpg');
   border-radius: 20px;
   padding: clamp(2.4rem, 2rem + 2vw, 3.6rem) clamp(1.5rem, 4vw, 3.5rem);
   max-width: 1000px;
@@ -8117,7 +8117,7 @@ h2.rg-route__stop-title{
   overflow:hidden;
   isolation:isolate;
   background-color:var(--rg-green);
-  background-image:url('/media/49/c2/fa/1787064499/rg-panel-grain4.jpg');
+  background-image:url('https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain4.jpg');
   border-radius:var(--rg-r-xp);
   padding:clamp(1.75rem, 4vw, 3.25rem);
   color:#fff;
