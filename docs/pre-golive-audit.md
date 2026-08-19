@@ -20,7 +20,7 @@
 5. **INP**: `MutationObserver` op `document.documentElement` `subtree:true` (zwaarste variant; disconnect op load).
 
 ## 🔴 SEO
-1. **Geen enkele JSON-LD** in de build (0 treffers). Toevoegen: `Organization`, `FAQPage` (per service/thema), `BreadcrumbList`, `WebSite`, `Product` (thema-check of Shopware levert).
+1. **Geen enkele JSON-LD** in de build (0 treffers). Toevoegen: `Organization`, `BreadcrumbList`, `WebSite` (Promidata's Structured Data-plugin, €100, checken of deze ondersteund worden), `Product` (checken of Shopware dit al standaard levert), `FAQPage` (**zelf bouwen** — geen Shopware FAQ-module, onze FAQ is eigen `<details>/<summary>`-HTML, dus JSON-LD moet met de hand mee, gebaseerd op `faq-bron.md`).
 2. **Breadcrumbs bewust verborgen** via `.cms-breadcrumb{display:none}` op thema/service/merken → kost navigatie + BreadcrumbList-signalen. Heroverwegen.
 3. **Overzichtspagina's missen `<h1>`** (services-overzicht: h1=0, kop is `h2.rg-theme-heading`); idem waarschijnlijk merken/thema-overzicht.
 4. **`<title>` + meta-description per pagina**: CMS-niveau (Shopware) — Ward vult later per pagina in. Verifiëren dat ze uniek + keyword-gericht zijn.
@@ -49,7 +49,7 @@ Onderstaande punten kunnen we zelf verifiëren, geen vraag aan Promidata nodig:
 
 ## 📊 Prioritering
 1. `<title>` + meta-description per pagina (CMS) — grootste hefboom. *(Ward doet dit in Shopware.)*
-2. JSON-LD: `Organization` (globaal) + `FAQPage` (service/thema). *(FAQ-bron staat in `faq-bron.md`.)*
+2. JSON-LD: `Organization`/`BreadcrumbList`/`WebSite` via Promidata's plugin (€100, dekking nog checken) + `FAQPage` zelf bouwen (service/thema). *(FAQ-bron staat in `faq-bron.md`.)*
 3. `width`/`height` op alle content-`<img>` + `fetchpriority=high` op hero.
 4. Hero-hoogte-JS herzien (CLS ná paint) + `<h1>` op overzichtspagina's.
 5. Breadcrumbs heroverwegen (of BreadcrumbList-schema zonder UI).
