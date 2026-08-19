@@ -6913,6 +6913,18 @@ h2.rg-faq-cat,
   box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.2);
   flex: none;
 }
+/* Optionele derde regel: subtiele CTA-link naast de foto, i.p.v. een
+   eigen losse paragraaf verderop (offerte-kop) -- hoort zo bij Richard. */
+.rg-team__cta {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ad6331;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.rg-team__cta:hover { color: #955529; }
 
 /* ============================================================
    CONTACT-KOP (.rg-contact-head) — gecentreerde header + team-avatars
@@ -6949,7 +6961,7 @@ h1.rg-contact-head__title,
   font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem);
   line-height: 1.55;
   margin: 0 auto;
-  max-width: 52ch;
+  max-width: 60ch;
   text-wrap: balance;   /* evenwichtige regels i.p.v. rafelig */
 }
 .rg-contact-head__sub a { color: #ad6331; text-decoration: underline; text-underline-offset: 2px; }
