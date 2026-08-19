@@ -777,7 +777,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .navigation-flyout-category .navigation-item {
   position: relative;
   display: block;
-  aspect-ratio: 1 / 1;
+  height: 160px;
   border-radius: 10px;
   overflow: hidden;
   background-size: cover !important;
@@ -1273,24 +1273,39 @@ img {
     justify-content: center !important;
     flex: none !important;
     cursor: pointer !important;
-    padding: 0.6rem !important;   /* groter tik-doel dan de 18px-icoon zelf */
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+    background: #2d4528 !important;
   }
   .home-productslider .base-slider-controls button .icon svg {
     display: none !important;
   }
   .home-productslider .base-slider-controls button .icon {
     display: block !important;
-    width: 14px !important;
-    height: 14px !important;
-    border-top: 3.5px solid #fff !important;
-    border-right: 3.5px solid #fff !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-top: 2.5px solid #fff !important;
+    border-right: 2.5px solid #fff !important;
     background: none !important;
-    filter: drop-shadow(0 1px 3px rgba(45, 69, 40, .6));
   }
-  .home-productslider .base-slider-controls-prev .icon { transform: rotate(-135deg); }
-  .home-productslider .base-slider-controls-next .icon { transform: rotate(45deg); }
-  .home-productslider .base-slider-controls button:disabled { cursor: default !important; }
+  .home-productslider .base-slider-controls-prev .icon { transform: rotate(-135deg) translate(1px, -1px); }
+  .home-productslider .base-slider-controls-next .icon { transform: rotate(45deg) translate(-1px, -1px); }
+  .home-productslider .base-slider-controls button:disabled { background: #8c9a86 !important; cursor: default !important; }
   .home-productslider .base-slider-controls button:disabled .icon { opacity: 0.4; }
+  /* Ruimte tussen titel/link-regel en de slider eronder verkleinen. */
+  .cms-block-text:has(+ .cms-block-product-slider) .cms-block-container {
+    padding-bottom: 6px !important;
+  }
+  /* "Bekijk alle producten" verplaatst naar onder de tegels, zie
+     rootedgoods.js 2.0b -- volwaardige, gecentreerde volle-breedte-knop
+     i.p.v. de kale tekstlink die erboven wordt gebruikt. */
+  .rg-slider-cta-moved {
+    display: flex !important;
+    justify-content: center;
+    width: calc(100% - 30px);
+    margin: 1.25rem 15px 2rem !important;
+  }
 }
 
 /* ------------------------------------------------------------
@@ -3759,6 +3774,21 @@ body.is-ctl-product {
   height: 100% !important;
   width: 100%;
   object-fit: cover;
+}
+/* Onder 768px (Bootstrap col-md-6 stackt hier) staat het beeld niet meer
+   náást de tekstkolom, dus "height:100% = even hoog als de tekstkolom"
+   klopt niet meer -- zonder tegenhanger viel de native Shopware-hoogte
+   (vast op 500px) terug, wat op mobiel een veel te hoog/smal (portret)
+   beeld gaf i.p.v. dezelfde verhouding als op desktop. */
+@media (max-width: 767.98px) {
+  .cms-section:has(.rg-feature-row__content) .cms-element-image,
+  .cms-section:has(.rg-feature-row__content) .cms-image-container {
+    height: auto !important;
+  }
+  .cms-section:has(.rg-feature-row__content) .cms-image {
+    height: auto !important;
+    aspect-ratio: 6 / 5;   /* zelfde verhouding als de desktop-weergave */
+  }
 }
 @media (min-width: 576px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
@@ -6514,15 +6544,18 @@ h1.rg-sd__title em,
 }
 .rg-sd__reassurance {
   margin: 0.9rem 0 0;
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem 0;
   font-size: 0.84rem;
   font-weight: 500;
   line-height: 1.5;
   color: #5d6d55;
 }
 .rg-sd__reassurance svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
+.rg-sd__reassurance-item { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+.rg-sd__reassurance-item + .rg-sd__reassurance-item::before { content: "\00B7"; color: #CA853F; margin: 0 0.6rem; }
 .rg-sd__hero-media img {
   width: 100%;
   aspect-ratio: 4 / 3;
