@@ -6949,7 +6949,7 @@ h1.rg-contact-head__title,
   font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.1rem);
   line-height: 1.55;
   margin: 0 auto;
-  max-width: 42ch;
+  max-width: 52ch;
   text-wrap: balance;   /* evenwichtige regels i.p.v. rafelig */
 }
 .rg-contact-head__sub a { color: #ad6331; text-decoration: underline; text-underline-offset: 2px; }
@@ -7061,22 +7061,6 @@ h1.rg-contact-head__title,
   color: #ffffff;
   transform: translateX(2px);
 }
-/* Subtiele secundaire route: kennismakingsgesprek plannen (cal.com) */
-.rg-contact-head__alt {
-  margin: 0.85rem auto 0;
-  font-size: 0.9rem;
-  color: #5d6d55;
-}
-/* Plain-link variant (offerte-kop): subtiel onderstreept. De btn-variant
-   (contact-kop) krijgt via :not(.btn) z'n eigen tekstlink-met-pijl-stijl. */
-.rg-contact-head__alt a:not(.btn) {
-  color: #ad6331;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.rg-contact-head__alt a:not(.btn):hover { color: #955529; }
-.rg-contact-head__alt .btn { vertical-align: middle; }
 /* Formulier strak onder de kop: minder ruimte ertussen */
 .cms-block-form:has(#cms-form-contact) .cms-block-container {
   padding-top: 0.5rem !important;
