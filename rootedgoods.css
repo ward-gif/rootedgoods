@@ -6803,7 +6803,31 @@ h2.rg-sd__panel-title,
   justify-content: flex-start;
   margin-top: 0.75rem;
 }
+/* .rg-sd__faq-cols -- voor de KORTE FAQ-subsets (thema/service-detail-
+   pagina's, één platte lijst zonder categorieën). Los-uitgeschreven grid-
+   auto-placement plaatste items rij voor rij over BEIDE kolommen heen, dus
+   een langere vraag in kolom 2 maakte de hele grid-rij hoger en duwde
+   daarmee ook de ruimte in kolom 1 uit elkaar (niet gerelateerd aan kolom
+   1's eigen inhoud). Nu 2 losse, onafhankelijke kolommen (elk maar 1
+   grid-item) -- items uit een <details> in kolom 2 hebben geen invloed
+   meer op de spacing in kolom 1. Verdeel de items zelf over de 2
+   .rg-sd__faq-col's in de HTML (zie thema-*.html/service-detail-*.html).
+   De grote /faq-pagina (met categorie-koppen) blijft de gewone
+   grid-auto-flow hierboven gebruiken -- daar is de kans op dit effect
+   kleiner en zou een vaste kolomsplitsing per categorie moeten gebeuren. */
+.rg-sd__faq > .rg-sd__faq-cols {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+}
+.rg-sd__faq-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 @media (max-width: 767px) {
+  .rg-sd__faq > .rg-sd__faq-cols { grid-template-columns: 1fr; }
   .rg-sd__faq { grid-template-columns: 1fr; }
 }
 .rg-sd__faq-item {
@@ -7882,12 +7906,14 @@ h1.rgh__title, .rgh__title,
 @media (min-width:992px){
   /* Service-hero: kop-dominante copy, ondersteunend beeld */
   .rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr) !important; }
-  /* Feature-rijen: beeld groter dan tekst; flip-bewust omgedraaid zodat het
-     beeld ALTIJD de bredere kolom pakt (media wisselt van kant via order). */
-  .rg-sd__row{ grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr) !important; }
-  .rg-sd__row--flip{ grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr) !important; }
-  .rg-feature-row{ grid-template-columns:1.08fr 0.92fr !important; }
-  .rg-feature-row--reverse{ grid-template-columns:0.92fr 1.08fr !important; }
+  /* Feature-rijen: strak 50/50 (was bewust 1.08/0.92 met beeld altijd de
+     bredere kolom -- maar bij afwisselend beeld links/rechts verschoof de
+     gutter dan tussen twee lijnen, waardoor opeenvolgende blokken niet meer
+     op dezelfde verticale lijn uitkwamen). */
+  .rg-sd__row{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; }
+  .rg-sd__row--flip{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; }
+  .rg-feature-row{ grid-template-columns:1fr 1fr !important; }
+  .rg-feature-row--reverse{ grid-template-columns:1fr 1fr !important; }
 }
 
 /* ---- 41.5 DEPTH — lichtere, consistente diepte (hairline > slagschaduw) ---- */
@@ -8087,10 +8113,9 @@ h1.rgh__title, .rgh__title,
   .rg-block-title--left{
     max-width:1600px !important;
     margin-left:auto !important; margin-right:auto !important;
-    /* padding 0: de spec-grid heeft op desktop ook padding 0, dus zo staat de
-       kop-tekst op exact dezelfde lijn (80px) als de tegels + de rest van home.
-       (15px hier zou de kop 15px naar rechts duwen t.o.v. de tegels.) */
-    padding-left:0 !important; padding-right:0 !important;
+    /* Padding NIET meer op 0: .rg-spec-grid kreeg inmiddels zelf 40px padding
+       (kaal-rand-fix), dus .rg-block-title's eigen default 40px (uit de
+       basisklasse) matcht dat nu vanzelf -- geen override meer nodig. */
   }
 }
 
