@@ -20,7 +20,10 @@
 5. **INP**: `MutationObserver` op `document.documentElement` `subtree:true` (zwaarste variant; disconnect op load).
 
 ## 🔴 SEO
-1. **Geen enkele JSON-LD** in de build (0 treffers). Toevoegen: `Organization`, `BreadcrumbList`, `WebSite` (Promidata's Structured Data-plugin, €100, checken of deze ondersteund worden), `Product` (checken of Shopware dit al standaard levert), `FAQPage` (**zelf bouwen** — geen Shopware FAQ-module, onze FAQ is eigen `<details>/<summary>`-HTML, dus JSON-LD moet met de hand mee, gebaseerd op `faq-bron.md`).
+1. **Geen enkele JSON-LD** in de build (0 treffers). Toevoegen:
+   - **Via Promidata's Structured Data-plugin (€100, dekking checken)**: `Organization`, `BreadcrumbList`, `WebSite`, `Product` (checken of dit al standaard in Shopware zit), `BlogPosting` (checken zodra het blog-onderdeel er is — mogelijk core-contenttype met eigen module, dus mogelijk automatisch schema).
+   - **Zelf bouwen** (eigen CMS-content, geen Shopware-module die dit kan uitlezen): `FAQPage` (gebaseerd op `faq-bron.md`), `Person` (Richard/Ward/Marco, gekoppeld aan Organization als `employee`), `Service` (de vier servicepagina's: personalisatie, verzending, warehousing, full-service).
+   - **Later** (nog geen content voor): `Review`/`AggregateRating`, zodra er klantreviews zijn.
 2. **Breadcrumbs bewust verborgen** via `.cms-breadcrumb{display:none}` op thema/service/merken → kost navigatie + BreadcrumbList-signalen. Heroverwegen.
 3. **Overzichtspagina's missen `<h1>`** (services-overzicht: h1=0, kop is `h2.rg-theme-heading`); idem waarschijnlijk merken/thema-overzicht.
 4. **`<title>` + meta-description per pagina**: CMS-niveau (Shopware) — Ward vult later per pagina in. Verifiëren dat ze uniek + keyword-gericht zijn.
