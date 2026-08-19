@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var hero = document.querySelector('.rgh');
   if (hero) {
     var fitHero = function () {
-      if (window.innerWidth < 993) { hero.style.minHeight = ''; return; }
+      if (window.innerWidth < 992) { hero.style.minHeight = ''; return; }
       hero.style.minHeight = '0px';                                   // reset -> meet natuurlijke stand
       var sliderBottom = wrapper.getBoundingClientRect().bottom;      // waar de slider nu eindigt (bij load = vanaf viewport-top)
       var delta = (window.innerHeight - 24) - sliderBottom;           // 24px ruimte onder de slider
@@ -1208,13 +1208,6 @@ document.addEventListener('DOMContentLoaded', function () {
     defs.appendChild(mask);
     base.setAttribute('mask', 'url(#rg-route-mask)');
     draw.setAttribute('mask', 'url(#rg-route-mask)');
-
-    /* meetlat: padlengte mag hooguit 1,2x de verticale afstand zijn */
-    var vert = pts[pts.length - 1].y - pts[0].y;
-    var padL = draw.getTotalLength();
-    console.log('[rg-route] padlengte ' + Math.round(padL) + 'px / verticaal ' +
-                Math.round(vert) + 'px = ' + (padL / vert).toFixed(2) + 'x' +
-                (padL / vert > 1.2 ? '  TE HOOG' : ''));
   }
 
   /* bezier met controlepunten die altijd TUSSEN de y van hun eindpunten

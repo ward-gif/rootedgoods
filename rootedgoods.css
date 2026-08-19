@@ -1216,7 +1216,9 @@ img {
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
   overflow: visible !important;
-  padding-top: 5rem !important;   /* was Shopware's eigen 1rem, wat krap */
+  padding-top: 5rem !important;   /* was Shopware's eigen 1rem, wat krap.
+    Geldt alleen effectief <992px -- vanaf 992px wint sectie 30's latere
+    eigen padding-regel (24px calc(...)+80px 0) op dezelfde selector. */
 }
 
 /* TinySlider's clip-containers: horizontaal NIET clippen, zodat kaarten links
@@ -4186,165 +4188,23 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
   padding-bottom: 0 !important;
 }
 
-/* ------------------------------------------------------------
-   HERO — content-opmaak (.rg-hero), gebruikt door de landing-header.
-   ------------------------------------------------------------ */
-.rg-hero {
-  max-width: 880px;
-  animation: rgHeroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Gecentreerde variant — bv. eerste sectie van de site */
-.rg-hero--center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.rg-hero--center .rg-hero__title {
-  max-width: 20ch;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-.rg-hero--center .rg-hero__subline {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-.rg-hero--center .rg-hero__cta,
-.rg-hero--center .rg-hero__usps {
-  justify-content: center;
-}
-.rg-hero .rg-hero__eyebrow {
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem) !important;
-  color: #CA853F !important;
-  margin: 0 0 clamp(1rem, 0.7rem + 0.9vw, 1.5rem) 0 !important;
-}
-.rg-hero__title {
-  font-size: clamp(2.4rem, 1.35rem + 3.6vw, 4.75rem) !important;
-  line-height: 1.07 !important;
-  letter-spacing: -0.01em;
-  color: #2d4528 !important;
-  max-width: 18ch;
-  margin: 0 0 clamp(1rem, 0.75rem + 0.9vw, 1.5rem) 0 !important;
-}
-.rg-hero__subline {
-  font-size: clamp(1.05rem, 0.95rem + 0.55vw, 1.4rem) !important;
-  line-height: 1.55;
-  color: #4a5a44;
-  max-width: 54ch;
-  margin: 0 0 clamp(1.5rem, 1.1rem + 1.3vw, 2.1rem) 0 !important;
-}
-.rg-hero__cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.6rem;
-}
-.rg-hero__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  padding: 0.85rem 2.05rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none !important;
-  transition: transform 0.18s ease, box-shadow 0.25s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.rg-hero__btn--primary {
-  background-color: #ad6331; /* terracotta → wit ≈ 4.55:1 (WCAG AA) */
-  color: #fff !important;
-  box-shadow: 0 12px 28px -12px rgba(173, 99, 49, 0.95);
-}
-.rg-hero__btn--primary:hover {
-  background-color: #955529;
-  transform: translateY(-3px);
-  box-shadow: 0 20px 38px -14px rgba(173, 99, 49, 1);
-}
-/* Pijl op de primaire CTA — schuift mee op hover */
-.rg-hero__btn--primary::after {
-  content: "";
-  width: 1.1em;
-  height: 1.1em;
-  background-color: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
-  transition: transform 0.2s ease;
-}
-.rg-hero__btn--primary:hover::after {
-  transform: translateX(5px);
-}
-.rg-hero__btn--secondary {
-  background-color: transparent !important;
-  color: #2d4528 !important;
-  border: 2px solid rgba(45, 69, 40, 0.28);
-}
-.rg-hero__btn--secondary:hover {
-  border-color: #ad6331;
-  color: #ad6331 !important;
-  transform: translateY(-3px);
-}
-.rg-hero__usps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.rg-hero__usps li {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2d4528;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(45, 69, 40, 0.08);
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-.rg-hero__usps li::before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-  background-color: #CA853F;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / contain no-repeat;
-}
+/* .rg-hero-componentfamilie (eerste-generatie hero, .rg-hero/.rg-hero--
+   center/.rg-hero__*) is hier verwijderd: kwam nergens meer voor in
+   blokken/*.html, vervangen door .rgh (sectie 35) en .rg-hero-v2 (sectie
+   38). @keyframes rgHeroIn blijft staan -- .image-row-spotlight hieronder
+   gebruikt 'm nog. LET OP: .landing-header/.image-row-spotlight zelf lijken
+   ook nergens meer in blokken/ voor te komen (nul matches), maar dat is een
+   grotere, nog niet losstaand geverifieerde opschoning -- bewust NIET in
+   deze pas meegenomen. */
 
 @keyframes rgHeroIn {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 767px) {
-  /* clamp() regelt de fontgroottes; hier alleen mobiel-specifieke layout */
-  .rg-hero__title { max-width: none; }
-  .rg-hero__btn { flex: 1 1 100%; }
-}
-
-/* Lage/laptop-schermen (breed maar weinig hoogte): titel + ritme + spotlight
-   subtieler zodat alles binnen de fold past mét onderruimte. */
+/* Lage/laptop-schermen (breed maar weinig hoogte): spotlight subtieler
+   zodat alles binnen de fold past mét onderruimte. */
 @media (min-width: 992px) and (max-height: 1080px) {
-  .rg-hero__title {
-    font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem) !important;
-    margin: 0 0 clamp(0.9rem, 0.6rem + 0.7vw, 1.3rem) 0 !important;
-  }
-  .rg-hero__eyebrow {
-    margin: 0 0 clamp(0.7rem, 0.5rem + 0.5vw, 1rem) 0 !important;
-  }
-  .rg-hero__subline {
-    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem) !important;
-    margin: 0 0 clamp(1.2rem, 1rem + 0.6vw, 1.8rem) 0 !important;
-  }
   .image-row-spotlight .cms-image-container,
   .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(15vw, 23vh) !important; }
   .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(17vw, 25vh) !important; }
@@ -4356,7 +4216,6 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
 
 /* Extra krap (kleine laptops): nog een tandje subtieler. */
 @media (min-width: 992px) and (max-height: 880px) {
-  .rg-hero__title { font-size: clamp(1.9rem, 0.8rem + 2.2vw, 3.1rem) !important; }
   .image-row-spotlight .cms-image-container,
   .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(14vw, 20vh) !important; }
   .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(16vw, 22vh) !important; }
@@ -4365,22 +4224,6 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
   .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(15vw, 21vh) !important; }
   .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(14vw, 20vh) !important; }
 }
-
-/* Toetsenbord-focus zichtbaar (a11y best practice) */
-.rg-hero__btn:focus-visible {
-  outline: 3px solid rgba(45, 69, 40, 0.55);
-  outline-offset: 3px;
-}
-
-/* ------------------------------------------------------------
-   HERO — editorial eyebrow (lijntjes flankeren label, centered)
-   ------------------------------------------------------------ */
-.rg-hero--center .rg-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-/* (decoratieve flankeer-streepjes verwijderd — kickers zonder streepje) */
 
 /* ------------------------------------------------------------
    LANDING — spotlight tiles: zoom-on-hover (binnen frame, niet
@@ -4448,13 +4291,10 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
 .image-row-spotlight .cms-block-element:nth-child(6) { animation-delay: 0.60s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .rg-hero,
   .cms-section:has(.landing-header) .image-row-spotlight .cms-block-element {
     animation: none !important;
   }
-  .image-row-spotlight .cms-image,
-  .rg-hero__btn,
-  .rg-hero__btn--primary::after {
+  .image-row-spotlight .cms-image {
     transition: none !important;
   }
 }
@@ -4640,22 +4480,12 @@ h2.rg-statement__title em { font-style: italic; font-weight: 600; }
 
 /* ------------------------------------------------------------
    Tekst-accent: nadruk op losse woorden in h1/h2 zonder dat het
-   te druk wordt. .rg-em = oker-kleur; .rg-em--mark = zachte
-   highlighter-veeg eronder. Gebruik op een <span> om een woord.
+   te druk wordt. .rg-em = oker-kleur. Gebruik op een <span> om een woord.
+   (De --mark/--underline-varianten zijn verwijderd: kwamen nergens meer
+   voor in blokken/*.html.)
    ------------------------------------------------------------ */
 .rg-em {
   color: #CA853F; /* secundair accent (test) */
-}
-.rg-em--mark {
-  background-image: linear-gradient(transparent 62%, rgba(202, 133, 63, 0.28) 62%);
-  background-repeat: no-repeat;
-  padding: 0 0.05em;
-}
-.rg-em--underline {
-  text-decoration: underline;
-  text-decoration-color: #ad6331;
-  text-decoration-thickness: 0.07em;
-  text-underline-offset: 0.12em;
 }
 
 /* Europa-kaart — statisch, puur visueel.
@@ -4784,148 +4614,8 @@ img.rg-europe-map__svg {
   }
 }
 
-/* ============================================================
-   34. CTA-SECTIE — "Vraag een offerte aan"
-   ============================================================
-   Split-opzet: groen tekstpaneel links (gegarandeerd contrast) + beeld
-   rechts. Opbouw (CRO/UX): eyebrow -> Playfair-titel -> subline ->
-   primaire + secundaire CTA -> geruststellende microcopy.
-   Breedte lijnt uit met de tegels (1600 - 2x40). Mobiel: gestapeld. */
-.rg-cta {
-  display: flex;
-  align-items: stretch;
-  max-width: 1440px;
-  margin: 3rem auto;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #2d4528;          /* groen paneel = gegarandeerd contrast */
-  color: #ffffff;
-  min-height: clamp(460px, 40vw, 620px);
-}
-@media (max-width: 1519px) { .rg-cta { margin-inline: 40px; } }
-@media (max-width: 575px)  { .rg-cta { margin-inline: 15px; } }
-
-.rg-cta__inner {
-  flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(2.5rem, 2rem + 2vw, 4rem) clamp(2rem, 1.5rem + 2vw, 3.5rem);
-}
-.rg-cta__media {
-  flex: 1 1 50%;
-  position: relative;
-}
-.rg-cta__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.rg-cta__eyebrow {
-  margin: 0 0 0.9rem 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: #e9c9a9;                 /* lichte terracotta op donker */
-}
-/* .rg-cta ervoor -> wint van theme's .cms-element-text h2 (anders groen). */
-.rg-cta .rg-cta__title {
-  font-family: 'Playfair Display', serif !important;
-  color: #ffffff !important;
-  font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
-  font-weight: 600;
-  line-height: 1.12;
-  margin: 0 0 1rem 0;
-}
-.rg-cta__text {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.12rem);
-  line-height: 1.55;
-  margin: 0 0 1.8rem 0;
-}
-.rg-cta__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 1.2rem;
-}
-.rg-cta__btn {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 0.5rem;
-}
-/* Ghost-knop: transparant met witte rand, vult licht op hover. Apart van de
-   andere knoppen omdat 'ie op het donkere/beeld-paneel contrast moet houden.
-   GEEN .rg-cta-ancestor vereist (anders pakt 'ie niet als de wrapper-class
-   afwijkt) + .btn-primary/.btn-outline-variant zodat 'ie nooit gevuld wordt. */
-.rg-cta__btn--ghost,
-.rg-cta__btn--ghost.btn,
-.rg-cta__btn--ghost.btn-primary,
-.rg-cta__btn--ghost.btn-outline-primary {
-  background: transparent !important;
-  background-color: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.7) !important;
-  color: #ffffff !important;
-}
-.rg-cta__btn--ghost:hover,
-.rg-cta__btn--ghost:focus-visible {
-  background: rgba(255, 255, 255, 0.12) !important;
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  border-color: #ffffff !important;
-  color: #ffffff !important;
-}
-/* Robuuste fallback: de 2e (laatste) knop in de CTA is ALTIJD secundair,
-   ook als de CMS-editor de ghost-class heeft weggestript. Hogere
-   specificiteit dan de site-brede .btn-primary. */
-.rg-cta .rg-cta__actions .btn:last-child {
-  background: transparent !important;
-  background-color: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.7) !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-}
-.rg-cta .rg-cta__actions .btn:last-child:hover,
-.rg-cta .rg-cta__actions .btn:last-child:focus-visible {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  border-color: #ffffff !important;
-  color: #ffffff !important;
-}
-.rg-cta__note {
-  margin: 0;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-/* Mobiel: gestapeld — beeld boven, tekstpaneel onder; knoppen vol-breed.
-   Full-bleed blijft (geen zij-marge); tekst-padding terug naar normaal. */
-@media (max-width: 767px) {
-  .rg-cta {
-    flex-direction: column;
-    min-height: 0;
-    margin-top: 2rem;
-  }
-  .rg-cta__inner {
-    padding: clamp(1.8rem, 1.2rem + 3vw, 2.6rem) 18px;
-  }
-  .rg-cta__media {
-    order: -1;
-    min-height: 200px;
-  }
-  .rg-cta__actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .rg-cta__btn {
-    justify-content: center;
-    width: 100%;
-  }
-}
+/* Sectie 34 (CTA-SECTIE, .rg-cta-componentfamilie) is verwijderd: kwam
+   nergens meer voor in blokken/*.html, was volledig dode code. */
 
 /* ============================================================
    30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhankelijk)
@@ -5262,15 +4952,6 @@ img.rg-europe-map__svg {
   margin: 0 0 clamp(1.5rem, 1rem + 1.5vw, 2.5rem) 0;
 }
 
-.rg-theme-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-flow: row dense;
-  gap: 0.85rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 .rg-theme-tile {
   position: relative;
   display: block;
@@ -5287,12 +4968,8 @@ img.rg-europe-map__svg {
   aspect-ratio: 16 / 10;
 }
 @media (min-width: 768px) {
-  .rg-theme-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; gap: 1.15rem; }
   .rg-theme-tile { aspect-ratio: auto; height: 100%; }
   .rg-theme-tile--feature { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-}
-@media (min-width: 992px) {
-  .rg-theme-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 224px; gap: 1.25rem; }
 }
 .rg-theme-tile:hover,
 .rg-theme-tile:focus-visible {
@@ -7820,7 +7497,6 @@ h1.rg-contact-head__title,
    de GROOTTE + tracking doen het editorial-werk. ---- */
 h1.rgh__title, .rgh__title,
 .rg-hero-v2__title, h1.rg-hero-v2__title,
-.rg-hero__title, h1.rg-hero__title,
 .rg-page-hero__title, h1.rg-page-hero__title,
 .rg-sd__title, h1.rg-sd__title,
 .rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title,
@@ -7865,7 +7541,6 @@ h1.rgh__title, .rgh__title,
 .rg-sd__panel-title, h2.rg-sd__panel-title,
 .rg-sd__ask-title, h2.rg-sd__ask-title,
 .rg-sd__journey-title, h2.rg-sd__journey-title,
-.rg-cta__title, h2.rg-cta__title,
 .rg-faq-title, h2.rg-faq-title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:600 !important;
@@ -7877,7 +7552,7 @@ h1.rgh__title, .rgh__title,
 .rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
 .rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff !important; } /* op groen paneel */
 .rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em,
-.rg-compare__title em, .rg-cta__title em, .rg-story__title em{
+.rg-compare__title em, .rg-story__title em{
   font-style: normal !important;
   font-synthesis: none;
   display: inline-block;
@@ -7887,8 +7562,8 @@ h1.rgh__title, .rgh__title,
 
 /* ---- 41.3 EYEBROW-signature: consistente kicker + hairline-aanzet ----
    Universeel: rustige, strak getrackte oker-caps. */
-.rg-cat-head__eyebrow, .rg-compare__eyebrow, .rg-story__eyebrow, .rg-hero__eyebrow,
-.rg-statement__kicker, .rg-cta__eyebrow, .rgh__eyebrow, .rg-hero-v2__kicker,
+.rg-cat-head__eyebrow, .rg-compare__eyebrow, .rg-story__eyebrow,
+.rg-statement__kicker, .rgh__eyebrow, .rg-hero-v2__kicker,
 .rg-endcta__eyebrow, .rg-sd__eyebrow, .rg-page-hero__eyebrow{
   font-family:'Montserrat',sans-serif !important;
   font-weight:700 !important;
@@ -7906,14 +7581,12 @@ h1.rgh__title, .rgh__title,
 @media (min-width:992px){
   /* Service-hero: kop-dominante copy, ondersteunend beeld */
   .rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr) !important; }
-  /* Feature-rijen: strak 50/50 (was bewust 1.08/0.92 met beeld altijd de
-     bredere kolom -- maar bij afwisselend beeld links/rechts verschoof de
-     gutter dan tussen twee lijnen, waardoor opeenvolgende blokken niet meer
-     op dezelfde verticale lijn uitkwamen). */
-  .rg-sd__row{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; }
-  .rg-sd__row--flip{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; }
-  .rg-feature-row{ grid-template-columns:1fr 1fr !important; }
-  .rg-feature-row--reverse{ grid-template-columns:1fr 1fr !important; }
+  /* Feature-rijen (.rg-sd__row/.rg-feature-row) hadden hier bewust een
+     1.08/0.92-asymmetrie (beeld altijd de bredere kolom); teruggedraaid naar
+     strak 50/50 omdat de gutter bij afwisselend beeld links/rechts anders
+     tussen twee verschillende lijnen verschoof. De basisregels van beide
+     classes zijn zelf al 1fr/1fr (resp. minmax(0,1fr) minmax(0,1fr)), dus
+     de losse herhaling hier was inert en is verwijderd. */
 }
 
 /* ---- 41.5 DEPTH — lichtere, consistente diepte (hairline > slagschaduw) ---- */
@@ -7999,19 +7672,19 @@ h1.rgh__title, .rgh__title,
 /* LEAD / INTRO — de subregel onder een sectie-kop */
 .rg-hero-v2__sub, .rg-statement__sub, .rg-page-hero__sub, .rg-block-title__sub,
 .rg-sd__head-sub, .rg-sd__sub, .rg-endcta__sub, .rg-theme-intro,
-.rg-cat-head__sub, .rg-compare__intro, .rg-hero__sub, .rg-contact-head__sub{
+.rg-cat-head__sub, .rg-compare__intro, .rg-contact-head__sub{
   font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
   line-height:1.6 !important;
 }
 /* BODY — lopende paragraaf-copy */
-.rg-service-card__text, .rg-cta__text,
+.rg-service-card__text,
 .rg-sd__row-copy p, .rg-feature-row__content p, .rg-sd__panel p,
 .rg-sd__faq-item p{
   font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem) !important;
   line-height:1.6 !important;
 }
 /* SMALL — noten, reassurance, trust-strips */
-.rg-cform__note, .rg-cta__note, .rg-sd__reassurance,
+.rg-cform__note, .rg-sd__reassurance,
 .rg-hero-v2__trust, .rg-endcta__trust, .rg-statement__reassurance{
   font-size:0.85rem !important;
 }
@@ -8098,9 +7771,11 @@ h1.rgh__title, .rgh__title,
   margin:0 0 .7rem !important;
 }
 /* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
-   zelfde als hero-v2 en de rest van home), niet op de spec-grid-rail (+120px).
-   Kop + tegels zitten in dezelfde container -> beide schuiven mee en blijven
-   onderling uitgelijnd. Wint van de +120-spec-regel omdat 'ie later staat. */
+   zelfde als hero-v2 en de rest van home). Kop + tegels zitten in dezelfde
+   container -> beide schuiven mee en blijven onderling uitgelijnd. (De
+   +120-spec-regel waar deze regel ooit van moest winnen is inmiddels zelf
+   verwijderd als dode code -- zie sectie 25a2/27, .rg-spec-grid gebruikt nu
+   gewoon de gedeelde +80-lijn plus een eigen 40px kaal-rand-fix.) */
 @media (min-width:992px){
   /* +80 alleen op HOME (body.is-act-home): daar moet de sectie op de standaard
      homepage-rail. Op thema/service houdt de sectie z'n eigen (spec-)rail. */
