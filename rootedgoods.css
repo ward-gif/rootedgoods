@@ -6989,7 +6989,7 @@ h1.rg-contact-head__title,
   align-items: center;
   gap: 0.9rem;
   max-width: 440px;
-  margin: 1.5rem auto 0;
+  margin: 1.5rem auto 0.5rem;
   padding: 0.85rem 1rem;
   background: #ffffff;
   border: 1px solid #EAE3D7;
@@ -6997,14 +6997,14 @@ h1.rg-contact-head__title,
   text-align: left;
   text-decoration: none !important;
   cursor: pointer;
-  box-shadow: 0 12px 32px -26px rgba(45, 69, 40, 0.4);
+  box-shadow: 0 16px 34px -20px rgba(45, 69, 40, 0.4);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .rg-contact-head__callcard:hover,
 .rg-contact-head__callcard:focus-visible {
   border-color: #ad6331;
   transform: translateY(-2px);
-  box-shadow: 0 18px 38px -26px rgba(45, 69, 40, 0.5);
+  box-shadow: 0 22px 40px -20px rgba(45, 69, 40, 0.5);
 }
 .rg-contact-head__callcard-avatars { display: inline-flex; flex: none; }
 .rg-contact-head__callcard-avatars img {
