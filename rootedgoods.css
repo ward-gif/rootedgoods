@@ -3354,15 +3354,12 @@ body.is-ctl-product {
    3 gelijke kaarten met achtergrondbeeld, donkergroene dim en
    gecentreerde tekst. Zet .rg-spec-card op een <a> met daarin een
    <img class="rg-spec-card__img"> + .rg-spec-card__label. */
-/* Spec-sectie: deterministische uitlijning (zelfde als feature/slider/cat). */
-@media (min-width: 992px) {
-  .cms-section:has(.rg-spec-grid) .cms-block-container,
-  .cms-section:has(.rg-spec-grid) .cms-block-container[style] {
-    max-width: none !important;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-  }
-}
+/* Spec-sectie: deterministische uitlijning (zelfde als feature/slider/cat).
+   De ancestor-padding zelf staat NIET meer hier -- sectie 30
+   (HOMEPAGE-UITLIJNING) staat bewust later in dit bestand en wint sowieso
+   op bronvolgorde (identieke specificiteit), dus een losse +120-regel hier
+   was dode code die de indruk wekte dat spec-grid een andere inspring had
+   dan cat-grid/feature-row/slider. Nu één bron van waarheid: sectie 30. */
 .rg-spec-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -3808,18 +3805,13 @@ body.is-ctl-product {
     padding-right: 40px !important;
   }
 }
-/* Desktop: zelfde linker-/rechterrand (calc + 80) als de tegels/slider-titel,
-   zodat de feature-blokken exact even breed zijn als de rest (niet te breed). */
+/* Verticale lucht tussen 2 opeenvolgende native feature-blokken (was Promidata's
+   inline 50px 0 50px 0 -> nu ~180px ertussen). Horizontale rand (links/rechts)
+   staat NIET meer hier -- sectie 30 (HOMEPAGE-UITLIJNING) staat later in dit
+   bestand en wint sowieso op bronvolgorde, dus een losse +120-regel hier was
+   dode code (zie ook .rg-spec-grid hierboven, zelfde opschoning). */
 @media (min-width: 992px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
-    max-width: none;
-    /* +120 (i.p.v. +80) = 40px extra inspring -> gelijk aan de cat-tegels (270). */
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 120px) !important;
-    /* Verticale padding fors omhoog t.o.v. Promidata's inline 50px 0 50px 0:
-       2 opeenvolgende feature-blokken -> ~180px lucht ertussen i.p.v. 100px.
-       Dit is de ECHTE hendel — deze homepage-blokken zijn native CMS-blokken
-       (.cms-block-container), niet het losse .rg-feature-row-grid. */
     padding-top: 90px !important;
     padding-bottom: 90px !important;
   }
