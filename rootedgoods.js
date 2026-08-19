@@ -3,10 +3,21 @@
  * Geladen via Promidata theme naast hun eigen scripts.
  * Last updated: 2026-07-02
  *
- * STRUCTUUR:
- *   SECTIE 1 — GLOBAL          : search overlay, sticky header, flyout CTA, offerte link
- *   SECTIE 2 — HOMEPAGE        : logo slider, productslider tegel-click, hero-v2 hoogte-fit
- *   SECTIE 3 — PDP             : productnaam verplaatsen, accordion default, staffel-tabel, zoom button
+ * STRUCTUUR (bijgewerkt -- was verouderd, noemde maar 3 grove items):
+ *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 sticky header, 1.3 flyout CTA,
+ *                           1.4 offerte-navlink, 1.5 Cal.com-embed lazy-load,
+ *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit
+ *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
+ *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.1b
+ *                           topbar USP-marquee (mobiel), 2.1c offcanvas quicklinks/
+ *                           toggle, 2.1d mobiel-header-rij, 2.2 productslider tegel-
+ *                           click, 2.4 hero-v2 hoogte-fit
+ *   SECTIE 3 — PDP        : 3.1 productnaam verplaatsen, 3.2 accordion-default,
+ *                           3.2b configurator-stappen open houden, 3.3 staffel-
+ *                           prijstabel, 3.4 gallery-zoom-knop
+ *
+ * `rgOnthulNaFonts()` (voor sectie 2.4) is een gedeelde helper, ook gebruikt door
+ * 1.6b -- zie de comment daar voor waarom de rest van die twee niet is samengevoegd.
  *
  * UITGANGSPUNTEN:
  * - Zo min mogelijk JS op PDP/PLP. Alleen functies die NIET zonder JS kunnen.
@@ -615,6 +626,8 @@ document.addEventListener('DOMContentLoaded', function () {
    * (stopImmediatePropagation) en zelf alleen de VOLGENDE groep opent — zonder
    * de huidige te sluiten. Handmatig sluiten via titel-klik blijft werken. */
   function keepConfiguratorStepsOpen() {
+    if (document.body.dataset.rgConfiguratorStepsGuard) return;
+    document.body.dataset.rgConfiguratorStepsGuard = '1';
     document.addEventListener('click', function (e) {
       var btn = e.target.closest('.btn-configurator-next');
       if (!btn) return;
@@ -661,8 +674,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var rows = document.querySelectorAll('.product-block-prices-row[data-qty]');
     rows.forEach(function (row) {
       // (a) Hele rij klikbaar
-      if (!row.dataset.rowClickBound) {
-        row.dataset.rowClickBound = 'true';
+      if (!row.dataset.rgRowClickBound) {
+        row.dataset.rgRowClickBound = '1';
         row.addEventListener('click', function (e) {
           // Skip als gebruiker direct op de qty-click span klikt
           // (heeft eigen Promidata handler die changeOrderQuantity aanroept)
@@ -712,6 +725,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })();
 
+
+/* Gedeeld door sectie 2.4 (hero-v2) en 1.6b (over-ons hero): onthul pas als
+   webfonts geladen zijn (of na een 1.5s-vangnet-timeout), zodat de content
+   niet nog een keer verspringt door een late font-swap. De twee secties
+   verschillen verder te veel (ander gemeten element, ander aantal correctie-
+   stappen, synchroon vs. DOMContentLoaded, wel/niet een resize-event
+   terugsturen naar bouwRoute()) om verder samen te voegen tot 1 functie --
+   dit stukje was wél letterlijk identiek op 2 plekken. */
+function rgOnthulNaFonts(toon) {
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(toon);
+    setTimeout(toon, 1500);
+  } else {
+    toon();
+  }
+}
 
 /* ---- 2.4 Hero v2 — hoogte passend maken zodat de logo-slider net boven de
  * vouw eindigt (24px marge). Eigen scope; doet niets zonder .rg-hero-v2 op de
@@ -793,12 +822,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fit();
     hero.classList.add('is-hero-klaar');
   }
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(toonHero);
-    setTimeout(toonHero, 1500);
-  } else {
-    toonHero();
-  }
+  rgOnthulNaFonts(toonHero);
 })();
 
 
@@ -1566,10 +1590,5 @@ document.addEventListener('DOMContentLoaded', function () {
     fit();
     root.classList.add('is-hero-klaar');
   }
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(toonHero);
-    setTimeout(toonHero, 1500);
-  } else {
-    toonHero();
-  }
+  rgOnthulNaFonts(toonHero);
 })();
