@@ -3825,6 +3825,28 @@ body.is-ctl-product {
   }
 }
 
+/* Zelfstandige .rg-feature-row-blokken (bv. waarom-rooted-goods.html,
+   zo-werkt-het.html) hebben hun EIGEN max-width/padding (zie sectie 27,
+   .rg-feature-row) -- de CMS-ancestor mag daar niks meer bovenop doen,
+   anders dubbelt zowel de zij-padding als de 90px verticale lucht
+   hierboven (die was bedoeld voor de OUDE native image-text-cover-opzet
+   zonder eigen .rg-feature-row-wrapper). Herkenbaar aan .rg-feature-row__media,
+   dat bestaat niet bij de oude native structuur. */
+@media (min-width: 576px) {
+  .cms-section:has(.rg-feature-row__media) .cms-block-container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .cms-section:has(.rg-feature-row__media) .cms-block-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
 /* Reverse-variant: dupliceer het blok en geef het in de CMS de CSS-class
    "rg-feature-reverse". Op desktop draaien de kolommen om (beeld rechts,
    tekst links); op mobiel blijft de natuurlijke stack (beeld boven). */
