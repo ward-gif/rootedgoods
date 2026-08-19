@@ -1282,28 +1282,31 @@ img {
     justify-content: center !important;
     flex: none !important;
     cursor: pointer !important;
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 50% !important;
-    background: #2d4528 !important;
+    padding: 0.6rem !important;
   }
   .home-productslider .base-slider-controls button .icon svg {
     display: none !important;
   }
   .home-productslider .base-slider-controls button .icon {
     display: block !important;
-    width: 10px !important;
-    height: 10px !important;
-    border-top: 2.5px solid #fff !important;
-    border-right: 2.5px solid #fff !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-top: 3.5px solid #2d4528 !important;
+    border-right: 3.5px solid #2d4528 !important;
     background: none !important;
   }
-  .home-productslider .base-slider-controls-prev .icon { transform: rotate(-135deg) translate(1px, -1px); }
-  .home-productslider .base-slider-controls-next .icon { transform: rotate(45deg) translate(-1px, -1px); }
-  .home-productslider .base-slider-controls button:disabled { background: #8c9a86 !important; cursor: default !important; }
-  .home-productslider .base-slider-controls button:disabled .icon { opacity: 0.4; }
-  /* Ruimte tussen titel/link-regel en de slider eronder verkleinen. */
+  .home-productslider .base-slider-controls-prev .icon { transform: rotate(-135deg); }
+  .home-productslider .base-slider-controls-next .icon { transform: rotate(45deg); }
+  .home-productslider .base-slider-controls button:disabled { cursor: default !important; }
+  .home-productslider .base-slider-controls button:disabled .icon { opacity: 0.35; }
+  /* Ruimte boven/onder de hele slider (titel erboven, wat er onder komt)
+     verkleinen -- de standaard Shopware block-padding (20px rondom) stond
+     hier onnodig ruim. */
   .cms-block-text:has(+ .cms-block-product-slider) .cms-block-container {
+    padding-bottom: 6px !important;
+  }
+  .cms-block-product-slider .cms-block-container {
+    padding-top: 6px !important;
     padding-bottom: 6px !important;
   }
   /* "Bekijk alle producten" verplaatst naar onder de tegels, zie
@@ -5004,6 +5007,17 @@ img.rg-europe-map__svg {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  /* .rg-spec-grid kreeg hierboven padding:0 (leunt op de calc+80-opmaak van
+     de OUDER-container) -- maar .rg-sd__faq/.rg-block-title/.rg-compare
+     hebben allemaal hun EIGEN 40px padding, dus hun content-rand ligt 40px
+     verder naar binnen dan .rg-spec-grid's kale rand. Buitenranden van de
+     containers matchten toevallig (vandaar dat het bij eerdere metingen
+     niet opviel), maar de kaarten zelf stonden zichtbaar verder naar links
+     dan bijvoorbeeld de FAQ-kaarten erboven. Hier hersteld. */
+  .rg-spec-grid {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
 
   /* 4. SLIDER: .cms-block-container blijft EXACT op de gedeelde 80px-lijn
      (zelfde rand als cat/spec/feature) — .base-slider daarbinnen wordt 2x
@@ -6759,8 +6773,17 @@ h2.rg-sd__panel-title,
 }
 .rg-sd__faq > .rg-sd__head,
 .rg-sd__faq > h2.rg-faq-cat,
-.rg-sd__faq > .rg-spec-cta {
+.rg-sd__faq > .rg-spec-cta,
+.rg-sd__faq > .rg-sd__ask {
   grid-column: 1 / -1;
+}
+/* Vangnet voor bestaande live pagina's waar .rg-sd__ask nog ín .rg-sd__faq
+   genest zit (viel anders in kolom 2 -> leek "naar rechts uitgelijnd").
+   Nieuwe/herplakte content zet 'm los van .rg-sd__faq neer (zie
+   contact-eind-ask.html), waar dit vanzelfsprekend geen effect heeft. */
+.rg-sd__faq > .rg-sd__ask {
+  margin-left: auto;
+  margin-right: auto;
 }
 .rg-sd__faq > .rg-spec-cta {
   justify-content: flex-start;
