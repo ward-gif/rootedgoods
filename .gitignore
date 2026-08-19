@@ -1,5 +1,6 @@
 _preview.html
 .playwright-mcp/
+.DS_Store
 *-desktop.png
 *-desktop2.png
 *-mobile.png

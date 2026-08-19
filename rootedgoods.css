@@ -5536,7 +5536,7 @@ img.rg-europe-map__svg {
 
 /* Breadcrumb verbergen op de thema- én merken-pagina (CSS-only via :has,
    geen Twig nodig: de pagina bevat de betreffende grid). */
-body:has(.rg-theme-grid) .cms-breadcrumb,
+body:has(.rg-theme-section) .cms-breadcrumb,
 body:has(.rg-brand-grid) .cms-breadcrumb {
   display: none !important;
 }
