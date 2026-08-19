@@ -248,6 +248,29 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 
+/* ---- 2.0b Product-slider "bekijk alle"-link naar onder de tegels (mobiel)
+ * De titel + "Bekijk alle producten"-link (.rg-cat-head) zitten samen in
+ * één tekstblok VOOR de slider -- puur CSS kan de link niet apart naar ná
+ * een latere sibling verplaatsen zonder ook de titel mee te nemen. Alleen
+ * de link zelf verhuist (titel blijft staan), en wordt een volwaardige
+ * knop i.p.v. de kale tekstlink-met-pijl (die viel op mobiel te veel weg
+ * onder de tegels). Alleen <576px: op tablet/desktop blijft 'm gewoon
+ * bovenaan naast de titel staan. */
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth >= 576) return;
+  document.querySelectorAll('.cms-block-product-slider').forEach(function (slider) {
+    var textBlock = slider.previousElementSibling;
+    if (!textBlock || !textBlock.classList.contains('cms-block-text')) return;
+    var link = textBlock.querySelector('.rg-cat-head__link');
+    if (!link || link.dataset.rgMoved) return;
+    link.dataset.rgMoved = '1';
+    link.classList.remove('rg-cat-head__link');
+    link.classList.add('btn', 'btn-primary', 'rg-slider-cta-moved');
+    slider.parentNode.insertBefore(link, slider.nextSibling);
+  });
+});
+
+
 /* ---- 2.1 Logo slider — Shopware carousel vervangen door continue scroll
  * DOMContentLoaded i.p.v. window.load: img.src is de resolved attribuutwaarde
  * en staat er al zodra het element geparsed is — de afbeelding hoeft niet
