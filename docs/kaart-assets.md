@@ -36,6 +36,22 @@ for f in svg/land-*.svg; do
 done
 ```
 
+## Mobiele variant (dunnere stroke)
+
+`non-scaling-stroke` (zie normalisatie hieronder) houdt de lijndikte
+constant ongeacht de weergavegrootte -- handig voor consistentie tussen
+landen, maar het betekent ook dat een kaart die op mobiel naar ~50%
+hoogte gaat (zie `.rg-route__map img` in rootedgoods.css, `@media
+max-width:991px`) verhoudingsgewijs een dubbel zo dikke lijn krijgt.
+Bestanden met een `-mobiel`-suffix (bv. `land-portugal-mobiel.svg`)
+zijn een kopie met de helft van de stroke-width (0.75px i.p.v. 1.5px),
+bedoeld voor gebruik in een `<picture>`-`<source media="(max-width:
+991px)">` naast het gewone bestand (zie `over-ons.html`). Alleen
+gemaakt voor bestanden die daadwerkelijk kleiner renderen op mobiel
+(de vier stop-kaarten, de Europa-introkaart, de Nederland-provincies-
+contactkaart) -- niet voor alle 16 landen, de meeste worden nergens
+kleiner getoond.
+
 ## Normalisatie (wat er is aangepast t.o.v. de originelen)
 
 1. **Lijndikte gelijkgetrokken via `vector-effect: non-scaling-stroke`**
