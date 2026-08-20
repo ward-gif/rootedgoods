@@ -167,10 +167,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   width: 20px !important;
   height: 20px !important;
 }
-.header-cart-total,
-.header-cart-total * {
-  font-size: 0.8rem !important;
-  color: #CA853F !important; /* status, geen CTA -> mos-groen i.p.v. terracotta */
+/* "€ 0,00" weg -- icoon blijft. Geen tellerbadge voor cart standaard
+   aanwezig in de markup (anders dan wishlist hieronder); dat volgt apart. */
+.header-cart-total {
+  display: none !important;
 }
 
 /* Header — wishlist badge */
@@ -198,6 +198,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   font-size: 0.65rem !important;
   line-height: 18px !important;
   border-radius: 50px !important;
+}
+/* Hartje volledig weg als de wishlist leeg is -- .header-wishlist-badge is
+   ALTIJD in de DOM (Shopware's WishlistWidgetPlugin update 'm live), leeg
+   (:empty) zolang er niks in zit. Bootstrap verbergt de badge zelf al zo
+   (.badge:empty{display:none}, all.css) -- dit haakt in op datzelfde
+   signaal om ook het icoon errond te verbergen, i.p.v. iets nieuws te
+   verzinnen. Zodra er >=1 item in zit vult Shopware de badge -> :empty
+   matcht niet meer -> icoon (met teller) verschijnt vanzelf. */
+.header-actions-col .header-wishlist:has(.header-wishlist-badge:empty) {
+  display: none !important;
 }
 
 /* ------------------------------------------------------------
@@ -266,21 +276,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   fill: #2d4528 !important;
 }
 
-/* Offerte-link in nav-main — accent-CTA in terracotta tekst met separator. */
-.offerte-link .main-navigation-link-text,
-.offerte-link .main-navigation-link-text span,
-.offerte-link [itemprop="name"] {
-  color: #ad6331 !important;
-}
-.offerte-link:hover .main-navigation-link-text,
-.offerte-link:hover .main-navigation-link-text span {
-  color: #955529 !important; /* CTA-link: hover in diepere terracotta (geen groen) */
-}
-.offerte-link .offerte-separator {
-  color: #000 !important;
-  margin-right: 0.5rem;
-  font-weight: 300;
-  opacity: 0.4;
+/* Offerteknop in de header-actions-rij (JS sectie 1.4) — hergebruikt de
+   globale .btn.btn-primary (zelfde kleur/vorm/hover/pijl als de primaire
+   hero-knop), alleen compacter: minder padding + iets kleinere tekst, want
+   de rij is maar ~61px hoog naast het logo en de 24px-iconen. */
+.header-actions-col .offerte-link.btn-primary {
+  padding: 0.5rem 1.1rem !important;
+  font-size: 0.875rem !important;
 }
 
 /* ------------------------------------------------------------
@@ -553,20 +555,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 #searchOverlay.active {
   display: block;
 }
-/* Vanaf 992px: enige die zichtbaar mag blijven tijdens zoeken is de
-   zoekbalk zelf (.header-search) -- logo, wishlist/account/cart-iconen EN
-   de categorieën-nav (.nav-main) moeten allemaal onder de overlay. Omdat
-   .header-search binnen .header-main's eigen stacking-context zit (fixed,
-   z-index 500), kan geen los z-index op .header-search 'm daarboven laten
-   uitsteken -- een kind kan nooit boven de eigen ouder's ranking uitkomen
-   t.o.v. iets BUITEN die ouder. De overlay moet dus zelf boven .header-main
-   (500), en .header-search wordt via JS (rootedgoods.js, sectie 1.1)
-   tijdelijk position:fixed gemaakt op exact z'n huidige plek, zodat 'ie wél
-   los van .header-main mee kan stijgen. */
+/* Vanaf 992px: dimt alleen ONDER de header -- de hele header (logo,
+   zoekbalk, wishlist/account/cart-iconen, categorieën-nav) blijft licht en
+   klikbaar. 140px = onderkant .header-main + .nav-main samen, zelfde meting
+   als de .content-main padding-top-reserve hierboven (sectie 2). Geen
+   aparte z-index-race meer nodig (was 550, boven .header-main's 500) --
+   zonder geometrische overlap doet de stacking-order er niet meer toe. */
 @media (min-width: 992px) {
   #searchOverlay {
-    top: 0;
-    z-index: 550;
+    top: 140px;
   }
 }
 
@@ -798,11 +795,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
 }
+/* Breedte gekoppeld aan .header-row i.p.v. een losse vw-%: die had geen
+   relatie tot de zoekbalk-rij eronder, dus oogde op sommige schermen (bv.
+   1520px) veel breder dan de rij zelf. .header-row heeft 2rem zij-padding
+   (sectie 3); hier 1.5rem inzet, dus de dropdown is altijd net iets breder
+   dan de header-row-inhoud, ongeacht viewport-breedte. */
 .navigation-flyout.cio-all-categories-navigation {
-  max-width: 80%;
+  max-width: calc(100% - 3rem);
   margin: 0 auto;
-  left: 10%;
-  right: 10%;
+  left: 1.5rem;
+  right: 1.5rem;
 }
 /* Theme zet zelf padding-bottom:60px op de tegel-rij -- flink kleiner. */
 .navigation-flyout .row.navigation-flyout-content {

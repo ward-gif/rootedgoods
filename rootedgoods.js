@@ -5,7 +5,8 @@
  *
  * STRUCTUUR (bijgewerkt -- was verouderd, noemde maar 3 grove items):
  *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 sticky header, 1.3 flyout CTA,
- *                           1.4 offerte-navlink, 1.5 Cal.com-embed lazy-load,
+ *                           1.4 offerteknop (header-actions), 1.4b nav-main
+ *                           zonder title-tooltip, 1.5 Cal.com-embed lazy-load,
  *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
  *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.1b
@@ -38,76 +39,22 @@
  * Donkere overlay achter zoekbalk wanneer 'ie focus heeft.
  * DOMContentLoaded: werkt zonder afbeeldingen geladen, draait eerder.
  *
- * Vanaf 992px moet ALLEEN de zoekbalk (.header-search) zelf zichtbaar
- * blijven boven de overlay -- logo, iconen en de categorieën-nav
- * (.nav-main) horen mee te verduisteren (CSS: overlay-z-index boven
- * .header-main). Een eigen z-index (zelfs met position:fixed) is HIER niet
- * genoeg: .header-search blijft een DOM-nakomeling van .header-main, en
- * .header-main zelf vormt al een eigen stacking-context (fixed + z-index)
- * -- een nakomeling kan nooit boven de RANKING VAN DIE OUDER uitkomen
- * t.o.v. iets BUITEN die ouder, hoe hoog z'n eigen z-index ook is.
- * Dus verplaatsen we .header-search hier ECHT in de DOM naar <body>, met
- * exact z'n huidige positie vastgepind (geen visuele sprong), zodat 'ie als
- * losse, echte sibling van de overlay meedoet in de stacking-vergelijking.
- * Bij blur/sluiten gaat 'ie terug naar z'n oorspronkelijke plek (bewaard via
- * origineleOuder/origineelVolgendeSibling), zodat de normale CSS-
- * positionering het weer overneemt en er geen inline styles blijven hangen. */
+ * Dimt alleen ONDER de header (CSS: overlay start op de headerhoogte vanaf
+ * 992px, sectie 6) -- de header zelf (logo, zoekbalk, iconen, categorieën-
+ * nav) overlapt de overlay dus nooit meer en blijft altijd licht en
+ * klikbaar. Geen DOM-verplaatsing van .header-search meer nodig (die trucs
+ * losten precies dít stacking-context-probleem op, dat nu niet meer
+ * bestaat omdat er simpelweg geen geometrische overlap meer is). */
 document.addEventListener('DOMContentLoaded', function () {
   var searchInput = document.querySelector('.header-search-input');
   var overlay = document.getElementById('searchOverlay');
-  var searchBox = document.querySelector('.header-search');
   if (!searchInput || !overlay) return;
 
-  var origineleOuder = searchBox ? searchBox.parentNode : null;
-  var origineelVolgendeSibling = searchBox ? searchBox.nextSibling : null;
-  var opgetild = false;
   var sluitTimeoutId = null;
 
-  function tilSearchboxOp() {
-    if (!searchBox || opgetild || window.innerWidth < 992) return;
-    var r = searchBox.getBoundingClientRect();
-    searchBox.style.position = 'fixed';
-    searchBox.style.left = r.left + 'px';
-    searchBox.style.top = r.top + 'px';
-    searchBox.style.margin = '0';
-    searchBox.style.transform = 'none';
-    searchBox.style.zIndex = '900';
-    // appendChild verplaatst searchInput's ouder in de DOM -> de browser
-    // blurt het veld daardoor automatisch (verlies van focus is standaard-
-    // gedrag bij het herplaatsen van een focused element/z'n voorouder).
-    // Focus meteen weer terugzetten; de eigen 'focus'-listener hieronder
-    // ziet dan opgetild al true staan en doet verder niets (geen lus).
-    document.body.appendChild(searchBox);
-    opgetild = true;
-    searchInput.focus();
-  }
-  function zetSearchboxTerug() {
-    if (!searchBox || !opgetild) return;
-    searchBox.style.position = '';
-    searchBox.style.left = '';
-    searchBox.style.top = '';
-    searchBox.style.margin = '';
-    searchBox.style.transform = '';
-    searchBox.style.zIndex = '';
-    if (origineelVolgendeSibling) {
-      origineleOuder.insertBefore(searchBox, origineelVolgendeSibling);
-    } else {
-      origineleOuder.appendChild(searchBox);
-    }
-    opgetild = false;
-  }
-
   searchInput.addEventListener('focus', function () {
-    // Een eventuele pending sluit-timeout van een vorige blur annuleren --
-    // anders kan die alsnog afgaan NA deze nieuwe focus (race condition,
-    // niet waterdicht af te vangen met alleen een activeElement-check op
-    // het moment dat de timeout afgaat). Dit was de oorzaak van het
-    // "springt terug"-effect: de verplaatsing in tilSearchboxOp() veroorzaakt
-    // zelf een tussentijdse blur (+ meteen re-focus), en die tussentijdse
-    // blur plande zijn eigen sluit-timeout die soms alsnog afging.
     if (sluitTimeoutId) { clearTimeout(sluitTimeoutId); sluitTimeoutId = null; }
     overlay.classList.add('active');
-    tilSearchboxOp();
   });
 
   // 150ms timeout: klik op zoekknop heeft tijd om te firen voordat overlay weg is.
@@ -115,13 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
     sluitTimeoutId = setTimeout(function () {
       sluitTimeoutId = null;
       overlay.classList.remove('active');
-      zetSearchboxTerug();
     }, 150);
   });
 
   overlay.addEventListener('click', function () {
     overlay.classList.remove('active');
-    zetSearchboxTerug();
     searchInput.blur();
   });
 });
@@ -183,18 +128,44 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 1.4 Offerte link in nav-main
- * Tekstuele CTA naast de hoofdnavigatie, alleen op desktop (>= 992px). */
+/* ---- 1.4 Offerteknop in de header-actions-rij
+ * Stond eerst als tekstlink in de menubalk (.nav-main); nu een compacte
+ * .btn.btn-primary vóór het iconen-cluster (wishlist/account/cart) in
+ * .header-actions-col, alleen op desktop (>= 992px). Mobiel heeft 'm al
+ * staan als snelkoppeling in het offcanvas-menu (sectie 2.1c). */
 document.addEventListener('DOMContentLoaded', function () {
-  var nav = document.querySelector('.nav-main .main-navigation-menu');
-  if (!nav || window.innerWidth < 992) return;
+  var row = document.querySelector('.header-actions-col .row');
+  if (!row || window.innerWidth < 992) return;
 
   var link = document.createElement('a');
   link.href = '/offerte';   // relatief -> werkt op dev én live
-  link.className = 'nav-link main-navigation-link offerte-link';
+  link.className = 'btn btn-primary offerte-link';
   link.title = 'Offerte aanvragen';
-  link.innerHTML = '<div class="main-navigation-link-text"><span class="offerte-separator">|</span><span>Offerte aanvragen</span></div>';
-  nav.appendChild(link);
+  link.textContent = 'Offerte aanvragen';
+
+  var col = document.createElement('div');
+  col.className = 'col-auto';
+  col.appendChild(link);
+
+  // Vóór het iconen-cluster (eerste col-auto is de wishlist-knop).
+  var wishlistCol = row.querySelector('.header-wishlist');
+  wishlistCol = wishlistCol ? wishlistCol.closest('.col-auto') : null;
+  if (wishlistCol) row.insertBefore(col, wishlistCol);
+  else row.appendChild(col);
+});
+
+
+/* ---- 1.4b Nav-main zonder title-tooltip
+ * Shopware zet op elk hoofdmenu-item (incl. "Onze categorieën") een
+ * title-attribuut -> native browser-tooltip. Overbodig want de tekst staat
+ * al zichtbaar in de link zelf; hier gestript. Scope bewust alleen
+ * .nav-main-links, niet de account/wishlist/cart-iconknoppen (die HEBBEN
+ * geen zichtbare tekst, dus daar is de title wél de enige uitleg) en niet
+ * de categorie-flyout-tegels (ander element, niet gevraagd). */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.nav-main .main-navigation-link[title]').forEach(function (el) {
+    el.removeAttribute('title');
+  });
 });
 
 
