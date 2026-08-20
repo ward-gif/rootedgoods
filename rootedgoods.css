@@ -167,13 +167,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   width: 20px !important;
   height: 20px !important;
 }
-/* "€ 0,00" weg -- icoon blijft. Geen tellerbadge voor cart standaard
-   aanwezig in de markup (anders dan wishlist hieronder); dat volgt apart. */
+/* "€ 0,00" weg -- icoon blijft. .header-cart-badge (teller, bv. "1") wordt
+   door Shopware alleen server-side gerenderd zodra de cart >=1 item heeft
+   -- geen :empty-truc nodig zoals bij wishlist hieronder, hij bestaat
+   simpelweg niet in de DOM bij een lege cart. Live geverifieerd door een
+   testproduct toe te voegen/weer te verwijderen. */
 .header-cart-total {
   display: none !important;
 }
+.header-cart-btn {
+  position: relative !important;
+}
 
-/* Header — wishlist badge */
+/* Header — wishlist- en cart-badge (zelfde positionering/opmaak) */
 .header-wishlist,
 .header-wishlist-btn,
 .header-actions-col,
@@ -187,7 +193,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .header-wishlist-btn {
   position: relative !important;
 }
-.header-wishlist-badge {
+.header-wishlist-badge,
+.header-cart-badge {
   position: absolute !important;
   top: 2px !important;
   right: -2px !important;
