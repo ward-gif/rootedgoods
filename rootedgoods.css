@@ -802,8 +802,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .navigation-flyout-category .navigation-item {
   position: relative;
-  display: block;
-  height: 160px;
+  display: block !important;
+  height: 160px !important;   /* !important: het theme's eigen, veel specifiekere
+    selector (body .navigation-flyouts .navigation-flyout .navigation-flyout-content
+    .navigation-flyout-category a) zet zelf height:120px en won anders altijd op
+    specificiteit, ongeacht bronvolgorde. */
   border-radius: 10px;
   overflow: hidden;
   background-size: cover !important;
