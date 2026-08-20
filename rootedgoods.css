@@ -212,7 +212,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   background-color: #ffffff;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
-  box-shadow: 0 6px 16px -10px rgba(45, 69, 40, 0.18);   /* hele lichte scheiding met de content eronder */
   transition: transform 0.3s ease;
 }
 .nav-main.header-hidden {
