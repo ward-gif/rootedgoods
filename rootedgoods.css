@@ -2228,7 +2228,12 @@ body.is-ctl-product .product-detail-ordernumber-container {
   color: #888;
   font-weight: 400;
   white-space: normal;                  /* mag wrappen ipv overlappen */
-  word-break: break-word;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;                        /* nette afbreekstreepjes ipv midden-in-het-woord
+    knippen (bv. "Walnoot-hout" i.p.v. "Walnootho-ut") -- gebruikt de nl-hyphenation-
+    dictionary via het lang="nl-NL" op <html>. */
+  -webkit-hyphens: auto;
   text-align: center;
   text-transform: capitalize;
 }
