@@ -553,6 +553,22 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 #searchOverlay.active {
   display: block;
 }
+/* Vanaf 992px: enige die zichtbaar mag blijven tijdens zoeken is de
+   zoekbalk zelf (.header-search) -- logo, wishlist/account/cart-iconen EN
+   de categorieën-nav (.nav-main) moeten allemaal onder de overlay. Omdat
+   .header-search binnen .header-main's eigen stacking-context zit (fixed,
+   z-index 500), kan geen los z-index op .header-search 'm daarboven laten
+   uitsteken -- een kind kan nooit boven de eigen ouder's ranking uitkomen
+   t.o.v. iets BUITEN die ouder. De overlay moet dus zelf boven .header-main
+   (500), en .header-search wordt via JS (rootedgoods.js, sectie 1.1)
+   tijdelijk position:fixed gemaakt op exact z'n huidige plek, zodat 'ie wél
+   los van .header-main mee kan stijgen. */
+@media (min-width: 992px) {
+  #searchOverlay {
+    top: 0;
+    z-index: 550;
+  }
+}
 
 @media (min-width: 768px) {
   .search-suggest-container {

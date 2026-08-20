@@ -36,23 +36,76 @@
 
 /* ---- 1.1 Search overlay
  * Donkere overlay achter zoekbalk wanneer 'ie focus heeft.
- * DOMContentLoaded: werkt zonder afbeeldingen geladen, draait eerder. */
+ * DOMContentLoaded: werkt zonder afbeeldingen geladen, draait eerder.
+ *
+ * Vanaf 992px moet ALLEEN de zoekbalk (.header-search) zelf zichtbaar
+ * blijven boven de overlay -- logo, iconen en de categorieën-nav
+ * (.nav-main) horen mee te verduisteren (CSS: overlay-z-index boven
+ * .header-main). Een eigen z-index (zelfs met position:fixed) is HIER niet
+ * genoeg: .header-search blijft een DOM-nakomeling van .header-main, en
+ * .header-main zelf vormt al een eigen stacking-context (fixed + z-index)
+ * -- een nakomeling kan nooit boven de RANKING VAN DIE OUDER uitkomen
+ * t.o.v. iets BUITEN die ouder, hoe hoog z'n eigen z-index ook is.
+ * Dus verplaatsen we .header-search hier ECHT in de DOM naar <body>, met
+ * exact z'n huidige positie vastgepind (geen visuele sprong), zodat 'ie als
+ * losse, echte sibling van de overlay meedoet in de stacking-vergelijking.
+ * Bij blur/sluiten gaat 'ie terug naar z'n oorspronkelijke plek (bewaard via
+ * origineleOuder/origineelVolgendeSibling), zodat de normale CSS-
+ * positionering het weer overneemt en er geen inline styles blijven hangen. */
 document.addEventListener('DOMContentLoaded', function () {
   var searchInput = document.querySelector('.header-search-input');
   var overlay = document.getElementById('searchOverlay');
+  var searchBox = document.querySelector('.header-search');
   if (!searchInput || !overlay) return;
+
+  var origineleOuder = searchBox ? searchBox.parentNode : null;
+  var origineelVolgendeSibling = searchBox ? searchBox.nextSibling : null;
+  var opgetild = false;
+
+  function tilSearchboxOp() {
+    if (!searchBox || opgetild || window.innerWidth < 992) return;
+    var r = searchBox.getBoundingClientRect();
+    searchBox.style.position = 'fixed';
+    searchBox.style.left = r.left + 'px';
+    searchBox.style.top = r.top + 'px';
+    searchBox.style.margin = '0';
+    searchBox.style.transform = 'none';
+    searchBox.style.zIndex = '900';
+    document.body.appendChild(searchBox);
+    opgetild = true;
+  }
+  function zetSearchboxTerug() {
+    if (!searchBox || !opgetild) return;
+    searchBox.style.position = '';
+    searchBox.style.left = '';
+    searchBox.style.top = '';
+    searchBox.style.margin = '';
+    searchBox.style.transform = '';
+    searchBox.style.zIndex = '';
+    if (origineelVolgendeSibling) {
+      origineleOuder.insertBefore(searchBox, origineelVolgendeSibling);
+    } else {
+      origineleOuder.appendChild(searchBox);
+    }
+    opgetild = false;
+  }
 
   searchInput.addEventListener('focus', function () {
     overlay.classList.add('active');
+    tilSearchboxOp();
   });
 
   // 150ms timeout: klik op zoekknop heeft tijd om te firen voordat overlay weg is.
   searchInput.addEventListener('blur', function () {
-    setTimeout(function () { overlay.classList.remove('active'); }, 150);
+    setTimeout(function () {
+      overlay.classList.remove('active');
+      zetSearchboxTerug();
+    }, 150);
   });
 
   overlay.addEventListener('click', function () {
     overlay.classList.remove('active');
+    zetSearchboxTerug();
     searchInput.blur();
   });
 });
