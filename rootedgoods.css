@@ -550,6 +550,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   z-index: 300;
   cursor: pointer;
 }
+/* Vanaf 992px: .nav-main (categorieën-balk, z-index 499) stond BOVEN de
+   overlay (z-index 300) en bleef dus altijd volledig zichtbaar/onverduisterd
+   tijdens zoeken, ook al viel de overlay er qua top-positie al overheen.
+   .header-main zelf (logo/zoekbalk/iconen, z-index 500+) hoort WEL zichtbaar
+   te blijven -- de zoekbalk zit daar zelf in. Dus alleen .nav-main omlaag en
+   de overlay ertussenin, zodat enkel de categorieën-balk verduistert (zelfde
+   patroon als het PF Concept-voorbeeld: alles onder de zoekbalk-rij dimt). */
+@media (min-width: 992px) {
+  .nav-main { z-index: 480; }
+  #searchOverlay { top: 93px; z-index: 490; }
+}
 #searchOverlay.active {
   display: block;
 }
