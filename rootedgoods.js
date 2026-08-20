@@ -125,6 +125,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function desktopGedrag(current) {
+    // Vers meten i.p.v. de gecachte waarden vertrouwen: een gecachte
+    // hoogte kan stiekem stale raken (bv. na een webfont-swap die de
+    // header een fractie van een pixel laat verspringen), en dat gaf
+    // live een merkbaar gaatje tussen header-row en nav-main terug. Een
+    // extra getBoundingClientRect() per scroll-event is verwaarloosbaar.
+    meetHoogtes();
+
     var voorbijDrempel = current > topBarHeight;
     var scrolltNaarBeneden = current > lastScroll;
     var verbergen = voorbijDrempel && scrolltNaarBeneden;
@@ -141,8 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     nav.style.top = (verbergen ? headerRowHeight : topBarHeight + headerRowHeight) + 'px';
   }
 
-  meetHoogtes();
-  desktopGedrag(window.scrollY);   // beginstand correct zetten (bv. na een refresh mid-page)
+  desktopGedrag(window.scrollY);   // beginstand correct zetten (bv. na een refresh mid-page); meet zelf vers
 
   window.addEventListener('scroll', function () {
     var current = window.scrollY;
@@ -152,10 +158,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
 
   window.addEventListener('resize', function () {
-    meetHoogtes();
     // Bij resize van mobiel naar desktop (of terug) moet de inline top
     // meteen kloppen met het nieuwe breakpoint i.p.v. te wachten op de
-    // eerstvolgende scroll.
+    // eerstvolgende scroll. desktopGedrag() meet zelf vers.
     if (window.innerWidth >= 992) {
       desktopGedrag(window.scrollY);
     } else {
@@ -444,11 +449,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // opacity 0 + transition: subtiele fade i.p.v. een abrupte DOM-swap wanneer
   // de native carousel wordt vervangen door deze continue-scroll-band.
   // Klasse (i.p.v. alleen inline styles) zodat de edge-fade-pseudo-elementen
-  // (CSS sectie 12) 'm kunnen targeten -- de scroll-track zelf blijft
-  // full-bleed, alleen de fade-overlay is ingekaderd op de content-breedte.
+  // (CSS sectie 12) 'm kunnen targeten. De wrapper zelf is nu ingekaderd op
+  // de sitebrede content-breedte (via --rg-logo-fade-inset, CSS sectie 12)
+  // i.p.v. full-bleed -- eerste versie liet de track edge-to-edge scrollen
+  // met alleen een fade-overlay erboven, waardoor logo's tussen de
+  // viewport-rand en de content-grens gewoon haarscherp zichtbaar bleven.
+  // Nu clipt overflow:hidden de track al op de smallere breedte, dus de
+  // slider oogt optisch net zo breed als de rest van de pagina-inhoud.
   var wrapper = document.createElement('div');
   wrapper.className = 'rg-logo-fade';
-  wrapper.style.cssText = 'overflow:hidden; width:100%; position:relative; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem); opacity:0; transition:opacity .35s ease;';
+  wrapper.style.cssText = 'overflow:hidden; width:calc(100% - 2 * var(--rg-logo-fade-inset)); margin:0 auto; position:relative; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem); opacity:0; transition:opacity .35s ease;';
   wrapper.appendChild(track);
 
   // Keyframe animatie inject
