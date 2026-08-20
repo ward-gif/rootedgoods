@@ -19,16 +19,21 @@
    op de thema-default (zwart). Op donkere overlays (image-cards,
    text-on-image) wordt tekst expliciet wit via hun eigen sectie.
    ------------------------------------------------------------ */
-body {
-  font-family: 'Montserrat', sans-serif !important;
+html {
   /* .header-row is een Bootstrap .row (negatieve zij-marges) binnen een
      gutter-loze .container -- ontstond al zo, maar was onzichtbaar zolang
      .header-main position:fixed was (fixed telt niet mee in scrollWidth).
      Sinds de sticky-header-omzetting (sectie 3) telt die -20px overflow
      ineens WEL mee -> horizontale scrollbar, site oogt breder rechts.
      clip (niet hidden) houdt position:sticky werkend, zelfde aanpak als
-     .rg-route al gebruikt. */
+     .rg-route al gebruikt. Op html zelf i.p.v. body: scrollWidth wordt op
+     het html-element gemeten, en overflow op body bleek dat niet altijd
+     te dekken (live getest -- clip op body alleen loste de scrollbar niet
+     op, op html wel). */
   overflow-x: clip;
+}
+body {
+  font-family: 'Montserrat', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif !important;
