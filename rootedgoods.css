@@ -5663,7 +5663,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   color: var(--rg-green-soft);
   max-width: 48ch;
 }
-.rg-hero-v2__sub b { font-weight: 600; color: var(--rg-green); }
 
 /* ---- CTA's: globale site-knoppen (.btn .btn-primary/-outline-primary)
    voor identieke styling en hover als de rest van de site. Alleen de
@@ -5696,32 +5695,40 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    .rg-statement__reassurance elders op de site (geruststellende regel onder
    een primaire knop), vandaar __reassure i.p.v. __contact. ---- */
 .rg-hero-v2__reassure {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center; gap: 12px;
   margin: 20px 0 0;
   text-align: left;
 }
 .rg-hero-v2__reassure-avatar { position: relative; flex: none; display: inline-flex; }
 .rg-hero-v2__reassure-avatar img {
-  width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: block;
+  width: 40px; height: 40px; border-radius: 50%; object-fit: cover; display: block;
 }
-/* Statusbolletje rechtsonder (45°) op de avatar: merkgroen, ring in de
-   hero-achtergrondkleur (i.p.v. wit) zodat 'ie los oogt van de foto zonder
-   een harde witte rand op de crème hero. */
+/* Statusbolletje: zelfde kleur + opbouw als .rg-team__dot (de canonieke
+   online-status-indicator op /contact) -- #6aa84f, geen nieuwe kleur. Hier
+   WEL een ring (i.p.v. team-dot's kale glow-shadow), want dit bolletje zit
+   bovenop een foto i.p.v. op een vlakke achtergrond -- zelfde ring-aanpak
+   als .rg-float-contact__dot, alleen crème i.p.v. wit zodat 'ie in de hero
+   wegvalt tegen de achtergrond i.p.v. tegen de kaart. Rechtsonder (45°) op
+   de avatar, ca. 10px (meeschalend met de grotere 40px-avatar). */
 .rg-hero-v2__reassure-dot {
   position: absolute; right: 0; bottom: 0;
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--rg-green); border: 2px solid var(--rg-cream);
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #6aa84f; border: 2px solid var(--rg-cream);
 }
 /* Eigen span (i.p.v. tekst los in de flex-rij): kan los van de avatar
    krimpen/wrappen op smalle schermen, zodat de regel nooit h-scroll
-   veroorzaakt. Kleur = --rg-soft (#5d6d55, bestaand token, gedempt
-   grijsgroen) -- 5.1:1 op --rg-cream, haalt WCAG AA (4.5:1) ruim. */
+   veroorzaakt. Geen expliciete line-height: zelfde patroon als de andere
+   SMALL-tekst-rollen in het type-consolidatie-systeem (sectie 41.12) en
+   .rg-team__status -- die laten 'm ook gewoon overerven. */
 .rg-hero-v2__reassure-text {
   min-width: 0; flex: 1 1 auto;
-  font-size: .875rem; font-weight: 400; line-height: 1.4;
+  font-size: .875rem; font-weight: 400;
   color: var(--rg-soft);
 }
-.rg-hero-v2__reassure-text b { font-weight: 500; }
+/* "Hi, ik ben Richard." -- medium + donkergroen (var(--rg-green), 9.7:1 op
+   --rg-cream). Rest van de zin regular + --rg-soft (5.1:1) -- beide ruim
+   boven WCAG AA (4.5:1). */
+.rg-hero-v2__reassure-text b { font-weight: 500; color: var(--rg-green); }
 
 /* ---- Zwevende contact-avatar (JS sectie 2.5) — verschijnt rechtsonder
    zodra de hero uit beeld scrolt. Bewust alleen het gezicht + het groene
