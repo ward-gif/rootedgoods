@@ -81,13 +81,16 @@ document.addEventListener('DOMContentLoaded', function () {
  * allebei in .header-main, dat vanaf hier CSS position:sticky heeft
  * (containing block <body>, lang genoeg om echt te kunnen plakken -- zie
  * de uitgebreide comment in de CSS bij waarom sticky op .header-row zelf
- * NIET werkte). Hier meten we de topbar-hoogte en zetten die als negatieve
- * top: header-main plakt daardoor met de topbar net buiten beeld, en
- * header-row komt op y=0 te staan. Live gemeten i.p.v. hardcoded (zelfde
- * patroon als de hero-fit JS, sectie 2.4) zodat het klopt blijft als de
- * topbar-hoogte ooit verandert (bv. de responsive font-shrink in CSS
- * sectie 26.7). Ook hier een class-toggle voor de schaduw zodra 'ie
- * daadwerkelijk vastzit.
+ * NIET werkte). Topbar + .nav-main (los element, geen kind van header-main)
+ * schuiven nu SAMEN weg zodra er voorbij een kleine drempel naar BENEDEN
+ * gescrold wordt, en komen samen weer terug zodra er ook maar een beetje
+ * omhoog gescrold wordt -- header-row zelf blijft te allen tijde zichtbaar
+ * (sticky). Topbar-hoogte live gemeten i.p.v. hardcoded (zelfde patroon
+ * als de hero-fit JS, sectie 2.4), want die bepaalt zowel de negatieve
+ * header-main-top (topbar-verbergtruc) als de drempel. .nav-main verbergt
+ * via transform (CSS sectie 4, .nav-hidden) i.p.v. height/overflow-collapse
+ * -- overflow:hidden zou de categorie-dropdown-flyout (die eronder uitklapt)
+ * afknippen.
  * passive: true voorkomt dat scroll-performance gehinderd wordt. */
 (function () {
   var header = document.querySelector('.header-main');
@@ -102,10 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function meetTopbar() {
     topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
-    // Inline top alleen op desktop; op mobiel (fixed, CSS sectie 3) moet
-    // 'ie leeg blijven zodat de basis top:0 daar gewoon geldt -- anders
-    // blijft een resize-naar-mobiel de negatieve desktop-top meeslepen.
-    header.style.top = window.innerWidth >= 992 ? (-topBarHeight) + 'px' : '';
   }
 
   function mobielGedrag(current) {
@@ -123,19 +122,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function desktopGedrag() {
-    row.classList.toggle('is-stuck', window.scrollY > topBarHeight);
+  function desktopGedrag(current) {
+    var voorbijDrempel = current > topBarHeight;
+    var scrolltNaarBeneden = current > lastScroll;
+    var verbergen = voorbijDrempel && scrolltNaarBeneden;
+
+    header.style.top = verbergen ? (-topBarHeight) + 'px' : '0px';
+    nav.classList.toggle('nav-hidden', verbergen);
+    row.classList.toggle('is-stuck', voorbijDrempel);
   }
 
   meetTopbar();
+  desktopGedrag(window.scrollY);   // beginstand correct zetten (bv. na een refresh mid-page)
+
   window.addEventListener('scroll', function () {
     var current = window.scrollY;
     if (window.innerWidth < 992) mobielGedrag(current);
-    else desktopGedrag();
+    else desktopGedrag(current);
     lastScroll = current;
   }, { passive: true });
 
-  window.addEventListener('resize', meetTopbar);
+  window.addEventListener('resize', function () {
+    meetTopbar();
+    // Bij resize van mobiel naar desktop (of terug) moet de inline top
+    // meteen kloppen met het nieuwe breakpoint i.p.v. te wachten op de
+    // eerstvolgende scroll.
+    if (window.innerWidth >= 992) desktopGedrag(window.scrollY);
+    else header.style.top = '';
+  });
 })();
 
 
@@ -386,8 +400,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Bouw scroll-track. Set is verdubbeld voor naadloze loop.
+  // 100s (was 50s): vaste animatie-DUUR over een variabele track-BREEDTE
+  // (hangt af van het aantal logo's) betekent dat meer logo's dezelfde
+  // afstand in dezelfde tijd afleggen -> oogt sneller. Simpelweg de duur
+  // verdubbelen halveert de waargenomen snelheid, ongeacht hoeveel logo's
+  // er nu of later in staan.
   var track = document.createElement('div');
-  track.style.cssText = 'display:flex; align-items:center; width:max-content; animation:logoScroll 50s linear infinite;';
+  track.style.cssText = 'display:flex; align-items:center; width:max-content; animation:logoScroll 100s linear infinite;';
 
   // 4 kopieën: de -50%-loop verschuift 2 kopieën -> die vullen altijd de
   // viewport-breedte, dus geen leeg gat + logo's die "ineens" verschijnen.
@@ -411,8 +430,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Wrapper transparant — section bg (#F7F5F2) komt door de CSS op .home.productslider.
   // opacity 0 + transition: subtiele fade i.p.v. een abrupte DOM-swap wanneer
   // de native carousel wordt vervangen door deze continue-scroll-band.
+  // Klasse (i.p.v. alleen inline styles) zodat de edge-fade-pseudo-elementen
+  // (CSS sectie 12) 'm kunnen targeten -- de scroll-track zelf blijft
+  // full-bleed, alleen de fade-overlay is ingekaderd op de content-breedte.
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'overflow:hidden; width:100%; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem); opacity:0; transition:opacity .35s ease;';
+  wrapper.className = 'rg-logo-fade';
+  wrapper.style.cssText = 'overflow:hidden; width:100%; position:relative; padding: clamp(2rem,4vh,3.5rem) 0 clamp(1rem,2vh,1.25rem); opacity:0; transition:opacity .35s ease;';
   wrapper.appendChild(track);
 
   // Keyframe animatie inject

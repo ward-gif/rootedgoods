@@ -1,8 +1,7 @@
   <!-- Rooted Goods — homepage hero v2 (staffel-mozaïek). Plak in een CMS HTML-block.
       De CSS staat in rootedgoods.css (sectie 38) -> stijl-tweaks lopen live mee.
       De fit-JS (hoogte passend aan de logo-slider) staat in rootedgoods.js (sectie 2.4).
-      Twee CTA's (primair + tekstlink) + niet-klikbare vertrouwensregel eronder;
-      de offerte-route loopt nu alleen nog via het nav-item "Offerte aanvragen". -->
+      Twee routes: primaire knop (/offerte) + klikbare Richard-regel (/contact). -->
   <section class="rg-hero-v2" aria-labelledby="rg-hero-v2-title">
     <div class="rg-hero-v2__inner">
 
@@ -23,23 +22,28 @@
 
         <div class="rg-hero-v2__copy-bottom">
           <!-- Pijl op beide CTA's komt automatisch via de globale button-CSS
-               (sectie 8). Primair = laagdrempelige route (naar /contact),
-               secundair = kale tekstlink (.btn-outline-primary). -->
+               (sectie 8). Primair = offerte-route, secundair = kale
+               tekstlink (.btn-outline-primary), nu gedemote (regular
+               weight, gedempte kleur, pijl alleen on hover). -->
           <div class="rg-hero-v2__cta">
-            <a class="btn btn-primary" href="/contact">Vraag vrijblijvend advies</a>
-            <a class="btn btn-outline-primary" href="/alle-producten/">Bekijk alle producten</a>
+            <a class="btn btn-primary" href="/offerte">Vraag een offerte aan</a>
+            <a class="btn btn-outline-primary rg-hero-v2__cta-secondary" href="/alle-producten/">Bekijk alle producten</a>
           </div>
 
-          <!-- Vertrouwensregel: NIET klikbaar, puur reassurance onder de
-               knoppenrij (geen 3e CTA meer). Zichtbaar op alle breakpoints,
-               incl. mobiel. -->
-          <p class="rg-hero-v2__reassure">
+          <!-- Richard-regel: weer klikbaar (naar /contact), geen kaart/rand/
+               achtergrond -- blijft een tekstregel met pijl, net als de
+               knoppen. Pijl + hover zitten in de tekst-span (niet op de
+               avatar), zodat alleen de tekst onderlijnt/de pijl schuift. -->
+          <a class="rg-hero-v2__reassure" href="/contact">
             <span class="rg-hero-v2__reassure-avatar">
               <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="40" height="40">
               <span class="rg-hero-v2__reassure-dot"></span>
             </span>
-            <span class="rg-hero-v2__reassure-text"><b>Hi, ik ben Richard.</b> Vertel me wat je zoekt, dan kom ik met opties</span>
-          </p>
+            <span class="rg-hero-v2__reassure-text">
+              <b>Hi, ik ben Richard.</b> Weet je nog niet precies wat je zoekt? Vertel het me, dan denk ik mee
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
         </div>
       </div>
 
