@@ -5744,6 +5744,40 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   background: rgba(255, 255, 255, .15); border-color: rgba(255, 255, 255, .85); transform: translateX(2px);
 }
 
+/* ---- Zwevende contact-avatar (JS sectie 2.5) — verschijnt rechtsonder
+   zodra de hero uit beeld scrolt. Bewust alleen het gezicht + het groene
+   'online'-bolletje: klein en compact, geen tekst, blijft over de volle
+   pagina zichtbaar. Element hangt aan <body>, dus los van .rg-hero-v2. ---- */
+.rg-float-contact {
+  position: fixed; right: 18px; bottom: 18px; z-index: 650;
+  display: inline-flex;
+  opacity: 0; transform: translateY(12px) scale(.9);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.rg-float-contact.is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.rg-float-contact__avatar {
+  position: relative; display: inline-flex;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px -10px rgba(45, 69, 40, .55);
+  transition: transform .2s ease;
+}
+.rg-float-contact:hover .rg-float-contact__avatar { transform: scale(1.06); }
+.rg-float-contact__avatar img {
+  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  border: 3px solid #fff; display: block;
+}
+.rg-float-contact__dot {
+  position: absolute; right: 0; bottom: 0;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #6aa84f; border: 2px solid #fff;
+  box-shadow: 0 0 0 3px rgba(106, 168, 79, .3);
+}
+@media (max-width: 480px) {
+  .rg-float-contact { right: 14px; bottom: 14px; }
+  .rg-float-contact__avatar img { width: 46px; height: 46px; }
+}
+
 /* ---- Beeld: vier product-tegels in gestaffelde 2x2 ----
    De middenweg: het aanbod tonen (variatie, inspiratie, zoals de oude
    3x2) maar met rust en hiërarchie (staffel-offset, geen 6 gelijke

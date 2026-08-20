@@ -11,7 +11,7 @@
  *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.1b
  *                           topbar USP-marquee (mobiel), 2.1c offcanvas quicklinks/
  *                           toggle, 2.1d mobiel-header-rij, 2.2 productslider tegel-
- *                           click, 2.4 hero-v2 hoogte-fit
+ *                           click, 2.4 hero-v2 hoogte-fit, 2.5 zwevende contact-avatar
  *   SECTIE 3 — PDP        : 3.1 productnaam verplaatsen, 3.2 accordion-default,
  *                           3.2b configurator-stappen open houden, 3.3 staffel-
  *                           prijstabel, 3.4 gallery-zoom-knop
@@ -892,6 +892,36 @@ function rgOnthulNaFonts(toon) {
     hero.classList.add('is-hero-klaar');
   }
   rgOnthulNaFonts(toonHero);
+})();
+
+
+/* ---- 2.5 Zwevende contact-avatar — verschijnt rechtsonder zodra de hero
+ * (met de inline contact-CTA erin) uit beeld scrolt, over de rest van de
+ * pagina. Eigen element, direct op <body> geplakt (zelfde escape-truc als
+ * de search-overlay in 1.1): position:fixed blijft zo gegarandeerd
+ * viewport-relatief, ongeacht of een CMS-wrapper verderop ooit een eigen
+ * stacking-context/transform krijgt. Alleen homepage: doet niets zonder
+ * .rg-hero-v2 op de pagina. */
+(function () {
+  var hero = document.querySelector('.rg-hero-v2');
+  if (!hero || !window.IntersectionObserver) return;
+
+  var floating = document.createElement('a');
+  floating.href = '/contact';
+  floating.className = 'rg-float-contact';
+  floating.setAttribute('aria-label', 'Neem contact op met ons team. Meestal binnen 24 uur reactie.');
+  floating.title = 'Neem contact op';
+  floating.innerHTML =
+    '<span class="rg-float-contact__avatar">' +
+      '<img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="52" height="52">' +
+      '<span class="rg-float-contact__dot"></span>' +
+    '</span>';
+  document.body.appendChild(floating);
+
+  var io = new IntersectionObserver(function (entries) {
+    floating.classList.toggle('is-visible', !entries[0].isIntersecting);
+  }, { threshold: 0 });
+  io.observe(hero);
 })();
 
 
