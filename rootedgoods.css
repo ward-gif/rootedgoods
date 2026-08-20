@@ -73,29 +73,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .content-main {
   padding: 0 !important;
-  /* Compenseert de fixed header (.header-main), zodat content na niet
-     eronder verdwijnt. Live opnieuw gemeten op 2026-08-13: 102px -- eerdere
-     waarden (143px, toen 131,39px) waren stale t.o.v. de werkelijke
-     headerhoogte. .container-main's eigen 20px padding is hier los van: dat
-     is interne ruimte NA deze reserve, niet dubbelop met de
-     header-vrijstelling zelf. */
+  /* Compenseert de fixed header (.header-main) op MOBIEL (<992px) -- die
+     blijft daar fixed, ongewijzigd. Vanaf 992px is de header nu normale
+     document-flow (alleen .header-row is sticky, sectie 3/4) -- content
+     wordt daar automatisch door de browser omlaag geduwd, geen reserve
+     meer nodig, zie de override hieronder. */
   padding-top: 102px !important;
 }
-/* Vanaf 992px komt .nav-main (categorieën-balk) ALS APARTE fixed laag onder
-   .header-main te hangen (samen 138px, live gemeten 2026-08-20) -- de 102px
-   hierboven dekte alleen .header-main zelf, dus op pagina's zonder eigen
-   hero (zoekresultaten, mijn-account e.d.) stond de titel/breadcrumb
-   gedeeltelijk ACHTER de categorieën-balk. Onder 992px is er geen aparte
-   .nav-main-laag (mobiel menu zit niet fixed), dus de 102px daar ongemoeid
-   laten -- geen regressierisico op mobiel.
-   :not(:has(.rg-route)) -- over-ons heeft z'n EIGEN, al afgestemde kleine
-   top-reserve op .rg-route__intro (bewust GEEN tweede grote reserve, zie
-   die sectie) plus een JS-hoogtefit die op de header-vrijstelling leunt.
-   Die pagina extra optellen verstoorde de precies uitgemeten positie van de
-   Europa-kaart erachter -- dus daar de oude 102px laten staan. */
+/* Desktop: header-main + nav-main zijn geen fixed lagen meer (sectie 3/4),
+   dus geen kunstmatige clearance meer nodig -- de browser reserveert zelf
+   de echte hoogte van topbar+header-row+nav-main in de normale flow. */
 @media (min-width: 992px) {
-  .content-main:not(:has(.rg-route)) {
-    padding-top: 140px !important;
+  .content-main {
+    padding-top: 0 !important;
   }
 }
 
@@ -133,6 +123,28 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .header-main.header-hidden {
   transform: translateY(-100%);
+}
+
+/* ---- Desktop (>=992px): alleen de middelste rij (logo/zoek/knop/iconen)
+   is sticky. .header-main zelf (topbar + header-row samen) en .nav-main
+   (categorieën-balk, sectie 4) worden gewone document-flow -- topbar en
+   nav-main scrollen dus gewoon met de pagina mee weg, alleen .header-row
+   blijft aan de bovenkant plakken. JS (sectie 1.2) toggelt .is-stuck
+   hieronder voor de schaduw zodra 'ie daadwerkelijk vastzit. Mobiel/tablet
+   blijven het oude fixed-gedrag houden (ongewijzigd, zie de basisregels
+   hierboven). */
+@media (min-width: 992px) {
+  .header-main {
+    position: static;
+  }
+  .header-main .header-row {
+    position: sticky;
+    top: 0;
+    transition: box-shadow 0.2s ease;
+  }
+  .header-main .header-row.is-stuck {
+    box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /* Header — logo. Expliciete HOOGTE i.p.v. alleen max-width: een SVG rekt
@@ -233,6 +245,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .nav-main.header-hidden {
   transform: translateY(-170px);
+}
+/* Desktop (>=992px): geen aparte fixed laag meer -- scrollt gewoon weg als
+   normale pagina-inhoud, direct onder de (nu ook normale-flow) topbar +
+   header-row. Zie de .header-main-override hierboven voor de rest van het
+   sticky-verhaal. Mobiel/tablet ongewijzigd. */
+@media (min-width: 992px) {
+  .nav-main {
+    position: static;
+  }
 }
 .nav-main .nav {
   justify-content: center;
@@ -562,15 +583,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 #searchOverlay.active {
   display: block;
 }
-/* Vanaf 992px: dimt alleen ONDER de header -- de hele header (logo,
-   zoekbalk, wishlist/account/cart-iconen, categorieën-nav) blijft licht en
-   klikbaar. 140px = onderkant .header-main + .nav-main samen, zelfde meting
-   als de .content-main padding-top-reserve hierboven (sectie 2). Geen
-   aparte z-index-race meer nodig (was 550, boven .header-main's 500) --
-   zonder geometrische overlap doet de stacking-order er niet meer toe. */
+/* Vanaf 992px: dimt alleen ONDER de sticky .header-row -- logo, zoekbalk
+   en wishlist/account/cart-iconen blijven altijd licht en klikbaar.
+   61px = live gemeten hoogte van .header-row zelf (sectie 3/4: topbar en
+   nav-main zijn sinds de sticky-omzetting geen fixed lagen meer, dus die
+   tellen hier niet meer mee zoals de oude 140px-waarde deed). Geen aparte
+   z-index-race meer nodig (was 550, boven .header-main's 500) -- zonder
+   geometrische overlap doet de stacking-order er niet meer toe. */
 @media (min-width: 992px) {
   #searchOverlay {
-    top: 140px;
+    top: 61px;
   }
 }
 
@@ -3585,10 +3607,11 @@ body.is-ctl-product {
   }
 }
 
-/* .nav-main bewust NIET verplaatsen — die top:97px is gekoppeld aan de
-   body padding-top in Promidata's theme. Aanpassen → content valt achter
-   de nav-balk. Topbar-wrap pakken we apart aan via compactere padding
-   in 26.7 hieronder. */
+/* .nav-main is sinds sectie 4 op desktop geen fixed laag meer (normale
+   document-flow, direct na topbar+header-row) -- de oude top:97px-koppeling
+   met de body/content-main padding-top waar deze comment ooit voor
+   waarschuwde bestaat niet meer. Topbar-wrap blijft wel de moeite waard om
+   te voorkomen (oogt gewoon niet netjes); dat gebeurt via 26.7 hieronder. */
 
 /* ---- 26.2 Image-row spotlight — geen geclipte afbeeldingen ---- */
 /* Tussen 992-1200 stond hij op 5×20% met overflow:hidden, waardoor
@@ -3641,10 +3664,11 @@ body.is-ctl-product {
 }
 
 /* ---- 26.7 Top-bar USPs — voorkom dat ze in 2 regels breken ---- */
-/* Wrap van topbar = totale header > 97px = nav-main verdwijnt achter
-   header. Daarom topbar agressief schalen op alle desktop-breedtes
-   en text expliciet op één regel forceren (mocht 'ie toch te breed
-   zijn, dan wordt 'ie afgekapt i.p.v. gewrapt — beter dan nav weg). */
+/* Puur esthetisch (sinds de sticky-header-omzetting, sectie 3/4, kan een
+   wrappende topbar de nav niet meer "wegduwen" -- die is toch al geen
+   fixed laag meer). Topbar agressief schalen op alle desktop-breedtes en
+   tekst expliciet op één regel forceren blijft wel gewenst: mocht 'ie
+   toch te breed zijn, dan wordt 'ie afgekapt i.p.v. gewrapt. */
 @media (min-width: 992px) and (max-width: 1500px) {
   .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
     padding: 0rem 0.75rem;
@@ -3668,17 +3692,6 @@ body.is-ctl-product {
   .top-bar-nav .top-bar-container {
     font-size: 0.72rem;
   }
-}
-
-/* ---- 26.7b Nav-main top — schaalt mee met topbar-shrink ---- */
-/* Omdat 26.7 de topbar font + padding verkleint, wordt de header korter
-   dan de hardcoded 97px van .nav-main. Resultaat: witte gap. Verlaag
-   nav-main top zodat 'ie precies onder de header aansluit. */
-@media (min-width: 992px) and (max-width: 1500px) {
-  .nav-main { top: 88px; }   /* -4px mee met de kleinere topbar-font */
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-  .nav-main { top: 84px; }   /* -4px mee met de kleinere topbar-font */
 }
 
 /* ---- 26.8 Header padding — krimpen op split-screen ---- */
@@ -4184,6 +4197,13 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
 .content-main:has(.landing-header) {
   padding-top: 115px !important;
   background-color: #F7F5F2;
+}
+/* Desktop: zelfde reden als de site-brede .content-main-override (sectie
+   2) -- header is daar geen fixed laag meer, dus geen clearance nodig. */
+@media (min-width: 992px) {
+  .content-main:has(.landing-header) {
+    padding-top: 0 !important;
+  }
 }
 /* container-main: weg met de 20px boven/onder padding en 200px min-height. */
 .content-main:has(.landing-header) .container-main {

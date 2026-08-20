@@ -4,7 +4,8 @@
  * Last updated: 2026-07-02
  *
  * STRUCTUUR (bijgewerkt -- was verouderd, noemde maar 3 grove items):
- *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 sticky header, 1.3 flyout CTA,
+ *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 header-scroll-gedrag
+ *                           (mobiel hide/show, desktop sticky-schaduw), 1.3 flyout CTA,
  *                           1.4 offerteknop (header-actions), 1.4b nav-main
  *                           zonder title-tooltip, 1.5 Cal.com-embed lazy-load,
  *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit
@@ -72,25 +73,31 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 1.2 Sticky header
- * Verbergt header bij scroll naar beneden, toont bij scroll naar boven.
+/* ---- 1.2 Header-scroll-gedrag
+ * Mobiel/tablet (<992px): .header-main/.nav-main blijven fixed (CSS sectie
+ * 3/4, ongewijzigd) -- verbergen bij scroll-naar-beneden, tonen bij
+ * scroll-naar-boven, zoals hiervoor.
+ * Desktop (>=992px): header-main/nav-main zijn nu normale document-flow,
+ * alleen .header-row is sticky (CSS sectie 3) -- topbar en nav-main
+ * scrollen gewoon met de pagina mee weg. Hier alleen een class-toggle voor
+ * een lichte schaduw zodra de rij daadwerkelijk vastzit.
  * passive: true voorkomt dat scroll-performance gehinderd wordt. */
 (function () {
-  var lastScroll = 0;
-  var threshold = 150;
   var header = document.querySelector('.header-main');
   var nav = document.querySelector('.nav-main');
-  if (!header || !nav) return;
+  var row = document.querySelector('.header-main .header-row');
+  if (!header || !nav || !row) return;
 
-  window.addEventListener('scroll', function () {
-    var current = window.scrollY;
+  var lastScroll = 0;
+  var threshold = 150;
+  var stickyPoint = row.offsetTop;
 
+  function mobielGedrag(current) {
     if (current < threshold) {
       header.classList.remove('header-hidden');
       nav.classList.remove('header-hidden');
       return;
     }
-
     if (current > lastScroll) {
       header.classList.add('header-hidden');
       nav.classList.add('header-hidden');
@@ -98,9 +105,22 @@ document.addEventListener('DOMContentLoaded', function () {
       header.classList.remove('header-hidden');
       nav.classList.remove('header-hidden');
     }
+  }
 
+  function desktopGedrag() {
+    row.classList.toggle('is-stuck', window.scrollY > stickyPoint);
+  }
+
+  window.addEventListener('scroll', function () {
+    var current = window.scrollY;
+    if (window.innerWidth < 992) mobielGedrag(current);
+    else desktopGedrag();
     lastScroll = current;
   }, { passive: true });
+
+  window.addEventListener('resize', function () {
+    stickyPoint = row.offsetTop;
+  });
 })();
 
 
