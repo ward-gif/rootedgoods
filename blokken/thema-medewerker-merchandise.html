@@ -199,3 +199,48 @@
       </a>
     </div>
   </section>
+
+<!-- FAQPage-subset (exact de zichtbare vragen hierboven op deze pagina) —
+     LET OP: als Shopware het <script type="application/ld+json"> uit een
+     HTML-blok strípt bij opslaan, verplaats dit dan naar het thema (<head>)
+     i.p.v. hier — zelfde risico als faq.html al documenteert. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welke techniek is het beste voor mijn logo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat hangt af van het product, je logo en het gewenste effect. We adviseren je graag: graveren voor tijdloos en subtiel, bedrukken voor full-color, borduren voor textiel, foliedruk voor een luxe metallic accent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan mijn logo in meerdere kleuren (PMS-match)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Bij bedrukken werken we in één of meerdere kleuren, met een PMS-match op je huisstijl. Bij gravure en borduren gelden andere mogelijkheden. Dat bespreken we vooraf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is er een minimale afname of bestelhoeveelheid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat verschilt per product. Er is geen vaste minimale afname. We kijken samen naar je doel, budget en aantallen wat het beste past. Grotere oplages in één productierun zijn wel voordeliger per stuk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe lang duurt de levertijd?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Levertijden zijn altijd productafhankelijk. Bij het opstellen van je offerte laten we een realistische levertijd zien en denken we met je mee over wat haalbaar is, zodat je niet voor verrassingen komt te staan."
+      }
+    }
+  ]
+}
+</script>

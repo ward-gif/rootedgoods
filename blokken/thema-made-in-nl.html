@@ -157,3 +157,48 @@
       </a>
     </div>
   </section>
+
+<!-- FAQPage-subset (exact de zichtbare vragen hierboven op deze pagina) —
+     LET OP: als Shopware het <script type="application/ld+json"> uit een
+     HTML-blok strípt bij opslaan, verplaats dit dan naar het thema (<head>)
+     i.p.v. hier — zelfde risico als faq.html al documenteert. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Waar worden jullie producten gemaakt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Onze relatiegeschenken worden geproduceerd bij premium partners in Europa. Zo houden we grip op kwaliteit, doorlooptijd en herkomst, in plaats van een schakel te zijn in een lange, onduidelijke keten. We zijn er eerlijk over: waar iets vandaan komt vertellen we transparant. Geassembleerd en gepersonaliseerd doen we in Europa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn jullie producten duurzaam of milieuvriendelijk geproduceerd?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Duurzaamheid weegt mee in ons selectieproces, net als functionaliteit en afwerking. Bij elk duurzaam relatiegeschenk laten we zien welke materialen en productiewijze erachter zitten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is er een minimale afname of bestelhoeveelheid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat verschilt per product. Er is geen vaste minimale afname. We kijken samen naar je doel, budget en aantallen wat het beste past. Grotere oplages in één productierun zijn wel voordeliger per stuk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ik weet niet welk product bij mijn doelgroep past, kunnen jullie meedenken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Graag zelfs. Vertel ons voor wie het is en wat je wilt bereiken, dan denken we met je mee over welk relatiegeschenk écht past, in plaats van je een catalogus in te sturen. De keuze maak je samen met ons; niets gaat in productie zonder jouw akkoord."
+      }
+    }
+  ]
+}
+</script>

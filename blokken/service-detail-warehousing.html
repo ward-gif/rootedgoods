@@ -148,4 +148,54 @@
     </div>
   </div>
 
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Warehousing & fulfillment",
+    "url": "https://rootedgoods.eu/warehousing-fulfillment",
+    "description": "Bestel één keer en laat de rest aan ons over: wij slaan je geschenken op, beheren de voorraad en verzenden precies wanneer jij dat wilt, vandaag, volgende maand of gespreid over het jaar.",
+    "provider": { "@type": "Organization", "name": "Rooted Goods", "url": "https://rootedgoods.eu" },
+    "areaServed": "Europe",
+    "serviceType": "Opslag en fulfillment van relatiegeschenken"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat kost opslag bij Rooted Goods?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dat hangt af van het volume en hoelang je voorraad bij ons ligt. In je offerte zie je precies wat opslag en verzending kosten. Geen verrassingen achteraf." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik ook eigen producten bij jullie laten opslaan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In overleg is veel mogelijk. Vertel ons wat je wilt opslaan en verzenden, dan kijken we of het past." }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe snel wordt er verzonden na mijn seintje?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Meestal verlaten pakketten binnen twee werkdagen ons magazijn. Grotere verzendingen naar meerdere adressen plannen we samen in." }
+      },
+      {
+        "@type": "Question",
+        "name": "Bieden jullie opslag aan, zodat ik gespreid kan laten leveren?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. We kunnen je bestelling voor je opslaan en op momenten die jij aangeeft laten uitleveren, bijvoorbeeld per nieuwe medewerker (onboarding) of per event. Zo hoef je niet alles in één keer af te nemen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is er een minimale afname of bestelhoeveelheid?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dat verschilt per product. Er is geen vaste minimale afname. We kijken samen naar je doel, budget en aantallen wat het beste past. Grotere oplages in één productierun zijn wel voordeliger per stuk." }
+      }
+    ]
+  }
+  </script>
+
 </section>

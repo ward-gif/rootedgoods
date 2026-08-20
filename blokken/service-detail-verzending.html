@@ -159,4 +159,59 @@
     </div>
   </div>
 
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Verzending naar meerdere locaties",
+    "url": "https://rootedgoods.eu/verzending-naar-meerdere-locaties",
+    "description": "Geschenken voor medewerkers thuis, meerdere vestigingen of klanten door heel Europa? Jij levert de adreslijst, wij sturen elk pakket rechtstreeks naar de juiste ontvanger, netjes ingepakt en gevolgd tot de voordeur.",
+    "provider": { "@type": "Organization", "name": "Rooted Goods", "url": "https://rootedgoods.eu" },
+    "areaServed": "Europe",
+    "serviceType": "Verzending van relatiegeschenken naar meerdere adressen"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe lever ik de adressen aan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Het makkelijkst met een eenvoudige lijst (bijvoorbeeld Excel) met naam en adres per ontvanger. Wij verwerken de lijst en houden je op de hoogte." }
+      },
+      {
+        "@type": "Question",
+        "name": "Naar welke landen verzenden jullie?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We verzenden door heel Europa. Voor bestemmingen buiten Europa kijken we graag met je mee naar de mogelijkheden." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik naar individuele huis- én kantooradressen sturen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. We leveren zowel op kantooradressen als rechtstreeks bij individuele ontvangers, ideaal voor thuiswerkende teams of geschenken die als verrassing thuis mogen komen. Ook internationaal." }
+      },
+      {
+        "@type": "Question",
+        "name": "Krijg ik track & trace van mijn zending?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, elke zending is te volgen tot aan de voordeur." }
+      },
+      {
+        "@type": "Question",
+        "name": "Verzorgen jullie ook de verpakking en een persoonlijk kaartje?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. We pakken elk geschenk verzorgd in, desgewenst met een persoonlijk kaartje of boodschap per ontvanger, in duurzame verpakking." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat als een product beschadigd of verkeerd aankomt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Laat het ons weten, dan lossen we het op. We regelen de retour of een vervangend product." }
+      }
+    ]
+  }
+  </script>
+
 </section>

@@ -199,3 +199,48 @@
       </a>
     </div>
   </section>
+
+<!-- FAQPage-subset (exact de zichtbare vragen hierboven op deze pagina) —
+     LET OP: als Shopware het <script type="application/ld+json"> uit een
+     HTML-blok strípt bij opslaan, verplaats dit dan naar het thema (<head>)
+     i.p.v. hier — zelfde risico als faq.html al documenteert. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kunnen jullie een compleet pakket of geschenkset voor me samenstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Graag. Vertel ons het doel, de doelgroep en het budget, dan stellen we een passend relatiegeschenk of geschenkset samen, van één product tot een volledig verzorgd pakket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bieden jullie opslag aan, zodat ik gespreid kan laten leveren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. We kunnen je bestelling voor je opslaan en op momenten die jij aangeeft laten uitleveren, bijvoorbeeld per nieuwe medewerker (onboarding) of per event. Zo hoef je niet alles in één keer af te nemen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik naar individuele huis- én kantooradressen sturen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. We leveren zowel op kantooradressen als rechtstreeks bij individuele ontvangers, ideaal voor thuiswerkende teams of geschenken die als verrassing thuis mogen komen. Ook internationaal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe lang duurt de levertijd?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Levertijden zijn altijd productafhankelijk. Bij het opstellen van je offerte laten we een realistische levertijd zien en denken we met je mee over wat haalbaar is, zodat je niet voor verrassingen komt te staan."
+      }
+    }
+  ]
+}
+</script>

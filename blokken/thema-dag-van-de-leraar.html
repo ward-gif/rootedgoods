@@ -157,3 +157,48 @@
       </a>
     </div>
   </section>
+
+<!-- FAQPage-subset (exact de zichtbare vragen hierboven op deze pagina) —
+     LET OP: als Shopware het <script type="application/ld+json"> uit een
+     HTML-blok strípt bij opslaan, verplaats dit dan naar het thema (<head>)
+     i.p.v. hier — zelfde risico als faq.html al documenteert. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kunnen jullie een compleet pakket of geschenkset voor me samenstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Graag. Vertel ons het doel, de doelgroep en het budget, dan stellen we een passend relatiegeschenk of geschenkset samen, van één product tot een volledig verzorgd pakket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is er een minimale afname of bestelhoeveelheid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat verschilt per product. Er is geen vaste minimale afname. We kijken samen naar je doel, budget en aantallen wat het beste past. Grotere oplages in één productierun zijn wel voordeliger per stuk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ik weet niet welk product bij mijn doelgroep past, kunnen jullie meedenken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Graag zelfs. Vertel ons voor wie het is en wat je wilt bereiken, dan denken we met je mee over welk relatiegeschenk écht past, in plaats van je een catalogus in te sturen. De keuze maak je samen met ons; niets gaat in productie zonder jouw akkoord."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe lang duurt de levertijd?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Levertijden zijn altijd productafhankelijk. Bij het opstellen van je offerte laten we een realistische levertijd zien en denken we met je mee over wat haalbaar is, zodat je niet voor verrassingen komt te staan."
+      }
+    }
+  ]
+}
+</script>

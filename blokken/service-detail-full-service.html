@@ -190,4 +190,59 @@
     </div>
   </div>
 
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Full-service ontzorging",
+    "url": "https://rootedgoods.eu/full-service-ontzorging",
+    "description": "Eén partner voor het hele traject: wij adviseren, selecteren premium producten van Europese makers, personaliseren met jouw logo, produceren, slaan op en bezorgen. Jij houdt één aanspreekpunt, wij regelen de rest.",
+    "provider": { "@type": "Organization", "name": "Rooted Goods", "url": "https://rootedgoods.eu" },
+    "areaServed": "Europe",
+    "serviceType": "Full-service ontzorging relatiegeschenken"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Moet ik het hele traject afnemen of kan het ook deels?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Beide kan. Wil je alles uit handen geven, dan regelen we het complete traject. Heb je maar één schakel nodig, bijvoorbeeld alleen personalisatie, opslag of verzending? Dan kan dat ook los." }
+      },
+      {
+        "@type": "Question",
+        "name": "Heb ik één vast aanspreekpunt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Van eerste idee tot bezorging heb je één vaste contactpersoon die het hele traject overziet. Geen doorschuiven tussen afdelingen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe lang duurt een full-service traject?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dat hangt af van producten, personalisatie en oplage. Bij je offerte krijg je een realistische planning; na akkoord op de drukproef weet je precies wanneer alles klaar is." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ik weet niet welk product bij mijn doelgroep past, kunnen jullie meedenken?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Graag zelfs. Vertel ons voor wie het is en wat je wilt bereiken, dan denken we met je mee over welk relatiegeschenk écht past, in plaats van je een catalogus in te sturen. De keuze maak je samen met ons; niets gaat in productie zonder jouw akkoord." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik mijn bestelling nog wijzigen of annuleren nadat ik akkoord heb gegeven?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Zolang de productie nog niet gestart is, kan dat. Zodra je de digitale drukproef hebt goedgekeurd, gaat de productie van start en is wijzigen of annuleren niet meer mogelijk." }
+      },
+      {
+        "@type": "Question",
+        "name": "Waar worden jullie producten gemaakt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Onze relatiegeschenken worden geproduceerd bij premium partners in Europa. Zo houden we grip op kwaliteit, doorlooptijd en herkomst, in plaats van een schakel te zijn in een lange, onduidelijke keten. We zijn er eerlijk over: waar iets vandaan komt vertellen we transparant. Geassembleerd en gepersonaliseerd doen we in Europa." }
+      }
+    ]
+  }
+  </script>
+
 </section>
