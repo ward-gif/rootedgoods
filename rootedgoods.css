@@ -841,7 +841,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    (sectie 3); hier 1.5rem inzet, dus de dropdown is altijd net iets breder
    dan de header-row-inhoud, ongeacht viewport-breedte. */
 .navigation-flyout.cio-all-categories-navigation {
-  max-width: calc(100% - 3rem);
+  /* width (niet max-width): de basisregel hierboven zet zelf al width:80%,
+     dat wint anders gewoon van een max-width-cap (width is explicieter dan
+     een bovengrens die nooit bereikt wordt) -- live getest, eerste poging
+     met max-width bleef daardoor gewoon op 80% hangen. */
+  width: calc(100% - 3rem);
   margin: 0 auto;
   left: 1.5rem;
   right: 1.5rem;
