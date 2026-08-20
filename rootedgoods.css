@@ -271,18 +271,27 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .nav-main.header-hidden {
   transform: translateY(-170px);
 }
-/* Desktop (>=992px): geen aparte fixed laag meer -- scrollt gewoon weg als
-   normale pagina-inhoud, direct onder de (nu ook normale-flow) topbar +
-   header-row. Zie de .header-main-override hierboven voor de rest van het
-   sticky-verhaal. Mobiel/tablet ongewijzigd. */
+/* Desktop (>=992px): position:sticky, NIET static. Reden: .nav-main is
+   (anders dan .header-row) een directe child van een grote, pagina-brede
+   wrapper (geen klein header-omhulsel) -- de containing-block-val die
+   sticky op .header-row zelf brak (sectie 3) speelt hier dus niet, sticky
+   werkt hier gewoon goed.
+   Waarom sticky i.p.v. static: bij static zou "nav-hidden weghalen" na
+   scroll-omhoog nav-main terugzetten op zijn NATUURLIJKE documentpositie
+   (vlak onder de topbar, bovenaan de pagina) -- onzichtbaar als je 500px
+   verderop in de pagina bent. Live getest en zo ontdekt. Met sticky (top =
+   live gemeten header-row-hoogte, JS sectie 1.2) plakt nav-main vanzelf
+   direct ONDER de sticky header-row zodra je eraan voorbij scrolt, dus
+   "nav-hidden weghalen" laat 'm daar verschijnen, altijd in beeld,
+   ongeacht scroll-diepte. */
 @media (min-width: 992px) {
   .nav-main {
-    position: static;
+    position: sticky;
+    top: 0;   /* JS zet dit naar de live gemeten header-row-hoogte */
     transition: transform 0.3s ease, opacity 0.2s ease;
   }
   /* JS (sectie 1.2) togglet dit samen met header-main's negatieve top,
-     zodat topbar + nav-main echt SAMEN wegschuiven i.p.v. dat nav-main
-     los onder de sticky header-row door blijft scrollen. transform i.p.v.
+     zodat topbar + nav-main echt SAMEN wegschuiven. transform i.p.v.
      max-height/overflow:hidden -- dat laatste zou de categorie-dropdown-
      flyout (klapt onder nav-main uit) afknippen. Eigen klasse i.p.v. de
      bestaande .header-hidden: die staat op -170px (mobiel-specifiek,

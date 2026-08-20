@@ -105,6 +105,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function meetTopbar() {
     topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
+    // nav-main's sticky top = header-row's live hoogte, zodat 'ie er
+    // precies onder aan blijft plakken zodra 'ie (via sticky, CSS sectie 4)
+    // in beeld komt -- alleen op desktop, sticky is daar pas actief.
+    if (window.innerWidth >= 992) nav.style.top = row.getBoundingClientRect().height + 'px';
   }
 
   function mobielGedrag(current) {
@@ -147,8 +151,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Bij resize van mobiel naar desktop (of terug) moet de inline top
     // meteen kloppen met het nieuwe breakpoint i.p.v. te wachten op de
     // eerstvolgende scroll.
-    if (window.innerWidth >= 992) desktopGedrag(window.scrollY);
-    else header.style.top = '';
+    if (window.innerWidth >= 992) {
+      desktopGedrag(window.scrollY);
+    } else {
+      header.style.top = '';
+      nav.style.top = '';
+    }
   });
 })();
 
