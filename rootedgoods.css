@@ -281,10 +281,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    scroll-omhoog nav-main terugzetten op zijn NATUURLIJKE documentpositie
    (vlak onder de topbar, bovenaan de pagina) -- onzichtbaar als je 500px
    verderop in de pagina bent. Live getest en zo ontdekt. Met sticky (top =
-   live gemeten header-row-hoogte, JS sectie 1.2) plakt nav-main vanzelf
-   direct ONDER de sticky header-row zodra je eraan voorbij scrolt, dus
-   "nav-hidden weghalen" laat 'm daar verschijnen, altijd in beeld,
-   ongeacht scroll-diepte. */
+   60px, JS sectie 1.2) plakt nav-main vanzelf direct ONDER de sticky
+   header-row zodra je eraan voorbij scrolt, dus "nav-hidden weghalen"
+   laat 'm daar verschijnen, altijd in beeld, ongeacht scroll-diepte. */
 @media (min-width: 992px) {
   .nav-main {
     position: sticky;
@@ -295,7 +294,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
        (layout-thrashing op position:sticky, zie de uitgebreide comment
        bij .header-main). Nu blijft top vast, en schuift alleen transform
        mee (JS sectie 1.2, compositor-only, geen layout-herberekening). */
-    top: 0;   /* JS zet dit één keer naar de live gemeten header-row-hoogte */
+    top: 0;   /* JS zet dit één keer vast op 60px (was live gemeten ~61px --
+                 dat 1px verschil met de daadwerkelijk gerenderde 60px was
+                 precies het resterende spleetje) */
     transition: transform 0.3s ease, opacity 0.2s ease;
   }
   /* JS (sectie 1.2) zet transform: translateY(topbarhoogte) wanneer de

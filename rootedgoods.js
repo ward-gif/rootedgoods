@@ -111,18 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
   var lastScroll = 0;
   var threshold = 150;
   var topBarHeight = 0;
-  var headerRowHeight = 0;
+  // header-row's live gemeten hoogte gaf ~61px (subpixel-afronding), maar
+  // dat 1px verschil met de daadwerkelijk gerenderde 60px was precies het
+  // resterende spleetje -- vast op 60px i.p.v. meten lost dat op. Geen
+  // aparte meting/variabele meer nodig hiervoor.
 
   function meetHoogtes() {
     topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
-    headerRowHeight = row.getBoundingClientRect().height;
     if (window.innerWidth >= 992) {
       // Statisch: header-main plakt altijd met de topbar net buiten beeld;
       // nav-main plakt altijd direct onder header-row (zonder topbar).
       // Wordt hierna nooit meer aangepast -- alleen transform (in
       // desktopGedrag) beweegt nog.
       header.style.top = (-topBarHeight) + 'px';
-      nav.style.top = headerRowHeight + 'px';
+      nav.style.top = '60px';
     } else {
       // Terug naar mobiel: ook eventuele desktop-transform opruimen, anders
       // wint een leftover inline transform van de mobiele .header-hidden-
