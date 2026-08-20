@@ -87,9 +87,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    hero (zoekresultaten, mijn-account e.d.) stond de titel/breadcrumb
    gedeeltelijk ACHTER de categorieën-balk. Onder 992px is er geen aparte
    .nav-main-laag (mobiel menu zit niet fixed), dus de 102px daar ongemoeid
-   laten -- geen regressierisico op mobiel. */
+   laten -- geen regressierisico op mobiel.
+   :not(:has(.rg-route)) -- over-ons heeft z'n EIGEN, al afgestemde kleine
+   top-reserve op .rg-route__intro (bewust GEEN tweede grote reserve, zie
+   die sectie) plus een JS-hoogtefit die op de header-vrijstelling leunt.
+   Die pagina extra optellen verstoorde de precies uitgemeten positie van de
+   Europa-kaart erachter -- dus daar de oude 102px laten staan. */
 @media (min-width: 992px) {
-  .content-main {
+  .content-main:not(:has(.rg-route)) {
     padding-top: 140px !important;
   }
 }
