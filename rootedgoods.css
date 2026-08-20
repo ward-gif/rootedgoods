@@ -126,20 +126,31 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 
 /* ---- Desktop (>=992px): alleen de middelste rij (logo/zoek/knop/iconen)
-   is sticky. .header-main zelf (topbar + header-row samen) en .nav-main
-   (categorieën-balk, sectie 4) worden gewone document-flow -- topbar en
-   nav-main scrollen dus gewoon met de pagina mee weg, alleen .header-row
-   blijft aan de bovenkant plakken. JS (sectie 1.2) toggelt .is-stuck
-   hieronder voor de schaduw zodra 'ie daadwerkelijk vastzit. Mobiel/tablet
-   blijven het oude fixed-gedrag houden (ongewijzigd, zie de basisregels
-   hierboven). */
+   oogt sticky, topbar + nav-main scrollen weg. .nav-main (sectie 4) is
+   een simpele position:static -- geen probleem, staat AL los in de DOM.
+   .header-main is lastiger: topbar + header-row zitten in de Shopware-
+   markup ALLEBEI in hetzelfde kleine wrapper-element (~96px hoog, exact
+   zo hoog als de inhoud). position:sticky op header-row ZELF bleek niet
+   te werken (live getest): sticky is begrensd door de hoogte van z'n
+   containing block, en die is hier maar 61px -- nét zo hoog als header-row
+   zelf, dus geen enkele "speling" om in te blijven plakken (0px bruikbare
+   sticky-ruimte, hij scrollt gewoon meteen weg).
+   Fix: .header-main ZELF wordt sticky (containing block = <body>, ruim
+   genoeg) met een NEGATIEVE top ter grootte van de topbar-hoogte. Daardoor
+   plakt header-main met zijn top net ZO VER boven de viewport dat de
+   topbar (het eerste stuk van header-main) buiten beeld valt, en
+   header-row (het stuk daarna) precies op y=0 uitkomt -- topbar oogt zo
+   alsof 'ie wegscrollt, header-row oogt sticky. JS (sectie 1.2) meet de
+   topbar-hoogte live en zet 'm als inline top (zelfde live-meet-patroon
+   als de hero-fit JS, sectie 2.4) -- geen hardcoded pixelwaarde die kan
+   gaan afwijken als de topbar ooit van hoogte verandert (bv. de
+   responsive font-shrink in sectie 26.7). */
 @media (min-width: 992px) {
   .header-main {
-    position: static;
+    position: sticky;
+    top: 0;   /* JS corrigeert dit naar -topbarhoogte */
   }
   .header-main .header-row {
-    position: sticky;
-    top: 0;
     transition: box-shadow 0.2s ease;
   }
   .header-main .header-row.is-stuck {

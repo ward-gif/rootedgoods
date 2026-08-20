@@ -77,20 +77,36 @@ document.addEventListener('DOMContentLoaded', function () {
  * Mobiel/tablet (<992px): .header-main/.nav-main blijven fixed (CSS sectie
  * 3/4, ongewijzigd) -- verbergen bij scroll-naar-beneden, tonen bij
  * scroll-naar-boven, zoals hiervoor.
- * Desktop (>=992px): header-main/nav-main zijn nu normale document-flow,
- * alleen .header-row is sticky (CSS sectie 3) -- topbar en nav-main
- * scrollen gewoon met de pagina mee weg. Hier alleen een class-toggle voor
- * een lichte schaduw zodra de rij daadwerkelijk vastzit.
+ * Desktop (>=992px): topbar + header-row zitten in de Shopware-markup
+ * allebei in .header-main, dat vanaf hier CSS position:sticky heeft
+ * (containing block <body>, lang genoeg om echt te kunnen plakken -- zie
+ * de uitgebreide comment in de CSS bij waarom sticky op .header-row zelf
+ * NIET werkte). Hier meten we de topbar-hoogte en zetten die als negatieve
+ * top: header-main plakt daardoor met de topbar net buiten beeld, en
+ * header-row komt op y=0 te staan. Live gemeten i.p.v. hardcoded (zelfde
+ * patroon als de hero-fit JS, sectie 2.4) zodat het klopt blijft als de
+ * topbar-hoogte ooit verandert (bv. de responsive font-shrink in CSS
+ * sectie 26.7). Ook hier een class-toggle voor de schaduw zodra 'ie
+ * daadwerkelijk vastzit.
  * passive: true voorkomt dat scroll-performance gehinderd wordt. */
 (function () {
   var header = document.querySelector('.header-main');
   var nav = document.querySelector('.nav-main');
   var row = document.querySelector('.header-main .header-row');
+  var topBar = document.querySelector('.header-main .top-bar');
   if (!header || !nav || !row) return;
 
   var lastScroll = 0;
   var threshold = 150;
-  var stickyPoint = row.offsetTop;
+  var topBarHeight = 0;
+
+  function meetTopbar() {
+    topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
+    // Inline top alleen op desktop; op mobiel (fixed, CSS sectie 3) moet
+    // 'ie leeg blijven zodat de basis top:0 daar gewoon geldt -- anders
+    // blijft een resize-naar-mobiel de negatieve desktop-top meeslepen.
+    header.style.top = window.innerWidth >= 992 ? (-topBarHeight) + 'px' : '';
+  }
 
   function mobielGedrag(current) {
     if (current < threshold) {
@@ -108,9 +124,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function desktopGedrag() {
-    row.classList.toggle('is-stuck', window.scrollY > stickyPoint);
+    row.classList.toggle('is-stuck', window.scrollY > topBarHeight);
   }
 
+  meetTopbar();
   window.addEventListener('scroll', function () {
     var current = window.scrollY;
     if (window.innerWidth < 992) mobielGedrag(current);
@@ -118,9 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     lastScroll = current;
   }, { passive: true });
 
-  window.addEventListener('resize', function () {
-    stickyPoint = row.offsetTop;
-  });
+  window.addEventListener('resize', meetTopbar);
 })();
 
 
