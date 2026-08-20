@@ -85,12 +85,21 @@ document.addEventListener('DOMContentLoaded', function () {
  * schuiven nu SAMEN weg zodra er voorbij een kleine drempel naar BENEDEN
  * gescrold wordt, en komen samen weer terug zodra er ook maar een beetje
  * omhoog gescrold wordt -- header-row zelf blijft te allen tijde zichtbaar
- * (sticky). Topbar-hoogte live gemeten i.p.v. hardcoded (zelfde patroon
- * als de hero-fit JS, sectie 2.4), want die bepaalt zowel de negatieve
- * header-main-top (topbar-verbergtruc) als de drempel. .nav-main verbergt
- * via transform (CSS sectie 4, .nav-hidden) i.p.v. height/overflow-collapse
- * -- overflow:hidden zou de categorie-dropdown-flyout (die eronder uitklapt)
- * afknippen.
+ * (sticky).
+ * BELANGRIJK: top (op beide elementen) is een STATISCHE, live gemeten
+ * waarde die verder niet meer verandert/animeert. Een eerdere versie liet
+ * top zelf heen-en-weer togglen met een CSS-transitie erop -- dat gaf live
+ * een kort zichtbaar spleetje bij scroll-omhoog dat pas na een paar
+ * seconden weer verdween (layout-thrashing: top is een layout-eigenschap,
+ * animeren daarvan op position:sticky dwingt de browser elk frame een
+ * herberekening te doen, en dat liep zichtbaar uit de pas). Nu animeert
+ * alléén nog transform: translateY (compositor-only, geen layout-
+ * herberekening, dus geen desync meer mogelijk) -- header-main en
+ * nav-main krijgen daarbij exact dezelfde translateY-waarde wanneer de
+ * topbar zichtbaar is, zodat ze gegarandeerd synchroon bewegen.
+ * .nav-main verbergt zichzelf (los van de topbar-schuif) via diezelfde
+ * transform i.p.v. height/overflow-collapse -- overflow:hidden zou de
+ * categorie-dropdown-flyout (die eronder uitklapt) afknippen.
  * passive: true voorkomt dat scroll-performance gehinderd wordt. */
 (function () {
   var header = document.querySelector('.header-main');
@@ -107,6 +116,22 @@ document.addEventListener('DOMContentLoaded', function () {
   function meetHoogtes() {
     topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
     headerRowHeight = row.getBoundingClientRect().height;
+    if (window.innerWidth >= 992) {
+      // Statisch: header-main plakt altijd met de topbar net buiten beeld;
+      // nav-main plakt altijd direct onder header-row (zonder topbar).
+      // Wordt hierna nooit meer aangepast -- alleen transform (in
+      // desktopGedrag) beweegt nog.
+      header.style.top = (-topBarHeight) + 'px';
+      nav.style.top = headerRowHeight + 'px';
+    } else {
+      // Terug naar mobiel: ook eventuele desktop-transform opruimen, anders
+      // wint een leftover inline transform van de mobiele .header-hidden-
+      // CSS-regel (inline gaat altijd voor).
+      header.style.top = '';
+      header.style.transform = '';
+      nav.style.top = '';
+      nav.style.transform = '';
+    }
   }
 
   function mobielGedrag(current) {
@@ -125,27 +150,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function desktopGedrag(current) {
-    // Vers meten i.p.v. de gecachte waarden vertrouwen: een gecachte
-    // hoogte kan stiekem stale raken (bv. na een webfont-swap die de
-    // header een fractie van een pixel laat verspringen), en dat gaf
-    // live een merkbaar gaatje tussen header-row en nav-main terug. Een
-    // extra getBoundingClientRect() per scroll-event is verwaarloosbaar.
+    // Vers meten i.p.v. de gecachte waarden vertrouwen: kan stiekem stale
+    // raken (bv. na een webfont-swap). Nu goedkoop -- zet alleen de
+    // statische top, geen transitie meer die daardoor kan haperen.
     meetHoogtes();
+    // Bewust NA meetHoogtes() pas afbreken op mobiel: die functie moet
+    // sowieso draaien om top/transform daar leeg te houden (bv. bij de
+    // initiële aanroep hieronder, die niet zelf op breedte checkt). Zonder
+    // deze guard zou de transform-logica verderop ook op mobiel draaien en
+    // een ongewenste translateY op de fixed mobiele header zetten.
+    if (window.innerWidth < 992) return;
 
     var voorbijDrempel = current > topBarHeight;
     var scrolltNaarBeneden = current > lastScroll;
     var verbergen = voorbijDrempel && scrolltNaarBeneden;
 
-    header.style.top = verbergen ? (-topBarHeight) + 'px' : '0px';
+    if (verbergen) {
+      // Topbar blijft via de statische top al buiten beeld -- header-main
+      // hoeft dus niet verschoven te worden. nav-main schuift zichzelf
+      // weg.
+      header.style.transform = '';
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      // Topbar zichtbaar maken: header-main (en nav-main mee, zelfde
+      // waarde) een topBarHeight naar beneden schuiven.
+      header.style.transform = 'translateY(' + topBarHeight + 'px)';
+      nav.style.transform = 'translateY(' + topBarHeight + 'px)';
+    }
     nav.classList.toggle('nav-hidden', verbergen);
-    // nav-main's sticky top hangt af van of de topbar op dit moment
-    // zichtbaar is: verborgen (topbar weg) -> nav plakt direct onder
-    // header-row (headerRowHeight); getoond (topbar weer zichtbaar) ->
-    // header-row zelf staat dan lager (na de topbar), dus nav moet verder
-    // naar beneden plakken (topBarHeight + headerRowHeight), anders
-    // overlapt nav de onderkant van header-row. Live getest en zo
-    // ontdekt -- een vaste top klopte alleen in de "verborgen" stand.
-    nav.style.top = (verbergen ? headerRowHeight : topBarHeight + headerRowHeight) + 'px';
   }
 
   desktopGedrag(window.scrollY);   // beginstand correct zetten (bv. na een refresh mid-page); meet zelf vers
@@ -158,14 +190,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
 
   window.addEventListener('resize', function () {
-    // Bij resize van mobiel naar desktop (of terug) moet de inline top
-    // meteen kloppen met het nieuwe breakpoint i.p.v. te wachten op de
-    // eerstvolgende scroll. desktopGedrag() meet zelf vers.
+    // Bij resize van mobiel naar desktop (of terug) moet de inline top/
+    // transform meteen kloppen met het nieuwe breakpoint i.p.v. te wachten
+    // op de eerstvolgende scroll. desktopGedrag() meet zelf vers (incl.
+    // top) en zet ook meteen de juiste transform; de mobiele tak van
+    // meetHoogtes() ruimt bij een resize-naar-mobiel zelf top+transform op.
     if (window.innerWidth >= 992) {
       desktopGedrag(window.scrollY);
     } else {
-      header.style.top = '';
-      nav.style.top = '';
+      meetHoogtes();
     }
   });
 })();
