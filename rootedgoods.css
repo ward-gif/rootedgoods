@@ -5701,12 +5701,15 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 }
 .rg-hero-v2__contact:hover { background: #fff; border-color: var(--rg-line); }
 .rg-hero-v2__contact:focus-visible { outline: 3px solid rgba(45, 69, 40, .55); outline-offset: 2px; }
-/* Avatar-wrapper puur voor het groene 'online'-bolletje rechtsonder. */
+/* Avatar-wrapper puur voor het groene 'online'-bolletje rechtsonder.
+   Zelfde groen + glow als .rg-team__dot (de drie hoofden op /contact);
+   witte rand blijft nodig om leesbaar te blijven bovenop de foto. */
 .rg-hero-v2__contact-avatar { position: relative; flex: none; display: inline-flex; }
 .rg-hero-v2__contact-avatar::after {
   content: ""; position: absolute; right: -1px; bottom: -1px;
   width: 11px; height: 11px; border-radius: 50%;
-  background: var(--rg-green); border: 2px solid #fff;
+  background: #6aa84f; border: 2px solid #fff;
+  box-shadow: 0 0 0 3px rgba(106, 168, 79, .2);
 }
 .rg-hero-v2__contact img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex: none; }
 .rg-hero-v2__contact-name { display: block; font-size: .72rem; font-weight: 600; color: var(--rg-cognac-light); }
