@@ -164,12 +164,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     top: 0;   /* JS zet dit naar 0 of -topbarhoogte, afhankelijk van scrollrichting */
     transition: top 0.3s ease;
   }
-  .header-main .header-row {
-    transition: box-shadow 0.2s ease;
-  }
-  .header-main .header-row.is-stuck {
-    box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.15);
-  }
 }
 
 /* Header — logo. Expliciete HOOGTE i.p.v. alleen max-width: een SVG rekt
@@ -899,8 +893,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    calc() als de hero/over-ons/etc.) i.p.v. aan .header-row: die laatste is
    bewust full-bleed (edge-to-edge header), dus een dropdown die zich
    daarnaar richt oogt altijd veel breder dan de rest van de pagina-inhoud
-   eronder. 60px inzet i.p.v. de sitebrede 80px, dus de dropdown is net
-   iets breder dan de content-kolom, niet exact gelijk.
+   eronder. 160px inzet (was 60px -- nog 100px per kant terug teruggemeld
+   als nog te breed), dus de dropdown is smaller dan de content-kolom.
    width:auto + left/right (geen expliciete width) -- de browser vult de
    ruimte tussen left/right dan vanzelf; de basisregel hierboven zet zelf
    width:80%, dus width moet HIER expliciet terug naar auto, anders wint
@@ -909,8 +903,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .navigation-flyout.cio-all-categories-navigation {
   width: auto;
   margin: 0;
-  left: calc(max((100vw - 1600px) / 2, 0px) + 60px);
-  right: calc(max((100vw - 1600px) / 2, 0px) + 60px);
+  left: calc(max((100vw - 1600px) / 2, 0px) + 160px);
+  right: calc(max((100vw - 1600px) / 2, 0px) + 160px);
 }
 /* Theme zet zelf padding-bottom:60px op de tegel-rij -- flink kleiner. */
 .navigation-flyout .row.navigation-flyout-content {
@@ -1669,41 +1663,41 @@ img {
   filter: grayscale(0%);
 }
 
-/* Edge-fade (JS sectie 2.1, .rg-logo-fade-wrapper): de logo-band scrollt
-   zelf full-bleed door, maar de fade-overlay staat ingekaderd op de
-   sitebrede content-kolom (zelfde calc() als hero/over-ons/etc.) i.p.v. op
-   de viewport-rand -- zo blijft dit niet het enige full-width element op
-   de pagina, zoals bij Monday.com's merkenrij. Kleurverloop naar de eigen
-   sectie-achtergrond (#F7F5F2), dus de logo's lijken te vervagen in de
-   pagina i.p.v. hard afgesneden te worden. */
-.rg-logo-fade {
-  --rg-logo-fade-inset: calc(max((100vw - 1600px) / 2, 0px) + 80px);
-}
-/* Onder 992px is de 80px-gutter uit de sitebrede formule verhoudingsgewijs
-   te veel (eet op een telefoon een groot deel van het scherm op) -- zelfde
-   kleinere inzet als de hero's eigen mobiele zij-marge. */
-@media (max-width: 991px) {
-  .rg-logo-fade {
-    --rg-logo-fade-inset: clamp(1.25rem, 5vw, 2rem);
-  }
-}
+/* Edge-fade (JS sectie 2.1, .rg-logo-fade): de logo-band scrollt zelf
+   full-bleed door. Eerste versie zette de fade-strook als smalle reep
+   INGESPRONGEN op de content-kolomgrens -- daarbuiten (het hele stuk
+   tussen viewport-rand en die grens) bleven logo's dus alsnog haarscherp
+   zichtbaar (live teruggemeld: "aan de zijkanten nog zichtbaar"). Nu
+   beslaat de fade de VOLLEDIGE buitenmarge zelf (viewport-rand tot
+   content-kolomgrens): vol dekkend aan de echte rand, verlopend naar
+   transparant precies op de content-kolomgrens. Kleurverloop naar de
+   eigen sectie-achtergrond (#F7F5F2). */
 .rg-logo-fade::before,
 .rg-logo-fade::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: clamp(3rem, 8vw, 9rem);
+  width: calc(max((100vw - 1600px) / 2, 0px) + 80px);
   z-index: 2;
   pointer-events: none;
 }
 .rg-logo-fade::before {
-  left: var(--rg-logo-fade-inset);
+  left: 0;
   background: linear-gradient(to right, #F7F5F2, rgba(247, 245, 242, 0));
 }
 .rg-logo-fade::after {
-  right: var(--rg-logo-fade-inset);
+  right: 0;
   background: linear-gradient(to left, #F7F5F2, rgba(247, 245, 242, 0));
+}
+/* Onder 992px is de 80px-gutter uit de sitebrede formule verhoudingsgewijs
+   te veel (eet op een telefoon een groot deel van het scherm op) -- zelfde
+   kleinere marge als de hero's eigen mobiele zij-marge. */
+@media (max-width: 991px) {
+  .rg-logo-fade::before,
+  .rg-logo-fade::after {
+    width: clamp(1.25rem, 5vw, 2rem);
+  }
 }
 
 /* ------------------------------------------------------------
@@ -5824,44 +5818,40 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover {
   box-shadow: 0 20px 38px -12px rgba(173, 99, 49, 1) !important;
 }
-/* Secundaire link gedemote: regular i.p.v. de globale .btn-outline-primary
-   se 600-gewicht, gedempte kleur i.p.v. bosgroen, en de pijl (normaal altijd
-   zichtbaar via sectie 8) hier alleen on hover -- concurreert zo niet meer
-   met de primaire knop. Underline-hover blijft, focus-visible komt gratis
-   mee via de site-brede regel. */
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary.rg-hero-v2__cta-secondary {
-  font-weight: 400 !important;
-  color: var(--rg-soft) !important;
+/* Secundaire link: teruggezet naar de gewone globale .btn-outline-primary
+   look (de gedemote regular/gedempte/pijl-alleen-on-hover-variant is weer
+   ingetrokken) -- alleen de hero-scoped underline-hover blijft, die
+   bestond nog niet in de site-brede regel (sectie 8). */
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary {
   transition: text-decoration-color .15s ease, color .2s ease !important;
 }
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary.rg-hero-v2__cta-secondary:hover {
-  color: var(--rg-cognac) !important;
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover {
   text-decoration: underline !important;
   text-underline-offset: 2px !important;
 }
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary.rg-hero-v2__cta-secondary::after {
-  opacity: 0;
-  transition: opacity .15s ease, transform .2s ease;
-}
-.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary.rg-hero-v2__cta-secondary:hover::after {
-  opacity: 1;
-}
 
-/* ---- Richard-regel: weer klikbaar (naar /contact) -- blijft een kale
-   tekstregel (geen kaart/rand/achtergrond), zelfde idioom als de secundaire
-   CTA hierboven: onderlijning + pijl-schuif alleen on hover, op de tekst,
-   niet op de avatar (aparte sibling-span, dus die krijgt vanzelf geen
-   underline mee). ---- */
+/* ---- Richard-CTA: klikbare kaart in een zachte zandtint (--rg-line, een
+   bestaand token -- "randen/scheidingslijnen", hier als achtergrond
+   hergebruikt i.p.v. een nieuwe kleur te verzinnen). width:fit-content
+   zodat de kaart niet meerekt met de kolombreedte. ---- */
 .rg-hero-v2__reassure {
-  display: flex; align-items: center; gap: 12px;
+  display: inline-flex; align-items: center; gap: 12px;
+  width: fit-content;
   margin: 14px 0 0;
+  padding: 12px 20px 12px 12px;
+  border-radius: 12px;   /* zelfde radius als de mozaïek-tegels (.rg-hero-v2__tile) */
+  background: var(--rg-line);
+  border: 1px solid rgba(45, 69, 40, .15);   /* merkgroen, laag-opaciteit */
   text-align: left;
   text-decoration: none;
+  transition: background-color .15s ease;
+}
+.rg-hero-v2__reassure:hover {
+  background: var(--rg-peach);   /* zelfde tonale familie, één stap dieper dan --rg-line */
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 .rg-hero-v2__reassure-avatar { position: relative; flex: none; display: inline-flex; }
 .rg-hero-v2__reassure-avatar img {
@@ -5871,39 +5861,43 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    online-status-indicator op /contact) -- #6aa84f, geen nieuwe kleur. Hier
    WEL een ring (i.p.v. team-dot's kale glow-shadow), want dit bolletje zit
    bovenop een foto i.p.v. op een vlakke achtergrond -- zelfde ring-aanpak
-   als .rg-float-contact__dot, alleen crème i.p.v. wit zodat 'ie in de hero
-   wegvalt tegen de achtergrond i.p.v. tegen de kaart. Rechtsonder (45°) op
-   de avatar, ca. 10px (meeschalend met de grotere 40px-avatar). */
+   als .rg-float-contact__dot, in de hero-achtergrondkleur (cream) zodat
+   'ie loskomt van de foto. Rechtsonder (45°) op de avatar, ca. 10px
+   (meeschalend met de grotere 40px-avatar). */
 .rg-hero-v2__reassure-dot {
   position: absolute; right: 0; bottom: 0;
   width: 10px; height: 10px; border-radius: 50%;
   background: #6aa84f; border: 2px solid var(--rg-cream);
 }
-/* Eigen span (i.p.v. tekst los in de flex-rij): kan los van de avatar
-   krimpen/wrappen op smalle schermen, zodat de regel nooit h-scroll
-   veroorzaakt. Geen expliciete line-height: zelfde patroon als de andere
-   SMALL-tekst-rollen in het type-consolidatie-systeem (sectie 41.12) en
-   .rg-team__status -- die laten 'm ook gewoon overerven. */
+/* Tekst + pijl samen in een eigen 8px-gap flex (los van de 12px avatar-gap
+   op het buitenste blok). */
+.rg-hero-v2__reassure-copy {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+/* 15px, één regel op desktop (white-space:nowrap in de media query
+   hieronder) -- mobiel mag nog gewoon wrappen, anders h-scroll-risico bij
+   een klein scherm. Kleur = --rg-green-soft (de LOKALE hero-token, niet de
+   globale --rg-soft): op de nieuwe zandtint-achtergrond haalt --rg-soft nog
+   maar 4.35:1 (onder de WCAG AA-norm van 4.5:1), --rg-green-soft haalt
+   5.8:1 op --rg-line en 4.72:1 op de --rg-peach-hover -- allebei ruim
+   voldoende. */
 .rg-hero-v2__reassure-text {
-  min-width: 0; flex: 1 1 auto;
-  font-size: .875rem; font-weight: 400;
-  color: var(--rg-soft);
-  transition: color .15s ease;
+  font-size: 15px; font-weight: 400;
+  color: var(--rg-green-soft);
 }
-/* "Hi, ik ben Richard." -- medium + donkergroen (var(--rg-green), 9.7:1 op
-   --rg-cream). Rest van de zin regular + --rg-soft (5.1:1) -- beide ruim
-   boven WCAG AA (4.5:1). */
+@media (min-width: 992px) {
+  .rg-hero-v2__reassure-text { white-space: nowrap; }
+}
+/* "Hi, ik ben Richard." -- medium + donkergroen (var(--rg-green), 8.3:1 op
+   --rg-line). */
 .rg-hero-v2__reassure-text b { font-weight: 500; color: var(--rg-green); }
-.rg-hero-v2__reassure:hover .rg-hero-v2__reassure-text {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.rg-hero-v2__reassure-text svg {
-  width: .85em; height: .85em; flex: none;
-  margin-left: .3rem; vertical-align: -0.05em;
+/* Pijl: zelfde gedempte kleur als de tweede teksthelft, niet zwaarder. */
+.rg-hero-v2__reassure-arrow {
+  width: .9em; height: .9em; flex: none;
+  color: var(--rg-green-soft);
   transition: transform .15s ease;
 }
-.rg-hero-v2__reassure:hover .rg-hero-v2__reassure-text svg {
+.rg-hero-v2__reassure:hover .rg-hero-v2__reassure-arrow {
   transform: translateX(4px);
 }
 
@@ -6015,10 +6009,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   /* Kolom i.p.v. wrap: anders krijgt de 2e (compactere) knop een eigen
      auto-breedte -> ongelijke pillen. Stretch maakt ze gelijke breedte
      (primair full-width, secundair eronder). .rg-hero-v2__reassure blijft
-     hier bewust ONGEMOEID (geen display/align override): 'ie heeft z'n
-     eigen text-align:left al in de basisregel, en de knoppenrij's
-     text-align:center (via copy-bottom hierboven) raakt 'm niet -- de
-     reassure-tekst zit al in een eigen span, geen los tekstnode-kind. */
+     hier bewust ONGEMOEID: het kaartje is inline-flex + width:fit-content,
+     dus de text-align:center hierboven (copy-bottom) centreert 'm gewoon
+     mee als geheel -- consistent met de rest van de gecentreerde mobiele
+     hero, geen aparte override nodig. */
   .rg-hero-v2__cta { flex-direction: column; align-items: stretch; margin-bottom: 0; }
   .rg-hero-v2__cap-label { display: none; }
 }

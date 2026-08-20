@@ -5,7 +5,7 @@
  *
  * STRUCTUUR (bijgewerkt -- was verouderd, noemde maar 3 grove items):
  *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 header-scroll-gedrag
- *                           (mobiel hide/show, desktop sticky-schaduw), 1.3 flyout CTA,
+ *                           (mobiel hide/show, desktop sticky topbar/nav), 1.3 flyout CTA,
  *                           1.4 offerteknop (header-actions), 1.4b nav-main
  *                           zonder title-tooltip, 1.5 Cal.com-embed lazy-load,
  *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit
@@ -131,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     header.style.top = verbergen ? (-topBarHeight) + 'px' : '0px';
     nav.classList.toggle('nav-hidden', verbergen);
-    row.classList.toggle('is-stuck', voorbijDrempel);
     // nav-main's sticky top hangt af van of de topbar op dit moment
     // zichtbaar is: verborgen (topbar weg) -> nav plakt direct onder
     // header-row (headerRowHeight); getoond (topbar weer zichtbaar) ->
