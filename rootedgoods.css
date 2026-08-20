@@ -2202,6 +2202,13 @@ body.is-ctl-product .product-detail-ordernumber-container {
   border-color: #CA853F !important;
 }
 
+/* Theme zet zelf margin-bottom:1.5rem op de options-rij (extra ruimte
+   onder elke Afmeting/Kleur-stap, bovenop de 3.5rem die de opties zelf al
+   reserveren voor hun label) -- flink kleiner. */
+.product-detail-buy .product-detail-configurator-options {
+  margin-bottom: 0.5rem !important;
+}
+
 /* Kleurkeuze: toon de naam (uit title-attribuut) onder elke swatch.
    Pure CSS via attr() — geen JS nodig. Promidata zet `title="bamboe"`
    etc. op elke kleur-label. Geselecteerde kleur krijgt donkergroen +
