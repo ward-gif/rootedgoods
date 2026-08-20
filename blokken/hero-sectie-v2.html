@@ -35,23 +35,18 @@
             <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.6l4 4 9-9.6"/></svg>bezorging geregeld</span>
           </p>
 
-          <!-- Verborgen op mobiel: staat al in het CTA-blok onderaan de pagina.
-               Mini-formulier i.p.v. pure link: gewone browser-navigatie
-               (method="get") stuurt de tekst als ?bericht= mee naar /contact,
-               waar rootedgoods.js (sectie 1.6c) 'm in het berichtveld zet.
-               Leeg versturen = gewoon doorklikken naar /contact. -->
-          <form class="rg-hero-v2__contact" action="/contact" method="get">
+          <!-- Verborgen op mobiel: staat al in het CTA-blok onderaan de pagina. -->
+          <a class="rg-hero-v2__contact" href="/contact" aria-label="Hi, ik ben Richard. Vertel wat je zoekt, het uitzoekwerk is voor mij. Neem contact op.">
             <span class="rg-hero-v2__contact-avatar">
-              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="56" height="56">
+              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="42" height="42">
             </span>
-            <span class="rg-hero-v2__contact-copy">
+            <span>
               <span class="rg-hero-v2__contact-name">Hi, ik ben Richard</span>
-              <input class="rg-hero-v2__contact-input" type="text" name="bericht" placeholder="Vertel wat je zoekt, het uitzoekwerk is voor mij" aria-label="Vertel wat je zoekt">
+              <span class="rg-hero-v2__contact-promise">Vertel wat je zoekt, het uitzoekwerk is voor mij
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
             </span>
-            <button type="submit" class="rg-hero-v2__contact-arrow" aria-label="Versturen">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </form>
+          </a>
         </div>
       </div>
 

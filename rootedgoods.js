@@ -6,8 +6,7 @@
  * STRUCTUUR (bijgewerkt -- was verouderd, noemde maar 3 grove items):
  *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 sticky header, 1.3 flyout CTA,
  *                           1.4 offerte-navlink, 1.5 Cal.com-embed lazy-load,
- *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit,
- *                           1.6c contact: ?bericht= uit hero-mini-form vooraf invullen
+ *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
  *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.1b
  *                           topbar USP-marquee (mobiel), 2.1c offcanvas quicklinks/
@@ -227,26 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 4000 });
   else window.addEventListener('load', function () { setTimeout(start, 1500); });
-})();
-
-
-/* ---- 1.6c Contact — bericht-veld vooraf invullen
- * De hero-mini-form (blokken/hero-sectie-v2.html, .rg-hero-v2__contact) is een
- * gewone <form method="get" action="/contact">: de browser regelt de
- * navigatie + querystring zelf, geen JS nodig aan die kant. Hier op /contact
- * lezen we ?bericht= terug en zetten 'm in het berichtveld, dan schonen we de
- * URL op (geen JS = gewoon een lege textarea, geen crash). */
-(function () {
-  var bericht = document.getElementById('cf-bericht');
-  if (!bericht) return;
-  var param = new URLSearchParams(window.location.search).get('bericht');
-  if (!param) return;
-  bericht.value = param;
-  bericht.focus();
-  bericht.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  var url = new URL(window.location.href);
-  url.searchParams.delete('bericht');
-  window.history.replaceState({}, '', url);
 })();
 
 
