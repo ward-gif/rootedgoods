@@ -212,6 +212,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   background-color: #ffffff;
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
+  box-shadow: 0 6px 16px -10px rgba(45, 69, 40, 0.18);   /* hele lichte scheiding met de content eronder */
   transition: transform 0.3s ease;
 }
 .nav-main.header-hidden {
@@ -788,6 +789,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   left: 10%;
   right: 10%;
 }
+/* Theme zet zelf padding-bottom:60px op de tegel-rij -- flink kleiner. */
+.navigation-flyout .row.navigation-flyout-content {
+  padding-bottom: 24px !important;
+}
 
 /* Flyout — categorie afbeeldingen met overlay.
    Tile is een <a> met background-image (geen <img>), dus we sturen
@@ -812,13 +817,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+  box-shadow: var(--rg-sh-soft);   /* zelfde schaduw-token als de rest van de site (bv. .rg-spec-card) */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navigation-flyout-category .navigation-item:hover,
 .navigation-flyout-category .navigation-item:focus-visible {
   transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--rg-sh-deep);
 }
 
 .navigation-flyout-category .navigation-item::after {
