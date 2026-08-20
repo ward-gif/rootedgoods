@@ -4470,10 +4470,11 @@ h2.rg-statement__title em { font-style: italic; font-weight: 600; }
   outline: 3px solid rgba(45, 69, 40, 0.55);
   outline-offset: 3px;
 }
-/* Geruststellende microcopy onder de knop — exact dezelfde styling als de
-   trust-strip onder de hero-knop (.rg-hero-v2__trust): donkergroen, .84rem,
-   weight 500, cognac-vinkje. Marge onder de knop ook gelijk aan de hero
-   (1.5rem, zelfde als --rg-s3 in .rg-hero-v2__cta). */
+/* Geruststellende microcopy onder de knop — donkergroen, .84rem, weight 500,
+   cognac-vinkje. Marge onder de knop 1.5rem (zelfde als --rg-s3 in
+   .rg-hero-v2__cta). (De hero-trust-strip waar dit ooit 1-op-1 van
+   overgenomen was, bestaat inmiddels niet meer -- vervangen door de niet-
+   klikbare .rg-hero-v2__reassure-regel, andere rol/opbouw.) */
 .rg-statement__reassurance {
   margin: 1.5rem 0 0;   /* knop -> reassurance */
   display: inline-flex;
@@ -5678,44 +5679,49 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover {
   box-shadow: 0 20px 38px -12px rgba(173, 99, 49, 1) !important;
 }
-/* (Secundaire hero-CTA-styling is nu de site-brede .btn.btn-outline-primary
-   tekstlink-regel in sectie 8 — geen hero-specifieke override meer nodig.) */
-
-/* ---- Trust: één rustige regel. Elk item is nowrap en draagt z'n eigen
-   scheidings-middot (::before), zodat bij wrap de middot netjes mee naar
-   de nieuwe regel gaat i.p.v. te blijven hangen aan het regeleinde. ---- */
-.rg-hero-v2__trust {
-  margin: 0;
-  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.25rem;
-  font-size: .84rem; font-weight: 500; color: #5d6d55;
+/* Secundaire link: pijl-hover + focus-visible komen al gratis mee via de
+   site-brede .btn-outline-primary-regels (sectie 8) -- alleen de underline-
+   op-hover bestond daar nog niet, hier hero-scoped toegevoegd. */
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary {
+  transition: text-decoration-color .15s ease, color .2s ease !important;
 }
-.rg-hero-v2__trust svg { width: 1rem; height: 1rem; flex: none; color: var(--rg-cognac-light); }
-.rg-hero-v2__t { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
-
-/* ---- Contactpersoon ---- */
-.rg-hero-v2__contact {
-  display: inline-flex; align-items: center; gap: .65rem;
-  margin-top: var(--rg-s2); padding: .35rem .8rem .35rem .35rem;
-  border-radius: 999px; text-decoration: none; border: 1px solid transparent;
-  transition: background-color .2s ease, border-color .2s ease;
+.rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
 }
-.rg-hero-v2__contact:hover { background: #fff; border-color: var(--rg-line); }
-.rg-hero-v2__contact:focus-visible { outline: 3px solid rgba(45, 69, 40, .55); outline-offset: 2px; }
-/* Avatar-wrapper puur voor het groene 'online'-bolletje rechtsonder.
-   Exact dezelfde regels als .rg-team__dot (de drie hoofden op /contact),
-   geen witte rand toegevoegd -- puur de glow-ring, 1-op-1 dezelfde stijl. */
-.rg-hero-v2__contact-avatar { position: relative; flex: none; display: inline-flex; }
-.rg-hero-v2__contact-avatar::after {
-  content: ""; position: absolute; right: 0; bottom: 0;
+
+/* ---- Vertrouwensregel: NIET klikbaar -- vervangt het eerdere klikbare
+   Richard-blok (was 3e CTA in de hero, nu reassurance-microcopy onder de
+   knoppenrij, geen interactie/hover). Zelfde rolnaam als het bestaande
+   .rg-statement__reassurance elders op de site (geruststellende regel onder
+   een primaire knop), vandaar __reassure i.p.v. __contact. ---- */
+.rg-hero-v2__reassure {
+  display: flex; align-items: center; gap: 10px;
+  margin: 20px 0 0;
+  text-align: left;
+}
+.rg-hero-v2__reassure-avatar { position: relative; flex: none; display: inline-flex; }
+.rg-hero-v2__reassure-avatar img {
+  width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: block;
+}
+/* Statusbolletje rechtsonder (45°) op de avatar: merkgroen, ring in de
+   hero-achtergrondkleur (i.p.v. wit) zodat 'ie los oogt van de foto zonder
+   een harde witte rand op de crème hero. */
+.rg-hero-v2__reassure-dot {
+  position: absolute; right: 0; bottom: 0;
   width: 8px; height: 8px; border-radius: 50%;
-  background: #6aa84f;
-  box-shadow: 0 0 0 3px rgba(106, 168, 79, .2);
+  background: var(--rg-green); border: 2px solid var(--rg-cream);
 }
-.rg-hero-v2__contact img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex: none; }
-.rg-hero-v2__contact-name { display: block; font-size: .72rem; font-weight: 600; color: var(--rg-cognac-light); }
-.rg-hero-v2__contact-promise { display: flex; align-items: center; gap: .3rem; font-size: .88rem; font-weight: 500; color: var(--rg-green-soft); }
-.rg-hero-v2__contact-promise svg { width: .95em; height: .95em; flex: none; transition: transform .2s ease; }
-.rg-hero-v2__contact:hover .rg-hero-v2__contact-promise svg { transform: translateX(3px); }
+/* Eigen span (i.p.v. tekst los in de flex-rij): kan los van de avatar
+   krimpen/wrappen op smalle schermen, zodat de regel nooit h-scroll
+   veroorzaakt. Kleur = --rg-soft (#5d6d55, bestaand token, gedempt
+   grijsgroen) -- 5.1:1 op --rg-cream, haalt WCAG AA (4.5:1) ruim. */
+.rg-hero-v2__reassure-text {
+  min-width: 0; flex: 1 1 auto;
+  font-size: .875rem; font-weight: 400; line-height: 1.4;
+  color: var(--rg-soft);
+}
+.rg-hero-v2__reassure-text b { font-weight: 500; }
 
 /* ---- Zwevende contact-avatar (JS sectie 2.5) — verschijnt rechtsonder
    zodra de hero uit beeld scrolt. Bewust alleen het gezicht + het groene
@@ -5823,11 +5829,14 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   .rg-hero-v2__title { margin-inline: auto; }
   .rg-hero-v2__sub { display: none; }
   /* Kolom i.p.v. wrap: anders krijgt de 2e (compactere) knop een eigen
-     auto-breedte -> ongelijke pillen. Stretch maakt ze gelijke breedte. */
+     auto-breedte -> ongelijke pillen. Stretch maakt ze gelijke breedte
+     (primair full-width, secundair eronder). .rg-hero-v2__reassure blijft
+     hier bewust ONGEMOEID (geen display/align override): 'ie heeft z'n
+     eigen text-align:left al in de basisregel, en de knoppenrij's
+     text-align:center (via copy-bottom hierboven) raakt 'm niet -- de
+     reassure-tekst zit al in een eigen span, geen los tekstnode-kind. */
   .rg-hero-v2__cta { flex-direction: column; align-items: stretch; margin-bottom: 0; }
   .rg-hero-v2__cap-label { display: none; }
-  .rg-hero-v2__trust { display: none; }
-  .rg-hero-v2__contact { display: none; }
 }
 
 /* ---- Tablet (>=768px): tegels vierkant, staffel aan ---- */
@@ -7767,7 +7776,7 @@ h1.rgh__title, .rgh__title,
 }
 /* SMALL — noten, reassurance, trust-strips */
 .rg-cform__note, .rg-sd__reassurance,
-.rg-hero-v2__trust, .rg-endcta__trust, .rg-statement__reassurance{
+.rg-endcta__trust, .rg-statement__reassurance{
   font-size:0.85rem !important;
 }
 

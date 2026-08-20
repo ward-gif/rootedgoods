@@ -1,7 +1,8 @@
   <!-- Rooted Goods — homepage hero v2 (staffel-mozaïek). Plak in een CMS HTML-block.
       De CSS staat in rootedgoods.css (sectie 38) -> stijl-tweaks lopen live mee.
       De fit-JS (hoogte passend aan de logo-slider) staat in rootedgoods.js (sectie 2.4).
-      TE VERVANGEN: 2x href="#" in de CTA's (offerteformulier + collectie). -->
+      Twee CTA's (primair + tekstlink) + niet-klikbare vertrouwensregel eronder;
+      de offerte-route loopt nu alleen nog via het nav-item "Offerte aanvragen". -->
   <section class="rg-hero-v2" aria-labelledby="rg-hero-v2-title">
     <div class="rg-hero-v2__inner">
 
@@ -20,33 +21,24 @@
         </div>
 
         <div class="rg-hero-v2__copy-bottom">
-          <!-- Pijl op de primaire komt automatisch via de globale button-CSS -->
+          <!-- Pijl op beide CTA's komt automatisch via de globale button-CSS
+               (sectie 8). Primair = laagdrempelige route (naar /contact),
+               secundair = kale tekstlink (.btn-outline-primary). -->
           <div class="rg-hero-v2__cta">
-            <a class="btn btn-primary" href="/offerte">Vraag een offerte aan</a>
+            <a class="btn btn-primary" href="/contact">Vertel wat je zoekt</a>
             <a class="btn btn-outline-primary" href="/alle-producten/">Bekijk alle producten</a>
           </div>
 
-          <!-- Bewust "geassembleerd", niet "100% gemaakt": de eerlijke claim uit
-              de brand story (sommige grondstoffen komen van verder weg).
-              Verborgen op mobiel: staat al in de topbar-USP's. -->
-          <p class="rg-hero-v2__trust">
-            <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.6l4 4 9-9.6"/></svg>Geassembleerd in Europa</span>
-            <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.6l4 4 9-9.6"/></svg>digitale drukproef</span>
-            <span class="rg-hero-v2__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.6l4 4 9-9.6"/></svg>bezorging geregeld</span>
+          <!-- Vertrouwensregel: NIET klikbaar, puur reassurance onder de
+               knoppenrij (geen 3e CTA meer). Zichtbaar op alle breakpoints,
+               incl. mobiel. -->
+          <p class="rg-hero-v2__reassure">
+            <span class="rg-hero-v2__reassure-avatar">
+              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="28" height="28">
+              <span class="rg-hero-v2__reassure-dot"></span>
+            </span>
+            <span class="rg-hero-v2__reassure-text">Je krijgt antwoord van <b>Richard</b>, meestal binnen een dag</span>
           </p>
-
-          <!-- Verborgen op mobiel: staat al in het CTA-blok onderaan de pagina. -->
-          <a class="rg-hero-v2__contact" href="/contact" aria-label="Hi, ik ben Richard. Vertel wat je zoekt, het uitzoekwerk is voor mij. Neem contact op.">
-            <span class="rg-hero-v2__contact-avatar">
-              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="42" height="42">
-            </span>
-            <span>
-              <span class="rg-hero-v2__contact-name">Hi, ik ben Richard</span>
-              <span class="rg-hero-v2__contact-promise">Vertel wat je zoekt, het uitzoekwerk is voor mij
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </span>
-          </a>
         </div>
       </div>
 
