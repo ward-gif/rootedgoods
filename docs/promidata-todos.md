@@ -47,6 +47,18 @@ een spatie of comment toevoegen en pushen. jsDelivr ziet de nieuwe SHA en fetcht
 opnieuw. Of vervang `@main` tijdelijk door een commit-SHA in de Promidata theme
 URL: `@<sha>/rootedgoods.js` — die is permanent gecached en altijd correct.
 
+**Browser-cache is de échte boosdoener (bevestigd 20 aug), niet alleen de
+jsDelivr-edge**: response-headers zijn `Cache-Control: public, max-age=604800,
+s-maxage=43200` — de edge (`s-maxage`) ververst na 12u zoals hierboven, maar
+elke bezoeker z'n BROWSER onthoudt het bestand zelf **7 dagen** (`max-age`) en
+checkt in die tijd niet eens bij de server of er iets nieuws is, ook niet na
+een geslaagde edge-purge. Verklaart waarom wijzigingen soms bij de één al
+zichtbaar zijn en bij de ander niet: alleen een harde refresh (Cmd/Ctrl+Shift+R)
+of een incognito-venster forceert een echte herfetch. Structurele oplossing:
+een versie-query in de theme-URL (`rootedgoods.css?v=2`, ophogen per release)
+zodat elke wijziging vanzelf een nieuwe, nooit-gecachete URL krijgt i.p.v. te
+leunen op purges/hard-refreshes.
+
 ---
 
 ## 3. (Toekomstig) Custom slider library
