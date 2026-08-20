@@ -5867,18 +5867,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin: 14px 0 0;
   padding: 12px 16px 12px 12px;
   border-radius: 12px;   /* zelfde radius als de mozaïek-tegels (.rg-hero-v2__tile) */
-  /* Basis lichter dan de vorige stand: --rg-line (zand, bestaand token).
-     De vorige achtergrond (#D6CCB9, zelfde kleur als de Europa-kaart-
-     vulling, sectie 29) trok in de basisstand te veel aandacht -- die
-     kleur is nu de HOVER, zodat de kaart op interactie juist voller/
-     aanwezig wordt i.p.v. andersom. */
-  background: var(--rg-line);
+  /* Geen achtergrond (meer) -- ook niet on hover: blijft een kale
+     tekstregel, geen kaart. */
   text-align: left;
   text-decoration: none;
-  transition: background-color .15s ease;
-}
-.rg-hero-v2__reassure:hover {
-  background: #D6CCB9;   /* zelfde kleur als de Europa-kaart-vulling, sectie 29 */
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
