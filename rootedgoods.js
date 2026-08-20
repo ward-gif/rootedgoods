@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var origineleOuder = searchBox ? searchBox.parentNode : null;
   var origineelVolgendeSibling = searchBox ? searchBox.nextSibling : null;
   var opgetild = false;
+  var sluitTimeoutId = null;
 
   function tilSearchboxOp() {
     if (!searchBox || opgetild || window.innerWidth < 992) return;
@@ -71,8 +72,14 @@ document.addEventListener('DOMContentLoaded', function () {
     searchBox.style.margin = '0';
     searchBox.style.transform = 'none';
     searchBox.style.zIndex = '900';
+    // appendChild verplaatst searchInput's ouder in de DOM -> de browser
+    // blurt het veld daardoor automatisch (verlies van focus is standaard-
+    // gedrag bij het herplaatsen van een focused element/z'n voorouder).
+    // Focus meteen weer terugzetten; de eigen 'focus'-listener hieronder
+    // ziet dan opgetild al true staan en doet verder niets (geen lus).
     document.body.appendChild(searchBox);
     opgetild = true;
+    searchInput.focus();
   }
   function zetSearchboxTerug() {
     if (!searchBox || !opgetild) return;
@@ -91,13 +98,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   searchInput.addEventListener('focus', function () {
+    // Een eventuele pending sluit-timeout van een vorige blur annuleren --
+    // anders kan die alsnog afgaan NA deze nieuwe focus (race condition,
+    // niet waterdicht af te vangen met alleen een activeElement-check op
+    // het moment dat de timeout afgaat). Dit was de oorzaak van het
+    // "springt terug"-effect: de verplaatsing in tilSearchboxOp() veroorzaakt
+    // zelf een tussentijdse blur (+ meteen re-focus), en die tussentijdse
+    // blur plande zijn eigen sluit-timeout die soms alsnog afging.
+    if (sluitTimeoutId) { clearTimeout(sluitTimeoutId); sluitTimeoutId = null; }
     overlay.classList.add('active');
     tilSearchboxOp();
   });
 
   // 150ms timeout: klik op zoekknop heeft tijd om te firen voordat overlay weg is.
   searchInput.addEventListener('blur', function () {
-    setTimeout(function () {
+    sluitTimeoutId = setTimeout(function () {
+      sluitTimeoutId = null;
       overlay.classList.remove('active');
       zetSearchboxTerug();
     }, 150);
