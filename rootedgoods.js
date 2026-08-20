@@ -13,7 +13,7 @@
  *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.1b
  *                           topbar USP-marquee (mobiel), 2.1c offcanvas quicklinks/
  *                           toggle, 2.1d mobiel-header-rij, 2.2 productslider tegel-
- *                           click, 2.4 hero-v2 hoogte-fit, 2.5 zwevende contact-avatar
+ *                           click, 2.4 hero-v2 hoogte-fit
  *   SECTIE 3 — PDP        : 3.1 productnaam verplaatsen, 3.2 accordion-default,
  *                           3.2b configurator-stappen open houden, 3.3 staffel-
  *                           prijstabel, 3.4 gallery-zoom-knop
@@ -173,11 +173,19 @@ document.addEventListener('DOMContentLoaded', function () {
       // weg.
       header.style.transform = '';
       nav.style.transform = 'translateY(-100%)';
-    } else {
-      // Topbar zichtbaar maken: header-main (en nav-main mee, zelfde
-      // waarde) een topBarHeight naar beneden schuiven.
+    } else if (voorbijDrempel) {
+      // Alleen hier is de sticky-clamp (top:-topBarHeight) daadwerkelijk
+      // actief -- topbar zichtbaar maken door header-main (en nav-main mee,
+      // zelfde waarde) een topBarHeight naar beneden te schuiven.
       header.style.transform = 'translateY(' + topBarHeight + 'px)';
       nav.style.transform = 'translateY(' + topBarHeight + 'px)';
+    } else {
+      // Nog boven de drempel (bv. net geladen, scrollY 0): header/nav staan
+      // al in hun natuurlijke, ongestickte positie -- geen transform nodig.
+      // Zonder deze tak kreeg de pagina bij load een zichtbaar gat boven de
+      // topbar (translateY(topBarHeight) werd dan ten onrechte al gezet).
+      header.style.transform = '';
+      nav.style.transform = '';
     }
     nav.classList.toggle('nav-hidden', verbergen);
   }
@@ -979,36 +987,6 @@ function rgOnthulNaFonts(toon) {
     hero.classList.add('is-hero-klaar');
   }
   rgOnthulNaFonts(toonHero);
-})();
-
-
-/* ---- 2.5 Zwevende contact-avatar — verschijnt rechtsonder zodra de hero
- * (met de inline contact-CTA erin) uit beeld scrolt, over de rest van de
- * pagina. Eigen element, direct op <body> geplakt (zelfde escape-truc als
- * de search-overlay in 1.1): position:fixed blijft zo gegarandeerd
- * viewport-relatief, ongeacht of een CMS-wrapper verderop ooit een eigen
- * stacking-context/transform krijgt. Alleen homepage: doet niets zonder
- * .rg-hero-v2 op de pagina. */
-(function () {
-  var hero = document.querySelector('.rg-hero-v2');
-  if (!hero || !window.IntersectionObserver) return;
-
-  var floating = document.createElement('a');
-  floating.href = '/contact';
-  floating.className = 'rg-float-contact';
-  floating.setAttribute('aria-label', 'Neem contact op met ons team. Meestal binnen 24 uur reactie.');
-  floating.title = 'Neem contact op';
-  floating.innerHTML =
-    '<span class="rg-float-contact__avatar">' +
-      '<img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="52" height="52">' +
-      '<span class="rg-float-contact__dot"></span>' +
-    '</span>';
-  document.body.appendChild(floating);
-
-  var io = new IntersectionObserver(function (entries) {
-    floating.classList.toggle('is-visible', !entries[0].isIntersecting);
-  }, { threshold: 0 });
-  io.observe(hero);
 })();
 
 
