@@ -931,6 +931,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   left: calc(max((100vw - 1600px) / 2, 0px) + 160px);
   right: calc(max((100vw - 1600px) / 2, 0px) + 160px);
 }
+/* "Onze categorieën"-titel in de flyout-balk weg (staat al als label op de
+   trigger-link zelf) -- alleen de titel-cel, de sluit-knop (col-auto
+   ernaast) blijft gewoon staan. */
+.navigation-flyout-category-link {
+  display: none;
+}
 /* Theme zet zelf padding-bottom:60px op de tegel-rij -- flink kleiner. */
 .navigation-flyout .row.navigation-flyout-content {
   padding-bottom: 24px !important;
@@ -991,6 +997,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   z-index: 1;
   color: #fff;
   font-weight: 600;
+  text-align: center;   /* labels die wrappen (bv. "Kantoor & Schrijfwaren")
+    stonden anders links uitgelijnd t.o.v. elkaar i.p.v. om dezelfde as. */
 }
 .navigation-flyout-category .icon {
   position: relative;
@@ -2008,11 +2016,11 @@ img {
   position: relative !important;
 }
 
-/* Hoofdafbeelding container groter (was 430px) — laat de afbeelding
-   meer ruimte vullen. Niet te hoog zodat de dots eronder net boven
-   de fold zichtbaar blijven op standaard laptop schermen. */
+/* Hoofdafbeelding container (was 430px, toen naar 580px) — iets kleiner
+   teruggezet: de brongfoto's zijn vaak lager resolutie, dus te groot
+   uitvergroot valt de zachtheid/pixelering meer op. */
 .product-detail-media .gallery-slider-item {
-  min-height: 580px !important;
+  min-height: 480px !important;
 }
 
 /* Arrows als minimal overlay — geen knop, alleen icoon */
@@ -2070,12 +2078,12 @@ img {
 /* Responsive: kleinere image-height op tablet/mobile */
 @media (max-width: 991px) {
   .product-detail-media .gallery-slider-item {
-    min-height: 500px !important;
+    min-height: 420px !important;
   }
 }
 @media (max-width: 576px) {
   .product-detail-media .gallery-slider-item {
-    min-height: 380px !important;
+    min-height: 320px !important;
   }
 }
 
@@ -2137,12 +2145,21 @@ body.is-ctl-product .product-detail-ordernumber-container {
   box-shadow: none !important;
 }
 
-/* Primair: "Offerte aanvragen" → filled-look (was outline). */
+/* Primair: "Offerte aanvragen" → filled-look (was outline).
+   padding/font-weight/font-size expliciet herzet: de site-wide "secundaire
+   CTA = kale tekstlink"-regel (.btn.btn-outline-primary, sectie 3) raakt
+   dit element ook (zelfde basisklasse) en verplette 'm met padding:0 5px
+   -- de kleur/border hieronder wint wel van die regel (ID > class), maar
+   padding stond daar niet bij, dus bleef de knop een paar pixels hoog
+   staan. Waarden matchen #buyButton (het bijbehorende secundaire knopje). */
 #js-request-offer.btn-outline-primary {
   background-color: #ad6331 !important;
   color: #fff !important;
   border: 2px solid #ad6331 !important;
   box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9) !important;
+  padding: 0.9rem 2rem !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
 }
 #js-request-offer.btn-outline-primary:hover,
 #js-request-offer.btn-outline-primary:focus {
@@ -2189,14 +2206,16 @@ body.is-ctl-product .product-detail-ordernumber-container {
    Pure CSS via attr() — geen JS nodig. Promidata zet `title="bamboe"`
    etc. op elke kleur-label. Geselecteerde kleur krijgt donkergroen +
    bold; niet-geselecteerd is dimmer. */
-.product-detail-buy .product-detail-configurator-options {
-  padding-bottom: 2rem;
-}
 .product-detail-buy .product-detail-configurator-option {
   position: relative;
   margin-bottom: 3.5rem;          /* ruim voor 2-regelig label (~32px) + 8px gap */
 }
-.product-detail-buy .product-detail-configurator-option-label::after {
+/* Kleurlabel onder de swatch — alleen voor opties MET een afbeelding
+   (.is-display-media, bv. Kleur): de swatch zelf toont geen tekst, dus het
+   label eronder is de enige plek waar de naam staat. Tekst-opties zonder
+   afbeelding (.is-display-text, bv. Afmeting: M/L) tonen die naam al IN de
+   klikbare knop zelf -- een tweede label eronder was dan dubbelop. */
+.product-detail-buy .product-detail-configurator-option-label.is-display-media::after {
   content: attr(title);
   position: absolute;
   top: calc(100% + 0.5rem);
@@ -2213,9 +2232,14 @@ body.is-ctl-product .product-detail-ordernumber-container {
   text-align: center;
   text-transform: capitalize;
 }
-.product-detail-buy .product-detail-configurator-option-input:checked + .product-detail-configurator-option-label::after {
+.product-detail-buy .product-detail-configurator-option-input:checked + .product-detail-configurator-option-label.is-display-media::after {
   color: #2d4528;
   font-weight: 600;
+}
+/* Tekst-opties (geen label eronder) hebben de extra margin-bottom niet
+   nodig -- die was gereserveerd voor het (hier afwezige) label. */
+.product-detail-buy .product-detail-configurator-option:has(.is-display-text) {
+  margin-bottom: 0.75rem;
 }
 
 /* Tabellen in buy-col: dark headers worden donkergroen, tekst wit.
