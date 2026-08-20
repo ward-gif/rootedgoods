@@ -282,7 +282,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .nav-main {
     position: sticky;
     top: 0;   /* JS zet dit naar de live gemeten header-row-hoogte */
-    transition: transform 0.3s ease, opacity 0.2s ease;
+    /* top MOET meetransitionen, zelfde duur als .header-main se eigen
+       top-transitie (sectie 3) -- zonder dit sprong nav-main's sticky-
+       referentiepunt INSTANT naar zijn nieuwe waarde (JS zet 'm direct),
+       terwijl header-row zelf nog 300ms aan het schuiven was. Gaf een
+       zichtbare spleet/sprong tijdens de overgang i.p.v. één vloeiende
+       gezamenlijke beweging. Live teruggemeld en zo ontdekt. */
+    transition: top 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
   }
   /* JS (sectie 1.2) togglet dit samen met header-main's negatieve top,
      zodat topbar + nav-main echt SAMEN wegschuiven. transform i.p.v.
@@ -5852,18 +5858,18 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin: 14px 0 0;
   padding: 12px 16px 12px 12px;
   border-radius: 12px;   /* zelfde radius als de mozaïek-tegels (.rg-hero-v2__tile) */
-  /* #D6CCB9 -- zelfde kleur als de vulling van de Europa-kaart (sectie 29,
-     .rg-europe-map__svg), daar al bewust gekozen als "donkerder dan het
-     paginacanvas zodat 'ie opvalt". Geen los token: de kaart zelf gebruikt
-     er ook geen, dus hier voor consistentie ook gewoon de hex. Geen rand
-     meer (was 1px merkgroen op lage opaciteit, mocht weg). */
-  background: #D6CCB9;
+  /* Basis lichter dan de vorige stand: --rg-line (zand, bestaand token).
+     De vorige achtergrond (#D6CCB9, zelfde kleur als de Europa-kaart-
+     vulling, sectie 29) trok in de basisstand te veel aandacht -- die
+     kleur is nu de HOVER, zodat de kaart op interactie juist voller/
+     aanwezig wordt i.p.v. andersom. */
+  background: var(--rg-line);
   text-align: left;
   text-decoration: none;
   transition: background-color .15s ease;
 }
 .rg-hero-v2__reassure:hover {
-  background: var(--rg-peach);   /* zelfde tonale familie, bestaand token */
+  background: #D6CCB9;   /* zelfde kleur als de Europa-kaart-vulling, sectie 29 */
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
@@ -5898,7 +5904,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    5.8:1 op --rg-line en 4.72:1 op de --rg-peach-hover -- allebei ruim
    voldoende. */
 .rg-hero-v2__reassure-text {
-  font-size: 15px; font-weight: 400;
+  font-size: 13px; font-weight: 400;   /* was 15px -- kleiner zodat 'ie lager in de hiërarchie leest dan de CTA's */
   color: var(--rg-green-soft);
 }
 @media (min-width: 992px) {
