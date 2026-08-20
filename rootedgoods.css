@@ -73,13 +73,25 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .content-main {
   padding: 0 !important;
-  /* Compenseert de fixed header (.header-main), zodat contentna niet
+  /* Compenseert de fixed header (.header-main), zodat content na niet
      eronder verdwijnt. Live opnieuw gemeten op 2026-08-13: 102px -- eerdere
      waarden (143px, toen 131,39px) waren stale t.o.v. de werkelijke
      headerhoogte. .container-main's eigen 20px padding is hier los van: dat
      is interne ruimte NA deze reserve, niet dubbelop met de
      header-vrijstelling zelf. */
   padding-top: 102px !important;
+}
+/* Vanaf 992px komt .nav-main (categorieën-balk) ALS APARTE fixed laag onder
+   .header-main te hangen (samen 138px, live gemeten 2026-08-20) -- de 102px
+   hierboven dekte alleen .header-main zelf, dus op pagina's zonder eigen
+   hero (zoekresultaten, mijn-account e.d.) stond de titel/breadcrumb
+   gedeeltelijk ACHTER de categorieën-balk. Onder 992px is er geen aparte
+   .nav-main-laag (mobiel menu zit niet fixed), dus de 102px daar ongemoeid
+   laten -- geen regressierisico op mobiel. */
+@media (min-width: 992px) {
+  .content-main {
+    padding-top: 140px !important;
+  }
 }
 
 /* ------------------------------------------------------------
@@ -5645,12 +5657,11 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    de nieuwe regel gaat i.p.v. te blijven hangen aan het regeleinde. ---- */
 .rg-hero-v2__trust {
   margin: 0;
-  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.25rem;
   font-size: .84rem; font-weight: 500; color: #5d6d55;
 }
 .rg-hero-v2__trust svg { width: 1rem; height: 1rem; flex: none; color: var(--rg-cognac-light); }
 .rg-hero-v2__t { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
-.rg-hero-v2__t + .rg-hero-v2__t::before { content: "\00B7"; color: var(--rg-cognac-light); margin: 0 .6rem; }
 
 /* ---- Contactpersoon ---- */
 .rg-hero-v2__contact {
@@ -5929,14 +5940,13 @@ h2.rg-endcta__title em,
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.35rem 0;
+  gap: 0.35rem 1.25rem;
   font-size: 0.84rem;
   font-weight: 500;
   color: #ffffff;
 }
 .rg-endcta__trust svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
 .rg-endcta__t { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
-.rg-endcta__t + .rg-endcta__t::before { content: "\00B7"; color: #CA853F; margin: 0 0.6rem; }
 
 .rg-endcta__divider {
   width: min(100%, 21rem);
@@ -6263,7 +6273,7 @@ h1.rg-sd__title em,
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.35rem 0;
+  gap: 0.35rem 1.25rem;
   font-size: 0.84rem;
   font-weight: 500;
   line-height: 1.5;
@@ -6271,7 +6281,6 @@ h1.rg-sd__title em,
 }
 .rg-sd__reassurance svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
 .rg-sd__reassurance-item { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
-.rg-sd__reassurance-item + .rg-sd__reassurance-item::before { content: "\00B7"; color: #CA853F; margin: 0 0.6rem; }
 .rg-sd__hero-media img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -6700,7 +6709,7 @@ h3.rg-sd__tech-title,
   overflow: hidden;
   isolation: isolate;
   max-width: 820px;
-  margin: 0 auto clamp(3rem, 3rem + 3vw, 5.5rem);
+  margin: clamp(2.5rem, 2rem + 2.5vw, 4rem) auto clamp(3rem, 3rem + 3vw, 5.5rem);
   display: flex;
   align-items: flex-start;
   gap: clamp(1.1rem, 2.5vw, 1.75rem);
@@ -7772,10 +7781,15 @@ h1.rgh__title, .rgh__title,
 }
 /* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
    zelfde als hero-v2 en de rest van home). Kop + tegels zitten in dezelfde
-   container -> beide schuiven mee en blijven onderling uitgelijnd. (De
-   +120-spec-regel waar deze regel ooit van moest winnen is inmiddels zelf
-   verwijderd als dode code -- zie sectie 25a2/27, .rg-spec-grid gebruikt nu
-   gewoon de gedeelde +80-lijn plus een eigen 40px kaal-rand-fix.) */
+   container -> beide schuiven mee en blijven onderling uitgelijnd.
+
+   BELANGRIJK verschil met thema/service-pagina's: op home geeft de ancestor-
+   container hieronder AL de volledige +80-inspring (bij 1920px: 240px, exact
+   gelijk aan hero-v2's eigen enkelstaps 240px-formule). .rg-block-title/
+   .rg-spec-grid's eigen 40px "kaal-rand"-padding (elders op de site wél nodig,
+   voor thema/service-pagina's die GEEN ancestor-behandeling krijgen) zou hier
+   dus 40px BOVENOP een al-complete inspring optellen -> sectie stond merkbaar
+   smaller dan de rest van home. Daarom hier expliciet weer op 0 voor beide. */
 @media (min-width:992px){
   /* +80 alleen op HOME (body.is-act-home): daar moet de sectie op de standaard
      homepage-rail. Op thema/service houdt de sectie z'n eigen (spec-)rail. */
@@ -7785,12 +7799,14 @@ h1.rgh__title, .rgh__title,
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
   }
+  body.is-act-home .rg-block-title--left,
+  body.is-act-home .rg-spec-grid{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   .rg-block-title--left{
     max-width:1600px !important;
     margin-left:auto !important; margin-right:auto !important;
-    /* Padding NIET meer op 0: .rg-spec-grid kreeg inmiddels zelf 40px padding
-       (kaal-rand-fix), dus .rg-block-title's eigen default 40px (uit de
-       basisklasse) matcht dat nu vanzelf -- geen override meer nodig. */
   }
 }
 
