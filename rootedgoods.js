@@ -102,13 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var lastScroll = 0;
   var threshold = 150;
   var topBarHeight = 0;
+  var headerRowHeight = 0;
 
-  function meetTopbar() {
+  function meetHoogtes() {
     topBarHeight = topBar ? topBar.getBoundingClientRect().height : 0;
-    // nav-main's sticky top = header-row's live hoogte, zodat 'ie er
-    // precies onder aan blijft plakken zodra 'ie (via sticky, CSS sectie 4)
-    // in beeld komt -- alleen op desktop, sticky is daar pas actief.
-    if (window.innerWidth >= 992) nav.style.top = row.getBoundingClientRect().height + 'px';
+    headerRowHeight = row.getBoundingClientRect().height;
   }
 
   function mobielGedrag(current) {
@@ -134,9 +132,17 @@ document.addEventListener('DOMContentLoaded', function () {
     header.style.top = verbergen ? (-topBarHeight) + 'px' : '0px';
     nav.classList.toggle('nav-hidden', verbergen);
     row.classList.toggle('is-stuck', voorbijDrempel);
+    // nav-main's sticky top hangt af van of de topbar op dit moment
+    // zichtbaar is: verborgen (topbar weg) -> nav plakt direct onder
+    // header-row (headerRowHeight); getoond (topbar weer zichtbaar) ->
+    // header-row zelf staat dan lager (na de topbar), dus nav moet verder
+    // naar beneden plakken (topBarHeight + headerRowHeight), anders
+    // overlapt nav de onderkant van header-row. Live getest en zo
+    // ontdekt -- een vaste top klopte alleen in de "verborgen" stand.
+    nav.style.top = (verbergen ? headerRowHeight : topBarHeight + headerRowHeight) + 'px';
   }
 
-  meetTopbar();
+  meetHoogtes();
   desktopGedrag(window.scrollY);   // beginstand correct zetten (bv. na een refresh mid-page)
 
   window.addEventListener('scroll', function () {
@@ -147,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
 
   window.addEventListener('resize', function () {
-    meetTopbar();
+    meetHoogtes();
     // Bij resize van mobiel naar desktop (of terug) moet de inline top
     // meteen kloppen met het nieuwe breakpoint i.p.v. te wachten op de
     // eerstvolgende scroll.
