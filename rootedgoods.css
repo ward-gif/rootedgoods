@@ -9341,7 +9341,7 @@ h2.rg-route__team-title{
 .cart-offcanvas .line-item-img-container {
   border-radius: var(--rg-r-fn);
   overflow: hidden;
-  box-shadow: var(--rg-sh-soft);
+  border: 1px solid var(--rg-sand);
 }
 .cart-offcanvas .line-item-label {
   font-family: 'Montserrat', sans-serif;
@@ -9415,62 +9415,20 @@ h2.rg-route__team-title{
   --bs-table-striped-bg: transparent !important;
 }
 
-/* ---- 49.4 Verlanglijst: gedempt, geen concurrentie met de hoofdacties ---- */
-.cart-offcanvas .product-wishlist { margin-top: 0.5rem; }
-.cart-offcanvas .icon-wishlist-not-added svg use { fill: var(--rg-muted) !important; }
-.cart-offcanvas .icon-wishlist-added svg use { fill: var(--rg-cognac) !important; }
-.cart-offcanvas .product-wishlist-btn-content {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.78rem;
-  color: var(--rg-muted);
-}
+/* ---- 49.4 Verlanglijst: hier weg -- overbodige actie zo vlak voor de
+   checkout, concurreert met de hoofd-CTA's. Blijft wel staan in de
+   checkout-aside/checkout-main recap (zie verderop). ---- */
+.cart-offcanvas .product-wishlist { display: none !important; }
 
-/* ---- 49.5 Hoeveelheid-stepper: ronde vlak, donkergroen icoon i.p.v.
-   de generieke Bootstrap-input-group-rand. */
+/* ---- 49.5 Hoeveelheid-stepper: alleen het label brand-passend maken,
+   de stepper zelf blijft de compacte, standaard thema-styling (eigen
+   ronde vlak-versie nam te veel ruimte in en stackte verticaal). */
 .cart-offcanvas .line-item-quantity-label {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--rg-green);
   margin-bottom: 0.3rem;
-}
-.cart-offcanvas .line-item-quantity-group {
-  border-radius: var(--rg-r-pill) !important;
-  overflow: hidden;
-  border: 1px solid var(--rg-sand);
-  width: fit-content;
-}
-.cart-offcanvas .btn-minus.btn,
-.cart-offcanvas .btn-plus.btn {
-  background: #fff !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 0 !important;
-  box-shadow: none !important;
-}
-.cart-offcanvas .btn-minus.btn:hover,
-.cart-offcanvas .btn-plus.btn:hover {
-  background: var(--rg-cream) !important;
-  transform: none !important;
-}
-.cart-offcanvas .btn-minus svg use,
-.cart-offcanvas .btn-plus svg use {
-  fill: var(--rg-green) !important;
-}
-.cart-offcanvas .quantity-selector-group-input {
-  border: none !important;
-  border-left: 1px solid var(--rg-sand) !important;
-  border-right: 1px solid var(--rg-sand) !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-align: center;
-  color: var(--rg-ink) !important;
-  font-weight: 600;
-  width: 56px;
-  padding: 0 !important;
 }
 
 /* ---- 49.6 Prijsregels (eenheidsprijs/subtotaal per item) ---- */
@@ -9504,6 +9462,11 @@ h2.rg-route__team-title{
 .cart-offcanvas .line-item-remove-button:hover svg use { fill: var(--rg-cognac) !important; }
 
 /* ---- 49.8 Subtotaal/verzendkosten-samenvatting ---- */
+/* .offcanvas-cart-items had al een eigen (niet-merk-)grijze border-bottom
+   -- samen met de border-top hieronder gaf dat twee lijntjes vlak na
+   elkaar. De native lijn eruit, alleen de merk-gekleurde (--rg-sand)
+   scheiding blijft staan. */
+.cart-offcanvas .offcanvas-cart-items { border-bottom: none !important; }
 .cart-offcanvas .offcanvas-summary {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
@@ -9557,6 +9520,9 @@ h2.rg-route__team-title{
   padding: 0 1.2rem !important;
   min-width: 46px;
   box-shadow: none !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 .cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary:hover {
   background: var(--rg-green-soft) !important;
@@ -9806,7 +9772,7 @@ h2.rg-route__team-title{
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
-.checkout-aside .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; box-shadow: var(--rg-sh-soft); }
+.checkout-aside .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; border: 1px solid var(--rg-sand); }
 .checkout-aside .line-item-label { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--rg-green) !important; text-decoration: none !important; }
 .checkout-aside .line-item-label:hover { color: var(--rg-cognac) !important; }
 .checkout-aside .line-item-details-characteristics:not(:has(table)) { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: var(--rg-soft); margin: 0.25rem 0; }
@@ -9861,7 +9827,7 @@ h2.rg-route__team-title{
 
 .checkout-main .line-item.is-default { padding: 1.25rem 0; border-top: 1px solid var(--rg-sand); }
 .checkout-main .line-item.is-default:first-of-type { border-top: none; padding-top: 0; }
-.checkout-main .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; box-shadow: var(--rg-sh-soft); }
+.checkout-main .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; border: 1px solid var(--rg-sand); }
 .checkout-main .line-item-label { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--rg-green) !important; text-decoration: none !important; }
 .checkout-main .line-item-label:hover { color: var(--rg-cognac) !important; }
 .checkout-main .line-item-details-characteristics:not(:has(table)) { font-family: 'Montserrat', sans-serif; font-size: 0.82rem; color: var(--rg-soft); margin: 0.25rem 0; }
