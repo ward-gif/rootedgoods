@@ -5986,8 +5986,11 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   transition: background-color .2s ease, border-color .2s ease;
 }
 .rg-hero-v2__reassure:hover {
-  background: var(--rg-peach);
-  border-color: rgba(45, 69, 40, .12);
+  /* Heel subtiel -- zelfde terughoudendheid als .rg-cta__contact:hover
+     elders (rgba(255,255,255,.1) op donkergroen); hier de lichte
+     tegenhanger, dus perzik op lage dekking i.p.v. vol perzik. */
+  background: rgba(233, 201, 169, .35);
+  border-color: rgba(45, 69, 40, .08);
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
@@ -7099,11 +7102,11 @@ h3.rg-sd__tech-title,
 .rg-sd__ask-name {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--rg-peach);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;   /* was 0.25rem -- iets meer lucht voor de sprong naar de grote kop */
 }
 h2.rg-sd__ask-title,
 .cms-element-text h2.rg-sd__ask-title {
@@ -7112,11 +7115,11 @@ h2.rg-sd__ask-title,
   color: #ffffff !important;
   font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem) !important;
   line-height: 1.15 !important;
-  margin: 0 0 0.5rem !important;
+  margin: 0 0 0.6rem !important;   /* was 0.5rem -- iets ruimer, in lijn met de marge erboven */
 }
 .rg-sd__ask-text {
   color: rgba(247, 245, 242, .85);
-  font-size: 0.95rem;
+  font-size: 1rem;   /* was 0.95rem -- rondere, iets duidelijkere verhouding t.o.v. de 0.8rem naam-label */
   line-height: 1.55;
   margin: 0 0 1.3rem;
   max-width: 48ch;
