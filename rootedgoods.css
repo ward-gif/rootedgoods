@@ -2942,6 +2942,9 @@ body.is-ctl-product {
   position: relative;
   z-index: 2;
 }
+.cms-listing-row .variant-thumbnail {
+  margin-top: 0.6rem;
+}
 .cms-listing-row .product-box:hover {
   box-shadow: 0 6px 20px rgba(45, 69, 40, 0.08);
   transform: translateY(-2px);
@@ -3015,7 +3018,7 @@ body.is-ctl-product {
 .cms-listing-row .variant-thumbnail.slider.active .prev,
 .cms-listing-row .variant-thumbnail.slider.active .next {
   background: transparent !important;
-  color: #ad6331 !important;
+  color: #888 !important;
   border: none !important;
   border-radius: 0 !important;
   width: 16px !important;
@@ -3037,7 +3040,7 @@ body.is-ctl-product {
 .cms-listing-row .variant-thumbnail.slider.active .prev:hover,
 .cms-listing-row .variant-thumbnail.slider.active .next:hover {
   background: transparent !important;
-  color: #955529 !important;
+  color: #555 !important;
 }
 
 /* Product info — naam in donkergroen, regular weight, on-brand */
@@ -9709,11 +9712,19 @@ h2.rg-route__team-title{
 /* ============================================================
    49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)
    ============================================================ */
+/* Checkout-pagina mag zo breed lopen als de rest van de site-content
+   (sitebrede content-kolom = 1600px, zelfde token als overal elders) --
+   stond hiervoor ongelimiteerd/edge-to-edge, wat op brede schermen
+   uitgerekt en leeg oogde. */
+.checkout-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
 .address-main-header {
   font-family: 'Playfair Display', serif;
   color: var(--rg-green);
-  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.7rem);
+  margin-bottom: 1.25rem;
 }
 .register-card {
   border: 1px solid var(--rg-sand) !important;
@@ -9721,28 +9732,27 @@ h2.rg-route__team-title{
   box-shadow: var(--rg-sh-soft) !important;
 }
 .register-card .card-body {
-  padding: clamp(1.5rem, 3vw, 2.5rem) !important;
+  padding: clamp(1.25rem, 2.5vw, 2rem) !important;
 }
 .register-card .card-title {
   font-family: 'Playfair Display', serif;
   color: var(--rg-green);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 }
 /* "Uw adres"/"Uw afwijkende afleveradres" zijn eigen sub-secties bínnen
-   dezelfde kaart (native markup heeft geen aparte .card per blok) -- een
-   lijn + ruimte geeft ze hun eigen focus zonder HTML te hoeven splitsen. */
+   dezelfde kaart (native markup heeft geen aparte .card per blok).
+   Alleen ruimte i.p.v. een lijn -- oogde met randen/lijnen overal
+   te rommelig, whitespace alleen geeft al genoeg scheiding. */
 .register-address,
 .register-shipping {
-  margin-top: 2rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--rg-sand);
+  margin-top: 1.5rem;
 }
 .register-address .card-title,
 .register-shipping .card-title {
-  font-size: 1.05rem;
-  margin-bottom: 1.1rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
 }
 
 /* ---- Formuliervelden: zelfde recept als het contactformulier (sectie
@@ -9814,16 +9824,17 @@ h2.rg-route__team-title{
    49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)
    ============================================================ */
 .checkout-aside-summary {
-  background: var(--rg-cream);
+  background: #ffffff;
   border: 1px solid var(--rg-sand);
   border-radius: var(--rg-r-xp);
+  box-shadow: var(--rg-sh-soft);
   padding: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 .checkout-aside-summary-header {
   font-family: 'Playfair Display', serif;
   color: var(--rg-green);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
 }
 .checkout-aside-summary-label,
 .checkout-aside-summary-value {
@@ -9899,8 +9910,8 @@ h2.rg-route__team-title{
 .confirm-main-header {
   font-family: 'Playfair Display', serif;
   color: var(--rg-green);
-  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.7rem);
+  margin-bottom: 1.25rem;
 }
 .checkout-card {
   border: 1px solid var(--rg-sand) !important;
