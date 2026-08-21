@@ -9741,7 +9741,7 @@ h2.rg-route__team-title{
    oogde als een eigen paneel i.p.v. gewoon een label boven een groep. */
 .register-card .card-title {
   font-family: 'Montserrat', sans-serif;
-  color: var(--rg-cognac);
+  color: var(--rg-cognac) !important;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -9766,6 +9766,10 @@ h2.rg-route__team-title{
   display: flex;
   flex-wrap: wrap;
   gap: 0 1rem;
+}
+.address-contact-type-company > div:has(#billingAddressdepartment) > .form-group {
+  flex: 0 0 calc(50% - 0.5rem) !important;
+  width: calc(50% - 0.5rem) !important;
 }
 /* Iets krappere verticale ritme tussen losse velden (was de Bootstrap-
    default 20px) -- draagt evenveel bij aan het "veel lucht"-gevoel als
