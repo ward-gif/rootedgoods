@@ -5992,6 +5992,11 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      Europa-kaart elders) -- 4.65:1 contrast met de tekst, ruim AA. */
   background: #D6CCB9;
   border-color: transparent;
+  /* Shopware's eigen theme-CSS heeft een generieke a:hover{text-decoration:
+     underline} die qua specificiteit wint van onze text-decoration:none op
+     de rustige staat (die geldt niet automatisch ook voor :hover) -- hier
+     expliciet herhaald zodat de tekst niet alsnog onderstreept raakt. */
+  text-decoration: none;
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
