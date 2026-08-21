@@ -5967,86 +5967,40 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   text-underline-offset: 2px !important;
 }
 
-/* ---- Richard-CTA: klikbare kaart in een zachte zandtint (--rg-line, een
-   bestaand token -- "randen/scheidingslijnen", hier als achtergrond
-   hergebruikt i.p.v. een nieuwe kleur te verzinnen). width:fit-content
-   zodat de kaart niet meerekt met de kolombreedte. ---- */
-.rg-hero-v2__reassure {
-  display: inline-flex; align-items: center; gap: 12px;
-  width: fit-content;
-  margin: 14px 0 0;
-  padding: 12px 16px 12px 12px;
-  border-radius: 12px;   /* zelfde radius als de mozaïek-tegels (.rg-hero-v2__tile) */
-  border: 1px solid transparent;   /* alleen zichtbaar on hover (border-color eronder) */
-  /* Basis blijft kaal (geen achtergrond) -- on hover komt een subtiele
-     kaart-vorm terug (achtergrond + rand), zelfde recept als .rg-cta__contact
-     elders op donkere achtergronden, hier de lichte tegenhanger. */
+/* ---- Richard-CTA: hergebruikt .rg-cta__contact (dezelfde component +
+   interactie als de eind-cta, sectie 34) i.p.v. een eigen hero-only
+   variant -- was eerst een aparte .rg-hero-v2__reassure-component met
+   telkens net andere hover-pogingen, uiteindelijk gewoon teruggedraaid
+   naar "hetzelfde blok, alleen op de lichte achtergrond". Alleen de
+   kleur/uitlijning-delta's die de lichte achtergrond nodig heeft staan
+   hieronder; de rest (vorm, hover-mechaniek, dot) komt automatisch mee. */
+.rg-hero-v2 .rg-cta__contact {
   text-align: left;
-  text-decoration: none;
-  transition: background-color .2s ease, border-color .2s ease;
 }
-.rg-hero-v2__reassure:hover {
-  /* Terug naar een gewone lichte, ronde achtergrond -- de vorige poging
-     (perzik op lage dekking) was te subtiel bevonden. #D6CCB9 is dezelfde
-     kleur als een eerdere iteratie van dit blok gebruikte (en die van de
-     Europa-kaart elders) -- 4.65:1 contrast met de tekst, ruim AA. */
+.rg-hero-v2 .rg-cta__contact:hover {
+  /* Zelfde lichte hover als elders op deze crème achtergrond (#D6CCB9) --
+     de underline-on-hover komt vanzelf mee via Shopware's eigen a:hover-
+     regel, hier bewust niet onderdrukt (in tegenstelling tot een eerdere
+     losse hero-poging). */
   background: #D6CCB9;
   border-color: transparent;
-  /* Shopware's eigen theme-CSS heeft een generieke a:hover{text-decoration:
-     underline} die qua specificiteit wint van onze text-decoration:none op
-     de rustige staat (die geldt niet automatisch ook voor :hover) -- hier
-     expliciet herhaald zodat de tekst niet alsnog onderstreept raakt. */
-  text-decoration: none;
 }
-.rg-hero-v2__reassure:focus-visible {
-  outline: 3px solid rgba(45, 69, 40, .55);
-  outline-offset: 3px;
+.rg-hero-v2 .rg-cta__contact-dot {
+  border-color: var(--rg-cream);   /* was var(--rg-green) voor de donkere kaarten elders */
 }
-.rg-hero-v2__reassure-avatar { position: relative; flex: none; display: inline-flex; }
-.rg-hero-v2__reassure-avatar img {
-  width: 40px; height: 40px; border-radius: 50%; object-fit: cover; display: block;
+/* Beide regels dezelfde grootte (was: klein label + grotere promise-tekst)
+   -- enige verschil is het gewicht op de naam. Kleuren donkergroen i.p.v.
+   peach/wit (die vielen weg op deze lichte achtergrond). */
+.rg-hero-v2 .rg-cta__contact-name {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--rg-green);
+  margin-bottom: 0;
 }
-/* Statusbolletje: zelfde kleur + opbouw als .rg-team__dot (de canonieke
-   online-status-indicator op /contact) -- #6aa84f, geen nieuwe kleur. Hier
-   WEL een ring (i.p.v. team-dot's kale glow-shadow), want dit bolletje zit
-   bovenop een foto i.p.v. op een vlakke achtergrond, in de hero-
-   achtergrondkleur (cream) zodat 'ie loskomt van de foto. Rechtsonder (45°)
-   op de avatar, ca. 10px (meeschalend met de grotere 40px-avatar). */
-.rg-hero-v2__reassure-dot {
-  position: absolute; right: 0; bottom: 0;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: #6aa84f; border: 2px solid var(--rg-cream);
-}
-/* Tekst + pijl samen in een eigen 8px-gap flex (los van de 12px avatar-gap
-   op het buitenste blok). */
-.rg-hero-v2__reassure-copy {
-  display: inline-flex; align-items: center; gap: 8px;
-}
-/* 15px, één regel op desktop (white-space:nowrap in de media query
-   hieronder) -- mobiel mag nog gewoon wrappen, anders h-scroll-risico bij
-   een klein scherm. Kleur = --rg-green-soft (de LOKALE hero-token, niet de
-   globale --rg-soft): op de nieuwe zandtint-achtergrond haalt --rg-soft nog
-   maar 4.35:1 (onder de WCAG AA-norm van 4.5:1), --rg-green-soft haalt
-   5.8:1 op --rg-line en 4.72:1 op de --rg-peach-hover -- allebei ruim
-   voldoende. */
-.rg-hero-v2__reassure-text {
-  font-size: 13px; font-weight: 400;   /* was 15px -- kleiner zodat 'ie lager in de hiërarchie leest dan de CTA's */
-  color: var(--rg-green-soft);
-}
-@media (min-width: 992px) {
-  .rg-hero-v2__reassure-text { white-space: nowrap; }
-}
-/* "Hi, ik ben Richard." -- medium + donkergroen (var(--rg-green), 8.3:1 op
-   --rg-line). */
-.rg-hero-v2__reassure-text b { font-weight: 500; color: var(--rg-green); }
-/* Pijl: zelfde gedempte kleur als de tweede teksthelft, niet zwaarder. */
-.rg-hero-v2__reassure-arrow {
-  width: .9em; height: .9em; flex: none;
-  color: var(--rg-green-soft);
-  transition: transform .15s ease;
-}
-.rg-hero-v2__reassure:hover .rg-hero-v2__reassure-arrow {
-  transform: translateX(4px);
+.rg-hero-v2 .rg-cta__contact-promise {
+  font-size: .88rem;
+  font-weight: 400;
+  color: var(--rg-green-soft);   /* 6.8:1 op crème, ruim AA */
 }
 
 /* ---- Beeld: vier product-tegels in gestaffelde 2x2 ----
@@ -6122,11 +6076,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   .rg-hero-v2__sub { display: none; }
   /* Kolom i.p.v. wrap: anders krijgt de 2e (compactere) knop een eigen
      auto-breedte -> ongelijke pillen. Stretch maakt ze gelijke breedte
-     (primair full-width, secundair eronder). .rg-hero-v2__reassure blijft
-     hier bewust ONGEMOEID: het kaartje is inline-flex + width:fit-content,
-     dus de text-align:center hierboven (copy-bottom) centreert 'm gewoon
-     mee als geheel -- consistent met de rest van de gecentreerde mobiele
-     hero, geen aparte override nodig. */
+     (primair full-width, secundair eronder). De Richard-CTA (.rg-cta__contact)
+     blijft hier bewust ONGEMOEID: het kaartje is inline-flex, dus de
+     text-align:center hierboven (copy-bottom) centreert 'm gewoon mee als
+     geheel -- consistent met de rest van de gecentreerde mobiele hero. De
+     eigen text-align:left (verderop) regelt alleen de tekst BINNEN de
+     kaart, niet de positie van de kaart zelf. */
   .rg-hero-v2__cta { flex-direction: column; align-items: stretch; margin-bottom: 0; }
   .rg-hero-v2__cap-label { display: none; }
 }

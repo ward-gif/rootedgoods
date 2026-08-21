@@ -29,18 +29,20 @@
             <a class="btn btn-outline-primary" href="/alle-producten/">Bekijk alle producten</a>
           </div>
 
-          <!-- Richard-CTA: klikbare kaart (naar /contact) in een zachte
-               zandtint. width:fit-content zodat 'ie niet meerekt met de
-               kolombreedte. Tekst+pijl zitten samen in .reassure-copy
-               (eigen 8px-gap), los van de avatar (12px-gap ernaartoe). -->
-          <a class="rg-hero-v2__reassure" href="/contact">
-            <span class="rg-hero-v2__reassure-avatar">
-              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="40" height="40">
-              <span class="rg-hero-v2__reassure-dot"></span>
+          <!-- Richard-CTA: zelfde component als de eind-cta (.rg-cta__contact,
+               rootedgoods.css sectie 34) i.p.v. een eigen hero-only variant --
+               scoped kleur/uitlijning-overrides voor de lichte achtergrond
+               staan in rootedgoods.css (".rg-hero-v2 .rg-cta__contact"). -->
+          <a class="rg-cta__contact" href="/contact" aria-label="Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem contact op.">
+            <span class="rg-cta__contact-avatar">
+              <img src="/media/6a/0f/ff/1782906551/Richardimg.jpg" alt="" width="44" height="44">
+              <span class="rg-cta__contact-dot"></span>
             </span>
-            <span class="rg-hero-v2__reassure-copy">
-              <span class="rg-hero-v2__reassure-text"><b>Hi, ik ben Richard.</b> Vertel wat je zoekt, ik denk mee</span>
-              <svg class="rg-hero-v2__reassure-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span>
+              <span class="rg-cta__contact-name">Hi, ik ben Richard</span>
+              <span class="rg-cta__contact-promise">Vertel wat je zoekt, ik denk mee
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
             </span>
           </a>
         </div>
