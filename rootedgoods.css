@@ -2982,46 +2982,62 @@ body.is-ctl-product {
   fill: #2d4528 !important;
 }
 
-/* Variant thumbnails — alleen img-styling, layout-rules overlaten
-   aan Promidata zodat .slider.active scroll-modus niet conflicteert. */
+/* Variant thumbnails -- swatches groter + meer ademruimte ertussen (bij
+   producten met veel variaties (15+) stonden ze anders vrijwel tegen
+   elkaar aan, wat druk oogde). gap i.p.v. margin op de flex-children,
+   want Promidata's eigen slider-JS meet de track via flexbox -- gap
+   wordt daar correct in meegenomen, in tegenstelling tot een margin-hack
+   die de breedteberekening kan verstoren. */
+.cms-listing-row .variant-thumbnail .slides {
+  gap: 8px;
+}
 .cms-listing-row .variant-thumbnail-img {
-  width: 28px !important;
-  height: 28px !important;
+  width: 34px !important;
+  height: 34px !important;
   border-radius: 50% !important;
   border: 1px solid #EAE3D7 !important;
   object-fit: cover !important;
 }
 
 /* Variant slider prev/next pijlen — alleen tonen wanneer .active class
-   is gezet (Promidata's JS doet dat als items overflowen). On-brand
-   ronde buttons ipv zwarte vierkanten. */
+   is gezet (Promidata's JS doet dat als items overflowen). Ruimte
+   gereserveerd aan weerskanten (padding op de wrapper) zodat de pijlen
+   niet meer bovenop de eerste/laatste swatch liggen -- was de bron van
+   het drukke, overlappende gevoel. Subtiele pijl i.p.v. gevuld wit
+   rondje, verticaal gecentreerd op de rij (niet eronder). */
 .cms-listing-row .variant-thumbnail.slider:not(.active) .prev,
 .cms-listing-row .variant-thumbnail.slider:not(.active) .next {
   display: none !important;
 }
+.cms-listing-row .variant-thumbnail.slider.active {
+  padding: 0 20px !important;
+}
 .cms-listing-row .variant-thumbnail.slider.active .prev,
 .cms-listing-row .variant-thumbnail.slider.active .next {
-  background-color: rgba(255, 255, 255, 0.92) !important;
-  color: #2d4528 !important;
-  border: 1px solid #EAE3D7 !important;
-  border-radius: 50% !important;
-  width: 26px !important;
-  height: 26px !important;
+  background: transparent !important;
+  color: #ad6331 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: 16px !important;
+  height: 34px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
   text-decoration: none !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: none !important;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
+.cms-listing-row .variant-thumbnail.slider.active .prev { left: 0 !important; }
+.cms-listing-row .variant-thumbnail.slider.active .next { right: 0 !important; }
 .cms-listing-row .variant-thumbnail.slider.active .prev:hover,
 .cms-listing-row .variant-thumbnail.slider.active .next:hover {
-  background-color: #ffffff !important;
-  border-color: #ad6331 !important;
-  color: #ad6331 !important;
+  background: transparent !important;
+  color: #955529 !important;
 }
 
 /* Product info — naam in donkergroen, regular weight, on-brand */
