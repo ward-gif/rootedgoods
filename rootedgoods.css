@@ -9667,7 +9667,7 @@ h2.rg-route__team-title{
 /* ============================================================
    49.11 CHECKOUT — support-strip (.header-minimal)
    ============================================================ */
-.header-minimal { border-bottom: 1px solid var(--rg-sand); }
+.header-minimal { border-bottom: 1px solid var(--rg-sand); padding: 1.1rem 0; }
 .header-minimal-row { align-items: center; }
 .header-minimal-contact {
   font-family: 'Montserrat', sans-serif;
@@ -9720,13 +9720,23 @@ h2.rg-route__team-title{
   max-width: 1600px;
   margin: 0 auto;
 }
-.address-main-header {
+/* Ruimte tussen de header-bar en de kop verkleind (native .container-main
+   had 20px padding-top, hier tot bijna niks teruggebracht) -- alleen
+   op checkout-pagina's, niet sitebreed. */
+.content-main:has(.checkout-container) .container-main,
+.content-main:has(.checkout-card) .container-main {
+  padding-top: 4px !important;
+}
+.address-main-header,
+.confirm-main-header {
   font-family: 'Playfair Display', serif;
   color: var(--rg-green);
-  font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.7rem);
-  margin-bottom: 1.25rem;
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  margin-top: 0;
+  margin-bottom: 1.1rem;
 }
 .register-card {
+  background: #ffffff !important;
   border: 1px solid var(--rg-sand) !important;
   border-radius: var(--rg-r-xp) !important;
   box-shadow: var(--rg-sh-soft) !important;
@@ -9940,13 +9950,10 @@ h2.rg-route__team-title{
    eigen line-item-variant (.is-default i.p.v. .is-offcanvas) t.o.v.
    /checkout/register -- zelfde behandeling, andere selectors.
    ============================================================ */
-.confirm-main-header {
-  font-family: 'Playfair Display', serif;
-  color: var(--rg-green);
-  font-size: clamp(1.35rem, 1.1rem + 0.8vw, 1.7rem);
-  margin-bottom: 1.25rem;
-}
+/* .confirm-main-header zelf staat nu bij .address-main-header hierboven
+   (gedeelde regel, beide koppen krijgen dezelfde compacte behandeling). */
 .checkout-card {
+  background: #ffffff !important;
   border: 1px solid var(--rg-sand) !important;
   border-radius: var(--rg-r-xp) !important;
   box-shadow: var(--rg-sh-soft) !important;
