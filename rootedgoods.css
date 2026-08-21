@@ -9102,8 +9102,9 @@ h2.rg-route__team-title{
 
 .footer-link-item { margin-bottom: 0.5rem; }
 .footer-link {
-  color: rgba(255, 255, 255, 0.8);   /* 7.4:1 op --rg-green, ruim AA */
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.92rem;
+  font-weight: 500;
   text-decoration: none;
   transition: color .15s ease;
 }
@@ -9115,36 +9116,38 @@ h2.rg-route__team-title{
 }
 
 /* Contact-kolom: adreslijst + contactformulier-link.
-   De FA-icoontjes (pin/telefoon/envelop) hebben een inline
-   style="color:#2F3F2B" (donkergroen) vanuit Shopware -- op de nieuwe
-   donkergroene achtergrond zijn ze daardoor bijna onzichtbaar (~1:1
-   contrast); wit overschreven via !important (wint van de inline style). */
-.footer-contact-hotline ul {
+   LET OP: .footer-contact-hotline is in de Shopware-markup een LEGE <p>
+   -- de eigenlijke <ul> (adres/tel/mail) staat als SIBLING erbuiten, en
+   .footer-contact (de kolom-collapse-wrapper) is de enige klasse die ze
+   allebei omvat. Scopete hierop richten i.p.v. op -hotline (die matchte
+   dus letterlijk niets -- de FA-icoontjes bleven daardoor toch
+   donkergroen-op-donkergroen, vrijwel onzichtbaar). */
+.footer-contact ul {
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
 }
-.footer-contact-hotline i[style] { color: #fff !important; }
-.footer-contact-hotline a {
+.footer-contact li i[style] { color: #fff !important; }
+.footer-contact a {
   color: var(--rg-cognac-light);
   font-weight: 500;
   text-decoration: none;
 }
-.footer-contact-hotline a:hover { color: #fff; text-decoration: underline; }
+.footer-contact a:hover { color: #fff; text-decoration: underline; }
 .footer-contact-form {
   margin-top: 0.9rem;
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
 }
-.footer-contact-form a { color: var(--rg-cognac-light); text-decoration: none; }
-.footer-contact-form a:hover { color: #fff; text-decoration: underline; }
 
 /* Betalen & Verzending: labels als kleine uppercase eyebrow, logo's in een
    nette flex-grid met vaste hoogte (i.p.v. de ruwe inline width:25%, die
    per logo een andere hoogte gaf naargelang de bron-afbeelding). De
    logo's zelf zijn witte kaartjes -- die komen los van het donkere groen. */
 .footer-custom-title {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--rg-peach);
@@ -9199,8 +9202,8 @@ h2.rg-route__team-title{
   }
 }
 .footer-vat { margin: 0; order: 1; }
-.footer-vat p { margin: 0; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
-.footer-vat a { color: rgba(255, 255, 255, 0.75); text-decoration: underline; }
+.footer-vat p { margin: 0; font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.7); }
+.footer-vat a { color: rgba(255, 255, 255, 0.85); text-decoration: underline; }
 .footer-vat a:hover { color: var(--rg-cognac-light); }
 .footer-copyright {
   order: 2;
@@ -9208,9 +9211,10 @@ h2.rg-route__team-title{
   align-items: center;
   gap: 0.4rem;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
 }
-.footer-copyright svg use { fill: rgba(255, 255, 255, 0.6) !important; }
+.footer-copyright svg use { fill: rgba(255, 255, 255, 0.7) !important; }
 /* Leeg native servicemenu (geen items geconfigureerd) -- geen loze ruimte. */
 .footer-service-menu-list:empty { display: none; }
 
