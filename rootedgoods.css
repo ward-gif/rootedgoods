@@ -9177,7 +9177,10 @@ h2.rg-route__team-title{
     flex-direction: column;
     align-items: flex-start;
     padding-left: 15px;
-    padding-right: 15px;
+    /* Extra ruimte rechts: de fixed scroll-up-knop (48px + eigen offset)
+       zweeft rechtsonder over de pagina en overlapte hier anders de
+       (op mobiel 2-regelige) BTW-tekst. */
+    padding-right: 72px;
   }
 }
 .footer-vat { margin: 0; order: 1; }
