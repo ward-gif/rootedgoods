@@ -5701,8 +5701,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 @media (max-width:640px){ .rgh__trust{flex-direction:column;align-items:flex-start;} }
 @media (max-width:480px){ .rgh__grid{grid-template-columns:1fr;} }
 
-/* Contactpersoon-blok in de CTA (dark-variant: naam lichte terracotta, belofte wit). */
-.rg-cta__contact{display:inline-flex;align-self:flex-start;align-items:center;gap:.65rem;margin-top:1.4rem;padding:.35rem .8rem .35rem .35rem;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:background-color .2s ease,border-color .2s ease;}
+/* Contactpersoon-blok in de CTA (dark-variant: naam lichte terracotta, belofte wit).
+   text-align:left + gelijke tekstgrootte (naam/promise beide .88rem, alleen
+   de naam vet) geldt nu overal -- ook hier, niet alleen in de hero-variant
+   (rootedgoods.css verderop, .rg-hero-v2 .rg-cta__contact-* regelt daar
+   alleen nog de kleuren/hover/dot-rand die om de lichte achtergrond vragen). */
+.rg-cta__contact{display:inline-flex;align-self:flex-start;align-items:center;gap:.65rem;margin-top:1.4rem;padding:.35rem .8rem .35rem .35rem;border-radius:999px;text-decoration:none;text-align:left;border:1px solid transparent;transition:background-color .2s ease,border-color .2s ease;}
 .rg-cta__contact:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);}
 .rg-cta__contact:focus-visible{outline:3px solid rgba(255,255,255,.6);outline-offset:2px;}
 .rg-cta__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
@@ -5712,8 +5716,8 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    tonen. Rechtsonder op de 44px-avatar. */
 .rg-cta__contact-avatar{position:relative;flex:none;display:inline-flex;}
 .rg-cta__contact-dot{position:absolute;right:0;bottom:0;width:11px;height:11px;border-radius:50%;background:#6aa84f;border:2px solid var(--rg-green);}
-.rg-cta__contact-name{display:block;font-size:.72rem;font-weight:600;color:#e9c9a9;}
-.rg-cta__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#fff;}
+.rg-cta__contact-name{display:block;font-size:.88rem;font-weight:700;color:#e9c9a9;}
+.rg-cta__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:400;color:#fff;}
 .rg-cta__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s ease;}
 .rg-cta__contact:hover .rg-cta__contact-promise svg{transform:translateX(3px);}
 
@@ -5967,16 +5971,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   text-underline-offset: 2px !important;
 }
 
-/* ---- Richard-CTA: hergebruikt .rg-cta__contact (dezelfde component +
-   interactie als de eind-cta, sectie 34) i.p.v. een eigen hero-only
-   variant -- was eerst een aparte .rg-hero-v2__reassure-component met
-   telkens net andere hover-pogingen, uiteindelijk gewoon teruggedraaid
-   naar "hetzelfde blok, alleen op de lichte achtergrond". Alleen de
-   kleur/uitlijning-delta's die de lichte achtergrond nodig heeft staan
-   hieronder; de rest (vorm, hover-mechaniek, dot) komt automatisch mee. */
-.rg-hero-v2 .rg-cta__contact {
-  text-align: left;
-}
+/* ---- Richard-CTA: hergebruikt .rg-cta__contact (dezelfde component,
+   vormgeving EN interactie, als de eind-cta, sectie 34) i.p.v. een eigen
+   hero-only variant. Vorm/grootte/uitlijning/hover-mechaniek/dot zijn nu
+   gewoon gelijk overal (staan in de basisregels bij sectie 34) -- hier
+   staan alleen nog de kleuren die de lichte achtergrond nodig heeft
+   (donkergroen i.p.v. peach/wit, die vielen weg op crème). */
 .rg-hero-v2 .rg-cta__contact:hover {
   /* Zelfde lichte hover als elders op deze crème achtergrond (#D6CCB9) --
      de underline-on-hover komt vanzelf mee via Shopware's eigen a:hover-
@@ -5988,18 +5988,10 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-hero-v2 .rg-cta__contact-dot {
   border-color: var(--rg-cream);   /* was var(--rg-green) voor de donkere kaarten elders */
 }
-/* Beide regels dezelfde grootte (was: klein label + grotere promise-tekst)
-   -- enige verschil is het gewicht op de naam. Kleuren donkergroen i.p.v.
-   peach/wit (die vielen weg op deze lichte achtergrond). */
 .rg-hero-v2 .rg-cta__contact-name {
-  font-size: .88rem;
-  font-weight: 700;
   color: var(--rg-green);
-  margin-bottom: 0;
 }
 .rg-hero-v2 .rg-cta__contact-promise {
-  font-size: .88rem;
-  font-weight: 400;
   color: var(--rg-green-soft);   /* 6.8:1 op crème, ruim AA */
 }
 
@@ -7342,7 +7334,7 @@ h2.rg-faq-cat,
 .rg-contact-head {
   max-width: 820px;   /* zelfde breedte als #request-offer-container (offerte-pagina) */
   margin: 0 auto;
-  text-align: left;
+  text-align: center;   /* terug naar gecentreerd (voor nu) -- stond op left, in strijd met de eigen sectie-comment hierboven en het team-blok eronder dat al van gecentreerd uitging */
   padding: clamp(1.5rem, 1rem + 2vw, 2.75rem) 20px 0.5rem;
 }
 /* Contactpagina specifiek breder: staat boven .rg-contact-layout (formulier
