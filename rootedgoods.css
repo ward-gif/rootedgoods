@@ -9090,6 +9090,21 @@ h2.rg-route__team-title{
   padding-top: 0;
 }
 
+/* ---- 47.3 Restgat na 47.2: .container-main (Shopware-default padding:20px
+   0) en de lege .cms-breadcrumb (Bootstrap-default margin-bottom) duwden
+   de kaart alsnog een stukje los van het menu, zelfs met padding-top:0
+   hierboven. Zelfde bewezen patroon als bij .landing-header (sectie 8,
+   regel 4448) -- hier hergebruikt voor .rg-route. */
+.content-main:has(.rg-route) .container-main {
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+.content-main:has(.rg-route) .cms-breadcrumb {
+  margin: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
 /* ============================================================
    48. FOOTER (.footer-main) — native theme-markup, alleen CSS
    ------------------------------------------------------------
