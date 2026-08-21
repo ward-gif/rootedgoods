@@ -9917,7 +9917,11 @@ h2.rg-route__team-title{
    gelaten (minder uitgangen tijdens checkout = betere conversie),
    alleen kleur/font passend gemaakt aan de merkstijl.
    ============================================================ */
+/* .footer-bottom (sectie 48) is donkergroen bedoeld voor de hoofd-footer,
+   maar dezelfde class zit ook in .footer-minimal -- zonder deze override
+   erft de checkout-footer per ongeluk die donkere achtergrond mee. */
 .footer-minimal { background: var(--rg-cream); border-top: 1px solid var(--rg-sand); }
+.footer-minimal .footer-bottom { background: transparent; padding: 1rem 0; }
 .footer-minimal .footer-vat p,
 .footer-minimal .footer-copyright {
   font-family: 'Montserrat', sans-serif;
