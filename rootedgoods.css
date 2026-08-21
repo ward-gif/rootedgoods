@@ -9834,7 +9834,86 @@ h2.rg-route__team-title{
 .checkout-aside .line-item-total-price-label { font-family: 'Montserrat', sans-serif; font-size: 0.74rem; color: var(--rg-muted); }
 
 /* ============================================================
-   49.15 CHECKOUT — footer (.footer-minimal): bewust kaal/rustig
+   49.15 CHECKOUT — bevestigingspagina (/checkout/confirm,
+   "Bestelling afronden"): eigen kop-class + eigen kaart-class +
+   eigen line-item-variant (.is-default i.p.v. .is-offcanvas) t.o.v.
+   /checkout/register -- zelfde behandeling, andere selectors.
+   ============================================================ */
+.confirm-main-header {
+  font-family: 'Playfair Display', serif;
+  color: var(--rg-green);
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+  margin-bottom: 1.5rem;
+}
+.checkout-card {
+  border: 1px solid var(--rg-sand) !important;
+  border-radius: var(--rg-r-xp) !important;
+  box-shadow: var(--rg-sh-soft) !important;
+}
+.checkout-card .card-body { padding: clamp(1.25rem, 2.5vw, 2rem) !important; }
+.checkout-card .card-title {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--rg-green);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.checkout-main .line-item.is-default { padding: 1.25rem 0; border-top: 1px solid var(--rg-sand); }
+.checkout-main .line-item.is-default:first-of-type { border-top: none; padding-top: 0; }
+.checkout-main .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; box-shadow: var(--rg-sh-soft); }
+.checkout-main .line-item-label { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--rg-green) !important; text-decoration: none !important; }
+.checkout-main .line-item-label:hover { color: var(--rg-cognac) !important; }
+.checkout-main .line-item-details-characteristics:not(:has(table)) { font-family: 'Montserrat', sans-serif; font-size: 0.82rem; color: var(--rg-soft); margin: 0.25rem 0; }
+.checkout-main .line-item-details-characteristics-option { font-weight: 600; color: var(--rg-ink); }
+.checkout-main .line-item-ordernumber { font-size: 0.72rem; color: var(--rg-muted); }
+
+.checkout-main .rg-price-detail.rg-price-detail--collapsed { display: none; }
+.checkout-main .rg-price-detail-toggle {
+  background: none; border: none; padding: 0; margin: 0.3rem 0 0.6rem;
+  font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 600;
+  color: var(--rg-cognac) !important; cursor: pointer; text-decoration: underline;
+  text-underline-offset: 2px; box-shadow: none !important; border-radius: 0 !important;
+}
+.checkout-main .rg-price-detail-toggle:hover { color: var(--rg-cognac-deep) !important; }
+.checkout-main .custom-configurator-table {
+  border-collapse: separate !important; border-spacing: 0 !important; margin-bottom: 0 !important;
+  border: 1px solid var(--rg-sand) !important; border-radius: var(--rg-r-fn); font-size: 0.82rem;
+}
+.checkout-main .custom-configurator-table > thead > tr > *:first-child { border-top-left-radius: var(--rg-r-fn); }
+.checkout-main .custom-configurator-table > thead > tr > *:last-child { border-top-right-radius: var(--rg-r-fn); }
+.checkout-main .custom-configurator-table > tbody > tr:last-child > *:first-child { border-bottom-left-radius: var(--rg-r-fn); }
+.checkout-main .custom-configurator-table > tbody > tr:last-child > *:last-child { border-bottom-right-radius: var(--rg-r-fn); }
+.checkout-main .custom-configurator-table > thead > tr > * { background-color: var(--rg-green) !important; color: #fff !important; font-weight: 700 !important; padding: 0.55rem 0.7rem !important; border: none !important; }
+.checkout-main .custom-configurator-table > tbody > tr > * { background-color: #fff !important; padding: 0.55rem 0.7rem !important; border-top: 1px solid var(--rg-sand) !important; border-bottom: none !important; }
+.checkout-main table.custom-configurator-table { --bs-table-striped-bg: transparent !important; }
+
+.checkout-main .btn-minus.btn,
+.checkout-main .btn-plus.btn {
+  background: #fff !important;
+  border: 1px solid var(--rg-sand) !important;
+  border-radius: var(--rg-r-pill) !important;
+  padding: 0 !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 0 !important;
+  box-shadow: none !important;
+}
+.checkout-main .btn-minus.btn:hover,
+.checkout-main .btn-plus.btn:hover { background: var(--rg-cream) !important; transform: none !important; }
+.checkout-main .btn-minus svg use,
+.checkout-main .btn-plus svg use { fill: var(--rg-green) !important; }
+.checkout-main .line-item-remove-button.btn {
+  background: transparent !important; border: none !important; border-radius: 0 !important;
+  padding: 0.3rem !important; width: auto !important; min-width: 0 !important; box-shadow: none !important;
+}
+.checkout-main .line-item-remove-button svg use { fill: var(--rg-muted) !important; }
+.checkout-main .line-item-remove-button:hover svg use { fill: var(--rg-cognac) !important; }
+.checkout-main .icon-wishlist-not-added svg use { fill: var(--rg-muted) !important; }
+.checkout-main .icon-wishlist-added svg use { fill: var(--rg-cognac) !important; }
+
+/* ============================================================
+   49.16 CHECKOUT — footer (.footer-minimal): bewust kaal/rustig
    gelaten (minder uitgangen tijdens checkout = betere conversie),
    alleen kleur/font passend gemaakt aan de merkstijl.
    ============================================================ */
