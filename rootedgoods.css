@@ -9060,18 +9060,22 @@ h2.rg-route__team-title{
 /* ============================================================
    48. FOOTER (.footer-main) — native theme-markup, alleen CSS
    ------------------------------------------------------------
-   Stond volledig ongestyled: platte kolommen zonder hiërarchie,
-   betaal-/verzendlogo's op ruwe inline width:25%, kopkleur in cognac
-   (in strijd met de eigen kleur-hiërarchie -- cognac is CTA/hover-only,
-   koppen horen donkergroen te zijn, zie ook de PDP-stapkoppen "AFMETING"/
-   "KLEUR" die dezelfde donkergroen+hoofdletters-conventie gebruiken).
+   Stond volledig ongestyled. Eerste versie gebruikte de lichte zand-
+   tint + dunne cognac-lijntjes -- teruggemeld: hoort donkergroen te zijn
+   (zelfde groen als de topbar, --rg-green #2d4528) voor een duidelijk,
+   herkenbaar einde van de pagina, en de lijntjes weg (die gebruiken we
+   nagenoeg nergens anders op de site). Kleurenpalet op het donkere groen
+   volgt hetzelfde recept als de eind-cta-kaart vlak erboven (sectie 39):
+   wit voor primaire tekst, cognac-light (#CA853F) alleen voor kleine
+   bold/uppercase labels (bij normale body-tekst te laag contrast, zie
+   hieronder), peach voor secundaire nadruk. Onderbalk een tint dieper
+   (--rg-green-deep) voor rustige gelaagdheid zonder lijn.
    Geen HTML-toegang hier (native theme-markup, geen CMS-blok) -- alles
    via bestaande globale tokens (sectie 41).
    ============================================================ */
 
 .footer-main {
-  background: var(--rg-sand);
-  border-top: 1px solid var(--rg-hair);
+  background: var(--rg-green);
   margin-top: clamp(2rem, 5vh, 4rem);
 }
 .footer-main .container {
@@ -9081,63 +9085,69 @@ h2.rg-route__team-title{
   .footer-main .container { padding-left: 15px; padding-right: 15px; }
 }
 
-/* Kolomkoppen: donkergroen i.p.v. cognac, zelfde uppercase-conventie als
-   de PDP-stapkoppen. padding-top expliciet op 0 (was 48px, theme-eigen
-   accordion-tapruimte) -- die ruimte komt hier al van .container hierboven,
-   dubbelop anders. */
+/* Kolomkoppen: wit (donkergroen-koppen-regel geldt op lichte achtergrond;
+   hier is de achtergrond zelf al het donkergroen). Geen lijn meer eronder
+   -- alleen nog ruimte. padding-top op 0 (was 48px, theme-eigen accordion-
+   tapruimte) -- die ruimte komt al van .container hierboven, dubbelop
+   anders. */
 .footer-column-headline {
-  color: var(--rg-green) !important;
+  color: #fff !important;
   font-size: 0.9rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0 0 0.85rem !important;
   margin-bottom: 0.7rem;
-  border-bottom: 1px solid var(--rg-hair);
 }
 
 .footer-link-item { margin-bottom: 0.5rem; }
 .footer-link {
-  color: var(--rg-soft);
+  color: rgba(255, 255, 255, 0.8);   /* 7.4:1 op --rg-green, ruim AA */
   font-size: 0.92rem;
   text-decoration: none;
   transition: color .15s ease;
 }
 .footer-link:hover,
 .footer-link:focus-visible {
-  color: var(--rg-cognac);
+  color: var(--rg-cognac-light);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* Contact-kolom: adreslijst + contactformulier-link */
+/* Contact-kolom: adreslijst + contactformulier-link.
+   De FA-icoontjes (pin/telefoon/envelop) hebben een inline
+   style="color:#2F3F2B" (donkergroen) vanuit Shopware -- op de nieuwe
+   donkergroene achtergrond zijn ze daardoor bijna onzichtbaar (~1:1
+   contrast); wit overschreven via !important (wint van de inline style). */
 .footer-contact-hotline ul {
   font-size: 0.92rem;
-  color: var(--rg-soft);
+  color: rgba(255, 255, 255, 0.8);
 }
+.footer-contact-hotline i[style] { color: #fff !important; }
 .footer-contact-hotline a {
-  color: var(--rg-cognac);
+  color: var(--rg-cognac-light);
   font-weight: 500;
   text-decoration: none;
 }
-.footer-contact-hotline a:hover { color: var(--rg-cognac-deep); text-decoration: underline; }
+.footer-contact-hotline a:hover { color: #fff; text-decoration: underline; }
 .footer-contact-form {
   margin-top: 0.9rem;
   font-size: 0.92rem;
-  color: var(--rg-soft);
+  color: rgba(255, 255, 255, 0.8);
 }
-.footer-contact-form a { color: var(--rg-cognac); text-decoration: none; }
-.footer-contact-form a:hover { color: var(--rg-cognac-deep); text-decoration: underline; }
+.footer-contact-form a { color: var(--rg-cognac-light); text-decoration: none; }
+.footer-contact-form a:hover { color: #fff; text-decoration: underline; }
 
-/* Betalen & Verzending: labels als kleine muted eyebrow, logo's in een
+/* Betalen & Verzending: labels als kleine uppercase eyebrow, logo's in een
    nette flex-grid met vaste hoogte (i.p.v. de ruwe inline width:25%, die
-   per logo een andere hoogte gaf naargelang de bron-afbeelding). */
+   per logo een andere hoogte gaf naargelang de bron-afbeelding). De
+   logo's zelf zijn witte kaartjes -- die komen los van het donkere groen. */
 .footer-custom-title {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--rg-muted);
+  color: var(--rg-peach);
   margin: 1.1rem 0 0.7rem;
 }
 .footer-column-content-inner > .footer-custom-title:first-child { margin-top: 0; }
@@ -9153,14 +9163,19 @@ h2.rg-route__team-title{
   object-fit: contain;
 }
 
-/* Onderbalk: BTW-notitie + copyright naast elkaar i.p.v. los gestapeld.
+/* Mobiel accordion: plus/minus-icoon is een inline SVG met fill="#758CA3"
+   (grijsblauw) -- op donkergroen bijna onleesbaar, wit overschreven. */
+.footer-column-toggle svg use { fill: #fff !important; }
+
+/* Onderbalk: een tint dieper (--rg-green-deep) i.p.v. een lijn als
+   scheiding. BTW-notitie + copyright naast elkaar i.p.v. los gestapeld.
    .footer-vat/.footer-copyright zijn GEEN kinderen van .container (die
    wrapt alleen de -- altijd lege -- .footer-service-menu-list) maar
    directe kinderen van .footer-bottom zelf; de flex/padding hoort dus
    daarop, niet op .container (die stond zonder eigen breedte/padding
    gewoon edge-to-edge, los van de rest van de footer-inhoud erboven). */
 .footer-bottom {
-  border-top: 1px solid var(--rg-hair);
+  background: var(--rg-green-deep);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -9184,18 +9199,18 @@ h2.rg-route__team-title{
   }
 }
 .footer-vat { margin: 0; order: 1; }
-.footer-vat p { margin: 0; font-size: 0.8rem; color: var(--rg-muted); }
-.footer-vat a { color: var(--rg-muted); text-decoration: underline; }
-.footer-vat a:hover { color: var(--rg-cognac); }
+.footer-vat p { margin: 0; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
+.footer-vat a { color: rgba(255, 255, 255, 0.75); text-decoration: underline; }
+.footer-vat a:hover { color: var(--rg-cognac-light); }
 .footer-copyright {
   order: 2;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.8rem;
-  color: var(--rg-muted);
+  color: rgba(255, 255, 255, 0.6);
 }
-.footer-copyright svg use { fill: var(--rg-muted) !important; }
+.footer-copyright svg use { fill: rgba(255, 255, 255, 0.6) !important; }
 /* Leeg native servicemenu (geen items geconfigureerd) -- geen loze ruimte. */
 .footer-service-menu-list:empty { display: none; }
 
