@@ -1,24 +1,15 @@
-<!-- Preconnect voor Google Fonts en jsDelivr CDN — browser opent TCP+TLS
-     connectie alvast terwijl HTML nog parseert. Scheelt 50-200ms per resource. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preconnect voor jsDelivr CDN — browser opent TCP+TLS connectie alvast
+     terwijl HTML nog parseert. Scheelt 50-200ms per resource.
+     Google Fonts-preconnects (fonts.googleapis.com/fonts.gstatic.com) zijn
+     weg: Montserrat + Playfair Display komen niet meer van Google. Montserrat
+     zat al zelf gehost in Promidata's eigen theme-CSS (theme-instelling
+     "Schriftart Text", dubbele load dus). Playfair Display staat nu ook
+     zelf gehost, via @font-face in rootedgoods.css (sectie 0) -- de
+     bestanden bleken al op de Promidata-server te staan, alleen nog niet
+     gedeclareerd. Eén request-hop minder (geen los Google-domein meer) en
+     dat @font-face-blok laadt al vroeg mee met rootedgoods.css zelf (die
+     staat wél al netjes in <head>, i.t.t. dit CMS-blok). -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-<!-- Google Fonts — Montserrat (body) + Playfair Display (headings).
-     BEWUST zonder ital-as: cursief hoort faux oblique te renderen (browser
-     trekt de rechte letter schuin); de echte Playfair Italic is te sierlijk.
-     display=optional (was swap): met swap rendert alle tekst eerst in de
-     fallback-font en springt 'ie zichtbaar naar de webfont zodra die laadt
-     -- precies het "verspringt naar grotere fontjes"-effect dat werd
-     teruggemeld. optional laat de browser de webfont ALLEEN gebruiken als
-     die er binnen een paar honderd ms al is; zo niet, dan blijft de
-     fallback voor de rest van dat paginabezoek staan -- geen latere swap,
-     dus geen zichtbare sprong meer mogelijk. Dit blok staat momenteel laat
-     in de body (CMS-blok, geen <head>-toegang vanuit hier) -- zie het
-     losse advies daarover; zolang dat niet verplaatst is, zal de webfont
-     hierdoor vaker wegvallen naar de fallback dan wenselijk, maar dat is
-     nog altijd beter dan de huidige zichtbare sprong. -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600&display=optional" rel="stylesheet">
 
 <!-- Search overlay element — wordt via CSS/JS zichtbaar bij focus op zoekbalk -->
 <div class="search-overlay" id="searchOverlay"></div>

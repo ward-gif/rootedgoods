@@ -3,13 +3,80 @@
    rootedgoods.eu | Shopware 6.5 / Promidata thema
    ============================================================ */
 
-/* LET OP — cursief is hier een bewuste keuze: de font-link laadt ALLEEN de
-   rechte Playfair. Alle cursief (hero-accent, .rg-em, stapnummers) is dus
-   faux oblique (browser trekt de rechte letter schuin) en dat is precies de
-   gewenste look. De echte Playfair Display Italic is te sierlijk bevonden —
-   NIET "fixen" door de ital-as of een @import toe te voegen.
+/* LET OP — cursief is hier een bewuste keuze: alleen de RECHTE Playfair-
+   weights hieronder zijn zelf-gehost. Alle cursief (hero-accent, .rg-em,
+   stapnummers) is dus faux oblique (browser trekt de rechte letter schuin)
+   en dat is precies de gewenste look. De echte Playfair Display Italic is
+   te sierlijk bevonden — NIET "fixen" door een italic-@font-face toe te
+   voegen (staat wel als bestand op de server, bewust ongebruikt gelaten).
    (Fraunces is hier kort geprobeerd voor de Over ons-hero en weer
    teruggedraaid: gewoon de site-brede Playfair-stijl aanhouden.) */
+
+/* ------------------------------------------------------------
+   0. WEBFONTS — zelf gehost i.p.v. Google Fonts
+   ------------------------------------------------------------
+   Montserrat hoeft hier niet bij: die zit al standaard, zelf gehost en
+   met alle gebruikte gewichten, in Promidata's eigen theme-CSS (theme-
+   instelling "Schriftart Text") -- onze eigen Google-Fonts-import
+   daarvan was dus pure dubbeling.
+   Playfair Display zat WEL alleen in de theme-instelling ("Schriftart
+   Überschrift") als kale font-family-naam, zonder bijbehorende
+   @font-face -- de browser had 'm dus nergens vandaan tot onze (te laat
+   in de pagina geladen) Google Fonts-link 'm alsnog binnenhaalde. De
+   bestanden bleken al wel op de server te staan (Promidata's algemene
+   webfonts-map, ongeacht of het admin-dropdown Playfair aanbiedt), dus
+   hier zelf gedeclareerd i.p.v. via Google:
+   - Eén load minder (geen fonts.googleapis.com + fonts.gstatic.com round-
+     trip meer, alles van hetzelfde domein als de rest van de site).
+   - font-display: optional -- als het lettertype niet binnen een fractie
+     van een seconde klaar is, blijft de fallback-serif voor de rest van
+     dat paginabezoek staan. Geen latere zichtbare sprong meer mogelijk
+     (was de kern van de "verspringt bij laden"-klacht).
+   Alleen de rechte (niet-cursieve) gewichten die we daadwerkelijk
+   gebruiken (400/500/600/700/800/900) -- italic bewust weggelaten, zie
+   de comment hierboven. */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('https://bambook.08.promidata.shop/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url('https://bambook.08.promidata.shop/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url('https://bambook.08.promidata.shop/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('https://bambook.08.promidata.shop/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+  src: url('https://bambook.08.promidata.shop/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: optional;
+  src: url('https://bambook.08.promidata.shop/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-900.woff2') format('woff2');
+}
 
 /* ------------------------------------------------------------
    1. GLOBAL — typografie
