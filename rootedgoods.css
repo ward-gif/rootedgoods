@@ -9338,11 +9338,23 @@ h2.rg-route__team-title{
   font-weight: 500;
   color: var(--rg-muted);
 }
+/* Op desktop overbodig (het kruisje rechtsboven + klikken buiten het
+   paneel doen al hetzelfde) -- op mobiel wel zinvol, maar dan compacter:
+   het grote grijze pil-vlak uit image1 nam te veel ruimte in. */
 .cart-offcanvas .offcanvas-close.js-offcanvas-close {
-  color: var(--rg-green) !important;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
+  display: none !important;
+}
+@media (max-width: 767.98px) {
+  .cart-offcanvas .offcanvas-close.js-offcanvas-close {
+    display: inline-flex !important;
+    background: transparent !important;
+    color: var(--rg-green) !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem !important;
+    box-shadow: none !important;
+  }
 }
 .cart-offcanvas .offcanvas-close .icon svg use {
   fill: var(--rg-green) !important;
@@ -9358,6 +9370,15 @@ h2.rg-route__team-title{
   border-radius: var(--rg-r-fn);
   overflow: hidden;
   border: 1px solid var(--rg-sand);
+}
+/* De <img> zelf (.line-item-img, een ANDER element dan de container
+   hierboven) had nog een eigen native grijze rand + vierkante hoeken --
+   samen met de ronde rand van de container gaf dat een dubbele/conflicter-
+   ende rand-look. Rand eraf, de container-rand is nu de enige. */
+.cart-offcanvas .line-item-img {
+  padding: 0.25rem;
+  border: none !important;
+  border-radius: 0;
 }
 .cart-offcanvas .line-item-label {
   font-family: 'Montserrat', sans-serif;
@@ -9592,6 +9613,12 @@ h2.rg-route__team-title{
 }
 .cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary svg use {
   fill: #fff !important;
+}
+/* De generieke .icon>svg{top:0.25em} regel (elders in dit bestand) zet 'm
+   op dit grote knop-lettertype op 6px -- hier iets minder, sluit beter
+   optisch aan bij het midden van de knop. */
+.cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary svg {
+  top: 2px !important;
 }
 
 /* ---- 49.10 CTA-hiërarchie: "Offerte aanvragen" primair (al btn-primary,
@@ -9836,6 +9863,7 @@ h2.rg-route__team-title{
   margin-bottom: 1rem;
 }
 .checkout-aside .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; border: 1px solid var(--rg-sand); }
+.checkout-aside .line-item-img { padding: 0.25rem; border: none !important; border-radius: 0; }
 .checkout-aside .line-item-label { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--rg-green) !important; text-decoration: none !important; }
 .checkout-aside .line-item-label:hover { color: var(--rg-cognac) !important; }
 .checkout-aside .line-item-details-characteristics:not(:has(table)) { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: var(--rg-soft); margin: 0.25rem 0; }
@@ -9891,6 +9919,7 @@ h2.rg-route__team-title{
 .checkout-main .line-item.is-default { padding: 1.25rem 0; border-top: 1px solid var(--rg-sand); }
 .checkout-main .line-item.is-default:first-of-type { border-top: none; padding-top: 0; }
 .checkout-main .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; border: 1px solid var(--rg-sand); }
+.checkout-main .line-item-img { padding: 0.25rem; border: none !important; border-radius: 0; }
 .checkout-main .line-item-label { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--rg-green) !important; text-decoration: none !important; }
 .checkout-main .line-item-label:hover { color: var(--rg-cognac) !important; }
 .checkout-main .line-item-details-characteristics:not(:has(table)) { font-family: 'Montserrat', sans-serif; font-size: 0.82rem; color: var(--rg-soft); margin: 0.25rem 0; }
