@@ -5986,11 +5986,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   transition: background-color .2s ease, border-color .2s ease;
 }
 .rg-hero-v2__reassure:hover {
-  /* Heel subtiel -- zelfde terughoudendheid als .rg-cta__contact:hover
-     elders (rgba(255,255,255,.1) op donkergroen); hier de lichte
-     tegenhanger, dus perzik op lage dekking i.p.v. vol perzik. */
-  background: rgba(233, 201, 169, .35);
-  border-color: rgba(45, 69, 40, .08);
+  /* Terug naar een gewone lichte, ronde achtergrond -- de vorige poging
+     (perzik op lage dekking) was te subtiel bevonden. #D6CCB9 is dezelfde
+     kleur als een eerdere iteratie van dit blok gebruikte (en die van de
+     Europa-kaart elders) -- 4.65:1 contrast met de tekst, ruim AA. */
+  background: #D6CCB9;
+  border-color: transparent;
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
