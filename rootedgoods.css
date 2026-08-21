@@ -9056,3 +9056,145 @@ h2.rg-route__team-title{
 .rg-route__intro{
   padding-top:clamp(3rem, 6vw, 5rem);
 }
+
+/* ============================================================
+   48. FOOTER (.footer-main) — native theme-markup, alleen CSS
+   ------------------------------------------------------------
+   Stond volledig ongestyled: platte kolommen zonder hiërarchie,
+   betaal-/verzendlogo's op ruwe inline width:25%, kopkleur in cognac
+   (in strijd met de eigen kleur-hiërarchie -- cognac is CTA/hover-only,
+   koppen horen donkergroen te zijn, zie ook de PDP-stapkoppen "AFMETING"/
+   "KLEUR" die dezelfde donkergroen+hoofdletters-conventie gebruiken).
+   Geen HTML-toegang hier (native theme-markup, geen CMS-blok) -- alles
+   via bestaande globale tokens (sectie 41).
+   ============================================================ */
+
+.footer-main {
+  background: var(--rg-sand);
+  border-top: 1px solid var(--rg-hair);
+  margin-top: clamp(2rem, 5vh, 4rem);
+}
+.footer-main .container {
+  padding: clamp(2.5rem, 5vh, 4rem) 40px clamp(1.5rem, 3vh, 2.5rem);
+}
+@media (max-width: 575px) {
+  .footer-main .container { padding-left: 15px; padding-right: 15px; }
+}
+
+/* Kolomkoppen: donkergroen i.p.v. cognac, zelfde uppercase-conventie als
+   de PDP-stapkoppen. padding-top expliciet op 0 (was 48px, theme-eigen
+   accordion-tapruimte) -- die ruimte komt hier al van .container hierboven,
+   dubbelop anders. */
+.footer-column-headline {
+  color: var(--rg-green) !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 0 0.85rem !important;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid var(--rg-hair);
+}
+
+.footer-link-item { margin-bottom: 0.5rem; }
+.footer-link {
+  color: var(--rg-soft);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--rg-cognac);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Contact-kolom: adreslijst + contactformulier-link */
+.footer-contact-hotline ul {
+  font-size: 0.92rem;
+  color: var(--rg-soft);
+}
+.footer-contact-hotline a {
+  color: var(--rg-cognac);
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer-contact-hotline a:hover { color: var(--rg-cognac-deep); text-decoration: underline; }
+.footer-contact-form {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--rg-soft);
+}
+.footer-contact-form a { color: var(--rg-cognac); text-decoration: none; }
+.footer-contact-form a:hover { color: var(--rg-cognac-deep); text-decoration: underline; }
+
+/* Betalen & Verzending: labels als kleine muted eyebrow, logo's in een
+   nette flex-grid met vaste hoogte (i.p.v. de ruwe inline width:25%, die
+   per logo een andere hoogte gaf naargelang de bron-afbeelding). */
+.footer-custom-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rg-muted);
+  margin: 1.1rem 0 0.7rem;
+}
+.footer-column-content-inner > .footer-custom-title:first-child { margin-top: 0; }
+.footer-custom-paymethods.icon-container {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+.footer-custom-paymethods.icon-container img {
+  width: auto !important;
+  height: 30px !important;
+  object-fit: contain;
+}
+
+/* Onderbalk: BTW-notitie + copyright naast elkaar i.p.v. los gestapeld. */
+.footer-bottom {
+  border-top: 1px solid var(--rg-hair);
+}
+.footer-bottom .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem 1.5rem;
+  padding: 1rem 40px;
+}
+@media (max-width: 575px) {
+  .footer-bottom .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.footer-vat { margin: 0; order: 1; }
+.footer-vat p { margin: 0; font-size: 0.8rem; color: var(--rg-muted); }
+.footer-vat a { color: var(--rg-muted); text-decoration: underline; }
+.footer-vat a:hover { color: var(--rg-cognac); }
+.footer-copyright {
+  order: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--rg-muted);
+}
+.footer-copyright svg use { fill: var(--rg-muted) !important; }
+/* Leeg native servicemenu (geen items geconfigureerd) -- geen loze ruimte. */
+.footer-service-menu-list:empty { display: none; }
+
+/* Tablet (md, 768-991px): 4x col-md-4 wrapt van nature lelijk (3 op de
+   eerste rij, 1 alleen op de tweede) -- 2x2 oogt rustiger. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .footer-columns > .footer-column {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    margin-bottom: 2rem;
+  }
+}
