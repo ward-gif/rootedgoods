@@ -6534,7 +6534,7 @@ body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 3vw, 3.5rem);
   align-items: center;
-  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+  margin-bottom: clamp(4rem, 4rem + 3vw, 7rem);
 }
 .rg-sd__eyebrow {
   margin: 0 0 1rem;
@@ -6650,7 +6650,7 @@ h2.rg-sd__head-title,
   padding: clamp(2rem, 2rem + 1.5vw, 3.25rem) 0;
   border-top: 1px solid #EAE3D7;
   border-bottom: 1px solid #EAE3D7;
-  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+  margin-bottom: clamp(4rem, 4rem + 3vw, 7rem);
 }
 .rg-sd__step-nr {
   display: block;
@@ -6685,7 +6685,7 @@ h3.rg-sd__step-title,
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 3.5vw, 4.5rem);
   align-items: center;
-  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+  margin-bottom: clamp(4rem, 4rem + 3vw, 7rem);
 }
 .rg-sd__row-media img {
   width: 100%;
@@ -6747,7 +6747,7 @@ h2.rg-sd__row-title,
   border-radius: 20px;
   padding: clamp(2.4rem, 2rem + 2vw, 3.6rem) clamp(1.5rem, 4vw, 3.5rem);
   max-width: 1000px;
-  margin: 0 auto clamp(3rem, 3rem + 3vw, 6rem);
+  margin: 0 auto clamp(4rem, 4rem + 3vw, 7rem);
   text-align: center;
   box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
@@ -6784,7 +6784,7 @@ h2.rg-sd__panel-title,
    systeem viel de linkerrand niet gelijk met de rest van de pagina. */
 .rg-sd__faq {
   max-width: 1600px;
-  margin: 0 auto clamp(3rem, 3rem + 2vw, 5rem);
+  margin: 0 auto clamp(4rem, 4rem + 2vw, 6rem);
   padding: 0 40px;
   box-sizing: border-box;
   display: grid;
@@ -6886,7 +6886,7 @@ h2.rg-sd__panel-title,
 .rg-sd__journey {
   position: relative;
   list-style: none;
-  margin: 0 0 clamp(3rem, 3rem + 3vw, 6rem);
+  margin: 0 0 clamp(4rem, 4rem + 3vw, 7rem);
   padding: 0;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -6952,7 +6952,7 @@ h3.rg-sd__journey-title,
 
 /* ---- Deel-diensten-sectie (hub -> spokes): hergebruikt .rg-service-card ---- */
 .rg-sd__spokes {
-  margin-bottom: clamp(3rem, 3rem + 3vw, 6rem);
+  margin-bottom: clamp(4rem, 4rem + 3vw, 7rem);
 }
 /* Spokes gebruiken de home-spec-cards (beeldtegels). Gecentreerde cluster,
    niet full-bleed over 1600px. De :has()-container-tweaks van de home gelden
@@ -6972,7 +6972,7 @@ h3.rg-sd__journey-title,
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(1rem, 2vw, 1.75rem);
-  margin: 0 0 clamp(3rem, 3rem + 3vw, 6rem);
+  margin: 0 0 clamp(4rem, 4rem + 3vw, 7rem);
 }
 .rg-sd__tech {
   display: flex;
@@ -7014,7 +7014,7 @@ h3.rg-sd__tech-title,
    als 'distributie-bereik'-showcase i.p.v. de copy+map-grid van het statement. */
 .rg-sd__map {
   max-width: 720px;
-  margin: 0 auto clamp(3rem, 3rem + 3vw, 6rem);
+  margin: 0 auto clamp(4rem, 4rem + 3vw, 7rem);
 }
 
 /* ---- Compacte, toegankelijke afsluit-CTA ----
@@ -8051,7 +8051,24 @@ h1.rgh__title, .rgh__title,
   background:linear-gradient(to top,
     rgba(32,22,12,.85) 0%, rgba(32,22,12,.32) 46%, rgba(32,22,12,.04) 100%) !important;
 }
-.rg-spec-card__sub{ max-width:36ch !important; }
+/* max-width in ch was een vaste cap ongeacht de daadwerkelijke tegel-
+   breedte -- brak de tekst onnodig smal af, vooral op de grote (nth-
+   child(1)) tegel die veel breder is dan de twee gestapelde ernaast.
+   Mag gewoon de volle beschikbare breedte in. Hyphens/word-break-
+   bescherming erbij, zelfde reden als .rg-service-card__title eerder:
+   de globale word-break:break-word van het thema brak anders midden in
+   een woord af op smallere tegels. */
+.rg-spec-card__sub{
+  max-width: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+.rg-spec-card__title{
+  word-break: normal !important;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
 .rg-spec-card{ border-radius:var(--rg-r-xp) !important; box-shadow:var(--rg-sh-soft) !important; }
 
 /* ---- 41.9 SECTIE-KOPPEN links — GERICHT (geen blanket) ----
