@@ -5706,6 +5706,12 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 .rg-cta__contact:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);}
 .rg-cta__contact:focus-visible{outline:3px solid rgba(255,255,255,.6);outline-offset:2px;}
 .rg-cta__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
+/* Statusbolletje, zelfde motief als .rg-hero-v2__reassure-dot -- #6aa84f,
+   rand in de kaartkleur (donkergroen) i.p.v. cream, zodat 'ie op deze
+   donkere kaarten wegvalt in de achtergrond i.p.v. een lichte ring te
+   tonen. Rechtsonder op de 44px-avatar. */
+.rg-cta__contact-avatar{position:relative;flex:none;display:inline-flex;}
+.rg-cta__contact-dot{position:absolute;right:0;bottom:0;width:11px;height:11px;border-radius:50%;background:#6aa84f;border:2px solid var(--rg-green);}
 .rg-cta__contact-name{display:block;font-size:.72rem;font-weight:600;color:#e9c9a9;}
 .rg-cta__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#fff;}
 .rg-cta__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s ease;}
@@ -5971,10 +5977,17 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin: 14px 0 0;
   padding: 12px 16px 12px 12px;
   border-radius: 12px;   /* zelfde radius als de mozaïek-tegels (.rg-hero-v2__tile) */
-  /* Geen achtergrond (meer) -- ook niet on hover: blijft een kale
-     tekstregel, geen kaart. */
+  border: 1px solid transparent;   /* alleen zichtbaar on hover (border-color eronder) */
+  /* Basis blijft kaal (geen achtergrond) -- on hover komt een subtiele
+     kaart-vorm terug (achtergrond + rand), zelfde recept als .rg-cta__contact
+     elders op donkere achtergronden, hier de lichte tegenhanger. */
   text-align: left;
   text-decoration: none;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.rg-hero-v2__reassure:hover {
+  background: var(--rg-peach);
+  border-color: rgba(45, 69, 40, .12);
 }
 .rg-hero-v2__reassure:focus-visible {
   outline: 3px solid rgba(45, 69, 40, .55);
