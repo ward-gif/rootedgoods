@@ -1,26 +1,37 @@
-<!-- Preconnect voor jsDelivr CDN — browser opent TCP+TLS connectie alvast
-     terwijl HTML nog parseert. Scheelt 50-200ms per resource.
-     Google Fonts-preconnects (fonts.googleapis.com/fonts.gstatic.com) zijn
-     weg: Montserrat + Playfair Display komen niet meer van Google. Montserrat
-     zat al zelf gehost in Promidata's eigen theme-CSS (theme-instelling
-     "Schriftart Text", dubbele load dus). Playfair Display staat nu ook
-     zelf gehost, via @font-face in rootedgoods.css (sectie 0) -- de
-     bestanden bleken al op de Promidata-server te staan, alleen nog niet
-     gedeclareerd. Eén request-hop minder (geen los Google-domein meer) en
-     dat @font-face-blok laadt al vroeg mee met rootedgoods.css zelf (die
-     staat wél al netjes in <head>, i.t.t. dit CMS-blok). -->
+<!-- LET OP -- dit bestand is GEEN sitebreed blok, wat de oudere comments
+     hieronder nog wel beweerden. Live gecontroleerd (aug 2026) welke
+     pagina's welk stuk van deze inhoud tonen: homepage had een nieuwere
+     losse plak-ronde (zoek-overlay + fonts-link, geen JSON-LD), faq/
+     contact/offerte hadden een oudere losse plak-ronde (wel JSON-LD, geen
+     zoek-overlay), en over-ons/alle-producten/alle-thema-s hadden he-le-
+     maal niets van dit bestand. Drie losse, uit de pas gelopen kopieën
+     dus, geen 1x-plakken-en-het-staat-overal-mechanisme.
+     Waarom: er is geen backend/plugin-toegang om dit via een echt
+     sitebreed injectiepunt te doen (zoals rootedgoods.css/js dat wél
+     krijgen via Promidata's eigen thema-mechanisme, herkenbaar aan de
+     "cioFrontendHeadHtml" marker-comment in de paginabron -- het scherm
+     waar dát geconfigureerd wordt is niet toegankelijk). Enige optie: deze
+     VOLLEDIGE inhoud handmatig plakken op elke pagina/layout die 'm nodig
+     heeft, en bij elke wijziging hier opnieuw overal bijwerken. Check bij
+     het plakken of de doelpagina een layout deelt met een andere pagina
+     (dan hoeft het maar 1x per gedeelde layout) — faq/contact/offerte
+     gaven identieke content, dus die drie delen mogelijk al één layout.
+     Sindsdien ook minder kritiek geworden: fonts/preconnect hieronder zijn
+     niet meer het enige dat Playfair laat werken -- die zit inmiddels ook
+     zelf gehost via @font-face in rootedgoods.css (sectie 0), wat WEL
+     via het werkende hoofd-mechanisme sitebreed laadt. Het enige dat hier
+     echt overal moet staan is dus de JSON-LD (SEO) en de zoek-overlay-div
+     (anders werkt de dim-op-focus simpelweg niet op die pagina, geen
+     harde bug). -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 <!-- Search overlay element — wordt via CSS/JS zichtbaar bij focus op zoekbalk -->
 <div class="search-overlay" id="searchOverlay"></div>
 
-<!-- CSS en JS worden globaal geladen door Promidata via jsDelivr CDN
-     (in het thema): rootedgoods.css en rootedgoods.js@main -->
-
-<!-- Sitebrede structured data (Organization + WebSite) — dit bestand laadt op
-     elke pagina (zelfde plek als de zoek-overlay-div hierboven), dus hier
-     hoeft dit maar 1x te staan. Nog GEEN sameAs (nog geen social-profielen)
-     en bewust geen adres/telefoon (staat nergens publiek op de site).
+<!-- Structured data (Organization + WebSite) -- zie de LET OP hierboven:
+     dit moet op ELKE pagina/layout apart geplakt worden, is geen 1x-actie.
+     Nog GEEN sameAs (nog geen social-profielen) en bewust geen adres/
+     telefoon (staat nergens publiek op de site).
      LET OP: als Shopware het <script type="application/ld+json"> uit een
      HTML-blok strípt bij opslaan, verplaats dit dan naar het thema (<head>)
      i.p.v. hier — zelfde risico als faq.html al documenteert. -->
