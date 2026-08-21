@@ -9153,11 +9153,14 @@ h2.rg-route__team-title{
   object-fit: contain;
 }
 
-/* Onderbalk: BTW-notitie + copyright naast elkaar i.p.v. los gestapeld. */
+/* Onderbalk: BTW-notitie + copyright naast elkaar i.p.v. los gestapeld.
+   .footer-vat/.footer-copyright zijn GEEN kinderen van .container (die
+   wrapt alleen de -- altijd lege -- .footer-service-menu-list) maar
+   directe kinderen van .footer-bottom zelf; de flex/padding hoort dus
+   daarop, niet op .container (die stond zonder eigen breedte/padding
+   gewoon edge-to-edge, los van de rest van de footer-inhoud erboven). */
 .footer-bottom {
   border-top: 1px solid var(--rg-hair);
-}
-.footer-bottom .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -9165,8 +9168,12 @@ h2.rg-route__team-title{
   gap: 0.4rem 1.5rem;
   padding: 1rem 40px;
 }
+.footer-bottom > .container:empty,
+.footer-bottom > .container:has(.footer-service-menu-list:empty) {
+  display: none;
+}
 @media (max-width: 575px) {
-  .footer-bottom .container {
+  .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 15px;
