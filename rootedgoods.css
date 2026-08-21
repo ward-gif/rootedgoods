@@ -9081,16 +9081,13 @@ h2.rg-route__team-title{
   padding: 0 !important;
 }
 
-/* ---- 47.2 De homepage-hero (.rg-hero-v2) centreert zijn copy verticaal
-   binnen een op de content afgestemde hoogte (align-items:center, geen
-   vaste vh), dus de kop staat daar nooit vlak tegen de bovenkant. Die exacte
-   centrering 1-op-1 overnemen conflicteert met margin-top:auto op de
-   scroll-cue (sectie 46), dus hier in plaats daarvan gewoon meer eigen
-   ademruimte boven de eyebrow -- ruimer dan de vorige stand (clamp(1rem,
-   2vw,2rem), max 32px), dichter bij wat de homepage-hero's eigen top-
-   padding oplevert wanneer de content daar niet extra gecentreerd wordt. */
+/* ---- 47.2 TERUGGEDRAAID: deze regel gaf .rg-route__intro extra
+   padding-top voor ademruimte boven de eyebrow, maar duwde daarmee ook de
+   EU-kaart (dezelfde flex-ouder) los van het menu -- precies het gat dat
+   47.1 hierboven net had weggewerkt. Teruggemeld: de kaart moet weer
+   vlak tegen het menu aansluiten, dus geen padding-top hier meer. */
 .rg-route__intro{
-  padding-top:clamp(3rem, 6vw, 5rem);
+  padding-top: 0;
 }
 
 /* ============================================================
