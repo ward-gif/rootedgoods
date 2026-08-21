@@ -9823,6 +9823,15 @@ h2.rg-route__team-title{
 /* ============================================================
    49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)
    ============================================================ */
+/* Lijnt de bovenkant van de samenvatting-kaart uit met de "heeft u al
+   een account"-banner (niet met de H1 erboven) -- gemeten offset op
+   desktop, dus alleen bij min-width waar de twee kolommen naast elkaar
+   staan (anders stapelt het toch onder elkaar en is dit ongewenst). */
+@media (min-width: 992px) {
+  .checkout-aside-container {
+    margin-top: 6rem;
+  }
+}
 .checkout-aside-summary {
   background: #ffffff;
   border: 1px solid var(--rg-sand);
