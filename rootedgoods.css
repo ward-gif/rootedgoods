@@ -9734,12 +9734,21 @@ h2.rg-route__team-title{
 .register-card .card-body {
   padding: clamp(1.25rem, 2.5vw, 2rem) !important;
 }
+/* Sectiekoppen: van een zware groene Playfair-kop met een eigen native
+   grijze onderrand (rgb(188,193,199), stond nergens in ons eigen CSS --
+   bleek een thema-default op .card-title) naar een compacte, gedempte
+   eyebrow-stijl. Dit was de grootste "rommelig"-veroorzaker: elke kop
+   oogde als een eigen paneel i.p.v. gewoon een label boven een groep. */
 .register-card .card-title {
-  font-family: 'Playfair Display', serif;
-  color: var(--rg-green);
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--rg-cognac);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 1rem;
 }
 /* "Uw adres"/"Uw afwijkende afleveradres" zijn eigen sub-secties bínnen
    dezelfde kaart (native markup heeft geen aparte .card per blok).
@@ -9747,12 +9756,22 @@ h2.rg-route__team-title{
    te rommelig, whitespace alleen geeft al genoeg scheiding. */
 .register-address,
 .register-shipping {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
-.register-address .card-title,
-.register-shipping .card-title {
-  font-size: 0.95rem;
-  margin-bottom: 0.9rem;
+/* Firma/Afdeling staan al samen; Afdeling + BTW Reg.nr. delen dezelfde
+   (klasseloze) wrapper-div in de native markup -- die naast elkaar
+   zetten i.p.v. allebei een eigen volle rij, scheelt twee onnodige
+   regels. */
+.address-contact-type-company > div:has(#billingAddressdepartment) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+}
+/* Iets krappere verticale ritme tussen losse velden (was de Bootstrap-
+   default 20px) -- draagt evenveel bij aan het "veel lucht"-gevoel als
+   de koppen zelf. */
+.checkout-main .form-group {
+  margin-bottom: 1rem !important;
 }
 
 /* ---- Formuliervelden: zelfde recept als het contactformulier (sectie
@@ -9930,10 +9949,14 @@ h2.rg-route__team-title{
 .checkout-card .card-body { padding: clamp(1.25rem, 2.5vw, 2rem) !important; }
 .checkout-card .card-title {
   font-family: 'Montserrat', sans-serif;
-  color: var(--rg-green);
+  color: var(--rg-cognac);
   font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0.85rem;
 }
 
 .checkout-main .line-item.is-default { padding: 1.25rem 0; border-top: 1px solid var(--rg-sand); }
