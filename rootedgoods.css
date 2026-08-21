@@ -9292,3 +9292,564 @@ h2.rg-route__team-title{
     margin-bottom: 2rem;
   }
 }
+
+/* ============================================================
+   49. WINKELMAND + CHECKOUT (.cart-offcanvas / .checkout-*)
+   ------------------------------------------------------------
+   Was 100% ongestyled native Shopware/Bootstrap-markup op het
+   belangrijkste conversiemoment van de site. Hergebruikt drie
+   bestaande patronen i.p.v. een nieuwe stijltaal te verzinnen:
+   het formulierveld-recept (sectie 40b), de donkergroene
+   tabel-header van de PDP-prijstabel (sectie 21) en de globale
+   kaart/schaduw/radius-tokens (sectie 41). Alle klassen hieronder
+   zijn 1-op-1 geverifieerd tegen de live DOM, geen HTML-toegang
+   nodig.
+   ============================================================ */
+
+/* ---- 49.1 Offcanvas: header ---- */
+.cart-offcanvas .offcanvas-cart-header {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--rg-green);
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid var(--rg-sand);
+}
+.cart-offcanvas .offcanvas-cart-header-count {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--rg-muted);
+}
+.cart-offcanvas .offcanvas-close.js-offcanvas-close {
+  color: var(--rg-green) !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.cart-offcanvas .offcanvas-close .icon svg use {
+  fill: var(--rg-green) !important;
+}
+
+/* ---- 49.2 Producttegel ---- */
+.cart-offcanvas .line-item + .line-item {
+  border-top: 1px solid var(--rg-sand);
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+}
+.cart-offcanvas .line-item-img-container {
+  border-radius: var(--rg-r-fn);
+  overflow: hidden;
+  box-shadow: var(--rg-sh-soft);
+}
+.cart-offcanvas .line-item-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--rg-green) !important;
+  text-decoration: none !important;
+}
+.cart-offcanvas .line-item-label:hover {
+  color: var(--rg-cognac) !important;
+}
+/* "Kleur: Beige" -- korte kenmerktekst, los van de prijstabel hieronder
+   die dezelfde class draagt (onderscheiden via :has(table)). */
+.cart-offcanvas .line-item-details-characteristics:not(:has(table)) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--rg-soft);
+  margin: 0.25rem 0;
+}
+.cart-offcanvas .line-item-details-characteristics-option {
+  font-weight: 600;
+  color: var(--rg-ink);
+}
+.cart-offcanvas .line-item-ordernumber {
+  font-size: 0.72rem;
+  color: var(--rg-muted);
+  margin: 0.15rem 0 0.4rem;
+}
+
+/* ---- 49.3 Prijsdetail-tabel: standaard ingeklapt (zie .rg-price-detail-
+   toggle, JS voegt die knop toe), zelfde donkergroene kop als de PDP-
+   totaalprijstabel maar compacter voor het drawer-formaat. */
+.cart-offcanvas .line-item-details-characteristics:has(table) {
+  margin-top: 0.4rem;
+}
+.cart-offcanvas .rg-price-detail.rg-price-detail--collapsed {
+  display: none;
+}
+.cart-offcanvas .rg-price-detail-toggle {
+  background: none; border: none; padding: 0; margin: 0.3rem 0 0.6rem;
+  font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600;
+  color: var(--rg-cognac); cursor: pointer; text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cart-offcanvas .rg-price-detail-toggle:hover { color: var(--rg-cognac-deep); }
+.cart-offcanvas .custom-configurator-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin-bottom: 0 !important;
+  border: 1px solid var(--rg-sand) !important;
+  border-radius: var(--rg-r-fn);
+  font-size: 0.8rem;
+}
+.cart-offcanvas .custom-configurator-table > thead > tr > *:first-child { border-top-left-radius: var(--rg-r-fn); }
+.cart-offcanvas .custom-configurator-table > thead > tr > *:last-child { border-top-right-radius: var(--rg-r-fn); }
+.cart-offcanvas .custom-configurator-table > tbody > tr:last-child > *:first-child { border-bottom-left-radius: var(--rg-r-fn); }
+.cart-offcanvas .custom-configurator-table > tbody > tr:last-child > *:last-child { border-bottom-right-radius: var(--rg-r-fn); }
+.cart-offcanvas .custom-configurator-table > thead > tr > * {
+  background-color: var(--rg-green) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  padding: 0.55rem 0.7rem !important;
+  border: none !important;
+}
+.cart-offcanvas .custom-configurator-table > tbody > tr > * {
+  background-color: #fff !important;
+  padding: 0.55rem 0.7rem !important;
+  border-top: 1px solid var(--rg-sand) !important;
+  border-bottom: none !important;
+}
+.cart-offcanvas table.custom-configurator-table {
+  --bs-table-striped-bg: transparent !important;
+}
+
+/* ---- 49.4 Verlanglijst: gedempt, geen concurrentie met de hoofdacties ---- */
+.cart-offcanvas .product-wishlist { margin-top: 0.5rem; }
+.cart-offcanvas .icon-wishlist-not-added svg use { fill: var(--rg-muted) !important; }
+.cart-offcanvas .icon-wishlist-added svg use { fill: var(--rg-cognac) !important; }
+.cart-offcanvas .product-wishlist-btn-content {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: var(--rg-muted);
+}
+
+/* ---- 49.5 Hoeveelheid-stepper: ronde vlak, donkergroen icoon i.p.v.
+   de generieke Bootstrap-input-group-rand. */
+.cart-offcanvas .line-item-quantity-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--rg-green);
+  margin-bottom: 0.3rem;
+}
+.cart-offcanvas .line-item-quantity-group {
+  border-radius: var(--rg-r-pill) !important;
+  overflow: hidden;
+  border: 1px solid var(--rg-sand);
+  width: fit-content;
+}
+.cart-offcanvas .btn-minus.btn,
+.cart-offcanvas .btn-plus.btn {
+  background: #fff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 0 !important;
+  box-shadow: none !important;
+}
+.cart-offcanvas .btn-minus.btn:hover,
+.cart-offcanvas .btn-plus.btn:hover {
+  background: var(--rg-cream) !important;
+  transform: none !important;
+}
+.cart-offcanvas .btn-minus svg use,
+.cart-offcanvas .btn-plus svg use {
+  fill: var(--rg-green) !important;
+}
+.cart-offcanvas .quantity-selector-group-input {
+  border: none !important;
+  border-left: 1px solid var(--rg-sand) !important;
+  border-right: 1px solid var(--rg-sand) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  color: var(--rg-ink) !important;
+  font-weight: 600;
+  width: 56px;
+  padding: 0 !important;
+}
+
+/* ---- 49.6 Prijsregels (eenheidsprijs/subtotaal per item) ---- */
+.cart-offcanvas .line-item-unit-price-label,
+.cart-offcanvas .line-item-total-price-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
+  color: var(--rg-muted);
+}
+.cart-offcanvas .line-item-unit-price-value {
+  color: var(--rg-soft);
+  font-size: 0.85rem;
+}
+.cart-offcanvas .line-item-total-price-value {
+  font-weight: 700;
+  color: var(--rg-green);
+  font-size: 1rem;
+}
+
+/* ---- 49.7 Verwijderen: kaal iconknopje, gedempt tot hover ---- */
+.cart-offcanvas .line-item-remove-button.btn {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.3rem !important;
+  width: auto !important;
+  min-width: 0 !important;
+  box-shadow: none !important;
+}
+.cart-offcanvas .line-item-remove-button svg use { fill: var(--rg-muted) !important; }
+.cart-offcanvas .line-item-remove-button:hover svg use { fill: var(--rg-cognac) !important; }
+
+/* ---- 49.8 Subtotaal/verzendkosten-samenvatting ---- */
+.cart-offcanvas .offcanvas-summary {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rg-sand);
+}
+.cart-offcanvas .offcanvas-summary-list,
+.cart-offcanvas .offcanvas-shipping-info {
+  font-family: 'Montserrat', sans-serif;
+}
+.cart-offcanvas .summary-label,
+.cart-offcanvas .summary-value {
+  color: var(--rg-green);
+  font-size: 0.92rem;
+}
+.cart-offcanvas .summary-total { font-weight: 700 !important; font-size: 1.05rem; }
+.cart-offcanvas .shipping-label,
+.cart-offcanvas .shipping-value {
+  font-size: 0.85rem;
+  color: var(--rg-soft);
+}
+.cart-offcanvas .js-toggle-shipping-selection {
+  color: var(--rg-cognac) !important;
+  font-weight: 600 !important;
+  padding: 0 !important;
+  font-size: 0.85rem !important;
+  text-decoration: underline;
+}
+.cart-offcanvas .offcanvas-cart-tax {
+  font-size: 0.75rem;
+  color: var(--rg-muted);
+  margin: 0.6rem 0 0;
+}
+
+/* ---- 49.9 Kortingscode: pill-vormige input-group, groene knop ---- */
+.cart-offcanvas .offcanvas-cart-promotion-form .input-group {
+  border: 1px solid var(--rg-sand);
+  border-radius: var(--rg-r-pill);
+  overflow: hidden;
+}
+.cart-offcanvas .offcanvas-cart-promotion-form .form-control {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0.65rem 1rem !important;
+  font-size: 0.88rem;
+}
+.cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary {
+  background: var(--rg-green) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 1.2rem !important;
+  min-width: 46px;
+  box-shadow: none !important;
+}
+.cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary:hover {
+  background: var(--rg-green-soft) !important;
+}
+.cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary svg use {
+  fill: #fff !important;
+}
+
+/* ---- 49.10 CTA-hiërarchie: "Offerte aanvragen" primair (al btn-primary,
+   dus al gevuld terracotta -- alleen naar boven verplaatst), "Ga naar de
+   kassa" secundair (outline), "Toon winkelwagen" kale tekstlink. Flex+order
+   i.p.v. DOM-herschikking, zelfde idioom als de PDP-knoppenvolgorde
+   (sectie 21, .d-grid:has(> #buyButton) #js-request-offer). */
+.cart-offcanvas .offcanvas-cart-actions {
+  display: flex;
+  flex-direction: column;
+}
+.cart-offcanvas .offcanvas-cart-actions > .js-offcanvas-cart-promotion { order: 0; }
+.cart-offcanvas .offcanvas-cart-actions > .d-grid:has(> #js-request-offer-cart) { order: 1; margin-top: 1.1rem; }
+.cart-offcanvas .offcanvas-cart-actions > .d-grid:has(> .begin-checkout-btn) { order: 2; }
+.cart-offcanvas .offcanvas-cart-actions > .d-grid:has(> a.btn-link) { order: 3; }
+
+.cart-offcanvas .begin-checkout-btn.btn-primary {
+  background: transparent !important;
+  border: 2px solid rgba(45, 69, 40, 0.28) !important;
+  color: var(--rg-green) !important;
+  box-shadow: none !important;
+}
+.cart-offcanvas .begin-checkout-btn.btn-primary:hover {
+  border-color: var(--rg-cognac) !important;
+  color: var(--rg-cognac) !important;
+  background: transparent !important;
+}
+.cart-offcanvas .offcanvas-cart-actions a.btn.btn-link {
+  padding: 0.5rem !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: var(--rg-muted) !important;
+  text-decoration: underline;
+  text-align: center;
+}
+.cart-offcanvas .offcanvas-cart-actions a.btn.btn-link:hover {
+  color: var(--rg-green) !important;
+}
+
+/* ============================================================
+   49.11 CHECKOUT — support-strip (.header-minimal)
+   ============================================================ */
+.header-minimal { border-bottom: 1px solid var(--rg-sand); }
+.header-minimal-row { align-items: center; }
+.header-minimal-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: var(--rg-soft);
+  line-height: 1.5;
+}
+.header-minimal-contact strong { color: var(--rg-green); font-weight: 600; }
+.header-minimal-contact a { color: var(--rg-cognac); text-decoration: none; }
+.header-minimal-contact a:hover { color: var(--rg-cognac-deep); text-decoration: underline; }
+.header-minimal-contact small { color: var(--rg-muted); }
+/* .header-minimal-back-to-shop-button is al .btn-outline-primary -> erft
+   automatisch de site-brede kale-tekstlink-met-pijl-stijl (sectie 8). */
+
+/* ============================================================
+   49.12 CHECKOUT — "Heeft u al een account?"-banner
+   ============================================================ */
+.register-login-collapse-toogle {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--rg-cream);
+  border: 1px solid var(--rg-sand);
+  border-radius: var(--rg-r-fn);
+  padding: 0.9rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.register-login-collapse-toogle .icon-avatar svg use {
+  fill: var(--rg-green) !important;
+}
+.register-login-collapse-toogle .login-collapse-toggle {
+  color: var(--rg-cognac) !important;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+}
+.register-login-collapse-toogle .login-collapse-toggle:hover {
+  color: var(--rg-cognac-deep) !important;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)
+   ============================================================ */
+.address-main-header {
+  font-family: 'Playfair Display', serif;
+  color: var(--rg-green);
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+  margin-bottom: 1.5rem;
+}
+.register-card {
+  border: 1px solid var(--rg-sand) !important;
+  border-radius: var(--rg-r-xp) !important;
+  box-shadow: var(--rg-sh-soft) !important;
+}
+.register-card .card-body {
+  padding: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+.register-card .card-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--rg-green);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+/* "Uw adres"/"Uw afwijkende afleveradres" zijn eigen sub-secties bínnen
+   dezelfde kaart (native markup heeft geen aparte .card per blok) -- een
+   lijn + ruimte geeft ze hun eigen focus zonder HTML te hoeven splitsen. */
+.register-address,
+.register-shipping {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rg-sand);
+}
+.register-address .card-title,
+.register-shipping .card-title {
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+}
+
+/* ---- Formuliervelden: zelfde recept als het contactformulier (sectie
+   40b), hier los toegepast op de checkout-forms (register/login/adres) --
+   geen gedeeld :has()-anker zoals #cms-form-contact voorhanden. */
+.checkout-main .form-label {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--rg-green);
+}
+.checkout-main .form-control,
+.checkout-main .form-select {
+  width: 100%;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.95rem;
+  color: var(--rg-green) !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--rg-sand) !important;
+  border-radius: var(--rg-r-fn) !important;
+  box-shadow: none !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.checkout-main .form-control::placeholder { color: var(--rg-muted); }
+.checkout-main .form-control:focus,
+.checkout-main .form-select:focus {
+  border-color: var(--rg-green) !important;
+  box-shadow: 0 0 0 3px rgba(45, 69, 40, 0.12) !important;
+  outline: none !important;
+}
+.checkout-main .form-control:hover:not(:focus),
+.checkout-main .form-select:hover:not(:focus) {
+  border-color: #d8cfc0 !important;
+}
+.checkout-main .form-select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232d4528' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 1.05em;
+  padding-right: 2.6rem !important;
+}
+.checkout-main .form-check-input {
+  width: 18px; height: 18px; flex: none; margin: 0; float: none;
+  accent-color: var(--rg-green);
+}
+.checkout-main .form-check-label {
+  margin: 0; font-weight: 500; color: var(--rg-soft); font-size: 0.92rem;
+}
+.checkout-main input:-webkit-autofill,
+.checkout-main input:-webkit-autofill:hover,
+.checkout-main input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #2d4528;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  border: 1px solid var(--rg-sand) !important;
+}
+/* Privacy-/voorwaarden-links in de checkout-forms: cognac i.p.v. standaardblauw */
+.checkout-main .register-form a:not(.btn) {
+  color: var(--rg-cognac);
+}
+.checkout-main .register-form a:not(.btn):hover {
+  color: var(--rg-cognac-deep);
+}
+
+/* ============================================================
+   49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)
+   ============================================================ */
+.checkout-aside-summary {
+  background: var(--rg-cream);
+  border: 1px solid var(--rg-sand);
+  border-radius: var(--rg-r-xp);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+.checkout-aside-summary-header {
+  font-family: 'Playfair Display', serif;
+  color: var(--rg-green);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.checkout-aside-summary-label,
+.checkout-aside-summary-value {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--rg-soft);
+  font-size: 0.9rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.checkout-aside-summary-label.summary-net,
+.checkout-aside-summary-value.summary-net,
+.checkout-aside-summary-label.summary-tax,
+.checkout-aside-summary-value.summary-tax {
+  color: var(--rg-muted);
+  font-size: 0.82rem;
+}
+/* Eindtotaal = het visuele eindpunt: scheidingslijn erboven, groter/vetter */
+.checkout-aside-summary-label.checkout-aside-summary-total,
+.checkout-aside-summary-value.checkout-aside-summary-total {
+  color: var(--rg-green) !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  border-top: 1px solid var(--rg-sand);
+  margin-top: 0.5rem;
+  padding-top: 0.9rem;
+}
+
+/* "Winkelmandje"-recap onder de samenvatting: hergebruikt automatisch de
+   line-item- en configurator-table-styling hierboven (zelfde markup als de
+   offcanvas), alleen de context-scope is hier .checkout-aside i.p.v.
+   .cart-offcanvas. */
+.checkout-aside-products { margin-top: 2rem; }
+.checkout-aside-product-header {
+  font-family: 'Playfair Display', serif;
+  color: var(--rg-green);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.checkout-aside .line-item-img-container { border-radius: var(--rg-r-fn); overflow: hidden; box-shadow: var(--rg-sh-soft); }
+.checkout-aside .line-item-label { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--rg-green) !important; text-decoration: none !important; }
+.checkout-aside .line-item-label:hover { color: var(--rg-cognac) !important; }
+.checkout-aside .line-item-details-characteristics:not(:has(table)) { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: var(--rg-soft); margin: 0.25rem 0; }
+.checkout-aside .line-item-details-characteristics-option { font-weight: 600; color: var(--rg-ink); }
+.checkout-aside .line-item-ordernumber { font-size: 0.7rem; color: var(--rg-muted); }
+.checkout-aside .rg-price-detail.rg-price-detail--collapsed { display: none; }
+.checkout-aside .rg-price-detail-toggle {
+  background: none; border: none; padding: 0; margin: 0.3rem 0 0.5rem;
+  font-family: 'Montserrat', sans-serif; font-size: 0.76rem; font-weight: 600;
+  color: var(--rg-cognac); cursor: pointer; text-decoration: underline;
+}
+.checkout-aside .custom-configurator-table {
+  border-collapse: separate !important; border-spacing: 0 !important; margin-bottom: 0 !important;
+  border: 1px solid var(--rg-sand) !important; border-radius: var(--rg-r-fn); font-size: 0.78rem;
+}
+.checkout-aside .custom-configurator-table > thead > tr > *:first-child { border-top-left-radius: var(--rg-r-fn); }
+.checkout-aside .custom-configurator-table > thead > tr > *:last-child { border-top-right-radius: var(--rg-r-fn); }
+.checkout-aside .custom-configurator-table > tbody > tr:last-child > *:first-child { border-bottom-left-radius: var(--rg-r-fn); }
+.checkout-aside .custom-configurator-table > tbody > tr:last-child > *:last-child { border-bottom-right-radius: var(--rg-r-fn); }
+.checkout-aside .custom-configurator-table > thead > tr > * { background-color: var(--rg-green) !important; color: #fff !important; font-weight: 700 !important; padding: 0.5rem 0.65rem !important; border: none !important; }
+.checkout-aside .custom-configurator-table > tbody > tr > * { background-color: #fff !important; padding: 0.5rem 0.65rem !important; border-top: 1px solid var(--rg-sand) !important; border-bottom: none !important; }
+.checkout-aside table.custom-configurator-table { --bs-table-striped-bg: transparent !important; }
+.checkout-aside .line-item-total-price-value { font-weight: 700; color: var(--rg-green); }
+.checkout-aside .line-item-unit-price-label,
+.checkout-aside .line-item-total-price-label { font-family: 'Montserrat', sans-serif; font-size: 0.74rem; color: var(--rg-muted); }
+
+/* ============================================================
+   49.15 CHECKOUT — footer (.footer-minimal): bewust kaal/rustig
+   gelaten (minder uitgangen tijdens checkout = betere conversie),
+   alleen kleur/font passend gemaakt aan de merkstijl.
+   ============================================================ */
+.footer-minimal { background: var(--rg-cream); border-top: 1px solid var(--rg-sand); }
+.footer-minimal .footer-vat p,
+.footer-minimal .footer-copyright {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: var(--rg-muted) !important;
+}
+.footer-minimal .footer-vat a { color: var(--rg-cognac) !important; }
+.footer-minimal .footer-vat a:hover { color: var(--rg-cognac-deep) !important; }
+.footer-minimal .footer-copyright svg use { fill: var(--rg-muted) !important; }
+
+@media (max-width: 767.98px) {
+  .header-minimal-contact,
+  .header-minimal-back-to-shop { text-align: center; margin-top: 0.5rem; }
+}

@@ -1756,3 +1756,38 @@ function rgOnthulNaFonts(toon) {
   }
   rgOnthulNaFonts(toonHero);
 })();
+
+/* =====================================================================
+   WINKELMAND/CHECKOUT — prijsdetail-tabel inklapbaar
+   ---------------------------------------------------------------------
+   De regel-tabel (basisproduct + aantal/prijs/totaal) in de offcanvas-
+   cart en de checkout-cart-recap stond altijd volledig open -- vrij
+   dicht voor een quick-glance winkelmandje, terwijl .line-item-total-
+   price-value er al een kort regeltotaal boven toont. Nu standaard dicht
+   met een "Toon prijsdetails"-linkje. Draait op beide plekken (zelfde
+   .line-item-markup). MutationObserver omdat Shopware de offcanvas-
+   inhoud + de checkout-aside bij hoeveelheid-wijzigingen via AJAX
+   herrendert -- nieuwe tabellen moeten dan opnieuw hun toggle krijgen.
+   ===================================================================== */
+(function () {
+  function initToggles(root) {
+    (root || document).querySelectorAll('.line-item-details-characteristics').forEach(function (wrap) {
+      if (wrap.dataset.rgToggled || !wrap.querySelector('table.custom-configurator-table')) return;
+      wrap.dataset.rgToggled = '1';
+      wrap.classList.add('rg-price-detail', 'rg-price-detail--collapsed');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'rg-price-detail-toggle';
+      btn.textContent = 'Toon prijsdetails';
+      btn.addEventListener('click', function () {
+        var collapsed = wrap.classList.toggle('rg-price-detail--collapsed');
+        btn.textContent = collapsed ? 'Toon prijsdetails' : 'Verberg prijsdetails';
+      });
+      wrap.parentNode.insertBefore(btn, wrap);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function () { initToggles(); });
+  if (window.MutationObserver) {
+    new MutationObserver(function () { initToggles(); }).observe(document.body, { childList: true, subtree: true });
+  }
+})();
