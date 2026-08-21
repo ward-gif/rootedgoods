@@ -9717,8 +9717,9 @@ h2.rg-route__team-title{
    stond hiervoor ongelimiteerd/edge-to-edge, wat op brede schermen
    uitgerekt en leeg oogde. */
 .checkout-container {
-  max-width: 1600px;
-  margin: 0 auto;
+  max-width: 1600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 /* Ruimte tussen de header-bar en de kop verkleind (native .container-main
    had 20px padding-top, hier tot bijna niks teruggebracht) -- alleen
