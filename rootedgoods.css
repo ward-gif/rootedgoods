@@ -963,11 +963,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     border-top: 1px solid #EAE3D7;
   }
 
-  /* ---- Snelkoppelingen + primaire CTA (JS vult .navigation-offcanvas-
-     actions, hier alleen de styling). "Offerte aanvragen" = sitebrede
-     primaire pil (cognac); FAQ/Contact = kale secundaire tekstlink --
-     zelfde hiërarchie-conventie als overal elders op de site. */
+  /* ---- Snelkoppelingen + CTA onderaan (JS vult .navigation-offcanvas-
+     actions, hier alleen de styling + de volgorde). Stond eerst bovenaan
+     als eerste child van .offcanvas-body -- op verzoek naar onderen, ná de
+     categorieën/Thema's-kaart. Beide directe children van .offcanvas-body
+     zijn native block-elementen (geen flex) -- hier zelf flex-column +
+     order gezet om zonder DOM-verplaatsing te herschikken. */
+  .offcanvas.navigation-offcanvas .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+  }
   .navigation-offcanvas-actions {
+    order: 2;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -975,21 +982,28 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     margin-top: 0.5rem;
     border-top: 1px solid #EAE3D7;
   }
+  .navigation-offcanvas-container {
+    order: 1;
+  }
+  /* "Offerte aanvragen" blijft staan maar subtieler: outline-pil i.p.v.
+     de volle cognac-vlak-knop (die stond te zwaar tussen de tekstlinks
+     in een hamburgermenu). */
   .rg-offcanvas-cta {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.9rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 999px;
-    background: #ad6331;
-    color: #fff !important;
+    border: 1.5px solid #ad6331;
+    background: transparent;
+    color: #ad6331 !important;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.92rem;
+    font-weight: 600;
+    font-size: 0.88rem;
     text-decoration: none !important;
   }
   .rg-offcanvas-cta:hover {
-    background: #955529;
+    background: rgba(173, 99, 49, 0.08);
   }
   .rg-offcanvas-quicklink {
     display: block;
