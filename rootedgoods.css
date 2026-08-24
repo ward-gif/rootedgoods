@@ -805,7 +805,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .top-bar-nav {
     justify-content: center !important;
   }
-  .top-bar-nav .top-bar-nav-extension {
+  .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
     display: none !important;
   }
 }
@@ -1567,9 +1567,11 @@ img {
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
   overflow: visible !important;
-  padding-top: 5rem !important;   /* was Shopware's eigen 1rem, wat krap.
-    Geldt alleen effectief <992px -- vanaf 992px wint sectie 30's latere
-    eigen padding-regel (24px calc(...)+80px 0) op dezelfde selector. */
+  padding-top: 1.75rem !important;   /* was 5rem -- te veel lucht tussen
+    titel en slider op mobiel/tablet, teruggebracht naar hetzelfde ritme
+    als de andere sectie-koppen. Geldt alleen effectief <992px -- vanaf
+    992px wint sectie 30's latere eigen padding-regel (24px calc(...)+80px 0)
+    op dezelfde selector. */
 }
 
 /* TinySlider's clip-containers: horizontaal NIET clippen, zodat kaarten links
@@ -1662,14 +1664,30 @@ img {
     padding-top: 6px !important;
     padding-bottom: 6px !important;
   }
+  /* Titel boven de slider: was ongestyled (Shopware's eigen kale
+     tekst-editor-look, veel te groot t.o.v. de rest van de site) --
+     zelfde schaal/gewicht/kleur als de andere sectie-koppen
+     (.rg-cat-heading, sectie 41.2), via de bestaande sibling-selector. */
+  .cms-block-text:has(+ .cms-block-product-slider) h2 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.018em !important;
+    line-height: 1.15 !important;
+    color: #2d4528 !important;
+    font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem) !important;
+    margin: 0 0 0.35rem !important;
+    text-wrap: balance;
+  }
   /* "Bekijk alle producten" verplaatst naar onder de tegels, zie
      rootedgoods.js 2.0b -- volwaardige, gecentreerde volle-breedte-knop
-     i.p.v. de kale tekstlink die erboven wordt gebruikt. */
+     i.p.v. de kale tekstlink die erboven wordt gebruikt. Top-marge
+     verkleind (was 1.25rem, samen met .home-productslider's eigen 40px
+     hover-shadow-padding erboven voelde dat als een dubbele lege strook). */
   .rg-slider-cta-moved {
     display: flex !important;
     justify-content: center;
     width: calc(100% - 30px);
-    margin: 1.25rem 15px 2rem !important;
+    margin: 0.25rem 15px 2rem !important;
   }
 }
 
@@ -6190,8 +6208,17 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    volledig losgekoppeld van de grid-rij-hoogte (zie die media-comment). */
 .rg-hero-v2__copy-wrap { display: contents; }
 .rg-hero-v2__copy-top { order: 1; }
-.rg-hero-v2__mosaic { order: 2; }
-.rg-hero-v2__copy-bottom { order: 3; }
+.rg-hero-v2__mosaic { order: 3; }
+.rg-hero-v2__copy-bottom { order: 4; }
+/* Onder 992px valt copy-bottom zelf ook "plat" (net als copy-wrap
+   hierboven): de CTA-knoppen en de Richard-regel worden dan APARTE
+   grid-items van .rg-hero-v2__inner, zodat ze los van elkaar geordend
+   kunnen worden -- knoppen vóór de mozaïek, Richard erna. */
+@media (max-width: 991px) {
+  .rg-hero-v2__copy-bottom { display: contents; }
+  .rg-hero-v2__cta { order: 2; }
+  .rg-hero-v2 .rg-cta__contact { order: 4; }
+}
 
 /* Onzichtbaar tot webfonts geladen zijn -- zelfde patroon als .is-hero-klaar
    bij de Over-ons-hero: fallback-serif/sans heeft andere lettermetriek dan
@@ -6226,7 +6253,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      geheel -- consistent met de rest van de gecentreerde mobiele hero. De
      eigen text-align:left (verderop) regelt alleen de tekst BINNEN de
      kaart, niet de positie van de kaart zelf. */
-  .rg-hero-v2__cta { flex-direction: column; align-items: stretch; margin-bottom: 0; }
+  .rg-hero-v2__cta { flex-direction: column; align-items: stretch; gap: 1rem; margin-bottom: 0; }
   .rg-hero-v2__cap-label { display: none; }
 }
 
@@ -9296,7 +9323,13 @@ h2.rg-route__team-title{
   margin-top: clamp(2rem, 5vh, 4rem);
 }
 .footer-main .container {
-  padding: clamp(2.5rem, 5vh, 4rem) 40px clamp(1.5rem, 3vh, 2.5rem);
+  /* Top-padding was even groot als .footer-main's eigen margin-top erboven
+     (beide clamp(...,4rem)) -- op deze pagina zijn eind-cta en footer
+     allebei donkergroen, dus geen visuele grens breekt dat op: de twee
+     stapelden op tot een dubbel zo grote, ongebroken groene leegte vóór
+     "CONTACT". Verkleind: margin-top blijft de hoofd-scheiding, dit is
+     alleen nog wat lucht voor de kolomkoppen zelf. */
+  padding: clamp(1.25rem, 3vh, 2rem) 40px clamp(1.5rem, 3vh, 2.5rem);
 }
 @media (max-width: 575px) {
   .footer-main .container { padding-left: 15px; padding-right: 15px; }
@@ -9384,8 +9417,18 @@ h2.rg-route__team-title{
 }
 
 /* Mobiel accordion: plus/minus-icoon is een inline SVG met fill="#758CA3"
-   (grijsblauw) -- op donkergroen bijna onleesbaar, wit overschreven. */
-.footer-column-toggle svg use { fill: #fff !important; }
+   (grijsblauw) -- op donkergroen bijna onleesbaar, wit overschreven. Alle
+   drie de mogelijke tekenlagen (svg/use/path) meegepakt, niet alleen
+   <use>, anders blijft 'm net niet zuiver wit ogen. */
+.footer-column-toggle svg,
+.footer-column-toggle svg use,
+.footer-column-toggle svg path { fill: #fff !important; }
+
+/* Scheidingslijntje tussen de accordion-rijen: was Shopware's eigen
+   grijsblauwe randkleur (#BCC1C7), op donkergroen te hard/koud.
+   Subtielere, warmere tint die bij het donkergroen past, net genoeg om
+   de rijen te scheiden. */
+.footer-column { border-bottom-color: rgba(255, 255, 255, 0.14) !important; }
 
 /* Onderbalk: een tint dieper (--rg-green-deep) i.p.v. een lijn als
    scheiding. BTW-notitie + copyright naast elkaar i.p.v. los gestapeld.
@@ -9410,13 +9453,23 @@ h2.rg-route__team-title{
 @media (max-width: 575px) {
   .footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    /* Was align-items:flex-start -- de BTW-tekst en copyright stonden
+       daardoor plat tegen de linkerkant i.p.v. gecentreerd, ook al had
+       de tekst zelf al text-align:center (dat centreert alleen ín de box,
+       niet de box zelf in de rij). */
+    align-items: center;
     padding-left: 15px;
     /* Extra ruimte rechts: de fixed scroll-up-knop (48px + eigen offset)
        zweeft rechtsonder over de pagina en overlapte hier anders de
        (op mobiel 2-regelige) BTW-tekst. */
     padding-right: 72px;
   }
+  .footer-vat,
+  .footer-copyright {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-copyright { justify-content: center; }
 }
 .footer-vat { margin: 0; order: 1; }
 .footer-vat p { margin: 0; font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.7); }
