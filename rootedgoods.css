@@ -825,7 +825,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      de knop collapt 'm, het icoon zelf is met vaste px-afmetingen
      opgebouwd (geen em) en blijft dus onaangetast. */
   .navigation-offcanvas .offcanvas-close.js-offcanvas-close {
-    font-size: 0;
+    font-size: 0 !important;
     padding: 0.5rem !important;
     min-width: 0 !important;
   }
