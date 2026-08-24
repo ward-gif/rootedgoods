@@ -8,10 +8,11 @@
  *                           (mobiel hide/show, desktop sticky topbar/nav), 1.3 flyout CTA,
  *                           1.4 offerteknop (header-actions), 1.4b nav-main
  *                           zonder title-tooltip, 1.4c offcanvas-menu (mobiel:
- *                           categorieën-toggle/Thema's-relabel/snelkoppelingen),
- *                           1.4d mobiel-header logo centreren, 1.5 Cal.com-embed
- *                           lazy-load, 1.6 over-ons "Route" (SVG/GSAP), 1.6b
- *                           over-ons hero-fit
+ *                           tegel-rij/headline-relabel/snelkoppelingen),
+ *                           1.4d mobiel-header logo centreren, 1.4e topbar
+ *                           USP-slider (mobiel), 1.5 Cal.com-embed lazy-load,
+ *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons
+ *                           hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
  *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.2
  *                           productslider tegel-click, 2.4 hero-v2 hoogte-fit
@@ -448,6 +449,60 @@ document.addEventListener('DOMContentLoaded', function () {
       zet(searchCol, 'overflow', 'hidden');
     });
   }
+});
+
+
+/* ---- 1.4e Topbar USP-slider (mobiel/tablet <992px)
+ * Verticale slide-up-cycler i.p.v. de eerder teruggedraaide horizontale
+ * marquee (zie CSS-sectie 5 voor de aanleiding). Simpeler en robuuster:
+ * vaste regelhoogte, geen breedte-/naad-berekening -- alleen een
+ * transform:translateY die twee elementen tegelijk verplaatst. Bouwt de
+ * viewport 1x uit de bestaande 4 USP-containers (leest de content, geen
+ * herhaalde DOM-queries per cyclus) en zet daarna gewoon een interval. */
+document.addEventListener('DOMContentLoaded', function () {
+  var ext = document.querySelector('.top-bar-nav .top-bar-nav-extension');
+  if (!ext || document.querySelector('.rg-usp-slider')) return;
+
+  var usps = [];
+  ext.querySelectorAll('.top-bar-container').forEach(function (c) {
+    if (c.classList.contains('container--5')) return;
+    var html = c.innerHTML.trim();
+    if (html) usps.push(html);
+  });
+  if (usps.length < 2) return;
+
+  var viewport = document.createElement('div');
+  viewport.className = 'rg-usp-slider';
+  viewport.setAttribute('aria-live', 'off');   // decoratief, geen a11y-aankondigingen per wissel
+
+  var huidig = document.createElement('div');
+  huidig.className = 'rg-usp-slider-item';
+  huidig.innerHTML = usps[0];
+  viewport.appendChild(huidig);
+  ext.parentNode.insertBefore(viewport, ext.nextSibling);
+
+  var index = 0;
+  setInterval(function () {
+    index = (index + 1) % usps.length;
+
+    var nieuw = document.createElement('div');
+    nieuw.className = 'rg-usp-slider-item rg-usp-slider-item--incoming';
+    nieuw.innerHTML = usps[index];
+    viewport.appendChild(nieuw);
+
+    // Force reflow zodat de --incoming startpositie echt gerenderd is
+    // vóórdat de animate-klasse (met transition) erbij komt -- anders
+    // ziet de browser het als 1 stap en is er niks te animeren.
+    void nieuw.offsetHeight;
+
+    huidig.classList.add('rg-usp-slider-item--animate', 'rg-usp-slider-item--outgoing');
+    nieuw.classList.add('rg-usp-slider-item--animate');
+    nieuw.classList.remove('rg-usp-slider-item--incoming');
+
+    var oud = huidig;
+    huidig = nieuw;
+    setTimeout(function () { oud.remove(); }, 550);
+  }, 3500);
 });
 
 

@@ -783,13 +783,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
 }
 
-/* ---- Topbar-USP op mobiel/tablet (<992px): één statische regel, geen
-   marquee (de vorige auto-scroll-versie toonde grotendeels een lege balk
-   en is teruggedraaid -- een tweede scroll-loop-poging zonder nieuwe
-   informatie over de oorzaak zou puur gokken zijn). "Gratis offerte op
-   maat" gekozen omdat 'ie direct aansluit op de primaire CTA verderop in
-   het offcanvas-menu. Rest + de overbodige utility-links (Blog/FAQ/Contact,
-   staan al als snelkoppeling in het menu) verborgen. */
+/* ---- Topbar-USP op mobiel/tablet (<992px): verticale slide-up-cycler
+   (JS bouwt 'm, rootedgoods.js 1.4c) -- ander mechanisme dan de eerder
+   teruggedraaide auto-scroll-marquee. Die faalde op een fragiele
+   HORIZONTALE naadloze-loop-breedteberekening; dit is een simpele,
+   robuuste VERTICALE stapel met vaste regelhoogte (geen breedte-
+   afhankelijke wiskunde) -- zelfde soort ticker als Caraway gebruikt:
+   de nieuwe USP schuift omhoog terwijl de vorige gelijktijdig omhoog
+   wegschuift, geen los scroll-tempo of naad om mis te gaan. De 4 losse
+   statische containers blijven verborgen op mobiel; de slider is de
+   enige zichtbare versie daar. Utility-links (Blog/FAQ/Contact, staan
+   al als snelkoppeling in het offcanvas-menu) blijven ook verborgen. */
 @media (max-width: 991px) {
   .top-bar.d-none.d-lg-block {
     display: block !important;
@@ -801,12 +805,42 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .top-bar-nav {
     justify-content: center !important;
   }
-  .top-bar-nav .top-bar-container:not(.container--2) {
+  .top-bar-nav .top-bar-nav-extension {
     display: none !important;
   }
-  .top-bar-nav .top-bar-container.container--2 {
-    text-align: center !important;
+}
+.rg-usp-slider {
+  display: none;
+}
+@media (max-width: 991px) {
+  .rg-usp-slider {
+    display: block;
+    position: relative;
+    height: 1.35em;
+    overflow: hidden;
     font-size: 0.78rem;
+    text-align: center;
+  }
+}
+.rg-usp-slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+}
+.rg-usp-slider-item--incoming {
+  transform: translateY(100%);
+}
+.rg-usp-slider-item--animate {
+  transition: transform 0.5s ease;
+}
+.rg-usp-slider-item--outgoing {
+  transform: translateY(-100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-usp-slider-item--animate {
+    transition: none;
   }
 }
 
