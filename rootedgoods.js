@@ -311,12 +311,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function labelThemaKaart(list) {
-    var naam = list.querySelector('.navigation-offcanvas-list-item a[href$="/alle-thema-s"] [itemprop="name"]');
-    if (naam && !naam.dataset.rgRelabeled) {
-      naam.dataset.rgRelabeled = '1';
-      naam.textContent = 'Shop op thema';
-    }
+  /* Twee uitgelichte tegels naast elkaar bovenaan: de bestaande native
+     Thema's-link (hergebruikt, niet gekloond -- click-gedrag blijft
+     intact) + een tweede, door ons zelf samengestelde "Trending"-tegel.
+     Geen backend-mechanisme voor dit laatste (de offcanvas-lijst heeft
+     geen afbeeldingsveld in dit thema) -- vaste link + afbeelding, zelfde
+     aanpak als de Thema's-tegel al had. */
+  function bouwUitgelichteTegels(list) {
+    if (list.dataset.rgTegels) return;
+    var themaLi = list.querySelector('.navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"])');
+    var themaLink = themaLi ? themaLi.querySelector('a[href$="/alle-thema-s"]') : null;
+    if (!themaLink) return;
+    list.dataset.rgTegels = '1';
+
+    var naam = themaLink.querySelector('[itemprop="name"]');
+    if (naam) naam.textContent = 'Shop op thema';
+    themaLink.classList.add('rg-offcanvas-tile', 'rg-offcanvas-tile--thema');
+
+    var trending = document.createElement('a');
+    trending.href = '/eindejaarsgeschenken';
+    trending.className = 'rg-offcanvas-tile rg-offcanvas-tile--trending';
+    trending.innerHTML =
+      '<span class="rg-offcanvas-tile-eyebrow">Trending</span>' +
+      '<span class="rg-offcanvas-tile-title">Kerst &amp; eindejaar</span>';
+
+    var rij = document.createElement('li');
+    rij.className = 'navigation-offcanvas-list-item rg-offcanvas-featured-row';
+    var grid = document.createElement('div');
+    grid.className = 'rg-offcanvas-featured-grid';
+    grid.appendChild(themaLink);   // verhuist de bestaande link, geen kloon
+    grid.appendChild(trending);
+    rij.appendChild(grid);
+
+    list.prepend(rij);
+    themaLi.remove();   // lege <li> die overblijft nadat de link verhuisde
   }
 
   function bouwCategorieToggle(list) {
@@ -348,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var nav = panel.querySelector('.navigation-offcanvas-actions');
       var list = panel.querySelector('.navigation-offcanvas-list');
       if (nav) vulSnelkoppelingen(nav);
-      if (list) { labelThemaKaart(list); bouwCategorieToggle(list); }
+      if (list) { bouwUitgelichteTegels(list); bouwCategorieToggle(list); }
     });
   }
   offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat

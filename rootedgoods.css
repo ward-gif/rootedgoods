@@ -847,9 +847,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 
   /* ---- Categorieën: standaard ingeklapt achter een checkbox-toggle ----
      Puur CSS (:has() op de checkbox), geen click-listener. Alles behalve
-     de uitgelichte Thema's-kaart en de toggle zelf is verborgen tot de
+     de uitgelichte tegel-rij en de toggle zelf is verborgen tot de
      checkbox aan staat. */
-  .navigation-offcanvas-list-item:not(:has(a[href$="/alle-thema-s"])):not(.rg-offcanvas-cats-toggle-item) {
+  .navigation-offcanvas-list-item:not(.rg-offcanvas-featured-row):not(.rg-offcanvas-cats-toggle-item) {
     display: none;
   }
   .navigation-offcanvas-list:has(.rg-cats-checkbox:checked) .navigation-offcanvas-list-item {
@@ -899,40 +899,62 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     transform: rotate(180deg);
   }
 
-  /* ---- Thema's-kaart: eigen curated landingspagina, onderscheiden van de
-     gelijknamige echte productcategorie verderop (JS herlabelt 'm naar
-     "Shop op thema"). Altijd zichtbaar, ook ingeklapt. Achtergrondfoto
-     hergebruikt de bestaande "Events & conferenties"-thema-afbeelding
-     (zelfde bestand als blokken/thema-tegels-home.html) -- geen nieuw
-     beeldmateriaal nodig. LET OP: dev-domein, bijwerken bij go-live naar
-     rootedgoods.eu (zie project_golive_domain_switch). */
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) {
+  /* ---- Uitgelichte tegel-rij: Thema's (eigen curated landingspagina,
+     onderscheiden van de gelijknamige echte productcategorie verderop --
+     JS herlabelt 'm naar "Shop op thema") + Trending (vaste link/foto,
+     zie rootedgoods.js 1.4c -- geen backend-mechanisme hiervoor, zie
+     projectnotitie). Altijd zichtbaar, ook ingeklapt. Achtergrondfoto's
+     hergebruiken bestaand beeldmateriaal (zelfde bestanden als
+     blokken/thema-tegels-home.html), geen nieuw materiaal nodig. LET OP:
+     dev-domein, bijwerken bij go-live naar rootedgoods.eu (zie
+     project_golive_domain_switch). */
+  .rg-offcanvas-featured-row {
     order: -2;
     margin: 0 1rem 0.5rem;
+    list-style: none;
   }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link {
+  .rg-offcanvas-featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .rg-offcanvas-tile {
     display: flex;
     align-items: flex-end;
-    min-height: 150px;
+    min-height: 130px;
     border-radius: 14px;
-    padding: 1.1rem 1.2rem !important;
-    background:
+    padding: 0.85rem !important;
+    background-size: cover;
+    background-position: center;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+  .rg-offcanvas-tile--thema {
+    background-image:
       linear-gradient(to top, rgba(20, 30, 15, 0.88), rgba(20, 30, 15, 0.15) 65%),
-      url('https://bambook.08.promidata.shop/media/c0/ba/fe/1785442349/Events-2.jpg') center / cover;
-    color: #fff !important;
+      url('https://bambook.08.promidata.shop/media/c0/ba/fe/1785442349/Events-2.jpg');
   }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link [itemprop="name"] {
-    color: #fff !important;
-    font-size: 1.05rem;
-    font-weight: 700;
+  .rg-offcanvas-tile--trending {
+    background-image:
+      linear-gradient(to top, rgba(45, 15, 10, 0.88), rgba(45, 15, 10, 0.15) 65%),
+      url('https://bambook.08.promidata.shop/media/d8/96/ae/1786435459/Kerst%20en%20eindejaar.jpg');
   }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link::after {
-    content: "Ontdek cadeaus per gelegenheid";
+  .rg-offcanvas-tile [itemprop="name"],
+  .rg-offcanvas-tile-title {
     display: block;
-    font-size: 0.78rem;
-    font-weight: 500;
+    color: #fff !important;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .rg-offcanvas-tile-eyebrow {
+    display: block;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #e9c9a9;
-    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
   }
 
   /* ---- Merken/Services/Over ons: gedemoot onder een eyebrow-label,
