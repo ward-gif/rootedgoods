@@ -820,14 +820,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .navigation-offcanvas .offcanvas-header {
     border-bottom: 1px solid #EAE3D7;
   }
+  /* "Categorieën"-titel weg op verzoek -- de hoofdcategorieën staan er
+     nu gewoon meteen open, geen kop nodig. */
   .navigation-offcanvas .navigation-offcanvas-headline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #8c857a;
-    margin: 1.2rem 0 0.6rem;
+    display: none;
   }
   .navigation-offcanvas-link,
   .navigation-offcanvas-link [itemprop="name"] {
@@ -845,59 +841,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     fill: #8c857a !important;
   }
 
-  /* ---- Categorieën: standaard ingeklapt achter een checkbox-toggle ----
-     Puur CSS (:has() op de checkbox), geen click-listener. Alles behalve
-     de uitgelichte tegel-rij en de toggle zelf is verborgen tot de
-     checkbox aan staat. */
-  .navigation-offcanvas-list-item:not(.rg-offcanvas-featured-row):not(.rg-offcanvas-cats-toggle-item) {
-    display: none;
-  }
-  .navigation-offcanvas-list:has(.rg-cats-checkbox:checked) .navigation-offcanvas-list-item {
-    display: list-item;
-  }
-
-  /* ---- Toggle-knop (JS voegt de <li> toe als eerste child van de <ul>) --- */
-  .rg-offcanvas-cats-toggle-item {
-    order: -1;
-    list-style: none;
-  }
-  .rg-offcanvas-cats-toggle-label {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    width: 100%;
-    margin: 0.4rem 0 0.2rem;
-    padding: 0.7rem 0.2rem;
-    border-top: 1px solid #EAE3D7;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #2d4528;
-    cursor: pointer;
-  }
-  .rg-offcanvas-cats-toggle-label .rg-cats-checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .rg-offcanvas-cats-toggle-label::after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    margin-left: auto;
-    background-color: currentColor;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
-    transition: transform 0.2s ease;
-  }
-  .rg-offcanvas-cats-toggle-label:has(.rg-cats-checkbox:checked) {
-    color: #ad6331;
-  }
-  .rg-offcanvas-cats-toggle-label:has(.rg-cats-checkbox:checked)::after {
-    transform: rotate(180deg);
-  }
+  /* ---- Categorieën: de inklap-toggle is op verzoek weer weg -- de
+     hoofdcategorieën staan nu gewoon altijd open (sub-categorieën blijven
+     wél achter hun eigen klik, dat is Shopware's eigen drill-down-gedrag
+     en wordt hier niet aangeraakt). */
 
   /* ---- Uitgelichte tegel-rij: Thema's (eigen curated landingspagina,
      onderscheiden van de gelijknamige echte productcategorie verderop --
@@ -972,17 +919,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     color: #8c857a !important;
     font-size: 0.85rem;
   }
-  .navigation-offcanvas-list-item:has(a[href$="/merken/"])::before {
-    content: "Meer op de site";
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #ad6331;
-    padding-top: 0.75rem;
-    margin: 1rem 0 0.4rem;
+  /* "Meer op de site"-label op verzoek weg; het lijntje erboven blijft
+     staan als visuele scheiding van de categorieën erboven. */
+  .navigation-offcanvas-list-item:has(a[href$="/merken/"]) {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
     border-top: 1px solid #EAE3D7;
   }
 

@@ -280,18 +280,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 1.4c Offcanvas-menu (mobiel): categorieën-toggle + Thema's-relabel +
- * snelkoppelingen. Vervangt de teruggedraaide §2.1b/c/d (zie CSS-sectie 6b
- * voor de aanleiding). Kernverschil met de vorige, kapotte versie: de
- * toggle wordt als EERSTE CHILD van de <ul> ingevoegd (list.prepend), nooit
- * als sibling ervoor -- CSS `order` herschikt alleen children van dezelfde
- * ouder, dus dit is de daadwerkelijke fix, geen cosmetische herhaling.
- * Open/dicht gaat volledig via CSS (:has() op de checkbox, zie CSS-sectie
- * 6c) -- geen click-listener die stil kan falen. Defensief herhaald bij elke
- * offcanvas-open (niet alleen 1x bij page-load) omdat Shopware terug-
- * navigatie in een submenu via een nieuwe content-render doet; de dataset-
- * vlaggen maken elke stap idempotent. .d-none-voorouder (Shopware's eigen
- * cache-node voor de root-lijst) wordt bewust overgeslagen. */
+/* ---- 1.4c Offcanvas-menu (mobiel): uitgelichte tegel-rij (Thema's +
+ * Trending) + snelkoppelingen. Vervangt de teruggedraaide §2.1b/c/d (zie
+ * CSS-sectie 6b voor de aanleiding). De categorieën-inklap-toggle die
+ * hier eerder stond is op verzoek weer verwijderd -- categorieën staan nu
+ * gewoon altijd open. Defensief herhaald bij elke offcanvas-open (niet
+ * alleen 1x bij page-load) omdat Shopware terug-navigatie in een submenu
+ * via een nieuwe content-render doet; de dataset-vlaggen maken elke stap
+ * idempotent. .d-none-voorouder (Shopware's eigen cache-node voor de
+ * root-lijst) wordt bewust overgeslagen. */
 document.addEventListener('DOMContentLoaded', function () {
   var QUICKLINKS = [
     { href: '/faq', label: 'Veelgestelde vragen', cta: false },
@@ -347,36 +344,13 @@ document.addEventListener('DOMContentLoaded', function () {
     themaLi.remove();   // lege <li> die overblijft nadat de link verhuisde
   }
 
-  function bouwCategorieToggle(list) {
-    if (list.dataset.rgToggle) return;
-    list.dataset.rgToggle = '1';
-
-    var li = document.createElement('li');
-    li.className = 'navigation-offcanvas-list-item rg-offcanvas-cats-toggle-item';
-
-    var label = document.createElement('label');
-    label.className = 'rg-offcanvas-cats-toggle-label';
-
-    var checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'rg-cats-checkbox';
-
-    var tekst = document.createElement('span');
-    tekst.textContent = 'Alle categorieën';
-
-    label.appendChild(checkbox);
-    label.appendChild(tekst);
-    li.appendChild(label);
-    list.prepend(li);   // echte child van de <ul>, geen sibling ervoor
-  }
-
   function offcanvasKlaar() {
     document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
       if (panel.closest('.d-none')) return;
       var nav = panel.querySelector('.navigation-offcanvas-actions');
       var list = panel.querySelector('.navigation-offcanvas-list');
       if (nav) vulSnelkoppelingen(nav);
-      if (list) { bouwUitgelichteTegels(list); bouwCategorieToggle(list); }
+      if (list) bouwUitgelichteTegels(list);
     });
   }
   offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
