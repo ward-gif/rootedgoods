@@ -853,7 +853,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
     content: "Categorieën";
-    margin: 0.9rem 0 0.3rem;
+    margin: 0.9rem 0 0.3rem 1rem;
   }
   .navigation-offcanvas-link,
   .navigation-offcanvas-link [itemprop="name"] {
