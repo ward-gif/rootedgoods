@@ -5081,6 +5081,17 @@ img.rg-europe-map__svg {
   .rg-europe-map__pin::after { animation: none !important; opacity: 0 !important; }
 }
 
+/* Mobiel: de kaart zelf schaalt mee (width:100%), maar de pins waren
+   vaste pixelmaten -- op een smal scherm oogden ze verhoudingsgewijs te
+   groot/dominant tegenover de (nu kleinere) kaart. */
+@media (max-width: 767px) {
+  .rg-europe-map__pin {
+    width: 9px;
+    height: 9px;
+    box-shadow: 0 0 0 4px rgba(202, 133, 63, 0.18);
+  }
+}
+
 /* Mobiel: stack (tekst boven, kaart onder), compact. DOM-volgorde geeft
    vanzelf: eyebrow -> kop -> subkop -> knop -> reassurance -> kaart. */
 @media (max-width: 991px) {
