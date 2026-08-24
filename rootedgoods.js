@@ -344,11 +344,23 @@ document.addEventListener('DOMContentLoaded', function () {
     themaLi.remove();   // lege <li> die overblijft nadat de link verhuisde
   }
 
+  /* Native "categorieën"-headline hergebruikt als label boven de tegel-
+     rij (staat er toevallig al precies goed voor, zie CSS-sectie 6c) --
+     alleen de tekst hoeft aangepast, geen nieuw element nodig. */
+  function herlabelHeadline(panel) {
+    var headline = panel.querySelector('.navigation-offcanvas-headline');
+    if (headline && !headline.dataset.rgRelabeled) {
+      headline.dataset.rgRelabeled = '1';
+      headline.textContent = 'Nu populair';
+    }
+  }
+
   function offcanvasKlaar() {
     document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
       if (panel.closest('.d-none')) return;
       var nav = panel.querySelector('.navigation-offcanvas-actions');
       var list = panel.querySelector('.navigation-offcanvas-list');
+      herlabelHeadline(panel);
       if (nav) vulSnelkoppelingen(nav);
       if (list) bouwUitgelichteTegels(list);
     });

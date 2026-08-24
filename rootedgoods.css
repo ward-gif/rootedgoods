@@ -829,19 +829,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     padding: 0.5rem !important;
     min-width: 0 !important;
   }
-  /* Native "categorieën"-headline blijft verborgen -- zit als sibling
-     VÓÓR de <ul>, dus zou altijd boven de tegels landen i.p.v. boven de
-     categorieën specifiek. Losse eigen labeltjes hieronder (::before op
-     de tegel-rij en op "Alle Producten") geven wél de gevraagde structuur,
-     zonder dat structuurprobleem. Beide subtiel: klein, dun, gedempt --
-     zelfde soort taal als "BEST SELLERS"/"EXPLORE CATEGORIES" in de
-     Caraway/Intelligent Change-voorbeelden. */
+  /* Native "categorieën"-headline zit als sibling VÓÓR de <ul> -- landt
+     daardoor altijd boven het EERSTE dat in de lijst staat, en dat is nu
+     de tegel-rij (order:-2). Precies waar "Nu populair" moet staan, dus
+     hergebruikt (herlabeld via JS, rootedgoods.js 1.4c) i.p.v. verborgen +
+     een nieuw element ernaast gebouwd. Voor "Categorieën" bestaat geen
+     vergelijkbaar native element op de juiste positie (tussen tegels en
+     lijst, ín de <ul>) -- die blijft een eigen ::before-label. Beide
+     subtiel: klein, dun, gedempt -- zelfde soort taal als "BEST SELLERS"/
+     "EXPLORE CATEGORIES" in de Caraway/Intelligent Change-voorbeelden. */
   .navigation-offcanvas .navigation-offcanvas-headline {
-    display: none;
-  }
-  .rg-offcanvas-featured-row::before,
-  .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
-    content: "Nu populair";
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7rem;
@@ -849,10 +846,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #8c857a;
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.5rem 1rem;
   }
   .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
     content: "Categorieën";
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8c857a;
     margin: 0.9rem 0 0.3rem 1rem;
   }
   .navigation-offcanvas-link,
