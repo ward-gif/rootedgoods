@@ -769,28 +769,50 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 
 /* ---- Logo centreren <576px: hamburger-kolom verhuist vóór het logo (zie
-   rootedgoods.js 1.4d, één element, één keer). :not(:has(...)) laat de
-   nowrap-regel los zodra de zoek-collapse openklapt, zodat dat bestaande
-   gedrag (volle breedte eronder) niet verstoord wordt. */
+   rootedgoods.js 1.4d, één element, één keer). Bootstraps eigen
+   order-*/col-*-klassen op deze kolommen zijn net zo specifiek als onze
+   overrides (of winnen door bron-volgorde) -- !important nodig, zelfde
+   valkuil als eerder deze sessie herhaaldelijk gezien. .header-search-col
+   bevat het zoekformulier: Bootstraps collapse klapt alleen de HOOGTE in
+   (niet de breedte), dus zonder expliciete width:0 bleef 'ie zijn volle
+   content-breedte claimen in de nieuwe nowrap-rij, ook terwijl "dicht". */
 @media (max-width: 575.98px) {
-  .header-row:not(:has(.header-search-col .collapse.show)):not(:has(.header-search-col .collapsing)) {
-    flex-wrap: nowrap;
+  .header-row {
+    flex-wrap: nowrap !important;
   }
   .header-row .header-logo-col {
-    order: 2;
-    flex: 1 1 auto;
-    min-width: 0;
+    order: 2 !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
     text-align: center;
   }
   .header-row .header-actions-col {
-    order: 3;
-    flex: 0 0 auto;
+    order: 3 !important;
+    flex: 0 0 auto !important;
     width: auto !important;
   }
   .header-row .rg-header-hamburger-slot {
-    order: 1;
-    flex: 0 0 auto;
+    order: 1 !important;
+    flex: 0 0 auto !important;
     width: auto !important;
+  }
+  .header-row .header-search-col {
+    order: 4 !important;
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  .header-row .header-search-col:has(.collapse.show),
+  .header-row .header-search-col:has(.collapsing) {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    overflow: visible;
+  }
+  .header-row:has(.header-search-col .collapse.show),
+  .header-row:has(.header-search-col .collapsing) {
+    flex-wrap: wrap !important;
   }
 }
 
