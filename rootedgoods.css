@@ -768,6 +768,255 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
 }
 
+/* ---- Logo centreren <576px: hamburger-kolom verhuist vóór het logo (zie
+   rootedgoods.js 1.4d, één element, één keer). :not(:has(...)) laat de
+   nowrap-regel los zodra de zoek-collapse openklapt, zodat dat bestaande
+   gedrag (volle breedte eronder) niet verstoord wordt. */
+@media (max-width: 575.98px) {
+  .header-row:not(:has(.header-search-col .collapse.show)):not(:has(.header-search-col .collapsing)) {
+    flex-wrap: nowrap;
+  }
+  .header-row .header-logo-col {
+    order: 2;
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+  }
+  .header-row .header-actions-col {
+    order: 3;
+    flex: 0 0 auto;
+    width: auto !important;
+  }
+  .header-row .rg-header-hamburger-slot {
+    order: 1;
+    flex: 0 0 auto;
+    width: auto !important;
+  }
+}
+
+/* ---- Topbar-USP op mobiel/tablet (<992px): één statische regel, geen
+   marquee (de vorige auto-scroll-versie toonde grotendeels een lege balk
+   en is teruggedraaid -- een tweede scroll-loop-poging zonder nieuwe
+   informatie over de oorzaak zou puur gokken zijn). "Gratis offerte op
+   maat" gekozen omdat 'ie direct aansluit op de primaire CTA verderop in
+   het offcanvas-menu. Rest + de overbodige utility-links (Blog/FAQ/Contact,
+   staan al als snelkoppeling in het menu) verborgen. */
+@media (max-width: 991px) {
+  .top-bar.d-none.d-lg-block {
+    display: block !important;
+  }
+  .top-bar .container {
+    max-width: 100% !important;
+    padding: 0.5rem 1rem !important;
+  }
+  .top-bar-nav {
+    justify-content: center !important;
+  }
+  .top-bar-nav .top-bar-container:not(.container--2) {
+    display: none !important;
+  }
+  .top-bar-nav .top-bar-container.container--2 {
+    text-align: center !important;
+    font-size: 0.78rem;
+  }
+}
+
+/* ============================================================
+   6c. OFFCANVAS-MENU (mobiel/tablet, <992px) — merk-typografie,
+   inklapbare categorieën, uitgelichte Thema's-kaart, snelkoppelingen.
+   JS bouwt de toggle/relabel/snelkoppelingen (rootedgoods.js 1.4c), hier
+   alleen de styling. Zie sectie 6b hierboven voor de aanleiding.
+   ============================================================ */
+@media (max-width: 991px) {
+  .navigation-offcanvas .offcanvas-header {
+    border-bottom: 1px solid #EAE3D7;
+  }
+  .navigation-offcanvas .navigation-offcanvas-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8c857a;
+    margin: 1.2rem 0 0.6rem;
+  }
+  .navigation-offcanvas-link,
+  .navigation-offcanvas-link [itemprop="name"] {
+    color: #2d4528 !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .navigation-offcanvas-list-item {
+    font-size: 0.92rem;
+  }
+  .navigation-offcanvas-list-item .navigation-offcanvas-link {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+  .navigation-offcanvas-link-icon svg use {
+    fill: #8c857a !important;
+  }
+
+  /* ---- Categorieën: standaard ingeklapt achter een checkbox-toggle ----
+     Puur CSS (:has() op de checkbox), geen click-listener. Alles behalve
+     de uitgelichte Thema's-kaart en de toggle zelf is verborgen tot de
+     checkbox aan staat. */
+  .navigation-offcanvas-list-item:not(:has(a[href$="/alle-thema-s"])):not(.rg-offcanvas-cats-toggle-item) {
+    display: none;
+  }
+  .navigation-offcanvas-list:has(.rg-cats-checkbox:checked) .navigation-offcanvas-list-item {
+    display: list-item;
+  }
+
+  /* ---- Toggle-knop (JS voegt de <li> toe als eerste child van de <ul>) --- */
+  .rg-offcanvas-cats-toggle-item {
+    order: -1;
+    list-style: none;
+  }
+  .rg-offcanvas-cats-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+    margin: 0.4rem 0 0.2rem;
+    padding: 0.7rem 0.2rem;
+    border-top: 1px solid #EAE3D7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2d4528;
+    cursor: pointer;
+  }
+  .rg-offcanvas-cats-toggle-label .rg-cats-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .rg-offcanvas-cats-toggle-label::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+    transition: transform 0.2s ease;
+  }
+  .rg-offcanvas-cats-toggle-label:has(.rg-cats-checkbox:checked) {
+    color: #ad6331;
+  }
+  .rg-offcanvas-cats-toggle-label:has(.rg-cats-checkbox:checked)::after {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Thema's-kaart: eigen curated landingspagina, onderscheiden van de
+     gelijknamige echte productcategorie verderop (JS herlabelt 'm naar
+     "Shop op thema"). Altijd zichtbaar, ook ingeklapt. Achtergrondfoto
+     hergebruikt de bestaande "Events & conferenties"-thema-afbeelding
+     (zelfde bestand als blokken/thema-tegels-home.html) -- geen nieuw
+     beeldmateriaal nodig. LET OP: dev-domein, bijwerken bij go-live naar
+     rootedgoods.eu (zie project_golive_domain_switch). */
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) {
+    order: -2;
+    margin-bottom: 0.5rem;
+  }
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link {
+    display: flex;
+    align-items: flex-end;
+    min-height: 150px;
+    border-radius: 14px;
+    padding: 1.1rem 1.2rem !important;
+    background:
+      linear-gradient(to top, rgba(20, 30, 15, 0.88), rgba(20, 30, 15, 0.15) 65%),
+      url('https://bambook.08.promidata.shop/media/c0/ba/fe/1785442349/Events-2.jpg') center / cover;
+    color: #fff !important;
+  }
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link [itemprop="name"] {
+    color: #fff !important;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link::after {
+    content: "Ontdek cadeaus per gelegenheid";
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #e9c9a9;
+    margin-top: 0.2rem;
+  }
+
+  /* ---- Merken/Services/Over ons: gedemoot onder een eyebrow-label,
+     geclusterd onderaan (los van de collapse-status van de categorieën). */
+  .navigation-offcanvas-list-item:has(a[href$="/merken/"]),
+  .navigation-offcanvas-list-item:has(a[href$="/services/"]),
+  .navigation-offcanvas-list-item:has(a[href$="/over-ons"]) {
+    display: list-item !important;
+    order: 10;
+  }
+  .navigation-offcanvas-list-item:has(a[href$="/merken/"]) .navigation-offcanvas-link,
+  .navigation-offcanvas-list-item:has(a[href$="/services/"]) .navigation-offcanvas-link,
+  .navigation-offcanvas-list-item:has(a[href$="/over-ons"]) .navigation-offcanvas-link {
+    color: #8c857a !important;
+    font-size: 0.85rem;
+  }
+  .navigation-offcanvas-list-item:has(a[href$="/merken/"])::before {
+    content: "Meer op de site";
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ad6331;
+    padding-top: 0.75rem;
+    margin: 1rem 0 0.4rem;
+    border-top: 1px solid #EAE3D7;
+  }
+
+  /* ---- Snelkoppelingen + primaire CTA (JS vult .navigation-offcanvas-
+     actions, hier alleen de styling). "Offerte aanvragen" = sitebrede
+     primaire pil (cognac); FAQ/Contact = kale secundaire tekstlink --
+     zelfde hiërarchie-conventie als overal elders op de site. */
+  .navigation-offcanvas-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0 1.25rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid #EAE3D7;
+  }
+  .rg-offcanvas-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: #ad6331;
+    color: #fff !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none !important;
+  }
+  .rg-offcanvas-cta:hover {
+    background: #955529;
+  }
+  .rg-offcanvas-quicklink {
+    display: block;
+    padding: 0.4rem 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #2d4528 !important;
+    text-decoration: none !important;
+  }
+  .rg-offcanvas-quicklink:hover {
+    color: #ad6331 !important;
+  }
+}
+
 
 /* ------------------------------------------------------------
    7. CATEGORY FLYOUT

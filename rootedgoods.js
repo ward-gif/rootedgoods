@@ -7,8 +7,11 @@
  *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 header-scroll-gedrag
  *                           (mobiel hide/show, desktop sticky topbar/nav), 1.3 flyout CTA,
  *                           1.4 offerteknop (header-actions), 1.4b nav-main
- *                           zonder title-tooltip, 1.5 Cal.com-embed lazy-load,
- *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons hero-fit
+ *                           zonder title-tooltip, 1.4c offcanvas-menu (mobiel:
+ *                           categorieën-toggle/Thema's-relabel/snelkoppelingen),
+ *                           1.4d mobiel-header logo centreren, 1.5 Cal.com-embed
+ *                           lazy-load, 1.6 over-ons "Route" (SVG/GSAP), 1.6b
+ *                           over-ons hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
  *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.2
  *                           productslider tegel-click, 2.4 hero-v2 hoogte-fit
@@ -239,8 +242,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ---- 1.4 Offerteknop in de header-actions-rij
  * Stond eerst als tekstlink in de menubalk (.nav-main); nu een compacte
  * .btn.btn-primary vóór het iconen-cluster (wishlist/account/cart) in
- * .header-actions-col, alleen op desktop (>= 992px). Mobiel heeft 'm al
- * staan als snelkoppeling in het offcanvas-menu (sectie 2.1c). */
+ * .header-actions-col, alleen op desktop (>= 992px). Mobiel heeft 'm als
+ * primaire CTA in het offcanvas-menu (sectie 1.4c). */
 document.addEventListener('DOMContentLoaded', function () {
   var row = document.querySelector('.header-actions-col .row');
   if (!row || window.innerWidth < 992) return;
@@ -274,6 +277,106 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.nav-main .main-navigation-link[title]').forEach(function (el) {
     el.removeAttribute('title');
   });
+});
+
+
+/* ---- 1.4c Offcanvas-menu (mobiel): categorieën-toggle + Thema's-relabel +
+ * snelkoppelingen. Vervangt de teruggedraaide §2.1b/c/d (zie CSS-sectie 6b
+ * voor de aanleiding). Kernverschil met de vorige, kapotte versie: de
+ * toggle wordt als EERSTE CHILD van de <ul> ingevoegd (list.prepend), nooit
+ * als sibling ervoor -- CSS `order` herschikt alleen children van dezelfde
+ * ouder, dus dit is de daadwerkelijke fix, geen cosmetische herhaling.
+ * Open/dicht gaat volledig via CSS (:has() op de checkbox, zie CSS-sectie
+ * 6c) -- geen click-listener die stil kan falen. Defensief herhaald bij elke
+ * offcanvas-open (niet alleen 1x bij page-load) omdat Shopware terug-
+ * navigatie in een submenu via een nieuwe content-render doet; de dataset-
+ * vlaggen maken elke stap idempotent. .d-none-voorouder (Shopware's eigen
+ * cache-node voor de root-lijst) wordt bewust overgeslagen. */
+document.addEventListener('DOMContentLoaded', function () {
+  var QUICKLINKS = [
+    { href: '/faq', label: 'Veelgestelde vragen', cta: false },
+    { href: '/contact', label: 'Contact', cta: false },
+    { href: '/offerte', label: 'Offerte aanvragen', cta: true }
+  ];
+
+  function vulSnelkoppelingen(nav) {
+    if (nav.dataset.rgQuicklinks) return;
+    nav.dataset.rgQuicklinks = '1';
+    QUICKLINKS.forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l.href;
+      a.className = l.cta ? 'rg-offcanvas-cta' : 'rg-offcanvas-quicklink';
+      a.textContent = l.label;
+      nav.appendChild(a);
+    });
+  }
+
+  function labelThemaKaart(list) {
+    var naam = list.querySelector('.navigation-offcanvas-list-item a[href$="/alle-thema-s"] [itemprop="name"]');
+    if (naam && !naam.dataset.rgRelabeled) {
+      naam.dataset.rgRelabeled = '1';
+      naam.textContent = 'Shop op thema';
+    }
+  }
+
+  function bouwCategorieToggle(list) {
+    if (list.dataset.rgToggle) return;
+    list.dataset.rgToggle = '1';
+
+    var li = document.createElement('li');
+    li.className = 'navigation-offcanvas-list-item rg-offcanvas-cats-toggle-item';
+
+    var label = document.createElement('label');
+    label.className = 'rg-offcanvas-cats-toggle-label';
+
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'rg-cats-checkbox';
+
+    var tekst = document.createElement('span');
+    tekst.textContent = 'Alle categorieën';
+
+    label.appendChild(checkbox);
+    label.appendChild(tekst);
+    li.appendChild(label);
+    list.prepend(li);   // echte child van de <ul>, geen sibling ervoor
+  }
+
+  function offcanvasKlaar() {
+    document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
+      if (panel.closest('.d-none')) return;
+      var nav = panel.querySelector('.navigation-offcanvas-actions');
+      var list = panel.querySelector('.navigation-offcanvas-list');
+      if (nav) vulSnelkoppelingen(nav);
+      if (list) { labelThemaKaart(list); bouwCategorieToggle(list); }
+    });
+  }
+  offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
+  document.querySelectorAll('[data-offcanvas-menu="true"]').forEach(function (btn) {
+    btn.addEventListener('click', function () { setTimeout(offcanvasKlaar, 0); });
+  });
+});
+
+
+/* ---- 1.4d Header <576px: logo centreren
+ * Hamburger en zoek-toggle/mandje zitten in dezelfde Bootstrap-kolom
+ * (.header-actions-col) -- puur CSS kan ze dus niet los van elkaar aan
+ * weerszijden van het logo zetten. Kleinst mogelijke ingreep: alleen de
+ * hamburger-kolom (bestaand element, click-handler blijft intact) verhuist
+ * vóór het logo, één keer. Geen nieuwe wrapper-divs, geen ander element
+ * aangeraakt -- bewust een aparte, kleinere functie dan de vorige,
+ * teruggedraaide rij-herbouw (die 4 elementen in nieuwe wrappers zette). */
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth >= 576) return;
+  var headerRow = document.querySelector('.header-row');
+  if (!headerRow || headerRow.dataset.rgHamburgerMoved) return;
+  var logoCol = headerRow.querySelector('.header-logo-col');
+  var hamburgerBtn = headerRow.querySelector('.header-actions-col .menu-button');
+  var hamburgerCol = hamburgerBtn ? hamburgerBtn.closest('.col.d-sm-none') : null;
+  if (!logoCol || !hamburgerCol) return;
+  headerRow.dataset.rgHamburgerMoved = '1';
+  hamburgerCol.classList.add('rg-header-hamburger-slot');
+  headerRow.insertBefore(hamburgerCol, logoCol);
 });
 
 
