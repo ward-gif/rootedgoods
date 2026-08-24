@@ -2768,6 +2768,58 @@ body.is-ctl-product .product-detail-ordernumber-container {
   box-shadow: 0 0 0 0.2rem rgba(172, 114, 62, 0.15) !important;
 }
 
+/* ---- 22b. PDP — Aantal-stepper (+/- knoppen, rootedgoods.js sectie 2.5)
+   Zelfde horizontale pil-stijl als het winkelmandje/checkout (secties
+   49.5 / checkout confirm), voor een consistente stepper door de hele
+   koop-flow heen -- was hiervoor de enige plek met een kaal getal-veld
+   zonder enige stepper-knop. */
+.rg-qty-stepper {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  border-radius: var(--rg-r-pill, 999px) !important;
+  overflow: hidden;
+  border: 1px solid #EAE3D7;
+  width: fit-content;
+}
+.rg-qty-stepper__btn {
+  background: #fff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 600;
+  color: #2d4528;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.15s ease;
+}
+.rg-qty-stepper__btn:hover {
+  background: #F7F5F2;
+}
+.product-detail-buy .rg-qty-stepper input.form-control {
+  border: none !important;
+  border-left: 1px solid #EAE3D7 !important;
+  border-right: 1px solid #EAE3D7 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  font-weight: 600;
+  width: 64px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+  -moz-appearance: textfield;
+}
+.product-detail-buy .rg-qty-stepper input[type="number"]::-webkit-outer-spin-button,
+.product-detail-buy .rg-qty-stepper input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* ------------------------------------------------------------
    23. PDP — STEPS SEPARATORS
    Promidata zet grijze borders tussen de configurator-steps
@@ -10376,21 +10428,49 @@ h2.rg-route__team-title{
   }
 }
 
+/* Stepper: was los-van-elkaar (elke knop z'n eigen cirkel-rand) en stapelde
+   op de confirm-pagina zelfs verticaal (geen eigen flex-row-regel, viel
+   terug op de native layout) -- nu exact dezelfde horizontale pil als het
+   winkelmandje (sectie 49.5), voor een consistente stepper door de hele
+   flow heen. */
+.checkout-main .line-item-quantity-group {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  border-radius: var(--rg-r-pill) !important;
+  overflow: hidden;
+  border: 1px solid var(--rg-sand);
+  width: fit-content;
+}
 .checkout-main .btn-minus.btn,
 .checkout-main .btn-plus.btn {
   background: #fff !important;
-  border: 1px solid var(--rg-sand) !important;
-  border-radius: var(--rg-r-pill) !important;
+  border: none !important;
+  border-radius: 0 !important;
   padding: 0 !important;
-  width: 34px !important;
-  height: 34px !important;
+  width: 30px !important;
+  height: 30px !important;
   min-width: 0 !important;
+  flex: none !important;
   box-shadow: none !important;
 }
 .checkout-main .btn-minus.btn:hover,
 .checkout-main .btn-plus.btn:hover { background: var(--rg-cream) !important; transform: none !important; }
 .checkout-main .btn-minus svg use,
 .checkout-main .btn-plus svg use { fill: var(--rg-green) !important; }
+.checkout-main .quantity-selector-group-input {
+  border: none !important;
+  border-left: 1px solid var(--rg-sand) !important;
+  border-right: 1px solid var(--rg-sand) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  color: var(--rg-ink) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  width: 44px !important;
+  flex: none !important;
+  padding: 0 !important;
+}
 .checkout-main .line-item-remove-button.btn {
   background: transparent !important; border: none !important; border-radius: 0 !important;
   padding: 0.3rem !important; width: auto !important; min-width: 0 !important; box-shadow: none !important;

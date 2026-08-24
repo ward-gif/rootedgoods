@@ -1749,6 +1749,56 @@ function rgOnthulNaFonts(toon) {
 })();
 
 
+/* ---- 2.5 PDP — Aantal-stepper (+/- knoppen)
+ * Native markup is een kaal <input type="number"> zonder stepper-knoppen --
+ * op een telefoon toont dat sowieso geen spinner-pijltjes (puur desktop),
+ * dus was het gewoon een tekstveld. Winkelmandje/checkout hebben al een
+ * nette +/- pil-stepper (rootedgoods.css secties 49.5/confirm) -- hier
+ * dezelfde stijl, door het bestaande input-element (niet klonen) in een
+ * kleine wrapper te zetten met twee knoppen ernaast. Klikken past .value
+ * aan binnen min/max/step en dispatcht een change-event, zodat Promidata's
+ * eigen prijsherberekening (staffeltabel/totaalprijs) gewoon blijft werken. */
+document.addEventListener('DOMContentLoaded', function () {
+  var input = document.querySelector('#product-order-quantity, .product-detail-quantity-select');
+  if (!input || input.closest('.rg-qty-stepper')) return;
+
+  var min = parseInt(input.min, 10) || 1;
+  var max = parseInt(input.max, 10) || Infinity;
+  var step = parseInt(input.step, 10) || 1;
+
+  var wrap = document.createElement('div');
+  wrap.className = 'rg-qty-stepper';
+
+  var minus = document.createElement('button');
+  minus.type = 'button';
+  minus.className = 'rg-qty-stepper__btn rg-qty-stepper__btn--minus';
+  minus.setAttribute('aria-label', 'Verminder aantal');
+  minus.textContent = '−';
+
+  var plus = document.createElement('button');
+  plus.type = 'button';
+  plus.className = 'rg-qty-stepper__btn rg-qty-stepper__btn--plus';
+  plus.setAttribute('aria-label', 'Verhoog aantal');
+  plus.textContent = '+';
+
+  input.parentNode.insertBefore(wrap, input);
+  wrap.appendChild(minus);
+  wrap.appendChild(input);
+  wrap.appendChild(plus);
+
+  function zetWaarde(delta) {
+    var huidig = parseInt(input.value, 10);
+    if (isNaN(huidig)) huidig = min;
+    var nieuw = Math.min(max, Math.max(min, huidig + delta));
+    if (nieuw === huidig) return;
+    input.value = nieuw;
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+  minus.addEventListener('click', function () { zetWaarde(-step); });
+  plus.addEventListener('click', function () { zetWaarde(step); });
+});
+
+
 /* ---- 1.6b Over-ons hero — hoogte passend maken zodat het reismerkteken
  * (.rg-route__mark, dat net onder de scroll-cue verschijnt) met ~40px lucht
  * boven de vouw eindigt, zelfde patroon als de home-hero (sectie 2.4):
