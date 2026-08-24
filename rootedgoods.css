@@ -532,49 +532,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   margin: 0 !important;
 }
 
-/* ---- Mobiel/tablet (<992px): topbar tonen als doorlopende USP-marquee ----
-   De topbar is standaard verborgen (.top-bar.d-none.d-lg-block). Op mobiel
-   tonen we 'm wél, maar de 5 statische containers passen niet -> we verbergen
-   die en laten een door JS gebouwde track (.rg-usp-marquee, dubbele set voor
-   een naadloze loop) automatisch scrollen. Utility-links (Over ons/FAQ/
-   Contact) vervallen op mobiel; die staan al in het menu. */
-.rg-usp-marquee { display: none; }   /* desktop: JS-track ongebruikt/verborgen */
-@media (max-width: 991px) {
-  .top-bar.d-none.d-lg-block { display: block !important; }   /* topbar un-hide */
-  .top-bar .container { max-width: 100% !important; padding: 0 !important; }
-  .top-bar-nav { overflow: hidden; }                          /* clipt de scrollende track */
-  .top-bar-nav .top-bar-nav-extension { display: none !important; }  /* statische containers weg */
-  .rg-usp-marquee {
-    display: flex;
-    width: max-content;
-    align-items: center;
-    padding: 6px 0;
-    animation: uspScroll 26s linear infinite;
-    will-change: transform;
-  }
-  /* De tussenruimte zit BEWUST in elk item (margin-right), NIET als flex-gap:
-     bij een flex-gap valt het -50%-omslagpunt niet op een itemgrens, waardoor
-     de loop een sprong/ongelijke ruimte krijgt bij de naad (leek of 'ie maar
-     1x schoof). Met margin-right is -50% exact één kopie -> naadloos rond,
-     overal dezelfde ruimte. */
-  .rg-usp-marquee__item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    white-space: nowrap;
-    font-size: 0.78rem;
-    color: #fff;
-    margin-right: 2.6rem;
-  }
-}
-@keyframes uspScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }   /* 2 kopieën + gelijke margin per item -> naadloze loop */
-}
-@media (prefers-reduced-motion: reduce) {
-  .rg-usp-marquee { animation: none !important; }
-}
-
 /* Container 5 (Over ons / Cases / Contact links) rechts uitlijnen
    binnen de cel zodat "Contact" visueel op één lijn staat met
    het cart-icoon en "€ 0,00" in de header daaronder. */
@@ -778,15 +735,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 
 /* ------------------------------------------------------------
-   6b. MOBIEL HEADER + MENU (<992px)
+   6b. MOBIEL HEADER (<992px)
    ------------------------------------------------------------
-   Was volledig kaal Shopware-default: forse header-balk, hamburgermenu
-   een platte opsomming van alle 13 productcategorieën met Thema's
-   (de eigenlijke ingang voor de meeste bezoekers) als een na laatste
-   regel. Herzien: kleiner logo, alleen zoeken + winkelmandje in de
-   actie-rij (wishlist/account weg -- weinig gebruikt op mobiel, minder
-   drukte), Thema's naar boven en als eigen kaart, categorieën
-   gedempt eronder. Reordering via :has()+order, geen JS nodig. */
+   Kleiner logo + alleen zoeken/winkelmandje in de actie-rij (wishlist/
+   account weg -- weinig gebruikt op mobiel, minder drukte).
+
+   De eerdere herbouw van deze sectie (mobiele header-rij + hamburger-
+   offcanvas: thema-kaart bovenaan, ingeklapte categorieën, quicklinks)
+   is teruggedraaid op verzoek -- brak (categorieën niet te openen,
+   verkeerde volgorde, topbar/USP-marquee grotendeels leeg). Offcanvas-
+   menu en topbar draaien nu weer op de kale Shopware-default, in
+   afwachting van een nieuw doordacht ontwerp. Zie git-historie
+   (commits rond "Mobiel: header/hamburgermenu herontwerp") voor de
+   teruggedraaide aanpak als referentie. */
 @media (max-width: 991px) {
   /* ---- Logo kleiner ---- */
   .header-logo-main-link img,
@@ -807,170 +768,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
 }
 
-/* Onder 576px (Bootstrap sm): hamburger / logo / zoeken+mandje op één rij,
-   logo ECHT gecentreerd (niet alleen "links + rechts opgevuld" -- de linker-
-   en rechtergroep zijn niet even breed, dus margin/flex-auto-trucs zouden
-   het logo niet precies in het midden zetten). rootedgoods.js (2.1d)
-   verplaatst de knoppen zelf (geen kloon, click-handlers blijven intact)
-   in een nieuwe .rg-mobile-header-row vóór de originele .header-row.
-   .header-logo-col/.header-actions-col raken daardoor leeg -> verbergen.
-   .header-search-col blijft staan (bevat het zoek-formulier zelf, dat
-   nog steeds op z'n oude plek open/dicht klapt). */
-@media (max-width: 575.98px) {
-  .header-logo-col,
-  .header-actions-col {
-    display: none !important;
-  }
-  .rg-mobile-header-row {
-    display: flex;
-    align-items: center;
-    padding: 0.6rem 1rem;
-  }
-  .rg-mobile-header-row__side {
-    flex: 0 0 84px;
-    display: flex;
-    align-items: center;
-  }
-  .rg-mobile-header-row__side:first-child { justify-content: flex-start; }
-  .rg-mobile-header-row__side:last-child { justify-content: flex-end; }
-  .rg-mobile-header-row .header-logo-col {
-    display: block !important;
-    flex: 1 1 auto;
-    text-align: center;
-  }
-}
-
-@media (max-width: 991px) {
-  /* ---- Offcanvas-menu: merk-typografie i.p.v. theme-default ---- */
-  .navigation-offcanvas .offcanvas-header {
-    border-bottom: 1px solid #EAE3D7;
-  }
-  .navigation-offcanvas .navigation-offcanvas-headline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #8c857a;
-    margin: 1.4rem 0 0.6rem;
-  }
-  .navigation-offcanvas-link,
-  .navigation-offcanvas-link [itemprop="name"] {
-    color: #2d4528 !important;
-    font-family: 'Montserrat', sans-serif;
-  }
-  /* Categorieën gedempt en compacter: Thema's (hieronder uitgelicht)
-     moet duidelijk de hoofdingang blijven, dit is de browse-route
-     voor wie al weet wat ze zoeken. */
-  .navigation-offcanvas-list-item {
-    font-size: 0.92rem;
-  }
-  .navigation-offcanvas-list-item .navigation-offcanvas-link {
-    padding-top: 0.6rem !important;
-    padding-bottom: 0.6rem !important;
-  }
-
-  /* ---- Thema's naar boven + als kaart i.p.v. platte regel ----
-     :has() i.p.v. JS-herordering: title="Thema's" matcht het <a>,
-     order verplaatst het hele <li> naar de top van de flex-lijst. */
-  .navigation-offcanvas-list {
-    display: flex;
-    flex-direction: column;
-  }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) {
-    order: -1;
-    margin-bottom: 0.5rem;
-  }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link {
-    background: linear-gradient(135deg, #2d4528, #3a5533);
-    color: #fff !important;
-    border-radius: 14px;
-    padding: 1rem 1.1rem !important;
-    font-weight: 700;
-  }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link [itemprop="name"] {
-    color: #fff !important;
-  }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link::after {
-    content: "Ontdek cadeaus per gelegenheid";
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--rg-peach, #e9c9a9);
-    margin-top: 0.2rem;
-  }
-  .navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"]) .navigation-offcanvas-link-icon svg use {
-    fill: #fff !important;
-  }
-  /* "Thema's" komt bewust 2x voor, met verschillend doel: /alle-thema-s
-     is onze eigen thema-overzichtpagina (linkt naar de custom LP's,
-     hierboven uitgelicht), /thema-s/ is een gewone Shopware-productcategorie
-     (submenu, blijft gewoon tussen de andere categorieën staan). Voor
-     duidelijkheid krijgt de uitgelichte kaart een ander label, zie
-     rootedgoods.js 2.1c. */
-
-  /* ---- Snelkoppelingen (FAQ/Contact/Offerte) -- JS vult deze nav,
-     hier alleen de styling. Zie rootedgoods.js 2.1c. ---- */
-  .navigation-offcanvas-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: 0 0 0.75rem;
-    border-bottom: 1px solid #EAE3D7;
-    margin-bottom: 0.25rem;
-  }
-  .rg-offcanvas-quicklink {
-    display: block;
-    padding: 0.5rem 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #ad6331 !important;
-    text-decoration: none !important;
-  }
-
-  /* ---- Categorieën-toggle (JS bouwt de knop, zie rootedgoods.js 2.1c) ----
-     Ingeklapt: alleen de Thema's-kaart zichtbaar, niet meteen alle 13
-     productcategorieën. */
-  .rg-offcanvas-cats-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    width: 100%;
-    margin: 0.4rem 0 0.2rem;
-    padding: 0.7rem 0.2rem;
-    background: none;
-    border: none;
-    border-top: 1px solid #EAE3D7;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #2d4528;
-    text-align: left;
-    cursor: pointer;
-  }
-  .rg-offcanvas-cats-toggle::after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    margin-left: auto;
-    background-color: currentColor;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
-    transition: transform 0.2s ease;
-  }
-  .rg-offcanvas-cats-toggle[aria-expanded="true"]::after {
-    transform: rotate(180deg);
-  }
-  .navigation-offcanvas-list.rg-cats-collapsed .navigation-offcanvas-list-item:not(:has(a[href$="/alle-thema-s"])) {
-    display: none;
-  }
-  /* .navigation-offcanvas-headline is een sibling van de lijst, geen kind
-     -- via de gedeelde ouder verbergen zolang de lijst is ingeklapt. */
-  .navigation-offcanvas-overlay-content:has(.navigation-offcanvas-list.rg-cats-collapsed) .navigation-offcanvas-headline {
-    display: none;
-  }
-}
 
 /* ------------------------------------------------------------
    7. CATEGORY FLYOUT
