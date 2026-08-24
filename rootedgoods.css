@@ -820,6 +820,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .navigation-offcanvas .offcanvas-header {
     border-bottom: 1px solid #EAE3D7;
   }
+  /* "Menu sluiten"-tekst weg, alleen het kruisje blijft. Kale tekstnode
+     na het icoon in de native markup (geen eigen span) -- font-size:0 op
+     de knop collapt 'm, het icoon zelf is met vaste px-afmetingen
+     opgebouwd (geen em) en blijft dus onaangetast. */
+  .navigation-offcanvas .offcanvas-close.js-offcanvas-close {
+    font-size: 0;
+    padding: 0.5rem !important;
+    min-width: 0 !important;
+  }
   /* "Categorieën"-titel weg op verzoek -- de hoofdcategorieën staan er
      nu gewoon meteen open, geen kop nodig. */
   .navigation-offcanvas .navigation-offcanvas-headline {
