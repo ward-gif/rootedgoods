@@ -7101,7 +7101,15 @@ h2.rg-sd__panel-title,
 }
 @media (max-width: 767px) {
   .rg-sd__faq > .rg-sd__faq-cols { grid-template-columns: 1fr; }
-  .rg-sd__faq { grid-template-columns: 1fr; }
+  .rg-sd__faq {
+    grid-template-columns: 1fr;
+    /* Desktop-padding (40px) was hier nooit teruggebracht op mobiel --
+       samen met de 16px van de omliggende .rg-sd-sectie bleef er maar
+       ~158px content-breedte over, veel te smal voor lange NL-woorden.
+       Ze braken daardoor structureel midden-in-het-woord i.p.v. op een
+       woordgrens. De sectie eromheen levert de gutter al. */
+    padding: 0;
+  }
 }
 .rg-sd__faq-item {
   background: #ffffff;
@@ -7358,6 +7366,27 @@ h2.rg-sd__ask-title,
   color: #ffffff !important;
 }
 .rg-sd__ask-ghost:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+/* Vangnet: de live CMS-tekst op Contact/FAQ/service-detail gebruikt op dit
+   moment nog de OUDE .btn-outline-primary-klasse i.p.v. .rg-sd__ask-ghost
+   hierboven (de HTML-blokken in de repo zijn al bijgewerkt, maar nog niet
+   herplakt in Shopware). Sitewide is .btn-outline-primary een kale
+   donkergroene tekstlink (padding 0 5px, geen rand) -- op déze donkere
+   kaart bijna onleesbaar EN visueel ingeklapt. Deze regel geeft 'm hier
+   alsnog de ghost-knop-look, ongeacht welke van de twee klassen live
+   staat, zodat de knop meteen goed oogt zonder op een CMS-herplak te
+   hoeven wachten. */
+.rg-sd__ask-actions .btn.btn-outline-primary:not(.rg-sd__ask-ghost) {
+  padding: 0.9rem 2rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  background: transparent !important;
+  color: #ffffff !important;
+}
+.rg-sd__ask-actions .btn.btn-outline-primary:not(.rg-sd__ask-ghost):hover {
   background: rgba(255, 255, 255, 0.1) !important;
   border-color: rgba(255, 255, 255, 0.85) !important;
   color: #ffffff !important;
@@ -10001,6 +10030,21 @@ h2.rg-route__team-title{
 .content-main:has(.checkout-card) .container-main {
   padding-top: 4px !important;
 }
+/* content-main's sitebrede 102px padding-top (regel 161) compenseert de
+   FIXED .header-main op gewone pagina's -- checkout gebruikt in plaats
+   daarvan .header-minimal, een gewone (niet-fixed) balk, dus die 102px
+   is hier pure verspilde ruimte. Samen met Shopware's eigen native
+   .checkout{padding-top:70px} (bedoeld voor een stappen-balk die dit
+   kale checkout-thema niet toont) stond er ~176px lege ruimte vóór de
+   eerste checkout-stap, alles boven de vouw duwend. */
+@media (max-width: 991px) {
+  .content-main:has(.checkout-container) {
+    padding-top: 0 !important;
+  }
+  .checkout-container .checkout {
+    padding-top: 1rem !important;
+  }
+}
 .address-main-header,
 .confirm-main-header {
   font-family: 'Playfair Display', serif;
@@ -10008,6 +10052,13 @@ h2.rg-route__team-title{
   font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
   margin-top: 0;
   margin-bottom: 1.1rem;
+  /* "Verzendingsinformatie" is één onbreekbaar Dutch samenstel-woord --
+     zonder dit liep de kop in een smalle mobiele kolom uit tot buiten
+     z'n container, en omdat elke voorouder tot en met <main> gewoon
+     overflow-x:visible heeft, bubbelde dat door tot een pagina-brede
+     horizontale scroll op de eerste checkout-stap. */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .register-card {
   background: #ffffff !important;
@@ -10055,6 +10106,19 @@ h2.rg-route__team-title{
 .address-contact-type-company > div:has(#billingAddressdepartment) > .form-group {
   flex: 0 0 calc(50% - 0.5rem) !important;
   width: calc(50% - 0.5rem) !important;
+}
+/* Postcode+Plaats delen op mobiel Bootstrap's col-4/col-8 -- Postcode
+   kreeg daardoor maar ~79px, te krap voor "1234 AB" op leesbare
+   invoergrootte (voelt als "is dit wel goed ingevuld?"). Zelfde
+   stack-op-mobiel-principe als het offerte-formulier (sectie rond regel
+   6618) al gebruikt voor zijn eigen Postcode+Plaats-paar: op smalle
+   schermen allebei de volle breedte, past ruim en oogt niet krap. */
+@media (max-width: 575px) {
+  .checkout-main .row.g-2 > .form-group.col-4,
+  .checkout-main .row.g-2 > .form-group.col-8 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
 }
 /* Iets krappere verticale ritme tussen losse velden (was de Bootstrap-
    default 20px) -- draagt evenveel bij aan het "veel lucht"-gevoel als
@@ -10275,6 +10339,17 @@ h2.rg-route__team-title{
 .checkout-main .custom-configurator-table > thead > tr > * { background-color: var(--rg-green) !important; color: #fff !important; font-weight: 700 !important; padding: 0.55rem 0.7rem !important; border: none !important; }
 .checkout-main .custom-configurator-table > tbody > tr > * { background-color: #fff !important; padding: 0.55rem 0.7rem !important; border-top: 1px solid var(--rg-sand) !important; border-bottom: none !important; }
 .checkout-main table.custom-configurator-table { --bs-table-striped-bg: transparent !important; }
+/* Zelfde vangnet als de PDP-prijstabel (sectie 21): op smalle schermen
+   met een lange productnaam kan deze tabel breder worden dan het
+   scherm -- horizontaal scrollbaar i.p.v. afgekapt. */
+@media (max-width: 575px) {
+  .checkout-main .custom-configurator-table,
+  .checkout-aside .custom-configurator-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 
 .checkout-main .btn-minus.btn,
 .checkout-main .btn-plus.btn {
