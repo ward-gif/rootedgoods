@@ -881,6 +881,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     text-transform: uppercase;
     color: #8c857a;
     margin: 0 0 0.5rem 1rem;
+    /* Native Shopware-headline had een lijntje erboven/eronder (scheiding
+       tussen menu-secties) -- hier ongewenst, dit is nu een subtiel
+       kicker-label, geen sectiedeler. */
+    border: none !important;
   }
   .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
     content: "Categorieën";
@@ -985,6 +989,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .rg-offcanvas-tile [itemprop="name"],
   .rg-offcanvas-tile-title {
     display: block;
+    text-align: left;
     color: #fff !important;
     font-size: 0.92rem;
     font-weight: 700;
@@ -992,12 +997,19 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   .rg-offcanvas-tile-eyebrow {
     display: block;
+    text-align: left;
     font-size: 0.64rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #e9c9a9;
     margin-bottom: 0.2rem;
+  }
+  /* Onzichtbare eyebrow-spacer op de Thema-tegel (rootedgoods.js
+     bouwUitgelichteTegels): zelfde box-hoogte als Trending's echte
+     eyebrow, zodat de titel-regel op beide tegels exact gelijk landt. */
+  .rg-offcanvas-tile-eyebrow--ghost {
+    visibility: hidden;
   }
 
   /* ---- Merken/Services/Over ons: gedemoot onder een eyebrow-label,
@@ -1561,7 +1573,11 @@ img {
 .home-productslider {
   overflow-x: hidden !important;
   overflow-y: visible !important;
-  padding-bottom: 40px !important;             /* ruimte voor hover-shadow */
+  /* Was 40px, stapelde op met .tns-ovh's eigen 24px hover-shadow-padding
+     hieronder -- samen ~90px dode ruimte tussen de laatste kaart en de
+     "Bekijk alle producten"-knop erna. Beide regels dienden hetzelfde doel
+     (schaduw niet clippen); 1 daarvan is genoeg. */
+  padding-bottom: 10px !important;
   box-sizing: border-box !important;
 }
 .home-productslider .cms-block-container,

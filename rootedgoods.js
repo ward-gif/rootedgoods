@@ -323,7 +323,17 @@ document.addEventListener('DOMContentLoaded', function () {
     list.dataset.rgTegels = '1';
 
     var naam = themaLink.querySelector('[itemprop="name"]');
-    if (naam) naam.textContent = 'Shop op thema';
+    if (naam) {
+      naam.textContent = 'Shop op thema';
+      // Onzichtbare spacer, zelfde opbouw als de Trending-tegel se eyebrow
+      // (span + tekst), zodat de titel-regel op exact dezelfde hoogte
+      // landt als bij Trending (die wél een eyebrow erboven heeft).
+      var spacer = document.createElement('span');
+      spacer.className = 'rg-offcanvas-tile-eyebrow rg-offcanvas-tile-eyebrow--ghost';
+      spacer.setAttribute('aria-hidden', 'true');
+      spacer.textContent = ' ';
+      naam.before(spacer);
+    }
     themaLink.classList.add('rg-offcanvas-tile', 'rg-offcanvas-tile--thema');
 
     var trending = document.createElement('a');
