@@ -1530,12 +1530,16 @@ img {
   color: #ad6331 !important;
 }
 
-/* Description: subtiel, max 2 regels */
+/* Description: subtiel, max 2 regels. height:auto overschrijft native
+   theme's vaste height:54px (voor hun eigen 3-regelige clamp) -- zelfde
+   bug/fix als de PLP-cards, sectie 24. */
 .home-productslider .product-description {
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: auto !important;
+  max-height: none !important;
   font-size: 0.825rem;
   color: #888;
   line-height: 1.4;
@@ -2691,6 +2695,50 @@ body.is-ctl-product .product-detail-ordernumber-container {
   background-color: #ffffff !important;
 }
 
+/* Mobiel (<576px): beide tabellen (staffel-prijzen + totaalprijs) hebben
+   3-4 kolommen met desktop-brede celpadding -- liepen letterlijk van het
+   scherm af, geen enkele horizontale-scroll-vangnet. .product-block-prices
+   is al een bestaande wrapper (voor de rounded corners) -- die krijgt de
+   scroll. .custom-configurator-table heeft BEWUST geen wrapper-div (zie
+   sectie 21: Promidata re-rendert dat blok, een JS-wrapper zou steeds
+   gewist worden) -- display:block direct op de <table> lost hetzelfde op
+   zonder wrapper. */
+@media (max-width: 575px) {
+  .product-detail-buy .product-block-prices {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-detail-buy .custom-configurator-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-detail-buy .product-block-prices-grid > tbody > tr > *,
+  .product-detail-buy .product-block-prices-grid > thead > tr > *,
+  .product-detail-buy .custom-configurator-table > thead > tr > *,
+  .product-detail-buy .custom-configurator-table > tbody > tr > * {
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .product-detail-buy .product-block-prices-grid > tbody > tr > *:first-child,
+  .product-detail-buy .product-block-prices-grid > thead > tr > *:first-child,
+  .product-detail-buy .custom-configurator-table > thead > tr > *:first-child,
+  .product-detail-buy .custom-configurator-table > tbody > tr > *:first-child {
+    padding-left: 1rem !important;
+  }
+  .product-detail-buy .product-block-prices-grid > tbody > tr > *:last-child,
+  .product-detail-buy .product-block-prices-grid > thead > tr > *:last-child,
+  .product-detail-buy .custom-configurator-table > thead > tr > *:last-child,
+  .product-detail-buy .custom-configurator-table > tbody > tr > *:last-child {
+    padding-right: 1rem !important;
+  }
+  .product-detail-buy #total-price-bottom-container .configurator-price-container {
+    padding: 0.85rem 1rem;
+  }
+}
+
 /* ------------------------------------------------------------
    22. PDP — FORM CONTROLS (aantallen, opmerkingen)
    Witte achtergrond, ruimer, consistent met de tabel-styling.
@@ -2895,6 +2943,11 @@ body.is-ctl-product {
   margin-top: 3rem;
   padding: 2.5rem 0;
 }
+@media (max-width: 767px) {
+  /* Desktop-maat (3rem + 2.5rem = 88px) oogde als een kale, lege strook
+     tussen de buy-col en de Beschrijving-kaart op een smal scherm. */
+  .product-detail-tabs { margin-top: 1.5rem; padding: 1.5rem 0; }
+}
 
 /* Viewport-wijde off-white achtergrond achter de tabs section */
 .product-detail-tabs::before {
@@ -3043,12 +3096,19 @@ body.is-ctl-product {
   display: none !important;
 }
 
-/* Description: zichtbaar maar subtiel — max 2 regels met ellipsis */
+/* Description: zichtbaar maar subtiel — max 2 regels met ellipsis.
+   Native theme zet zelf een VASTE height:54px (voor hun eigen 3-regelige
+   clamp) -- die vaste hoogte bood ruimte voor een volledige 3e regel,
+   waardoor onze -webkit-line-clamp:2 zijn ellipsis nooit toonde (de tekst
+   liep gewoon door tot de rand van hun hoogte i.p.v. na 2 regels af te
+   knippen). height:auto laat de clamp zelf de hoogte bepalen. */
 .cms-listing-row .product-description {
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: auto !important;
+  max-height: none !important;
   font-size: 0.825rem;
   color: #888;
   line-height: 1.4;
