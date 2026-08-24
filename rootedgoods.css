@@ -10058,7 +10058,8 @@ h2.rg-route__team-title{
      overflow-x:visible heeft, bubbelde dat door tot een pagina-brede
      horizontale scroll op de eerste checkout-stap. */
   overflow-wrap: break-word;
-  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 .register-card {
   background: #ffffff !important;
