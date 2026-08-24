@@ -6253,7 +6253,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      geheel -- consistent met de rest van de gecentreerde mobiele hero. De
      eigen text-align:left (verderop) regelt alleen de tekst BINNEN de
      kaart, niet de positie van de kaart zelf. */
-  .rg-hero-v2__cta { flex-direction: column; align-items: stretch; gap: 1rem; margin-bottom: 0; }
+  .rg-hero-v2__cta { flex-direction: column; align-items: stretch; gap: 1.75rem; margin-bottom: 0; }
   .rg-hero-v2__cap-label { display: none; }
 }
 
