@@ -3503,10 +3503,17 @@ body.is-ctl-product {
 /* Filter-dropdowns: witte achtergrond + nette ruimte wanneer open (i.p.v. een
    strakke ongestylde lijst tegen de rand). Geldt voor multi-select én prijs. */
 .filter-panel-item-dropdown {
+  /* Native Promidata-gedrag is position:absolute -- een geopende dropdown
+     zwéééfde daardoor los OVER de chip-rij eronder i.p.v. 'm omlaag te
+     duwen, en clipte die chip half weg. Terug naar normale document-flow:
+     de dropdown duwt de rest van de grid nu gewoon naar beneden, zoals
+     een accordeon hoort te doen. */
+  position: static !important;
   background-color: #ffffff !important;
   border: 1px solid #EAE3D7 !important;
   border-radius: 12px !important;
   margin-top: 0.4rem !important;
+  margin-bottom: 0.6rem !important;
   padding: 0.35rem 0.85rem !important;
 }
 .filter-multi-select-list {
@@ -3581,6 +3588,23 @@ body.is-ctl-product {
   padding: 0 10px;
   background-color: transparent;
   border-radius: 0;
+}
+
+/* PLP-paginering: bij veel pagina's (« ‹ 1 2 3 4 › ») past de rij niet in
+   een mobiele kolom -- liep zonder vangnet gewoon af (scrollWidth 384 vs
+   clientWidth 210), latere paginanummers alleen bereikbaar door herhaald
+   op "›" te tikken. Horizontaal scrollbaar i.p.v. onbereikbaar afgekapt. */
+@media (max-width: 575px) {
+  .pagination-nav {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pagination-nav .pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+  }
 }
 
 /* PLP-paginering — ronde page-labels, actieve in terracotta. */
