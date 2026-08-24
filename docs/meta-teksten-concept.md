@@ -136,17 +136,15 @@
 
 ---
 
-## Thema: Brievenbuspakket — URL nog te bevestigen
-*(`blokken/thema-brievenbus.html` bestaat, maar ik heb de live URL niet met zekerheid kunnen vaststellen tijdens deze sessie — Ward, kun je 'm doorgeven? Dan vul ik 'm aan.)*
-**Titel (concept):** Brievenbuspakket als relatiegeschenk | Rooted Goods
-**Meta-description (concept):** Een brievenbuspakket dat wél opvalt tussen de post. Compact, persoonlijk en rechtstreeks op de deurmat bij thuiswerkers of klanten.
+## Thema: Brievenbuspakket — `/brievenbus`
+**Titel:** Brievenbuspakket als relatiegeschenk | Rooted Goods
+**Meta-description:** Een brievenbuspakket dat wél opvalt tussen de post. Compact, persoonlijk en rechtstreeks op de deurmat bij thuiswerkers of klanten.
 
 ---
 
-## Thema: Made in NL — URL nog te bevestigen
-*(`blokken/thema-made-in-nl.html` bestaat, live URL nog te bevestigen.)*
-**Titel (concept):** Relatiegeschenken Made in NL | Rooted Goods
-**Meta-description (concept):** Op zoek naar relatiegeschenken van Nederlandse makers? Ontdek onze selectie producten met een Nederlandse oorsprong, geassembleerd dichtbij huis.
+## Thema: Made in NL — `/made-in-nl`
+**Titel:** Relatiegeschenken Made in NL | Rooted Goods
+**Meta-description:** Op zoek naar relatiegeschenken van Nederlandse makers? Ontdek onze selectie producten met een Nederlandse oorsprong, geassembleerd dichtbij huis.
 
 ---
 
