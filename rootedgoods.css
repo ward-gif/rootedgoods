@@ -829,10 +829,31 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     padding: 0.5rem !important;
     min-width: 0 !important;
   }
-  /* "Categorieën"-titel weg op verzoek -- de hoofdcategorieën staan er
-     nu gewoon meteen open, geen kop nodig. */
+  /* Native "categorieën"-headline blijft verborgen -- zit als sibling
+     VÓÓR de <ul>, dus zou altijd boven de tegels landen i.p.v. boven de
+     categorieën specifiek. Losse eigen labeltjes hieronder (::before op
+     de tegel-rij en op "Alle Producten") geven wél de gevraagde structuur,
+     zonder dat structuurprobleem. Beide subtiel: klein, dun, gedempt --
+     zelfde soort taal als "BEST SELLERS"/"EXPLORE CATEGORIES" in de
+     Caraway/Intelligent Change-voorbeelden. */
   .navigation-offcanvas .navigation-offcanvas-headline {
     display: none;
+  }
+  .rg-offcanvas-featured-row::before,
+  .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
+    content: "Nu populair";
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8c857a;
+    margin: 0 0 0.5rem;
+  }
+  .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
+    content: "Categorieën";
+    margin: 0.9rem 0 0.3rem;
   }
   .navigation-offcanvas-link,
   .navigation-offcanvas-link [itemprop="name"] {
