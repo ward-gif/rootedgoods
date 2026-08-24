@@ -365,18 +365,69 @@ document.addEventListener('DOMContentLoaded', function () {
  * hamburger-kolom (bestaand element, click-handler blijft intact) verhuist
  * vóór het logo, één keer. Geen nieuwe wrapper-divs, geen ander element
  * aangeraakt -- bewust een aparte, kleinere functie dan de vorige,
- * teruggedraaide rij-herbouw (die 4 elementen in nieuwe wrappers zette). */
+ * teruggedraaide rij-herbouw (die 4 elementen in nieuwe wrappers zette).
+ *
+ * De flex-layout-eigenschappen (flex-wrap/order/width) worden hier via JS
+ * inline gezet i.p.v. puur in CSS: het thema blijkt zelf al een !important
+ * flex-wrap:wrap op .row te zetten die zelfs een hoge-specificiteit eigen
+ * !important-regel versloeg (bevestigd via live debuggen) -- een inline
+ * style wint altijd, dat is de enige betrouwbare manier hier. */
 document.addEventListener('DOMContentLoaded', function () {
   if (window.innerWidth >= 576) return;
   var headerRow = document.querySelector('.header-row');
   if (!headerRow || headerRow.dataset.rgHamburgerMoved) return;
   var logoCol = headerRow.querySelector('.header-logo-col');
+  var actionsCol = headerRow.querySelector('.header-actions-col');
+  var searchCol = headerRow.querySelector('.header-search-col');
   var hamburgerBtn = headerRow.querySelector('.header-actions-col .menu-button');
   var hamburgerCol = hamburgerBtn ? hamburgerBtn.closest('.col.d-sm-none') : null;
-  if (!logoCol || !hamburgerCol) return;
+  if (!logoCol || !actionsCol || !searchCol || !hamburgerCol) return;
   headerRow.dataset.rgHamburgerMoved = '1';
   hamburgerCol.classList.add('rg-header-hamburger-slot');
   headerRow.insertBefore(hamburgerCol, logoCol);
+
+  function zet(el, eigenschap, waarde) {
+    el.style.setProperty(eigenschap, waarde, 'important');
+  }
+  zet(headerRow, 'flex-wrap', 'nowrap');
+  zet(hamburgerCol, 'order', '1');
+  zet(hamburgerCol, 'flex', '0 0 auto');
+  zet(hamburgerCol, 'width', 'auto');
+  zet(logoCol, 'order', '2');
+  zet(logoCol, 'flex', '1 1 0');
+  zet(logoCol, 'min-width', '0');
+  zet(logoCol, 'width', 'auto');
+  zet(actionsCol, 'order', '3');
+  zet(actionsCol, 'flex', '0 0 auto');
+  zet(actionsCol, 'width', 'auto');
+  zet(searchCol, 'order', '4');
+  zet(searchCol, 'flex', '0 0 0');
+  zet(searchCol, 'width', '0');
+  zet(searchCol, 'padding', '0');
+  zet(searchCol, 'overflow', 'hidden');
+
+  /* Zodra de zoekbalk opengeklapt wordt: alle geforceerde inline-waarden
+     weer loslaten, zodat het bestaande (ongewijzigde) zoek-collapse-gedrag
+     gewoon zijn eigen volle-breedte-rij kan pakken. */
+  var zoekCollapseEl = searchCol.querySelector('.collapse');
+  if (zoekCollapseEl) {
+    zoekCollapseEl.addEventListener('show.bs.collapse', function () {
+      headerRow.style.removeProperty('flex-wrap');
+      searchCol.style.removeProperty('order');
+      searchCol.style.removeProperty('flex');
+      searchCol.style.removeProperty('width');
+      searchCol.style.removeProperty('padding');
+      searchCol.style.removeProperty('overflow');
+    });
+    zoekCollapseEl.addEventListener('hidden.bs.collapse', function () {
+      zet(headerRow, 'flex-wrap', 'nowrap');
+      zet(searchCol, 'order', '4');
+      zet(searchCol, 'flex', '0 0 0');
+      zet(searchCol, 'width', '0');
+      zet(searchCol, 'padding', '0');
+      zet(searchCol, 'overflow', 'hidden');
+    });
+  }
 });
 
 

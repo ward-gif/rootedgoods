@@ -769,53 +769,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 
 /* ---- Logo centreren <576px: hamburger-kolom verhuist vóór het logo (zie
-   rootedgoods.js 1.4d, één element, één keer). Bootstraps eigen
-   order-*/col-*-klassen op deze kolommen zijn net zo specifiek als onze
-   overrides (of winnen door bron-volgorde) -- !important nodig, zelfde
-   valkuil als eerder deze sessie herhaaldelijk gezien. .header-search-col
-   bevat het zoekformulier: Bootstraps collapse klapt alleen de HOOGTE in
-   (niet de breedte), dus zonder expliciete width:0 bleef 'ie zijn volle
-   content-breedte claimen in de nieuwe nowrap-rij, ook terwijl "dicht". */
+   rootedgoods.js 1.4d, één element, één keer). De flex-wrap/order/width-
+   mechanica staat daar BEWUST als inline JS-styles, niet hier: het thema
+   zet zelf al een !important flex-wrap:wrap op .row die zelfs een hoge-
+   specificiteit eigen !important-regel versloeg (bevestigd via live
+   debuggen) -- een inline style wint gegarandeerd, dat is hier de enige
+   betrouwbare manier. Hier alleen het cosmetische restje dat niets
+   bevecht. */
 @media (max-width: 575.98px) {
-  /* Bootstraps eigen .row is standaard flex-wrap:wrap (met !important in
-     dit thema, bleek bij live-debuggen) -- hogere specificiteit nodig dan
-     alleen .header-row om te winnen. */
-  .header-main .header-row.row.align-items-center {
-    flex-wrap: nowrap !important;
-  }
-  .header-main .header-row.row .header-logo-col {
-    order: 2 !important;
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    width: auto !important;
+  .header-row .header-logo-col {
     text-align: center;
-  }
-  .header-main .header-row.row .header-actions-col {
-    order: 3 !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-  }
-  .header-main .header-row.row .rg-header-hamburger-slot {
-    order: 1 !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-  }
-  .header-main .header-row.row .header-search-col {
-    order: 4 !important;
-    flex: 0 0 0 !important;
-    width: 0 !important;
-    padding: 0 !important;
-    overflow: hidden;
-  }
-  .header-main .header-row.row .header-search-col:has(.collapse.show),
-  .header-main .header-row.row .header-search-col:has(.collapsing) {
-    flex: 1 1 100% !important;
-    width: 100% !important;
-    overflow: visible;
-  }
-  .header-main .header-row.row.align-items-center:has(.header-search-col .collapse.show),
-  .header-main .header-row.row.align-items-center:has(.header-search-col .collapsing) {
-    flex-wrap: wrap !important;
   }
 }
 
