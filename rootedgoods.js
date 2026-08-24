@@ -389,6 +389,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function zet(el, eigenschap, waarde) {
     el.style.setProperty(eigenschap, waarde, 'important');
   }
+  /* .header-row's eigen padding (2rem/32px links+rechts, bedoeld voor
+     desktop) laat op een smal scherm te weinig ruimte over voor het logo
+     (natuurlijke breedte ~157px bij de vaste 26px-hoogte) -- hier verkleind
+     zodat het logo niet meer over de zoek-/mandje-iconen heen overlapt. */
+  zet(headerRow, 'padding-left', '0.75rem');
+  zet(headerRow, 'padding-right', '0.75rem');
   zet(headerRow, 'flex-wrap', 'nowrap');
   zet(hamburgerCol, 'order', '1');
   zet(hamburgerCol, 'flex', '0 0 auto');
