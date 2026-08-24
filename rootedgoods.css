@@ -920,7 +920,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   .rg-offcanvas-tile {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
     min-height: 130px;
     border-radius: 14px;
     padding: 0.85rem !important;
