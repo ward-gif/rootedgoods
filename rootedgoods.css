@@ -777,41 +777,44 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    (niet de breedte), dus zonder expliciete width:0 bleef 'ie zijn volle
    content-breedte claimen in de nieuwe nowrap-rij, ook terwijl "dicht". */
 @media (max-width: 575.98px) {
-  .header-row {
+  /* Bootstraps eigen .row is standaard flex-wrap:wrap (met !important in
+     dit thema, bleek bij live-debuggen) -- hogere specificiteit nodig dan
+     alleen .header-row om te winnen. */
+  .header-main .header-row.row.align-items-center {
     flex-wrap: nowrap !important;
   }
-  .header-row .header-logo-col {
+  .header-main .header-row.row .header-logo-col {
     order: 2 !important;
     flex: 1 1 0 !important;
     min-width: 0 !important;
     width: auto !important;
     text-align: center;
   }
-  .header-row .header-actions-col {
+  .header-main .header-row.row .header-actions-col {
     order: 3 !important;
     flex: 0 0 auto !important;
     width: auto !important;
   }
-  .header-row .rg-header-hamburger-slot {
+  .header-main .header-row.row .rg-header-hamburger-slot {
     order: 1 !important;
     flex: 0 0 auto !important;
     width: auto !important;
   }
-  .header-row .header-search-col {
+  .header-main .header-row.row .header-search-col {
     order: 4 !important;
     flex: 0 0 0 !important;
     width: 0 !important;
     padding: 0 !important;
     overflow: hidden;
   }
-  .header-row .header-search-col:has(.collapse.show),
-  .header-row .header-search-col:has(.collapsing) {
+  .header-main .header-row.row .header-search-col:has(.collapse.show),
+  .header-main .header-row.row .header-search-col:has(.collapsing) {
     flex: 1 1 100% !important;
     width: 100% !important;
     overflow: visible;
   }
-  .header-row:has(.header-search-col .collapse.show),
-  .header-row:has(.header-search-col .collapsing) {
+  .header-main .header-row.row.align-items-center:has(.header-search-col .collapse.show),
+  .header-main .header-row.row.align-items-center:has(.header-search-col .collapsing) {
     flex-wrap: wrap !important;
   }
 }
