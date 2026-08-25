@@ -996,14 +996,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     min-height: 130px;
     border-radius: 14px;
     padding: 0.85rem !important;
-    /* Zelfde native-nav-link-erfenis als hierboven, maar dan voor padding:
-       de Thema-tegel kreeg via Shopware's eigen .nav-link-regel een kleinere
-       padding-bottom (9.6px i.p.v. onze 13.6px) -- de titel landde daardoor
-       4px lager dan bij de Trending-tegel, ook al staan beide op
-       justify-content:flex-end binnen exact dezelfde tegel-hoogte. Los
-       overschreven zodat de shorthand hierboven niet per ongeluk alsnog op
-       één zijde verliest. */
-    padding-bottom: 0.85rem !important;
+    /* Padding-bottom specifiek voor de Thema-tegel (native nav-link, erft
+       een kleinere padding-bottom die zelfs !important hier niet won) wordt
+       via inline style geforceerd in rootedgoods.js (bouwUitgelichteTegels) --
+       zie de comment daar. */
     background-size: cover;
     background-position: center;
     color: #fff !important;

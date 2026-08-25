@@ -335,6 +335,12 @@ document.addEventListener('DOMContentLoaded', function () {
       naam.before(spacer);
     }
     themaLink.classList.add('rg-offcanvas-tile', 'rg-offcanvas-tile--thema');
+    // themaLink is een ECHTE native nav-link (Shopware's eigen categorie-
+    // link) en erft daardoor ergens een eigen padding-bottom die zelfs
+    // onze !important-CSS-regel verslaat (specificiteitsgevecht dat niet
+    // via CSS alleen te winnen was) -- inline stijl wint altijd, zelfde
+    // patroon als de logo-centrering (sectie 1.4d).
+    themaLink.style.setProperty('padding-bottom', '0.85rem', 'important');
 
     var trending = document.createElement('a');
     trending.href = '/eindejaarsgeschenken';
