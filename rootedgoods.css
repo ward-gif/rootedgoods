@@ -1694,15 +1694,18 @@ img {
   }
   /* Titel boven de slider: was ongestyled (Shopware's eigen kale
      tekst-editor-look, veel te groot t.o.v. de rest van de site) --
-     zelfde schaal/gewicht/kleur als de andere sectie-koppen
-     (.rg-cat-heading, sectie 41.2), via de bestaande sibling-selector. */
+     zelfde schaal/gewicht/kleur als de andere sectie-koppen sitewide.
+     Font-size nu gelijk aan de canonieke .rg-cat-heading-maat (regel
+     ~3723) i.p.v. een eigen net-iets-andere clamp -- deze titel draagt
+     zelf ook al de .rg-cat-heading-class, dus dat had toch al moeten
+     matchen; nu ook letterlijk dezelfde waarde, geen toeval meer. */
   .cms-block-text:has(+ .cms-block-product-slider) h2 {
     font-family: 'Playfair Display', Georgia, serif !important;
     font-weight: 600 !important;
     letter-spacing: -0.018em !important;
     line-height: 1.15 !important;
     color: #2d4528 !important;
-    font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem) !important;
+    font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
     margin: 0 0 0.35rem !important;
     text-wrap: balance;
   }
@@ -3725,9 +3728,18 @@ body.is-ctl-product {
   margin: 3rem auto 0;
   padding: 0 15px;
   color: #2d4528;
-  font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.4rem);
   font-weight: 600;
   line-height: 1.15;
+}
+/* Font-size APART met !important + h2/.cms-element-text-specificiteit: de
+   kale regel hierboven (geen !important) verloor stilletjes van de globale
+   type-scale (h2 { font-size: 2rem !important }, regel 117) zodra deze kop
+   in .cms-element-text genest zit (altijd het geval als CMS-blok-content) --
+   vandaar dat "Cadeaus per moment" op 32px stond i.p.v. z'n eigen bedoelde
+   maat. Nu dezelfde clamp als alle andere sectie-koppen sitewide. */
+h2.rg-cat-heading,
+.cms-element-text h2.rg-cat-heading {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
 }
 @media (min-width: 576px) {
   .rg-cat-heading { padding: 0 40px; }
@@ -4322,11 +4334,19 @@ body.is-ctl-product {
 }
 
 .rg-feature-row__title {
-  font-size: 2.25rem;
   font-weight: 600;
   line-height: 1.15;
   color: #2d4528;
   margin: 0 0 2rem 0;
+}
+/* Font-size apart met !important + h3/.cms-element-text-specificiteit: deze
+   kop rendert als <h3>, en de kale regel hierboven (geen !important) verloor
+   stilletjes van de globale type-scale (h3 { font-size: 1.625rem !important },
+   regel 118) -- "Waarom Rooted Goods"/"Zo werkt het" stonden daardoor op een
+   andere maat dan de overige sectie-koppen. Nu dezelfde clamp als de rest. */
+h3.rg-feature-row__title,
+.cms-element-text h3.rg-feature-row__title {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
 }
 
 .rg-feature-row__body p {
@@ -4359,7 +4379,6 @@ body.is-ctl-product {
     padding: 2.5rem 20px;
   }
   .rg-feature-row__title {
-    font-size: 1.75rem;
     margin-bottom: 1.25rem;
   }
   /* Reverse-variant volgt natuurlijke stack-volgorde op mobiel */
@@ -4374,7 +4393,6 @@ body.is-ctl-product {
     padding: 3rem 24px;
   }
   .rg-feature-row__title {
-    font-size: 2rem;
     margin-bottom: 1.5rem;
   }
 }
@@ -4725,7 +4743,7 @@ h2.rg-story__title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
   color: #2d4528 !important;
-  font-size: clamp(1.7rem, 1.3rem + 1.5vw, 2.6rem) !important;
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 1.2rem !important;
   text-wrap: balance;
@@ -5002,14 +5020,18 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
 /* Dubbel-specifiek + !important is hier NODIG: de globale type-scale zet
    h2 op 3rem/600 mét !important (om Promidata-overrides te verslaan) en
    won dus stilletjes van de kale class — daarom oogde de kop als een
-   gewone h2 i.p.v. een statement. Zelfde patroon als h2.rg-endcta__title. */
+   gewone h2 i.p.v. een statement. Zelfde patroon als h2.rg-endcta__title.
+   Was hiervoor var(--rg-text-display), hero-schaal (clamp 2.6-4.5rem) --
+   deze kop is semantisch een gewone sectie-H2, geen pagina-hero, en kreeg
+   daardoor onterecht dezelfde grootte als een hero-titel. Nu dezelfde maat
+   als de rest van de sectie-koppen sitewide (sectie 41.2). */
 h2.rg-statement__title,
 .cms-element-text h2.rg-statement__title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: var(--rg-text-display) !important;
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
   font-weight: 600 !important;
-  line-height: 1.05 !important;
-  letter-spacing: -0.02em;
+  line-height: 1.12 !important;
+  letter-spacing: -0.018em;
   color: #2d4528 !important;
   margin: 0 0 var(--rg-space-lg) !important;   /* kop -> subkop */
 }
@@ -5592,9 +5614,17 @@ img.rg-europe-map__svg {
 .rg-theme-heading {
   font-family: 'Playfair Display', serif;
   color: #2d4528 !important;
-  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem) !important;
   font-weight: 600 !important;
   margin: 0 0 0.4rem 0;
+}
+/* Font-size apart met h2/.cms-element-text-specificiteit: de vorige regel
+   (bare class, !important) had nét niet genoeg specificiteit tegenover de
+   globale type-scale (h2 { font-size: 2rem !important }) -- verloor
+   stilletjes zodra genest in .cms-element-text (altijd het geval).
+   Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
+h2.rg-theme-heading,
+.cms-element-text h2.rg-theme-heading {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
 }
 .rg-theme-intro {
   color: #4a5a44;
@@ -6185,10 +6215,16 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem);
   line-height: 1.15;
   margin: 0 auto;
   max-width: 24ch;
+}
+/* Font-size apart met h2/.cms-element-text-specificiteit: was een kale
+   regel zonder !important, verloor altijd van de globale type-scale.
+   Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
+h2.rg-block-title__title,
+.cms-element-text h2.rg-block-title__title {
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
 }
 .rg-block-title__sub {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
@@ -6911,7 +6947,11 @@ h1.rg-sd__title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 700 !important;
   color: #2d4528 !important;
-  font-size: clamp(2.2rem, 1.3rem + 2.6vw, 3.4rem) !important;
+  /* Was een eigen clamp(2.2rem...) -- door de .cms-element-text-prefixed
+     specificiteit hier won die stilletjes van sectie 41.1's bedoeld-
+     unificerende regel, waardoor deze H1 kleiner oogde dan de andere
+     hero-titels sitewide. Nu dezelfde maat als .rg-hero-v2__title. */
+  font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem) !important;
   line-height: 1.06 !important;
   letter-spacing: -0.01em;
   margin: 0 0 1.1rem !important;
@@ -7059,7 +7099,9 @@ h2.rg-sd__row-title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
   color: #2d4528 !important;
-  font-size: clamp(1.6rem, 1.2rem + 1.3vw, 2.3rem) !important;
+  /* Was clamp(1.6rem...), net iets kleiner dan de rest van de sectie-
+     koppen (die allemaal 1.7rem) -- gelijkgetrokken. */
+  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 0.85rem !important;
   text-wrap: balance;
@@ -7484,13 +7526,17 @@ h2.rg-sd__ask-title,
   transform: translateY(-2px);
 }
 
-/* ---- Losse FAQ-pagina (faq.html): h1 + categorie-koppen tussen de groepen ---- */
+/* ---- Losse FAQ-pagina (faq.html): h1 + categorie-koppen tussen de groepen ----
+   Font-size/weight nu gelijk aan de rest van de hero/pagina-H1's sitewide
+   (was een eigen clamp(2rem...) op weight 800 -- stond los van sectie 41.1's
+   "DISPLAY-koppen"-systeem, zag er daardoor duidelijk kleiner/dikker uit dan
+   elke andere hero-titel op de site). */
 h1.rg-faq-title,
 .cms-element-text h1.rg-faq-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   color: #2d4528 !important;
-  font-size: clamp(2rem, 1.4rem + 2vw, 3rem) !important;
+  font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem) !important;
   line-height: 1.1 !important;
   margin: 0 0 0.8rem !important;
   text-wrap: balance;
@@ -8215,7 +8261,6 @@ h1.rgh__title, .rgh__title,
 .rg-hero-v2__title, h1.rg-hero-v2__title,
 .rg-page-hero__title, h1.rg-page-hero__title,
 .rg-sd__title, h1.rg-sd__title,
-.rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title,
 .rg-endcta__title, h2.rg-endcta__title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
@@ -8224,16 +8269,20 @@ h1.rgh__title, .rgh__title,
   color:var(--rg-green) !important;
   text-wrap:balance;
 }
-/* Per-kop groottes: fors editorial, met behoud van nette line-wraps */
+/* Per-kop groottes: fors editorial, met behoud van nette line-wraps.
+   Eén gedeelde maat voor alle "echte" H1-hero-titels sitewide (was voorheen
+   2.6rem vs 2.5rem, twee net iets verschillende formules voor wat visueel
+   dezelfde rol speelt -- nu volledig gelijk). .rg-statement__title (Europa-
+   kaart-sectie) hoort hier NIET meer bij: dat is semantisch een gewone
+   sectie-H2 die per ongeluk hero-schaal had gekregen (sectie 5006/41.2). */
 .rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
 .rgh__title, h1.rgh__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.5rem,1.3rem + 3.2vw,4.2rem) !important; }
-.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.5rem,1.3rem + 3.2vw,4.2rem) !important; }
-.rg-statement__title, h2.rg-statement__title, .cms-element-text h2.rg-statement__title{ font-size:clamp(2.6rem,1.3rem + 3.6vw,4.6rem) !important; }
+.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
+.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
 .rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem) !important; }
 /* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
 .rg-hero-v2__title em, .rgh__title em, .rg-sd__title em,
-.rg-statement__title em, .rg-endcta__title em, .rg-page-hero__title em{
+.rg-endcta__title em, .rg-page-hero__title em{
   font-style: normal !important;
   font-synthesis: none;
   display: inline-block;
@@ -8246,10 +8295,14 @@ h1.rgh__title, .rgh__title,
   .rg-hero-v2__title, h1.rg-hero-v2__title{ max-width:18ch !important; }
 }
 
-/* ---- 41.2 SECTIE-koppen: één maat kleiner dan display, zelfde discipline ---- */
+/* ---- 41.2 SECTIE-koppen: één maat kleiner dan display, zelfde discipline ----
+   (.rg-feature-row__title stond hier onterecht als h2.-variant genoteerd --
+   het element rendert als <h3>, dus die specificiteitsboost matchte nooit.
+   .rg-faq-title hoort hier niet: dat is een <h1>, zit in de display-tier
+   hierboven, stond hier als dode h2-regel.) */
 .rg-sd__head-title, h2.rg-sd__head-title, .cms-element-text h2.rg-sd__head-title,
 .rg-block-title__title,
-.rg-feature-row__title, h2.rg-feature-row__title, .cms-element-text h2.rg-feature-row__title,
+.rg-feature-row__title, h3.rg-feature-row__title, .cms-element-text h3.rg-feature-row__title,
 .rg-sd__row-title, h2.rg-sd__row-title, .cms-element-text h2.rg-sd__row-title,
 .rg-compare__title, h2.rg-compare__title,
 .rg-story__title, h2.rg-story__title,
@@ -8257,7 +8310,7 @@ h1.rgh__title, .rgh__title,
 .rg-sd__panel-title, h2.rg-sd__panel-title,
 .rg-sd__ask-title, h2.rg-sd__ask-title,
 .rg-sd__journey-title, h2.rg-sd__journey-title,
-.rg-faq-title, h2.rg-faq-title{
+.rg-theme-heading{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:600 !important;
   letter-spacing:-.018em !important;
