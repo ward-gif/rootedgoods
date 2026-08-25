@@ -1679,6 +1679,14 @@ img {
      hier onnodig ruim. */
   .cms-block-text:has(+ .cms-block-product-slider) .cms-block-container {
     padding-bottom: 6px !important;
+    /* Shopware's bloktemplate zet hier zelf een INLINE style="padding:
+       0 40px" (geen instelbaar CMS-veld -- vandaar dat er nergens een
+       optie voor te vinden was). .rg-cat-heading/.rg-cat-head leveren
+       daarnaast zelf al hun eigen responsieve zij-marge (15px/40px, zie
+       sectie 41.2 c.q. de "Nu populair"-sectie), dus dit stapelde op tot
+       dubbele zijruimte. !important nodig om de inline style te verslaan. */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   .cms-block-product-slider .cms-block-container {
     padding-top: 6px !important;
