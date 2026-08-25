@@ -8496,40 +8496,50 @@ h2.rg-statement__title em{
   font-size:.68rem !important;
 }
 
-/* ---- 41.10 THEMA-OVERZICHT — 1 uitgelichte tegel + compacte vierkante grid
-   met de overige thema's, zodat alles in (bijna) één oogopslag te overzien is
-   i.p.v. eerst door wisselend grote tegels te moeten scrollen. Hergebruikt
-   .rg-theme-tile (beeld/label/pijl); alleen de grid-indeling is nieuw.
-   Eén platte grid (geen flex-wrapper om een geneste grid heen) -- anders
-   moet de uitgelichte tegel z'n hoogte "raden" via een vaste aspect-ratio
-   i.p.v. hem echt te laten matchen met de grid ernaast (gaf een storend
-   gat/hoogteverschil, zie live screenshot 25-08). In één grid kan de
-   uitgelichte tegel gewoon grid-row:1/3 + height:100% doen, want de
-   rijhoogte van de rest is dan intrinsiek al bekend (aspect-ratio:1/1). */
-.rg-theme-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin:0 0 1.15rem; }
-/* Uitgelicht: overschrijft de globale >=768 .rg-theme-tile{aspect-ratio:auto;height:100%}. */
-.rg-theme-grid .rg-theme-tile--feature{ grid-column:1/-1 !important; aspect-ratio:16/10 !important; height:auto !important; }
-/* Overige thema's: compacte vierkante tegels, 2 per rij op mobiel. */
-.rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature){ aspect-ratio:1/1 !important; height:auto !important; }
-/* Kleine vierkante tegel -> minder padding, anders eet de body te veel beeld op. */
-.rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) .rg-theme-tile__body{ padding:0.85rem !important; }
-/* Smallere kop nodig: op 2-koloms mobiel is de tegel maar ~150px breed, de
-   standaard titelgrootte breekt dan midden-in-het-woord (bv. "Onboar/ding"). */
-.rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
-.cms-element-text .rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title{ font-size:1rem !important; }
+/* ---- 41.10 THEMA-OVERZICHT — terug naar de hero-opzet (1 uitgelicht + 2
+   middelgroot) + rij van 4, want die had de juiste hiërarchie (het
+   uitgelichte thema sprong er echt uit) -- de platte 7-tegel-grid van
+   ervoor maakte alles even zwaar, waardoor niks meer opviel. Wél
+   compacter dan de oorspronkelijke hero/row4-opzet: op mobiel/tablet
+   staan de 2 middelgrote tegels naast elkaar i.p.v. allebei vol-breed
+   gestapeld, en de rij van 4 staat als 2x2 vierkant i.p.v. 4 gestapelde
+   tegels -- scheelt flink in scrollhoogte t.o.v. de oude opzet. */
+.rg-theme-hero{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin:0 0 0.75rem; }
+.rg-theme-hero .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
+.rg-theme-hero .rg-theme-tile--feature{ grid-column:1/-1 !important; grid-row:auto !important; aspect-ratio:16/10 !important; }
+
+.rg-theme-row4{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; }
+.rg-theme-row4 .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
+
+/* Compacte tegels (middelgroot + klein) -> minder padding en een kleinere
+   kop, anders breekt de standaard titelgrootte midden-in-het-woord. */
+.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) .rg-theme-tile__body,
+.rg-theme-row4 .rg-theme-tile__body{ padding:0.85rem !important; }
+.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
+.rg-theme-row4 h3.rg-theme-tile__title,
+.cms-element-text .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
+.cms-element-text .rg-theme-row4 h3.rg-theme-tile__title{ font-size:1rem !important; }
 
 @media (min-width:600px){
-  .rg-theme-grid{ grid-template-columns:repeat(3,1fr); gap:0.9rem; }
-  .rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
-  .cms-element-text .rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title{ font-size:1.1rem !important; }
+  .rg-theme-row4{ grid-template-columns:repeat(4,1fr); gap:0.9rem; }
+  .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
+  .rg-theme-row4 h3.rg-theme-tile__title,
+  .cms-element-text .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
+  .cms-element-text .rg-theme-row4 h3.rg-theme-tile__title{ font-size:1.1rem !important; }
 }
 @media (min-width:992px){
-  /* Uitgelicht links (1 kolom, 2 rijen), rest rechts (3x2) -> alle 7 thema's
-     in één oogopslag, geen scrollen nodig om het overzicht te zien. */
-  .rg-theme-grid{ grid-template-columns:1.1fr repeat(3,1fr); grid-template-rows:repeat(2,1fr); gap:1rem; }
-  .rg-theme-grid .rg-theme-tile--feature{ grid-column:1 !important; grid-row:1 / 3 !important; aspect-ratio:auto !important; height:100% !important; min-height:300px; }
-  .rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
-  .cms-element-text .rg-theme-grid .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title{ font-size:1.25rem !important; }
+  /* Vanaf desktop de klassieke hero-verhoudingen (groot uitgelicht +
+     2 middelgroot gestapeld ernaast), maar met een lagere min-height en
+     een vlakkere rij-van-4 (16:9 i.p.v. 4:3) voor minder scrollhoogte. */
+  .rg-theme-hero{ grid-template-columns:1.5fr 1fr; grid-template-rows:1fr 1fr; margin-bottom:1rem; }
+  .rg-theme-hero .rg-theme-tile{ aspect-ratio:auto !important; height:100% !important; min-height:220px; }
+  .rg-theme-hero .rg-theme-tile--feature{ grid-column:1 !important; grid-row:1 / 3 !important; }
+  .rg-theme-row4{ grid-template-columns:repeat(4,1fr); }
+  .rg-theme-row4 .rg-theme-tile{ aspect-ratio:16/9 !important; height:auto !important; }
+  .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
+  .rg-theme-row4 h3.rg-theme-tile__title,
+  .cms-element-text .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
+  .cms-element-text .rg-theme-row4 h3.rg-theme-tile__title{ font-size:1.2rem !important; }
 }
 /* CTA-ruimte onder de rij */
 .rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem + 2vw,2.5rem); }
