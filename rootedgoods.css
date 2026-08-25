@@ -786,6 +786,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .header-search-col .collapse:not(.show) {
     display: none !important;
   }
+  /* De zoek-toggle-knop zelf zit in een wrapper met Bootstrap's eigen
+     .d-sm-none (native: alleen zichtbaar <576px -- de theme liet de
+     zoekbalk vanaf 576px kennelijk gewoon altijd open staan, vandaar
+     geen aparte toggle-knop op tablet-breedte). Nu de zoekbalk hierboven
+     ook op tablet standaard verborgen is, moet de knop om 'm te openen
+     daar dus wél zichtbaar zijn -- anders is zoeken op tablet nergens
+     meer bereikbaar. */
+  .header-search-col .col-auto.d-sm-none:has(.search-toggle) {
+    display: block !important;
+  }
 }
 
 /* ---- Logo centreren <576px: hamburger-kolom verhuist vóór het logo (zie
