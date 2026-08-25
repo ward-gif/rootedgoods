@@ -6411,6 +6411,13 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    eerder in beeld), USP's/Richard weg (staan elders al: topbar-USP's +
    CTA-blok onderaan met Richard). CTA-knoppen gecentreerd. */
 @media (max-width: 767px) {
+  /* Ruimte tussen header/menu en de eyebrow ("Geworteld in Europa") was
+     onnodig groot: .rg-hero-v2__inner erft hier nog de desktop-maat
+     top-padding (var(--rg-s4), 32px). Hero-hoogte wordt op mobiel NIET
+     door de fit()-JS vastgezet (die reset 'm juist naar auto, zie
+     rootedgoods.js sectie 2.4) -- dus deze padding rechtstreeks verkleinen
+     schuift de hele hero-inhoud (incl. Richard eronder) mee omhoog. */
+  .rg-hero-v2__inner { padding-top: 0.75rem; }
   .rg-hero-v2__copy-top,
   .rg-hero-v2__copy-bottom { text-align: center; }
   .rg-hero-v2__kicker,
