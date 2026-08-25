@@ -5808,7 +5808,7 @@ h2.rg-theme-heading,
   border-radius: 999px;
   margin-bottom: 0.65rem;
 }
-.rg-theme-tile__title {
+h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
   font-family: 'Playfair Display', serif !important;
   color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem) !important;
@@ -5825,7 +5825,7 @@ h2.rg-theme-heading,
   color: rgba(255, 255, 255, 0.88);
   margin-top: 0.25rem;
 }
-.rg-theme-tile--feature .rg-theme-tile__title {
+.rg-theme-tile--feature h3.rg-theme-tile__title, .cms-element-text .rg-theme-tile--feature h3.rg-theme-tile__title {
   font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.6rem) !important;
 }
 
@@ -8506,9 +8506,13 @@ h2.rg-statement__title em{
 .rg-theme-grid .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
 /* Kleine vierkante tegel -> minder padding, anders eet de body te veel beeld op. */
 .rg-theme-grid .rg-theme-tile__body{ padding:0.85rem !important; }
+/* Smallere kop nodig: op 2-koloms mobiel is de tegel maar ~150px breed, de
+   standaard titelgrootte breekt dan midden-in-het-woord (bv. "Onboar/ding"). */
+.rg-theme-grid h3.rg-theme-tile__title, .cms-element-text .rg-theme-grid h3.rg-theme-tile__title{ font-size:1rem !important; }
 
 @media (min-width:600px){
   .rg-theme-grid{ grid-template-columns:repeat(3,1fr); gap:0.9rem; }
+  .rg-theme-grid h3.rg-theme-tile__title, .cms-element-text .rg-theme-grid h3.rg-theme-tile__title{ font-size:1.1rem !important; }
 }
 @media (min-width:992px){
   /* Uitgelicht links, vierkante grid rechts (3x2) -> in één oogopslag alle
@@ -8517,6 +8521,7 @@ h2.rg-statement__title em{
   .rg-theme-layout .rg-theme-tile--feature{ aspect-ratio:auto !important; height:100% !important; flex:0 0 30%; }
   .rg-theme-grid{ flex:1 1 auto; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,1fr); gap:1rem; }
   .rg-theme-grid .rg-theme-tile{ height:100% !important; }
+  .rg-theme-grid h3.rg-theme-tile__title, .cms-element-text .rg-theme-grid h3.rg-theme-tile__title{ font-size:1.25rem !important; }
 }
 /* CTA-ruimte onder de rij */
 .rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem + 2vw,2.5rem); }
