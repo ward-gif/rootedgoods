@@ -614,17 +614,6 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     z-index: 620;  /* verplaatst van header-search-col */
   }
 }
-/* "Smal desktop" (992-1279px, bv. iPad Pro landscape/portrait): de vaste
-   600px-brede, viewport-gecentreerde zoekbalk botst hier met het logo
-   (dat op volle desktop-grootte rendert, geen mobiel/tablet-hoogtecap
-   meer) -- bevestigd live: zoekbalk liep 21px over het logo heen op
-   1024px. Smaller in dit tussenbereik, vanaf 1280px weer de volle 600px. */
-@media (min-width: 992px) and (max-width: 1279px) {
-  .header-search {
-    width: 340px !important;
-    max-width: 340px !important;
-  }
-}
 .header-search-col {
   position: relative;
   z-index: 620;
@@ -4273,11 +4262,15 @@ h2.rg-cat-heading,
 
 @media (min-width: 992px) and (max-width: 1399px) {
   /* Tussen logo (250px) en actions (~180px) past 700px niet meer op
-     1024-1280. Cap op een fluid waarde zodat 'ie netjes verkleint. */
+     1024-1280. Cap op een fluid waarde zodat 'ie netjes verkleint.
+     Was 48vw -- op 1024px (bv. iPad Pro) gaf dat nog 491px, en de
+     viewport-gecentreerde zoekbalk liep daarmee alsnog 21px over het
+     (volledig-desktop-formaat) logo heen. 38vw laat op de smalste
+     breedte van dit bereik (992px) nog ~20px lucht tot het logo. */
   .header-search,
   .header-row .header-search {
-    width: min(600px, 48vw) !important;
-    max-width: min(600px, 48vw) !important;
+    width: min(600px, 38vw) !important;
+    max-width: min(600px, 38vw) !important;
   }
 }
 
