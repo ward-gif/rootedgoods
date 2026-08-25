@@ -776,6 +776,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .header-search-col .collapsing {
     padding: 1rem 0 1.25rem;
   }
+  /* Zoekbalk stond permanent open op tablet-breedtes (576-991px) i.p.v.
+     verborgen tot er op het zoek-icoon wordt geklikt -- de knop zelf
+     (aria-expanded="false") en de JS-state waren wel gewoon correct
+     "collapsed", maar iets (native theme-CSS, cross-origin dus niet
+     rechtstreeks te inspecteren) forceerde het collapse-element sowieso
+     op display:block. Bootstrap's eigen .collapse:not(.show)-regel
+     hoort dit te regelen; hier expliciet met !important herbevestigd. */
+  .header-search-col .collapse:not(.show) {
+    display: none !important;
+  }
 }
 
 /* ---- Logo centreren <576px: hamburger-kolom verhuist vóór het logo (zie
