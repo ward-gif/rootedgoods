@@ -1,8 +1,12 @@
 <!-- ============================================================
      THEMA-OVERZICHT — plak dit in een CMS HTML-blok op de Thema's-pagina.
-     Opzet: eyebrow-kop (zoals het service-blok), daaronder een hero
-     (1 grote uitgelichte tegel + 2 middelgrote ernaast) + een rij van 4,
-     afgesloten met een "Bekijk alle producten"-CTA.
+     Opzet: eyebrow-kop, daaronder 1 uitgelichte tegel + een compacte
+     vierkante grid van de overige 6 thema's, afgesloten met een
+     "Bekijk alle producten"-CTA.
+     Doel (feedback Ward): bezoeker moet in (bijna) één oogopslag alle
+     thema's kunnen overzien i.p.v. eerst door steeds wisselende grote/
+     kleine tegels moeten scrollen. Uitgelicht blijft z'n eigen moment
+     (trending-badge, groot beeld); de rest is nu overal even groot.
      - Uitgelicht = de tegel met class "rg-theme-tile--feature".
      - CSS staat in rootedgoods.css (sectie 41.10/41.11 + .rg-theme-tile).
      ============================================================ -->
@@ -11,8 +15,8 @@
   <h2 class="rg-theme-heading">Shop op thema</h2>
   <p class="rg-theme-intro">Elke gelegenheid vraagt om een ander cadeau. Vind snel wat past bij het moment, van feestdagen tot events en van welkom-nieuwe-collega tot merchandise voor je collega's.</p>
 
-  <!-- ===== HERO: 1 groot + 2 middelgroot ===== -->
-  <div class="rg-theme-hero">
+  <div class="rg-theme-layout">
+    <!-- ===== UITGELICHT ===== -->
     <a class="rg-theme-tile rg-theme-tile--feature" href="/eindejaarsgeschenken">
       <img class="rg-theme-tile__img" src="/media/d8/96/ae/1786435459/Kerst en eindejaar.jpg" alt="Kerst en eindejaar">
       <span class="rg-theme-tile__body">
@@ -25,56 +29,56 @@
       </span>
     </a>
 
-    <a class="rg-theme-tile" href="/onboarding-welkomstpakket">
-      <img class="rg-theme-tile__img" src="/media/3a/c8/55/1785442349/Eindejaarsgeschenken-2.jpg" alt="Onboarding &amp; welkomstpakketten">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Onboarding <span class="rg-amp">&amp;</span> welkom</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
+    <!-- ===== OVERIGE THEMA'S: compacte vierkante grid (2 op mobiel, 3 vanaf tablet) ===== -->
+    <div class="rg-theme-grid">
+      <a class="rg-theme-tile" href="/onboarding-welkomstpakket">
+        <img class="rg-theme-tile__img" src="/media/3a/c8/55/1785442349/Eindejaarsgeschenken-2.jpg" alt="Onboarding &amp; welkomstpakketten">
+        <span class="rg-theme-tile__body">
+          <span><h3 class="rg-theme-tile__title">Onboarding <span class="rg-amp">&amp;</span> welkom</h3></span>
+          <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+        </span>
+      </a>
 
-    <a class="rg-theme-tile" href="/events-conferenties">
-      <img class="rg-theme-tile__img" src="/media/c0/ba/fe/1785442349/Events-2.jpg" alt="Events &amp; conferenties">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Events <span class="rg-amp">&amp;</span> conferenties</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
-  </div>
+      <a class="rg-theme-tile" href="/events-conferenties">
+        <img class="rg-theme-tile__img" src="/media/c0/ba/fe/1785442349/Events-2.jpg" alt="Events &amp; conferenties">
+        <span class="rg-theme-tile__body">
+          <span><h3 class="rg-theme-tile__title">Events <span class="rg-amp">&amp;</span> conferenties</h3></span>
+          <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+        </span>
+      </a>
 
-  <!-- ===== RIJ VAN 4 ===== -->
-  <div class="rg-theme-row4">
-    <a class="rg-theme-tile" href="/dag-van-de-leraar">
-      <img class="rg-theme-tile__img" src="/media/0b/4f/33/1785442348/Dag van de leraar-2.jpg" alt="Dag van de leraar">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Dag van de leraar</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
+      <a class="rg-theme-tile" href="/dag-van-de-leraar">
+        <img class="rg-theme-tile__img" src="/media/0b/4f/33/1785442348/Dag van de leraar-2.jpg" alt="Dag van de leraar">
+        <span class="rg-theme-tile__body">
+          <span><h3 class="rg-theme-tile__title">Dag van de leraar</h3></span>
+          <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+        </span>
+      </a>
 
-    <a class="rg-theme-tile" href="/brievenbus">
-      <img class="rg-theme-tile__img" src="/media/4a/2e/d4/1785831536/Verzending naar locaties doosjes-2.jpg" alt="Brievenbus">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Brievenbus</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
+      <a class="rg-theme-tile" href="/brievenbus">
+        <img class="rg-theme-tile__img" src="/media/4a/2e/d4/1785831536/Verzending naar locaties doosjes-2.jpg" alt="Brievenbus">
+        <span class="rg-theme-tile__body">
+          <span><h3 class="rg-theme-tile__title">Brievenbus</h3></span>
+          <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+        </span>
+      </a>
 
-    <a class="rg-theme-tile" href="/made-in-nl">
-      <img class="rg-theme-tile__img" src="/media/b4/43/ed/1785854400/Made in NL-2.jpg" alt="Made in NL">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Made in NL</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
+      <a class="rg-theme-tile" href="/made-in-nl">
+        <img class="rg-theme-tile__img" src="/media/b4/43/ed/1785854400/Made in NL-2.jpg" alt="Made in NL">
+        <span class="rg-theme-tile__body">
+          <span><h3 class="rg-theme-tile__title">Made in NL</h3></span>
+          <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+        </span>
+      </a>
 
-    <a class="rg-theme-tile" href="/medewerker-merchandise">
-      <img class="rg-theme-tile__img" src="/media/a4/8c/a1/1785442348/merchandise-2.jpg" alt="Medewerker Merchandise">
-      <span class="rg-theme-tile__body">
-        <span><h3 class="rg-theme-tile__title">Medewerker Merchandise</h3></span>
-        <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
-      </span>
-    </a>
+      <a class="rg-theme-tile" href="/medewerker-merchandise">
+        <img class="rg-theme-tile__img" src="/media/a4/8c/a1/1785442348/merchandise-2.jpg" alt="Medewerker Merchandise">
+        <span class="rg-theme-tile__body">
+          <span><h3 class="rg-theme-tile__title">Medewerker Merchandise</h3></span>
+          <span class="rg-theme-tile__arrow" aria-hidden="true"></span>
+        </span>
+      </a>
+    </div>
   </div>
 
   <div class="rg-spec-cta">
