@@ -4644,7 +4644,7 @@ h3.rg-feature-row__title,
 .rg-compare__head {
   text-align: center;
   max-width: 62ch;
-  margin: 0 auto clamp(1.75rem, 1.5rem + 1.5vw, 2.75rem);
+  margin: 0 auto clamp(3rem, 2.25rem + 3vw, 4.5rem);
 }
 .rg-compare__eyebrow {
   margin: 0 0 0.8rem;
@@ -4688,8 +4688,10 @@ h2.rg-compare__title,
   align-items: stretch;
 }
 .rg-compare__col--no {
-  padding: clamp(.5rem, 1.5vw, 1.25rem) 0;
+  padding: clamp(1.75rem, 2vw + 1rem, 2.75rem) clamp(1.75rem, 3vw, 2.5rem);
   align-self: center;
+  border: 1px solid #8a8073;
+  border-radius: var(--rg-r-xp, 20px);
 }
 .rg-compare__col--yes {
   background-image: url('https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain4%20small.jpg');
