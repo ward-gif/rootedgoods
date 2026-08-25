@@ -8515,12 +8515,15 @@ h2.rg-statement__title em{
   .rg-theme-grid h3.rg-theme-tile__title, .cms-element-text .rg-theme-grid h3.rg-theme-tile__title{ font-size:1.1rem !important; }
 }
 @media (min-width:992px){
-  /* Uitgelicht links, vierkante grid rechts (3x2) -> in één oogopslag alle
-     thema's zichtbaar, geen scrollen nodig om het overzicht te zien. */
-  .rg-theme-layout{ flex-direction:row; align-items:stretch; gap:1.25rem; }
-  .rg-theme-layout .rg-theme-tile--feature{ aspect-ratio:auto !important; height:100% !important; flex:0 0 30%; }
+  /* Uitgelicht links (staand formaat), vierkante grid rechts (3x2) -> in één
+     oogopslag alle thema's zichtbaar, geen scrollen nodig om het overzicht
+     te zien. Beide op eigen aspect-ratio (geen stretch): een flex-item met
+     height:100% t.o.v. een auto-hoge flex-ouder resolveert in Chromium naar
+     0px, dus expliciete ratio's i.p.v. daarop te vertrouwen. */
+  .rg-theme-layout{ flex-direction:row; align-items:flex-start; gap:1.25rem; }
+  .rg-theme-layout .rg-theme-tile--feature{ aspect-ratio:3/4 !important; height:auto !important; flex:0 0 30%; }
   .rg-theme-grid{ flex:1 1 auto; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,1fr); gap:1rem; }
-  .rg-theme-grid .rg-theme-tile{ height:100% !important; }
+  .rg-theme-grid .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
   .rg-theme-grid h3.rg-theme-tile__title, .cms-element-text .rg-theme-grid h3.rg-theme-tile__title{ font-size:1.25rem !important; }
 }
 /* CTA-ruimte onder de rij */
