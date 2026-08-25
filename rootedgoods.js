@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-/* ---- 1.4d Header <576px: logo centreren
+/* ---- 1.4d Header <992px: logo centreren
  * Hamburger en zoek-toggle/mandje zitten in dezelfde Bootstrap-kolom
  * (.header-actions-col) -- puur CSS kan ze dus niet los van elkaar aan
  * weerszijden van het logo zetten. Kleinst mogelijke ingreep: alleen de
@@ -398,28 +398,52 @@ document.addEventListener('DOMContentLoaded', function () {
  * aangeraakt -- bewust een aparte, kleinere functie dan de vorige,
  * teruggedraaide rij-herbouw (die 4 elementen in nieuwe wrappers zette).
  *
+ * Was oorspronkelijk <576px-only; op 576-991px (tablet) bleek de hamburger
+ * een HELEMAAL ANDER element te zijn dan op mobiel -- niet in
+ * .header-actions-col, maar GENEST in .header-search-col (naast de
+ * zoekbalk, in een eigen mini-rijtje, breakpoint-gewisseld via Bootstrap's
+ * d-none/d-sm-block/d-lg-none). Zonder dit bleef .header-logo-col op
+ * tablet z'n eigen volle-breedte-rij (col-12 tot col-lg-auto) claimen en
+ * het logo stond dus los boven de rest i.p.v. ertussenin gecentreerd.
+ * Beide mogelijke hamburger-kolommen worden hier verplaatst (de niet-
+ * actieve is toch display:none, onschadelijk) i.p.v. per breedte te
+ * detecteren welke er nu net zichtbaar is.
+ *
  * De flex-layout-eigenschappen (flex-wrap/order/width) worden hier via JS
  * inline gezet i.p.v. puur in CSS: het thema blijkt zelf al een !important
  * flex-wrap:wrap op .row te zetten die zelfs een hoge-specificiteit eigen
  * !important-regel versloeg (bevestigd via live debuggen) -- een inline
  * style wint altijd, dat is de enige betrouwbare manier hier. */
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.innerWidth >= 576) return;
+  if (window.innerWidth >= 992) return;
   var headerRow = document.querySelector('.header-row');
   if (!headerRow || headerRow.dataset.rgHamburgerMoved) return;
   var logoCol = headerRow.querySelector('.header-logo-col');
   var actionsCol = headerRow.querySelector('.header-actions-col');
   var searchCol = headerRow.querySelector('.header-search-col');
-  var hamburgerBtn = headerRow.querySelector('.header-actions-col .menu-button');
-  var hamburgerCol = hamburgerBtn ? hamburgerBtn.closest('.col.d-sm-none') : null;
-  if (!logoCol || !actionsCol || !searchCol || !hamburgerCol) return;
+  // Mobiel (<576px): hamburger zit in .header-actions-col.
+  var mobielHamburgerCol = headerRow.querySelector('.header-actions-col .col.d-sm-none:has(.menu-button)');
+  // Tablet (576-991px): hamburger zit GENEST in .header-search-col, naast
+  // (niet in) de zoekbalk-collapse.
+  var tabletHamburgerCol = headerRow.querySelector('.header-search-col .col-sm-auto.d-none.d-sm-block.d-lg-none');
+  if (!logoCol || !actionsCol || !searchCol || (!mobielHamburgerCol && !tabletHamburgerCol)) return;
   headerRow.dataset.rgHamburgerMoved = '1';
-  hamburgerCol.classList.add('rg-header-hamburger-slot');
-  headerRow.insertBefore(hamburgerCol, logoCol);
 
   function zet(el, eigenschap, waarde) {
     el.style.setProperty(eigenschap, waarde, 'important');
   }
+  // Belangrijk: EERST de tablet-hamburger-kolom uit .header-search-col
+  // halen, VOORDAT searchCol hieronder op width:0 wordt gezet -- anders
+  // verdwijnt de tablet-hamburger mee de collapse in.
+  [mobielHamburgerCol, tabletHamburgerCol].forEach(function (col) {
+    if (!col) return;
+    col.classList.add('rg-header-hamburger-slot');
+    zet(col, 'order', '1');
+    zet(col, 'flex', '0 0 auto');
+    zet(col, 'width', 'auto');
+    headerRow.insertBefore(col, logoCol);
+  });
+
   /* .header-row's eigen padding (2rem/32px links+rechts, bedoeld voor
      desktop) laat op een smal scherm te weinig ruimte over voor het logo
      (natuurlijke breedte ~157px bij de vaste 26px-hoogte) -- hier verkleind
@@ -427,9 +451,6 @@ document.addEventListener('DOMContentLoaded', function () {
   zet(headerRow, 'padding-left', '0.75rem');
   zet(headerRow, 'padding-right', '0.75rem');
   zet(headerRow, 'flex-wrap', 'nowrap');
-  zet(hamburgerCol, 'order', '1');
-  zet(hamburgerCol, 'flex', '0 0 auto');
-  zet(hamburgerCol, 'width', 'auto');
   zet(logoCol, 'order', '2');
   zet(logoCol, 'flex', '1 1 0');
   zet(logoCol, 'min-width', '0');
