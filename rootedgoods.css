@@ -967,6 +967,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .rg-offcanvas-tile {
     display: flex;
     flex-direction: column;
+    /* Zonder dit erft de Thema-tegel (hergebruikt een ECHTE native
+       categorie-link, dus ook Shopware's eigen nav-link align-items:center)
+       een gecentreerde tekst-positie, terwijl de Trending-tegel (los door
+       JS gebouwd, geen native nav-link-klassen) gewoon stretch/links kreeg
+       -- twee tegels naast elkaar met verschillende uitlijning zonder dat
+       we dat ooit bedoeld hadden. */
+    align-items: stretch;
     justify-content: flex-end;
     min-height: 130px;
     border-radius: 14px;
@@ -1705,7 +1712,7 @@ img {
     letter-spacing: -0.018em !important;
     line-height: 1.15 !important;
     color: #2d4528 !important;
-    font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+    font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
     margin: 0 0 0.35rem !important;
     text-wrap: balance;
   }
@@ -3739,7 +3746,7 @@ body.is-ctl-product {
    maat. Nu dezelfde clamp als alle andere sectie-koppen sitewide. */
 h2.rg-cat-heading,
 .cms-element-text h2.rg-cat-heading {
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
 }
 @media (min-width: 576px) {
   .rg-cat-heading { padding: 0 40px; }
@@ -4346,7 +4353,7 @@ h2.rg-cat-heading,
    andere maat dan de overige sectie-koppen. Nu dezelfde clamp als de rest. */
 h3.rg-feature-row__title,
 .cms-element-text h3.rg-feature-row__title {
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
 }
 
 .rg-feature-row__body p {
@@ -4574,7 +4581,7 @@ h2.rg-compare__title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
   color: #2d4528 !important;
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 0.9rem !important;
   text-wrap: balance;
@@ -4743,7 +4750,7 @@ h2.rg-story__title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
   color: #2d4528 !important;
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 1.2rem !important;
   text-wrap: balance;
@@ -5021,22 +5028,33 @@ h2.rg-story__title em { font-style: italic; font-weight: 600; }
    h2 op 3rem/600 mét !important (om Promidata-overrides te verslaan) en
    won dus stilletjes van de kale class — daarom oogde de kop als een
    gewone h2 i.p.v. een statement. Zelfde patroon als h2.rg-endcta__title.
-   Was hiervoor var(--rg-text-display), hero-schaal (clamp 2.6-4.5rem) --
-   deze kop is semantisch een gewone sectie-H2, geen pagina-hero, en kreeg
-   daardoor onterecht dezelfde grootte als een hero-titel. Nu dezelfde maat
-   als de rest van de sectie-koppen sitewide (sectie 41.2). */
+   Was hiervoor var(--rg-text-display), hero-schaal (clamp 2.6-4.5rem) op
+   ALLE breedtes -- op mobiel is dat nu de gewone sectie-kop-maat (sectie
+   41.2), voor rust/consistentie met de rest. Op desktop mag deze kop
+   bewust wél groter blijven (eigen statement-moment, net als de hero) --
+   zie de losse >=992px-override hieronder. */
 h2.rg-statement__title,
 .cms-element-text h2.rg-statement__title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   font-weight: 600 !important;
   line-height: 1.12 !important;
   letter-spacing: -0.018em;
   color: #2d4528 !important;
   margin: 0 0 var(--rg-space-lg) !important;   /* kop -> subkop */
 }
-/* Accent-slotregel — zelfde motief als hero/eind-CTA (cognac italic). */
-h2.rg-statement__title em { font-style: italic; font-weight: 600; }
+@media (min-width: 992px) {
+  h2.rg-statement__title,
+  .cms-element-text h2.rg-statement__title {
+    font-size: var(--rg-text-display) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em;
+  }
+}
+/* Accent-slotregel: echte italic vervangen door de faux-oblique skewX-
+   techniek (sectie 41.2, .rg-statement__title toegevoegd aan die gedeelde
+   regel) -- ECHTE Playfair-italic laden we nergens op de site, te sierlijk
+   (zie project-notitie playfair-faux-oblique). */
 /* Subkop in body-formaat onder de kop; kleiner dan de kop-maat zodat het
    contrast de statement draagt. */
 .rg-statement__sub {
@@ -5624,7 +5642,7 @@ img.rg-europe-map__svg {
    Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
 h2.rg-theme-heading,
 .cms-element-text h2.rg-theme-heading {
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
 }
 .rg-theme-intro {
   color: #4a5a44;
@@ -6224,7 +6242,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
 h2.rg-block-title__title,
 .cms-element-text h2.rg-block-title__title {
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
 }
 .rg-block-title__sub {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
@@ -7020,7 +7038,7 @@ h2.rg-sd__head-title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
   color: #2d4528 !important;
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 !important;
   text-wrap: balance;
@@ -7101,7 +7119,7 @@ h2.rg-sd__row-title,
   color: #2d4528 !important;
   /* Was clamp(1.6rem...), net iets kleiner dan de rest van de sectie-
      koppen (die allemaal 1.7rem) -- gelijkgetrokken. */
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 0.85rem !important;
   text-wrap: balance;
@@ -7156,7 +7174,7 @@ h2.rg-sd__panel-title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600 !important;
   color: #ffffff !important;
-  font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 1.9rem !important;
   text-wrap: balance;
@@ -8321,7 +8339,8 @@ h1.rgh__title, .rgh__title,
 .rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
 .rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff !important; } /* op groen paneel */
 .rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em,
-.rg-compare__title em, .rg-story__title em{
+.rg-compare__title em, .rg-story__title em, .rg-statement__title em,
+h2.rg-statement__title em{
   font-style: normal !important;
   font-synthesis: none;
   display: inline-block;
