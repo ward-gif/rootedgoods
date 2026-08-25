@@ -810,8 +810,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .header-logo img {
     height: 34px !important;
   }
+  /* .header-logo-col is zelf display:flex -- text-align:center (wat op
+     <576px wél werkt, daar is de kolom kennelijk geen flex-container)
+     heeft hier geen enkel effect, flex-children luisteren naar
+     justify-content, niet naar text-align. */
   .header-row .header-logo-col {
-    text-align: center;
+    justify-content: center;
   }
 }
 
