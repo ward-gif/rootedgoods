@@ -798,6 +798,23 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
 }
 
+/* ---- Logo op tablet (576-991px): groter + écht gecentreerd ----
+   26px was afgestemd op de smalste telefoons (voorkwam overlap met de
+   zoek-/mandje-iconen daar) -- op tablet is er veel meer ruimte, dus
+   groter. .header-logo-col had ook nog maar op <576px tekst-align:center
+   staan (rootedgoods.js 1.4d verplaatst de hamburger nu ook op tablet
+   vóór het logo, maar zonder deze regel bleef het logo binnen z'n eigen
+   kolom links uitgelijnd i.p.v. gecentreerd tussen hamburger en iconen). */
+@media (min-width: 576px) and (max-width: 991px) {
+  .header-logo-main-link img,
+  .header-logo img {
+    height: 34px !important;
+  }
+  .header-row .header-logo-col {
+    text-align: center;
+  }
+}
+
 /* ---- Logo centreren <576px: hamburger-kolom verhuist vóór het logo (zie
    rootedgoods.js 1.4d, één element, één keer). De flex-wrap/order/width-
    mechanica staat daar BEWUST als inline JS-styles, niet hier: het thema
