@@ -6227,6 +6227,13 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 5.5rem) 40px;
 }
+/* Optionele eyebrow boven de titel -- voor thema-pagina's waar de titel zelf
+   (bv. "Tastbare waardering") niet letterlijk het thema noemt, zodat
+   bezoekers meteen zien dat ze op de juiste pagina zitten. */
+.rg-page-hero__eyebrow {
+  display: block;
+  margin: 0 0 0.75rem;
+}
 .rg-page-hero__title {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 800;
