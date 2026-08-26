@@ -6320,10 +6320,22 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   .rg-page-hero {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2.5rem 20px;
+    /* Minder ruimte boven -- .rg-page-hero__media staat via order:-1 als
+       eerste, dus deze top-padding is de volledige ruimte tussen header en
+       beeld (de fixed-header-clearance zit al in .content-main, dit is
+       daarbovenop). Onderkant blijft ruim voor lucht na de logo's. */
+    padding: 1.25rem 20px 2.5rem;
   }
   .rg-page-hero__media { order: -1; height: clamp(260px, 60vw, 380px); }
   .rg-page-hero__title { font-size: clamp(2rem, 1.3rem + 3vw, 2.8rem); max-width: none; }
+  /* Meer lucht tussen de 2 CTA's: op mobiel is er geen ruimte naast elkaar,
+     dus ze stapelen -- 1rem (de desktop-waarde, voor naast-elkaar) oogde
+     daar te krap. */
+  .rg-page-hero__cta { gap: 1.5rem; }
+  /* Kleiner + krappere gap, zodat 3 logo's op één rij passen i.p.v. de
+     3e naar een eigen regel te laten wikkelen. */
+  .rg-page-hero__logos { gap: 0.75rem 1rem; }
+  .rg-page-hero__logos img { height: 22px; }
   .rg-page-hero__logos img:nth-child(n+4) { display: none; }   /* max 3 op mobiel */
 }
 
