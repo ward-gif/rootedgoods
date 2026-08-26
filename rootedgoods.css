@@ -5425,6 +5425,10 @@ img.rg-europe-map__svg {
   .cms-section:has(.rg-feature-row__content) .cms-block-container[style],
   .cms-section:has(.rg-feature-row__content) .cms-block-container-row,
   .cms-section:has(.rg-feature-row__content) .col-12,
+  .cms-section:has(.rg-page-hero) .cms-block-container,
+  .cms-section:has(.rg-page-hero) .cms-block-container[style],
+  .cms-section:has(.rg-page-hero) .cms-block-container-row,
+  .cms-section:has(.rg-page-hero) .col-12,
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container,
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container[style],
   .cms-section:has(.home-productslider) .cms-block-text .cms-block-container-row,
@@ -5473,6 +5477,17 @@ img.rg-europe-map__svg {
   .cms-section:has(.rg-statement) .cms-block-container[style] {
     padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
     padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+  }
+  /* .rg-page-hero krijgt +48 i.p.v. +80: de feature-row/compare/faq/specs/
+     endcta-brok hierboven zit door z'n eigen --bs-gutter-x:4rem (regel 27,
+     "ruimte tussen beeld en tekst") 32px per kant BUITEN deze gedeelde lijn
+     -- dat is dus de content-breedte die je op de pagina ECHT ziet (1504px
+     i.p.v. 1440px @1920). +48 legt de hero op exact diezelfde zichtbare
+     lijn i.p.v. op de theoretische "schone" 1440-lijn ernaast. */
+  .cms-section:has(.rg-page-hero) .cms-block-container,
+  .cms-section:has(.rg-page-hero) .cms-block-container[style] {
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 48px) !important;
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 48px) !important;
   }
 
   /* 3. Grids/heading vullen de container (geen eigen horizontale opmaak) */
