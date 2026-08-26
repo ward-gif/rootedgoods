@@ -19,7 +19,7 @@
 ## 1. Bestellen & offerte
 
 
-### Hoe kan je een bestelling plaatsen bij Rooted Goods?
+### Hoe kan ik een bestelling plaatsen bij Rooted Goods?
 → full-service, algemeen, faq · (Ward)
 Blader door onze **relatiegeschenken** en kies de producten die je aanspreken. Geef je gewenste kleuren door en upload je logo. Vraag je een offerte aan? Dan stelt ons team binnen 24 uur een offerte samen, inclusief een persoonlijk productontwerp. Dit kost je niks, en je kunt je bestelling tot het laatste moment nog aanpassen of annuleren. Bestellen bij Rooted Goods maken we je zo makkelijk mogelijk, zonder gedoe.
 
@@ -67,7 +67,7 @@ Ja. Ons team maakt gratis een ontwerp op basis van jouw logo en huisstijl (afhan
 
 ### Kan ik ook mijn eigen ontwerp aanleveren?
 → personalisatie, faq · (Ward)
-Afhankelijk per product. Sommige artikelen zijn full colour te bedrukken, op andere producten zijn er weer andere opties. Samen bekijken we welke mogelijkheden we hebben.
+Dat hangt af per product. Sommige artikelen zijn full colour te bedrukken, op andere producten zijn er weer andere opties. Samen bekijken we welke mogelijkheden we hebben.
 
 
 ### Welke techniek is het beste voor mijn logo?
