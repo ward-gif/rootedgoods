@@ -6251,7 +6251,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 .rg-page-hero__logos img {
-  height: 26px;
+  height: 35px;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);
