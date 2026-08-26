@@ -8502,7 +8502,7 @@ h2.rg-statement__title em{
 }
 .rg-sd__tech-media{
   box-shadow:none !important;
-  border:1px solid rgba(45,69,40,.10) !important;
+  border:none !important;
   border-radius:var(--rg-r-xp) !important;
 }
 
