@@ -2909,7 +2909,14 @@ body.is-ctl-product .product-detail-ordernumber-container {
    gewist worden) -- display:block direct op de <table> lost hetzelfde op
    zonder wrapper. */
 @media (max-width: 575px) {
+  /* De accordeon-body van elke stap staat op Bootstrap's .ps-4.ms-1 (28px
+     inspringing t.o.v. de stap-tekst erboven) -- prima voor de Aantal-
+     stepper, maar de tabel wordt daardoor onnodig smaller dan de rest van
+     de content. Negatieve marge trekt 'm terug uit naar de volle
+     stap-breedte (net zo breed als "2 AANTAL" erboven). */
   .product-detail-buy .product-block-prices {
+    margin-left: -28px;
+    width: calc(100% + 28px);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -2922,22 +2929,28 @@ body.is-ctl-product .product-detail-ordernumber-container {
   .product-detail-buy .product-block-prices-grid > thead > tr > *,
   .product-detail-buy .custom-configurator-table > thead > tr > *,
   .product-detail-buy .custom-configurator-table > tbody > tr > * {
-    padding-top: 0.85rem !important;
-    padding-bottom: 0.85rem !important;
-    font-size: 0.85rem;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+    font-size: 0.78rem;
     white-space: nowrap;
   }
   .product-detail-buy .product-block-prices-grid > tbody > tr > *:first-child,
   .product-detail-buy .product-block-prices-grid > thead > tr > *:first-child,
   .product-detail-buy .custom-configurator-table > thead > tr > *:first-child,
   .product-detail-buy .custom-configurator-table > tbody > tr > *:first-child {
-    padding-left: 1rem !important;
+    padding-left: 0.85rem !important;
   }
   .product-detail-buy .product-block-prices-grid > tbody > tr > *:last-child,
   .product-detail-buy .product-block-prices-grid > thead > tr > *:last-child,
   .product-detail-buy .custom-configurator-table > thead > tr > *:last-child,
   .product-detail-buy .custom-configurator-table > tbody > tr > *:last-child {
-    padding-right: 1rem !important;
+    padding-right: 0.85rem !important;
+  }
+  /* Besparings-badge iets compacter zodat de kolom niet onnodig breed wordt */
+  .product-detail-buy .product-block-prices-grid .badge,
+  .product-detail-buy .custom-configurator-table .badge {
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.55rem !important;
   }
   .product-detail-buy #total-price-bottom-container .configurator-price-container {
     padding: 0.85rem 1rem;
@@ -3083,31 +3096,29 @@ body.is-ctl-product .product-detail-ordernumber-container {
   stroke: #2d4528;
 }
 
-/* Gallery slider dots — on-brand pill, donkergroene actieve dot.
-   Promidata levert de dots als <div class="base-slider-dots"> met
-   <button class="base-slider-dot"> children, actieve dot heeft
-   .tns-nav-active. */
+/* Gallery slider dots — subtiel, geen pill-achtergrond (viel toch nauwelijks
+   op tegen de crème pagina, oogde daardoor als "kale" bolletjes). Gewoon
+   kleine stipjes met ruimte eronder, donkergroen voor de actieve. */
 .product-detail-media .gallery-slider-col .base-slider-dots {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.85rem;
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-radius: 999px !important;
+  gap: 0.4rem;
+  padding: 0;
+  background: transparent !important;
   width: max-content;
-  margin: 1.5rem auto 0 !important;
+  margin: 1rem auto 0 !important;
   position: relative !important;
   bottom: auto !important;
   left: auto !important;
   transform: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: none !important;
   z-index: 5;
 }
 
 .product-detail-media .base-slider-dots .base-slider-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: #d4cdc2;
   border: none !important;
@@ -3122,6 +3133,24 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 .product-detail-media .base-slider-dots .base-slider-dot.tns-nav-active {
   background-color: #2d4528;
+}
+
+/* Thumbnail-strip: flush tegen links i.p.v. gecentreerd (Promidata's
+   justify-content:center zorgde ervoor dat de rij aan BEIDE kanten evenveel
+   overflowde -- een halve thumbnail zichtbaar aan de linkerkant, ook al kon
+   je daar niet naartoe scrollen). Nu begint 'ie gewoon bij de eerste
+   thumbnail; overflow is alleen nog rechts, bereikbaar door te swipen. */
+.gallery-slider-thumbnails {
+  justify-content: flex-start !important;
+  gap: 8px;
+}
+/* Rand op-brand (was Bootstrap's ongekozen grijs), actieve thumbnail
+   behoudt zijn eigen terracotta rand (hogere specificiteit hieronder). */
+.gallery-slider-thumbnails-item-inner {
+  border-color: #EAE3D7 !important;
+}
+.gallery-slider-thumbnails-item.tns-nav-active .gallery-slider-thumbnails-item-inner {
+  border-color: #ad6331 !important;
 }
 
 /* ------------------------------------------------------------
