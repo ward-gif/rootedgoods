@@ -10935,12 +10935,18 @@ h2.rg-route__team-title{
 .cookie-permission-content a:hover { color: var(--rg-cognac-deep); }
 
 .cookie-permission-actions {
-  flex-direction: column-reverse !important;
+  flex-direction: column !important;
   align-items: stretch !important;
   gap: 0.6rem;
   padding: 0 !important;
   width: 100%;
 }
+/* DOM-volgorde is Weigeren/Configureren/Accepteren -- visueel Accepteren +
+   Weigeren (gelijk gewicht) bovenaan naast elkaar in de leesvolgorde,
+   Configureren (neutrale extra optie) als laatste/kleinste onderaan. */
+.js-cookie-accept-all-button { order: 1; }
+.js-cookie-permission-button { order: 2; }
+.js-cookie-configuration-button { order: 3; }
 .cookie-permission-actions .btn {
   width: 100%;
   margin: 0 !important;
