@@ -8144,6 +8144,7 @@ h1.rg-contact-head__title,
    regels hieronder gelden via :is() voor beide containers -- geen
    duplicatie, altijd dezelfde look. */
 :is(.block-cioform-container, #request-offer-container) {
+  width: auto;
   max-width: 820px;
   margin: 0 auto;
   background: #ffffff;
