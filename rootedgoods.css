@@ -928,6 +928,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .navigation-offcanvas .offcanvas-body {
     background-color: #F7F5F2;
   }
+  /* Elke rij (native Bootstrap list-item) heeft ZELF nog een expliciete
+     witte achtergrond, die overal onder de crème-kleur van hierboven
+     door bleef schijnen -- vandaar dat de tekst/link-blokken zelf nog
+     wit oogden terwijl de rest van het paneel al crème was. */
+  .navigation-offcanvas-list-item {
+    background-color: #F7F5F2 !important;
+  }
   .navigation-offcanvas .offcanvas-header {
     border-bottom: 1px solid #EAE3D7;
   }
@@ -1081,9 +1088,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     text-decoration: none !important;
   }
   .rg-offcanvas-tile--thema {
+    /* Zelfde beeld als de "Onboarding & welkom"-tegel op thema-overzicht.html
+       (op verzoek Ward, i.p.v. het eerder gebruikte Events-2.jpg). */
     background-image:
       linear-gradient(to top, rgba(20, 30, 15, 0.88), rgba(20, 30, 15, 0.15) 65%),
-      url('/media/c0/ba/fe/1785442349/Events-2.jpg');
+      url('/media/3e/e9/dc/1787744856/Onboarding Small JPEG.jpg');
   }
   .rg-offcanvas-tile--trending {
     /* Bestandsnaam bijgewerkt: het oude bestand (zonder "(1)") is vervangen

@@ -377,6 +377,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* Categorieën met sub-categorieën (herkenbaar aan .js-navigation-
+     offcanvas-link + data-href) openden een drill-down-submenu i.p.v. te
+     navigeren -- op verzoek Ward voortaan gewoon direct naar de
+     hoofdcategorie. Shopware's eigen plugin bindt de klik-onderschepping
+     op deze klasse (mogelijk via delegatie op een voorouder, mogelijk
+     direct op het element -- niet gegarandeerd welke, dus geen listener
+     proberen te verwijderen). We VERVANGEN het element door een kloon:
+     cloneNode kopieert geen JS-listeners mee, en zonder de klasse/
+     data-href kan ook een delegated handler 'm niet meer matchen. De
+     native href (hoofdcategorie-URL) blijft gewoon intact. Structurele
+     check (geen dataset-vlag): zelfde reden als bouwUitgelichteTegels --
+     Shopware's eigen content-render bij terug-navigeren zet de klasse
+     gewoon weer terug, dus elke keer opnieuw controleren i.p.v. 1x. */
+  function directeCategorielinks(list) {
+    list.querySelectorAll('.navigation-offcanvas-link.js-navigation-offcanvas-link[data-href]').forEach(function (link) {
+      var kloon = link.cloneNode(true);
+      kloon.classList.remove('js-navigation-offcanvas-link');
+      kloon.removeAttribute('data-href');
+      link.parentNode.replaceChild(kloon, link);
+    });
+  }
+
   function offcanvasKlaar() {
     document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
       if (panel.closest('.d-none')) return;
@@ -384,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var list = panel.querySelector('.navigation-offcanvas-list');
       herlabelHeadline(panel);
       if (nav) vulSnelkoppelingen(nav);
-      if (list) bouwUitgelichteTegels(list);
+      if (list) { bouwUitgelichteTegels(list); directeCategorielinks(list); }
     });
   }
   offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
