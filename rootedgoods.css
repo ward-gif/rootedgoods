@@ -101,6 +101,15 @@ html {
 }
 body {
   font-family: 'Montserrat', sans-serif !important;
+  /* Zelfde -20px .row-lek als hierboven bij html, maar clip alleen op html
+     bleek niet genoeg om mobiel (Safari/iOS) heen-en-weer swipen van de
+     hele pagina tegen te houden -- vooral merkbaar op de productslider,
+     waar een horizontale swipe-gesture op de tegels de PAGINA meesleepte
+     i.p.v. alleen de slider. clip (niet hidden) om dezelfde reden als op
+     html: hidden zou overflow-y stiekem naar auto forceren (CSS Overflow-
+     spec) en zo een eigen verticale scroll-container maken die alle
+     position:sticky-elementen op de pagina zou breken. */
+  overflow-x: clip;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif !important;
@@ -913,8 +922,21 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    alleen de styling. Zie sectie 6b hierboven voor de aanleiding.
    ============================================================ */
 @media (max-width: 991px) {
+  /* Crème achtergrond i.p.v. Shopware's standaard wit, zelfde toon als de
+     rest van de site (--rg-cream). */
+  .navigation-offcanvas,
+  .navigation-offcanvas .offcanvas-body {
+    background-color: #F7F5F2;
+  }
   .navigation-offcanvas .offcanvas-header {
     border-bottom: 1px solid #EAE3D7;
+  }
+  /* Native scheidingslijntjes tussen de categorieën zijn Bootstrap's kale
+     grijze standaardkleur (nooit bewust gekozen) -- vervangen door de
+     warme lijnkleur die de rest van de site al gebruikt, en dunner qua
+     contrast (subtieler, minder hard). */
+  .navigation-offcanvas-list-item {
+    border-top-color: #EAE3D7 !important;
   }
   /* "Menu sluiten"-tekst weg, alleen het kruisje blijft. Kale tekstnode
      na het icoon in de native markup (geen eigen span) -- font-size:0 op
@@ -1092,6 +1114,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      eyebrow, zodat de titel-regel op beide tegels exact gelijk landt. */
   .rg-offcanvas-tile-eyebrow--ghost {
     visibility: hidden;
+  }
+
+  /* ---- Echte categorie "Thema's" onderaan de lijst weg: de tegel-rij
+     bovenaan (herlabeld naar "Shop op thema") dekt die ingang al, dubbel
+     met deze losse categorie-link. */
+  .navigation-offcanvas-list-item:has(> a[href$="/thema-s/"]) {
+    display: none !important;
   }
 
   /* ---- Merken/Services/Over ons: gedemoot onder een eyebrow-label,
@@ -1532,6 +1561,18 @@ img {
   width: 100% !important;
   height: 0 !important;
   padding-bottom: 85% !important;
+}
+/* Mobiel: tegels waren nog erg hoog t.o.v. hun breedte (smalle
+   tegel + volle padding + bijna-vierkant beeld stapelde flink op). Beeld
+   platter en wat minder lucht in de card-body. */
+@media (max-width: 575px) {
+  .home-productslider .product-image-wrapper,
+  .home-productslider .product-box .product-image-wrapper {
+    padding-bottom: 68% !important;
+  }
+  .home-productslider .product-box .card-body {
+    padding: 1.1rem 1rem !important;
+  }
 }
 .home-productslider .product-image-link,
 .home-productslider .product-box .product-image-link {
@@ -3790,6 +3831,30 @@ body.is-ctl-product {
   position: static !important;
   top: 0 !important;
   display: block !important;
+}
+
+/* Mobiel/tablet (<992px, sidebar-filter is dan al ingeklapt achter de
+   "Filter"-knop): 2 tegels naast elkaar i.p.v. 1 per rij (Bootstrap's
+   col-sm-6/col-lg-6/col-xl-4 heeft geen basis-col, dus viel onder 576px
+   terug op de volle breedte). Ook de dubbele zij-padding weg: de content-
+   kolom (.cms-section-sidebar-main-content) heeft ZELF nog 40px, bovenop
+   de 40px van de buitenste wrap eromheen -- op desktop is die eigen 40px
+   de ruimte t.o.v. de sidebar ernaast, maar die sidebar staat op mobiel
+   niet meer naast de content, dus die extra laag is daar puur verspilde
+   breedte (pagina oogde daardoor smaller dan de rest van de site). */
+@media (max-width: 991px) {
+  .cms-listing-col {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .cms-section-sidebar-main-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .cms-section-sidebar-mobile-wrap.boxed {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
 
 /* ------------------------------------------------------------

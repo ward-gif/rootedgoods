@@ -316,11 +316,16 @@ document.addEventListener('DOMContentLoaded', function () {
      geen afbeeldingsveld in dit thema) -- vaste link + afbeelding, zelfde
      aanpak als de Thema's-tegel al had. */
   function bouwUitgelichteTegels(list) {
-    if (list.dataset.rgTegels) return;
+    /* GEEN dataset-vlag op `list` als idempotentie-check: Shopware
+       vervangt bij terug-navigeren in een submenu de INHOUD van dit
+       element (nieuwe categorie-lijst), maar het element zelf (met z'n
+       dataset) blijft bestaan -- de vlag overleefde dus de content-swap
+       terwijl de tegels zelf verdwenen waren. Structurele check i.p.v.
+       vlag: als de tegel-rij niet meer in de lijst zit, opnieuw bouwen. */
+    if (list.querySelector('.rg-offcanvas-featured-row')) return;
     var themaLi = list.querySelector('.navigation-offcanvas-list-item:has(a[href$="/alle-thema-s"])');
     var themaLink = themaLi ? themaLi.querySelector('a[href$="/alle-thema-s"]') : null;
     if (!themaLink) return;
-    list.dataset.rgTegels = '1';
 
     var naam = themaLink.querySelector('[itemprop="name"]');
     if (naam) {
@@ -640,6 +645,9 @@ document.addEventListener('DOMContentLoaded', function () {
        Kleinere waarde specifiek onder 576px: 2 tegels zichtbaar (met de nu
        ook zichtbare pijl duidelijk genoeg dat er meer te zien is). */
     opts.productboxMinWidth = window.innerWidth < 576 ? '130px' : '250px';
+    // Iets minder ruimte tussen de tegels op mobiel (was overal 30px, oogde
+    // op smalle schermen extra breed t.o.v. de al platter gemaakte tegels).
+    if (window.innerWidth < 576) opts.slider.gutter = 16;
 
     el.setAttribute('data-product-slider-options', JSON.stringify(opts));
     el.dataset.rgLoopPatched = '1';
