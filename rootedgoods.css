@@ -8215,6 +8215,12 @@ h1.rg-contact-head__title,
   }
   .cms-section-default.boxed .block-cioform-container { margin: 0 !important; width: 100% !important; }
 }
+/* Poconfigurator-aanvraagpagina: native .container heeft hier 40px zij-padding
+   i.p.v. de sitebrede 20px, met dezelfde dubbele-inspring-uitkomst als hierboven. */
+@media (max-width: 575px) {
+  body.is-ctl-requestoffer .container { padding-left: 20px !important; padding-right: 20px !important; }
+  body.is-ctl-requestoffer #request-offer-container { width: 100% !important; margin: 0 !important; }
+}
 
 /* Form = 2-koloms grid */
 :is(.block-cioform-container, #request-offer-container) form {
