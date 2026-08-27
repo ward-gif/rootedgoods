@@ -1748,6 +1748,10 @@ img {
   }
   :is(.home-productslider, .cms-listing-row) .product-name {
     display: block !important;
+    /* Native theme zet hier een harde height:44px (voor zijn eigen
+       2-regelige clamp) -- zonder override bleef de rij die hoogte
+       aanhouden ook al toont de tekst nu maar 1 regel. */
+    height: auto !important;
     -webkit-line-clamp: 1 !important;
     white-space: nowrap;
     overflow: hidden;
