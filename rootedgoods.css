@@ -1567,9 +1567,15 @@ img {
 
 /* Image-wrapper platter via height:0 + padding-bottom (betrouwbaarder dan
    aspect-ratio: wint altijd van een eventuele intrinsieke height die
-   Promidata's theme ergens zet). */
+   Promidata's theme ergens zet). .card-body is een flex-column-container;
+   Promidata's eigen flex-basis:180px op deze wrapper won daardoor altijd
+   van height:0/padding-bottom (bij flex-items op de hoofdas regelt
+   flex-basis de grootte, niet height) -- vandaar dat de tegel ondanks deze
+   regels toch steevast ~180px hoog bleef. flex:none dwingt 'm terug naar
+   een gewone auto-hoogte die wél naar de padding-bottom-truc luistert. */
 :is(.home-productslider, .cms-listing-row) .product-image-wrapper {
   position: relative !important;
+  flex: none !important;
   margin-bottom: 1rem !important;
   background-color: #ffffff !important;
   border-radius: 8px !important;
