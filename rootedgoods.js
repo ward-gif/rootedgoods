@@ -581,12 +581,14 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ---- 1.5b Offerteformulier — verzendknop-label overschrijven
  * Het knop-label ("Versturen") komt uit het sitewide formulier-onderdeel
  * (Shopware form-builder) en wordt gedeeld met o.a. het contactformulier
- * -- aanpassen in de form-instellingen zou dus overal veranderen. Hier
- * scopen we het puur op het offerteformulier (.block-cioform-container,
- * bestaat alleen op /offerte), zodat alleen déze knop een ander label
- * krijgt. Echte tekst-node (geen CSS-content-trucje) -> blijft correct
- * voor screenreaders. */
+ * -- aanpassen in de form-instellingen zou dus overal veranderen. EERST
+ * gescoped op .block-cioform-container, maar dat bleek een generieke
+ * wrapper-class voor ELK custom-formulier (ook het contactformulier kreeg
+ * zo per ongeluk hetzelfde label) -- nu op het pad zelf, dat is wél uniek
+ * voor deze pagina. Echte tekst-node (geen CSS-content-trucje) -> blijft
+ * correct voor screenreaders. */
 (function () {
+  if (window.location.pathname.replace(/\/+$/, '') !== '/offerte') return;
   var btn = document.querySelector('.block-cioform-container form > button[type="submit"]');
   if (!btn) return;
   btn.textContent = 'Vraag offerte aan';
