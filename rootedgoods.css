@@ -7847,6 +7847,7 @@ h2.rg-faq-cat,
 .rg-team {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.9rem;
   flex-wrap: wrap;
 }
@@ -7904,6 +7905,10 @@ h2.rg-faq-cat,
   margin: 0 auto;
   text-align: center;   /* terug naar gecentreerd (voor nu) -- stond op left, in strijd met de eigen sectie-comment hierboven en het team-blok eronder dat al van gecentreerd uitging */
   padding: clamp(1.5rem, 1rem + 2vw, 2.75rem) 20px 0.5rem;
+}
+/* Mobiel: minder ruimte tussen menu en de eerste tekst. */
+@media (max-width: 575px) {
+  .rg-contact-head { padding-top: 0.75rem; }
 }
 /* Contactpagina specifiek breder: staat boven .rg-contact-layout (formulier
    + belafspraak-kaartje naast elkaar, 1080px), niet boven het smallere
@@ -8067,6 +8072,10 @@ h1.rg-contact-head__title,
   padding: clamp(1.5rem, 3vw, 2.75rem);
   box-shadow: 0 24px 55px -35px rgba(45, 69, 40, 0.30);
 }
+/* Mobiel: kleine zij-marge, anders raakt de kaart randloos de schermranden. */
+@media (max-width: 575px) {
+  .block-cioform-container { margin: 0 12px; }
+}
 /* Stray "Formular Titel"-placeholder verbergen (titel komt uit offerte-kop) */
 .block-cioform-container > [data-cms-element-id] > div:not([class]):not([id]) { display: none; }
 
@@ -8081,6 +8090,7 @@ h1.rg-contact-head__title,
 .block-cioform-container .form-group:has([name="request-name"]),
 .block-cioform-container .form-group:has([name="request-lastName"]),
 .block-cioform-container .form-group:has([name="request-email"]),
+.block-cioform-container .form-group:has([name="request-company"]),
 .block-cioform-container .form-group:has([name="request-telephone"]),
 .block-cioform-container .form-group:has([name="request-zip"]),
 .block-cioform-container .form-group:has([name="request-location"]) {
@@ -8144,10 +8154,17 @@ h1.rg-contact-head__title,
 }
 .block-cioform-container .basic-captcha-content-refresh-icon svg use { fill: #2d4528 !important; }
 
-/* Verzendknop rechts */
-.block-cioform-container form > button[type="submit"] { grid-column: 1 / -1; justify-self: end; margin-top: 0.5rem; }
+/* Verzendknop gecentreerd, iets groter/breder dan de standaard-knop */
+.block-cioform-container form > button[type="submit"] {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 0.5rem;
+  padding: 0.95rem 2.5rem !important;
+  font-size: 1.05rem !important;
+  min-width: 260px;
+}
 @media (max-width: 575px) {
-  .block-cioform-container form > button[type="submit"] { width: 100%; justify-self: stretch; }
+  .block-cioform-container form > button[type="submit"] { width: 100%; justify-self: stretch; min-width: 0; }
 }
 /* Alerts (succes/fout) netjes in de kaart */
 .block-cioform-container .alert { border-radius: 10px; margin-bottom: 1rem; }
