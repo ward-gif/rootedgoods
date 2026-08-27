@@ -1503,23 +1503,24 @@ img {
 }
 
 /* ------------------------------------------------------------
-   10. HOMEPAGE PRODUCT SLIDER
+   10. PRODUCTTEGELS — productslider, PLP èn zoekresultaten
+   Eén gedeelde stijl via :is(.home-productslider, .cms-listing-row).
+   Zoekresultaten hergebruikt Shopware's eigen .cms-listing-row-template,
+   dus die volgt hier automatisch in mee -- geen aparte selector nodig.
    ------------------------------------------------------------ */
 
-/* Slider — verberg overbodige elementen */
+/* Verberg overbodige elementen op de tile */
 .badge-new {
   display: none !important;
 }
-.home-productslider hr {
-  display: none !important;
-}
-.home-productslider .product-box .product-action {
+:is(.home-productslider, .cms-listing-row) hr,
+:is(.home-productslider, .cms-listing-row) .product-box .product-action {
   display: none !important;
 }
 
-/* Slider — tekst styling, consistent met PLP. Selector op .box-image
-   omdat slider tiles die specific class hebben (PLP heeft .box-standard). */
-.home-productslider .product-box,
+/* Selector ook op .box-image: alleen de homepage-slider-tiles hebben die
+   specifieke class (PLP/zoekresultaten hebben .box-standard/.box-minimal). */
+:is(.home-productslider, .cms-listing-row) .product-box,
 .home-productslider .product-box.box-image,
 .home-productslider .product-slider-item .product-box {
   border: none !important;
@@ -1527,44 +1528,43 @@ img {
   background-color: #ffffff !important;
   overflow: hidden;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
   position: relative;
 }
 
 /* Hele tile klikbaar via ::after op de product-name link.
    Wishlist en variant-thumbs krijgen hogere z-index zodat ze
    eigen click-target houden. */
-.home-productslider .product-name {
+:is(.home-productslider, .cms-listing-row) .product-name {
   position: static;
 }
-.home-productslider .product-name::after {
+:is(.home-productslider, .cms-listing-row) .product-name::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
 }
-.home-productslider .product-wishlist,
-.home-productslider .variant-thumbnail,
-.home-productslider .product-image-link {
+:is(.home-productslider, .cms-listing-row) .product-wishlist,
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail,
+:is(.home-productslider, .cms-listing-row) .product-image-link {
   position: relative;
   z-index: 2;
 }
-.home-productslider .product-box:hover,
+:is(.home-productslider, .cms-listing-row) .product-box:hover,
 .home-productslider .product-box.box-image:hover {
   box-shadow: 0 6px 20px rgba(45, 69, 40, 0.08);
   transform: translateY(-2px);
 }
-.home-productslider .product-box .card-body {
-  --bs-card-spacer-y: 1.75rem;
-  --bs-card-spacer-x: 1.5rem;
+:is(.home-productslider, .cms-listing-row) .product-box .card-body {
   padding: 1.75rem 1.5rem !important;
   display: flex;
   flex-direction: column;
 }
 
-/* Image-wrapper platter — padding-bottom 85% (was 110%, te portrait).
-   Werkt betrouwbaar, niet door Promidata te overschrijven. */
-.home-productslider .product-image-wrapper,
-.home-productslider .product-box .product-image-wrapper {
+/* Image-wrapper platter via height:0 + padding-bottom (betrouwbaarder dan
+   aspect-ratio: wint altijd van een eventuele intrinsieke height die
+   Promidata's theme ergens zet). */
+:is(.home-productslider, .cms-listing-row) .product-image-wrapper {
   position: relative !important;
   margin-bottom: 1rem !important;
   background-color: #ffffff !important;
@@ -1578,16 +1578,14 @@ img {
    tegel + volle padding + bijna-vierkant beeld stapelde flink op). Beeld
    platter en wat minder lucht in de card-body. */
 @media (max-width: 575px) {
-  .home-productslider .product-image-wrapper,
-  .home-productslider .product-box .product-image-wrapper {
+  :is(.home-productslider, .cms-listing-row) .product-image-wrapper {
     padding-bottom: 68% !important;
   }
-  .home-productslider .product-box .card-body {
+  :is(.home-productslider, .cms-listing-row) .product-box .card-body {
     padding: 1.1rem 1rem !important;
   }
 }
-.home-productslider .product-image-link,
-.home-productslider .product-box .product-image-link {
+:is(.home-productslider, .cms-listing-row) .product-image-link {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
@@ -1595,11 +1593,8 @@ img {
   top: 0 !important;
   left: 0 !important;
 }
-.home-productslider .product-image,
-.home-productslider .product-box .product-image,
-.home-productslider img.product-image.is-contain,
-.home-productslider .product-image-link > img,
-.home-productslider .product-image-link .product-image {
+:is(.home-productslider, .cms-listing-row) .product-image,
+.home-productslider img.product-image.is-contain {
   position: absolute !important;   /* forceer fill, ongeacht intrinsieke afmetingen */
   inset: 0 !important;
   width: 100% !important;
@@ -1615,44 +1610,95 @@ img {
 
 /* Wishlist button — Promidata default position (onder image, rechts).
    We laten flow positioning intact, alleen icon-kleur op-brand. */
-.home-productslider .product-wishlist svg use,
-.home-productslider .product-wishlist svg path {
+:is(.home-productslider, .cms-listing-row) .product-wishlist svg use,
+:is(.home-productslider, .cms-listing-row) .product-wishlist svg path {
   fill: #2d4528 !important;
 }
 
-/* Variant thumbnails — ronde swatches, consistent met PLP */
-.home-productslider .variant-thumbnail.slider {
-  margin: 0.25rem 0 0.75rem 0;
-  display: flex;
-  gap: 0.35rem;
-  overflow: hidden;
+/* Variant thumbnails — ronde swatches met prev/next-navigatie en edge-fade
+   zodra er te veel varianten zijn om ineens te tonen (Promidata's eigen
+   slider-JS zet dan de .active class). Grotere swatches + gap i.p.v. margin
+   op de flex-children, want die JS meet de track via flexbox. */
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail {
+  margin-top: 0.6rem;
 }
-.home-productslider .variant-thumbnail .slides {
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail .slides {
   display: flex;
-  gap: 0.35rem;
+  gap: 8px;
 }
-.home-productslider .variant-thumbnail-img {
-  width: 28px !important;
-  height: 28px !important;
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail-img {
+  width: 34px !important;
+  height: 34px !important;
   border-radius: 50% !important;
   border: 1px solid #EAE3D7 !important;
   object-fit: cover !important;
 }
-.home-productslider .variant-thumbnail .prev,
-.home-productslider .variant-thumbnail .next {
-  display: none;
+/* Pijlen alleen tonen wanneer .active is gezet. Ruimte gereserveerd aan
+   weerskanten (padding op de wrapper) zodat ze niet bovenop de eerste/
+   laatste swatch liggen. Subtiele pijl i.p.v. gevuld wit rondje, verticaal
+   gecentreerd op de rij. */
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider:not(.active) .prev,
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider:not(.active) .next {
+  display: none !important;
 }
-.home-productslider .variant-thumbnail.active .prev,
-.home-productslider .variant-thumbnail.active .next {
-  display: inline-flex;
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active {
+  padding: 0 20px !important;
+}
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev,
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next {
+  background: transparent !important;
+  color: #888 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: 16px !important;
+  height: 34px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev { left: 0 !important; }
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next { right: 0 !important; }
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev:hover,
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next:hover {
+  background: transparent !important;
+  color: #555 !important;
+}
+/* Subtiele edge-fade over de swatch-track (zelfde idee als .rg-logo-fade
+   bij de merken-slider) -- de track knipt een half-zichtbare swatch anders
+   hard af aan de rand. Positie op 20px (de padding hierboven voor de
+   pijlen) zodat de fade precies op de rand van de zichtbare track valt. */
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active::before,
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  z-index: 1;
+  pointer-events: none;
+}
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active::before {
+  left: 20px;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+}
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active::after {
+  right: 20px;
+  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
 }
 
 /* Product info — naam donkergroen, regular weight, hover bruin */
-.home-productslider .product-info {
+:is(.home-productslider, .cms-listing-row) .product-info {
   margin-top: auto;
 }
-.home-productslider .product-name,
-.home-productslider .product-box .product-info .product-name {
+:is(.home-productslider, .cms-listing-row) .product-name {
   display: block;
   font-weight: 400 !important;
   color: #2d4528 !important;
@@ -1661,14 +1707,14 @@ img {
   line-height: 1.3;
   margin: 0.25rem 0 0.5rem 0;
 }
-.home-productslider .product-name:hover {
+:is(.home-productslider, .cms-listing-row) .product-name:hover {
   color: #ad6331 !important;
 }
 
 /* Description: subtiel, max 2 regels. height:auto overschrijft native
-   theme's vaste height:54px (voor hun eigen 3-regelige clamp) -- zelfde
-   bug/fix als de PLP-cards, sectie 24. */
-.home-productslider .product-description {
+   theme's vaste height:54px (voor hun eigen 3-regelige clamp), anders toont
+   -webkit-line-clamp:2 zijn ellipsis nooit. */
+:is(.home-productslider, .cms-listing-row) .product-description {
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1682,11 +1728,14 @@ img {
 }
 
 /* Prijs — bold donkergroen met "Van" subtieler label */
-.home-productslider .product-price-wrapper {
+:is(.home-productslider, .cms-listing-row) .product-price-info {
+  margin-top: 0.25rem;
+}
+:is(.home-productslider, .cms-listing-row) .product-price-wrapper {
   font-size: 0.95rem;
   color: #888;
 }
-.home-productslider .product-price {
+:is(.home-productslider, .cms-listing-row) .product-price {
   font-weight: 700 !important;
   color: #2d4528 !important;
   font-size: 1.15rem;
@@ -3274,231 +3323,10 @@ body.is-ctl-product {
 
 /* ------------------------------------------------------------
    24. PLP — PRODUCT LISTING PAGE
-   Cleaner tiles, in stijl van homepage productslider tiles:
-   - Verberg ruis: "Nieuw" badges, hr divider, lange description
-   - Verberg "Details" button — image + naam zijn al klikbaar
-   - Subtiele card-styling met hover-lift en rounded corners
-   - Pricing bold + on-brand kleuren
-   Geen JS toegevoegd: Promidata's PLP heeft al re-renders bij
-   filteren/sorteren — onze CSS is robuust tegen die rebuilds.
+   Tegel-styling zelf staat nu bij sectie 10 (gedeeld met productslider en
+   zoekresultaten via :is()). Hier alleen wat écht PLP-specifiek is: filter-
+   /sorteerbalk en de mobiele grid/sidebar-layout verderop in dit bestand.
    ------------------------------------------------------------ */
-
-/* Verberg overbodige elementen op de tile */
-.cms-listing-row .badge-new {
-  display: none !important;
-}
-.cms-listing-row .product-box hr {
-  display: none !important;
-}
-.cms-listing-row .product-action {
-  display: none !important;
-}
-
-/* Description: zichtbaar maar subtiel — max 2 regels met ellipsis.
-   Native theme zet zelf een VASTE height:54px (voor hun eigen 3-regelige
-   clamp) -- die vaste hoogte bood ruimte voor een volledige 3e regel,
-   waardoor onze -webkit-line-clamp:2 zijn ellipsis nooit toonde (de tekst
-   liep gewoon door tot de rand van hun hoogte i.p.v. na 2 regels af te
-   knippen). height:auto laat de clamp zelf de hoogte bepalen. */
-.cms-listing-row .product-description {
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  height: auto !important;
-  max-height: none !important;
-  font-size: 0.825rem;
-  color: #888;
-  line-height: 1.4;
-  margin: 0.25rem 0 0.5rem 0;
-}
-
-/* Card styling — rounded, geen border (op verzoek verwijderd, was 1px
-   solid #EAE3D7), lift on hover */
-.cms-listing-row .product-box {
-  border: none !important;
-  border-radius: 12px !important;
-  background-color: #ffffff;
-  overflow: hidden;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-  height: 100%;
-  position: relative;
-}
-
-/* Hele tile klikbaar via ::after op de product-name link.
-   Wishlist en variant-thumbs krijgen hogere z-index. */
-.cms-listing-row .product-name {
-  position: static;
-}
-.cms-listing-row .product-name::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.cms-listing-row .product-wishlist,
-.cms-listing-row .variant-thumbnail,
-.cms-listing-row .product-image-link {
-  position: relative;
-  z-index: 2;
-}
-.cms-listing-row .variant-thumbnail {
-  margin-top: 0.6rem;
-}
-.cms-listing-row .product-box:hover {
-  box-shadow: 0 6px 20px rgba(45, 69, 40, 0.08);
-  transform: translateY(-2px);
-}
-
-/* Card body padding ruimer — meer ademruimte boven en onder
-   image, plus breathing room rond text. */
-.cms-listing-row .product-box .card-body {
-  padding: 2rem 1.5rem !important;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Image-wrapper bijna square — aspect-ratio voor compactere PLP tiles. */
-.cms-listing-row .product-image-wrapper {
-  position: relative;
-  margin-bottom: 1rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  aspect-ratio: 10 / 9 !important;
-}
-.cms-listing-row .product-image-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.cms-listing-row .product-image {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  border-radius: 8px;
-}
-
-/* Wishlist button — Promidata default position. Alleen icon-kleur on-brand. */
-.cms-listing-row .product-wishlist svg use,
-.cms-listing-row .product-wishlist svg path {
-  fill: #2d4528 !important;
-}
-
-/* Variant thumbnails -- swatches groter + meer ademruimte ertussen (bij
-   producten met veel variaties (15+) stonden ze anders vrijwel tegen
-   elkaar aan, wat druk oogde). gap i.p.v. margin op de flex-children,
-   want Promidata's eigen slider-JS meet de track via flexbox -- gap
-   wordt daar correct in meegenomen, in tegenstelling tot een margin-hack
-   die de breedteberekening kan verstoren. */
-.cms-listing-row .variant-thumbnail .slides {
-  gap: 8px;
-}
-.cms-listing-row .variant-thumbnail-img {
-  width: 34px !important;
-  height: 34px !important;
-  border-radius: 50% !important;
-  border: 1px solid #EAE3D7 !important;
-  object-fit: cover !important;
-}
-
-/* Variant slider prev/next pijlen — alleen tonen wanneer .active class
-   is gezet (Promidata's JS doet dat als items overflowen). Ruimte
-   gereserveerd aan weerskanten (padding op de wrapper) zodat de pijlen
-   niet meer bovenop de eerste/laatste swatch liggen -- was de bron van
-   het drukke, overlappende gevoel. Subtiele pijl i.p.v. gevuld wit
-   rondje, verticaal gecentreerd op de rij (niet eronder). */
-.cms-listing-row .variant-thumbnail.slider:not(.active) .prev,
-.cms-listing-row .variant-thumbnail.slider:not(.active) .next {
-  display: none !important;
-}
-.cms-listing-row .variant-thumbnail.slider.active {
-  padding: 0 20px !important;
-}
-.cms-listing-row .variant-thumbnail.slider.active .prev,
-.cms-listing-row .variant-thumbnail.slider.active .next {
-  background: transparent !important;
-  color: #888 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  width: 16px !important;
-  height: 34px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 0.9rem !important;
-  font-weight: 400 !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  cursor: pointer;
-  transition: color 0.15s ease, transform 0.15s ease;
-}
-.cms-listing-row .variant-thumbnail.slider.active .prev { left: 0 !important; }
-.cms-listing-row .variant-thumbnail.slider.active .next { right: 0 !important; }
-.cms-listing-row .variant-thumbnail.slider.active .prev:hover,
-.cms-listing-row .variant-thumbnail.slider.active .next:hover {
-  background: transparent !important;
-  color: #555 !important;
-}
-/* Subtiele edge-fade over de swatch-track (zelfde idee als .rg-logo-fade
-   bij de merken-slider) -- de track knipt een half-zichtbare swatch
-   hard af aan de rand, dat oogde te bot als "hint dat er meer is".
-   Positie op 20px (de padding die hierboven al voor de pijlen gereserveerd
-   is) zodat de fade precies op de rand van de zichtbare track valt, niet
-   over de pijlen heen. Verloop naar wit (de tegel-achtergrond), niet
-   naar de crème pagina-achtergrond. */
-.cms-listing-row .variant-thumbnail.slider.active::before,
-.cms-listing-row .variant-thumbnail.slider.active::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 16px;
-  z-index: 1;
-  pointer-events: none;
-}
-.cms-listing-row .variant-thumbnail.slider.active::before {
-  left: 20px;
-  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
-}
-.cms-listing-row .variant-thumbnail.slider.active::after {
-  right: 20px;
-  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
-}
-
-/* Product info — naam in donkergroen, regular weight, on-brand */
-.cms-listing-row .product-info {
-  margin-top: auto;
-}
-.cms-listing-row .product-name {
-  display: block;
-  font-weight: 400 !important;
-  color: #2d4528 !important;
-  text-decoration: none !important;
-  font-size: 1rem;
-  line-height: 1.3;
-  margin: 0.25rem 0 0.5rem 0;
-}
-.cms-listing-row .product-name:hover {
-  color: #ad6331 !important;
-}
-
-/* Prijs — bold, donkergroen, "Van" iets dimmer als label */
-.cms-listing-row .product-price-info {
-  margin-top: 0.25rem;
-}
-.cms-listing-row .product-price-wrapper {
-  font-size: 0.95rem;
-  color: #888;
-}
-.cms-listing-row .product-price {
-  font-weight: 700 !important;
-  color: #2d4528 !important;
-  font-size: 1.15rem;
-  margin-left: 0.25rem;
-}
 
 /* Filter en sort balk — meer lucht en consistente styling */
 .cms-element-product-listing-actions {
