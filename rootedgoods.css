@@ -10891,7 +10891,12 @@ h2.rg-route__team-title{
    BEIDE op dezelfde grootte/positie gehouden (alleen gevuld vs. omlijnd),
    en alleen "Configureren" (een neutrale derde optie, geen weigering) als
    visueel rustiger tekstlink. */
-.cookie-permission-container {
+/* [style*="display: block"]: Shopware togglet zichtbaarheid via inline
+   style (nooit removed uit de DOM), en zet bij sluiten inline
+   "display: none" -- een ongeclausuleerde !important hierboven zou die
+   inline none altijd verslaan, waardoor de popup na "Aanvaarden"/"Weigeren"
+   nooit meer dichtging (leek te laden, bleef dan gewoon staan). */
+.cookie-permission-container[style*="display: block"] {
   position: fixed !important;
   inset: 0 !important;
   bottom: 0 !important;
@@ -10972,6 +10977,7 @@ h2.rg-route__team-title{
 .js-cookie-permission-button .btn {
   background-color: transparent !important;
   border: 2px solid var(--rg-green) !important;
+  box-shadow: none !important;
   color: var(--rg-green) !important;
 }
 .js-cookie-permission-button .btn:hover {
