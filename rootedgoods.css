@@ -8106,6 +8106,17 @@ h1.rg-contact-head__title,
   display: block; margin: 0 0 0.4rem;
   font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; color: #2d4528;
 }
+/* Hulptekst onder het Aanvraag-label -- puur CSS (geen JS), want de
+   placeholder in de textarea verdwijnt zodra iemand begint te typen. */
+.block-cioform-container .form-group:has([name="request-inquiry"]) > label::after {
+  content: "Aantallen, budget en gewenste leverdatum helpen ons het snelst";
+  display: block;
+  margin-top: 0.3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #8c857a;
+}
 /* Velden */
 .block-cioform-container .form-control {
   width: 100%; padding: 0.8rem 1rem !important; font-size: 1rem;
