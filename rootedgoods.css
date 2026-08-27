@@ -8179,6 +8179,22 @@ h1.rg-contact-head__title,
 #request-offer-container .product-image-container img {
   width: 64px; height: 64px; object-fit: cover; border-radius: 10px; border: 1px solid #EAE3D7;
 }
+/* Verzendknop zit hier (i.t.t. offerte/contact) in een eigen .button-container-div,
+   niet direct als form > button -- de gedeelde :is()-regel hierboven mist 'm dus. */
+#request-offer-container .button-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+#request-offer-container .button-container button[type="submit"] {
+  padding: 0.95rem 2.5rem !important;
+  font-size: 1.05rem !important;
+  min-width: 260px;
+}
+@media (max-width: 575px) {
+  #request-offer-container .button-container button[type="submit"] { width: 100%; min-width: 0; }
+}
 /* Contactpagina: de native sectie is als "boxed" ingesteld (40px zij-padding
    op Shopware's eigen theme), terwijl de rest van de pagina (bv. de kop) 20px
    gebruikt. Op 20px terugbrengen + eigen kaart-marge uitzetten voorkomt dat
