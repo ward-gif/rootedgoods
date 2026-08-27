@@ -6754,13 +6754,16 @@ h2.rg-endcta__title,
   line-height: 1.6;
 }
 
-/* De form-kaart */
+/* Geen eigen kaart meer op #form-content: #request-offer-container zelf is
+   inmiddels de kaart (sectie 40c, gedeeld met /offerte en /contact) -- twee
+   geneste kaarten oogde als "blok in een blok". #form-content blijft puur
+   layout (het formulier zelf), geen eigen achtergrond/rand/schaduw. */
 #request-offer-container #form-content {
-  background: #ffffff;
-  border: 1px solid #EAE3D7;
-  border-radius: 18px;
-  padding: clamp(1.5rem, 3vw, 2.75rem);
-  box-shadow: 0 24px 55px -35px rgba(45, 69, 40, 0.30);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 /* 2-koloms grid; standaard vult elk veld de volle breedte */
@@ -8007,14 +8010,19 @@ h1.rg-contact-head__title,
   font-family: 'Montserrat', sans-serif; color: #2d4528;
 }
 #request-offer-container #head-content h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+/* Subregel onder de titel ("Schrijf ons een e-mail...") is een generieke
+   Shopware-standaardzin zonder toegevoegde waarde hier -- weg. */
+#request-offer-container #head-content p { display: none; }
 #request-offer-container .product.section > h2 { display: none; }
 #request-offer-container .product.section {
   display: flex; align-items: center; gap: 1rem;
   margin-bottom: 1.5rem; padding-bottom: 1.5rem;
   border-bottom: 1px solid #EAE3D7;
 }
+/* Foto voor de naam i.p.v. erna (DOM-volgorde is tekst -> foto) en iets groter. */
+#request-offer-container .product-image-container { order: -1; }
 #request-offer-container .product-image-container img {
-  width: 64px; height: 64px; object-fit: cover; border-radius: 10px; border: 1px solid #EAE3D7;
+  width: 88px; height: 88px; object-fit: cover; border-radius: 10px; border: 1px solid #EAE3D7;
 }
 /* Verzendknop zit hier (i.t.t. offerte/contact) in een eigen .button-container-div,
    niet direct als form > button -- de gedeelde :is()-regel hierboven mist 'm dus. */
