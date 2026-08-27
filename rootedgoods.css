@@ -886,6 +886,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 @media (max-width: 991px) {
   .rg-usp-slider {
     display: block;
+    width: 100%;   /* zonder dit: 0px breed. Enige kind is position:absolute
+                      (regel hieronder), telt dus niet mee voor de auto-
+                      breedte van deze flex-item -- de balk toonde daardoor
+                      nooit tekst, ongeacht caching. */
     position: relative;
     height: 1.35em;
     overflow: hidden;
