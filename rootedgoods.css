@@ -1592,7 +1592,10 @@ img {
     padding-bottom: 68% !important;
   }
   :is(.home-productslider, .cms-listing-row) .product-box .card-body {
-    padding: 1.1rem 1rem !important;
+    /* Minder ruimte specifiek boven de afbeelding (top) -- de gelijke
+       1.1rem rondom oogde met de nu veel kortere tegel onnodig lucht
+       tussen tegel-rand en foto. */
+    padding: 0.75rem 1rem 1.1rem !important;
   }
 }
 :is(.home-productslider, .cms-listing-row) .product-image-link {
