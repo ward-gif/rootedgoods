@@ -10875,3 +10875,110 @@ h2.rg-route__team-title{
   .header-minimal-contact,
   .header-minimal-back-to-shop { text-align: center; margin-top: 0.5rem; }
 }
+
+/* ============================================================
+   50. COOKIE-CONSENT — als centrale popup i.p.v. onderbalk
+   ============================================================
+   Was een vaste balk onderaan het scherm; oogde als een storende reep
+   i.p.v. een bewuste keuze. Nu een gecentreerde kaart met verduisterde/
+   vervaagde achtergrond (backdrop), zodat de rest van de pagina duidelijk
+   "erachter" ligt terwijl je een keuze maakt.
+
+   Belangrijk (AVG/ePrivacy, Autoriteit Persoonsgegevens & EDPB-richtlijnen):
+   "Weigeren" moet EVEN GEMAKKELIJK/PROMINENT zijn als "Accepteren" -- een
+   opvallende primaire knop voor accepteren met weigeren als kleine/vage
+   link is een verboden "dark pattern" en kan beboet worden. Daarom hier
+   BEIDE op dezelfde grootte/positie gehouden (alleen gevuld vs. omlijnd),
+   en alleen "Configureren" (een neutrale derde optie, geen weigering) als
+   visueel rustiger tekstlink. */
+.cookie-permission-container {
+  position: fixed !important;
+  inset: 0 !important;
+  bottom: 0 !important;
+  background-color: rgba(20, 26, 15, 0.55) !important;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1100;
+}
+/* Achtergrond dichtklikken mag niet als "accepteren" tellen -- geen click-
+   through toegevoegd, de kaart zelf vangt clicks gewoon af (position/stacking
+   is voldoende, geen extra JS nodig). */
+.cookie-permission-container > .container {
+  background-color: #ffffff;
+  border-radius: var(--rg-r-xp);
+  box-shadow: 0 30px 70px -25px rgba(20, 26, 15, 0.45);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 560px;
+  width: 100%;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+.cookie-permission-container .row {
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.cookie-permission-content {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--rg-soft);
+  text-align: center;
+}
+.cookie-permission-content a {
+  color: var(--rg-cognac);
+  text-decoration: underline;
+}
+.cookie-permission-content a:hover { color: var(--rg-cognac-deep); }
+
+.cookie-permission-actions {
+  flex-direction: column-reverse !important;
+  align-items: stretch !important;
+  gap: 0.6rem;
+  padding: 0 !important;
+  width: 100%;
+}
+.cookie-permission-actions .btn {
+  width: 100%;
+  margin: 0 !important;
+  border-radius: var(--rg-r-pill) !important;
+  font-weight: 600 !important;
+}
+/* Accepteren + weigeren: zelfde formaat/gewicht, alleen gevuld vs. omlijnd. */
+.js-cookie-accept-all-button .btn {
+  background-color: var(--rg-cognac) !important;
+  border: 2px solid var(--rg-cognac) !important;
+  color: #ffffff !important;
+}
+.js-cookie-accept-all-button .btn:hover {
+  background-color: var(--rg-cognac-deep) !important;
+  border-color: var(--rg-cognac-deep) !important;
+}
+.js-cookie-permission-button .btn {
+  background-color: transparent !important;
+  border: 2px solid var(--rg-green) !important;
+  color: var(--rg-green) !important;
+}
+.js-cookie-permission-button .btn:hover {
+  background-color: var(--rg-green) !important;
+  color: #ffffff !important;
+}
+/* Configureren: neutrale derde optie (geen accept/weiger-keuze), dus bewust
+   lichter -- kale tekstlink i.p.v. een knop. */
+.js-cookie-configuration-button .btn {
+  background: transparent !important;
+  border: none !important;
+  color: var(--rg-soft) !important;
+  font-weight: 500 !important;
+  text-decoration: underline;
+  width: auto;
+  margin: 0.2rem auto 0 !important;
+  padding: 0.3rem !important;
+}
+.js-cookie-configuration-button .btn:hover { color: var(--rg-green) !important; }
+
+/* Achtergrond niet laten scrollen terwijl de consent-kaart open staat. */
+body:has(.cookie-permission-container) { overflow: hidden; }
