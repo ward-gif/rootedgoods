@@ -10987,4 +10987,8 @@ h2.rg-route__team-title{
 .js-cookie-configuration-button .btn:hover { color: var(--rg-green) !important; }
 
 /* Achtergrond niet laten scrollen terwijl de consent-kaart open staat. */
-body:has(.cookie-permission-container) { overflow: hidden; }
+/* Let op: Shopware verwijdert het element nooit, alleen display:none/block
+   via inline style -- :has() ziet enkel of het element bestáát, dus zonder
+   de [style*] filter zou de pagina na het sluiten van de popup voorgoed op
+   overflow:hidden blijven staan. */
+body:has(.cookie-permission-container[style*="display: block"]) { overflow: hidden; }
