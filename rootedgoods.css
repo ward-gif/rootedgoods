@@ -10912,8 +10912,14 @@ h2.rg-route__team-title{
   border-radius: var(--rg-r-xp);
   box-shadow: 0 30px 70px -25px rgba(20, 26, 15, 0.45);
   padding: clamp(1.5rem, 3vw, 2.25rem);
-  max-width: 560px;
-  width: 100%;
+  /* !important + flex-basis: .container is een flex-item van de backdrop
+     (display:flex hierboven) -- Bootstrap's eigen .container-breedte
+     (die oploopt tot 1320px op grote schermen) won anders van max-width,
+     zelfde soort flex-vs-gewone-eigenschap-conflict als eerder bij het
+     cioform-formulier. */
+  flex: 0 1 560px !important;
+  max-width: 560px !important;
+  width: 100% !important;
   max-height: calc(100vh - 2rem);
   overflow-y: auto;
 }
@@ -10977,6 +10983,7 @@ h2.rg-route__team-title{
 .js-cookie-configuration-button .btn {
   background: transparent !important;
   border: none !important;
+  box-shadow: none !important;
   color: var(--rg-soft) !important;
   font-weight: 500 !important;
   text-decoration: underline;
