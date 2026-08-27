@@ -5456,7 +5456,7 @@ img.rg-europe-map__svg {
     padding-top: 1.375rem;    /* helft van de 2.75rem hierboven */
     padding-bottom: 1.375rem;
   }
-  .rg-statement__cta { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .rg-statement__cta { flex-direction: column; align-items: flex-start; gap: 1.75rem; }
   .rg-statement__cta-btn {
     display: flex;
     justify-content: center;
