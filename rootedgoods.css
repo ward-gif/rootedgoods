@@ -8144,7 +8144,7 @@ h1.rg-contact-head__title,
    regels hieronder gelden via :is() voor beide containers -- geen
    duplicatie, altijd dezelfde look. */
 :is(.block-cioform-container, #request-offer-container) {
-  width: auto;
+  box-sizing: border-box;
   max-width: 820px;
   margin: 0 auto;
   background: #ffffff;
@@ -8158,7 +8158,15 @@ h1.rg-contact-head__title,
    ambient padding heeft (bv. /contact, zie verderop) zetten dit terug naar 0
    om dubbele inspringing te voorkomen. */
 @media (max-width: 575px) {
-  :is(.block-cioform-container, #request-offer-container) { margin: 0 20px; }
+  /* De container is een flex-item zonder eigen breedte-declaratie (op
+     /offerte/contact) -- width:auto/shrink-to-fit werkt daar niet zoals bij
+     een normaal blok-element, dus expliciet berekenen i.p.v. op margin+auto
+     vertrouwen (anders hangt de breedte af van de content en overflowt/krimpt
+     de kaart onvoorspelbaar). */
+  :is(.block-cioform-container, #request-offer-container) {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
 }
 /* Stray "Formular Titel"-placeholder verbergen (titel komt uit offerte-kop) */
 :is(.block-cioform-container, #request-offer-container) > [data-cms-element-id] > div:not([class]):not([id]) { display: none; }
@@ -8205,7 +8213,7 @@ h1.rg-contact-head__title,
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
-  .cms-section-default.boxed .block-cioform-container { margin: 0 !important; }
+  .cms-section-default.boxed .block-cioform-container { margin: 0 !important; width: 100% !important; }
 }
 
 /* Form = 2-koloms grid */
