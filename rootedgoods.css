@@ -871,7 +871,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   .top-bar .container {
     max-width: 100% !important;
-    padding: 0.5rem 1rem !important;
+    padding: 0.85rem 1rem !important;
   }
   .top-bar-nav {
     justify-content: center !important;
@@ -3435,6 +3435,31 @@ body.is-ctl-product {
   padding: 0.5rem 0;
 }
 
+/* Mobiele "Filter"-knop (opent de offcanvas-sidebar): de sitebrede
+   .btn-outline-primary-regel (sectie 1, knoppen) maakt secundaire knoppen
+   bewust tot een kale tekstlink zonder rand -- prima voor marketing-CTA's,
+   maar deze utility-knop moet gewoon als knop oogen. Zelfde specificiteit
+   (4 class-selectors incl. :not()) zodat 'ie wint, plus ruimte eronder
+   zodat de paginering niet direct erbovenop plakt. */
+.filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem !important;
+  border: 2px solid rgba(45, 69, 40, 0.28) !important;
+  border-radius: 50px !important;
+  background-color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 1.25rem;
+}
+.filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon):hover {
+  border-color: #ad6331 !important;
+  color: #ad6331 !important;
+}
+
 /* Filter panel active container — chips + reset button als filters actief zijn.
    Promidata vult deze div automatisch. Verberg als 'ie leeg is. */
 .filter-panel-active-container {
@@ -3634,6 +3659,16 @@ body.is-ctl-product {
     display: flex;
     flex-wrap: nowrap;
     width: max-content;
+  }
+  /* Kleinere page-labels zodat een normaal aantal pagina's past zonder
+     te hoeven scrollen (bij heel veel pagina's blijft de scroll hierboven
+     als vangnet werken). */
+  .page-item .page-link {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 0.4rem !important;
+    margin: 0 0.1rem;
+    font-size: 0.85rem !important;
   }
 }
 
