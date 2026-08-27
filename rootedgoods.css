@@ -1594,23 +1594,6 @@ img {
   :is(.home-productslider, .cms-listing-row) .product-box .card-body {
     padding: 1.1rem 1rem !important;
   }
-  /* Op 2-tegels-per-rij (~150px breed) maakten een 2-regelige naam +
-     een 2-regelige beschrijving de tegel alsnog torenhoog t.o.v. de
-     smalle, platte afbeelding erboven (en .cms-listing-row rekt binnen
-     één rij alle tegels naar de hoogste uit, dus één lang product duwde
-     de hele rij omhoog). Beschrijving is op deze breedte overbodige ruis
-     -- naam + prijs zijn hier de enige echte beslisinformatie. Naam naar
-     1 regel met ellipsis i.p.v. 2 losse regels. */
-  :is(.home-productslider, .cms-listing-row) .product-description {
-    display: none !important;
-  }
-  :is(.home-productslider, .cms-listing-row) .product-name {
-    display: block !important;
-    -webkit-line-clamp: 1 !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 :is(.home-productslider, .cms-listing-row) .product-image-link {
   display: block !important;
@@ -1752,6 +1735,24 @@ img {
   color: #888;
   line-height: 1.4;
   margin: 0.25rem 0 0.5rem 0;
+}
+/* Op 2-tegels-per-rij (~150px breed) maakten een 2-regelige naam + een
+   2-regelige beschrijving de tegel alsnog torenhoog t.o.v. de smalle,
+   platte afbeelding erboven (.cms-listing-row rekt bovendien alle tegels
+   in één rij naar de hoogste uit, dus één lang product duwde de hele rij
+   omhoog). Beschrijving is op deze breedte overbodige ruis -- naam + prijs
+   zijn hier de enige echte beslisinformatie. Naam naar 1 regel i.p.v. 2. */
+@media (max-width: 575px) {
+  :is(.home-productslider, .cms-listing-row) .product-description {
+    display: none !important;
+  }
+  :is(.home-productslider, .cms-listing-row) .product-name {
+    display: block !important;
+    -webkit-line-clamp: 1 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /* Prijs — bold donkergroen met "Van" subtieler label */
