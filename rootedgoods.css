@@ -1083,12 +1083,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .rg-offcanvas-tile--thema {
     background-image:
       linear-gradient(to top, rgba(20, 30, 15, 0.88), rgba(20, 30, 15, 0.15) 65%),
-      url('https://bambook.08.promidata.shop/media/c0/ba/fe/1785442349/Events-2.jpg');
+      url('/media/c0/ba/fe/1785442349/Events-2.jpg');
   }
   .rg-offcanvas-tile--trending {
+    /* Bestandsnaam bijgewerkt: het oude bestand (zonder "(1)") is vervangen
+       (404) toen de gecomprimeerde versie werd geupload -- zie ook
+       thema-overzicht.html/thema-tegels-home.html, dezelfde vervanging. */
     background-image:
       linear-gradient(to top, rgba(45, 15, 10, 0.88), rgba(45, 15, 10, 0.15) 65%),
-      url('https://bambook.08.promidata.shop/media/d8/96/ae/1786435459/Kerst%20en%20eindejaar.jpg');
+      url('/media/d8/96/ae/1786435459/Kerst en Eindejaar (1).jpg');
   }
   .rg-offcanvas-tile [itemprop="name"],
   .rg-offcanvas-tile-title {
