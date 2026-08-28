@@ -43,23 +43,69 @@ dit de eerste keer dat een meting betekenis heeft.
    home, een thema-pagina, een PDP, een PLP/categoriepagina, checkout — **elk
    los gemeten voor mobiel én desktop** (10 metingen totaal). Vervangt de
    schattingen uit de pre-golive-audit door echte CLS/LCP/INP/TBT-cijfers.
-2. **(ik)** Robots.txt-check op rootedgoods.eu: bevestigen dat er geen
-   `noindex`/disallow is meeverhuisd vanaf de dev-omgeving. **Hoogste
-   prioriteit van dit hele plan** — dit is de klassieke "geen foutmelding,
-   gewoon onvindbaar"-launch-fout, en elke dag die verstrijkt zonder dat we
-   het checken is potentieel gemiste indexering.
+2. ✅ **(ik) Robots.txt-check — gezond.** `Allow: /` breed, geen per-ongeluk
+   meeverhuisde blanket-disallow. Wel `Disallow` op account/checkout/
+   widgets/navigation/bundles/poconfigurator/livestock (allemaal terecht,
+   geen content-pagina's) en een `Crawl-delay: 5` (klein, geen actie nodig).
+   Sitemap correct gerefereerd.
 3. **(ik, met jouw GSC-toegang)** Status in Search Console: is rootedgoods.eu
    geverifieerd, is de sitemap ingediend, zijn er al dekking-/indexerings-
    waarschuwingen, staat er al Core Web Vitals-fielddata (waarschijnlijk nog
-   te vroeg, maar checken kost niets).
-4. **(ik)** XML-sitemap: bevat die de losse thema-CMS-pagina's automatisch?
-   (Open vraag uit beide audits, nog nooit echt gecheckt.)
-5. **(ik)** Canonical-steekproef: een paar pagina's checken op correcte
-   zelf-canonical (geen dubbele indexering via met/zonder trailing slash).
+   te vroeg, maar checken kost niets). *(Nog te doen — vereist jouw GSC-login.)*
+4. ✅ **(ik) XML-sitemap gecheckt — bevestigt een echt gat.** De sitemap bevat
+   alleen categorieën, producten en een paar vaste juridische pagina's. **Alle
+   Landing Pages ontbreken volledig**: `/contact`, `/over-ons`, `/faq`,
+   `/offerte`, `/services/` (uitzondering: deze laatste zit er zelf niet in
+   maar heeft wél een eigen canonical, zie punt 5) en alle "mooie" thema-URL's
+   (`/onboarding-welkomstpakket`, `/eindejaarsgeschenken`, enz.) — dit zijn in
+   Shopware **Landing Pages**, een ander content-type dan Category, en
+   Shopware's sitemap-generator neemt dat type niet mee. Zie Fase 3 hieronder
+   voor de vervolgstappen.
+5. ✅ **(ik) Canonical-steekproef — inconsistent.** `/services/` heeft een
+   correcte zelf-canonical. `/contact`, `/over-ons` en `/eindejaarsgeschenken`
+   hebben **geen enkele canonical-tag**. Zelfde patroon als punt 4: lijkt
+   samen te hangen met het Landing Page-type, niet uniform kapot of uniform
+   goed.
 6. **(ik)** Mixed-content/oud-domein-steekproef: nog ergens een hardcoded
    verwijzing naar `http://` of naar `bambook.08.promidata.shop`? (De
    font-URL's van vandaag waren zo'n geval — goed mogelijk dat er nog meer
-   zijn, bv. in CMS-rich-text-afbeeldingen.)
+   zijn, bv. in CMS-rich-text-afbeeldingen.) *(Nog te doen.)*
+
+### 🔴 Nieuwe bevinding: Landing Pages missen titel/description/canonical/sitemap
+
+Steekproef op 4 Landing Pages (`/onboarding-welkomstpakket`, `/contact`,
+`/over-ons`, `/eindejaarsgeschenken`) bevestigt een systemisch (niet
+incidenteel) patroon voor dit Shopware-content-type:
+- `<title>` is kaal (bv. simpelweg "Onboarding", geen merknaam-suffix, geen
+  keyword-rijke tekst) en meta-description is leeg.
+- Geen `<link rel="canonical">`.
+- Niet opgenomen in de XML-sitemap (zie punt 4).
+
+**Er bestaat daarnaast een losse, automatisch aangemaakte Category-pagina per
+thema** (bv. `/thema-s/onboarding-welkom/`, wél in de sitemap, wél met eigen
+canonical) — dit is **geen bug maar een bestaande, legitieme catalogus-
+structuur** ("Onze categorieën"-menu linkt er zelf naartoe): de Category-
+pagina is de kale product-filterlijst, de Landing Page is de door ons
+geschreven verhalende versie met dezelfde thematiek. Geverifieerd dat het
+**geen dubbele content is** (983 vs. 2174 woorden, andere H1/structuur) en
+dat **geen van beide naar de ander linkt** — dat laatste is wél een gemiste
+kans (zwakkere topical-relevance-signalen, gebruiker die op de kale
+categorie-pagina landt vindt niet de rijkere verhaal-pagina en andersom).
+
+**Voorstel, verwerkt in Fase 3:**
+1. Titel + meta-description ook voor Landing Pages invullen (**Ward**, hangt
+   af van of Shopware dat veld voor dit content-type sowieso toont — checken).
+2. Canonical-tag-gat navragen bij Promidata: is dit een Shopware-kernbeperking
+   voor Landing Pages, of een instelling die aan staat/uit moet (**Ward** stelt
+   de vraag, **ik** lever de technische omschrijving).
+3. Sitemap-gat: als Promidata bevestigt dat Landing Pages structureel nooit in
+   de auto-sitemap komen, overwegen een **losse, handmatig onderhouden sitemap
+   voor Landing Pages** toe te voegen (Shopware ondersteunt meerdere sitemap-
+   bestanden via de sitemap-index) — **(ik)** kan dat technisch opzetten zodra
+   punt 2 duidelijkheid geeft.
+4. Kruislink toevoegen tussen elke Landing Page en z'n Category-tegenhanger
+   (bv. "Bekijk alle producten in dit thema" onderaan de Landing Page, linkend
+   naar `/thema-s/xxx/`) — **(ik)**, lage moeite, versterkt zowel SEO als UX.
 
 **Resultaat van deze fase:** een concreet, cijfermatig prioriteitenlijstje in
 plaats van de kwalitatieve inschatting uit de pre-golive-audit — fase 2 en 3
@@ -164,22 +210,36 @@ in "kan al" en "wacht op plugin-bevestiging".
    controleren op uniciteit — grootste hefboom uit de pre-golive-audit,
    ligt bij jou in Shopware. **(ik)** lever een geprioriteerde lijst welke
    pagina's het eerst (hoogste verkeer/omzetpotentie) als dat helpt.
+   **Concreet bevestigd tijdens Fase 0** dat dit voor Landing Pages
+   (`/contact`, `/over-ons`, alle thema-URL's) nog helemaal leeg staat — zie
+   de bevinding in Fase 0 voor de volle omvang.
+6. **(Ward → Promidata, ik levert de vraag)** Canonical-tag-gat op Landing
+   Pages navragen: Shopware-kernbeperking voor dit content-type, of een
+   instelling? Bepaalt of dit een code-fix, een Shopware-instelling, of iets
+   is dat we structureel niet kunnen oplossen (en dan bewust accepteren).
+7. **(ik, na punt 6)** Sitemap-gat voor Landing Pages: als bevestigd dat dit
+   nooit automatisch meekomt, een losse handmatige sitemap toevoegen aan de
+   sitemap-index.
+8. **(ik)** Kruislink Landing Page ↔ bijbehorende Category-pagina (bv.
+   "Bekijk alle producten in dit thema" op de Landing Page, linkend naar
+   `/thema-s/xxx/`) — lage moeite, versterkt SEO-relevantie én UX-navigatie
+   tussen de twee parallelle structuren.
 
 **Wacht op plugin-bevestiging (volgende week):**
-6. Zodra de plugin live is: **(ik)** checken wélke schema's hij dekt
+9. Zodra de plugin live is: **(ik)** checken wélke schema's hij dekt
    (`Organization`/`WebSite`/`BreadcrumbList`/`Product` zijn de verwachte,
    maar dat was in Promidata's eigen testomgeving nog niet 100% zeker) via
    view-source + de Rich Results Test.
-7. **(ik)** Alleen de schema's zelf bouwen die de plugin *niet* dekt of
-   onvolledig invult (bv. verzendtijd/retourbeleid-velden die nu in de
-   testomgeving Duitse demo-waarden tonen — checken of dat bij Rooted Goods
-   goed vanuit de eigen Shopware-instellingen komt).
-8. **(samen)** Breadcrumbs heroverwegen: nu verborgen via CSS op thema/
-   service/merken. Beslissing hangt af van of de plugin al `BreadcrumbList`
-   meestuurt zonder zichtbare UI (dan hoeft er niets aan het oog te
-   veranderen) — pas na punt 6 een echte keuze te maken.
-9. **(ik)** Interne links steviger: spokes (thema/service-pagina's) linken nu
-   niet consequent terug naar hun hub-pagina.
+10. **(ik)** Alleen de schema's zelf bouwen die de plugin *niet* dekt of
+    onvolledig invult (bv. verzendtijd/retourbeleid-velden die nu in de
+    testomgeving Duitse demo-waarden tonen — checken of dat bij Rooted Goods
+    goed vanuit de eigen Shopware-instellingen komt).
+11. **(samen)** Breadcrumbs heroverwegen: nu verborgen via CSS op thema/
+    service/merken. Beslissing hangt af van of de plugin al `BreadcrumbList`
+    meestuurt zonder zichtbare UI (dan hoeft er niets aan het oog te
+    veranderen) — pas na punt 9 een echte keuze te maken.
+12. **(ik)** Interne links steviger: spokes (thema/service-pagina's) linken nu
+    niet consequent terug naar hun hub-pagina.
 
 ---
 
