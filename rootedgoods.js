@@ -1486,11 +1486,7 @@ function rgOnthulNaFonts(toon) {
     var vorigeTransforms = teMeten.map(function (el) { return el.style.transform; });
     teMeten.forEach(function (el) { el.style.transform = 'none'; });   /* fase 1: alle writes */
 
-    var defs = svg.querySelector('defs') || svg.insertBefore(
-      document.createElementNS('http://www.w3.org/2000/svg', 'defs'), svg.firstChild);
-    defs.innerHTML = '';
     tekstVlakken = [];
-    var NS = 'http://www.w3.org/2000/svg';
     var bereik = document.createRange();
 
     /* fase 2: alle metingen, geen writes ertussen */
@@ -1530,31 +1526,14 @@ function rgOnthulNaFonts(toon) {
 
     teMeten.forEach(function (el, i) { el.style.transform = vorigeTransforms[i]; });  /* fase 3 */
 
-    var mask = document.createElementNS(NS, 'mask');
-    mask.setAttribute('id', 'rg-route-mask');
-    mask.setAttribute('maskUnits', 'userSpaceOnUse');
-    var vlak = document.createElementNS(NS, 'rect');
-    vlak.setAttribute('width', breedte); vlak.setAttribute('height', hoogte);
-    vlak.setAttribute('fill', '#fff');
-    mask.appendChild(vlak);
-    tekstVlakken.forEach(function (v) {
-      var re = document.createElementNS(NS, 'rect');
-      re.setAttribute('x', v.x1);
-      re.setAttribute('y', v.y1);
-      re.setAttribute('width', v.x2 - v.x1);
-      re.setAttribute('height', v.y2 - v.y1);
-      re.setAttribute('fill', '#4d4d4d');   /* ~30% */
-      mask.appendChild(re);
-    });
-    defs.appendChild(mask);
-    /* TIJDELIJK UITGEZET (28 aug) -- diagnostisch experiment op verzoek van
-       Ward om te checken of de SVG-mask (i.c.m. de per-scroll-frame
-       stroke-dashoffset-update) de oorzaak is van het schokkerige
-       scroll-gevoel op iPhone/mobiel. Bijwerking zolang dit uit staat: de
-       lijn dimt niet meer naar 30% achter tekstblokken. TERUGZETTEN na de
-       test, ongeacht uitkomst -- zie chat 28 aug. */
-    // base.setAttribute('mask', 'url(#rg-route-mask)');
-    // draw.setAttribute('mask', 'url(#rg-route-mask)');
+    /* GEEN SVG-mask meer op de lijn (28 aug, permanent): een gemaskeerd pad
+       waarvan de stroke-dashoffset elke scroll-frame verandert bleek op
+       mobiel (bevestigd op meerdere telefoons, incl. iPhone) de daadwerkelijke
+       oorzaak van schokkerig scrollen -- niet de dashoffset-animatie op
+       zich (die liep in een geïsoleerde test, zonder mask, wel soepel).
+       tekstVlakken blijft wel bestaan: die voedt ook het losstaande
+       merkteken-vervaag-effect (zetMerkteken hieronder), dat een gewone
+       opacity-tween is en niet betrokken was bij het schokkerige gedrag. */
   }
 
   /* bezier met controlepunten die altijd TUSSEN de y van hun eindpunten
