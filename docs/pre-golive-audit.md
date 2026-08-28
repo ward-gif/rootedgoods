@@ -1,3 +1,7 @@
+> **Status 28 aug 2026:** de site is live. Deze bevindingen zijn samen met
+> `post-golive-audit.md` verwerkt in `plan-van-aanpak-optimalisatie.md` —
+> vink daar af, dit bestand blijft staan als ruwe bevindingen/bewijsvoering.
+
 # Pre-golive audit — techniek, SEO, GEO, Core Web Vitals
 
 > Analyse van 6 aug 2026 (nog placeholders in beeld). **Erbij pakken zodra de

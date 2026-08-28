@@ -1,3 +1,6 @@
+> **Status 28 aug 2026:** verwerkt in `plan-van-aanpak-optimalisatie.md` —
+> vink daar af, dit bestand blijft staan als ruwe bevindingen/bewijsvoering.
+
 # Post-golive audit — dingen die pas op het echte domein te checken zijn
 
 > Aanmaken 20 aug 2026. Dit is de tegenhanger van `pre-golive-audit.md`: alles
