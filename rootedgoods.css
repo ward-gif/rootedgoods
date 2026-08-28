@@ -786,8 +786,13 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     max-width: 100%;
   }
 
-  /* ---- Actie-rij: alleen zoeken + winkelmandje ---- */
-  .header-actions-col .header-wishlist,
+  /* ---- Actie-rij: alleen zoeken + winkelmandje + (indien gevuld) wishlist ----
+     Wishlist hoort hier NIET onvoorwaardelijk verborgen te worden: sectie 1
+     hierboven (regel ~339) laat 'm al vanzelf verschijnen zodra de wishlist
+     niet leeg is (zelfde :empty-badge-truc als op desktop) -- die had
+     alleen op mobiel geen enkele kans, want dit blokte 'm altijd, gevuld
+     of niet. Zonder zichtbaar icoon/teller ergens had toevoegen aan de
+     wishlist op mobiel geen enkele bevestiging of vindplaats. */
   .header-actions-col .account-menu {
     display: none !important;
   }
