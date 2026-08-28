@@ -39,10 +39,39 @@ Zonder dit werken we blind: de pre-golive-cijfers waren expliciet schattingen
 "met nog placeholders in beeld". Nu de site live staat met echte content is
 dit de eerste keer dat een meting betekenis heeft.
 
-1. **(ik)** Lighthouse/PageSpeed Insights op 5 representatieve pagina's —
-   home, een thema-pagina, een PDP, een PLP/categoriepagina, checkout — **elk
-   los gemeten voor mobiel én desktop** (10 metingen totaal). Vervangt de
-   schattingen uit de pre-golive-audit door echte CLS/LCP/INP/TBT-cijfers.
+1. ✅ **(ik) Lighthouse/PageSpeed Insights — 10 metingen gedraaid** (eigen
+   API-key, 28 aug). Vervangt de schattingen uit de pre-golive-audit door
+   echte cijfers:
+
+   | Pagina | Type | Perf | A11y | BP | SEO | LCP | CLS |
+   |---|---|---|---|---|---|---|---|
+   | Home | mobiel | 60 | 76 | 96 | 92 | **35.5s** | 0.000 |
+   | Home | desktop | 59 | 78 | 96 | 92 | 4.1s | 0.014 |
+   | Thema (onboarding) | mobiel | 61 | 76 | 96 | 92 | **10.0s** | 0.000 |
+   | Thema (onboarding) | desktop | 81 | 78 | 96 | 92 | 0.9s | 0.003 |
+   | PDP (Victorinox) | mobiel | 66 | 84 | 96 | 100 | 7.1s | 0.091 |
+   | PDP (Victorinox) | desktop | 64 | 76 | 96 | 100 | 1.4s | **0.361** |
+   | PLP (Zakmessen) | mobiel | 72 | 82 | 96 | 85 | 4.4s | 0.041 |
+   | PLP (Zakmessen) | desktop | 96 | 83 | 96 | 85 | 1.2s | 0.004 |
+   | Checkout (leeg mandje) | mobiel | 56 | 85 | 100 | 58 | 9.1s | 0.000 |
+   | Checkout (leeg mandje) | desktop | 93 | 87 | 100 | 58 | 1.2s | 0.002 |
+
+   **Headline: 35,5 seconden LCP op de mobiele homepage.** Root cause
+   opgezocht in de ruwe data — geen server-probleem (response-time overal
+   15-50ms): de homepage laadt **11,5 MB in 214 requests, waarvan 10,6 MB
+   (189 requests) alleen al afbeeldingen**. Losse voorbeelden: een
+   feature-row-foto van 689 KB, één van 593 KB, meerdere productslider-
+   thumbnails van 200-365 KB elk — dat zijn factor 3-10x groter dan nodig
+   voor het formaat waarop ze getoond worden. Thema-pagina (3,3 MB
+   afbeeldingen) en PLP (1,6 MB) hebben dezelfde soort probleem, in mindere
+   mate. PDP en checkout zijn qua afbeeldingsgewicht juist prima (0,3 MB /
+   0,1 MB) — dus dit is geen sitebreed CSS/JS-probleem alleen, specifiek
+   **onbewerkte, te grote brongfoto's op een paar contentrijke pagina's**.
+   Zie de nieuwe prioriteit #1 in Fase 2 hieronder.
+   Ook opvallend: **checkout scoort SEO=58** (logisch — die pagina's staan
+   terecht op `Disallow` in robots.txt, dus dit cijfer is geen zorg) en
+   **PDP desktop CLS=0,361** (boven de 0,25-grens, "slecht" — nader te
+   onderzoeken in Fase 2, mogelijk de swatch-slider die na laden herindeelt).
 2. ✅ **(ik) Robots.txt-check — gezond.** `Allow: /` breed, geen per-ongeluk
    meeverhuisde blanket-disallow. Wel `Disallow` op account/checkout/
    widgets/navigation/bundles/poconfigurator/livestock (allemaal terecht,
@@ -145,12 +174,40 @@ fases, ongeacht wat de Fase 0-cijfers laten zien.
 
 ## Fase 2 — Core Web Vitals & performance
 
-Gebruikt de Fase 0-cijfers om te bepalen welke van onderstaande het zwaarst
-weegt; de bekende kandidaten uit de audit zijn:
+Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
 
+0. 🔴 **(Ward, media-workflow) Afbeeldingsgewicht — verreweg de grootste
+   hefboom, vóór al het onderstaande.** 35,5s mobiele LCP op de homepage komt
+   voor het overgrote deel door 10,6 MB aan afbeeldingen (189 requests) op
+   die ene pagina; thema-pagina's en PLP hebben hetzelfde probleem in
+   mindere mate. Concreet:
+   - Brongfoto's die in CMS-blokken (feature-rows, hero's) zijn geplakt zijn
+     vaak 200-690 KB per stuk — dat hoort voor een web-formaat op zo'n
+     schaal eerder 30-80 KB te zijn na compressie.
+   - **(Ward)** Vóór het uploaden in Shopware: foto's comprimeren/resizen
+     (bv. via Squoosh.app of TinyPNG, target ~1600px breed voor hero/
+     feature-formaat, kwaliteit ~75-80%) i.p.v. de camera-/design-tool-
+     export direct plakken.
+   - **(ik, navraag Promidata)** Checken of Shopware's eigen thumbnail-
+     generatie (de `/shared/thumbnail/...`-paden die we al zagen) een
+     kwaliteitsinstelling heeft die nu te hoog staat, en of WebP/AVIF-
+     varianten al worden aangeboden (`<picture>` met moderne formaten kan
+     hier los van de brongrootte al veel schelen).
+   - **(ik)** `loading="lazy"` steekproef: content buiten beeld (bv. verderop
+     in de productslider, brand-logo-carousel-duplicaten) hoort pas te laden
+     als de gebruiker er richting scrollt — checken of dat al overal correct
+     staat, want dat voorkomt dat afbeeldingen buiten beeld meedingen naar
+     bandbreedte tijdens de LCP-race.
+   - **Meten na fix**: opnieuw dezelfde 10 PageSpeed-metingen, verwacht een
+     LCP-daling van tientallen seconden naar een paar seconden op de
+     zwaarste pagina's.
 1. **(ik)** CLS: `width`/`height` (of `aspect-ratio`) op alle content-`<img>`
    die dat nog missen — audit noemde specifiek de hero-collage
    (`.rg-page-hero__img`), `.rg-feature-row__img` en product-slider-beelden.
+   **Nieuw uit Fase 0**: PDP desktop scoorde CLS=0,361 (boven de 0,25-grens,
+   "slecht") terwijl PDP mobiel prima was (0,091) — onderzoeken wat op
+   desktop-breedte specifiek herindeelt (kandidaat: de variant-swatch-
+   slider die pas na laden zijn breedte/navigatiepijlen bepaalt).
 2. **(ik)** Hero-hoogte-JS herzien (`rootedgoods.js` ~510-521): zet nu ná de
    eerste paint `minHeight` via `getBoundingClientRect`/`ResizeObserver` →
    veroorzaakt een layout-shift ná paint. Grootste concrete CLS-bron die al
