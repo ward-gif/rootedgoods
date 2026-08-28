@@ -2515,6 +2515,16 @@ img {
 .product-detail-media .gallery-slider-controls-next {
   right: 0.5rem !important;
 }
+/* Mobiel: op de smallere gallery-kolom stonden de pijlen met 0.5rem inzet
+   vaak bovenop het product zelf i.p.v. ernaast -- dichter tegen de rand. */
+@media (max-width: 575px) {
+  .product-detail-media .gallery-slider-controls-prev {
+    left: 0.15rem !important;
+  }
+  .product-detail-media .gallery-slider-controls-next {
+    right: 0.15rem !important;
+  }
+}
 
 /* Arrow icon — donkergroen ipv default lichtgrijs voor zichtbaarheid */
 .product-detail-media .gallery-slider-controls svg use {
@@ -2543,6 +2553,11 @@ img {
 @media (max-width: 576px) {
   .product-detail-media .gallery-slider-item {
     min-height: 320px !important;
+  }
+  /* Ruimte tussen productnaam en gallery was 64px (32px eigen margin-top +
+     16px naam-margin + wat restant) -- overdreven op een smal scherm. */
+  .product-detail-media {
+    margin-top: 12px !important;
   }
 }
 
@@ -2970,22 +2985,30 @@ body.is-ctl-product .product-detail-ordernumber-container {
   .product-detail-buy .product-block-prices-grid > thead > tr > *,
   .product-detail-buy .custom-configurator-table > thead > tr > *,
   .product-detail-buy .custom-configurator-table > tbody > tr > * {
-    padding-top: 0.6rem !important;
-    padding-bottom: 0.6rem !important;
-    font-size: 0.78rem;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+    font-size: 0.72rem;
     white-space: nowrap;
+  }
+  /* Header-tekst ("Prijs per eenheid") mag wél wrappen -- die lange
+     tekst forceerde als enige de hele kolombreedte, waardoor de tabel
+     (incl. de selectie-rand eromheen) net niet in de kaart paste en een
+     horizontale scroll nodig had. */
+  .product-detail-buy .product-block-prices-grid > thead > tr > *,
+  .product-detail-buy .custom-configurator-table > thead > tr > * {
+    white-space: normal;
   }
   .product-detail-buy .product-block-prices-grid > tbody > tr > *:first-child,
   .product-detail-buy .product-block-prices-grid > thead > tr > *:first-child,
   .product-detail-buy .custom-configurator-table > thead > tr > *:first-child,
   .product-detail-buy .custom-configurator-table > tbody > tr > *:first-child {
-    padding-left: 0.85rem !important;
+    padding-left: 0.6rem !important;
   }
   .product-detail-buy .product-block-prices-grid > tbody > tr > *:last-child,
   .product-detail-buy .product-block-prices-grid > thead > tr > *:last-child,
   .product-detail-buy .custom-configurator-table > thead > tr > *:last-child,
   .product-detail-buy .custom-configurator-table > tbody > tr > *:last-child {
-    padding-right: 0.85rem !important;
+    padding-right: 0.6rem !important;
   }
   /* Besparings-badge iets compacter zodat de kolom niet onnodig breed wordt */
   .product-detail-buy .product-block-prices-grid .badge,
@@ -3095,6 +3118,11 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .product-detail-buy .collapse-group + .collapse-group {
   border-top: 1px solid #EAE3D7 !important;
 }
+/* "Volgende"-knop tussen de stappen: iets meer lucht eronder, plakte
+   direct tegen de rand van de volgende stap aan. */
+.product-detail-buy .btn-configurator-next {
+  margin-bottom: 0.75rem;
+}
 
 /* Hoofdafbeelding klikbaar — cursor zoom-in als hint. */
 .product-detail-media .gallery-slider-image,
@@ -3148,7 +3176,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
   padding: 0;
   background: transparent !important;
   width: max-content;
-  margin: 1rem auto 0 !important;
+  margin: 1rem auto 1rem !important;
   position: relative !important;
   bottom: auto !important;
   left: auto !important;
