@@ -876,12 +876,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
   /* Was ".top-bar .container" -- die class bestaat hier helemaal niet
      (.top-bar gaat direct naar .top-bar-nav, geen Bootstrap .container
-     wrapper), dus deze padding kwam nooit ergens terecht. */
-  .top-bar {
-    padding: 0.65rem 1rem !important;
-  }
+     wrapper), dus deze padding kwam nooit ergens terecht. Padding hoort
+     bovendien op .top-bar-nav zelf, niet op .top-bar: de groene
+     achtergrond zit óp .top-bar-nav, dus padding op de transparante ouder
+     erboven maakte alleen de buitenkant hoger -- het groene vlak zelf
+     bleef even dun, met zichtbare crème marge er nu overheen/onder. */
   .top-bar-nav {
     justify-content: center !important;
+    padding: 0.4rem 1rem !important;
   }
   .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
     display: none !important;
@@ -1881,7 +1883,13 @@ img {
     inset: 0 !important;
     z-index: 5;
     display: flex !important;
-    align-items: center;
+    /* Geen align-items:center: dit vlak beslaat de HELE tegel (incl. naam
+       en prijs onder de afbeelding), dus "verticaal gecentreerd" hierin
+       kwam op de tekst uit i.p.v. op de foto. De knoppen zelf krijgen
+       hieronder een top-percentage die overeenkomt met het midden van het
+       beeld (card-body padding-top + halve beeldhoogte, gemeten als
+       aandeel van de totale tegelhoogte). */
+    align-items: flex-start;
     justify-content: space-between;
     pointer-events: none !important;
     margin: 0 !important;
@@ -1892,6 +1900,8 @@ img {
     all: unset !important;
     pointer-events: auto !important;
     position: relative !important;
+    top: 19%;
+    transform: translateY(-50%);
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2521,13 +2531,15 @@ img {
   right: 0.5rem !important;
 }
 /* Mobiel: op de smallere gallery-kolom stonden de pijlen met 0.5rem inzet
-   vaak bovenop het product zelf i.p.v. ernaast -- dichter tegen de rand. */
+   vaak bovenop het product zelf i.p.v. ernaast. Negatieve inzet duwt ze
+   voorbij de gallery-kolom (die zelf al 20px van de schermrand af staat)
+   tot vrijwel tegen de echte schermrand aan, zoals gevraagd. */
 @media (max-width: 575px) {
   .product-detail-media .gallery-slider-controls-prev {
-    left: 0.15rem !important;
+    left: -14px !important;
   }
   .product-detail-media .gallery-slider-controls-next {
-    right: 0.15rem !important;
+    right: -14px !important;
   }
 }
 
@@ -3023,6 +3035,12 @@ body.is-ctl-product .product-detail-ordernumber-container {
   }
   .product-detail-buy #total-price-bottom-container .configurator-price-container {
     padding: 0.85rem 1rem;
+  }
+  /* "Totaalprijs Netto:" + bedrag braken naar 2 regels op smalle schermen
+     bij de native font-size (20px, .totalprice). */
+  .product-detail-buy #total-price-bottom-container .configurator-price-container > table th,
+  .product-detail-buy #total-price-bottom-container .configurator-price-container > table td {
+    font-size: 0.95rem !important;
   }
 }
 
