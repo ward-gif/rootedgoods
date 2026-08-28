@@ -1900,8 +1900,11 @@ img {
     all: unset !important;
     pointer-events: auto !important;
     position: relative !important;
-    top: 19%;
-    transform: translateY(-50%);
+    /* !important nodig: all:unset!important hierboven zet top óók op
+       !important (all is een shorthand), dus zonder !important verliest
+       deze latere, specifiekere waarde alsnog binnen dezelfde regel. */
+    top: 19% !important;
+    transform: translateY(-50%) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
