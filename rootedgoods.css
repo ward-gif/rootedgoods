@@ -869,9 +869,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .top-bar.d-none.d-lg-block {
     display: block !important;
   }
-  .top-bar .container {
-    max-width: 100% !important;
-    padding: 0.85rem 1rem !important;
+  /* Was ".top-bar .container" -- die class bestaat hier helemaal niet
+     (.top-bar gaat direct naar .top-bar-nav, geen Bootstrap .container
+     wrapper), dus deze padding kwam nooit ergens terecht. */
+  .top-bar {
+    padding: 0.65rem 1rem !important;
   }
   .top-bar-nav {
     justify-content: center !important;
@@ -1775,6 +1777,20 @@ img {
   color: #2d4528 !important;
   font-size: 1.15rem;
   margin-left: 0.25rem;
+}
+@media (max-width: 575px) {
+  /* Iets kleiner op mobiel, en nowrap: bij een grotere systeem-tekstgrootte
+     (bv. iOS "Grotere tekst"-toegankelijkheidsinstelling, die rem-waarden
+     meeschaalt) brak "Van € 21,63" anders naar 2 regels op de smalle tegel. */
+  :is(.home-productslider, .cms-listing-row) .product-price-info {
+    white-space: nowrap;
+  }
+  :is(.home-productslider, .cms-listing-row) .product-price-wrapper {
+    font-size: 0.8rem;
+  }
+  :is(.home-productslider, .cms-listing-row) .product-price {
+    font-size: 1rem;
+  }
 }
 
 /* Slider — reset alle interne spacing */
@@ -3519,6 +3535,12 @@ body.is-ctl-product {
   border-color: #ad6331 !important;
   color: #ad6331 !important;
 }
+/* Icoon zelf staat native op position:relative;top:6px -- duwt 'm 6px
+   lager dan het midden van de knop, ondanks dat de omliggende span/flex
+   wél gecentreerd is. */
+.filter-panel-wrapper-toggle .icon svg {
+  top: 0 !important;
+}
 
 /* Filter panel active container — chips + reset button als filters actief zijn.
    Promidata vult deze div automatisch. Verberg als 'ie leeg is. */
@@ -3793,6 +3815,54 @@ body.is-ctl-product {
   .cms-section-sidebar-mobile-wrap.boxed {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+  /* Native theme geeft dit CMS-block zelf ook nog padding: 0 links / 20px
+     rechts -- op desktop is dat de halve gutter t.o.v. de sidebar ernaast
+     (die zelf de andere helft bijdraagt), maar die sidebar bestaat op
+     mobiel niet meer. Resultaat: de hele rij (incl. de 2 tegels) stond
+     20px naar links verschoven t.o.v. de rest van de pagina -- rechts
+     bleef daardoor dubbel zoveel ruimte over als links. */
+  .cms-block-product-listing > .cms-block-container {
+    padding-left: 20px !important;
+  }
+  /* Bootstrap's default col-gutter (15px, dus 30px tussen tegels) en de
+     30px verticale marge waren allebei ruimer dan nodig -- kleiner, en
+     gelijk aan elkaar gehouden voor een consistent grid-gevoel. */
+  .cms-listing-col {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    margin-bottom: 16px !important;
+  }
+  /* Ruimte tussen breadcrumb en titel: breadcrumb's eigen margin-bottom
+     (16px) + het CMS-titelblok's eigen padding-top (20px) telden op tot
+     36px. .pos-0 = altijd het eerste blok op de pagina (hier: de titel). */
+  body:has(.cms-listing-row) .cms-breadcrumb {
+    margin-bottom: 8px !important;
+  }
+  body:has(.cms-listing-row) .cms-block.pos-0.cms-block-text > .cms-block-container {
+    padding-top: 4px !important;
+  }
+  /* Titel -> Filter-knop -> paginering -> sorteren: gelijke, kleinere
+     tussenruimte i.p.v. de opgetelde Bootstrap-standaardmarges. "Sorteren"
+     boven de dropdown is overbodig (de dropdown zelf is al duidelijk). */
+  body:has(.cms-listing-row) .cms-block-text h2 {
+    margin-bottom: 16px !important;
+  }
+  .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
+    padding: 0.65rem 1.25rem !important;
+    margin-bottom: 16px !important;
+  }
+  .sorting-label {
+    display: none !important;
+  }
+  .cms-element-product-listing-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+    margin-bottom: 16px !important;
+  }
+  .cms-element-product-listing-actions > * {
+    margin: 0 !important;
   }
 }
 
