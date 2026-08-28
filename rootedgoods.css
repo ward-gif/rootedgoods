@@ -3975,7 +3975,7 @@ h2.rg-cat-heading,
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #CA853F;
+  color: #955529;
 }
 .rg-cat-head__sub {
   margin: 0.55rem 0 0;
@@ -4773,7 +4773,7 @@ h3.rg-feature-row__title,
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #CA853F;
+  color: #955529;
 }
 h2.rg-compare__title,
 .cms-element-text h2.rg-compare__title {
@@ -4946,7 +4946,7 @@ h2.rg-compare__title,
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #CA853F;
+  color: #955529;
 }
 h2.rg-story__title,
 .cms-element-text h2.rg-story__title {
@@ -5224,7 +5224,7 @@ h2.rg-story__title,
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem);
-  color: #CA853F;
+  color: #955529;
   margin: 0 0 var(--rg-space-md) 0;   /* eyebrow hugt de kop (groepering) */
 }
 /* (decoratief streepje verwijderd — kicker zonder streepje) */
@@ -5331,7 +5331,7 @@ h2.rg-statement__title,
   width: 1rem;
   height: 1rem;
   flex: none;
-  color: #CA853F;
+  color: #955529;
 }
 
 /* Scroll-reveal: content + kaart komen omhoog/faden in als de sectie in
@@ -5369,7 +5369,7 @@ h2.rg-statement__title,
    voor in blokken/*.html.)
    ------------------------------------------------------------ */
 .rg-em {
-  color: #CA853F; /* secundair accent (test) */
+  color: #955529; /* secundair accent (test) */
 }
 
 /* Europa-kaart — statisch, puur visueel.
@@ -6270,7 +6270,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center;
 }
 .rgh__copy{max-width:37rem;}
-.rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem + .4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#CA853F;} /* gelijk aan .rg-statement__kicker */
+.rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem + .4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#955529;} /* gelijk aan .rg-statement__kicker */
 .rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:800;color:#2d4528;font-size:clamp(2.1rem,1.2rem + 2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
 /* .rgh__title em: geen eigen echte-italic-regel meer -- gebruikt de
    gedeelde faux-oblique skewX-regel (sectie 41.1). */
@@ -6280,13 +6280,13 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 /* (oude-hero secundair volgt nu de site-brede tekstlink-stijl uit sectie 8) */
 .rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:nowrap;gap:.35rem 1.1rem;align-items:center;}
 .rgh__trust li{display:flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:500;color:#2d4528;white-space:nowrap;}
-.rgh__trust svg{width:1rem;height:1rem;flex:none;color:#CA853F;}
+.rgh__trust svg{width:1rem;height:1rem;flex:none;color:#955529;}
 .rgh__sep{display:block;width:min(100%,22rem);height:1px;background:#EAE3D7;margin:1rem 0 .9rem;}
 .rgh__contact{display:inline-flex;align-self:flex-start;align-items:center;gap:.65rem;margin-top:0;padding:.35rem .8rem .35rem .35rem;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:background-color .2s,border-color .2s;}
 .rgh__contact:hover{background:#fff;border-color:#EAE3D7;}
 .rgh__contact:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:2px;}
 .rgh__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
-.rgh__contact-name{display:block;font-size:.72rem;font-weight:600;color:#CA853F;}
+.rgh__contact-name{display:block;font-size:.72rem;font-weight:600;color:#955529;}
 .rgh__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#4a5a44;}
 .rgh__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s;}
 .rgh__contact:hover .rgh__contact-promise svg{transform:translateX(3px);}
@@ -6832,7 +6832,7 @@ h2.rg-block-title__title,
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #CA853F;
+  color: #955529;
 }
 /* Dubbel-specifieke selector (h2.class + .cms-element-text h2.class):
    de globale type-scale gebruikt ".cms-element-text h2 !important"
@@ -6915,7 +6915,7 @@ h2.rg-endcta__title,
   font-weight: 500;
   color: #ffffff;
 }
-.rg-endcta__trust svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
+.rg-endcta__trust svg { width: 1rem; height: 1rem; flex: none; color: #955529; }
 .rg-endcta__t { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
 
 .rg-endcta__divider {
@@ -7195,7 +7195,7 @@ body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #CA853F;
+  color: #955529;
 }
 h1.rg-sd__title,
 .cms-element-text h1.rg-sd__title {
@@ -7256,7 +7256,7 @@ h1.rg-sd__title em,
   line-height: 1.5;
   color: #5d6d55;
 }
-.rg-sd__reassurance svg { width: 1rem; height: 1rem; flex: none; color: #CA853F; }
+.rg-sd__reassurance svg { width: 1rem; height: 1rem; flex: none; color: #955529; }
 .rg-sd__reassurance-item { display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
 .rg-sd__hero-media img {
   width: 100%;
@@ -7316,7 +7316,7 @@ h2.rg-sd__head-title,
   font-weight: 600;
   font-size: clamp(1.9rem, 1.5rem + 1vw, 2.6rem);
   line-height: 1;
-  color: #CA853F;
+  color: #955529;
   margin-bottom: 0.65rem;
 }
 h3.rg-sd__step-title,
@@ -7389,7 +7389,7 @@ h2.rg-sd__row-title,
   font-weight: 500;
   line-height: 1.5;
 }
-.rg-sd__checks svg { width: 1.05rem; height: 1.05rem; flex: none; margin-top: 0.2rem; color: #CA853F; }
+.rg-sd__checks svg { width: 1.05rem; height: 1.05rem; flex: none; margin-top: 0.2rem; color: #955529; }
 
 /* ---- Donkergroen checklist-paneel ----
    Compacter dan de sectie-breedte (zelfde gedachte als de eind-CTA-
@@ -8046,7 +8046,7 @@ h2.rg-faq-cat,
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #CA853F;
+  color: #955529;
 }
 h1.rg-contact-head__title,
 .cms-element-text h1.rg-contact-head__title {
