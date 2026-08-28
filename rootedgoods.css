@@ -1883,13 +1883,10 @@ img {
     inset: 0 !important;
     z-index: 5;
     display: flex !important;
-    /* Geen align-items:center: dit vlak beslaat de HELE tegel (incl. naam
-       en prijs onder de afbeelding), dus "verticaal gecentreerd" hierin
-       kwam op de tekst uit i.p.v. op de foto. De knoppen zelf krijgen
-       hieronder een top-percentage die overeenkomt met het midden van het
-       beeld (card-body padding-top + halve beeldhoogte, gemeten als
-       aandeel van de totale tegelhoogte). */
-    align-items: flex-start;
+    /* Eerder een keer verschoven naar het midden van het BEELD i.p.v. de
+       hele tegel -- op verzoek teruggedraaid: gewoon verticaal gecentreerd
+       op de volledige tegelhoogte (incl. naam/prijs eronder). */
+    align-items: center;
     justify-content: space-between;
     pointer-events: none !important;
     margin: 0 !important;
@@ -1900,11 +1897,6 @@ img {
     all: unset !important;
     pointer-events: auto !important;
     position: relative !important;
-    /* !important nodig: all:unset!important hierboven zet top óók op
-       !important (all is een shorthand), dus zonder !important verliest
-       deze latere, specifiekere waarde alsnog binnen dezelfde regel. */
-    top: 19% !important;
-    transform: translateY(-50%) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
