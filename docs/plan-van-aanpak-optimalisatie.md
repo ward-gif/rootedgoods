@@ -100,6 +100,23 @@ dit de eerste keer dat een meting betekenis heeft.
    font-URL's van vandaag waren zo'n geval — goed mogelijk dat er nog meer
    zijn, bv. in CMS-rich-text-afbeeldingen.) *(Nog te doen.)*
 
+### 🔴 Nieuwe bevinding: Search Console kan de sitemap niet ophalen
+
+Sitemaps-rapport toont "Kan niet ophalen", ook na opnieuw indienen. Zelf
+getest: bestand + onderliggende `.xml.gz` zijn gewoon bereikbaar (200,
+geldige gzip, geldige XML, ook met Googlebot-user-agent). URL-inspectie's
+eigen "Live testen" op dezelfde sitemap-URL **slaagt wél** (crawlen +
+indexeren toegestaan, pagina succesvol opgehaald) — dat verschil (losse
+test slaagt, sitemap-rapport blijft falen) wijst richting de **al bekende
+agressieve bot-/abuse-detectie op de Promidata-omgeving** (blokkeerde
+eerder al eens een IP na een korte uitbarsting van requests, bevestigd
+door Promidata-support in een eerdere sessie) — een sitemap-crawl haalt
+kort na elkaar meerdere bestanden op (index + onderliggend bestand),
+precies zo'n uitbarsting-patroon.
+**(Ward → Promidata)** Vraag uitgezet (samen met het WebP-verzoek
+hieronder): staan Googlebot's geverifieerde IP-reeksen op een witte lijst?
+Potentieel breder dan alleen de sitemap als bevestigd.
+
 ### 🔴 Nieuwe bevinding: Landing Pages missen titel/description/canonical/sitemap
 
 Steekproef op 4 Landing Pages (`/onboarding-welkomstpakket`, `/contact`,
@@ -176,23 +193,20 @@ fases, ongeacht wat de Fase 0-cijfers laten zien.
 
 Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
 
-0. 🔴 **(Ward, media-workflow) Afbeeldingsgewicht — verreweg de grootste
-   hefboom, vóór al het onderstaande.** 35,5s mobiele LCP op de homepage komt
-   voor het overgrote deel door 10,6 MB aan afbeeldingen (189 requests) op
-   die ene pagina; thema-pagina's en PLP hebben hetzelfde probleem in
-   mindere mate. Concreet:
-   - Brongfoto's die in CMS-blokken (feature-rows, hero's) zijn geplakt zijn
-     vaak 200-690 KB per stuk — dat hoort voor een web-formaat op zo'n
-     schaal eerder 30-80 KB te zijn na compressie.
-   - **(Ward)** Vóór het uploaden in Shopware: foto's comprimeren/resizen
-     (bv. via Squoosh.app of TinyPNG, target ~1600px breed voor hero/
-     feature-formaat, kwaliteit ~75-80%) i.p.v. de camera-/design-tool-
-     export direct plakken.
-   - **(ik, navraag Promidata)** Checken of Shopware's eigen thumbnail-
-     generatie (de `/shared/thumbnail/...`-paden die we al zagen) een
-     kwaliteitsinstelling heeft die nu te hoog staat, en of WebP/AVIF-
-     varianten al worden aangeboden (`<picture>` met moderne formaten kan
-     hier los van de brongrootte al veel schelen).
+0. 🟡 **(Ward, media-workflow — CMS-foto's al aangepakt) Afbeeldingsgewicht,
+   nu nog de productthumbnails.** 35,5s mobiele LCP op de homepage kwam
+   voor het overgrote deel door 10,6 MB aan afbeeldingen (189 requests).
+   **Update 28 aug:** Ward heeft de handmatig geüploade CMS-foto's al
+   gecomprimeerd — homepage 11,5→9,6 MB, thema-pagina 4,4→3,3 MB. Resterende
+   hefboom zit nu in de **productthumbnails uit Promidata's feed**
+   (`/shared/thumbnail/..._800x800.png`): gemeten dat één zo'n thumbnail
+   374 KB was als PNG, 53 KB als JPEG op exact dezelfde resolutie (-86%) —
+   PNG comprimeert foto-detail simpelweg slecht. **Vraag al uitgezet bij
+   Promidata**: thumbnail-generatie omzetten naar WebP (lossy, ~kwaliteit
+   80, behoudt transparantie i.t.t. JPEG). AVIF genoemd als optionele bonus
+   als hun pipeline dat makkelijk aankan, niet als vervanging van het
+   WebP-verzoek (AVIF kost aanzienlijk meer encodeer-tijd, zwaardere ask
+   voor een pipeline die mogelijk meerdere winkels bedient).
    - **(ik)** `loading="lazy"` steekproef: content buiten beeld (bv. verderop
      in de productslider, brand-logo-carousel-duplicaten) hoort pas te laden
      als de gebruiker er richting scrollt — checken of dat al overal correct
