@@ -238,10 +238,20 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    topbar-USP's zelf in het CMS staan alsnog op FA i.p.v. SVG (comment in de
    CSS suggereerde dat dat al was omgezet) — geen actie nu, puur informatief
    voor als Ward dat blok ooit opnieuw plakt.
-2. **(ik)** Hero-hoogte-JS herzien (`rootedgoods.js` ~510-521): zet nu ná de
-   eerste paint `minHeight` via `getBoundingClientRect`/`ResizeObserver` →
-   veroorzaakt een layout-shift ná paint. Grootste concrete CLS-bron die al
-   geïdentificeerd is.
+2. ✅ **Hero-hoogte-JS — al opgelost, code alleen nog niet opgeruimd.** De
+   audit-vondst sloeg op de OUDE hero (`.rgh`, `rootedgoods.js` §2.1,
+   ~regel 832-848: `fitHero()` + een blinde `setTimeout(fitHero, 400)`
+   "extra pas" ná paint — precies het post-paint-springgedrag dat CLS
+   veroorzaakt). Gecheckt tegen alle gecachete live pagina's: **geen enkele
+   gebruikt nog `.rgh`** — de homepage draait al op `.rg-hero-v2` (§2.4,
+   ~regel 1073), een latere herschrijving die dit probleem al structureel
+   oplost: `DOMContentLoaded`-getimed (niet `window.load`), herberekent
+   via `ResizeObserver` op de daadwerkelijke logo-slider (reactief i.p.v.
+   een tijd-gok), plus een scroll-guard tegen de "kapotte hero na
+   heen-en-weer scrollen"-bug. Geen actie hier nodig. **Toegevoegd aan
+   item 6 (dode code) hieronder**: de oude `.rgh`-hero (JS §2.1 + het bijbehorende
+   `blokken/hero-sectie.html`/`blokken-def/hero-sectie.html`) is een concrete
+   kandidaat om te verwijderen zodra de dode-code-sweep loopt.
 3. **(ik)** LCP: `fetchpriority="high"` + expliciete dimensies op het
    hero-beeld; Playfair-`h1` swap-gedrag herchecken op tekst-shift.
 4. **(ik)** INP: de zware `MutationObserver` (subtree:true op
@@ -258,6 +268,15 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    teruggedraaid). Concreet:
    - Selectors zoeken die geen enkel element op de live site raken (grep
      klasse-namen uit de CSS tegen de daadwerkelijke HTML/CMS-blokken).
+   - **Concrete al-gevonden kandidaat (28 aug, via Fase 2 item 2)**: de oude
+     `.rgh`-hero — CSS-sectie rond regel 6282 (`.rgh{...}`, `.rgh__*`) +
+     `rootedgoods.js` §2.1 (~regel 745-849, logo-slider-opbouw + `fitHero`)
+     + `blokken/hero-sectie.html`/`blokken-def/hero-sectie.html`. Bevestigd
+     dat geen enkele gecachete live pagina nog `.rgh` gebruikt (homepage
+     draait op `.rg-hero-v2`) — vermoedelijk een eerdere iteratie die is
+     vervangen zonder de oude versie op te ruimen. Nog niet verwijderd:
+     bewaard voor de gecombineerde sweep hieronder i.p.v. een losse
+     tussentijdse deletie.
    - Duplicaten/near-duplicaten consolideren waar dat *zonder visueel risico*
      kan (bv. twee bijna-identieke `box-shadow`-waarden die overduidelijk
      dezelfde bedoeling hadden) — puur opschonen, geen herontwerp.
