@@ -10998,20 +10998,25 @@ h2.rg-route__team-title{
   .header-minimal-contact,
   .header-minimal-back-to-shop { text-align: center; margin-top: 0.5rem; }
   /* Logo staat vast op col-6 (nooit col-md-6), dus ook op mobiel maar
-     half-breed en links uitgelijnd i.p.v. gecentreerd bovenaan de pagina. */
+     half-breed en links uitgelijnd i.p.v. gecentreerd bovenaan de pagina.
+     text-align werkt hier niet: <picture> (rond de <img>) is zelf
+     display:block, en een block-kind negeert text-align op de ouder --
+     flex+justify-content centreert 'm wél, ongeacht die block/inline-mix. */
   .header-minimal-logo {
     flex: 0 0 100% !important;
     max-width: 100% !important;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
 /* Checkout-.container had native 40px zij-padding, .checkout-main daarbovenop
    nog eens 20px -- dubbele inspringing (60px totaal), pagina oogde daardoor
    smaller dan de rest van de site. Zelfde patroon als eerder bij contact-
-   pagina/poconfigurator. */
+   pagina/poconfigurator. Alleen de contentkolom, niet de header (die heeft
+   z'n eigen, aparte .container en centreert zichzelf via bovenstaande regels). */
 @media (max-width: 575px) {
-  body.is-ctl-register .container,
-  body.is-ctl-login .container {
+  body.is-ctl-register .content-main > .container,
+  body.is-ctl-login .content-main > .container {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
