@@ -320,15 +320,33 @@ Om dubbel werk (en risico op tegenstrijdige JSON-LD) te voorkomen, splitsen we
 in "kan al" en "wacht op plugin-bevestiging".
 
 **Kan al, geen plugin-overlap mogelijk:**
-1. **(ik)** `FAQPage`-schema bouwen vanuit `faq-bron.md` (bron staat al
-   compleet klaar, 232 regels, per pagina getagd).
-2. **(ik)** `Person`-schema (Richard/Ward/Marco) als `employee` van
-   Organization.
-3. **(ik)** `Service`-schema voor de vier servicepagina's (personalisatie,
-   verzending, warehousing, full-service).
-4. **(ik)** Overzichtspagina's missen een `<h1>` (services-overzicht
-   bevestigd h1=0; merken/thema-overzicht vermoedelijk ook) — losse,
-   snelle fix.
+1. ✅ **`FAQPage`-schema — al gebouwd én live.** Gecontroleerd: `blokken/
+   faq.html` bevat de volledige, correcte JSON-LD (1-op-1 matchend met de
+   zichtbare vragen); live-check op `/faq` bevestigt 'm staand en de
+   Shopware-sanitizer overleefd (het risico dat het bestand zelf al
+   documenteerde). Geen actie nodig.
+2. ✅ **`Person`-schema — gebouwd (28 aug), nog te plakken door Ward.**
+   Toegevoegd als `employee`-array op de bestaande Organization-JSON-LD in
+   `blokken/rootedgoods.html` (+ `blokken-def/`-versie): Richard, Ward,
+   Marco, allen `jobTitle: "Oprichter"` (enige rol die de site zelf noemt,
+   via de Founders.jpg-alt op /over-ons) — geen achternamen, die staan
+   nergens publiek. **Let op:** dit bestand is (zoals de eigen comment
+   erin al uitlegt) GEEN sitebreed blok — moet apart herplakt worden op elke
+   pagina/layout die 'm gebruikt (faq/contact/offerte hadden 'm al, home/
+   over-ons/alle-producten/alle-thema-s nog niet).
+3. ✅ **`Service`-schema — al gebouwd én live op alle 4.** Gecontroleerd:
+   personalisatie, verzending, warehousing en full-service hebben elk al
+   een correcte `Service`-JSON-LD (met `provider`, `areaServed: "Europe"`,
+   beschrijving) — live bevestigd op alle 4 URL's. Geen actie nodig.
+4. ✅ **Overzichtspagina's `<h1>` — gefixt (28 aug).** Bevestigd: `/services/`,
+   `/merken/` én `/alle-thema-s` hadden alle drie `h1=0` (top-kop was
+   `<h2 class="rg-theme-heading">`, geen enkele h1 ernaast op de pagina).
+   Tag gewijzigd naar `<h1>` in `blokken/services-overzicht.html`,
+   `merken-overzicht.html`, `thema-overzicht.html` (+ `blokken-def/`-versies).
+   CSS-specificiteitsregel (rootedgoods.css, sectie met `.rg-theme-heading`)
+   uitgebreid met `h1.rg-theme-heading` naast de bestaande `h2`-variant,
+   anders verliest de font-size-clamp het van de sitewide `h1{font-size:4rem}`-
+   regel. **Nog te plakken door Ward** op alle 3 pagina's.
 5. **(Ward, CMS)** `<title>` + meta-description per pagina invullen/
    controleren op uniciteit — grootste hefboom uit de pre-golive-audit,
    ligt bij jou in Shopware. **(ik)** lever een geprioriteerde lijst welke

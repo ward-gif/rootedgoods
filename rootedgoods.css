@@ -5876,8 +5876,8 @@ img.rg-europe-map__svg {
    globale type-scale (h2 { font-size: 2rem !important }) -- verloor
    stilletjes zodra genest in .cms-element-text (altijd het geval).
    Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
-h2.rg-theme-heading,
-.cms-element-text h2.rg-theme-heading {
+h1.rg-theme-heading, h2.rg-theme-heading,
+.cms-element-text h1.rg-theme-heading, .cms-element-text h2.rg-theme-heading {
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
 }
 .rg-theme-intro {
