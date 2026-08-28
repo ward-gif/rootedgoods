@@ -117,7 +117,28 @@ weegt; de bekende kandidaten uit de audit zijn:
 5. **(Ward, hosting/CDN-vraag)** CSS/JS-gewicht: 228 KB onverkleind + geen
    `.min`-pad via jsDelivr. Zelf minifiëren voor push, of Promidata vragen om
    een gebuild/geminificeerd pad te serveren.
-6. **(ik)** Lighthouse-hermeting na 1-5 om te bevestigen dat de cijfers ook
+6. **(ik)** Dode-code- en consistentie-check op `rootedgoods.css`/`.js` —
+   nog niet eerder gedaan, en na maandenlang incrementeel bouwen (11.000+
+   regels CSS) realistisch dat er selectors bijzitten die nergens meer op
+   matchen (bv. na een CMS-blok-herbouw of een teruggedraaide poging, zoals
+   het mobiele hamburgermenu-herontwerp dat eerder deze sessie is
+   teruggedraaid). Concreet:
+   - Selectors zoeken die geen enkel element op de live site raken (grep
+     klasse-namen uit de CSS tegen de daadwerkelijke HTML/CMS-blokken).
+   - Duplicaten/near-duplicaten consolideren waar dat *zonder visueel risico*
+     kan (bv. twee bijna-identieke `box-shadow`-waarden die overduidelijk
+     dezelfde bedoeling hadden) — puur opschonen, geen herontwerp.
+   - **Grens met `DESIGN-AUDIT.md`**: die audit signaleerde al hetzelfde
+     soort ruis (108× hardcoded `#2d4528` vs. 3× via token, 992×
+     `!important`, 18 bijna-gelijke shadow-varianten) maar behandelt het als
+     *visueel systeem-vraagstuk* (Fase 4 daar, wacht nog op jouw akkoord).
+     Hier gaat het alleen om **veilig, mechanisch opschonen** (dode selectors
+     weg, evidente duplicaten samenvoegen) — geen tokens/kleuren/spacing
+     herontwerpen. Puur zoek-en-verwijder werk vooraf, verkleint bovendien
+     hoeveel er ooit ook door Fase 4 van het design-traject moet.
+   - Ongebruikte JS-functies/event-listeners identificeren (bv. resten van
+     eerder teruggedraaide experimenten die nooit zijn opgeruimd).
+7. **(ik)** Lighthouse-hermeting na 1-6 om te bevestigen dat de cijfers ook
    echt verbeterd zijn (niet aannemen).
 
 ---
