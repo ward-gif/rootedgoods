@@ -10997,6 +10997,12 @@ h2.rg-route__team-title{
 @media (max-width: 767.98px) {
   .header-minimal-contact,
   .header-minimal-back-to-shop { text-align: center; margin-top: 0.5rem; }
+  /* .header-minimal-back-to-shop is zelf display:flex (native) -- text-align
+     centreert geen flex-children, vandaar nog steeds scheef ondanks de
+     regel hierboven. */
+  .header-minimal-back-to-shop {
+    justify-content: center;
+  }
   /* Logo staat vast op col-6 (nooit col-md-6), dus ook op mobiel maar
      half-breed en links uitgelijnd i.p.v. gecentreerd bovenaan de pagina.
      text-align werkt hier niet: <picture> (rond de <img>) is zelf
