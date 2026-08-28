@@ -1547,8 +1547,14 @@ function rgOnthulNaFonts(toon) {
       mask.appendChild(re);
     });
     defs.appendChild(mask);
-    base.setAttribute('mask', 'url(#rg-route-mask)');
-    draw.setAttribute('mask', 'url(#rg-route-mask)');
+    /* TIJDELIJK UITGEZET (28 aug) -- diagnostisch experiment op verzoek van
+       Ward om te checken of de SVG-mask (i.c.m. de per-scroll-frame
+       stroke-dashoffset-update) de oorzaak is van het schokkerige
+       scroll-gevoel op iPhone/mobiel. Bijwerking zolang dit uit staat: de
+       lijn dimt niet meer naar 30% achter tekstblokken. TERUGZETTEN na de
+       test, ongeacht uitkomst -- zie chat 28 aug. */
+    // base.setAttribute('mask', 'url(#rg-route-mask)');
+    // draw.setAttribute('mask', 'url(#rg-route-mask)');
   }
 
   /* bezier met controlepunten die altijd TUSSEN de y van hun eindpunten
