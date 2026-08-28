@@ -1973,24 +1973,39 @@ document.addEventListener('DOMContentLoaded', function () {
    herrendert -- nieuwe tabellen moeten dan opnieuw hun toggle krijgen.
    ===================================================================== */
 (function () {
-  function initToggles(root) {
-    (root || document).querySelectorAll('.line-item-details-characteristics').forEach(function (wrap) {
-      if (wrap.dataset.rgToggled || !wrap.querySelector('table.custom-configurator-table')) return;
-      wrap.dataset.rgToggled = '1';
-      wrap.classList.add('rg-price-detail', 'rg-price-detail--collapsed');
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'rg-price-detail-toggle';
-      btn.textContent = 'Toon prijsdetails';
-      btn.addEventListener('click', function () {
-        var collapsed = wrap.classList.toggle('rg-price-detail--collapsed');
-        btn.textContent = collapsed ? 'Toon prijsdetails' : 'Verberg prijsdetails';
-      });
-      wrap.parentNode.insertBefore(btn, wrap);
+  function setupToggle(wrap) {
+    if (wrap.dataset.rgToggled || !wrap.querySelector('table.custom-configurator-table')) return;
+    wrap.dataset.rgToggled = '1';
+    wrap.classList.add('rg-price-detail', 'rg-price-detail--collapsed');
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'rg-price-detail-toggle';
+    btn.textContent = 'Toon prijsdetails';
+    btn.addEventListener('click', function () {
+      var collapsed = wrap.classList.toggle('rg-price-detail--collapsed');
+      btn.textContent = collapsed ? 'Toon prijsdetails' : 'Verberg prijsdetails';
     });
+    wrap.parentNode.insertBefore(btn, wrap);
   }
-  document.addEventListener('DOMContentLoaded', function () { initToggles(); });
+  /* INP-fix (28 aug): draaide voorheen bij ELKE DOM-mutatie in document.body
+     een document-brede querySelectorAll, voor de volledige levensduur van
+     ELKE pagina (nooit disconnect -- moet wel blijven leven voor latere
+     AJAX-hoeveelheidswijzigingen). Nu: alleen de daadwerkelijk toegevoegde
+     nodes per mutatie scannen, zelfde patroon als de productslider-observer
+     hierboven (2.0). */
+  function scanNode(root) {
+    if (root.nodeType !== 1) return;
+    if (root.matches && root.matches('.line-item-details-characteristics')) setupToggle(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll('.line-item-details-characteristics').forEach(setupToggle);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function () { scanNode(document.body); });
   if (window.MutationObserver) {
-    new MutationObserver(function () { initToggles(); }).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(scanNode);
+      });
+    }).observe(document.body, { childList: true, subtree: true });
   }
 })();

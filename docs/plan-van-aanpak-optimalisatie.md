@@ -262,9 +262,18 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    sectie 0) — bij een trage font-load blijft de fallback-serif de hele
    paginalevensduur staan i.p.v. later te wisselen, dus geen tekst-shift
    mogelijk. Geen verdere actie.
-4. **(ik)** INP: de zware `MutationObserver` (subtree:true op
-   `document.documentElement`) vervangen door een scherper gescoped
-   variant.
+4. ✅ **INP — afgerond (28 aug), maar andere observer dan verwacht.** De
+   productslider-observer (`document.documentElement`, sectie 2.0) bleek al
+   eerder gefixt: scant nu alleen toegevoegde nodes en disconnect bij vondst
+   / op `window.load` (comment in de code documenteert dit zelf al als "de
+   pre-golive-audit's zwaarste INP-post"). De ECHTE nog-openstaande zware
+   observer zat elders: de winkelmand/checkout-prijsdetail-toggle (§"WINKELMAND/
+   CHECKOUT", ~regel 1975) draaide op `document.body` (subtree:true), deed
+   op ELKE mutatie een document-brede `querySelectorAll`, en disconnect'te
+   nooit (moet ook echt voor de volledige paginalevensduur blijven leven,
+   voor latere AJAX-hoeveelheidswijzigingen). Nu hetzelfde scoped-node-scan-
+   patroon toegepast: alleen de daadwerkelijk toegevoegde nodes per mutatie
+   checken i.p.v. een herhaalde document-brede query.
 5. **(Ward, hosting/CDN-vraag)** CSS/JS-gewicht: 228 KB onverkleind + geen
    `.min`-pad via jsDelivr. Zelf minifiëren voor push, of Promidata vragen om
    een gebuild/geminificeerd pad te serveren.
