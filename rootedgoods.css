@@ -505,7 +505,24 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   color: #fff !important;
 }
 /* (USP-iconen zijn nu witte inline-SVG-vinkjes via currentColor; de oude
-   terracotta <i>-icoonregel is verwijderd — terracotta blijft puur voor CTA's.) */
+   terracotta <i>-icoonregel is verwijderd — terracotta blijft puur voor CTA's.)
+   CORRECTIE (28 aug, PSI-meting): het live CMS-blok gebruikt toch nog
+   <i class="fa-solid fa-check">, geen SVG (comment hierboven klopt niet meer
+   met de content). Dat FA-icoon-lettertype (fa-solid-900.woff2) laadt async
+   -- vóór het laden heeft de <i> een andere glyph-breedte dan erna, wat de
+   volledige topbar (en dus alles eronder) een fractie in hoogte laat
+   verspringen zodra het font binnenkomt. PSI wees dit aan als 98% van de
+   PDP-CLS (0.354 van 0.361). Vaste box i.p.v. font-afhankelijke breedte
+   lost dit op, ongeacht wanneer/of het font laadt. */
+.top-bar-nav .fa-solid,
+.top-bar-nav .fas {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: -0.1em;
+}
 .top-bar-nav a {
   text-decoration: none;
 }

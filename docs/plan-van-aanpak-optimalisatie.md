@@ -70,8 +70,9 @@ dit de eerste keer dat een meting betekenis heeft.
    Zie de nieuwe prioriteit #1 in Fase 2 hieronder.
    Ook opvallend: **checkout scoort SEO=58** (logisch — die pagina's staan
    terecht op `Disallow` in robots.txt, dus dit cijfer is geen zorg) en
-   **PDP desktop CLS=0,361** (boven de 0,25-grens, "slecht" — nader te
-   onderzoeken in Fase 2, mogelijk de swatch-slider die na laden herindeelt).
+   **PDP desktop CLS=0,361** (boven de 0,25-grens, "slecht") — root cause
+   gevonden en opgelost in Fase 2 (zie daar): geen swatch-slider, maar een
+   font-laad-verspringing in de desktop-only topbar-iconen.
 2. ✅ **(ik) Robots.txt-check — gezond.** `Allow: /` breed, geen per-ongeluk
    meeverhuisde blanket-disallow. Wel `Disallow` op account/checkout/
    widgets/navigation/bundles/poconfigurator/livestock (allemaal terecht,
@@ -215,13 +216,28 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    - **Meten na fix**: opnieuw dezelfde 10 PageSpeed-metingen, verwacht een
      LCP-daling van tientallen seconden naar een paar seconden op de
      zwaarste pagina's.
-1. **(ik)** CLS: `width`/`height` (of `aspect-ratio`) op alle content-`<img>`
-   die dat nog missen — audit noemde specifiek de hero-collage
-   (`.rg-page-hero__img`), `.rg-feature-row__img` en product-slider-beelden.
-   **Nieuw uit Fase 0**: PDP desktop scoorde CLS=0,361 (boven de 0,25-grens,
-   "slecht") terwijl PDP mobiel prima was (0,091) — onderzoeken wat op
-   desktop-breedte specifiek herindeelt (kandidaat: de variant-swatch-
-   slider die pas na laden zijn breedte/navigatiepijlen bepaalt).
+1. ✅ **CLS beeld-afmetingen** — gecheckt, blijkt al opgelost door eerder
+   CSS-werk deze sessie: `.rg-page-hero__img` (vaste `height` via `clamp()`
+   op de grid-ouder `.rg-page-hero__media`), `.rg-feature-row__img`
+   (`aspect-ratio: 4/3`) en de product-slider-beelden (`height:0` +
+   `padding-bottom`-truc op `.product-image-wrapper`) reserveren allemaal al
+   ruimte vóór het laden. Geen actie nodig.
+   **PDP desktop CLS=0,361 — opgelost (28 aug).** Root cause via PSI's
+   `layout-shifts`-audit (niet de gok op de swatch-slider): 98% van de score
+   (0,354) kwam van "Web font loaded" op `fa-solid-900.woff2`. Live HTML-check
+   wees uit dat de topbar (desktop-only, `d-none d-lg-block`) nog 4×
+   `<i class="fa-solid fa-check">` gebruikt i.p.v. de SVG-vinkjes die
+   elders al zijn doorgevoerd — de glyph-breedte verspringt zodra het
+   icon-font async binnenkomt, wat de hele topbar (en dus alles eronder,
+   inclusief de PDP-mediakolom die de audit als "verschoven element"
+   rapporteerde) een fractie optilt. Verklaart ook meteen waarom mobiel
+   (topbar daar sowieso verborgen) een prima CLS had. Fix: vaste
+   `width:1em;height:1em` box op `.top-bar-nav .fa-solid/.fas`
+   (rootedgoods.css, sectie 5) — icoon kan niet meer van grootte
+   veranderen ongeacht wanneer het font laadt. **Nog open, apart punt:** de
+   topbar-USP's zelf in het CMS staan alsnog op FA i.p.v. SVG (comment in de
+   CSS suggereerde dat dat al was omgezet) — geen actie nu, puur informatief
+   voor als Ward dat blok ooit opnieuw plakt.
 2. **(ik)** Hero-hoogte-JS herzien (`rootedgoods.js` ~510-521): zet nu ná de
    eerste paint `minHeight` via `getBoundingClientRect`/`ResizeObserver` →
    veroorzaakt een layout-shift ná paint. Grootste concrete CLS-bron die al
