@@ -252,8 +252,16 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    item 6 (dode code) hieronder**: de oude `.rgh`-hero (JS §2.1 + het bijbehorende
    `blokken/hero-sectie.html`/`blokken-def/hero-sectie.html`) is een concrete
    kandidaat om te verwijderen zodra de dode-code-sweep loopt.
-3. **(ik)** LCP: `fetchpriority="high"` + expliciete dimensies op het
-   hero-beeld; Playfair-`h1` swap-gedrag herchecken op tekst-shift.
+3. ✅ **LCP hero-beeld — afgerond (28 aug).** `blokken/hero-sectie-v2.html`
+   (de live homepage-hero) had al `width="400" height="400"` +
+   `loading="eager"` op alle 4 mozaïek-tegels; toegevoegd:
+   `fetchpriority="high"` op diezelfde 4 (zowel `blokken/` als de
+   comment-vrije `blokken-def/`-versie — nog wel opnieuw te plakken door
+   Ward). Playfair-`h1` swap-check: al goed, `font-display: optional`
+   staat al op alle 6 gewichten (bewuste eerdere keuze, zie CSS-comment
+   sectie 0) — bij een trage font-load blijft de fallback-serif de hele
+   paginalevensduur staan i.p.v. later te wisselen, dus geen tekst-shift
+   mogelijk. Geen verdere actie.
 4. **(ik)** INP: de zware `MutationObserver` (subtree:true op
    `document.documentElement`) vervangen door een scherper gescoped
    variant.
