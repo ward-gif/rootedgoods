@@ -9868,6 +9868,16 @@ h2.rg-route__team-title{
   color: var(--rg-green);
   margin-bottom: 0.3rem;
 }
+/* WCAG 400%-zoom-toets (31 aug): in een smalle Bootstrap-kolom knipte
+   "Hoeveelheid" middenin het woord (geen scroll-bug, wel lelijk/matig
+   leesbaar) -- zelfde fix als de configurator-kleurlabels elders
+   (sectie 20): hyphens:auto geeft een net afbreekstreepje i.p.v. een
+   kale knip. Geldt voor zowel de offcanvas- als de volle winkelmandje-
+   pagina, dus niet .cart-offcanvas-scoped. */
+.line-item-quantity-label {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
 .cart-offcanvas .line-item-quantity-group {
   display: flex !important;
   flex-wrap: nowrap !important;
