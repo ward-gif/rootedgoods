@@ -208,14 +208,26 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    als hun pipeline dat makkelijk aankan, niet als vervanging van het
    WebP-verzoek (AVIF kost aanzienlijk meer encodeer-tijd, zwaardere ask
    voor een pipeline die mogelijk meerdere winkels bedient).
-   - **(ik)** `loading="lazy"` steekproef: content buiten beeld (bv. verderop
-     in de productslider, brand-logo-carousel-duplicaten) hoort pas te laden
-     als de gebruiker er richting scrollt — checken of dat al overal correct
-     staat, want dat voorkomt dat afbeeldingen buiten beeld meedingen naar
-     bandbreedte tijdens de LCP-race.
-   - **Meten na fix**: opnieuw dezelfde 10 PageSpeed-metingen, verwacht een
-     LCP-daling van tientallen seconden naar een paar seconden op de
-     zwaarste pagina's.
+   - ✅ **`loading="lazy"` steekproef — gecheckt (31 aug).** Uitkomst is
+     concreter dan verwacht: de 133 productslider-thumbnails op de homepage
+     (samen 6,56 MB — 79% van de totale beeld-lading) staan HELEMAAL NIET in
+     de server-gerenderde HTML. Promidata's eigen slider-plugin injecteert ze
+     zelf via JS (vermoedelijk uit een `data-`-template), dus er is geen
+     `<img loading="...">`-attribuut in de brontekst dat ik kan zetten of
+     overschrijven — dit valt buiten CSS/JS-bereik, het zit in hun
+     closed-source plugin-code. **Nieuw punt voor de eerstvolgende
+     Promidata-vraag**: laadt de slider al zijn slides in één keer (ongeacht
+     zichtbaarheid), of is er een instelling/parameter om dat lazy te maken?
+   - **Meten na fix (31 aug, PSI mobiel, ná CLS/CTA/schema-fixes van deze
+     sessie):**
+     - **PDP: CLS 0,361 → 0,087** (van "slecht" naar "goed", ruim onder de
+       0,1-grens) — bevestigt de topbar-icoon-fix rechtstreeks.
+     - **Home: LCP nog steeds 29,6s** (nauwelijks beter dan de 35,5s
+       baseline) — de `fetchpriority=high`-fix op de hero-tegels hielp dus
+       niet merkbaar, want de hero is niet de bottleneck. Het zijn wel
+       degelijk de 133 productslider-thumbnails (6,56 MB, hierboven) die de
+       LCP-race domineren; dat blijft dus volledig hangen op Promidata's kant
+       (WebP-verzoek + de nieuwe lazy-load-vraag hierboven).
 1. ✅ **CLS beeld-afmetingen** — gecheckt, blijkt al opgelost door eerder
    CSS-werk deze sessie: `.rg-page-hero__img` (vaste `height` via `clamp()`
    op de grid-ouder `.rg-page-hero__media`), `.rg-feature-row__img`
