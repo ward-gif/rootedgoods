@@ -1985,146 +1985,6 @@ img {
 }
 
 /* ------------------------------------------------------------
-   11. HOMEPAGE IMAGE ROW SPOTLIGHT
-   ------------------------------------------------------------ */
-
-/* Spotlight — 40px gutter aan zijkant komt vanuit Promidata's inline
-   padding op .cms-block-container (geen override nodig). Ruimte tussen
-   tiles via Bootstrap gutter: 40px = 20px padding op elke col-zijde,
-   wat resulteert in 40px gap tussen aangrenzende tiles. */
-.image-row-spotlight .cms-block-container-row {
-  --bs-gutter-x: 28px !important;
-}
-
-/* Spotlight — ronde hoeken + image vult col volledig
-   Zonder width:100% laat Promidata de <img> op natural width staan
-   binnen .cms-image-container, waardoor er extra dode ruimte ontstaat
-   in de col. Resultaat: visuele gap tussen tegels > 40px gutter.
-   Door container en image op 100% breedte/hoogte te forceren met
-   object-fit:cover, valt de visuele gap precies samen met de
-   bs-gutter-x (40px) en komt 'ie overeen met side + bottom. */
-.image-row-spotlight .cms-block-element {
-  overflow: hidden;
-}
-.image-row-spotlight .cms-image-container {
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  width: 100% !important;
-}
-.image-row-spotlight .cms-image {
-  border-radius: 16px !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
-
-/* Spotlight — verticale offset per afbeelding voor dynamisch effect.
-   margin-top schaalt vloeiend met viewport via clamp():
-   - 1366px viewport → ~10px
-   - 1920px viewport → ~15px (user's target)
-   - 2560px viewport → ~20px (clamped)
-   Zo blijft de visuele lucht boven de row consistent klein zonder
-   breakpoint-trap. */
-.image-row-spotlight {
-  margin-top: clamp(8px, 0.8vw, 20px);
-}
-/* Bottom-aligned arch: geen top-stagger meer (tegels staan op één basislijn,
-   variatie zit in de hoogte). Padding-top expliciet 0 om eerdere staggers
-   en de tablet-staggers te neutraliseren. */
-.image-row-spotlight .cms-block-element,
-.image-row-spotlight .cms-block-element:nth-child(2),
-.image-row-spotlight .cms-block-element:nth-child(3),
-.image-row-spotlight .cms-block-element:nth-child(4),
-.image-row-spotlight .cms-block-element:nth-child(5),
-.image-row-spotlight .cms-block-element:nth-child(6) {
-  padding-top: 0 !important;
-}
-
-/* Spotlight — arch-hoogtes met min(vw, vh) zodat tegels schalen met zowel
-   breedte als HOOGTE van viewport. Laag aan de randen, hoog in het midden →
-   de productrij vormt een zachte boog die de CTA erboven omlijst en oogt
-   alsof de producten omhoog "groeien" vanaf de basislijn. */
-.image-row-spotlight .cms-image-container         { min-height: min(15vw, 24vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(17vw, 28vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(19vw, 31vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(20vw, 34vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(20vw, 33vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(18vw, 30vh) !important; }
-.image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(17vw, 28vh) !important; }
-
-/* Op kleinere schermen: tegels 5 + 6 weglaten zodat 4 brede tegels
-   overblijven die niet vierkant ogen. */
-@media (max-width: 1200px) {
-  .image-row-spotlight .cms-block-element:nth-child(6) {
-    display: none !important;
-  }
-  .image-row-spotlight .cms-block-element {
-    min-width: 20% !important;
-    flex: 0 0 20% !important;
-  }
-}
-@media (max-width: 991px) {
-  .image-row-spotlight .cms-block-element:nth-child(5),
-  .image-row-spotlight .cms-block-element:nth-child(6) {
-    display: none !important;
-  }
-  .image-row-spotlight .cms-block-element {
-    min-width: 25% !important;
-    flex: 0 0 25% !important;
-  }
-}
-
-/* Spotlight — desktop (alle 6 afbeeldingen passen precies).
-   align-items:flex-end → alle tegels delen één basislijn onderaan en
-   "groeien" omhoog (arch via per-tegel hoogtes hieronder). */
-.image-row-spotlight .cms-block-container-row {
-  flex-wrap: nowrap !important;
-  overflow: hidden !important;
-  align-items: flex-end !important;
-}
-.image-row-spotlight .cms-block-element {
-  min-width: calc(100% / 6) !important;
-  flex: 0 0 calc(100% / 6) !important;
-}
-
-/* Spotlight — tablet groot */
-@media (max-width: 1200px) {
-  .image-row-spotlight .cms-block-element {
-    min-width: 20% !important;
-    flex: 0 0 20% !important;
-  }
-}
-
-/* Spotlight — tablet klein */
-@media (max-width: 991px) {
-  .image-row-spotlight .cms-block-element {
-    min-width: 25% !important;
-    flex: 0 0 25% !important;
-  }
-  .image-row-spotlight .cms-image-container {
-    min-height: 20vw !important;
-  }
-}
-
-/* Spotlight — mobiel (3-koloms grid) */
-@media (max-width: 576px) {
-  .image-row-spotlight .cms-block-container-row {
-    flex-wrap: wrap !important;
-  }
-  .image-row-spotlight .cms-block-element {
-    min-width: 33.333% !important;
-    flex: 0 0 33.333% !important;
-    padding-top: 0 !important;
-  }
-  .image-row-spotlight .cms-image-container {
-    min-height: 28vw !important;
-  }
-  .image-row-spotlight {
-    margin-top: 0 !important;
-  }
-}
-
-/* ------------------------------------------------------------
    12. LOGO SLIDER
    ------------------------------------------------------------ */
 
@@ -4438,23 +4298,6 @@ h2.rg-cat-heading,
    waarschuwde bestaat niet meer. Topbar-wrap blijft wel de moeite waard om
    te voorkomen (oogt gewoon niet netjes); dat gebeurt via 26.7 hieronder. */
 
-/* ---- 26.2 Image-row spotlight — geen geclipte afbeeldingen ---- */
-/* Tussen 992-1200 stond hij op 5×20% met overflow:hidden, waardoor
-   de 6e tegel verdween. Nu: alle 6 zichtbaar op één rij door cols te
-   smaller te maken; bij echt smal (1100-) laten we wrappen naar 3×2. */
-@media (min-width: 992px) and (max-width: 1200px) {
-  .image-row-spotlight .cms-block-element {
-    min-width: calc(100% / 6) !important;
-    flex: 0 0 calc(100% / 6) !important;
-  }
-  .image-row-spotlight .cms-image-container {
-    min-height: 14vw !important;
-  }
-  /* Geen top-stagger meer — tegels zijn nu bottom-aligned (zie sectie 11). */
-}
-/* Margin-top wordt nu in sectie 11 vloeiend geschaald via clamp(),
-   dus hier geen breakpoint-overrides meer. */
-
 /* ---- 26.3 Categorie-tiles — responsive nu in sectie 25 (staande kaarten) ---- */
 
 /* ---- 26.4 Image-text-row (Specialiteiten) — minder hoog op smal ---- */
@@ -5011,198 +4854,6 @@ h2.rg-story__title,
   line-height: 1.7;
   max-width: 60ch;
   margin: 0 auto;
-}
-
-/* ============================================================
-   28. LANDING-SECTIE — full-viewport hero met spotlight onderaan
-   ============================================================
-   De .cms-section met .landing-header vult de hele viewport (minus
-   topbar 170px). Flex-column distribueert kinderen:
-   - .landing-header krijgt flex:1 → vult resterende ruimte bovenaan
-   - .image-row-spotlight krijgt margin-top:auto → plakt aan onderkant
-   Resultaat: hero bovenaan, spotlight altijd onderaan, 40px van de
-   viewport-rand (via Promidata's inline padding-bottom op container).
-   Geen tile-height tuning meer nodig om "boven de fold" te blijven. */
-
-/* Landing-pagina canvas in #F7F5F2 zodat alles boven de hero dezelfde kleur
-   heeft als de sectie. Clearance hier 115px i.p.v. de site-brede 143px: de
-   hero-content staat tóch verticaal gecentreerd (ver van de top), dus de
-   sectie mag ~28px hoger beginnen → de achtergrond loopt door achter de
-   afgeronde onderhoeken van de fixed header (geen afwijkende kleur in de
-   hoeken). Andere pagina's houden de volle 143px clearance. */
-.content-main:has(.landing-header) {
-  padding-top: 115px !important;
-  background-color: #F7F5F2;
-}
-/* Desktop: zelfde reden als de site-brede .content-main-override (sectie
-   2) -- header is daar geen fixed laag meer, dus geen clearance nodig. */
-@media (min-width: 992px) {
-  .content-main:has(.landing-header) {
-    padding-top: 0 !important;
-  }
-}
-/* container-main: weg met de 20px boven/onder padding en 200px min-height. */
-.content-main:has(.landing-header) .container-main {
-  padding: 0 !important;
-  min-height: 0 !important;
-  background-color: #F7F5F2;
-}
-/* Lege breadcrumb boven de hero platdrukken (Bootstrap .breadcrumb heeft
-   default margin-bottom → zou de sectie net buiten beeld duwen). */
-.content-main:has(.landing-header) .cms-breadcrumb {
-  margin: 0 !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-}
-.cms-section:has(.landing-header) {
-  position: relative;
-  min-height: calc(100vh - 115px);
-  display: flex;
-  flex-direction: column;
-  background-color: #F7F5F2;
-}
-/* Inner wrapper vult de sectie (flex:1) i.p.v. een eigen calc-hoogte →
-   robuust tegen eventuele sectie-padding (geen dubbele 100vh-berekening). */
-.cms-section:has(.landing-header) > .cms-section-default {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.landing-header {
-  flex: 1 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  /* Hero-content wat lager + meer lucht bovenin (content blijft binnen de fold
-     omdat de spotlight via margin-top:auto onderaan vastzit). */
-  padding-top: clamp(2.5rem, 8vh, 7rem);
-}
-
-.cms-section:has(.landing-header) .image-row-spotlight {
-  margin-top: auto !important;
-  /* Onderruimte = 28px, gelijk aan de gutter tussen de beelden (uniforme
-     marge rondom). */
-  margin-bottom: 28px !important;
-}
-/* Zij-ruimte = 28px, óók gelijk aan de gutter tussen de beelden. */
-.image-row-spotlight .cms-block-container {
-  padding-left: 28px !important;
-  padding-right: 28px !important;
-  padding-bottom: 0 !important;
-}
-
-/* .rg-hero-componentfamilie (eerste-generatie hero, .rg-hero/.rg-hero--
-   center/.rg-hero__*) is hier verwijderd: kwam nergens meer voor in
-   blokken/*.html, vervangen door .rgh (sectie 35) en .rg-hero-v2 (sectie
-   38). @keyframes rgHeroIn blijft staan -- .image-row-spotlight hieronder
-   gebruikt 'm nog. LET OP: .landing-header/.image-row-spotlight zelf lijken
-   ook nergens meer in blokken/ voor te komen (nul matches), maar dat is een
-   grotere, nog niet losstaand geverifieerde opschoning -- bewust NIET in
-   deze pas meegenomen. */
-
-@keyframes rgHeroIn {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Lage/laptop-schermen (breed maar weinig hoogte): spotlight subtieler
-   zodat alles binnen de fold past mét onderruimte. */
-@media (min-width: 992px) and (max-height: 1080px) {
-  .image-row-spotlight .cms-image-container,
-  .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(15vw, 23vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(17vw, 25vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(18vw, 27vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(18vw, 26vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(16vw, 24vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(15vw, 23vh) !important; }
-}
-
-/* Extra krap (kleine laptops): nog een tandje subtieler. */
-@media (min-width: 992px) and (max-height: 880px) {
-  .image-row-spotlight .cms-image-container,
-  .image-row-spotlight .cms-block-element:nth-child(1) .cms-image-container { min-height: min(14vw, 20vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(2) .cms-image-container { min-height: min(16vw, 22vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(3) .cms-image-container { min-height: min(17vw, 24vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(4) .cms-image-container { min-height: min(17vw, 23vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(5) .cms-image-container { min-height: min(15vw, 21vh) !important; }
-  .image-row-spotlight .cms-block-element:nth-child(6) .cms-image-container { min-height: min(14vw, 20vh) !important; }
-}
-
-/* ------------------------------------------------------------
-   LANDING — spotlight tiles: zoom-on-hover (binnen frame, niet
-   geclipt) + gestaffelde entree. Lift/shadow vermijden we want
-   .cms-block-element heeft overflow:hidden (zou clippen).
-   ------------------------------------------------------------ */
-.image-row-spotlight .cms-image {
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease !important;
-}
-.image-row-spotlight .cms-block-element:hover .cms-image {
-  transform: scale(1.06);
-}
-/* Gelinkte tegel: beeld iets donkerder op hover (contrast voor de badge). */
-.image-row-spotlight .cms-block-element:has(a):hover .cms-image {
-  filter: brightness(0.9);
-}
-.image-row-spotlight .cms-image-container {
-  box-shadow: inset 0 0 0 1px rgba(45, 69, 40, 0.05);
-  position: relative;
-}
-
-/* Klikbaar-hover: tegels met een link tonen op hover een donkergroene tint +
-   witte cirkel met terracotta "bekijk"-pijl. Alleen op tegels die echt een
-   <a> bevatten (:has(a)) → geen misleidende hover op niet-gelinkte tegels. */
-.image-row-spotlight .cms-block-element:has(a) {
-  cursor: pointer;
-}
-.image-row-spotlight .cms-image-container::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 3;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.7);
-  transition: opacity 0.28s ease, transform 0.28s ease;
-  background-color: rgba(45, 69, 40, 0.92);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 26px 26px;
-}
-.image-row-spotlight .cms-block-element:has(a):hover .cms-image-container::before {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-@media (prefers-reduced-motion: reduce) {
-  .image-row-spotlight .cms-image-container::before { transition: none !important; }
-}
-
-/* Entree: tiles faden gestaffeld omhoog (transform op block-element zelf
-   wordt niet geclipt door z'n eigen overflow:hidden). */
-.cms-section:has(.landing-header) .image-row-spotlight .cms-block-element {
-  animation: rgHeroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.image-row-spotlight .cms-block-element:nth-child(1) { animation-delay: 0.20s; }
-.image-row-spotlight .cms-block-element:nth-child(2) { animation-delay: 0.28s; }
-.image-row-spotlight .cms-block-element:nth-child(3) { animation-delay: 0.36s; }
-.image-row-spotlight .cms-block-element:nth-child(4) { animation-delay: 0.44s; }
-.image-row-spotlight .cms-block-element:nth-child(5) { animation-delay: 0.52s; }
-.image-row-spotlight .cms-block-element:nth-child(6) { animation-delay: 0.60s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .cms-section:has(.landing-header) .image-row-spotlight .cms-block-element {
-    animation: none !important;
-  }
-  .image-row-spotlight .cms-image {
-    transition: none !important;
-  }
 }
 
 /* ============================================================
@@ -6293,61 +5944,6 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
 }
 
-/* ============================================================
-   35. HOMEPAGE HERO (.rgh) — verplaatst uit inline <style> naar global
-   ============================================================
-   HTML staat in hero-sectie.html (CMS HTML-block, nu zonder <style>).
-   CSS hier zodat stijl-tweaks live meelopen (geen re-paste nodig).
-   Hero-hoogte wordt door rootedgoods.js dynamisch gezet (slider onderaan).
-   ============================================================ */
-.rgh{background:#F7F5F2;font-family:'Montserrat',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;min-height:calc(100vh - 300px);display:flex;align-items:center;}
-.rgh *{box-sizing:border-box;}
-.rgh__inner{
-  width:100%;max-width:none;margin:0 auto;
-  padding:clamp(1.5rem,3vh,2.5rem) calc(max((100vw - 1600px)/2, 0px) + 80px); /* zelfde calc+80-lijn als de rest -> content op 230, breedte 1440 */
-  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center;
-}
-.rgh__copy{max-width:37rem;}
-.rgh__eyebrow{margin:0 0 clamp(1rem,2vw,1.4rem);font-family:'Montserrat',sans-serif;font-size:clamp(.82rem,.72rem + .4vw,1.05rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#955529;} /* gelijk aan .rg-statement__kicker */
-.rgh__title{font-family:'Playfair Display',Georgia,serif;font-weight:800;color:#2d4528;font-size:clamp(2.1rem,1.2rem + 2.7vw,3.7rem);line-height:1.07;letter-spacing:-.01em;margin:0 0 clamp(1rem,2vw,1.4rem);text-wrap:balance;}
-/* .rgh__title em: geen eigen echte-italic-regel meer -- gebruikt de
-   gedeelde faux-oblique skewX-regel (sectie 41.1). */
-.rgh__sub{font-size:clamp(1.02rem,.95rem + .4vw,1.2rem);line-height:1.55;color:#4a5a44;margin:0 0 clamp(1.4rem,3vw,1.9rem);max-width:46ch;}
-.rgh__cta{display:flex;flex-wrap:wrap;align-items:center;gap:.85rem;margin:0 0 clamp(1.1rem,2.2vw,1.5rem);}
-.rgh .rgh__cta a.btn-primary{padding:.95rem 2.2rem !important;font-size:1rem !important;}       /* primair groter */
-/* (oude-hero secundair volgt nu de site-brede tekstlink-stijl uit sectie 8) */
-.rgh__trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:nowrap;gap:.35rem 1.1rem;align-items:center;}
-.rgh__trust li{display:flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:500;color:#2d4528;white-space:nowrap;}
-.rgh__trust svg{width:1rem;height:1rem;flex:none;color:#955529;}
-.rgh__sep{display:block;width:min(100%,22rem);height:1px;background:#EAE3D7;margin:1rem 0 .9rem;}
-.rgh__contact{display:inline-flex;align-self:flex-start;align-items:center;gap:.65rem;margin-top:0;padding:.35rem .8rem .35rem .35rem;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:background-color .2s,border-color .2s;}
-.rgh__contact:hover{background:#fff;border-color:#EAE3D7;}
-.rgh__contact:focus-visible{outline:3px solid rgba(45,69,40,.55);outline-offset:2px;}
-.rgh__contact img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;}
-.rgh__contact-name{display:block;font-size:.72rem;font-weight:600;color:#955529;}
-.rgh__contact-promise{display:flex;align-items:center;gap:.3rem;font-size:.88rem;font-weight:500;color:#4a5a44;}
-.rgh__contact-promise svg{width:.95em;height:.95em;flex:none;transition:transform .2s;}
-.rgh__contact:hover .rgh__contact-promise svg{transform:translateX(3px);}
-
-.rgh__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.rgh__tile{position:relative;display:block;overflow:hidden;border-radius:10px;aspect-ratio:3/4;background:#2d4528;text-decoration:none;box-shadow:0 14px 30px -24px rgba(45,69,40,.5);}
-.rgh__tile img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;user-select:none;}
-.rgh__tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.28) 48%,rgba(0,0,0,0));transition:background .25s ease;}
-.rgh__tile:hover::after,.rgh__tile:focus-visible::after{background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.4) 55%,rgba(0,0,0,0));}
-.rgh__tile-cap{position:absolute;left:.7rem;right:.7rem;bottom:.6rem;z-index:2;}
-.rgh__tile-brand{display:block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e9c9a9;}
-.rgh__tile-label{font-size:.8rem;font-weight:500;color:#fff;background-image:linear-gradient(#fff,#fff);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s ease;}
-.rgh__tile:hover .rgh__tile-label,.rgh__tile:focus-visible .rgh__tile-label{background-size:100% 1px;}
-.rgh__tile:focus-visible{outline:3px solid #fff;outline-offset:-3px;}
-
-@media (max-width:992px){
-  .rgh__inner{grid-template-columns:1fr;gap:2rem;padding-left:clamp(1.25rem,5vw,2rem);padding-right:clamp(1.25rem,5vw,2rem);}
-  .rgh__copy{max-width:none;}
-  .rgh__grid{grid-template-columns:repeat(2,1fr);}
-}
-@media (max-width:640px){ .rgh__trust{flex-direction:column;align-items:flex-start;} }
-@media (max-width:480px){ .rgh__grid{grid-template-columns:1fr;} }
-
 /* Contactpersoon-blok in de CTA (dark-variant: naam lichte terracotta, belofte wit).
    text-align:left + gelijke tekstgrootte (naam/promise beide .88rem, alleen
    de naam vet) geldt nu overal -- ook hier, niet alleen in de hero-variant
@@ -6537,10 +6133,10 @@ h2.rg-block-title__title,
 /* ============================================================
    38. HERO V2 (.rg-hero-v2) — verplaatst uit inline <style> naar global
    ============================================================
-   HTML staat in hero-sectie-v2.html (CMS HTML-block, nu zonder <style>),
-   zelfde aanpak als de oude hero (.rgh, sectie 35) -> stijl-tweaks lopen
-   live mee, geen re-paste nodig. Hero-hoogte wordt door rootedgoods.js
-   dynamisch gezet (sectie 2.4, fit() past 'm aan op de logo-slider eronder).
+   HTML staat in hero-sectie-v2.html (CMS HTML-block, nu zonder <style>) ->
+   stijl-tweaks lopen live mee, geen re-paste nodig. Hero-hoogte wordt door
+   rootedgoods.js dynamisch gezet (sectie 2.4, fit() past 'm aan op de
+   logo-slider eronder).
    ============================================================ */
 .rg-hero-v2 {
   /* Brand-tokens (alleen binnen deze scope) */
@@ -8653,7 +8249,6 @@ h1.rg-contact-head__title,
 /* ---- 41.1 DISPLAY-koppen: groot, strak getrackt, optisch gecorrigeerd.
    Gewicht bewust 700 (Playfair 800 breekt op groot formaat, zie sectie 38);
    de GROOTTE + tracking doen het editorial-werk. ---- */
-h1.rgh__title, .rgh__title,
 .rg-hero-v2__title, h1.rg-hero-v2__title,
 .rg-page-hero__title, h1.rg-page-hero__title,
 .rg-sd__title, h1.rg-sd__title,
@@ -8672,12 +8267,11 @@ h1.rgh__title, .rgh__title,
    kaart-sectie) hoort hier NIET meer bij: dat is semantisch een gewone
    sectie-H2 die per ongeluk hero-schaal had gekregen (sectie 5006/41.2). */
 .rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-.rgh__title, h1.rgh__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
 .rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
 .rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
 .rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem) !important; }
 /* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
-.rg-hero-v2__title em, .rgh__title em, .rg-sd__title em,
+.rg-hero-v2__title em, .rg-sd__title em,
 .rg-endcta__title em, .rg-page-hero__title em{
   font-style: normal !important;
   font-synthesis: none;
@@ -8729,7 +8323,7 @@ h2.rg-statement__title em{
 /* ---- 41.3 EYEBROW-signature: consistente kicker + hairline-aanzet ----
    Universeel: rustige, strak getrackte oker-caps. */
 .rg-cat-head__eyebrow, .rg-compare__eyebrow, .rg-story__eyebrow,
-.rg-statement__kicker, .rgh__eyebrow, .rg-hero-v2__kicker,
+.rg-statement__kicker, .rg-hero-v2__kicker,
 .rg-endcta__eyebrow, .rg-sd__eyebrow, .rg-page-hero__eyebrow{
   font-family:'Montserrat',sans-serif !important;
   font-weight:700 !important;
@@ -9968,8 +9562,7 @@ h2.rg-route__team-title{
 /* ---- 47.3 Restgat na 47.2: .container-main (Shopware-default padding:20px
    0) en de lege .cms-breadcrumb (Bootstrap-default margin-bottom) duwden
    de kaart alsnog een stukje los van het menu, zelfs met padding-top:0
-   hierboven. Zelfde bewezen patroon als bij .landing-header (sectie 8,
-   regel 4448) -- hier hergebruikt voor .rg-route. */
+   hierboven. */
 .content-main:has(.rg-route) .container-main {
   padding: 0 !important;
   min-height: 0 !important;

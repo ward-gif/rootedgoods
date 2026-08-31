@@ -14,8 +14,8 @@
  *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons
  *                           hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
- *                           (mobiel), 2.1 logo-slider + oude .rgh hero-fit, 2.2
- *                           productslider tegel-click, 2.4 hero-v2 hoogte-fit
+ *                           (mobiel), 2.1 logo-slider, 2.2 productslider
+ *                           tegel-click, 2.4 hero-v2 hoogte-fit
  *   SECTIE 3 — PDP        : 3.1 productnaam verplaatsen, 3.2 accordion-default,
  *                           3.2b configurator-stappen open houden, 3.3 staffel-
  *                           prijstabel, 3.4 gallery-zoom-knop
@@ -828,24 +828,6 @@ document.addEventListener('DOMContentLoaded', function () {
   requestAnimationFrame(function () {
     requestAnimationFrame(function () { wrapper.style.opacity = '1'; });
   });
-
-  // Hero-hoogte dynamisch: de logo-slider komt net boven de onderkant van het
-  // scherm uit (kleine ruimte eronder), hero-content blijft gecentreerd voor
-  // balans. Alleen desktop; herberekent bij resize.
-  var hero = document.querySelector('.rgh');
-  if (hero) {
-    var fitHero = function () {
-      if (window.innerWidth < 992) { hero.style.minHeight = ''; return; }
-      hero.style.minHeight = '0px';                                   // reset -> meet natuurlijke stand
-      var sliderBottom = wrapper.getBoundingClientRect().bottom;      // waar de slider nu eindigt (bij load = vanaf viewport-top)
-      var delta = (window.innerHeight - 24) - sliderBottom;           // 24px ruimte onder de slider
-      var heroH = hero.getBoundingClientRect().height;
-      hero.style.minHeight = Math.max(heroH + delta, 420) + 'px';     // hero groeit/krimpt zodat slider net boven de vouw zit
-    };
-    fitHero();
-    window.addEventListener('resize', fitHero);
-    setTimeout(fitHero, 400);                                         // extra pass nadat de layout volledig gesetteld is
-  }
 });
 
 
@@ -1061,7 +1043,7 @@ function rgOnthulNaFonts(toon) {
 
 /* ---- 2.4 Hero v2 — hoogte passend maken zodat de logo-slider net boven de
  * vouw eindigt (24px marge). Eigen scope; doet niets zonder .rg-hero-v2 op de
- * pagina (bijt de oude fitHero voor .rgh dus niet).
+ * pagina.
  *
  * Gebruikt ResizeObserver op .logo-slider i.p.v. een eenmalige setTimeout-gok:
  * één vaste meting (bv. 400ms na load) kan de slider treffen VOORDAT die

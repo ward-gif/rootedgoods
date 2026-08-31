@@ -297,15 +297,22 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
    teruggedraaid). Concreet:
    - Selectors zoeken die geen enkel element op de live site raken (grep
      klasse-namen uit de CSS tegen de daadwerkelijke HTML/CMS-blokken).
-   - **Concrete al-gevonden kandidaat (28 aug, via Fase 2 item 2)**: de oude
-     `.rgh`-hero — CSS-sectie rond regel 6282 (`.rgh{...}`, `.rgh__*`) +
-     `rootedgoods.js` §2.1 (~regel 745-849, logo-slider-opbouw + `fitHero`)
-     + `blokken/hero-sectie.html`/`blokken-def/hero-sectie.html`. Bevestigd
-     dat geen enkele gecachete live pagina nog `.rgh` gebruikt (homepage
-     draait op `.rg-hero-v2`) — vermoedelijk een eerdere iteratie die is
-     vervangen zonder de oude versie op te ruimen. Nog niet verwijderd:
-     bewaard voor de gecombineerde sweep hieronder i.p.v. een losse
-     tussentijdse deletie.
+   - ✅ **Eerste ronde afgerond (31 aug).** Drie bevestigd-dode candidates
+     verwijderd, elk gecheckt op 0 matches in `blokken/*.html` vóór
+     verwijdering:
+     - De oude `.rgh`-hero: CSS (~107 regels, incl. mobiele media-queries),
+       de `.rgh`-specifieke `fitHero`-logica in `rootedgoods.js` §2.1 (de
+       gedeelde logo-slider-opbouw eromheen blijft, die voedt ook de live
+       `.rg-hero-v2`), en de orphaned bronbestanden `blokken/hero-sectie.html`
+       + `blokken-def/hero-sectie.html`.
+     - `.landing-header`/`.image-row-spotlight` (CSS-secties 11, 26.2 en 28,
+       ~190 regels): een complete "full-viewport landing hero met spotlight
+       onderaan"-opzet waar geen enkel blok meer naar verwijst. `@keyframes
+       rgHeroIn` werd alleen door deze sectie aangeroepen, ook verwijderd.
+     - Diverse losse stale comment-verwijzingen naar bovenstaande in nog wel
+       levende CSS-secties bijgewerkt.
+     - Netto: 421 regels CSS weg, ~20 regels JS weg, 2 bestanden weg.
+       Brace-balans + `node -c` na elke stap gecontroleerd.
    - Duplicaten/near-duplicaten consolideren waar dat *zonder visueel risico*
      kan (bv. twee bijna-identieke `box-shadow`-waarden die overduidelijk
      dezelfde bedoeling hadden) — puur opschonen, geen herontwerp.
