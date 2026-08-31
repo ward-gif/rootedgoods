@@ -396,13 +396,14 @@ in "kan al" en "wacht op plugin-bevestiging".
    uitgebreid met `h1.rg-theme-heading` naast de bestaande `h2`-variant,
    anders verliest de font-size-clamp het van de sitewide `h1{font-size:4rem}`-
    regel. **Nog te plakken door Ward** op alle 3 pagina's.
-5. **(Ward, CMS)** `<title>` + meta-description per pagina invullen/
-   controleren op uniciteit — grootste hefboom uit de pre-golive-audit,
-   ligt bij jou in Shopware. **(ik)** lever een geprioriteerde lijst welke
-   pagina's het eerst (hoogste verkeer/omzetpotentie) als dat helpt.
-   **Concreet bevestigd tijdens Fase 0** dat dit voor Landing Pages
-   (`/contact`, `/over-ons`, alle thema-URL's) nog helemaal leeg staat — zie
-   de bevinding in Fase 0 voor de volle omvang.
+5. 🟡 **Lijst geleverd (31 aug), invullen bij Ward.** Live gecheckt op 20
+   pagina's (niet alleen Landing Pages — sitebreed): elke pagina heeft alleen
+   een kale, generieke title (letterlijk de paginanaam, bv. "Contact") en
+   **geen enkele pagina heeft een meta-description**, groter gat dan Fase 0
+   liet zien. Kant-en-klare title+description-voorstellen per pagina
+   aangeleverd, geprioriteerd op vermoedelijke omzetpotentie (home/offerte/
+   PLP eerst, dan thema-landingspagina's, dan services, dan ondersteunend).
+   **(Ward, CMS)**: invullen/aanpassen naar smaak in Shopware.
 6. **(Ward → Promidata, ik levert de vraag)** Canonical-tag-gat op Landing
    Pages navragen: Shopware-kernbeperking voor dit content-type, of een
    instelling? Bepaalt of dit een code-fix, een Shopware-instelling, of iets
@@ -410,10 +411,14 @@ in "kan al" en "wacht op plugin-bevestiging".
 7. **(ik, na punt 6)** Sitemap-gat voor Landing Pages: als bevestigd dat dit
    nooit automatisch meekomt, een losse handmatige sitemap toevoegen aan de
    sitemap-index.
-8. **(ik)** Kruislink Landing Page ↔ bijbehorende Category-pagina (bv.
-   "Bekijk alle producten in dit thema" op de Landing Page, linkend naar
-   `/thema-s/xxx/`) — lage moeite, versterkt SEO-relevantie én UX-navigatie
-   tussen de twee parallelle structuren.
+8. 🟡 **Kruislink Landing Page ↔ Category — half af (31 aug).** Bleek al
+   voor de helft te bestaan: alle 7 thema-Landing Pages linken al naar hun
+   Category-pagina (hero-CTA "Bekijk alle producten", live gecheckt: alle 7
+   resolven 200). De andere kant ontbrak: geen van de 7 Category-pagina's
+   linkte terug. Dat tekstblok is een native Shopware-CMS-element (geen
+   `blokken/*.html`-bestand), dus **(Ward, CMS)**: kant-en-klare HTML per
+   pagina aangeleverd om het bestaande titel-blok te vervangen door titel +
+   "Meer lezen over dit thema"-link.
 
 **Wacht op plugin-bevestiging (volgende week):**
 9. Zodra de plugin live is: **(ik)** checken wélke schema's hij dekt
