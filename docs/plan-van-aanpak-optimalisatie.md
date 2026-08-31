@@ -484,9 +484,19 @@ eerste vijf fases.
 2. **CWV-fielddata (Chrome UX Report)** pas na 3-4 weken voldoende verkeer
    zinvol te bekijken in Search Console — noteer dit als "check rond eind
    september", niet nu al proberen te interpreteren.
-3. **(ik)** Rich Results Test-steekproef zodra de JSON-LD (Fase 3) live
-   staat, om te bevestigen dat Google het ook echt als geldig herkent, niet
-   alleen technisch valide.
+3. ✅ **Steekproef gedaan (31 aug) — verrassende maar geruststellende
+   uitkomst.** Google's Rich Results Test gaf op zowel `/faq` als
+   `/full-service-ontzorging` "Geen items gedetecteerd" — géén bug: Google
+   beperkt zichtbare FAQPage-rich-results sinds 2023 tot overheids-/
+   gezondheidssites, en `Service` heeft sowieso nooit een zichtbaar
+   rich-result-type gehad (die schema's tellen wel gewoon mee voor SEO/GEO-
+   begrip, alleen niet voor een visueel accordion/snippet in de
+   zoekresultaten). Ter bevestiging de eigenlijk juiste tool gebruikt
+   (validator.schema.org): `/faq` geeft **0 fouten, 0 waarschuwingen, 3
+   geldige items** (WebPage, SiteNavigationElement, FAQPage) — de JSON-LD
+   is dus technisch volledig correct. Bijvangst: `og:description` en
+   `twitter:description` staan ook leeg op deze pagina's — komt waarschijnlijk
+   vanzelf mee zodra Ward de meta-descriptions invult (Fase 3 item 5).
 4. **(samen)** Bij elke nieuwe feature/pagina voortaan dezelfde dubbele
    mobiel+desktop-toets als in dit plan, i.p.v. dat achteraf als aparte
    "mobile feedback"-ronde te doen — borgen i.p.v. herhaaldelijk repareren.
