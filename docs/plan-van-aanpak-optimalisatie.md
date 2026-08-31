@@ -376,15 +376,10 @@ in "kan al" en "wacht op plugin-bevestiging".
    zichtbare vragen); live-check op `/faq` bevestigt 'm staand en de
    Shopware-sanitizer overleefd (het risico dat het bestand zelf al
    documenteerde). Geen actie nodig.
-2. ✅ **`Person`-schema — gebouwd (28 aug), nog te plakken door Ward.**
-   Toegevoegd als `employee`-array op de bestaande Organization-JSON-LD in
-   `blokken/rootedgoods.html` (+ `blokken-def/`-versie): Richard, Ward,
-   Marco, allen `jobTitle: "Oprichter"` (enige rol die de site zelf noemt,
-   via de Founders.jpg-alt op /over-ons) — geen achternamen, die staan
-   nergens publiek. **Let op:** dit bestand is (zoals de eigen comment
-   erin al uitlegt) GEEN sitebreed blok — moet apart herplakt worden op elke
-   pagina/layout die 'm gebruikt (faq/contact/offerte hadden 'm al, home/
-   over-ons/alle-producten/alle-thema-s nog niet).
+2. ❌ **`Person`-schema — geschrapt (Ward, 28 aug).** Kort gebouwd als
+   `employee`-array op de Organization-JSON-LD, maar Ward vond het geen
+   toegevoegde waarde en liet 'm er weer uit halen. Niet meer oppakken
+   tenzij hij er zelf op terugkomt.
 3. ✅ **`Service`-schema — al gebouwd én live op alle 4.** Gecontroleerd:
    personalisatie, verzending, warehousing en full-service hebben elk al
    een correcte `Service`-JSON-LD (met `provider`, `areaServed: "Europe"`,
@@ -454,9 +449,12 @@ Kan grotendeels parallel aan de andere fases (lage impact op andere code),
 maar apart benoemd zodat het niet ondersneeuwt — precies wat er twee keer
 (pre- én post-golive-audit) is blijven liggen.
 
-1. **(ik)** Cognac-eyebrow-contrast: `#CA853F` op crème `#F7F5F2` ≈ 2.8:1,
-   onder WCAG AA (4.5:1 voor tekst). Donkerder oker of groter/vetter maken.
-   Concreet, klein, twee keer genoteerd en nog steeds niet opgepakt.
+1. ✅ **Cognac-eyebrow-contrast — afgerond (28 aug).** `#CA853F` verving naar
+   de bestaande `--rg-cognac-deep` (`#955529`, al elders gebruikt voor
+   hover-states): 5,35:1 op crème, 5,82:1 op wit — ruim boven de WCAG AA-eis
+   van 4,5:1. Alleen 16 tekst-`color:`-declaraties aangepast (regex met
+   negative lookbehind), achtergrond-/randgebruik van dezelfde kleur bewust
+   ongemoeid. Live geverifieerd.
 2. **(ik, nieuw n.a.v. vandaag)** Zoom/reflow-toets op de belangrijkste
    flows (checkout, PDP, PLP) op 200% en 400% browser-zoom — de officiële
    WCAG 1.4.4/1.4.10-toets, niet hetzelfde als een viewport verkleinen.
