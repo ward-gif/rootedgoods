@@ -458,12 +458,14 @@ maar apart benoemd zodat het niet ondersneeuwt — precies wat er twee keer
    van 4,5:1. Alleen 16 tekst-`color:`-declaraties aangepast (regex met
    negative lookbehind), achtergrond-/randgebruik van dezelfde kleur bewust
    ongemoeid. Live geverifieerd.
-2. **(ik, nieuw n.a.v. vandaag)** Zoom/reflow-toets op de belangrijkste
-   flows (checkout, PDP, PLP) op 200% en 400% browser-zoom — de officiële
-   WCAG 1.4.4/1.4.10-toets, niet hetzelfde als een viewport verkleinen.
-   Vandaag ontdekten we dat een grotere systeem-tekstgrootte een prijs naar
-   2 regels liet breken; een structurele zoom-toets vangt dat soort dingen
-   voortaan vóórdat een gebruiker het meldt.
+2. ✅ **Zoom/reflow-toets — afgerond (31 aug).** Getest op de effectieve
+   viewport-breedtes van 200%/400% browser-zoom (640px/320px) op PDP, PLP
+   en checkout/winkelmandje (echt product toegevoegd, niet alleen de lege
+   pagina). Geen van drie had horizontale overflow — WCAG 1.4.10 (reflow)
+   geslaagd op alle drie. Wel gevonden en gefixt: het "Hoeveelheid"-label
+   op de winkelmandje-pagina knipte middenin het woord in een smalle
+   119px-kolom — `hyphens: auto` toegepast (zelfde recept als de
+   configurator-kleurlabels elders op de site).
 
 ---
 
