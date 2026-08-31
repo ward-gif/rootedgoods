@@ -313,6 +313,38 @@ Fase 0 heeft de prioriteit al bepaald — dit is geen open vraag meer.
        levende CSS-secties bijgewerkt.
      - Netto: 421 regels CSS weg, ~20 regels JS weg, 2 bestanden weg.
        Brace-balans + `node -c` na elke stap gecontroleerd.
+   - ✅ **Tweede ronde afgerond (31 aug).** Ditmaal systematisch: alle 321
+     unieke `.rg-*`-klassen uit de CSS geëxtraheerd en gecheckt tegen
+     `blokken/*.html` (46 kandidaten met 0 matches). De meeste bleken loos
+     alarm: proza in comments die toevallig op een klassenaam lijkt (bv.
+     `.rg-sd-wrapper`, `.rg-feature-row-template`), of features die via JS
+     content INJECTEREN i.p.v. het via een blok te plakken (dus onzichtbaar
+     voor een blokken/-grep) — waaronder het complete `rg-offcanvas-*`-
+     mobiele-menu-systeem (quicklinks/featured-tile), dat na live-check in
+     de browser gewoon actief en zichtbaar bleek. **Belangrijke les**: bij
+     twijfel of iets JS-geïnjecteerd wordt, altijd tegen de live/gerenderde
+     DOM checken, niet alleen tegen de statische blokken/-bron.
+     Écht bevestigd dood, verwijderd:
+     - `.rg-route__meter` (1 regel, losse mobiele override zonder basis-
+       regel — het bijbehorende element bestaat niet (meer)).
+     - `.rg-cat-head__title` (verwijderd uit een gedeelde type-scale-
+       selectorlijst; `.rg-cat-heading` in diezelfde regel is wél levend).
+     - `.rg-contact-layout__callcard` (~60 regels): een compleet, eigen
+       gestyled "belafspraak-kaartje" voor een twee-koloms contactpagina-
+       layout (formulier + kaartje naast elkaar) die niet meer bestaat —
+       `contactform-voorzetje.html`'s eigen comment bevestigt expliciet dat
+       het kaartje is teruggeplaatst in `contact-kop.html` onder een andere
+       naam (`.rg-contact-head__callcard`, met een eigen volledig aparte
+       stijl). Ook de 2 verwijzingen ernaar in de gedeelde "boslicht-drift"-
+       achtergrondanimatie-selectorlijst weggehaald (géén rename naar de
+       nieuwe naam: die kaart heeft een plat wit vlak zonder achtergrond-
+       afbeelding, de drift-animatie zou daar sowieso niets doen).
+     Bewust NIET verwijderd ondanks 0 matches: `.rg-cta__btn--ghost` (een
+     gedocumenteerde defensieve `:not()`-guard tegen een specifiek toekomstig
+     conflict, kost niets om te laten staan) en `.rg-route__punch` (een
+     kant-en-klare "km-punchline bij thuiskomst"-stijl zonder bijbehorende
+     tekst in over-ons.html — mogelijk bewust nog niet ingevulde content,
+     geen duidelijke bug, dus niet blind verwijderd).
    - Duplicaten/near-duplicaten consolideren waar dat *zonder visueel risico*
      kan (bv. twee bijna-identieke `box-shadow`-waarden die overduidelijk
      dezelfde bedoeling hadden) — puur opschonen, geen herontwerp.

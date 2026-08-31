@@ -4787,7 +4787,6 @@ h2.rg-compare__title,
 .rg-route__panel,
 .rg-sd__panel,
 .rg-sd__ask,
-.rg-contact-layout__callcard,
 .rg-compare__col--yes {
   background-size: 118% 118%;
   background-position: 28% 42%;
@@ -4803,7 +4802,6 @@ h2.rg-compare__title,
   .rg-route__panel,
   .rg-sd__panel,
   .rg-sd__ask,
-  .rg-contact-layout__callcard,
   .rg-compare__col--yes { animation: none !important; }
 }
 
@@ -8124,11 +8122,10 @@ h1.rg-contact-head__title,
   .rg-cform__submit { width: 100%; }
 }
 
-/* ---- Contactpagina: formulier + belafspraak-kaartje naast elkaar ----
-   Kaartje stond eerst boven het formulier in contact-kop.html; nu op de
-   rechterhelft ernaast, als donker boslicht-paneel (zelfde grain-gradient-
-   recept als de eind-CTA elders op de site -- geen ander donker paneel op
-   deze pagina, dus grain5 hergebruiken is geen probleem). */
+/* ---- Contactpagina: formulier ----
+   Het belafspraak-kaartje stond hier ooit naast het formulier (donker
+   boslicht-paneel); is teruggeplaatst in contact-kop.html (.rg-contact-
+   head__callcard, sectie 40) -- onafhankelijk van dit formulier-blok. */
 .rg-contact-layout {
   display: flex;
   align-items: stretch;
@@ -8142,68 +8139,8 @@ h1.rg-contact-head__title,
   margin: 0;
   max-width: none;
 }
-.rg-contact-layout__callcard {
-  flex: 0 0 300px;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  background-color: #2d4528;
-  background-image: url('https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain5.jpg');
-  border-radius: var(--rg-r-xp, 20px);
-  padding: 1.5rem;
-  box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.rg-contact-layout__callcard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 34px 64px -28px rgba(45, 69, 40, 0.5);
-}
-.rg-contact-layout__callcard-avatars { display: inline-flex; flex: none; margin-bottom: 1rem; }
-.rg-contact-layout__callcard-avatars img {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  position: relative;
-}
-.rg-contact-layout__callcard-avatars img:first-child { z-index: 2; }
-.rg-contact-layout__callcard-avatars img + img { margin-left: -12px; z-index: 1; }
-.rg-contact-layout__callcard-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 0.4rem;
-}
-.rg-contact-layout__callcard-sub {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: rgba(247, 245, 242, .85);
-  flex: 1 1 auto;
-}
-.rg-contact-layout__callcard-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px; height: 38px;
-  margin-top: 1.25rem;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-.rg-contact-layout__callcard-arrow svg { width: 1.05rem; height: 1.05rem; }
-.rg-contact-layout__callcard:hover .rg-contact-layout__callcard-arrow {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.85);
-}
 @media (max-width: 900px) {
   .rg-contact-layout { flex-direction: column; }
-  .rg-contact-layout__callcard { flex: none; }
 }
 
 /* ============================================================
@@ -8296,7 +8233,7 @@ h1.rg-contact-head__title,
 .rg-sd__row-title, h2.rg-sd__row-title, .cms-element-text h2.rg-sd__row-title,
 .rg-compare__title, h2.rg-compare__title,
 .rg-story__title, h2.rg-story__title,
-.rg-cat-head__title, .rg-cat-heading,
+.rg-cat-heading,
 .rg-sd__panel-title, h2.rg-sd__panel-title,
 .rg-sd__ask-title, h2.rg-sd__ask-title,
 .rg-sd__journey-title, h2.rg-sd__journey-title,
@@ -9313,7 +9250,6 @@ h2.rg-route__team-title{
   .rg-route__map img{ height:calc(var(--map-h, 58vh) * .5); }
   .rg-route__map{ opacity:.75; }
   .rg-route__intro-map{ width:100vw; opacity:.32; }
-  .rg-route__meter{ top:calc(100vh - 4.5rem); }
   .rg-route__mark{ left:28px; }
 }
 
