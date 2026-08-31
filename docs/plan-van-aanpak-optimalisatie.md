@@ -167,14 +167,14 @@ Dit zijn dingen die *geen foutmelding geven* als ze mis zijn — ze kosten
 gewoon stil omzet of vindbaarheid. Vandaar vóór de "normale" optimalisatie-
 fases, ongeacht wat de Fase 0-cijfers laten zien.
 
-1. **(Ward, ik lever de tekst)** Cache-structurele fix opnieuw bij Promidata
-   aankaarten (staat al open sinds 21 aug, nooit bevestigd afgehandeld) —
-   `promidata-todos.md` beschrijft de oplossing al concreet: een
-   versie-query in de theme-`<link>/<script>` (`rootedgoods.css?v=3`,
-   ophogen per release) i.p.v. leunen op `@main` + purges. Dit is geen
-   incidentele bug maar de reden dat **elke** toekomstige CSS/JS-wijziging in
-   dit hele plan trager zichtbaar wordt dan nodig — vandaar vroeg in de
-   volgorde, niet omdat het zelf een CWV/SEO-punt is.
+1. ✅ **(ik) Tekst geleverd (31 aug), wacht op Ward om te versturen.**
+   Kant-en-klare uitleg + voorstel (versie-query `?v=1` op de theme-`<link>/
+   <script>`, ophogen per release i.p.v. leunen op `@main` + purges) als
+   bestand aangeleverd. Dit is geen incidentele bug maar de reden dat
+   **elke** toekomstige CSS/JS-wijziging in dit hele plan trager zichtbaar
+   wordt dan nodig (bevestigd meerdere keren deze sessie: jsDelivr's
+   `@main`-alias bleef inconsistent tussen edge-nodes serveren, ook ná een
+   geslaagde purge) — vandaar vroeg in de volgorde.
 2. **(Ward)** Contactformulier, offerteformulier en Cal.com-boekingsknop
    end-to-end testen — daadwerkelijk versturen/boeken, niet alleen visueel.
    Een kapot leadformulier na go-live is het duurste soort bug: geen
@@ -184,9 +184,12 @@ fases, ongeacht wat de Fase 0-cijfers laten zien.
    fulfillment`, `/verzending-meerdere-locaties` → `/verzending-naar-
    meerdere-locaties`) — de juiste versie staat al klaar in
    `home-services-blok.html`, alleen het live CMS-blok is nog de oude.
-4. **(ik)** Steekproef van de interne links die deze sessie zijn gefixt
-   (offerte-CTA die naar /contact linkte, thema-overzicht-tegels) nog eens
-   bevestigen op het huidige live domein.
+4. ✅ **Steekproef interne links — afgerond (31 aug).** 33 unieke interne
+   links gecrawld vanaf home/alle-thema-s/offerte/services/merken en stuk
+   voor stuk gecheckt op de live site. Eén echte 404 gevonden en gefixt: de
+   "Alle thema's"-link in `thema-tegels-home.html` wees naar
+   `/alle-thema-s/` (met trailing slash, 404) i.p.v. `/alle-thema-s` (zonder,
+   200). **Nog te plakken door Ward.** Overige 32 links waren correct.
 
 ---
 
