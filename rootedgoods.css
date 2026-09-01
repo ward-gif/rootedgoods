@@ -9879,6 +9879,7 @@ h2.rg-route__team-title{
 @media (max-width: 767.98px) {
   .cart-offcanvas .offcanvas-close.js-offcanvas-close {
     display: inline-flex !important;
+    align-items: center;
     background: transparent !important;
     color: var(--rg-green) !important;
     font-family: 'Montserrat', sans-serif;
@@ -9886,6 +9887,16 @@ h2.rg-route__team-title{
     font-weight: 600;
     padding: 0.3rem 0.5rem !important;
     box-shadow: none !important;
+  }
+  /* Pijltje ("‹") staat te hoog t.o.v. de tekst-baseline -- niet op te
+     lossen via de doos zelf (box van icoon en tekst waren al zo goed als
+     even hoog gecentreerd, live gemeten), dus de ROTATIE-matrix op de
+     <use> (dit icoon is een gedraaide arrow-head, geen los links-pijltje-
+     asset) laat het zichtbare pijltje kennelijk niet perfect gecentreerd
+     binnen z'n eigen viewBox staan. Handmatig 3px omlaag geduwd i.p.v. de
+     matrix zelf aan te passen (kleinere, veiligere ingreep). */
+  .cart-offcanvas .offcanvas-close .icon {
+    transform: translateY(3px);
   }
 }
 .cart-offcanvas .offcanvas-close .icon svg use {
