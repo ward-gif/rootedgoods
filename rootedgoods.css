@@ -3078,9 +3078,23 @@ body.is-ctl-product .product-detail-ordernumber-container {
   border-top: 1px solid #EAE3D7 !important;
 }
 /* "Volgende"-knop tussen de stappen: iets meer lucht eronder, plakte
-   direct tegen de rand van de volgende stap aan. */
+   direct tegen de rand van de volgende stap aan. Links uitgelijnd i.p.v.
+   gecentreerd (sitewide .btn-outline-primary-patroon centreert de "kale
+   tekstlink"-inhoud, prima voor losstaande CTA's maar deze knop staat vol-
+   breed (.btn-block) tussen twee stappen -- gecentreerd oogde daar zwevend
+   i.p.v. als een duidelijke volgende-actie onderaan de stap.) Zelfde op
+   beide devices, geen aparte mobiel/desktop-regel nodig. */
 .product-detail-buy .btn-configurator-next {
   margin-bottom: 0.75rem;
+  justify-content: flex-start !important;
+}
+
+/* Voorraad-tekstje (native Shopware, toont/verbergt zichzelf via een
+   "invisible"-klasse afhankelijk van de voorraadstand) staat op sommige
+   producten onder "toevoegen aan verlanglijst" -- op verzoek altijd
+   verborgen, los van de voorraadstand. */
+.product-detail-stockinfo-container {
+  display: none !important;
 }
 
 /* Hoofdafbeelding klikbaar — cursor zoom-in als hint. */
