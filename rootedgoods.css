@@ -6003,7 +6003,6 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border: 1px solid #EAE3D7;
   border-radius: 18px;
   overflow: hidden;
   text-decoration: none !important;
@@ -7653,7 +7652,6 @@ h2.rg-faq-cat,
   max-width: 820px;
   margin: 0 auto;
   background: #ffffff;
-  border: 1px solid #EAE3D7;
   border-radius: 18px;
   box-shadow: 0 24px 55px -35px rgba(45, 69, 40, 0.30);
 }
@@ -7902,7 +7900,7 @@ h1.rg-contact-head__title,
   margin: 1.5rem auto 1.25rem;
   padding: 0.85rem 1rem;
   background: #ffffff;
-  border: 1px solid #EAE3D7;
+  border: 1px solid transparent;
   border-radius: 14px;
   text-align: left;
   text-decoration: none !important;
@@ -7991,7 +7989,6 @@ h1.rg-contact-head__title,
   max-width: 820px;
   margin: 0 auto;
   background: #ffffff;
-  border: 1px solid #EAE3D7;
   border-radius: 18px;
   padding: clamp(1.5rem, 3vw, 2.75rem);
   box-shadow: 0 24px 55px -35px rgba(45, 69, 40, 0.30);
