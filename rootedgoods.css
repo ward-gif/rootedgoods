@@ -7930,6 +7930,7 @@ h1.rg-contact-head__title,
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-email"]),
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-company"]),
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-telephone"]),
+:is(.block-cioform-container, #request-offer-container) .form-group:has([name="phone"]),
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-zip"]),
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-location"]) {
   grid-column: span 1;
