@@ -6198,6 +6198,13 @@ h2.rg-block-title__title,
   /* Geen max-width op mobiel/tablet: de 20ch-cap (hieronder, >=992px) was
      te krap voor de kleinere mobiele letter-grootte en brak elk woord op
      een eigen regel. Mobiel gebruikt gewoon de volle kolombreedte. */
+  /* Ward's nieuwe copy (31 aug) begint met "Relatiegeschenken" -- op
+     smalle telefoons (320px) brak dat lange woord kaal doormidden
+     ("Relatiegeschen"/"ken", word-break:break-word zonder streepje).
+     Zelfde fix als elders op de site: hyphens:auto geeft een net
+     afbreekstreepje op een geldige lettergreepgrens. */
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 /* .rg-hero-v2__title em: geen eigen echte-italic-regel meer -- gebruikt de
    gedeelde faux-oblique skewX-regel (sectie 41.1). */
