@@ -9,10 +9,17 @@
      Erft daarmee gewoon de sitebrede typografie (Playfair-koppen,
      Montserrat-body) zonder extra opsmuk, wat voor een juridische pagina
      ook de juiste toon is.
+     .rg-legal-content: de native CMS-tekstkolom hier heeft GEEN max-width
+     (live gemeten: 1360px breed op desktop, zonder deze wrapper leest de
+     tekst dus over de volle paginabreedte door -- veel te lang per regel).
+     Wrapper-klasse i.p.v. een generieke selector, want de paginacontainer
+     zelf deelt zijn body-classes met andere paginatypes (geen unieke haak
+     beschikbaar) -- zie rootedgoods.css voor de bijbehorende regel.
      ============================================================ -->
+<div class="rg-legal-content">
 <h1>Algemene voorwaarden</h1>
 
-<h2>Artikel 1 — Definities</h2>
+<h4>Artikel 1 — Definities</h4>
 <p><strong>1.1</strong> Rooted Goods: handelsnaam van Bambook B.V., ingeschreven bij de Kamer van Koophandel onder nummer 83188797, gevestigd te Ede. Waar in deze algemene voorwaarden 'Rooted Goods' wordt genoemd, wordt Bambook B.V. bedoeld, handelend onder deze naam.</p>
 <p><strong>1.2</strong> Klant: de rechtspersoon of de natuurlijke persoon die handelt in de uitoefening van beroep of bedrijf, die een overeenkomst aangaat met Rooted Goods dan wel een offerte of aanbod van Rooted Goods aanvaardt.</p>
 <p><strong>1.3</strong> Overeenkomst: iedere afspraak tussen Rooted Goods en Klant tot levering van producten en/of diensten.</p>
@@ -22,37 +29,37 @@
 <p><strong>1.7</strong> Drukproef: de digitale of fysieke weergave van het te produceren Maatwerkproduct, die ter goedkeuring aan Klant wordt voorgelegd voordat de productie start.</p>
 <p><strong>1.8</strong> Schriftelijk: communicatie per brief, e-mail, of een andere manier die hiermee redelijkerwijs gelijk kan worden gesteld.</p>
 
-<h2>Artikel 2 — Toepasselijkheid</h2>
+<h4>Artikel 2 — Toepasselijkheid</h4>
 <p><strong>2.1</strong> Deze algemene voorwaarden zijn van toepassing op elk aanbod van Rooted Goods en op elke overeenkomst die tussen Rooted Goods en Klant tot stand komt.</p>
 <p><strong>2.2</strong> Het aanbod van Rooted Goods is uitsluitend gericht op zakelijke afnemers en niet op consumenten. Door een bestelling te plaatsen of een offerte te aanvaarden verklaart Klant te handelen in de uitoefening van beroep of bedrijf.</p>
 <p><strong>2.3</strong> Eventuele inkoop- of andere voorwaarden van Klant worden uitdrukkelijk van de hand gewezen, tenzij Rooted Goods deze schriftelijk heeft aanvaard.</p>
 <p><strong>2.4</strong> Blijkt een bepaling van deze voorwaarden nietig of onafdwingbaar, dan blijven de overige bepalingen onverkort van kracht. Partijen stellen in dat geval samen een vervangende bepaling vast die zo dicht mogelijk aansluit bij het doel van de oorspronkelijke bepaling.</p>
 
-<h2>Artikel 3 — Aanbod en totstandkoming van de overeenkomst</h2>
+<h4>Artikel 3 — Aanbod en totstandkoming van de overeenkomst</h4>
 <p><strong>3.1</strong> Offertes van Rooted Goods zijn vrijblijvend en geldig tot 30 dagen na dagtekening, tenzij anders vermeld.</p>
 <p><strong>3.2</strong> Afbeeldingen, maten, kleuren en andere specificaties in offertes en op de website zijn zo nauwkeurig mogelijk weergegeven, maar zijn niet bindend tenzij Rooted Goods dit uitdrukkelijk bevestigt. Kennelijke vergissingen of fouten in het aanbod, waaronder prijsfouten, binden Rooted Goods niet.</p>
 <p><strong>3.3</strong> Bij het offertetraject komt de overeenkomst tot stand zodra Rooted Goods de schriftelijke aanvaarding van Klant heeft bevestigd, of zodra Rooted Goods op verzoek van Klant met de uitvoering is begonnen.</p>
 <p><strong>3.4</strong> Bij bestellingen via de webshop komt de overeenkomst tot stand zodra Rooted Goods de bestelling per e-mail heeft bevestigd. Rooted Goods mag een bestelling binnen 5 werkdagen na plaatsing alsnog weigeren of annuleren, bijvoorbeeld bij een kennelijke prijsfout of onvoldoende voorraad. Reeds betaalde bedragen worden in dat geval direct terugbetaald.</p>
 
-<h2>Artikel 4 — Prijzen</h2>
+<h4>Artikel 4 — Prijzen</h4>
 <p><strong>4.1</strong> Alle door Rooted Goods vermelde prijzen zijn exclusief btw en exclusief eventuele verzend- of andere bijkomende kosten, tenzij anders aangegeven.</p>
 <p><strong>4.2</strong> Prijzen zijn gebaseerd op de kostprijzen die golden op het moment van de offerte. Aanzienlijke wijzigingen in bijvoorbeeld materiaal-, transport- of productiekosten kunnen worden doorberekend, ook nadat de overeenkomst al tot stand is gekomen. Leidt dit binnen drie maanden na totstandkoming van de overeenkomst tot een prijsstijging van meer dan 10%, dan mag Klant de overeenkomst kosteloos ontbinden.</p>
 
-<h2>Artikel 5 — Ontwerp, drukproef en aantallen (Maatwerkproducten)</h2>
+<h4>Artikel 5 — Ontwerp, drukproef en aantallen (Maatwerkproducten)</h4>
 <p><strong>5.1</strong> Voorafgaand aan de productie van een Maatwerkproduct ontvangt Klant een digitale drukproef ter goedkeuring. De productie start pas nadat Klant deze drukproef schriftelijk heeft goedgekeurd.</p>
 <p><strong>5.2</strong> Rooted Goods is niet aansprakelijk voor fouten of onvolkomenheden die al aanwezig waren in de door Klant goedgekeurde drukproef.</p>
 <p><strong>5.3</strong> Voor de beste reproductie levert Klant logo's en ontwerpen bij voorkeur aan als vectorbestand (.eps, .ai of vector-PDF). Beschikt Klant hier niet over, dan adviseert Rooted Goods over de mogelijkheden.</p>
 <p><strong>5.4</strong> Geringe afwijkingen tussen het geleverde Maatwerkproduct en de goedgekeurde drukproef, in kleur, positionering of materiaal, die in de branche gebruikelijk en redelijkerwijs onvermijdelijk zijn, gelden niet als tekortkoming.</p>
 <p><strong>5.5</strong> Bij Maatwerkproducten is een afwijking tot 10% meer of minder dan het bestelde aantal productietechnisch mogelijk en geldt niet als tekortkoming. Facturatie vindt plaats op basis van het werkelijk geleverde aantal.</p>
 
-<h2>Artikel 6 — Levering</h2>
+<h4>Artikel 6 — Levering</h4>
 <p><strong>6.1</strong> Levering vindt plaats binnen Nederland, tenzij schriftelijk anders overeengekomen. Bij levering buiten Nederland komen bijkomende kosten, waaronder transport- en eventuele invoerkosten, voor rekening van Klant en kunnen afwijkende levertijden gelden.</p>
 <p><strong>6.2</strong> Opgegeven levertijden zijn indicatief. Ze gaan in zodra de overeenkomst tot stand is gekomen, alle benodigde gegevens (waaronder bij Maatwerkproducten het akkoord op de drukproef) zijn ontvangen en, indien van toepassing, de overeengekomen (voor)betaling is voldaan.</p>
 <p><strong>6.3</strong> Rooted Goods spant zich in om overeengekomen levertijden te halen. Overschrijding hiervan geeft Klant geen recht op schadevergoeding. Wordt ook binnen een door Klant schriftelijk gestelde redelijke nadere termijn van ten minste 14 dagen niet geleverd, dan mag Klant de overeenkomst voor het niet-geleverde deel ontbinden.</p>
 <p><strong>6.4</strong> Rooted Goods mag een bestelling in gedeelten leveren en iedere levering afzonderlijk factureren.</p>
 <p><strong>6.5</strong> Het risico van beschadiging of verlies tijdens transport gaat over op Klant op het moment van levering op het overeengekomen afleveradres.</p>
 
-<h2>Artikel 7 — Betaling</h2>
+<h4>Artikel 7 — Betaling</h4>
 <p><strong>7.1</strong> Bestellingen via de webshop worden direct online betaald via iDEAL, creditcard of PayPal. Bij het offertetraject is betaling achteraf per factuur mogelijk. Rooted Goods mag vooruitbetaling verlangen, onder meer van organisaties zonder KvK-inschrijving en van bepaalde buitenlandse partijen.</p>
 <p><strong>7.2</strong> Facturen dienen binnen 14 dagen na factuurdatum te zijn voldaan, tenzij schriftelijk anders overeengekomen.</p>
 <p><strong>7.3</strong> Betaalt Klant niet binnen deze termijn, dan is Klant van rechtswege in verzuim. Rooted Goods mag dan de wettelijke handelsrente en redelijke incassokosten in rekening brengen.</p>
@@ -60,26 +67,26 @@
 <p><strong>7.5</strong> Klant is niet gerechtigd zijn betalingsverplichting op te schorten of te verrekenen met vorderingen op Rooted Goods.</p>
 <p><strong>7.6</strong> In geval van faillissement, surseance van betaling, liquidatie of beslag aan de zijde van Klant zijn alle vorderingen van Rooted Goods op Klant direct en volledig opeisbaar.</p>
 
-<h2>Artikel 8 — Opschorting en ontbinding</h2>
+<h4>Artikel 8 — Opschorting en ontbinding</h4>
 <p><strong>8.1</strong> Rooted Goods mag de nakoming van haar verplichtingen opschorten of de overeenkomst geheel of gedeeltelijk ontbinden als Klant zijn verplichtingen uit de overeenkomst niet, niet tijdig of niet volledig nakomt, of als een van de situaties uit artikel 7.6 zich voordoet.</p>
 <p><strong>8.2</strong> In dat geval blijft Klant de reeds door Rooted Goods gemaakte kosten en geleden schade verschuldigd.</p>
 
-<h2>Artikel 9 — Eigendomsvoorbehoud</h2>
+<h4>Artikel 9 — Eigendomsvoorbehoud</h4>
 <p><strong>9.1</strong> Alle geleverde Producten blijven eigendom van Rooted Goods totdat Klant alle uit de overeenkomst voortvloeiende bedragen volledig heeft voldaan.</p>
 <p><strong>9.2</strong> Zolang de eigendom niet op Klant is overgegaan, mag Klant de Producten niet verpanden of anderszins bezwaren, behalve in de normale bedrijfsuitoefening.</p>
 
-<h2>Artikel 10 — Annulering</h2>
+<h4>Artikel 10 — Annulering</h4>
 <p><strong>10.1</strong> Wil Klant een overeenkomst annuleren, dan neemt hij hierover zo snel mogelijk schriftelijk contact op met Rooted Goods. Annulering gebeurt altijd in overleg.</p>
 <p><strong>10.2</strong> Bij annulering brengt Rooted Goods uitsluitend de kosten in rekening die op dat moment daadwerkelijk zijn gemaakt of redelijkerwijs niet meer zijn af te wenden. Denk aan ingekochte materialen en producten, ontwerp- en drukproefwerk, gestarte productie en gereserveerde capaciteit.</p>
 <p><strong>10.3</strong> Bij Maatwerkproducten waarvan de productie na goedkeuring van de drukproef is gestart, kunnen deze kosten oplopen tot de volledige ordersom, omdat gepersonaliseerde producten niet opnieuw verkoopbaar zijn. Bij Standaardproducten geldt als richtlijn een maximum van 15% van de ordersom bij annulering tot 8 weken voor de leverdatum en 50% bij annulering tot 4 weken voor de leverdatum. Bij latere annulering bepalen partijen de vergoeding op basis van artikel 10.2.</p>
 <p><strong>10.4</strong> Partijen overleggen over een nette afwikkeling. Reeds geproduceerde of ingekochte Producten kan Rooted Goods desgewenst alsnog aan Klant leveren tegen vergoeding van de daarvoor gemaakte kosten.</p>
 
-<h2>Artikel 11 — Retourneren</h2>
+<h4>Artikel 11 — Retourneren</h4>
 <p><strong>11.1</strong> Maatwerkproducten kunnen na levering niet worden geretourneerd. Deze Producten zijn gepersonaliseerd en niet geschikt om opnieuw te gebruiken of te verkopen.</p>
 <p><strong>11.2</strong> Wijkt de bedrukking af van de goedgekeurde drukproef, is een Product beschadigd aangekomen, of heeft Klant iets anders ontvangen dan besteld? Dan neemt Klant hierover direct contact op met Rooted Goods. Afhankelijk van de situatie biedt Rooted Goods een vervangende levering, credit voor het foutieve deel, of een andere passende oplossing.</p>
 <p><strong>11.3</strong> Standaardproducten en samples kunnen binnen 14 dagen na ontvangst worden geretourneerd, mits ongebruikt en in de originele verpakking. Zodra Rooted Goods de retourzending heeft ontvangen en gecontroleerd, wordt het aankoopbedrag binnen 14 dagen terugbetaald. De kosten van het retourneren zijn voor rekening van Klant.</p>
 
-<h2>Artikel 12 — Klachten en aansprakelijkheid</h2>
+<h4>Artikel 12 — Klachten en aansprakelijkheid</h4>
 <p><strong>12.1</strong> Zichtbare gebreken aan een geleverd Product meldt Klant binnen 5 werkdagen na levering schriftelijk bij Rooted Goods. Overige gebreken meldt Klant binnen 5 werkdagen na ontdekking. Klant vermeldt daarbij het ordernummer en stuurt waar mogelijk foto's van het gebrek mee.</p>
 <p><strong>12.2</strong> De aansprakelijkheid van Rooted Goods is beperkt tot vergoeding van directe schade, met een maximum van het factuurbedrag (excl. btw) van de betreffende order.</p>
 <p><strong>12.3</strong> Rooted Goods is niet aansprakelijk voor indirecte schade, waaronder gevolgschade, gederfde winst, gemiste omzet, gemiste besparingen en reputatieschade.</p>
@@ -87,30 +94,30 @@
 <p><strong>12.5</strong> De beperkingen in dit artikel gelden niet als de schade het gevolg is van opzet of bewuste roekeloosheid van Rooted Goods.</p>
 <p><strong>12.6</strong> Rechtsvorderingen jegens Rooted Goods vervallen één jaar na de leverdatum, tenzij schriftelijk anders overeengekomen.</p>
 
-<h2>Artikel 13 — Intellectueel eigendom, portfolio en geheimhouding</h2>
+<h4>Artikel 13 — Intellectueel eigendom, portfolio en geheimhouding</h4>
 <p><strong>13.1</strong> Alle rechten van intellectuele eigendom op door Rooted Goods ontwikkelde ontwerpen, concepten en mockups blijven bij Rooted Goods, tenzij schriftelijk anders overeengekomen.</p>
 <p><strong>13.2</strong> Klant staat ervoor in dat het aangeleverde logo, beeldmateriaal of ontwerp geen inbreuk maakt op rechten van derden, en vrijwaart Rooted Goods tegen aanspraken die hieruit voortvloeien.</p>
 <p><strong>13.3</strong> Rooted Goods mag uitgevoerde opdrachten, inclusief naam en logo van Klant, gebruiken als referentie in haar portfolio en marketinguitingen, tenzij Klant hiertegen schriftelijk bezwaar maakt.</p>
 <p><strong>13.4</strong> Beide partijen behandelen vertrouwelijke bedrijfsinformatie die zij van elkaar ontvangen zorgvuldig en delen deze niet met derden zonder toestemming.</p>
 
-<h2>Artikel 14 — Overmacht</h2>
+<h4>Artikel 14 — Overmacht</h4>
 <p><strong>14.1</strong> Rooted Goods hoeft een verplichting niet na te komen als zij daarin wordt verhinderd door overmacht, waaronder in ieder geval: tekortkomingen van toeleveranciers, tekorten aan grondstoffen of energie, vervoersproblemen, stakingen, brand, pandemieën, cyberincidenten en overheidsmaatregelen.</p>
 <p><strong>14.2</strong> Duurt de overmachtssituatie langer dan drie maanden, dan mogen beide partijen de overeenkomst voor het nog niet uitgevoerde deel ontbinden, zonder dat een van beiden schadevergoeding verschuldigd is.</p>
 
-<h2>Artikel 15 — Verwerking van persoonsgegevens</h2>
+<h4>Artikel 15 — Verwerking van persoonsgegevens</h4>
 <p><strong>15.1</strong> Verstrekt Klant in het kader van de overeenkomst persoonsgegevens aan Rooted Goods (bijvoorbeeld van medewerkers voor individuele bezorging), dan blijft Klant verwerkingsverantwoordelijke.</p>
 <p><strong>15.2</strong> Rooted Goods treft passende technische en organisatorische maatregelen om deze gegevens te beveiligen en gebruikt ze uitsluitend voor de uitvoering van de overeenkomst.</p>
 <p><strong>15.3</strong> Op verzoek leggen partijen hun afspraken hierover vast in een verwerkersovereenkomst.</p>
 
-<h2>Artikel 16 — Toepasselijk recht en geschillen</h2>
+<h4>Artikel 16 — Toepasselijk recht en geschillen</h4>
 <p><strong>16.1</strong> Op alle overeenkomsten met Rooted Goods is Nederlands recht van toepassing. De toepasselijkheid van het Weens Koopverdrag (CISG) is uitgesloten.</p>
 <p><strong>16.2</strong> Geschillen lossen partijen bij voorkeur in onderling overleg op. Komen zij er niet uit, dan is de rechtbank Gelderland exclusief bevoegd, tenzij dwingend recht anders bepaalt.</p>
 
-<h2>Artikel 17 — Slotbepalingen</h2>
+<h4>Artikel 17 — Slotbepalingen</h4>
 <p><strong>17.1</strong> Rooted Goods mag deze algemene voorwaarden wijzigen. Wijzigingen worden Klant schriftelijk medegedeeld en treden 30 dagen na bekendmaking in werking. Bij een wezenlijke wijziging mag Klant lopende overeenkomsten waarop de wijziging betrekking heeft, opzeggen.</p>
 <p><strong>17.2</strong> Deze algemene voorwaarden zijn voor het laatst gewijzigd op 1 september 2026 en gepubliceerd op rootedgoods.eu.</p>
 
-<h2>Artikel 18 — Bedrijfsgegevens</h2>
+<h4>Artikel 18 — Bedrijfsgegevens</h4>
 <p>
   Rooted Goods, handelsnaam van Bambook B.V.<br>
   Grotestraat 96<br>
@@ -120,3 +127,4 @@
   E-mail: <a href="mailto:info@rootedgoods.eu">info@rootedgoods.eu</a><br>
   Telefoon: <a href="tel:+31318307340">0318 307 340</a>
 </p>
+</div>

@@ -10801,3 +10801,18 @@ h2.rg-route__team-title{
     padding-right: 0 !important;
   }
 }
+
+/* ------------------------------------------------------------
+   Juridische pagina's — leesbare regellengte (.rg-legal-content)
+   ------------------------------------------------------------
+   Native CMS-tekstkolom heeft geen eigen max-width (live gemeten op
+   /algemeen/algemene-voorwaarden/: 1360px breed op desktop, tekst liep
+   dus over de volle paginabreedte door). Wrapper-klasse i.p.v. een
+   pagina-specifieke selector: de body-classes van dit paginatype zijn
+   generiek (gedeeld met andere landingspagina's), geen unieke haak
+   beschikbaar. */
+.rg-legal-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
