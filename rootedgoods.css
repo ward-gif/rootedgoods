@@ -3503,9 +3503,14 @@ body.is-ctl-product {
    bewust tot een kale tekstlink zonder rand -- prima voor marketing-CTA's,
    maar deze utility-knop moet gewoon als knop oogen. Zelfde specificiteit
    (4 class-selectors incl. :not()) zodat 'ie wint, plus ruimte eronder
-   zodat de paginering niet direct erbovenop plakt. */
+   zodat de paginering niet direct erbovenop plakt.
+   display:INLINE-flex, niet flex: een kale `flex` maakt een <button> een
+   block-level flex-container, die z'n ouder-breedte vult ONGEACHT de
+   @media-only `width:100%` hieronder -- die was daardoor overbodig op
+   mobiel én zorgde ervoor dat de knop op DESKTOP óók vol-breed bleef staan
+   (live bevestigd op 1280px: width bleef 820px, gelijk aan de ouder). */
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -3735,33 +3740,6 @@ body.is-ctl-product {
   border-radius: 0;
 }
 
-/* PLP-paginering: bij veel pagina's (« ‹ 1 2 3 4 › ») past de rij niet in
-   een mobiele kolom -- liep zonder vangnet gewoon af (scrollWidth 384 vs
-   clientWidth 210), latere paginanummers alleen bereikbaar door herhaald
-   op "›" te tikken. Horizontaal scrollbaar i.p.v. onbereikbaar afgekapt. */
-@media (max-width: 575px) {
-  .pagination-nav {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .pagination-nav .pagination {
-    display: flex;
-    flex-wrap: nowrap;
-    width: max-content;
-  }
-  /* Kleinere page-labels zodat een normaal aantal pagina's past zonder
-     te hoeven scrollen (bij heel veel pagina's blijft de scroll hierboven
-     als vangnet werken). */
-  .page-item .page-link {
-    min-width: 32px;
-    height: 32px;
-    padding: 0 0.4rem !important;
-    margin: 0 0.1rem;
-    font-size: 0.85rem !important;
-  }
-}
-
 /* PLP-paginering — ronde page-labels, actieve in terracotta. */
 .page-item .page-link {
   min-width: 40px;
@@ -3800,6 +3778,43 @@ body.is-ctl-product {
   position: static !important;
   top: 0 !important;
   display: block !important;
+}
+
+/* PLP-paginering mobiel: bij veel pagina's (« ‹ 1 2 3 4 › ») past de rij
+   niet in een mobiele kolom -- liep zonder vangnet gewoon af (scrollWidth
+   384 vs clientWidth 210), latere paginanummers alleen bereikbaar door
+   herhaald op "›" te tikken. Horizontaal scrollbaar i.p.v. onbereikbaar
+   afgekapt, plus kleinere page-labels zodat een normaal aantal pagina's
+   sowieso al past zonder te hoeven scrollen (bij heel veel pagina's blijft
+   de scroll als vangnet werken).
+   LET OP volgorde: dit blok moet NÁ de kale `.page-item .page-link`-regel
+   hierboven staan. Stond 'm eerst ervoor -- zelfde specificiteit, dus won
+   de latere (kale, 40px) regel de cascade altijd, ongeacht viewport-
+   breedte. Daardoor bleven de knoppen op mobiel altijd 40px in plaats van
+   de bedoelde 32px, met precies dat te-brede/afgekapte/niet-gecentreerde
+   resultaat als gevolg (live bevestigd: linkMinWidth bleef 40px op 390px
+   breed). `margin: 0 auto` op de max-content-rij centreert 'm zodra hij
+   wél past; bij méér pagina's dan er passen verdeelt dat de overflow
+   gelijk over beide kanten i.p.v. altijd links te beginnen. */
+@media (max-width: 575px) {
+  .pagination-nav {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pagination-nav .pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    margin: 0 auto;
+  }
+  .page-item .page-link {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 0.4rem !important;
+    margin: 0 0.1rem;
+    font-size: 0.85rem !important;
+  }
 }
 
 /* Mobiel/tablet (<992px, sidebar-filter is dan al ingeklapt achter de
