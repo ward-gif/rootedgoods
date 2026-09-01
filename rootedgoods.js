@@ -514,78 +514,112 @@ document.addEventListener('DOMContentLoaded', function () {
  * inline gezet i.p.v. puur in CSS: het thema blijkt zelf al een !important
  * flex-wrap:wrap op .row te zetten die zelfs een hoge-specificiteit eigen
  * !important-regel versloeg (bevestigd via live debuggen) -- een inline
- * style wint altijd, dat is de enige betrouwbare manier hier. */
+ * style wint altijd, dat is de enige betrouwbare manier hier.
+ *
+ * Live gemeld (Ward, real device op /poconfigurator/request/...): op die
+ * pagina staat de header soms terug in de kale, ongefixte staat (zoek-
+ * icoon naast het logo i.p.v. bij het mandje) -- niet reproduceerbaar via
+ * directe navigatie naar exact dezelfde URL (ook niet in een privé-tab,
+ * dus geen cache-kwestie), dus vermoedelijk iets in HOE de configurator-
+ * flow daar komt (die leunt zwaar op AJAX-content-vervanging, zie de
+ * poconfigurator/render-XHR's elders) dat de header-rij's inhoud opnieuw
+ * opbouwt ná onze fix. Zelfde categorie bug als het offcanvas-menu
+ * hierboven. Was hier gegokt op een 1x-per-paginalevensduur dataset-vlag
+ * (rgHamburgerMoved) -- die voorkwam een eventuele HERSTEL-poging na zo'n
+ * reset. Nu: geen vlag meer, puur structureel bepalen of de hamburger nog
+ * in z'n GEFIXTE positie staat (buiten .header-actions-col, vóór het
+ * logo) -- zo niet, gewoon opnieuw toepassen. Alle stappen hieronder zijn
+ * sowieso al idempotent (dezelfde inline waarde nogmaals zetten is een
+ * no-op), dus opnieuw draaien op een AL gefixte header kost niets. Een
+ * MutationObserver herhaalt de fix zodra de header-rij van binnen
+ * verandert, ongeacht de exacte oorzaak. */
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.innerWidth >= 992) return;
-  var headerRow = document.querySelector('.header-row');
-  if (!headerRow || headerRow.dataset.rgHamburgerMoved) return;
-  var logoCol = headerRow.querySelector('.header-logo-col');
-  var actionsCol = headerRow.querySelector('.header-actions-col');
-  var searchCol = headerRow.querySelector('.header-search-col');
-  // Mobiel (<576px): hamburger zit in .header-actions-col.
-  var mobielHamburgerCol = headerRow.querySelector('.header-actions-col .col.d-sm-none:has(.menu-button)');
-  // Tablet (576-991px): hamburger zit GENEST in .header-search-col, naast
-  // (niet in) de zoekbalk-collapse.
-  var tabletHamburgerCol = headerRow.querySelector('.header-search-col .col-sm-auto.d-none.d-sm-block.d-lg-none');
-  if (!logoCol || !actionsCol || !searchCol || (!mobielHamburgerCol && !tabletHamburgerCol)) return;
-  headerRow.dataset.rgHamburgerMoved = '1';
+  function pasHeaderMobielAan() {
+    if (window.innerWidth >= 992) return;
+    var headerRow = document.querySelector('.header-row');
+    if (!headerRow) return;
+    var logoCol = headerRow.querySelector('.header-logo-col');
+    var actionsCol = headerRow.querySelector('.header-actions-col');
+    var searchCol = headerRow.querySelector('.header-search-col');
+    // Mobiel (<576px): hamburger zit in .header-actions-col. Tablet
+    // (576-991px): GENEST in .header-search-col, naast (niet in) de
+    // zoekbalk-collapse. Matcht bewust NIET meer zodra de kolom al
+    // verhuisd is (dan zit 'ie niet meer in .header-actions-col/
+    // .header-search-col) -- dat IS het structurele "al gefixt"-signaal.
+    var mobielHamburgerCol = headerRow.querySelector('.header-actions-col .col.d-sm-none:has(.menu-button)');
+    var tabletHamburgerCol = headerRow.querySelector('.header-search-col .col-sm-auto.d-none.d-sm-block.d-lg-none');
+    if (!logoCol || !actionsCol || !searchCol || (!mobielHamburgerCol && !tabletHamburgerCol)) return;
 
-  function zet(el, eigenschap, waarde) {
-    el.style.setProperty(eigenschap, waarde, 'important');
+    function zet(el, eigenschap, waarde) {
+      el.style.setProperty(eigenschap, waarde, 'important');
+    }
+    // Belangrijk: EERST de tablet-hamburger-kolom uit .header-search-col
+    // halen, VOORDAT searchCol hieronder op width:0 wordt gezet -- anders
+    // verdwijnt de tablet-hamburger mee de collapse in.
+    [mobielHamburgerCol, tabletHamburgerCol].forEach(function (col) {
+      if (!col) return;
+      col.classList.add('rg-header-hamburger-slot');
+      zet(col, 'order', '1');
+      zet(col, 'flex', '0 0 auto');
+      zet(col, 'width', 'auto');
+      headerRow.insertBefore(col, logoCol);
+    });
+
+    /* .header-row's eigen padding (2rem/32px links+rechts, bedoeld voor
+       desktop) laat op een smal scherm te weinig ruimte over voor het logo
+       (natuurlijke breedte ~157px bij de vaste 26px-hoogte) -- hier verkleind
+       zodat het logo niet meer over de zoek-/mandje-iconen heen overlapt. */
+    zet(headerRow, 'padding-left', '0.75rem');
+    zet(headerRow, 'padding-right', '0.75rem');
+    zet(headerRow, 'flex-wrap', 'nowrap');
+    zet(logoCol, 'order', '2');
+    zet(logoCol, 'flex', '1 1 0');
+    zet(logoCol, 'min-width', '0');
+    zet(logoCol, 'width', 'auto');
+    zet(actionsCol, 'order', '3');
+    zet(actionsCol, 'flex', '0 0 auto');
+    zet(actionsCol, 'width', 'auto');
+    zet(searchCol, 'order', '4');
+    zet(searchCol, 'flex', '0 0 0');
+    zet(searchCol, 'width', '0');
+    zet(searchCol, 'padding', '0');
+    zet(searchCol, 'overflow', 'hidden');
+
+    /* Zodra de zoekbalk opengeklapt wordt: alle geforceerde inline-waarden
+       weer loslaten, zodat het bestaande (ongewijzigde) zoek-collapse-gedrag
+       gewoon zijn eigen volle-breedte-rij kan pakken. Eigen dataset-vlag
+       (niet de hele-functie-vlag hierboven) zodat dit specifiek deel -- dat
+       NIET zomaar herhaalbaar is, addEventListener zou anders per herstel-
+       poging een extra listener stapelen -- maar 1x per collapse-element
+       gebeurt, ook als de rest van de functie wél opnieuw draait. */
+    var zoekCollapseEl = searchCol.querySelector('.collapse');
+    if (zoekCollapseEl && !zoekCollapseEl.dataset.rgCollapseListeners) {
+      zoekCollapseEl.dataset.rgCollapseListeners = '1';
+      zoekCollapseEl.addEventListener('show.bs.collapse', function () {
+        headerRow.style.removeProperty('flex-wrap');
+        searchCol.style.removeProperty('order');
+        searchCol.style.removeProperty('flex');
+        searchCol.style.removeProperty('width');
+        searchCol.style.removeProperty('padding');
+        searchCol.style.removeProperty('overflow');
+      });
+      zoekCollapseEl.addEventListener('hidden.bs.collapse', function () {
+        zet(headerRow, 'flex-wrap', 'nowrap');
+        zet(searchCol, 'order', '4');
+        zet(searchCol, 'flex', '0 0 0');
+        zet(searchCol, 'width', '0');
+        zet(searchCol, 'padding', '0');
+        zet(searchCol, 'overflow', 'hidden');
+      });
+    }
   }
-  // Belangrijk: EERST de tablet-hamburger-kolom uit .header-search-col
-  // halen, VOORDAT searchCol hieronder op width:0 wordt gezet -- anders
-  // verdwijnt de tablet-hamburger mee de collapse in.
-  [mobielHamburgerCol, tabletHamburgerCol].forEach(function (col) {
-    if (!col) return;
-    col.classList.add('rg-header-hamburger-slot');
-    zet(col, 'order', '1');
-    zet(col, 'flex', '0 0 auto');
-    zet(col, 'width', 'auto');
-    headerRow.insertBefore(col, logoCol);
-  });
 
-  /* .header-row's eigen padding (2rem/32px links+rechts, bedoeld voor
-     desktop) laat op een smal scherm te weinig ruimte over voor het logo
-     (natuurlijke breedte ~157px bij de vaste 26px-hoogte) -- hier verkleind
-     zodat het logo niet meer over de zoek-/mandje-iconen heen overlapt. */
-  zet(headerRow, 'padding-left', '0.75rem');
-  zet(headerRow, 'padding-right', '0.75rem');
-  zet(headerRow, 'flex-wrap', 'nowrap');
-  zet(logoCol, 'order', '2');
-  zet(logoCol, 'flex', '1 1 0');
-  zet(logoCol, 'min-width', '0');
-  zet(logoCol, 'width', 'auto');
-  zet(actionsCol, 'order', '3');
-  zet(actionsCol, 'flex', '0 0 auto');
-  zet(actionsCol, 'width', 'auto');
-  zet(searchCol, 'order', '4');
-  zet(searchCol, 'flex', '0 0 0');
-  zet(searchCol, 'width', '0');
-  zet(searchCol, 'padding', '0');
-  zet(searchCol, 'overflow', 'hidden');
-
-  /* Zodra de zoekbalk opengeklapt wordt: alle geforceerde inline-waarden
-     weer loslaten, zodat het bestaande (ongewijzigde) zoek-collapse-gedrag
-     gewoon zijn eigen volle-breedte-rij kan pakken. */
-  var zoekCollapseEl = searchCol.querySelector('.collapse');
-  if (zoekCollapseEl) {
-    zoekCollapseEl.addEventListener('show.bs.collapse', function () {
-      headerRow.style.removeProperty('flex-wrap');
-      searchCol.style.removeProperty('order');
-      searchCol.style.removeProperty('flex');
-      searchCol.style.removeProperty('width');
-      searchCol.style.removeProperty('padding');
-      searchCol.style.removeProperty('overflow');
-    });
-    zoekCollapseEl.addEventListener('hidden.bs.collapse', function () {
-      zet(headerRow, 'flex-wrap', 'nowrap');
-      zet(searchCol, 'order', '4');
-      zet(searchCol, 'flex', '0 0 0');
-      zet(searchCol, 'width', '0');
-      zet(searchCol, 'padding', '0');
-      zet(searchCol, 'overflow', 'hidden');
-    });
+  pasHeaderMobielAan();
+  if (window.MutationObserver) {
+    var headerRowVoorObserver = document.querySelector('.header-row');
+    if (headerRowVoorObserver) {
+      new MutationObserver(pasHeaderMobielAan).observe(headerRowVoorObserver, { childList: true, subtree: true });
+    }
   }
 });
 
