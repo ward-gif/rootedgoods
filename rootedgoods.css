@@ -1075,9 +1075,12 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      zie rootedgoods.js 1.4c -- geen backend-mechanisme hiervoor, zie
      projectnotitie). Altijd zichtbaar, ook ingeklapt. Achtergrondfoto's
      hergebruiken bestaand beeldmateriaal (zelfde bestanden als
-     blokken/thema-tegels-home.html), geen nieuw materiaal nodig. LET OP:
-     dev-domein, bijwerken bij go-live naar rootedgoods.eu (zie
-     project_golive_domain_switch). */
+     blokken/thema-tegels-home.html), geen nieuw materiaal nodig.
+     VOLLEDIGE domeinnaam verplicht (niet root-relative /media/...): deze
+     CSS-file wordt zelf vanaf jsDelivr geladen (ander origin), dus een
+     root-relative url() in een background-image loste 404 op tegen
+     cdn.jsdelivr.net i.p.v. rootedgoods.eu -- live bevestigd (tegels
+     toonden alleen het kleurverloop, geen foto). */
   .rg-offcanvas-featured-row {
     order: -2;
     margin: 0 1rem 0.5rem;
@@ -1125,7 +1128,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
        (op verzoek Ward, i.p.v. het eerder gebruikte Events-2.jpg). */
     background-image:
       linear-gradient(to top, rgba(20, 30, 15, 0.88), rgba(20, 30, 15, 0.15) 65%),
-      url('/media/3e/e9/dc/1787744856/Onboarding Small JPEG.jpg');
+      url('https://rootedgoods.eu/media/3e/e9/dc/1787744856/Onboarding Small JPEG.jpg');
   }
   .rg-offcanvas-tile--trending {
     /* Bestandsnaam bijgewerkt: het oude bestand (zonder "(1)") is vervangen
@@ -1133,7 +1136,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
        thema-overzicht.html/thema-tegels-home.html, dezelfde vervanging. */
     background-image:
       linear-gradient(to top, rgba(45, 15, 10, 0.88), rgba(45, 15, 10, 0.15) 65%),
-      url('/media/d8/96/ae/1786435459/Kerst en Eindejaar (1).jpg');
+      url('https://rootedgoods.eu/media/d8/96/ae/1786435459/Kerst en Eindejaar (1).jpg');
   }
   .rg-offcanvas-tile [itemprop="name"],
   .rg-offcanvas-tile-title {
