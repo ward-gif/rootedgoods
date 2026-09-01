@@ -6201,10 +6201,15 @@ h2.rg-block-title__title,
   /* Ward's nieuwe copy (31 aug) begint met "Relatiegeschenken" -- op
      smalle telefoons (320px) brak dat lange woord kaal doormidden
      ("Relatiegeschen"/"ken", word-break:break-word zonder streepje).
-     Zelfde fix als elders op de site: hyphens:auto geeft een net
-     afbreekstreepje op een geldige lettergreepgrens. */
-  hyphens: auto;
-  -webkit-hyphens: auto;
+     hyphens:auto loste dat op, maar de browser-woordenboek-hyphenatie
+     koos een geldige maar niet de meest logische lettergreepgrens
+     ("Relatiege-schenken" i.p.v. het samenstelling-scheidingspunt
+     "Relatie-geschenken"). hyphens:manual (default) + een handmatige
+     &shy; in de HTML (blokken/hero-sectie-v2.html) op precies die plek
+     geeft volledige controle over wáár het woord breekt, zonder aan het
+     woordenboek over te laten. */
+  hyphens: manual;
+  -webkit-hyphens: manual;
 }
 /* .rg-hero-v2__title em: geen eigen echte-italic-regel meer -- gebruikt de
    gedeelde faux-oblique skewX-regel (sectie 41.1). */
