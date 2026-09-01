@@ -805,6 +805,24 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     height: 26px !important;
     max-width: 100%;
   }
+  /* Live gemeld (Ward, /poconfigurator/request-pagina): logo stond
+     zichtbaar naar rechts geschoven, deels over de zoek-/mandje-iconen
+     heen. Root cause via de browserconsole gevonden: .header-logo-col
+     heeft nog zijn NATIVE Bootstrap-kolom-padding (20px links+rechts) --
+     dat at bij de smalle flex-breedte die 1.4d (rootedgoods.js) 'm hier
+     geeft (~188px op een 430px-scherm) 40px van de beschikbare ruimte op.
+     De binnenste wrapper (.header-logo-main, thema-CSS) heeft bovendien
+     een vaste width:200px die niet meekromp -- samen duwde dat de
+     zichtbare foto met tientallen pixels naar rechts, tot over de
+     actie-kolom heen. Padding weg + wrapper op auto-breedte i.p.v. vast
+     200px lost dit op. */
+  .header-logo-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .header-logo-main {
+    width: auto !important;
+  }
 
   /* ---- Actie-rij: alleen zoeken + winkelmandje + (indien gevuld) wishlist ----
      Wishlist hoort hier NIET onvoorwaardelijk verborgen te worden: sectie 1
