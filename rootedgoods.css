@@ -661,6 +661,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   border: none;
   border-top-left-radius: 32px !important;
   border-bottom-left-radius: 32px !important;
+  /* iOS Safari zoomt automatisch in bij focus op een input met
+     font-size < 16px -- deze stond op 14px (thema-default). */
+  font-size: 16px !important;
 }
 .header-search-input::placeholder {
   color: #8c857a !important; /* subtieler dan ervoor */

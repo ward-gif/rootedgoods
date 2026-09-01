@@ -10,7 +10,8 @@
  *                           zonder title-tooltip, 1.4c offcanvas-menu (mobiel:
  *                           tegel-rij/headline-relabel/snelkoppelingen),
  *                           1.4d mobiel-header logo centreren, 1.4e topbar
- *                           USP-slider (mobiel), 1.5 Cal.com-embed lazy-load,
+ *                           USP-slider (mobiel), 1.4f mobiel zoekbalk (iconen
+ *                           vast/auto-focus/sluiten buiten klik), 1.5 Cal.com-embed lazy-load,
  *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons
  *                           hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
@@ -513,6 +514,85 @@ document.addEventListener('DOMContentLoaded', function () {
       zet(searchCol, 'overflow', 'hidden');
     });
   }
+});
+
+
+/* ---- 1.4f Mobiel zoekbalk: iconen blijven staan + auto-focus + sluiten
+ * buiten klik
+ * Drie losstaande symptomen, één oorzaak/plek: het thema's eigen
+ * "col-12 order-2 col-sm order-sm-1"-klasse op .header-search-col komt
+ * weer bovendrijven zodra 1.4d hierboven bij het OPENEN van de collapse
+ * z'n eigen geforceerde order:4 loslaat -- die order:2 valt toevallig
+ * samen met de eveneens geforceerde order:2 op .header-logo-col. Bij een
+ * orde-gelijkspel beslist de DOM-volgorde binnen de flex-rij, en
+ * .header-actions-col (order:3, ná die gelijkspel-groep) kan daardoor niet
+ * meer op dezelfde regel als hamburger+logo blijven staan zodra de
+ * zoekbalk (die zelf een volle-breedte regel opeist) naar een tweede regel
+ * wrapt -- 'ie wrapt zelf mee naar een DERDE regel, precies het "iconen
+ * springen onder de zoekbalk"-symptoom.
+ * Fix: de rust-positie van de iconen-kolom TEN OPZICHTE VAN .header-row
+ * wordt hier één keer bij page-load gemeten (dus altijd de correcte,
+ * dichte stand -- geen afhankelijkheid van de volgorde waarin verschillende
+ * 'show.bs.collapse'-listeners op hetzelfde element vuren). Bij het openen
+ * van de zoekbalk wordt de kolom daarmee uit de flex-flow gehaald
+ * (position:absolute, gepind op exact die gemeten waarde) zodat 'ie
+ * geometrisch nooit meer kan meewrappen, ongeacht wat er met de zoekbalk
+ * zelf gebeurt. Bij sluiten weer terug in de flow.
+ * Auto-focus: het thema focust de input kennelijk pas ná de collapse-
+ * animatie (of async) -- op iOS opent het toetsenbord alleen als focus()
+ * nog SYNCHROON binnen dezelfde tik-gebeurtenis valt. 'show.bs.collapse'
+ * vuurt synchroon zodra de toggle-klik 'm aanzet (nog vóór de eigen
+ * hoogte-animatie start), dus een eigen focus() daar hangt gegarandeerd
+ * nog in dezelfde gebruikers-gesture-keten als de tik.
+ * Sluiten buiten klik: één document-brede klik-listener sluit de collapse
+ * zodra er ergens BUITEN de zoekkolom of de toggle-knop geklikt wordt --
+ * dekt zowel de bestaande dim-overlay (sectie 1.1) als de rest van de
+ * pagina (header zelf incluis). hide() nogmaals aanroepen terwijl 'ie al
+ * dicht is, is een no-op in Bootstrap. */
+document.addEventListener('DOMContentLoaded', function () {
+  var headerRow = document.querySelector('.header-row');
+  var searchCol = headerRow ? headerRow.querySelector('.header-search-col') : null;
+  var actionsCol = headerRow ? headerRow.querySelector('.header-actions-col') : null;
+  var searchCollapseEl = document.getElementById('searchCollapse');
+  var searchInput = document.querySelector('.header-search-input');
+  var toggleBtns = document.querySelectorAll('.search-toggle-btn');
+  if (!headerRow || !searchCol || !actionsCol || !searchCollapseEl || !searchInput || window.innerWidth >= 992) return;
+
+  // Eén keer gemeten in de gesloten rust-stand -- zie uitleg hierboven.
+  var rowRect = headerRow.getBoundingClientRect();
+  var actionsRect = actionsCol.getBoundingClientRect();
+  var pinTop = actionsRect.top - rowRect.top;
+  var pinRight = rowRect.right - actionsRect.right;
+
+  searchCollapseEl.addEventListener('show.bs.collapse', function () {
+    if (window.innerWidth >= 992) return;
+    actionsCol.style.setProperty('position', 'absolute', 'important');
+    actionsCol.style.setProperty('top', pinTop + 'px', 'important');
+    actionsCol.style.setProperty('right', pinRight + 'px', 'important');
+    actionsCol.style.setProperty('left', 'auto', 'important');
+    actionsCol.style.setProperty('z-index', '720', 'important');
+    searchInput.focus();
+  });
+
+  searchCollapseEl.addEventListener('hidden.bs.collapse', function () {
+    actionsCol.style.removeProperty('position');
+    actionsCol.style.removeProperty('top');
+    actionsCol.style.removeProperty('right');
+    actionsCol.style.removeProperty('left');
+    actionsCol.style.removeProperty('z-index');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth >= 992) return;
+    if (!searchCollapseEl.classList.contains('show')) return;
+    if (searchCol.contains(e.target)) return;
+    var opToggle = false;
+    toggleBtns.forEach(function (btn) { if (btn.contains(e.target)) opToggle = true; });
+    if (opToggle) return;
+    if (window.bootstrap && window.bootstrap.Collapse) {
+      window.bootstrap.Collapse.getOrCreateInstance(searchCollapseEl).hide();
+    }
+  });
 });
 
 
