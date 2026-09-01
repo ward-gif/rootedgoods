@@ -3568,6 +3568,15 @@ body.is-ctl-product {
     width: 100% !important;
   }
 }
+/* Op desktop (>=992px) staat de complete filterrij (Afmeting/Eco/Kleur/...)
+   toch al altijd open eronder -- live bevestigd dat de knop daar geen
+   enkele werking heeft (klik doet niets, aria-expanded blijft "false").
+   Overbodige, niet-functionele knop dus weg op desktop. */
+@media (min-width: 992px) {
+  .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
+    display: none !important;
+  }
+}
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon):hover {
   border-color: #ad6331 !important;
   color: #ad6331 !important;
