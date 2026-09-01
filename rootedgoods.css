@@ -3505,12 +3505,14 @@ body.is-ctl-product {
    (4 class-selectors incl. :not()) zodat 'ie wint, plus ruimte eronder
    zodat de paginering niet direct erbovenop plakt.
    display:INLINE-flex, niet flex: een kale `flex` maakt een <button> een
-   block-level flex-container, die z'n ouder-breedte vult ONGEACHT de
-   @media-only `width:100%` hieronder -- die was daardoor overbodig op
-   mobiel én zorgde ervoor dat de knop op DESKTOP óók vol-breed bleef staan
-   (live bevestigd op 1280px: width bleef 820px, gelijk aan de ouder). */
+   block-level flex-container, die z'n ouder-breedte vult. Bleek zelfs
+   daarna nog niet genoeg (live bevestigd op 1280px: width bleef 820px) --
+   het thema zet ergens al zelf een `width:100%` op deze knop (los van
+   onze eigen mobiel-only regel hieronder), dus expliciete `width:auto`
+   hier nodig om dat op desktop te breken. */
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
   display: inline-flex !important;
+  width: auto !important;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -3527,7 +3529,7 @@ body.is-ctl-product {
    en oogt vol-breed juist te zwaar -- daar gewoon content-breedte. */
 @media (max-width: 991px) {
   .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
-    width: 100%;
+    width: 100% !important;
   }
 }
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon):hover {
