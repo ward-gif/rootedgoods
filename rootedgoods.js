@@ -11,7 +11,8 @@
  *                           tegel-rij/headline-relabel/snelkoppelingen),
  *                           1.4d mobiel-header logo centreren, 1.4e topbar
  *                           USP-slider (mobiel), 1.4f mobiel zoekbalk (iconen
- *                           vast/auto-focus/sluiten buiten klik), 1.5 Cal.com-embed lazy-load,
+ *                           vast/auto-focus/sluiten buiten klik), 1.4g wishlist
+ *                           zwevende badge (mobiel), 1.5 Cal.com-embed lazy-load,
  *                           1.6 over-ons "Route" (SVG/GSAP), 1.6b over-ons
  *                           hero-fit
  *   SECTIE 2 — HOMEPAGE   : 2.0 productslider-optiepatch, 2.0b slider-CTA verplaatsen
@@ -665,6 +666,57 @@ document.addEventListener('DOMContentLoaded', function () {
       window.bootstrap.Collapse.getOrCreateInstance(searchCollapseEl).hide();
     }
   });
+});
+
+
+/* ---- 1.4g Wishlist — zwevende badge rechtsonder (<992px)
+ * De header zelf heeft al een wishlist-icoon (.header-wishlist, met een
+ * :empty-badge-truc die 'm toont zodra er iets in zit) -- maar dat zit op
+ * mobiel in de toch al krappe actie-rij (naast de net-gefixte zoek-toggle
+ * en het mandje). Losse, zwevende knop rechtsonder is duidelijker en
+ * botst nergens mee: zelfde hoek als Shopware's eigen "naar boven"-knop
+ * (.scroll-up-button), erboven gestapeld.
+ * Positie: .scroll-up-button zet zijn eigen `bottom` als INLINE style
+ * (live bevestigd: schuift omhoog zolang de cookie-banner openstaat) --
+ * geen vaste waarde dus. Een MutationObserver op die stijl zet een CSS-
+ * variabele (--rg-scrollup-bottom) die de CSS hierboven gebruikt om altijd
+ * correct erboven te blijven staan, ongeacht die dynamiek.
+ * Inhoud: de bestaande .header-wishlist-knop wordt gekloond (hergebruikt
+ * href + hart-icoon-svg, geen eigen markup verzinnen) i.p.v. clone Shopware's
+ * PluginManager bindt 'm niet opnieuw, maar dat hoeft ook niet -- het is
+ * een kale link naar /wishlist, geen interactief widget. De teller wordt
+ * apart gesynchroniseerd (leeg = knop verborgen) vanaf de ORIGINELE,
+ * levende badge in de header, die Shopware's eigen WishlistWidgetPlugin
+ * wél live bijhoudt. */
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth >= 992) return;
+  var bron = document.querySelector('.header-wishlist');
+  var scrollUpBtn = document.querySelector('.scroll-up-button');
+  if (!bron) return;
+
+  var float = bron.cloneNode(true);
+  float.classList.add('rg-wishlist-float');
+  var floatBadge = float.querySelector('.header-wishlist-badge');
+  document.body.appendChild(float);
+
+  function syncBadge() {
+    var bronBadge = bron.querySelector('.header-wishlist-badge');
+    if (!bronBadge || !floatBadge) return;
+    floatBadge.textContent = bronBadge.textContent;
+    float.style.display = bronBadge.textContent.trim() ? 'flex' : 'none';
+  }
+  syncBadge();
+  var badgeObs = new MutationObserver(syncBadge);
+  var bronBadgeEl = bron.querySelector('.header-wishlist-badge');
+  if (bronBadgeEl) badgeObs.observe(bronBadgeEl, { childList: true, characterData: true, subtree: true });
+
+  if (scrollUpBtn) {
+    function syncPositie() {
+      document.documentElement.style.setProperty('--rg-scrollup-bottom', getComputedStyle(scrollUpBtn).bottom);
+    }
+    syncPositie();
+    new MutationObserver(syncPositie).observe(scrollUpBtn, { attributes: true, attributeFilter: ['style'] });
+  }
 });
 
 

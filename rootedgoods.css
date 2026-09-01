@@ -1529,6 +1529,64 @@ img {
   fill: #ffffff !important;
 }
 
+/* Wishlist — zwevende badge rechtsonder (mobiel/tablet), zie rootedgoods.js
+   1.4g. Kloon van de header-wishlist-link; witte knop (geen cognac vlak --
+   die kleur is voorbehouden aan CTA's/hovers, zie de kleur-hiërarchie) met
+   een cognac hartje + tellertje, zelfde vorm/grootte als de "naar boven"-
+   knop ernaast, erboven gestapeld via de JS-gesynchroniseerde
+   --rg-scrollup-bottom-variabele (Shopware's eigen knop verschuift zijn
+   bottom-offset dynamisch, o.a. zolang de cookiebanner openstaat). Start
+   verborgen (JS toont 'm pas zodra de badge niet leeg is) en alleen
+   <992px -- desktop heeft het icoon al gewoon in de header staan. */
+.rg-wishlist-float {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: calc(var(--rg-scrollup-bottom, 24px) + 48px + 12px);
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
+  z-index: 700;
+}
+.rg-wishlist-float .header-wishlist-btn {
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+}
+.rg-wishlist-float .icon svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+.rg-wishlist-float .icon svg use {
+  fill: var(--rg-cognac, #ad6331) !important;
+}
+.rg-wishlist-float .header-wishlist-badge {
+  position: absolute !important;
+  top: -4px !important;
+  right: -4px !important;
+  min-width: 18px;
+  height: 18px !important;
+  padding: 0 4px !important;
+  border-radius: 50px !important;
+  background: var(--rg-cognac, #ad6331);
+  color: #fff;
+  font-size: 0.65rem !important;
+  font-weight: 700;
+  line-height: 18px !important;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .rg-wishlist-float {
+    display: none !important;
+  }
+}
+
 /* ------------------------------------------------------------
    9. PRODUCT BOX (algemeen)
    ------------------------------------------------------------ */
