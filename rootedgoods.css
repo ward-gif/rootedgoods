@@ -8064,9 +8064,14 @@ h1.rg-contact-head__title,
   .cms-section-default.boxed .block-cioform-container { margin: 0 !important; width: 100% !important; }
 }
 /* Poconfigurator-aanvraagpagina: native .container heeft hier 40px zij-padding
-   i.p.v. de sitebrede 20px, met dezelfde dubbele-inspring-uitkomst als hierboven. */
+   i.p.v. de sitebrede 20px, met dezelfde dubbele-inspring-uitkomst als hierboven.
+   :not(.header-main .container) uitgesloten: Ward vond via DevTools dat deze
+   regel ook de header-rij's EIGEN .container raakte (dezelfde class, andere
+   plek in de DOM) -- die kreeg zo een onbedoelde extra 20px zij-marge bovenop
+   wat de mobiele header-fix (sectie 1.4d) al aan ruimte inrekent, waardoor het
+   logo op déze pagina specifiek toch weer richting de iconen werd geduwd. */
 @media (max-width: 575px) {
-  body.is-ctl-requestoffer .container { padding-left: 20px !important; padding-right: 20px !important; }
+  body.is-ctl-requestoffer .container:not(.header-main .container) { padding-left: 20px !important; padding-right: 20px !important; }
   body.is-ctl-requestoffer #request-offer-container { width: 100% !important; margin: 0 !important; }
 }
 
