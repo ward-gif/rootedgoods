@@ -1961,12 +1961,16 @@ img {
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
     position: absolute !important;
-    inset: 0 !important;
+    /* Eerder een keer verschoven naar het midden van het BEELD i.p.v. de
+       hele tegel -- op verzoek teruggedraaid naar gecentreerd op de
+       volledige tegelhoogte (incl. naam/prijs eronder). Nadien alsnog op
+       verzoek een stukje omhoog: bottom-inset op 25% i.p.v. 0 verkleint
+       de doos waarin align-items:center centreert, middenin tussen de
+       twee eerdere standen in (niet weer volledig terug naar "midden van
+       het beeld alleen"). */
+    inset: 0 0 25% 0 !important;
     z-index: 5;
     display: flex !important;
-    /* Eerder een keer verschoven naar het midden van het BEELD i.p.v. de
-       hele tegel -- op verzoek teruggedraaid: gewoon verticaal gecentreerd
-       op de volledige tegelhoogte (incl. naam/prijs eronder). */
     align-items: center;
     justify-content: space-between;
     pointer-events: none !important;
