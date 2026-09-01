@@ -286,11 +286,24 @@ document.addEventListener('DOMContentLoaded', function () {
  * Trending) + snelkoppelingen. Vervangt de teruggedraaide §2.1b/c/d (zie
  * CSS-sectie 6b voor de aanleiding). De categorieën-inklap-toggle die
  * hier eerder stond is op verzoek weer verwijderd -- categorieën staan nu
- * gewoon altijd open. Defensief herhaald bij elke offcanvas-open (niet
- * alleen 1x bij page-load) omdat Shopware terug-navigatie in een submenu
- * via een nieuwe content-render doet; de dataset-vlaggen maken elke stap
- * idempotent. .d-none-voorouder (Shopware's eigen cache-node voor de
- * root-lijst) wordt bewust overgeslagen. */
+ * gewoon altijd open. .d-none-voorouder (Shopware's eigen cache-node voor
+ * de root-lijst) wordt bewust overgeslagen.
+ *
+ * Live bevestigd (Ward's melding "tegels verdwijnen bij terug-navigeren"):
+ * "1x opnieuw draaien bij elke hamburger-klik" (de vorige aanpak) is NIET
+ * genoeg. Shopware herbouwt de lijst-inhoud namelijk ook ZONDER nieuwe
+ * hamburger-klik: bij het inklikken van een categorie (drill-down naar
+ * subcategorieën) én bij "Terug" daaruit vervangt het z'n eigen plugin de
+ * inhoud van het paneel met een verse render (en herstelt daarbij de
+ * standaard headline-tekst + drill-down-klasse/data-href die
+ * herlabelHeadline/directeCategorielinks al hadden weggehaald, en de
+ * tegel-rij die bouwUitgelichteTegels had toegevoegd is dan simpelweg
+ * weg). Een MutationObserver op elk paneel vangt dat soort content-
+ * vervanging alsnog op, ongeacht welke actie 'm veroorzaakte. Alle drie de
+ * stappen zijn al idempotent (dataset-vlag of structurele check) --
+ * opnieuw draaien na de eigen mutaties van offcanvasKlaar() zelf (bv.
+ * list.prepend in bouwUitgelichteTegels) is dus een goedkope no-op, geen
+ * oneindige lus. */
 document.addEventListener('DOMContentLoaded', function () {
   var QUICKLINKS = [
     { href: '/faq', label: 'Veelgestelde vragen', cta: false },
@@ -369,9 +382,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Native "categorieën"-headline hergebruikt als label boven de tegel-
      rij (staat er toevallig al precies goed voor, zie CSS-sectie 6c) --
-     alleen de tekst hoeft aangepast, geen nieuw element nodig. */
-  function herlabelHeadline(panel) {
-    var headline = panel.querySelector('.navigation-offcanvas-headline');
+     alleen de tekst hoeft aangepast, geen nieuw element nodig. Verwacht de
+     ROOT-wrapper (.navigation-offcanvas-placeholder), niet het hele paneel
+     -- zie de uitleg bij offcanvasKlaar(). */
+  function herlabelHeadline(root) {
+    var headline = root.querySelector('.navigation-offcanvas-headline');
     if (headline && !headline.dataset.rgRelabeled) {
       headline.dataset.rgRelabeled = '1';
       headline.textContent = 'Nu populair';
@@ -403,17 +418,74 @@ document.addEventListener('DOMContentLoaded', function () {
   function offcanvasKlaar() {
     document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
       if (panel.closest('.d-none')) return;
+      /* Live ontdekt (Ward's "tegels weg na Terug"-melding): een gedrilde
+         categorie EN de weg-terug-navigatie laten allebei een EIGEN, LOS
+         .navigation-offcanvas-list(+headline) achter -- Shopware bouwt de
+         subcategorie-drill-down als een apart "overlay"-element
+         (.navigation-offcanvas-overlay-content / -overlay) dat na het
+         teruggaan gewoon in de DOM blijft hangen (transitie-restant),
+         NAAST de echte root-lijst (.navigation-offcanvas-placeholder). Een
+         kale panel.querySelector('.navigation-offcanvas-list') pakt de
+         EERSTE match in DOM-volgorde -- vaak zo'n overlay-restant i.p.v.
+         de root -- en bouwt de tegels dus op de verkeerde (inactieve)
+         lijst. Root-lijst expliciet via .navigation-offcanvas-placeholder
+         scopen lost dat op. */
+      var root = panel.querySelector('.navigation-offcanvas-placeholder');
       var nav = panel.querySelector('.navigation-offcanvas-actions');
-      var list = panel.querySelector('.navigation-offcanvas-list');
-      herlabelHeadline(panel);
+      if (root) {
+        herlabelHeadline(root);
+        var list = root.querySelector('.navigation-offcanvas-list');
+        if (list) bouwUitgelichteTegels(list);
+      }
       if (nav) vulSnelkoppelingen(nav);
-      if (list) { bouwUitgelichteTegels(list); directeCategorielinks(list); }
+      // Direct-linken geldt voor élke zichtbare lijst (root én een evt.
+      // subcategorie-overlay), niet alleen de root -- anders zou een
+      // sub-subcategorie alsnog een eigen drill-down kunnen tonen.
+      panel.querySelectorAll('.navigation-offcanvas-list').forEach(directeCategorielinks);
     });
   }
   offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
   document.querySelectorAll('[data-offcanvas-menu="true"]').forEach(function (btn) {
     btn.addEventListener('click', function () { setTimeout(offcanvasKlaar, 0); });
   });
+
+  /* Vangt content-vervanging die Shopware's eigen plugin doet zonder een
+     nieuwe hamburger-klik (categorie-drill-down, "Terug" daaruit) -- zie
+     de uitleg bovenaan deze sectie. Twee observers, bewust niet één:
+     - Het paneel BESTAAT NOG NIET bij DOMContentLoaded (live bevestigd:
+       0 treffers voor .offcanvas.navigation-offcanvas vóór de eerste
+       hamburger-klik) -- Shopware bouwt 'm pas dan. Een observer die
+       alleen bestaande panelen pakt bij page-load zou dus nooit iets
+       observeren. Deze buitenste observer zit daarom op <body> zelf
+       (bestaat altijd al) en wacht tot het paneel als DIRECT kind
+       verschijnt (live bevestigd: paneel hangt rechtstreeks onder body).
+     - Zodra het paneel er is, hangt de buitenste observer er een tweede,
+       eigen (subtree:true) observer aan op om de INHOUD te volgen -- dat
+       vangt zowel de eerste keer als een eventuele latere volledige
+       vervanging van het paneel-element zelf (dan verschijnt er gewoon
+       een nieuw kind onder body, en de buitenste observer herhaalt zich).
+     Alleen de daadwerkelijk toegevoegde nodes per mutatie worden gecheckt
+     (geen document-brede query per mutatie) -- zelfde "scoped node scan"-
+     patroon als de eerdere INP-fix bij het winkelmandje (Fase 2). */
+  function volgPaneel(panel) {
+    if (!window.MutationObserver || panel.dataset.rgOffcanvasObserved) return;
+    panel.dataset.rgOffcanvasObserved = '1';
+    new MutationObserver(offcanvasKlaar).observe(panel, { childList: true, subtree: true });
+  }
+  document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(volgPaneel);
+  if (window.MutationObserver) {
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) {
+          if (node.nodeType !== 1) return;
+          if (node.matches && node.matches('.offcanvas.navigation-offcanvas')) {
+            offcanvasKlaar();
+            volgPaneel(node);
+          }
+        });
+      });
+    }).observe(document.body, { childList: true });
+  }
 });
 
 
