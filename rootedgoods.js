@@ -858,6 +858,43 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 
+/* ---- 1.5c Contact-/offerteformulier — type + autocomplete op velden
+ * Uit de AI-signalen-audit: velden hadden geen type="email"/"tel" (dus
+ * verkeerd mobiel toetsenbord) en geen autocomplete (geen browser-
+ * invulsuggesties) -- een menselijke developer zet dit vrijwel altijd,
+ * dus het ontbreken ervan was letterlijk een van de gevonden signalen.
+ * Gecheckt in Shopware's eigen formulierveld-instelling (Ward's
+ * screenshot): de "Type"-dropdown daar biedt alleen text/multiline_text/
+ * file/select/select_salutation/select_country/date -- geen email/tel,
+ * dus niet oplosbaar in de admin. Vandaar hier gepatcht, gescoped op
+ * dezelfde .block-cioform-container/#request-offer-container die 1.5b
+ * ook gebruikt (geldt voor zowel /contact als /offerte, twee losse
+ * formulier-instanties met andere technische veldnamen per instantie --
+ * vandaar de losse regels i.p.v. één generieke naam-op-patroon-match).
+ * [name$="firstName"] i.p.v. [name="firstName"]: het veld op /contact
+ * heeft live een voorloop-spatie in z'n name-attribuut (Shopware-
+ * formulierbouwer-eigenaardigheid, geen typfout van ons) -- "eindigt op"
+ * i.p.v. exacte match werkt ongeacht die spatie. */
+document.addEventListener('DOMContentLoaded', function () {
+  var VELDEN = [
+    { selector: '[name="request-name"]', autocomplete: 'name' },
+    { selector: '[name$="firstName"]', autocomplete: 'name' },
+    { selector: '[name="request-email"]', type: 'email', autocomplete: 'email' },
+    { selector: '[name="email"]', type: 'email', autocomplete: 'email' },
+    { selector: '[name="request-company"]', autocomplete: 'organization' },
+    { selector: '[name="phone"]', type: 'tel', autocomplete: 'tel' }
+  ];
+  document.querySelectorAll('.block-cioform-container, #request-offer-container').forEach(function (form) {
+    VELDEN.forEach(function (v) {
+      var el = form.querySelector(v.selector);
+      if (!el) return;
+      if (v.type) el.type = v.type;
+      if (v.autocomplete) el.setAttribute('autocomplete', v.autocomplete);
+    });
+  });
+});
+
+
 /* =====================================================================
  * SECTIE 2 — HOMEPAGE
  * Selectors zijn unieke homepage-classes (.home-productslider, .logo-slider).
