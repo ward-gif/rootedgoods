@@ -428,24 +428,31 @@ document.addEventListener('DOMContentLoaded', function () {
          placeholder (na Terug vanuit een drill), .navigation-offcanvas-
          overlay.has-transition (na het drillen IN een subcategorie). In
          plaats van te gokken welke wrapper-klasse nu "de juiste" is:
-         gewoon ELKE .navigation-offcanvas-list in het paneel behandelen
-         -- bouwUitgelichteTegels() is idempotent (doet niks als de
-         tegel-rij er al staat) en de tegels hebben zelf geen afhankelijkheid
-         meer van welke categorie/subcategorie een lijst toont, dus dit is
-         goedkoop en werkt op elke drill-diepte tegelijk (op verzoek: de
-         tegels moeten ALTIJD zichtbaar zijn, ook op een gedrilde
-         subcategorie-lijst). Headline-relabel ("Nu populair") wél alleen
-         op een ECHTE hoofdmenu-lijst: een lijst waarvan de wrapper GEEN
-         .is-home-link ("Terug"/"Toon alle categorieën") bevat -- anders
-         zou de categorie-contextlabel (bv. "Drinkwaren") op een gedrilde
-         weergave overschreven worden, wat "waar ben ik"-context wegneemt. */
+         ELKE .navigation-offcanvas-list in het paneel bekijken en per
+         lijst bepalen of het de ECHTE hoofdmenu-lijst is (wrapper bevat
+         GEEN .is-home-link -- "Terug"/"Toon alle categorieën" bestaat
+         alleen op een gedrilde subcategorie-weergave). Tegels EN
+         headline-relabel ("Nu populair") allebei alleen op het
+         hoofdmenu (op verzoek Ward: tegels hoorden alleen op het
+         hoofdmenu, niet op een gedrilde subcategorie-lijst -- eerdere
+         versie bouwde ze overal, dat is teruggedraaid). */
       panel.querySelectorAll('.navigation-offcanvas-list').forEach(function (list) {
-        bouwUitgelichteTegels(list);
         var wrapper = list.parentElement;
-        if (wrapper && !wrapper.querySelector('.is-home-link')) herlabelHeadline(wrapper);
+        if (wrapper && !wrapper.querySelector('.is-home-link')) {
+          bouwUitgelichteTegels(list);
+          herlabelHeadline(wrapper);
+        }
       });
-      var nav = panel.querySelector('.navigation-offcanvas-actions');
-      if (nav) vulSnelkoppelingen(nav);
+      /* Zelfde "elke instantie, niet alleen de eerste match"-aanpak voor de
+         snelkoppelingen-balk onderaan (Ward's melding "knoppen soms weg na
+         Terug"): net als de lijst-wrappers kan Shopware bij een drill-
+         transitie een NIEUWE .navigation-offcanvas-actions inzetten terwijl
+         een oude (al gevulde) instantie ergens verweesd blijft hangen --
+         panel.querySelector (1 match) kon dan de verkeerde/lege te pakken
+         krijgen. querySelectorAll+forEach vult ELKE instantie die nog geen
+         dataset.rgQuicklinks heeft, dus welke er ook zichtbaar wordt, hij
+         is al gevuld. */
+      panel.querySelectorAll('.navigation-offcanvas-actions').forEach(vulSnelkoppelingen);
     });
   }
   offcanvasKlaar();   // dekt het geval dat de offcanvas al (verborgen) in de DOM staat
