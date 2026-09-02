@@ -284,27 +284,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ---- 1.4c Offcanvas-menu (mobiel): uitgelichte tegel-rij (Thema's +
- * Trending) + snelkoppelingen. Vervangt de teruggedraaide §2.1b/c/d (zie
- * CSS-sectie 6b voor de aanleiding). De categorieën-inklap-toggle die
- * hier eerder stond is op verzoek weer verwijderd -- categorieën staan nu
- * gewoon altijd open. .d-none-voorouder (Shopware's eigen cache-node voor
- * de root-lijst) wordt bewust overgeslagen.
+ * Trending + Medewerker merchandise + Events, 2x2) + snelkoppelingen.
+ * Vervangt de teruggedraaide §2.1b/c/d (zie CSS-sectie 6b voor de
+ * aanleiding). De categorieën-inklap-toggle die hier eerder stond is op
+ * verzoek weer verwijderd -- categorieën staan nu gewoon altijd open.
+ * .d-none-voorouder (Shopware's eigen cache-node voor de root-lijst)
+ * wordt bewust overgeslagen.
  *
- * Live bevestigd (Ward's melding "tegels verdwijnen bij terug-navigeren"):
- * "1x opnieuw draaien bij elke hamburger-klik" (de vorige aanpak) is NIET
- * genoeg. Shopware herbouwt de lijst-inhoud namelijk ook ZONDER nieuwe
- * hamburger-klik: bij het inklikken van een categorie (drill-down naar
- * subcategorieën) én bij "Terug" daaruit vervangt het z'n eigen plugin de
- * inhoud van het paneel met een verse render (en herstelt daarbij de
- * standaard headline-tekst + drill-down-klasse/data-href die
- * herlabelHeadline/directeCategorielinks al hadden weggehaald, en de
- * tegel-rij die bouwUitgelichteTegels had toegevoegd is dan simpelweg
- * weg). Een MutationObserver op elk paneel vangt dat soort content-
- * vervanging alsnog op, ongeacht welke actie 'm veroorzaakte. Alle drie de
- * stappen zijn al idempotent (dataset-vlag of structurele check) --
- * opnieuw draaien na de eigen mutaties van offcanvasKlaar() zelf (bv.
- * list.prepend in bouwUitgelichteTegels) is dus een goedkope no-op, geen
- * oneindige lus. */
+ * BUGFIX (Ward's melding "tegels zijn nu helemaal weg"): de vorige versie
+ * zocht de root-lijst via `panel.querySelector('.navigation-offcanvas-placeholder')`.
+ * Live geverifieerd dat dit element in de huidige Shopware-markup NERGENS
+ * meer voorkomt (0 treffers) -- kennelijk een theme-/plugin-update die de
+ * wrapper-klasse veranderde. Gevolg: `root` was altijd null, dus
+ * herlabelHeadline/bouwUitgelichteTegels draaiden nooit (de headline bleef
+ * "categorieën", geen tegels). vulSnelkoppelingen bleef wel werken (hangt
+ * niet af van `root`) -- vandaar dat alleen de tegel-rij ontbrak, niet het
+ * hele menu. Nieuwe selector scoped op `.navigation-offcanvas-container`
+ * (bestaat wel, 1 treffer, bevat zowel headline als lijst) i.p.v. een
+ * specifieke binnenste wrapper-klasse -- minder gevoelig voor een volgende
+ * Shopware-markup-wijziging. Ook bevestigd: `directeCategorielinks`
+ * (hieronder) onderschept de klik vóórdat Shopware's eigen drill-down-JS
+ * 'm kan pakken, dus in de praktijk ontstaat er geen los "overlay"-element
+ * meer naast de root-lijst -- de eerdere aanname (twee lijsten door
+ * elkaar) was voor de huidige markup niet meer van toepassing, maar de
+ * MutationObserver-vangnet hieronder blijft staan als goedkope, idempotente
+ * herhaling mocht Shopware dit weer veranderen. */
 document.addEventListener('DOMContentLoaded', function () {
   var QUICKLINKS = [
     { href: '/faq', label: 'Veelgestelde vragen', cta: false },
@@ -324,11 +328,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Twee uitgelichte tegels naast elkaar bovenaan: de bestaande native
+  /* Vier uitgelichte tegels in een 2x2-grid bovenaan: de bestaande native
      Thema's-link (hergebruikt, niet gekloond -- click-gedrag blijft
-     intact) + een tweede, door ons zelf samengestelde "Trending"-tegel.
-     Geen backend-mechanisme voor dit laatste (de offcanvas-lijst heeft
-     geen afbeeldingsveld in dit thema) -- vaste link + afbeelding, zelfde
+     intact) + drie door ons zelf samengestelde tegels ("Trending",
+     "Medewerker merchandise", "Events & conferenties"). Geen backend-
+     mechanisme voor die laatste drie (de offcanvas-lijst heeft geen
+     afbeeldingsveld in dit thema) -- vaste link + afbeelding, zelfde
      aanpak als de Thema's-tegel al had. */
   function bouwUitgelichteTegels(list) {
     /* GEEN dataset-vlag op `list` als idempotentie-check: Shopware
@@ -359,8 +364,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // link) en erft daardoor ergens een eigen padding-bottom die zelfs
     // onze !important-CSS-regel verslaat (specificiteitsgevecht dat niet
     // via CSS alleen te winnen was) -- inline stijl wint altijd, zelfde
-    // patroon als de logo-centrering (sectie 1.4d).
-    themaLink.style.setProperty('padding-bottom', '0.85rem', 'important');
+    // patroon als de logo-centrering (sectie 1.4d). Waarde volgt de
+    // .rg-offcanvas-tile basis-padding (CSS-sectie 6c).
+    themaLink.style.setProperty('padding-bottom', '0.65rem', 'important');
 
     var trending = document.createElement('a');
     trending.href = '/eindejaarsgeschenken';
@@ -369,12 +375,24 @@ document.addEventListener('DOMContentLoaded', function () {
       '<span class="rg-offcanvas-tile-eyebrow">Trending</span>' +
       '<span class="rg-offcanvas-tile-title">Kerst &amp; eindejaar</span>';
 
+    var merchandise = document.createElement('a');
+    merchandise.href = '/medewerker-merchandise';
+    merchandise.className = 'rg-offcanvas-tile rg-offcanvas-tile--merchandise';
+    merchandise.innerHTML = '<span class="rg-offcanvas-tile-title">Medewerker merchandise</span>';
+
+    var events = document.createElement('a');
+    events.href = '/events-conferenties';
+    events.className = 'rg-offcanvas-tile rg-offcanvas-tile--events';
+    events.innerHTML = '<span class="rg-offcanvas-tile-title">Events &amp; conferenties</span>';
+
     var rij = document.createElement('li');
     rij.className = 'navigation-offcanvas-list-item rg-offcanvas-featured-row';
     var grid = document.createElement('div');
     grid.className = 'rg-offcanvas-featured-grid';
     grid.appendChild(themaLink);   // verhuist de bestaande link, geen kloon
     grid.appendChild(trending);
+    grid.appendChild(merchandise);
+    grid.appendChild(events);
     rij.appendChild(grid);
 
     list.prepend(rij);
@@ -384,8 +402,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Native "categorieën"-headline hergebruikt als label boven de tegel-
      rij (staat er toevallig al precies goed voor, zie CSS-sectie 6c) --
      alleen de tekst hoeft aangepast, geen nieuw element nodig. Verwacht de
-     ROOT-wrapper (.navigation-offcanvas-placeholder), niet het hele paneel
-     -- zie de uitleg bij offcanvasKlaar(). */
+     ROOT-scope (.navigation-offcanvas-container of `panel`), zie de
+     uitleg bij offcanvasKlaar(). */
   function herlabelHeadline(root) {
     var headline = root.querySelector('.navigation-offcanvas-headline');
     if (headline && !headline.dataset.rgRelabeled) {
@@ -419,19 +437,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function offcanvasKlaar() {
     document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
       if (panel.closest('.d-none')) return;
-      /* Live ontdekt (Ward's "tegels weg na Terug"-melding): een gedrilde
-         categorie EN de weg-terug-navigatie laten allebei een EIGEN, LOS
-         .navigation-offcanvas-list(+headline) achter -- Shopware bouwt de
-         subcategorie-drill-down als een apart "overlay"-element
-         (.navigation-offcanvas-overlay-content / -overlay) dat na het
-         teruggaan gewoon in de DOM blijft hangen (transitie-restant),
-         NAAST de echte root-lijst (.navigation-offcanvas-placeholder). Een
-         kale panel.querySelector('.navigation-offcanvas-list') pakt de
-         EERSTE match in DOM-volgorde -- vaak zo'n overlay-restant i.p.v.
-         de root -- en bouwt de tegels dus op de verkeerde (inactieve)
-         lijst. Root-lijst expliciet via .navigation-offcanvas-placeholder
-         scopen lost dat op. */
-      var root = panel.querySelector('.navigation-offcanvas-placeholder');
+      /* Root-scope voor headline+lijst: .navigation-offcanvas-container
+         bestaat betrouwbaar (1 treffer, bevat headline+lijst samen) --
+         zie de uitleg bovenaan deze sectie voor waarom de vorige,
+         specifiekere selector (.navigation-offcanvas-placeholder) stuk
+         ging. Fallback op `panel` zelf als Shopware ooit ook déze
+         wrapper-klasse verandert. */
+      var root = panel.querySelector('.navigation-offcanvas-container') || panel;
       var nav = panel.querySelector('.navigation-offcanvas-actions');
       if (root) {
         herlabelHeadline(root);

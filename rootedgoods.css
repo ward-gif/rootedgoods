@@ -1087,18 +1087,26 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      wél achter hun eigen klik, dat is Shopware's eigen drill-down-gedrag
      en wordt hier niet aangeraakt). */
 
-  /* ---- Uitgelichte tegel-rij: Thema's (eigen curated landingspagina,
-     onderscheiden van de gelijknamige echte productcategorie verderop --
-     JS herlabelt 'm naar "Shop op thema") + Trending (vaste link/foto,
-     zie rootedgoods.js 1.4c -- geen backend-mechanisme hiervoor, zie
-     projectnotitie). Altijd zichtbaar, ook ingeklapt. Achtergrondfoto's
-     hergebruiken bestaand beeldmateriaal (zelfde bestanden als
-     blokken/thema-tegels-home.html), geen nieuw materiaal nodig.
+  /* ---- Uitgelichte tegel-rij: 2x2 grid met Thema's (eigen curated
+     landingspagina, onderscheiden van de gelijknamige echte
+     productcategorie verderop -- JS herlabelt 'm naar "Shop op thema"),
+     Trending, Medewerker merchandise en Events & conferenties (alle drie
+     vaste links/foto's, zie rootedgoods.js 1.4c -- geen backend-mechanisme
+     hiervoor voor de laatste drie, zie projectnotitie). Altijd zichtbaar,
+     ook ingeklapt -- root-cause van het eerdere "tegels verdwijnen soms"-
+     probleem was NIET deze CSS maar een JS-selector die op een inmiddels
+     niet meer bestaand Shopware-element (.navigation-offcanvas-placeholder)
+     wachtte, zie rootedgoods.js. Achtergrondfoto's hergebruiken bestaand
+     beeldmateriaal (zelfde bestanden als blokken/thema-tegels-home.html en
+     blokken/thema-overzicht.html), geen nieuw materiaal nodig.
      VOLLEDIGE domeinnaam verplicht (niet root-relative /media/...): deze
      CSS-file wordt zelf vanaf jsDelivr geladen (ander origin), dus een
      root-relative url() in een background-image loste 404 op tegen
      cdn.jsdelivr.net i.p.v. rootedgoods.eu -- live bevestigd (tegels
-     toonden alleen het kleurverloop, geen foto). */
+     toonden alleen het kleurverloop, geen foto). Tegels bewust vlakker
+     (kleinere min-height/padding) dan de eerdere 2-tegel-versie -- met 4
+     stuks in een 2x2-grid neemt de rij anders te veel verticale ruimte in
+     bovenaan het menu. */
   .rg-offcanvas-featured-row {
     order: -2;
     margin: 0 1rem 0.5rem;
@@ -1116,22 +1124,22 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .rg-offcanvas-featured-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
   .rg-offcanvas-tile {
     display: flex;
     flex-direction: column;
     /* Zonder dit erft de Thema-tegel (hergebruikt een ECHTE native
        categorie-link, dus ook Shopware's eigen nav-link align-items:center)
-       een gecentreerde tekst-positie, terwijl de Trending-tegel (los door
-       JS gebouwd, geen native nav-link-klassen) gewoon stretch/links kreeg
-       -- twee tegels naast elkaar met verschillende uitlijning zonder dat
-       we dat ooit bedoeld hadden. */
+       een gecentreerde tekst-positie, terwijl de andere tegels (los door
+       JS gebouwd, geen native nav-link-klassen) gewoon stretch/links kregen
+       -- tegels naast elkaar met verschillende uitlijning zonder dat we
+       dat ooit bedoeld hadden. */
     align-items: stretch;
     justify-content: flex-end;
-    min-height: 130px;
-    border-radius: 14px;
-    padding: 0.85rem !important;
+    min-height: 92px;
+    border-radius: 12px;
+    padding: 0.65rem !important;
     /* Padding-bottom specifiek voor de Thema-tegel (native nav-link, erft
        een kleinere padding-bottom die zelfs !important hier niet won) wordt
        via inline style geforceerd in rootedgoods.js (bouwUitgelichteTegels) --
@@ -1156,12 +1164,26 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
       linear-gradient(to top, rgba(45, 15, 10, 0.88), rgba(45, 15, 10, 0.15) 65%),
       url('https://rootedgoods.eu/media/d8/96/ae/1786435459/Kerst en Eindejaar (1).jpg');
   }
+  .rg-offcanvas-tile--merchandise {
+    /* Zelfde beeld als "Medewerker merchandise" op thema-tegels-home.html/
+       thema-overzicht.html. */
+    background-image:
+      linear-gradient(to top, rgba(20, 20, 20, 0.85), rgba(20, 20, 20, 0.15) 65%),
+      url('https://rootedgoods.eu/media/a4/8c/a1/1785442348/Merchandise JPEG.jpg');
+  }
+  .rg-offcanvas-tile--events {
+    /* Zelfde beeld als "Events & conferenties" op thema-tegels-home.html/
+       thema-overzicht.html. */
+    background-image:
+      linear-gradient(to top, rgba(20, 20, 20, 0.85), rgba(20, 20, 20, 0.15) 65%),
+      url('https://rootedgoods.eu/media/c0/ba/fe/1785442349/Media Events (1).jpg');
+  }
   .rg-offcanvas-tile [itemprop="name"],
   .rg-offcanvas-tile-title {
     display: block;
     text-align: left;
     color: #fff !important;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 700;
     line-height: 1.2;
   }
@@ -8089,6 +8111,16 @@ h1.rg-contact-head__title,
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-zip"]),
 :is(.block-cioform-container, #request-offer-container) .form-group:has([name="request-location"]) {
   grid-column: span 1;
+}
+/* Op /contact staat "phone" (zelfde generieke veldnaam als op /offerte)
+   ALLEEN, zonder een "request-"-veld ernaast om de helft-breedte rij te
+   vullen -- daar bleef het dus als half-breed, wees weeshalfje hangen.
+   Op /offerte (dit blok HEEFT wel "request-"-velden) pairt phone netjes
+   met request-company, dat gedrag blijft ongemoeid. Onderscheid via
+   :has() op de DOM-vorm i.p.v. een pagina-ID (zelfde aanpak als elders --
+   dit paginatype heeft geen unieke body-hook, zie project-notitie). */
+:is(.block-cioform-container, #request-offer-container):not(:has([name^="request-"])) .form-group:has([name="phone"]) {
+  grid-column: 1 / -1 !important;
 }
 @media (max-width: 575px) {
   :is(.block-cioform-container, #request-offer-container) form { grid-template-columns: 1fr; }

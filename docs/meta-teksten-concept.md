@@ -8,7 +8,7 @@
 > **Uitgangspunten:**
 > - **Waarheid eerst.** Alleen claims die kloppen met `project_brand_story`
 >   (memory) en `faq-bron.md`: "geassembleerd in Europa" (niet "gemaakt in"),
->   geen vaste minimale afname, offerte/ontwerp binnen 24 uur, gratis ontwerp,
+>   geen vaste minimale afname, offerte/ontwerp binnen één werkdag, gratis ontwerp,
 >   digitale drukproef vooraf. Geen "beste"/"grootste"-achtige superlatieven
 >   die niet hard te maken zijn.
 > - **Tone of voice**: warm, eerlijk, concreet, nuchter-Nederlands — zie
@@ -22,7 +22,7 @@
 > - **GEO (AI-antwoordmachines zoals ChatGPT/Perplexity)**: begin met een
 >   feitelijke, citeerbare eerste zin ("Rooted Goods is/levert/regelt...")
 >   i.p.v. vage marketingtaal — dat citeert een taalmodel makkelijker dan een
->   slogan. Concrete getallen (24 uur, geen minimale afname) zijn GEO-goud:
+>   slogan. Concrete getallen (één werkdag, geen minimale afname) zijn GEO-goud:
 >   specifiek en verifieerbaar.
 >
 > Kernwoorden die terugkomen (bewust gespreid, niet overal tegelijk):
@@ -40,7 +40,7 @@
 
 ## Alle Producten (PLP) — `/alle-producten/`
 **Titel:** Alle relatiegeschenken met logo | Rooted Goods
-**Meta-description:** Bekijk ons volledige assortiment relatiegeschenken met logo, van drinkwaren tot kantoorartikelen. Europese makers, persoonlijk ontwerp binnen 24 uur.
+**Meta-description:** Bekijk ons volledige assortiment relatiegeschenken met logo, van drinkwaren tot kantoorartikelen. Europese makers, persoonlijk ontwerp binnen één werkdag.
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Contact — `/contact`
 **Titel:** Contact | Rooted Goods relatiegeschenken
-**Meta-description:** Staat je vraag er niet bij? Neem contact op met Rooted Goods, we denken graag met je mee. Persoonlijk antwoord binnen 24 uur, geheel vrijblijvend.
+**Meta-description:** Staat je vraag er niet bij? Neem contact op met Rooted Goods, we denken graag met je mee. Persoonlijk antwoord binnen één werkdag, geheel vrijblijvend.
 
 ---
 
@@ -64,7 +64,7 @@
 
 ## Offerte aanvragen — `/offerte`
 **Titel:** Vraag een offerte aan | Rooted Goods
-**Meta-description:** Vraag vrijblijvend een offerte aan voor relatiegeschenken met jouw logo. Binnen 24 uur een persoonlijk voorstel inclusief ontwerp, zonder verplichtingen.
+**Meta-description:** Vraag vrijblijvend een offerte aan voor relatiegeschenken met jouw logo. Binnen één werkdag een persoonlijk voorstel inclusief ontwerp, zonder verplichtingen.
 
 ---
 
@@ -154,16 +154,60 @@
 
 ---
 
-## Categorie-pagina's (PLP, dynamisch — bijv. `/drinkwaren/`, `/verzorging/`, `/elektronica/`, …)
-Deze ~12 pagina's worden per categorie ingevuld in Shopware (categorie-naam +
-beschrijving), dus geen los concept per stuk — wel een **sjabloon** om
-consistent te houden:
+## Categorie-pagina's (PLP)
+Per categorie een eigen concept i.p.v. een letterlijk sjabloon met alleen de
+naam verwisseld — anders concurreren Homepage, Alle Producten én alle ~11
+categoriepagina's allemaal op dezelfde term ("relatiegeschenken met logo"),
+wat cannibalisatie oplevert. Elk voorbeeld hieronder is geverifieerd tegen de
+live categoriepagina (echte producten/merken, niet verzonnen).
 
-**Titel-patroon:** `[Categorienaam] relatiegeschenken met logo | Rooted Goods`
-*(bijv. "Drinkwaren relatiegeschenken met logo | Rooted Goods")*
+### Drinkwaren — `/drinkwaren/`
+**Titel:** Drinkwaren als relatiegeschenk | Rooted Goods
+**Meta-description:** Van een gegraveerde thermosfles tot upcycled Rebottled-glazen: drinkwaren met jouw logo, geassembleerd door Europese makers. Bekijk het assortiment.
 
-**Meta-description-patroon:** `Bekijk onze [categorienaam, kleine letter] als relatiegeschenk: gepersonaliseerd met jouw logo, geassembleerd door Europese makers. [Eén concreet productvoorbeeld of use-case].`
-*(bijv. "Bekijk onze drinkwaren als relatiegeschenk: gepersonaliseerd met jouw logo, geassembleerd door Europese makers. Van thermosbekers tot upcycled wijnglazen.")*
+### Kantoor & Schrijfwaren — `/kantoor-schrijfwaren/`
+**Titel:** Kantoorartikelen met logo | Rooted Goods
+**Meta-description:** Van een Bambook-notitieboek tot pennen van gerecycled materiaal: kantoorartikelen die je relaties écht gebruiken, gepersonaliseerd met jouw logo.
+
+### Kleding & Textiel — `/kleding-textiel/`
+**Titel:** Bedrijfskleding & textiel met logo | Rooted Goods
+**Meta-description:** Van een biologisch katoenen T-shirt tot een softshell jas: geborduurde of bedrukte kleding die medewerkers graag dragen, niet in een la belandt.
+
+### Tassen & Reizen — `/tassen-reizen/`
+**Titel:** Tassen & reisaccessoires met logo | Rooted Goods
+**Meta-description:** Van een Samsonite-koffer tot een gerecycled leren kaarthouder: reisaccessoires met jouw logo erop, geassembleerd door Europese makers. Vraag een offerte aan.
+
+### Verzorging — `/verzorging/`
+**Titel:** Verzorgingsproducten als relatiegeschenk | Rooted Goods
+**Meta-description:** Van een JANZEN-geurcadeau tot verzorgende bodylotion: persoonlijke verzorgingsproducten met jouw logo, geassembleerd door Europese makers.
+
+### Sport & Spel — `/sport-spel/`
+**Titel:** Sport- & spelrelatiegeschenken | Rooted Goods
+**Meta-description:** Van een geïsoleerde Mepal-sportfles tot gerecyclede golfballen: relatiegeschenken voor wie graag beweegt, gepersonaliseerd met jouw logo.
+
+### Huis & Keuken — `/huis-keuken/`
+**Titel:** Relatiegeschenken voor huis & keuken | Rooted Goods
+**Meta-description:** Van een Victorinox-tafelmes tot Mepal-serviesgoed: relatiegeschenken voor thuis, gepersonaliseerd met jouw logo. Ons grootste assortiment.
+
+### Elektronica — `/elektronica/`
+**Titel:** Elektronica als relatiegeschenk | Rooted Goods
+**Meta-description:** Een kleine, zorgvuldig gekozen selectie elektronica als relatiegeschenk, waaronder de Chipolo-tracker en LOKD, gepersonaliseerd met jouw logo.
+*Let op: deze categorie heeft maar 3 producten (1 pagina, geen paginering) — de tekst belooft bewust geen breed assortiment, om verwachtingen niet te overspannen.*
+
+### Giveaways — `/giveaways/`
+**Titel:** Giveaways & goodies met logo | Rooted Goods
+**Meta-description:** Van reflecterende hangers tot een compleet EHBO-kitje: betaalbare giveaways met jouw logo erop, ideaal voor beurzen, events en grote aantallen.
+
+### Eten & Drinken — `/eten-drinken/`
+**Titel:** Eten & drinken als relatiegeschenk | Rooted Goods
+**Meta-description:** Van een Tony's Chocolonely-proeverij tot een wijn-en-chocolade-pakket: culinaire relatiegeschenken met jouw logo op de verpakking, snel geregeld.
+
+### Outdoor — `/outdoor/`
+**Titel:** Outdoor relatiegeschenken | Rooted Goods
+**Meta-description:** Van een Opinel- of Victorinox-zakmes tot een POLARBOX-koelbox: relatiegeschenken voor buiten, gepersonaliseerd met jouw logo, klaar voor gebruik.
+
+*Niet meegenomen: Thema-overzicht (`/alle-thema-s/`) en Alle Producten
+(`/alle-producten/`) staan al eerder in dit document.*
 
 ## Productpagina's (PDP, dynamisch)
 Ook hier geen los concept per product (te veel, en Shopware/Promidata vult
