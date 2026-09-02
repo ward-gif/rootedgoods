@@ -10848,3 +10848,182 @@ h2.rg-route__team-title{
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* ============================================================
+   50. COOKIE-CONSENT — center-modal op desktop/tablet, mobiel blijft
+   Shopware's eigen onderbalk
+   ============================================================
+   Eerdere ronde (27 aug, commits cfe43ed..39d4df8) bouwde dit al eens tot
+   een werkende center-modal en werd daarna uit voorzorg teruggedraaid
+   (0958ded) vanwege een jsDelivr-cache die tijdelijk een tussentijdse,
+   nog-kapotte versie serveerde -- de CSS zelf werkte (commit-message van
+   de revert zegt het letterlijk: "werkt correct (geverifieerd)"). Deze
+   sectie herbouwt dezelfde, al bewezen aanpak, plus twee nieuwe wensen
+   (Ward): (1) alleen desktop/tablet krijgen de center-modal, mobiel blijft
+   de native onderbalk; (2) Weigeren altijd omlijnd + Configureren altijd
+   een pijltje-tekstlink, MINDER prominent -- deze twee laatste gelden
+   BEWUST OOK op mobiel (vandaar buiten de media-query hieronder).
+
+   KRITIEKE BUG UIT DE EERSTE RONDE (root cause, nooit een fundamenteel
+   CSS-probleem, wel een specificiteitsval): Shopware verwijdert
+   .cookie-permission-container NOOIT uit de DOM -- toggelt alleen een
+   inline style="display: block" / "display: none" na een keuze. Een
+   ongeclausuleerde "display: flex !important" op de kale selector wint
+   dus altijd van die inline "none", waardoor de popup na Aanvaarden/
+   Weigeren nooit meer dichtging. Fix (bewezen, hier vanaf het begin
+   toegepast): ELKE regel die zichtbaarheid/backdrop afdwingt gescoped op
+   [style*="display: block"], nooit op de kale selector. */
+
+/* ---- Knop-styling: geldt op ALLE devices (ook mobiel, native onderbalk) */
+.js-cookie-permission-button .btn {
+  background-color: transparent !important;
+  border: 2px solid var(--rg-green) !important;
+  box-shadow: none !important;
+  color: var(--rg-green) !important;
+}
+.js-cookie-permission-button .btn:hover {
+  background-color: var(--rg-green) !important;
+  color: #ffffff !important;
+}
+/* Configureren: neutrale derde optie (geen accept/weiger-keuze), dus
+   bewust het minst prominent -- kale tekstlink + pijltje, zelfde
+   pijl-icoon-techniek als .rg-cat-head__link (sectie 25) voor visuele
+   consistentie met de rest van de site. */
+.js-cookie-configuration-button .btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--rg-soft) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  width: auto;
+  padding: 0.3rem !important;
+}
+.js-cookie-configuration-button .btn::after {
+  content: "";
+  flex: none;
+  width: 0.95em;
+  height: 0.95em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+.js-cookie-configuration-button .btn:hover {
+  color: var(--rg-green) !important;
+}
+.js-cookie-configuration-button .btn:hover::after { transform: translateX(3px); }
+
+/* ---- Center-modal met verduisterde/vervaagde achtergrond, op ALLE
+   schermformaten (ook mobiel). Eerst mobiel bewust uitgesloten (native
+   onderbalk), maar live meegekeken (Ward): op mobiel stonden de hero-CTA's
+   ("Vraag een offerte aan"/"Bekijk alle producten") nog gewoon in beeld
+   naast de cookiebanner-knoppen -- concurrerende knoppen. De center-modal
+   dimt de hele pagina (incl. die CTA's) weg, dus geen concurrentie meer,
+   op elk formaat. */
+.cookie-permission-container[style*="display: block"] {
+    position: fixed !important;
+    inset: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(20, 26, 15, 0.55) !important;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1100;
+  }
+  /* Achtergrond dichtklikken telt niet als keuze -- geen click-through
+     toegevoegd, de kaart zelf vangt clicks gewoon af (position/stacking
+     is voldoende, geen extra JS nodig). */
+  .cookie-permission-container[style*="display: block"] > .container {
+    background-color: #ffffff;
+    border-radius: var(--rg-r-xp);
+    box-shadow: 0 30px 70px -25px rgba(20, 26, 15, 0.45);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    /* !important + flex-basis: .container is een flex-item van de
+       backdrop hierboven -- Bootstrap's eigen .container-breedte (loopt
+       op tot 1320px op grote schermen) wint anders van max-width, zelfde
+       flex-vs-gewone-eigenschap-conflict als bij het cioform-formulier
+       (sectie 40). */
+    flex: 0 1 560px !important;
+    max-width: 560px !important;
+    width: 100% !important;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+  .cookie-permission-container[style*="display: block"] .row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .cookie-permission-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--rg-soft);
+    text-align: center;
+  }
+  .cookie-permission-content a {
+    color: var(--rg-cognac);
+    text-decoration: underline;
+  }
+  .cookie-permission-content a:hover { color: var(--rg-cognac-deep); }
+
+  .cookie-permission-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem;
+    padding: 0 !important;
+    width: 100%;
+  }
+  /* DOM-volgorde is Weigeren/Configureren/Accepteren -- visueel
+     Accepteren + Weigeren (gelijk gewicht) bovenaan, Configureren
+     (neutrale extra optie, minder prominent) als laatste/kleinste
+     onderaan. Alleen op desktop/tablet: op mobiel staat Configureren juist
+     BOVENAAN (zie de losse mobiele regel hierboven) -- bewust
+     tegengestelde volgorde per formfactor, beide op eigen verzoek. */
+  .js-cookie-accept-all-button { order: 1; }
+  .js-cookie-permission-button { order: 2; }
+  .js-cookie-configuration-button { order: 3; justify-content: center; }
+  .cookie-permission-actions .btn {
+    width: 100%;
+    margin: 0 !important;
+    border-radius: var(--rg-r-pill) !important;
+    font-weight: 600 !important;
+  }
+  .js-cookie-configuration-button .btn { width: auto; margin: 0.2rem auto 0 !important; }
+  /* Accepteren: enige gevulde/primaire knop -- Weigeren is via de
+     sitebrede regel hierboven al omlijnd (geldt ook hier, geen dubbele
+     regel nodig). */
+  .js-cookie-accept-all-button .btn {
+    background-color: var(--rg-cognac) !important;
+    border: 2px solid var(--rg-cognac) !important;
+    color: #ffffff !important;
+  }
+  .js-cookie-accept-all-button .btn:hover {
+    background-color: var(--rg-cognac-deep) !important;
+    border-color: var(--rg-cognac-deep) !important;
+  }
+
+/* Achtergrond niet laten scrollen terwijl de consent-kaart open staat.
+   Zelfde [style*="display: block"]-scoping nodig: :has() ziet alleen of
+   het element bestáát (altijd, zie boven), niet of het zichtbaar is. */
+body:has(.cookie-permission-container[style*="display: block"]) { overflow: hidden; }
+
+/* Mobiel: duim rust onderaan het scherm, dus de onderste knop in de
+   rij is fysiek het makkelijkst te raken. Volgorde daarom omgedraaid
+   t.o.v. desktop (waar muis-precisie geen rol speelt): Configureren
+   bovenaan (minst waarschijnlijke keuze, verst van de duim), Weigeren
+   in het midden, Aanvaarden onderaan. Positie is expliciet een legale,
+   optimaliseerbare variabele (zie het cookiebanner-onderzoek in
+   docs/) -- in tegenstelling tot grootte/kleur/contrast, die tussen
+   Aanvaarden/Weigeren gelijk moeten blijven en dat via de order-regels
+   hierboven ook blijven. */
+@media (max-width: 767px) {
+  .js-cookie-configuration-button { order: -1; }
+  .js-cookie-accept-all-button { order: 3; }
+}
