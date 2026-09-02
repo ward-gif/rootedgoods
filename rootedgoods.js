@@ -291,24 +291,28 @@ document.addEventListener('DOMContentLoaded', function () {
  * .d-none-voorouder (Shopware's eigen cache-node voor de root-lijst)
  * wordt bewust overgeslagen.
  *
- * BUGFIX (Ward's melding "tegels zijn nu helemaal weg"): de vorige versie
- * zocht de root-lijst via `panel.querySelector('.navigation-offcanvas-placeholder')`.
- * Live geverifieerd dat dit element in de huidige Shopware-markup NERGENS
- * meer voorkomt (0 treffers) -- kennelijk een theme-/plugin-update die de
- * wrapper-klasse veranderde. Gevolg: `root` was altijd null, dus
- * herlabelHeadline/bouwUitgelichteTegels draaiden nooit (de headline bleef
- * "categorieën", geen tegels). vulSnelkoppelingen bleef wel werken (hangt
- * niet af van `root`) -- vandaar dat alleen de tegel-rij ontbrak, niet het
- * hele menu. Nieuwe selector scoped op `.navigation-offcanvas-container`
- * (bestaat wel, 1 treffer, bevat zowel headline als lijst) i.p.v. een
- * specifieke binnenste wrapper-klasse -- minder gevoelig voor een volgende
- * Shopware-markup-wijziging. Ook bevestigd: `directeCategorielinks`
- * (hieronder) onderschept de klik vóórdat Shopware's eigen drill-down-JS
- * 'm kan pakken, dus in de praktijk ontstaat er geen los "overlay"-element
- * meer naast de root-lijst -- de eerdere aanname (twee lijsten door
- * elkaar) was voor de huidige markup niet meer van toepassing, maar de
- * MutationObserver-vangnet hieronder blijft staan als goedkope, idempotente
- * herhaling mocht Shopware dit weer veranderen. */
+ * BUGFIX-GESCHIEDENIS (Ward's melding "tegels zijn nu helemaal weg"), TWEE
+ * ronden live onderzoek, beide bevindingen kloppen (voor VERSCHILLENDE
+ * momenten in de levenscyclus van het paneel):
+ * 1) Bij een VERSE hamburger-klik (nog nooit gedrild) bestaat
+ *    .navigation-offcanvas-placeholder niet -- de root-lijst zit dan in
+ *    .navigation-offcanvas-overlay-content (0 treffers voor placeholder,
+ *    live bevestigd).
+ * 2) Na drill-down + "Terug" (bv. .is-home-link, of een categoriepagina
+ *    die zelf al gedrild opent) bouwt Shopware wél een verse
+ *    .navigation-offcanvas-placeholder met de herstelde root-inhoud --
+ *    maar LAAT de oude .navigation-offcanvas-overlay-content (+ een
+ *    tweede, animerende .navigation-offcanvas-overlay.has-transition-
+ *    kopie) met de VERLATEN gedrilde inhoud gewoon in de DOM staan
+ *    (transitie-restanten, geen opruiming). Een kale
+ *    panel.querySelector('.navigation-offcanvas-list') pakt dan de EERSTE
+ *    match in DOM-volgorde -- dat is de VERLATEN kopie, niet de echte
+ *    herstelde root -- en herlabelHeadline/bouwUitgelichteTegels werken
+ *    dan stil op de verkeerde (inactieve) lijst; de bezoeker ziet de
+ *    kale "categorieën"-headline zonder tegels op de ECHTE (zichtbare)
+ *    lijst. Vandaar: EERST .navigation-offcanvas-placeholder proberen
+ *    (dekt geval 2), pas als die niet bestaat terugvallen op
+ *    .navigation-offcanvas-overlay-content (dekt geval 1). */
 document.addEventListener('DOMContentLoaded', function () {
   var QUICKLINKS = [
     { href: '/faq', label: 'Veelgestelde vragen', cta: false },
@@ -424,9 +428,19 @@ document.addEventListener('DOMContentLoaded', function () {
      native href (hoofdcategorie-URL) blijft gewoon intact. Structurele
      check (geen dataset-vlag): zelfde reden als bouwUitgelichteTegels --
      Shopware's eigen content-render bij terug-navigeren zet de klasse
-     gewoon weer terug, dus elke keer opnieuw controleren i.p.v. 1x. */
+     gewoon weer terug, dus elke keer opnieuw controleren i.p.v. 1x.
+     BUGFIX (Ward's melding "Terug leidt naar een kale widget-pagina"):
+     de "Toon [Categorie]"-link bovenaan een gedrilde subcategorie-lijst
+     (Shopware's eigen "terug naar hoofdmenu"-link, herkenbaar aan
+     .is-home-link) matcht DEZELFDE selector (ook .js-navigation-offcanvas-
+     link met data-href) en werd dus ook door deze kloon-truc kapotgemaakt
+     -- zonder z'n class/data-href werd de AJAX-terugnavigatie een kale
+     browser-navigatie naar de rauwe widget-fragment-URL zelf
+     (/widgets/menu/offcanvas). :not(.is-home-link) uitgesloten: dit is
+     geen "categorie met submenu" maar een "ga terug"-affordance, moet z'n
+     eigen AJAX-gedrag behouden. */
   function directeCategorielinks(list) {
-    list.querySelectorAll('.navigation-offcanvas-link.js-navigation-offcanvas-link[data-href]').forEach(function (link) {
+    list.querySelectorAll('.navigation-offcanvas-link.js-navigation-offcanvas-link[data-href]:not(.is-home-link)').forEach(function (link) {
       var kloon = link.cloneNode(true);
       kloon.classList.remove('js-navigation-offcanvas-link');
       kloon.removeAttribute('data-href');
@@ -437,19 +451,39 @@ document.addEventListener('DOMContentLoaded', function () {
   function offcanvasKlaar() {
     document.querySelectorAll('.offcanvas.navigation-offcanvas').forEach(function (panel) {
       if (panel.closest('.d-none')) return;
-      /* Root-scope voor headline+lijst: .navigation-offcanvas-container
-         bestaat betrouwbaar (1 treffer, bevat headline+lijst samen) --
-         zie de uitleg bovenaan deze sectie voor waarom de vorige,
-         specifiekere selector (.navigation-offcanvas-placeholder) stuk
-         ging. Fallback op `panel` zelf als Shopware ooit ook déze
-         wrapper-klasse verandert. */
-      var root = panel.querySelector('.navigation-offcanvas-container') || panel;
-      var nav = panel.querySelector('.navigation-offcanvas-actions');
+      /* Op verzoek Ward: het menu moet ALTIJD op het hoofdmenu (met tegels)
+         openen, ongeacht welke pagina je opent -- Shopware rendert de
+         offcanvas-inhoud standaard al gedrild op de huidige categorie
+         (subcategorieën + een "Toon [Categorie]"-terug-link, herkenbaar
+         aan .is-home-link) wanneer je 'm opent vanaf een categoriepagina.
+         Eenmalige, veilig begrensde auto-klik op die terug-link: het
+         dataset-vlag wordt ONVOORWAARDELIJK gezet bij de EERSTE keer dat
+         dit paneel gezien wordt, ongeacht of er toen een terug-link was --
+         dat garandeert dat dit blok nooit meer dan 1x per paneel-leven
+         kan klikken, dus geen enkele foutieve state-detectie kan ooit tot
+         een klik-lus leiden (eerdere poging zonder deze harde begrenzing
+         liet de browser vastlopen op een AJAX-klik-lus, zie git-historie). */
+      if (!panel.dataset.rgAutoReset) {
+        panel.dataset.rgAutoReset = '1';
+        var terugLink = panel.querySelector('.navigation-offcanvas-link.is-home-link');
+        if (terugLink) { terugLink.click(); return; }
+      }
+      /* Root-scope voor headline+lijst: EERST .navigation-offcanvas-placeholder
+         (bestaat na drill-down+Terug, bevat de echte herstelde root-inhoud),
+         DAN .navigation-offcanvas-overlay-content (bestaat bij een verse,
+         nog nooit gedrilde opening) -- zie de uitgebreide uitleg bovenaan
+         deze sectie. Fallback op .navigation-offcanvas-container/`panel`
+         zelf als geen van beide bestaat (onbekende toekomstige markup). */
+      var root = panel.querySelector('.navigation-offcanvas-placeholder')
+        || panel.querySelector('.navigation-offcanvas-overlay-content')
+        || panel.querySelector('.navigation-offcanvas-container')
+        || panel;
       if (root) {
         herlabelHeadline(root);
         var list = root.querySelector('.navigation-offcanvas-list');
         if (list) bouwUitgelichteTegels(list);
       }
+      var nav = panel.querySelector('.navigation-offcanvas-actions');
       if (nav) vulSnelkoppelingen(nav);
       // Direct-linken geldt voor élke zichtbare lijst (root én een evt.
       // subcategorie-overlay), niet alleen de root -- anders zou een
