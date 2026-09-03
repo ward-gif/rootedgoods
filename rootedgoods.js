@@ -1027,6 +1027,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 2.0c Productslider vorige/volgende-knoppen — toegankelijke naam
+ * Promidata's eigen .base-slider-controls-prev/-next-knoppen hebben geen
+ * tekst en geen aria-label (alleen een decoratief pijl-icoon) -- voor
+ * screenreaders "niets" (Lighthouse: "Buttons do not have an accessible
+ * name"). Zelfde MutationObserver-vangnet als sectie 2.0: knoppen bestaan
+ * al bij DOMContentLoaded op de meeste pagina's, maar een async-geladen
+ * slider (bv. verderop de pagina) kan ze pas later toevoegen. */
+document.addEventListener('DOMContentLoaded', function () {
+  function labelKnoppen(root) {
+    root.querySelectorAll('.base-slider-controls-prev').forEach(function (btn) {
+      if (!btn.hasAttribute('aria-label')) btn.setAttribute('aria-label', 'Vorige');
+    });
+    root.querySelectorAll('.base-slider-controls-next').forEach(function (btn) {
+      if (!btn.hasAttribute('aria-label')) btn.setAttribute('aria-label', 'Volgende');
+    });
+  }
+  labelKnoppen(document);
+  if (window.MutationObserver) {
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) {
+          if (node.nodeType === 1) labelKnoppen(node.parentNode || document);
+        });
+      });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+});
+
+
 /* ---- 2.1 Logo slider — Shopware carousel vervangen door continue scroll
  * DOMContentLoaded i.p.v. window.load: img.src is de resolved attribuutwaarde
  * en staat er al zodra het element geparsed is — de afbeelding hoeft niet
@@ -1390,23 +1419,14 @@ function rgOnthulNaFonts(toon) {
     if (e.persisted) fit();
   });
 
-  /* .rg-hero-v2__copy-wrap (CSS) blijft onzichtbaar tot webfonts geladen
-     zijn: Playfair (titel) en Montserrat (kicker/sub/cta) renderen anders
-     eerst in de fallback-serif/sans -- andere lettermetriek, dus een andere
-     content-hoogte dan waar fit() hierboven al op gemeten heeft. Zonder dit
-     kan de copy-kolom na de font-swap alsnog verspringen (of, subtieler, de
-     slider net niet meer exact boven de vouw laten eindigen). Zelfde patroon
-     als .is-hero-klaar bij de Over-ons-hero (sectie 1.6b): één laatste
-     fit()-pas vlak vóór het onthullen, met een vangnet-timeout zodat er
-     nooit permanent niets te zien is. */
-  var onthuld = false;
-  function toonHero() {
-    if (onthuld) return;
-    onthuld = true;
-    fit();
-    hero.classList.add('is-hero-klaar');
-  }
-  rgOnthulNaFonts(toonHero);
+  /* .rg-hero-v2__copy-wrap toonde vroeger pas op via .is-hero-klaar (CSS)
+     -- verwijderd, kostte de H1 (LCP-element) 1,3s render delay (Lighthouse-
+     gemeten) voor een font-swap-sprong die `font-display: optional`
+     (sectie 1) al voorkomt op browserniveau. fit() draait hier nog wel
+     opnieuw na fonts.ready, als goedkope correctiepas mocht de content-
+     hoogte alsnog net iets afwijken -- kost niks aan zichtbaarheid, de
+     hero staat allang gewoon te zien. */
+  rgOnthulNaFonts(fit);
 })();
 
 
@@ -2188,28 +2208,12 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', fit);
   window.addEventListener('pageshow', function (e) { if (e.persisted) fit(); });
 
-  /* Kop/eyebrow/vraag blijven onzichtbaar (CSS: .rg-route__intro-copy) tot
-     webfonts geladen zijn: renderen ze eerst in de fallback-serif/sans, dan
-     wijkt de tekst-/regelhoogte af van de uiteindelijke Playfair/Montserrat-
-     metriek, en verspringt zowel de tekst zelf als (via ResizeObserver
-     hierboven) de fit() -- exact het soort sprong die dit bestand net
-     probeert te voorkomen. Eén laatste fit()-pas vlak vóór het onthullen
-     vangt die eventuele verschuiving af terwijl alles nog onzichtbaar is.
-     Vangnet-timeout: nooit permanent onzichtbaar laten hangen als fonts.
-     ready om wat voor reden dan ook niet resolvet.
-     .rg-route__hint zit BEWUST niet in deze gate (CSS-comment legt uit
-     waarom): die botst met zijn eigen GSAP-scroll-fade (sectie 1.6) als
-     GSAP eerder laadt dan fonts.ready hier resolvet. fit()'s eigen
-     ResizeObserver + de laatste fit()-pas hieronder houden 'm hoe dan ook al
-     goed gepositioneerd. */
-  var onthuld = false;
-  function toonHero() {
-    if (onthuld) return;
-    onthuld = true;
-    fit();
-    root.classList.add('is-hero-klaar');
-  }
-  rgOnthulNaFonts(toonHero);
+  /* Kop/eyebrow/vraag toonden vroeger pas op via .is-hero-klaar (CSS) --
+     verwijderd, zelfde LCP-kostenpost als de hero-v2-gate (sectie 2.4).
+     fit() draait hier nog wel opnieuw na fonts.ready als correctiepas;
+     .rg-route__hint blijft er bewust buiten (zit al in een eigen GSAP-
+     scroll-fade, sectie 1.6). */
+  rgOnthulNaFonts(fit);
 })();
 
 /* =====================================================================

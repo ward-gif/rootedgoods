@@ -6505,21 +6505,15 @@ h2.rg-block-title__title,
   .rg-hero-v2 .rg-cta__contact { order: 4; }
 }
 
-/* Onzichtbaar tot webfonts geladen zijn -- zelfde patroon als .is-hero-klaar
-   bij de Over-ons-hero: fallback-serif/sans heeft andere lettermetriek dan
-   Playfair/Montserrat, dus zonder dit kan de copy na de font-swap alsnog
-   verspringen t.o.v. waar rootedgoods.js (sectie 2.4) 'm al op gefit had.
-   Op mobiel is .rg-hero-v2__copy-wrap zelf display:contents (genereert geen
-   eigen box, hierboven), dus opacity daar heeft geen effect -- geen probleem:
-   de hoogtefit is toch alleen een desktop-mechanisme (zie fit() in JS). */
-.rg-hero-v2__copy-wrap { opacity: 0; }
-.rg-hero-v2.is-hero-klaar .rg-hero-v2__copy-wrap {
-  opacity: 1;
-  transition: opacity .3s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .rg-hero-v2.is-hero-klaar .rg-hero-v2__copy-wrap { transition: none; }
-}
+/* VERWIJDERD (was: opacity:0 tot webfonts geladen zijn, ter voorkoming van
+   een font-swap-sprong -- zie git-historie). Kostte de LCP-tijd van dit
+   H1 zelf 1,3s "element render delay" (Lighthouse-gemeten): de tekst mag
+   simpelweg niet verschijnen tot fonts.ready ondanks dat 'ie allang klaar
+   staat om te renderen. `font-display: optional` op de fonts (sectie 1)
+   regelt de fallback-vs-eigen-font-keuze al op browserniveau zonder ooit
+   een late swap te doen -- deze extra JS/CSS-gate erbovenop was dus zowel
+   overbodig als een directe LCP-kostenpost. fit() blijft na fonts.ready
+   nog wel opnieuw draaien (rootedgoods.js) als goedkope correctiepas. */
 
 /* Mobiel: gecentreerd, subline weg (bespaart hoogte -> logo-slider komt
    eerder in beeld), USP's/Richard weg (staan elders al: topbar-USP's +
@@ -8835,32 +8829,11 @@ h1.rg-route__title em{
   flex-direction:column;
   justify-content:center;
 }
-/* Onzichtbaar tot webfonts geladen zijn EN de hoogtefit (rootedgoods.js,
-   sectie 1.6b) definitief is. Zonder dit: kop/vraag renderen eerst in de
-   fallback-serif/sans (ander lettermetriek -> andere hoogte), en zodra de
-   echte fonts laden verspringt de tekst alsnog -- zelfde soort "sprong" als
-   .is-klaar hierboven al oplost voor de routelijn, nu ook voor de hero-tekst
-   zelf. .is-hero-klaar wordt gezet zodra fonts.ready + één definitieve
-   fit()-pas klaar zijn (met een vangnet-timeout, zie rootedgoods.js).
-   .rg-route__hint zit BEWUST niet in deze gate: die heeft al zijn eigen
-   scroll-gekoppelde opacity-tween (GSAP, sectie 1.6, "top 28%"/"top 2%").
-   Twee losse systemen die tegelijk opacity claimen botst -- als GSAP zijn
-   tween aanmaakt terwijl de cue hier nog op opacity:0 stond (fonts nog niet
-   klaar), pakt GSAP dat als STARTWAARDE en zet 'm blijvend via inline style
-   vast op 0 (een class-based CSS-regel kan een inline style nooit
-   overschrijven), dus de cue kwam nooit meer terug. */
-.rg-route__intro-copy{
-  opacity:0;
-}
-.rg-route.is-hero-klaar .rg-route__intro-copy{
-  opacity:1;
-  transition:opacity .3s ease;
-}
-@media (prefers-reduced-motion: reduce){
-  .rg-route.is-hero-klaar .rg-route__intro-copy{
-    transition:none;
-  }
-}
+/* VERWIJDERD (was: opacity:0 tot webfonts + hoogtefit klaar waren -- zie
+   git-historie). Zelfde LCP-kostenpost als de hero-v2-gate hierboven, nu
+   voor de over-ons-hero. `font-display: optional` dekt de fallback/eigen-
+   font-keuze al af zonder late swap, dus deze extra gate was overbodig.
+   fit() draait na fonts.ready nog wel opnieuw als correctiepas. */
 /* Europa-outline groot en ingezoomd achter de kop */
 .rg-route__intro-map{
   position:absolute;
