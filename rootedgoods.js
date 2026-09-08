@@ -902,6 +902,30 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 1.5d Landing Pages — self-canonical
+ * Shopware's "Landing Page"-controller (thema-pagina's, /offerte,
+ * /alle-thema-s e.d., herkenbaar aan body.is-ctl-landingpage) genereert
+ * GEEN <link rel="canonical"> -- live bevestigd op meerdere pagina's
+ * (categorie-pagina's krijgen 'm wél automatisch server-side, dit
+ * paginatype niet). Een sitebrede/configureerbare fix kost bij Promidata
+ * €900 -- voor nu te gortig, dit is de gratis tussenoplossing. Query-
+ * string bewust weggelaten (location.pathname, niet .href): robots.txt
+ * staat crawlen van ?gclid=/?utm_source=/?utm_medium=-varianten toe (voor
+ * Ads-doeleinden), dus zonder dit zou een canonical met querystring
+ * zo'n tracking-variant als "de" URL kunnen aanwijzen i.p.v. de schone.
+ * Google's voorkeur is een canonical in de ruwe HTML, maar hun crawler
+ * rendert JS en pikt een JS-canonical in de praktijk vrijwel altijd op --
+ * geen garantie, wel beter dan helemaal niks. */
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body.classList.contains('is-ctl-landingpage')) return;
+  if (document.querySelector('link[rel="canonical"]')) return;
+  var link = document.createElement('link');
+  link.rel = 'canonical';
+  link.href = location.origin + location.pathname;
+  document.head.appendChild(link);
+});
+
+
 /* =====================================================================
  * SECTIE 2 — HOMEPAGE
  * Selectors zijn unieke homepage-classes (.home-productslider, .logo-slider).
