@@ -926,6 +926,48 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/* ---- 1.5e Homepage — Organization + WebSite structured data
+ * blokken/rootedgoods.html plakt dit ook als <script type="application/
+ * ld+json"> in een CMS HTML-blok -- live bevestigd (sep 2026) dat
+ * Shopware dat er bij het opslaan uitstript op de homepage specifiek
+ * (de rest van hetzelfde blok, zoals de search-overlay-div, overleefde
+ * wél). Promidata heeft eerder al head-injection-toegang tot het thema
+ * geweigerd (zie project-notitie), dus geen alternatief injectiepunt
+ * beschikbaar buiten JS om. Dubbele-injectie-guard: als het CMS-blok
+ * het bij een volgende Shopware-versie tóch overleeft, wint de server-
+ * side versie gewoon (deze slaat dan zichzelf over). */
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body.classList.contains('is-act-home')) return;
+  if (document.querySelector('script[type="application/ld+json"]')) return;
+  [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Rooted Goods',
+      url: 'https://rootedgoods.eu',
+      logo: 'https://rootedgoods.eu/media/2a/71/e6/1786449349/Logo%20Rooted.svg',
+      description: 'Rooted Goods personaliseert premium producten van Europese makers met jouw logo. Relatiegeschenken gemaakt in Europa.'
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Rooted Goods',
+      url: 'https://rootedgoods.eu',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://rootedgoods.eu/search?search={search_term_string}',
+        'query-input': 'required name=search_term_string'
+      }
+    }
+  ].forEach(function (data) {
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(data);
+    document.head.appendChild(script);
+  });
+});
+
+
 /* =====================================================================
  * SECTIE 2 — HOMEPAGE
  * Selectors zijn unieke homepage-classes (.home-productslider, .logo-slider).
