@@ -28,6 +28,20 @@
    hier zelf gedeclareerd i.p.v. via Google:
    - Eén load minder (geen fonts.googleapis.com + fonts.gstatic.com round-
      trip meer, alles van hetzelfde domein als de rest van de site).
+
+   LET OP, absolute URL's, en dat moet zo blijven (28 okt 2026).
+   Hier stond een relatief pad, /webfonts/... . Een relatieve url() in CSS
+   wordt opgelost tegen de herkomst van het CSS-BESTAND, niet die van de
+   pagina. Dit bestand wordt uitgeleverd vanaf cdn.jsdelivr.net, dus de
+   browser zocht ze op cdn.jsdelivr.net/webfonts/... en kreeg zes keer een
+   404. Op de homepage vielen alleen 600 en 700 op, want alleen de gewichten
+   die een pagina echt gebruikt worden opgehaald; de andere vier waren net zo
+   kapot. Gevolg: elke Playfair-kop werd door de browser nagemaakt in plaats
+   van geladen. Gemeten en bevestigd op 28 oktober; alle zes bestanden geven
+   200 op rootedgoods.eu en 404 op jsDelivr. Dezelfde oplossing die Noah
+   Pelzer van Promidata in augustus voor het 500-gewicht aandroeg.
+   Verplaatst deze CSS ooit terug naar het thema, dan mag het pad weer
+   relatief.
    - font-display: optional -- als het lettertype niet binnen een fractie
      van een seconde klaar is, blijft de fallback-serif voor de rest van
      dat paginabezoek staan. Geen latere zichtbare sprong meer mogelijk
@@ -40,42 +54,42 @@
   font-style: normal;
   font-weight: 400;
   font-display: optional;
-  src: url('/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-regular.woff2') format('woff2');
+  src: url('https://rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 500;
   font-display: optional;
-  src: url('/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-500.woff2') format('woff2');
+  src: url('https://rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-500.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 600;
   font-display: optional;
-  src: url('/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-600.woff2') format('woff2');
+  src: url('https://rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-600.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 700;
   font-display: optional;
-  src: url('/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-700.woff2') format('woff2');
+  src: url('https://rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-700.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 800;
   font-display: optional;
-  src: url('/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-800.woff2') format('woff2');
+  src: url('https://rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-800.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 900;
   font-display: optional;
-  src: url('/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-900.woff2') format('woff2');
+  src: url('https://rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-900.woff2') format('woff2');
 }
 
 /* ------------------------------------------------------------
@@ -10846,3 +10860,64 @@ h2.rg-route__team-title{
    niets en kan los terug, maar dan zonder de layout-regels (flex-direction
    column, order, width:100%) die bij de modal hoorden en op een onderbalk
    niet kloppen. */
+
+/* ------------------------------------------------------------
+   50b. COOKIE-BALK — alleen knopstyling (28 okt 2026)
+   ------------------------------------------------------------
+   Shopware geeft alle drie de knoppen class .btn.btn-primary mee:
+   "Weigeren" (.js-cookie-permission-button), "Configureren"
+   (.js-cookie-configuration-button) en "Aanvaard alle cookies"
+   (.js-cookie-accept-all-button). Daardoor pakken ze alle drie de
+   cognac vulling, de schaduw en het pijltje uit sectie 8, en leest
+   de balk als drie even harde oproepen naast elkaar.
+
+   Hier: alleen de accepteerknop blijft gevuld, de andere twee worden
+   omlijnd. Bewust GEEN layoutregels (geen flex-direction, order of
+   width) -- dat was precies wat de modal uit sectie 50 verkeerd deed.
+   Alleen kleur, rand, schaduw en het pijltje.
+
+   Weigeren blijft even groot, op dezelfde balk en op één klik. Dat is
+   de eis die de AP stelt: weigeren moet even makkelijk zijn als
+   accepteren. Nadruk via kleur is een grijs gebied, het aantal klikken
+   niet. Verstop weigeren dus nooit onder "Configureren".
+
+   We mikken op de wrapper-classes, niet op :nth-child, zodat een
+   andere knopvolgorde of een uitgeschakelde knop dit niet omgooit. */
+
+/* Geen pijl op cookieknoppen: die suggereert navigatie, en dit zijn
+   keuzes. (Overschrijft de ::after uit sectie 8.) */
+.cookie-permission-container .cookie-permission-actions .btn::after {
+  content: none !important;
+}
+
+/* De twee secundaire keuzes: omlijnd, bosgroen op de balk. */
+.cookie-permission-container .js-cookie-permission-button .btn.btn-primary,
+.cookie-permission-container .js-cookie-configuration-button .btn.btn-primary {
+  background-color: transparent !important;
+  border: 2px solid rgba(45, 69, 40, 0.3) !important;
+  color: #2d4528 !important;
+  box-shadow: none !important;
+}
+.cookie-permission-container .js-cookie-permission-button .btn.btn-primary:hover,
+.cookie-permission-container .js-cookie-configuration-button .btn.btn-primary:hover {
+  background-color: transparent !important;
+  border-color: #ad6331 !important;
+  color: #ad6331 !important;
+  box-shadow: none !important;
+}
+
+/* Accepteren blijft de gevulde cognac knop uit sectie 8. Expliciet
+   herhaald zodat een volgende wijziging aan .btn-primary hier niet
+   stilletjes doorwerkt, en zodat duidelijk is dat dit de enige
+   gevulde knop op de balk hoort te zijn. */
+.cookie-permission-container .js-cookie-accept-all-button .btn.btn-primary {
+  background-color: #ad6331 !important;
+  border: 2px solid #ad6331 !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9) !important;
+}
+.cookie-permission-container .js-cookie-accept-all-button .btn.btn-primary:hover {
+  background-color: #955529 !important;
+  border-color: #955529 !important;
+  color: #fff !important;
+}
