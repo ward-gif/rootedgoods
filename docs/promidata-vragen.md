@@ -196,6 +196,46 @@ maken met CSS.
 
 ---
 
+### A3. Een versienummer in de CSS- en JS-URL in het thema
+
+**Dit is de reden dat een wijziging soms dagen duurt voordat iedereen hem ziet.**
+De bestanden komen binnen met `Cache-Control: public, max-age=604800, s-maxage=43200`.
+Die `s-maxage` van twaalf uur geldt voor de jsDelivr-edge, en die kunnen we purgen.
+Maar `max-age=604800` is **zeven dagen in de browser van de bezoeker**, en die
+controleert in die week niet eens of er iets nieuws is. Een purge helpt daar niets
+tegen. Alleen een harde ververs of een incognitovenster forceert een nieuwe ophaling.
+
+Dat verklaart waarom een wijziging bij de een meteen zichtbaar is en bij de ander
+niet. Het raakt alles wat we dit najaar aanpassen: de cookieknoppen en de
+lettertypefix van 28 oktober bereiken terugkerende bezoekers pas over maximaal
+een week.
+
+**Vraag:** kan er een versie-query achter de twee URL's in het thema, dus
+`rootedgoods.css?v=2` en `rootedgoods.js?v=2`, die wij bij een release ophogen?
+Dan krijgt elke wijziging vanzelf een nieuwe URL die nooit uit de cache komt, en
+zijn purges en harde ververs niet meer nodig.
+
+**Prioriteit:** hoog. Dit is de enige van de lijst die alle andere wijzigingen
+sneller laat landen.
+
+### B4. Productslider, productboxMinWidth van 300 naar 400
+
+In `data-product-slider-options` op `.base-slider.product-slider` staat
+`"productboxMinWidth": "300"`. Op een scherm van 1900 px passen er dan ongeveer
+zes tegels, te veel, en er is geen ruimte voor een peek aan de rand. Met 400 passen
+er vier tot vijf met een natuurlijke peek.
+
+Het alternatief is de tegelbreedte via onze eigen CSS overschrijven, en dat botst
+met de interne transform-berekening van TinySlider: gekloonde tegels werden links
+zichtbaar.
+
+Raakt alleen de productslider op de homepage, niet de catalogus of de
+zoekresultaten.
+
+**Prioriteit:** laag. Staat al sinds april open.
+
+---
+
 ## Nog uit te zoeken voordat we het vraagt
 
 - **Betalen op rekening** (punt 21 uit het verbeterplan): eerst zelf in de backend
