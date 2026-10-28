@@ -1,0 +1,50 @@
+[
+ {
+  "url": "https://rootedgoods.eu/",
+  "strategy": "desktop",
+  "score": 75,
+  "label": "voor lazy",
+  "gemeten": "2026-10-27T17:51:04",
+  "largest-contentful-paint": 1041.013058970607,
+  "cumulative-layout-shift": 0.011864124224799084,
+  "total-blocking-time": 543.5,
+  "speed-index": 1291.0644829956157,
+  "first-contentful-paint": 681.0081618566293
+ },
+ {
+  "url": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "strategy": "desktop",
+  "score": 72,
+  "label": "voor lazy",
+  "gemeten": "2026-10-27T17:51:29",
+  "largest-contentful-paint": 1354.1192288799018,
+  "cumulative-layout-shift": 0.002054623031275453,
+  "total-blocking-time": 572.4999999999999,
+  "speed-index": 1274.9373312251935,
+  "first-contentful-paint": 721.0693695301247
+ },
+ {
+  "url": "https://rootedgoods.eu/alle-producten/",
+  "strategy": "desktop",
+  "score": 60,
+  "label": "voor lazy",
+  "gemeten": "2026-10-27T17:51:50",
+  "largest-contentful-paint": 901.0022929489874,
+  "cumulative-layout-shift": 0.34268963429274846,
+  "total-blocking-time": 494.4999999999999,
+  "speed-index": 1102.8864892392774,
+  "first-contentful-paint": 681.0016777675518
+ },
+ {
+  "url": "https://rootedgoods.eu/offerte",
+  "strategy": "desktop",
+  "score": 96,
+  "label": "voor lazy",
+  "gemeten": "2026-10-27T17:52:01",
+  "largest-contentful-paint": 1065.413449370411,
+  "cumulative-layout-shift": 0.01150689439718401,
+  "total-blocking-time": 126.5,
+  "speed-index": 1019.261966943403,
+  "first-contentful-paint": 802.3235690724955
+ }
+]

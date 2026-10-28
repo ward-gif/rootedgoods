@@ -1,0 +1,19 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL bevat","/offerte"
+
+"Paginaweergaven","10"
+"Totaal aantal klikken","9"
+
+"Metrisch","Tikken"
+
+"Rang","Knop","Tikken"," % van aanraakinvoer"
+"1","HTML>BODY:nth-of-type(1)>HEADER.header-main:nth-of-type(1)>DIV.container:nth-of-type(1)>DIV.row.align-items-center.header-row:nth-of-type(2)>DIV.col.d-sm-none.rg-header-hamburger-slot:nth-of-type(1)>DIV.menu-button:nth-of-type(1)>BUTTON.btn.nav-main-toggle-btn.header-actions-btn:nth-of-type(1)","2","22,22%"
+"2","HTML>BODY:nth-of-type(1)>DIV.offcanvas.offcanvas-start.navigation-offcanvas:nth-of-type(7)>DIV.offcanvas-body:nth-of-type(2)>DIV.navigation-offcanvas-container.js-navigation-offcanvas:nth-of-type(1)>DIV.navigation-offcanvas-overlay.has-transition:nth-of-type(3)>UL.list-unstyled.navigation-offcanvas-list:nth-of-type(1)>LI.navigation-offcanvas-list-item:nth-of-type(3)>A.navigation-offcanvas-link.nav-item.nav-link:nth-of-type(1)","1","11,11%"
+"3","HTML>BODY:nth-of-type(1)>DIV.offcanvas.offcanvas-start.navigation-offcanvas:nth-of-type(7)>DIV.offcanvas-body:nth-of-type(2)>DIV.navigation-offcanvas-container.js-navigation-offcanvas:nth-of-type(1)>DIV.navigation-offcanvas-overlay-content.js-navigation-offcanvas-overlay-content:nth-of-type(1)>UL.list-unstyled.navigation-offcanvas-list:nth-of-type(1)>LI.navigation-offcanvas-list-item:nth-of-type(4)>A.navigation-offcanvas-link.nav-item.nav-link.js-navigation-offcanvas-link:nth-of-type(1)>SPAN:nth-of-type(1)","1","11,11%"
+"4","HTML>BODY:nth-of-type(1)>DIV.offcanvas.offcanvas-start.navigation-offcanvas:nth-of-type(7)>DIV.offcanvas-body:nth-of-type(2)>DIV.navigation-offcanvas-container.js-navigation-offcanvas:nth-of-type(1)>DIV.navigation-offcanvas-overlay-content.js-navigation-offcanvas-overlay-content:nth-of-type(1)>UL.list-unstyled.navigation-offcanvas-list:nth-of-type(1)>LI.navigation-offcanvas-list-item:nth-of-type(6)>A.navigation-offcanvas-link.nav-item.nav-link.js-navigation-offcanvas-link:nth-of-type(1)>SPAN.navigation-offcanvas-link-icon:nth-of-type(2)>SPAN.icon.icon-arrow-medium-right.icon-sm:nth-of-type(1)>svg:nth-of-type(1)","1","11,11%"
+"5","HTML>BODY:nth-of-type(1)>HEADER.header-main:nth-of-type(1)>DIV.container:nth-of-type(1)>DIV.row.align-items-center.header-row:nth-of-type(2)>DIV.col-lg-auto.header-logo-col:nth-of-type(3)>DIV.header-logo-main:nth-of-type(1)>A.header-logo-main-link:nth-of-type(1)>PICTURE.header-logo-picture:nth-of-type(1)>IMG.img-fluid.header-logo-main-img:nth-of-type(1)","1","11,11%"
+"6","HTML>BODY:nth-of-type(1)>DIV.offcanvas.offcanvas-start.navigation-offcanvas:nth-of-type(7)>DIV.offcanvas-body:nth-of-type(2)>DIV.navigation-offcanvas-container.js-navigation-offcanvas:nth-of-type(1)>DIV.navigation-offcanvas-overlay.has-transition:nth-of-type(3)>UL.list-unstyled.navigation-offcanvas-list:nth-of-type(1)>LI.navigation-offcanvas-list-item:nth-of-type(4)>A.navigation-offcanvas-link.nav-item.nav-link:nth-of-type(1)>SPAN:nth-of-type(1)","1","11,11%"
+"7","HTML>BODY:nth-of-type(1)>MAIN.content-main:nth-of-type(1)>DIV.container-main:nth-of-type(2)>DIV.cms-page:nth-of-type(2)>DIV.cms-sections:nth-of-type(1)>DIV.cms-section.cms-section-default:nth-of-type(2)>DIV.cms-section-default.full-width:nth-of-type(1)>DIV.cms-block.cms-block-cioform:nth-of-type(1)>DIV.cms-block-container:nth-of-type(1)>DIV.cms-block-container-row.row.cms-row:nth-of-type(1)>DIV.block-cioform-container:nth-of-type(1)>DIV:nth-of-type(1)>FORM:nth-of-type(1)>BUTTON.btn.btn-primary:nth-of-type(1)","1","11,11%"

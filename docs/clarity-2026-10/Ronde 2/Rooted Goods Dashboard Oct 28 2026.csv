@@ -1,0 +1,75 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL bevat","https://rootedgoods.eu/?gad"
+
+"Metrisch","Sessies"
+"","Totaal aantal sessies","231"
+"","Botsessies","0"
+
+"Metrisch","Pagina's per sessie"
+"","Gemiddeld","1"
+
+"Metrisch","Schuifdiepte"
+"","Gemiddeld","28.6"
+
+"Metrisch","Actieve tijd besteed"
+"","Actieve tijd","15"
+"","Totale tijd","38"
+
+"Metrisch","Gebruikersoverzicht"
+"","Unieke gebruikers","231"
+"","Sessies met nieuwe gebruikers","231"
+"","Sessies met terugkerende gebruikers","0"
+
+"Metrisch","Insights","Aantal sessies","% van sessies"
+"","Boze klikken","0","0%"
+"","Klik die nergens toe leidt","6","2,60%"
+"","Overmatig scrollen","0","0%"
+"","Snel terugklikken","0","0%"
+
+"Metrisch","Browsers","Aantal sessies","% van sessies"
+"","MobileSafari","65","28,14%"
+"","ChromeMobile","50","21,65%"
+"","FacebookApp","35","15,15%"
+"","GoogleApp","22","9,52%"
+"","InstagramApp","18","7,79%"
+"","SamsungInternet","14","6,06%"
+"","Chrome","13","5,63%"
+"","Edge","10","4,33%"
+"","Safari","4","1,73%"
+
+"Metrisch","Toppagina's","Aantal sessies"
+"","https://rootedgoods.eu/","231"
+
+"Metrisch","Slimme gebeurtenissen","Aantal sessies","% van sessies"
+"","Formulier verzenden","2","0,87%"
+"","Contact met ons opnemen","1","0,43%"
+"","Offerte aanvragen","1","0,43%"
+
+"Metrisch","Verwijzer","Aantal sessies"
+"","www.google.com","173"
+"","syndicatedsearch.goog","54"
+"","www.google.nl","2"
+
+"Metrisch","JavaScript-fouten"
+"","Sessies met JavaScript-fouten"
+""," totaal aantal JavaScript-fouten","1"
+"","","Aantal sessies","% van sessies"
+"","error invoking postmessage: java object is gone","1","100%"
+
+"Metrisch","Overzicht van prestaties"
+"","Score","72.88372093023256"
+"","LCP (Largest Contentful Paint)","4.244s"
+"","INP ('Interaction to Next Paint')","392ms"
+"","CLS (Cumulative Layout Shift)","0.011s"
+
+"Metrisch","Botverkeer"
+"webScraperBotSessions","0"
+"suspiciousDeviceBotSessions","0"
+"suspiciousNetworkBotSessions","0"
+"suspiciousInteractionBotSessions","0"
+"ppcAdFraudBotSessions","0"
+"otherBotsSessions","0"
+"__typename","BotTypes"

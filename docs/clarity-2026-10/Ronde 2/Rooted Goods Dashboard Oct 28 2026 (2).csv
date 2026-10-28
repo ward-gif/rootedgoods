@@ -1,0 +1,69 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL bevat","kerstpakketten-eindejaar"
+
+"Metrisch","Sessies"
+"","Totaal aantal sessies","75"
+"","Botsessies","1"
+
+"Metrisch","Pagina's per sessie"
+"","Gemiddeld","1"
+
+"Metrisch","Schuifdiepte"
+"","Gemiddeld","72.8"
+
+"Metrisch","Actieve tijd besteed"
+"","Actieve tijd","19"
+"","Totale tijd","22"
+
+"Metrisch","Gebruikersoverzicht"
+"","Unieke gebruikers","75"
+"","Sessies met nieuwe gebruikers","75"
+"","Sessies met terugkerende gebruikers","0"
+
+"Metrisch","Insights","Aantal sessies","% van sessies"
+"","Boze klikken","0","0%"
+"","Klik die nergens toe leidt","4","5,33%"
+"","Overmatig scrollen","0","0%"
+"","Snel terugklikken","0","0%"
+
+"Metrisch","Browsers","Aantal sessies","% van sessies"
+"","MobileSafari","23","30,67%"
+"","ChromeMobile","23","30,67%"
+"","Edge","9","12%"
+"","Chrome","6","8%"
+"","Safari","5","6,67%"
+"","GoogleApp","3","4%"
+"","SamsungInternet","2","2,67%"
+"","FacebookApp","2","2,67%"
+"","Firefox","2","2,67%"
+
+"Metrisch","Toppagina's","Aantal sessies"
+"","https://rootedgoods.eu/thema-s/kerstpakketten-eindejaar/","75"
+
+"Metrisch","Slimme gebeurtenissen","Aantal sessies","% van sessies"
+
+"Metrisch","Verwijzer","Aantal sessies"
+"","rootedgoods.eu","75"
+
+"Metrisch","JavaScript-fouten"
+"","Sessies met JavaScript-fouten"
+""," totaal aantal JavaScript-fouten","0"
+"","","Aantal sessies","% van sessies"
+
+"Metrisch","Overzicht van prestaties"
+"","Score","0"
+"","LCP (Largest Contentful Paint)","nulls"
+"","INP ('Interaction to Next Paint')","nullms"
+"","CLS (Cumulative Layout Shift)","nulls"
+
+"Metrisch","Botverkeer"
+"webScraperBotSessions","1"
+"suspiciousDeviceBotSessions","1"
+"suspiciousNetworkBotSessions","1"
+"suspiciousInteractionBotSessions","1"
+"ppcAdFraudBotSessions","1"
+"otherBotsSessions","0"
+"__typename","BotTypes"

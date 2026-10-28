@@ -1,0 +1,82 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL bevat","gad_"
+
+"Metrisch","Sessies"
+"","Totaal aantal sessies","841"
+"","Botsessies","1"
+
+"Metrisch","Pagina's per sessie"
+"","Gemiddeld","1"
+
+"Metrisch","Schuifdiepte"
+"","Gemiddeld","39.52"
+
+"Metrisch","Actieve tijd besteed"
+"","Actieve tijd","14"
+"","Totale tijd","32"
+
+"Metrisch","Gebruikersoverzicht"
+"","Unieke gebruikers","841"
+"","Sessies met nieuwe gebruikers","841"
+"","Sessies met terugkerende gebruikers","0"
+
+"Metrisch","Insights","Aantal sessies","% van sessies"
+"","Boze klikken","0","0%"
+"","Klik die nergens toe leidt","18","2,14%"
+"","Overmatig scrollen","0","0%"
+"","Snel terugklikken","0","0%"
+
+"Metrisch","Browsers","Aantal sessies","% van sessies"
+"","ChromeMobile","264","31,39%"
+"","MobileSafari","239","28,42%"
+"","FacebookApp","113","13,44%"
+"","GoogleApp","64","7,61%"
+"","SamsungInternet","53","6,30%"
+"","Chrome","42","4,99%"
+"","InstagramApp","32","3,80%"
+"","Edge","17","2,02%"
+"","Safari","13","1,55%"
+"","Firefox","4","0,48%"
+
+"Metrisch","Toppagina's","Aantal sessies"
+"","https://rootedgoods.eu/eindejaarsgeschenken","316"
+"","https://rootedgoods.eu/alle-producten/","280"
+"","https://rootedgoods.eu/","231"
+"","https://rootedgoods.eu/merken/","11"
+"","https://rootedgoods.eu/onboarding-welkomstpakket","3"
+
+"Metrisch","Slimme gebeurtenissen","Aantal sessies","% van sessies"
+"","Formulier verzenden","10","1,19%"
+"","Contact met ons opnemen","2","0,24%"
+"","Offerte aanvragen","2","0,24%"
+
+"Metrisch","Verwijzer","Aantal sessies"
+"","www.google.com","667"
+"","syndicatedsearch.goog","157"
+"","www.google.nl","8"
+"","www.google.be","1"
+
+"Metrisch","JavaScript-fouten"
+"","Sessies met JavaScript-fouten"
+""," totaal aantal JavaScript-fouten","2"
+"","","Aantal sessies","% van sessies"
+"","error invoking postmessage: java object is gone","1","50%"
+"","json parse error: unexpected eof","1","50%"
+
+"Metrisch","Overzicht van prestaties"
+"","Score","75.82191780821918"
+"","LCP (Largest Contentful Paint)","4.244s"
+"","INP ('Interaction to Next Paint')","500ms"
+"","CLS (Cumulative Layout Shift)","0.0095s"
+
+"Metrisch","Botverkeer"
+"webScraperBotSessions","0"
+"suspiciousDeviceBotSessions","0"
+"suspiciousNetworkBotSessions","1"
+"suspiciousInteractionBotSessions","1"
+"ppcAdFraudBotSessions","1"
+"otherBotsSessions","0"
+"__typename","BotTypes"

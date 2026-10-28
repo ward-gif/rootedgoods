@@ -1,0 +1,76 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL bevat","https://rootedgoods.eu/eindejaarsgeschenken"
+
+"Metrisch","Sessies"
+"","Totaal aantal sessies","370"
+"","Botsessies","11"
+
+"Metrisch","Pagina's per sessie"
+"","Gemiddeld","1"
+
+"Metrisch","Schuifdiepte"
+"","Gemiddeld","31.95"
+
+"Metrisch","Actieve tijd besteed"
+"","Actieve tijd","15"
+"","Totale tijd","36"
+
+"Metrisch","Gebruikersoverzicht"
+"","Unieke gebruikers","370"
+"","Sessies met nieuwe gebruikers","370"
+"","Sessies met terugkerende gebruikers","0"
+
+"Metrisch","Insights","Aantal sessies","% van sessies"
+"","Boze klikken","0","0%"
+"","Klik die nergens toe leidt","10","2,70%"
+"","Overmatig scrollen","0","0%"
+"","Snel terugklikken","0","0%"
+
+"Metrisch","Browsers","Aantal sessies","% van sessies"
+"","ChromeMobile","103","27,84%"
+"","MobileSafari","101","27,30%"
+"","FacebookApp","51","13,78%"
+"","Chrome","33","8,92%"
+"","SamsungInternet","29","7,84%"
+"","GoogleApp","22","5,95%"
+"","Edge","17","4,59%"
+"","Safari","10","2,70%"
+"","InstagramApp","2","0,54%"
+"","Firefox","2","0,54%"
+
+"Metrisch","Toppagina's","Aantal sessies"
+"","https://rootedgoods.eu/eindejaarsgeschenken","370"
+
+"Metrisch","Slimme gebeurtenissen","Aantal sessies","% van sessies"
+"","Formulier verzenden","1","0,27%"
+"","Offerte aanvragen","1","0,27%"
+
+"Metrisch","Verwijzer","Aantal sessies"
+"","www.google.com","254"
+"","syndicatedsearch.goog","56"
+"","rootedgoods.eu","55"
+"","www.google.be","1"
+"","www.google.nl","1"
+
+"Metrisch","JavaScript-fouten"
+"","Sessies met JavaScript-fouten"
+""," totaal aantal JavaScript-fouten","0"
+"","","Aantal sessies","% van sessies"
+
+"Metrisch","Overzicht van prestaties"
+"","Score","85.52777777777777"
+"","LCP (Largest Contentful Paint)","2.197s"
+"","INP ('Interaction to Next Paint')","202ms"
+"","CLS (Cumulative Layout Shift)","0.003s"
+
+"Metrisch","Botverkeer"
+"webScraperBotSessions","1"
+"suspiciousDeviceBotSessions","3"
+"suspiciousNetworkBotSessions","10"
+"suspiciousInteractionBotSessions","11"
+"ppcAdFraudBotSessions","1"
+"otherBotsSessions","0"
+"__typename","BotTypes"

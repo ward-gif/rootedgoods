@@ -16,3 +16,7 @@ mock-editorial*.png
 _kaarten-test.html
 _*.svg
 _*.html
+.venv/
+__pycache__/
+*.pyc
+_werkrommel/

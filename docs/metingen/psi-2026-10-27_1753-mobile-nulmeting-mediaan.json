@@ -1,0 +1,74 @@
+[
+ {
+  "url": "https://rootedgoods.eu/",
+  "strategy": "mobile",
+  "label": "nulmeting mediaan",
+  "runs": 3,
+  "gemeten": "2026-10-27T17:54:15",
+  "alle_scores": [
+   46,
+   37,
+   37
+  ],
+  "score": 37,
+  "largest-contentful-paint": 31633.612906763112,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 1161.499999999999,
+  "speed-index": 6691.895526626431,
+  "first-contentful-paint": 4051.0136032244773
+ },
+ {
+  "url": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "strategy": "mobile",
+  "label": "nulmeting mediaan",
+  "runs": 3,
+  "gemeten": "2026-10-27T17:54:58",
+  "alle_scores": [
+   46,
+   48,
+   46
+  ],
+  "score": 46,
+  "largest-contentful-paint": 10373.72905537689,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 601,
+  "speed-index": 6053.407388908665,
+  "first-contentful-paint": 4067.086763400338
+ },
+ {
+  "url": "https://rootedgoods.eu/alle-producten/",
+  "strategy": "mobile",
+  "label": "nulmeting mediaan",
+  "runs": 3,
+  "gemeten": "2026-10-27T17:55:48",
+  "alle_scores": [
+   37,
+   41,
+   37
+  ],
+  "score": 37,
+  "largest-contentful-paint": 27689.090196116438,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 1132.0000000000018,
+  "speed-index": 7075.967819866148,
+  "first-contentful-paint": 4214.012849857682
+ },
+ {
+  "url": "https://rootedgoods.eu/offerte",
+  "strategy": "mobile",
+  "label": "nulmeting mediaan",
+  "runs": 3,
+  "gemeten": "2026-10-27T17:56:00",
+  "alle_scores": [
+   60,
+   60,
+   60
+  ],
+  "score": 60,
+  "largest-contentful-paint": 9153.0404438549,
+  "cumulative-layout-shift": 0.09233444325653391,
+  "total-blocking-time": 210,
+  "speed-index": 4285.295235230033,
+  "first-contentful-paint": 3901.4268487609843
+ }
+]

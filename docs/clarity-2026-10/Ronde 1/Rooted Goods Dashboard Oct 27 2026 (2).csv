@@ -1,0 +1,62 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL bevat","https://rootedgoods.eu/Alle-Producten/"
+
+"Metrisch","Sessies"
+"","Totaal aantal sessies","29"
+"","Botsessies","0"
+
+"Metrisch","Pagina's per sessie"
+"","Gemiddeld","1"
+
+"Metrisch","Schuifdiepte"
+"","Gemiddeld","84.31"
+
+"Metrisch","Actieve tijd besteed"
+"","Actieve tijd","13"
+"","Totale tijd","30"
+
+"Metrisch","Gebruikersoverzicht"
+"","Unieke gebruikers","29"
+"","Sessies met nieuwe gebruikers","29"
+"","Sessies met terugkerende gebruikers","0"
+
+"Metrisch","Insights","Aantal sessies","% van sessies"
+"","Boze klikken","0","0%"
+"","Klik die nergens toe leidt","1","3,45%"
+"","Overmatig scrollen","0","0%"
+"","Snel terugklikken","0","0%"
+
+"Metrisch","Browsers","Aantal sessies","% van sessies"
+"","MobileSafari","28","96,55%"
+"","Chrome","1","3,45%"
+
+"Metrisch","Toppagina's","Aantal sessies"
+"","https://rootedgoods.eu/Alle-Producten/","29"
+
+"Metrisch","Slimme gebeurtenissen","Aantal sessies","% van sessies"
+
+"Metrisch","Verwijzer","Aantal sessies"
+"","rootedgoods.eu","29"
+
+"Metrisch","JavaScript-fouten"
+"","Sessies met JavaScript-fouten"
+""," totaal aantal JavaScript-fouten","0"
+"","","Aantal sessies","% van sessies"
+
+"Metrisch","Overzicht van prestaties"
+"","Score","0"
+"","LCP (Largest Contentful Paint)","nulls"
+"","INP ('Interaction to Next Paint')","nullms"
+"","CLS (Cumulative Layout Shift)","nulls"
+
+"Metrisch","Botverkeer"
+"webScraperBotSessions","0"
+"suspiciousDeviceBotSessions","0"
+"suspiciousNetworkBotSessions","0"
+"suspiciousInteractionBotSessions","0"
+"ppcAdFraudBotSessions","0"
+"otherBotsSessions","0"
+"__typename","BotTypes"

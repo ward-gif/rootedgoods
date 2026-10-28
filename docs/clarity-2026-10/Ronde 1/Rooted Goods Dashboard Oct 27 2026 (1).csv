@@ -1,0 +1,73 @@
+﻿"Projectnaam","Rooted Goods"
+"Datumbereik","10/01/2026 00:00 - 10/27/2026 23:59"
+
+
+"Bezochte URL is precies","https://rootedgoods.eu/"
+
+"Metrisch","Sessies"
+"","Totaal aantal sessies","177"
+"","Botsessies","45"
+
+"Metrisch","Pagina's per sessie"
+"","Gemiddeld","1.0056497175141244"
+
+"Metrisch","Schuifdiepte"
+"","Gemiddeld","26.77"
+
+"Metrisch","Actieve tijd besteed"
+"","Actieve tijd","27"
+"","Totale tijd","98"
+
+"Metrisch","Gebruikersoverzicht"
+"","Unieke gebruikers","177"
+"","Sessies met nieuwe gebruikers","177"
+"","Sessies met terugkerende gebruikers","0"
+
+"Metrisch","Insights","Aantal sessies","% van sessies"
+"","Boze klikken","1","0,56%"
+"","Klik die nergens toe leidt","19","10,73%"
+"","Overmatig scrollen","0","0%"
+"","Snel terugklikken","1","0,56%"
+
+"Metrisch","Browsers","Aantal sessies","% van sessies"
+"","Chrome","87","49,15%"
+"","Edge","37","20,90%"
+"","ChromeMobile","19","10,73%"
+"","Safari","17","9,60%"
+"","MobileSafari","13","7,34%"
+"","Firefox","4","2,26%"
+
+"Metrisch","Toppagina's","Aantal sessies"
+"","https://rootedgoods.eu/","177"
+"","https://rootedgoods.eu/contact","1"
+
+"Metrisch","Slimme gebeurtenissen","Aantal sessies","% van sessies"
+"","Formulier verzenden","3","1,69%"
+"","Contact met ons opnemen","2","1,13%"
+
+"Metrisch","Verwijzer","Aantal sessies"
+"","rootedgoods.eu","24"
+"","www.google.com","16"
+"","www.linkedin.com","2"
+"","com.google.android.gm","1"
+"","teams.public.onecdn.static.microsoft","1"
+
+"Metrisch","JavaScript-fouten"
+"","Sessies met JavaScript-fouten"
+""," totaal aantal JavaScript-fouten","0"
+"","","Aantal sessies","% van sessies"
+
+"Metrisch","Overzicht van prestaties"
+"","Score","81.5625"
+"","LCP (Largest Contentful Paint)","3.55s"
+"","INP ('Interaction to Next Paint')","194ms"
+"","CLS (Cumulative Layout Shift)","0.072s"
+
+"Metrisch","Botverkeer"
+"webScraperBotSessions","2"
+"suspiciousDeviceBotSessions","22"
+"suspiciousNetworkBotSessions","19"
+"suspiciousInteractionBotSessions","45"
+"ppcAdFraudBotSessions","1"
+"otherBotsSessions","0"
+"__typename","BotTypes"
