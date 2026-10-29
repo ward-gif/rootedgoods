@@ -319,6 +319,33 @@ bestand.
 van het beeldgewicht. Met een 200w-formaat erbij wordt het meer. Op de catalogus praat
 je over megabytes, zonder dat er iets aan het ontwerp verandert.
 
+### Er is een tweede helft, en die twee werken alleen samen
+
+De productbeelden staan in de mediamap **Shared Media**. Daar staan maar twee
+miniatuurformaten aan: **400×400 en 800×800.** De formaten 200, 280, 360 en 1920 staan
+uit. Dat is precies wat we in de `srcset` terugzien: twee kandidaten, meer niet.
+
+Zouden jullie **200, 280 en 360 willen aanzetten** op die map? Dan kan de browser
+eindelijk iets kiezen dat in de buurt van 266 px ligt, in plaats van te moeten kiezen
+tussen 400 en 800.
+
+**Let op: los van elkaar doen deze twee niets.**
+
+- Alleen de kleine formaten aanzetten helpt niet, want met `sizes="500px"` rekent de
+  browser 500 × 2 = 1000 px en pakt hij alsnog de 800w. Dan genereren jullie duizenden
+  miniaturen die nooit gekozen worden.
+- Alleen het `sizes`-attribuut rechtzetten helpt wel iets, want dan wordt het 400w in
+  plaats van 800w, maar 400 is nog steeds anderhalf keer te groot voor een tegel van
+  133 px.
+
+Samen halen ze een tegel van 227 kB terug naar ongeveer 25 kB.
+
+**En een vraag vooraf:** die map heet Shared Media en er staan duizenden producten in
+die wij niet verkopen. Het lijkt dus een bibliotheek die jullie over meerdere winkels
+delen. Wij kúnnen de instelling aanpassen, de knop werkt, maar we doen het niet omdat
+we niet weten wat het bij anderen aanricht en hoe zwaar het hergenereren is. Kunnen
+jullie zeggen of dit van ons is om te wijzigen, of dat jullie het beter kunnen doen?
+
 **Hangt samen met B1:** die gaat over het *aantal* afbeeldingen (148 variant-miniaturen
 op `eager`), deze over hun *formaat*. Samen zijn ze de verklaring voor een catalogus van
 8,4 MB.
