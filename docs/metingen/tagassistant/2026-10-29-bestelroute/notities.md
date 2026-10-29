@@ -79,3 +79,45 @@ niet vanuit een oud tabblad of een opgeslagen omgevingslink.
    `begin_checkout` en `purchase`. De dataLayer is er al, dus dit is alleen
    koppelen.
 3. Nog één sessie waarin de betaling wél wordt afgerond, om `purchase` te zien.
+
+---
+
+# Tweede sessie, met de tags erin (v2)
+
+Export: `tag_assistant_rootedgoods_eu_2026_10_29 v2.json`. Nu wél vanuit de juiste
+werkruimte, omgeving `Preview Environment 18 2026-10-29`.
+
+## Alles vuurde
+
+| Tag | Keer |
+|---|---|
+| `GA4 - view_item_list` | 1 |
+| `GA4 - select_item` | 1 |
+| `GA4 - view_item` | 1 |
+| `GA4 - view_cart` | 1 |
+| `GA4 - begin_checkout` | 1 |
+| `GA4 - confirm_order` | 1 |
+| `Toestemming bijwerken na keuze` | 6, één per pagina |
+| `GA4 - page_view na toestemming` | 6 |
+
+## En de inhoud ging mee
+
+Bij `GA4 - begin_checkout` stond het volledige e-commerceobject in het opgeloste
+model:
+
+```
+currency: EUR
+value: 1858
+items: 100 × Wellmark Discovery set à € 18,58
+       variant "wit", merk "PF - Concept", categorie "Woon accessoires"
+```
+
+Dat is waar het om ging. De tag stuurt niet alleen een naam maar de hele order.
+
+## Nog open
+
+`purchase` is opnieuw niet gezien, want de betaling is weer niet afgerond. Die tag
+staat klaar en vuurt zodra een echte bestelling doorloopt. Tot die tijd weten we
+niet zeker of dat laatste stuk werkt.
+
+`add_to_cart` staat er bewust niet tussen zolang hij nul meldt, zie E6.
