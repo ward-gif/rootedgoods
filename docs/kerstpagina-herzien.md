@@ -69,6 +69,35 @@ klikken hoort de offerteknop daar te staan.
 "Wat is de minimale afname?" en "Wat is de levertijd?" hoeven niet in de FAQ te
 blijven, maar het antwoord moet bovenin staan. De FAQ mag het herhalen.
 
+### 4. Het beeld doet niet genoeg voor de ruimte die het pakt
+
+Gemeten op mobiel, 390 px breed: **17 zichtbare afbeeldingen, samen 2.260 px, oftewel
+33% van de pagina.** Een derde van de hoogte is beeld.
+
+Wat er staat en wat het doet:
+
+| Waar | Formaat | Wat het is |
+|---|---|---|
+| y=178 | 129×123 en 167×260 | collage bovenaan, klein |
+| y=1100 | 9× 133×90 | de pakketten uit Inspiratie |
+| **y=1739** | **320×240** | **sfeerfoto "Collega's die elkaar oprecht bedanken"** |
+
+Twee dingen vallen op.
+
+**De sfeerfoto staat precies in de klif.** Die 240 px zit op y=1739, midden in de band
+waar 91 van de 292 bezoekers afhaken. Het is het grootste beeld op de pagina en het
+zegt niets over prijs, aantal of levertijd. Op mobiel is dat 240 px die een inkoper
+moet passeren om bij informatie te komen.
+
+**De pakketten zijn te klein om iets te zien.** Negen afbeeldingen van 133×90 px op een
+scherm van 390 px breed. Een inkoper kan daarop niet zien wat er in een pakket zit, en
+dat is precies wat hij wil weten. Ze dragen hun ruimte dus ook niet, maar om de
+omgekeerde reden: te klein in plaats van te groot.
+
+**Voorstel:** sfeerbeeld weg op mobiel, of naar onderen. De pakketten juist groter, met
+de prijs en het vanaf-aantal eronder. Dan vertelt het beeld wat het pakket is én wat het
+kost, in plaats van alleen sfeer.
+
 ### 4. Inkorten, of de klif verplaatsen
 
 Acht schermen is veel voor een seizoenspagina. Als inkorten niet kan, zorg dan dat
