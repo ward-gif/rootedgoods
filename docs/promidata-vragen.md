@@ -236,6 +236,41 @@ zoekresultaten.
 
 ---
 
+### E6. `add_to_cart` stuurt een hoeveelheid en een waarde van nul
+
+**Gemeten op 29 oktober**, met een Tag Assistant-sessie over de hele
+bestelroute. Export staat in
+`docs/metingen/tagassistant/2026-10-29-bestelroute/`.
+
+Bij het toevoegen aan de winkelwagen komt dit binnen:
+
+```
+add_to_cart   quantity: 0   value: 0   price: 26.53
+```
+
+Eén stap later klopt het wel:
+
+```
+view_cart     quantity: 100  price: 24.32   (de staffelprijs)
+begin_checkout  value: 2431.50
+```
+
+De prijs per stuk staat er dus wel in, maar het aantal en de totaalwaarde zijn
+nul. Bij een winkel die op staffels werkt is dat geen detail: het aantal bepaalt
+de prijs.
+
+**Waarom het nu uitmaakt:** we gaan de e-commercegebeurtenissen aan GA4 koppelen.
+Zetten we `add_to_cart` aan zoals hij nu is, dan meldt GA4 elke toevoeging als
+nul euro, en dan is de trechter onbruikbaar. De andere gebeurtenissen kunnen wel
+meteen aan.
+
+**Vraag:** kan `add_to_cart` het werkelijke aantal en de bijbehorende
+staffelprijs meesturen, net als `view_cart` dat al doet?
+
+**Prioriteit:** hoog, maar pas nodig als de e-commercetags live gaan.
+
+---
+
 ## Nog uit te zoeken voordat we het vraagt
 
 - **Betalen op rekening** (punt 21 uit het verbeterplan): eerst zelf in de backend
