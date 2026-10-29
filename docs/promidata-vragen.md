@@ -271,6 +271,62 @@ staffelprijs meesturen, net als `view_cart` dat al doet?
 
 ---
 
+### D2. Het `sizes`-attribuut klopt niet, en dat kost megabytes
+
+**Dit is waarschijnlijk de grootste snelheidswinst van de hele lijst, en hij kost
+niets aan beeldkwaliteit.**
+
+Gemeten op 29 oktober, mobiel, 390 px breed met pixelverhouding 2:
+
+| Pagina | Totaal | Waarvan beeld |
+|---|---:|---:|
+| `/eindejaarsgeschenken` | 4.207 kB | **3.478 kB** |
+| `/alle-producten/` | 8.365 kB | **7.680 kB** |
+
+De oorzaak is niet het aantal afbeeldingen maar hun formaat. **Zestien van de
+zeventien afbeeldingen op de kerstpagina worden 2,4 tot 11,4 keer groter geladen dan
+ze getoond worden.** Op een scherm met pixelverhouding 2 is factor 2 precies goed.
+
+Bij de productslider staat dit:
+
+```
+sizes="(min-width: 1200px) 280px, (min-width: 992px) 350px,
+       (min-width: 768px) 390px, (min-width: 576px) 500px,
+       (min-width: 0px) 500px, 100vw"
+```
+
+Op een telefoon van 390 px pakt hij de regel `(min-width: 0px) 500px`. De browser
+rekent dus met 500 px, verdubbelt dat voor het scherm naar 1000 px, en kiest het
+grootste bestand uit de `srcset`. Er zijn maar twee formaten: **400w van 78 kB en 800w
+van 227 kB.** Hij neemt de 800.
+
+Terwijl de tegel in werkelijkheid **133 px breed** is.
+
+Op de categoriepagina staat bovendien `sizes="180x180"`, en dat is helemaal geen
+geldige waarde. Een `sizes` hoort een CSS-lengte te zijn, bijvoorbeeld `180px`. Bij een
+ongeldige waarde valt de browser terug op `100vw` en kiest hij altijd het grootste
+bestand.
+
+**Twee vragen:**
+
+1. Kan het `sizes`-attribuut de werkelijk gerenderde breedte noemen? Voor de slider op
+   mobiel is dat ongeveer `140px`, niet `500px`. En kan `180x180` op de categoriepagina
+   `180px` worden?
+2. Kunnen er kleinere miniaturen bijkomen, bijvoorbeeld 200w en 300w? Nu is 400w de
+   kleinste, en dat is al drie keer te groot voor een tegel van 133 px.
+
+**Wat het oplevert:** alleen al van 800w naar 400w is een factor 3 op het grootste deel
+van het beeldgewicht. Met een 200w-formaat erbij wordt het meer. Op de catalogus praat
+je over megabytes, zonder dat er iets aan het ontwerp verandert.
+
+**Hangt samen met B1:** die gaat over het *aantal* afbeeldingen (148 variant-miniaturen
+op `eager`), deze over hun *formaat*. Samen zijn ze de verklaring voor een catalogus van
+8,4 MB.
+
+**Prioriteit:** hoog.
+
+---
+
 ## Nog uit te zoeken voordat we het vraagt
 
 - **Betalen op rekening** (punt 21 uit het verbeterplan): eerst zelf in de backend

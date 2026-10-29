@@ -294,3 +294,47 @@ of mensen kopen of uitdagen.
 - De levertijd per pakket. De deadline van vijftien werkdagen hebben we nu, maar wat
   een inkoper op de productpagina ziet is nog niets.
 - Of de inspiratie alleen uit de elf kerstpakketten komt of breder uit de catalogus.
+
+---
+
+# Hoeveel inspiratie kunnen we tonen?
+
+Ward vroeg zich af of meer voorbeelden de pagina niet te zwaar maakt. Nagemeten op
+29 oktober, mobiel:
+
+| | Totaal | Waarvan beeld |
+|---|---:|---:|
+| `/eindejaarsgeschenken` | 4.207 kB | 3.478 kB |
+| `/alle-producten/` | 8.365 kB | 7.680 kB |
+
+**De zorg is terecht, maar hij wijst de verkeerde kant op.** Het gewicht komt niet van
+het aantal afbeeldingen maar van hun formaat: zestien van de zeventien worden 2,4 tot
+11,4 keer groter geladen dan ze getoond worden. De negen pakketten zijn samen goed voor
+het meeste daarvan, en ze zijn op het scherm 133 px breed.
+
+Reken het eens om. Een tegel van 133 px heeft op een retina-scherm 266 px nodig. Nu
+komt er 800 px binnen. Dat is ruwweg negen keer zoveel pixels als nodig, en bytes
+schalen mee met het oppervlak.
+
+**Wat dat betekent voor het ontwerp:** met kloppende formaten kun je ongeveer **drie
+keer zoveel voorbeelden tonen als nu, groter, en toch lichter uitkomen.** De keuze is
+dus niet "veel inspiratie of snel". Hij is "kloppende formaten of niet".
+
+## Drie regels voor het nieuwe blok
+
+**1. Raster, geen slider.** Een slider zet alle slides in de DOM, dus alles laadt, ook
+wat niemand ziet. Een raster met `loading="lazy"` laadt alleen wat in beeld komt. Dat
+is ook punt 15 in het plan, en hier valt het samen met de snelheidswinst.
+
+**2. Groter en minder, in plaats van kleiner en meer.** Een pakket van 133×90 px
+vertelt niets. Dat is nu het probleem: de afbeeldingen zijn tegelijk te zwaar voor de
+leiding én te klein voor het oog. Op mobiel twee kolommen, dus ongeveer 180 px breed,
+met de prijs en het vanaf-aantal eronder.
+
+**3. In onze eigen blokken zetten we `srcset` en `sizes` zelf.** Zeven van de zeventien
+afbeeldingen op deze pagina hebben helemaal geen `srcset`: de hero, de sfeerfoto en de
+drie servicekaarten. Die staan in `blokken-def/`, dus dat is ons werk, niet dat van
+Promidata.
+
+De slider en de catalogus zijn wel Promidata, want daar wordt het `sizes`-attribuut
+door het thema gezet. Dat staat nu als D2 op de lijst.
