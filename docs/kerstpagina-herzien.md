@@ -210,3 +210,87 @@ ontbreken. Voor een advertentiebezoeker die nog niets van je weet, is dat anders
 
 **Nog te leveren door Ward:** de vanaf-prijs, het vanaf-aantal, de levertijd en de
 kerstdeadline. Die getallen staan nergens op de site en ik kan ze niet verzinnen.
+
+---
+
+# Herziene opdracht, 29 oktober
+
+Ward: de themapagina's tonen producten als **inspiratie**, en sturen erop dat bezoekers
+delen wat zíj willen weggeven. De elf pakketten zijn afneembaar, maar mooier is het als
+een bezoeker ons uitdaagt met een eigen idee, mits dat een goed verhaal heeft,
+origineel is en in de EU gemaakt wordt.
+
+Dat verandert wat de pagina moet doen. Niet: deze elf pakketten verkopen. Wel: laten
+zien wat voor soort dingen we maken, en een gesprek beginnen.
+
+## De spanning die we moeten oplossen
+
+Iemand die `kerstgeschenk met logo` intypt zit in koopmodus, niet in meedenkmodus.
+Vraag je hem meteen om mee te ontwerpen, dan vraag je meer dan waarvoor hij kwam.
+
+Maar stel je eerst gerust dat hij op de goede plek is, dan landt de uitnodiging wel.
+Daarom deze volgorde:
+
+### 1. Oriëntatie, drie regels
+
+Geen verkooppraatje, alleen het signaal "je zit goed".
+
+> **Kerstpakketten van € 25 tot € 70 per persoon · vanaf 10 stuks · met jouw logo erop**
+> Bestel vóór 27 november, dan ligt het er de week voor kerst. Daarna in overleg.
+
+Alle elf pakketten zitten in die band en hebben **dezelfde minimale afname van 10**.
+Dat is geen schatting, het is nagemeten op 29 oktober. De huidige FAQ zegt "er is geen
+vaste minimale afname", en dat klopt hier dus niet.
+
+De deadline is berekend: vijftien werkdagen terug vanaf vrijdag 18 december komt uit
+op **vrijdag 27 november**. Lever je tot 22 december, dan is het 1 december.
+
+### 2. Inspiratie, niet een schap
+
+De elf pakketten groot genoeg om te zien wat erin zit, met prijs en vanaf-aantal
+eronder. Niet gepresenteerd als "koop dit", maar als "dit is het soort dingen dat we
+maken".
+
+Nu zijn ze 133×90 px op een scherm van 390 breed. Daar kun je niet op zien wat een
+pakket is, en dat is nou juist de hele functie van een inspiratieblok.
+
+### 3. De uitnodiging
+
+Dit is de kern van de nieuwe opdracht. Na de voorbeelden, niet ervoor:
+
+> **Of daag ons uit.**
+> Heb je zelf een idee? Vertel wat je wil weggeven, dan zoeken we uit of het kan.
+> We maken het als het een goed verhaal heeft, origineel is en in Europa gemaakt kan
+> worden.
+
+Die drie eisen zijn geen drempel maar een kader: ze zeggen wat voor opdracht je leuk
+vindt, en ze maken meteen duidelijk waar je voor staat.
+
+**Eén hoofdknop.** Twee gelijkwaardige knoppen, "koop dit pakket" naast "vertel je
+idee", laat mensen stilstaan. De uitnodiging wordt de hoofdknop, de pakketten houden
+elk hun eigen rustige link.
+
+### 4. Daarna pas het bewijs
+
+Klantlogo's, het vergelijkblok, proefdruk binnen één werkdag, services. Dat is
+geruststelling en het hoort ná de vraag, niet ervoor.
+
+## Wat dit raakt in de rest van het plan
+
+**Punt 18, de showroom.** Dit is precies waar dat voor bedoeld is. "Vertel wat je wil
+weggeven" en dan binnen een werkdag een eigen voorstel terugsturen, dat is de showroom.
+De kerstpagina wordt daarmee de eerste echte ingang ervan.
+
+**Punt 14, de tegenstrijdigheid over minimale afname.** Voor deze pagina is die
+opgelost: elf pakketten, allemaal vanaf 10. De tegenspraak zit in de FAQ-tekst, en die
+kan gewoon weg.
+
+**Punt 26, elke conversie zijn eigen gebeurtenis.** Als de uitnodiging een eigen
+formulier of route krijgt, moet die een eigen gebeurtenis hebben. Anders weet je niet
+of mensen kopen of uitdagen.
+
+## Nog open
+
+- De levertijd per pakket. De deadline van vijftien werkdagen hebben we nu, maar wat
+  een inkoper op de productpagina ziet is nog niets.
+- Of de inspiratie alleen uit de elf kerstpakketten komt of breder uit de catalogus.
