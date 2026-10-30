@@ -141,13 +141,24 @@ gelijk; 8 gedeeld skill tegen showroom, allemaal gelijk. Wat hier wel staat en i
 skill niet: `--rg-space-md/lg/xl` en `--rg-text-display`, lay-out van deze site en geen
 huisstijl.
 
-**Begin geen vierde spacingschaal.** Er waren er drie. `--rg-e1..e6` werd door de
-merkgids voorgeschreven voor nieuw werk en werd nul keer aangeroepen; die is geschrapt,
-net als `--rg-space-xs` en `-sm`. Wat overblijft en echt gebruikt wordt is
-`--rg-space-md/lg/xl` (5 aanroepen, de verticale ritmiek van eyebrow naar kop naar subkop
-naar knop) en `--rg-s2/s3/s4` (7 aanroepen). `--rg-s1` en `--rg-s5` zijn ook dood maar
-staan er nog. Een ritme kiezen is een open besluit; gebruik tot die tijd wat er in de
-buurt al staat.
+**Begin geen derde spacingschaal.** Er waren er drie. `--rg-e1..e6` werd door de
+merkgids voorgeschreven voor nieuw werk en werd nul keer aangeroepen; geschrapt op
+30 oktober 2026, net als `--rg-space-xs`, `-sm`, `--rg-s1` en `--rg-s5`. Wat overblijft
+is wat echt gebruikt wordt:
+
+| Schaal | Aanroepen | Waarvoor |
+|---|---|---|
+| `--rg-space-md/lg/xl` | 5 | verticale ritmiek: eyebrow → kop → subkop → knop |
+| `--rg-s2/s3/s4` | 7 | stappen van 8 px |
+
+Welke van de twee de maat wordt is een open besluit. Gebruik tot die tijd wat er in de
+buurt al staat in plaats van iets nieuws te beginnen.
+
+**Drie tokens staan er bewust nog zonder gebruiker:** `--rg-hair` (de cognac hairline,
+het signatuurelement), `--rg-line` en `--rg-sh-rest`. Die staan alle drie ook in de
+merkgids, en "hairline boven schaduw" is daar een principe. Dat ze nu nergens worden
+aangeroepen betekent dat het principe nog niet toegepast is, niet dat het ballast is.
+Niet schrappen zonder dat de merkgids meebeweegt.
 
 **De showroom bewaakt zijn kant zelf:** sinds 30 oktober breekt de showroom-build af als
 zijn tokens afwijken van de merkgids, met beide waarden in de melding. Aan deze kant is

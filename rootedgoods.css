@@ -6333,7 +6333,9 @@ h2.rg-block-title__title,
   --rg-cream: #F7F5F2;        /* warm crème canvas */
   --rg-line: #EAE3D7;         /* subtiele lijnen/randen */
   /* Spacing-ritme: alles in stappen van 8px voor een rustig grid */
-  --rg-s1: .5rem; --rg-s2: 1rem; --rg-s3: 1.5rem; --rg-s4: 2rem; --rg-s5: 3rem;
+  /* s1 (.5rem) en s5 (3rem) stonden hier ook; op 30 oktober 2026 geschrapt,
+     want nergens aangeroepen. s2, s3 en s4 dragen samen zeven aanroepen. */
+  --rg-s2: 1rem; --rg-s3: 1.5rem; --rg-s4: 2rem;
 
   background: var(--rg-cream);
   font-family: 'Montserrat', system-ui, -apple-system, sans-serif;

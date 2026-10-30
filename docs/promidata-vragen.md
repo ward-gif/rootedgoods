@@ -206,23 +206,49 @@ maken met CSS.
 
 **Dit is de reden dat een wijziging soms dagen duurt voordat iedereen hem ziet.**
 De bestanden komen binnen met `Cache-Control: public, max-age=604800, s-maxage=43200`.
-Die `s-maxage` van twaalf uur geldt voor de jsDelivr-edge, en die kunnen we purgen.
-Maar `max-age=604800` is **zeven dagen in de browser van de bezoeker**, en die
-controleert in die week niet eens of er iets nieuws is. Een purge helpt daar niets
-tegen. Alleen een harde ververs of een incognitovenster forceert een nieuwe ophaling.
+Dat zijn twee problemen boven elkaar.
 
-Dat verklaart waarom een wijziging bij de een meteen zichtbaar is en bij de ander
-niet. Het raakt alles wat we dit najaar aanpassen: de cookieknoppen en de
-lettertypefix van 28 oktober bereiken terugkerende bezoekers pas over maximaal
-een week.
+**Eerst de browser.** `max-age=604800` is zeven dagen bij de bezoeker, en die
+controleert in die week niet eens of er iets nieuws is. Een purge helpt daar niets
+tegen; alleen een harde ververs of een incognitovenster forceert een nieuwe ophaling.
+Dat verklaart waarom een wijziging bij de een meteen zichtbaar is en bij de ander niet.
+
+**En daarboven de CDN, en dat wisten we tot 30 oktober 2026 niet.** De thema-head
+laadt `rootedgoods.min.css` en `rootedgoods.min.js` van `cdn.jsdelivr.net/gh/...@main`.
+Die geminificeerde bestanden staan niet in onze repo; jsDelivr maakt ze zelf, en
+cachet ze los van de onverkorte versies. Gemeten die dag, na een wijziging die we
+pushten en purgeden:
+
+| URL | omvang | bevat de geschrapte regel |
+|---|---|---|
+| `@main/rootedgoods.min.css` | 208.166 bytes | ja, dus verouderd |
+| `@<commit-sha>/rootedgoods.min.css` | 207.953 bytes | nee, dus actueel |
+
+De purge gaf `HTTP 200` en de `age`-header stond op `0`, maar de inhoud was de oude.
+Na drie purges nog steeds. De onverkorte variant verversde wél meteen. Een
+SHA-URL van dezelfde commit gaf ook meteen het nieuwe bestand. Het zit dus in de
+combinatie van `@main` en de minificatie van jsDelivr.
+
+**Gevolg:** een CSS-wijziging bereikt de bezoeker niet op het moment dat wij hem
+publiceren, maar pas als de edge vanzelf vervalt, tot twaalf uur later, en daarna
+nog eens tot zeven dagen per terugkerende bezoeker. Het raakt alles wat we dit
+najaar aanpassen: de cookieknoppen en de lettertypefix van 28 oktober bereikten
+terugkerende bezoekers pas na maximaal een week.
 
 **Vraag:** kan er een versie-query achter de twee URL's in het thema, dus
-`rootedgoods.css?v=2` en `rootedgoods.js?v=2`, die wij bij een release ophogen?
-Dan krijgt elke wijziging vanzelf een nieuwe URL die nooit uit de cache komt, en
-zijn purges en harde ververs niet meer nodig.
+`rootedgoods.min.css?v=2` en `rootedgoods.min.js?v=2`, die wij bij een release
+ophogen? Dan krijgt elke wijziging vanzelf een nieuwe URL die nooit uit een cache
+komt, en zijn purges en harde ververs niet meer nodig.
+
+Werkt een query niet, dan is een vaste commit-SHA in plaats van `@main` net zo
+goed: `cdn.jsdelivr.net/gh/ward-gif/rootedgoods@<sha>/rootedgoods.min.css`. Die URL
+is onveranderlijk en dus per definitie vers. Wij leveren de nieuwe SHA aan bij
+elke release. Dat kost wel een themawijziging per release, dus de query heeft onze
+voorkeur.
 
 **Prioriteit:** hoog. Dit is de enige van de lijst die alle andere wijzigingen
-sneller laat landen.
+sneller laat landen, en sinds de meting van 30 oktober weten we dat het niet alleen
+traag is maar dat een wijziging domweg niet aankomt zolang de edge hem niet loslaat.
 
 ### B4. Productslider, productboxMinWidth van 300 naar 400
 
