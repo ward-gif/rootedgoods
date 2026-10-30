@@ -20,3 +20,35 @@ met uitsluitingen op: met naam, baby, kerstbal, voor hem, voor haar.
 
 Groet,
 Ward
+
+---
+
+## Naschrift 30 oktober: het zoektermenrapport maakt het onontkoombaar
+
+Over 1 tot en met 29 oktober, uit het zoektermenrapport per netwerk:
+
+| Netwerk | Klikken | Vertoningen | Klikratio | Kosten | Conversies |
+|---|---:|---:|---:|---:|---:|
+| Google Zoeken | 700 | 6.873 | 10,2% | € 1.061,89 | 0 |
+| Zoekpartners | 222 | 335 | **66,3%** | € 172,13 | 0 |
+
+De drie grootste zoektermen van de maand zijn **allemaal partnerverkeer**:
+
+| Zoekterm | Klikken | Vertoningen | Klikratio | Kosten |
+|---|---:|---:|---:|---:|
+| kerstgeschenk voor klanten | 99 | 139 | 71% | € 91,53 |
+| luxe relatiegeschenken | 58 | 67 | 87% | € 33,54 |
+| originele relatiegeschenken | 42 | 53 | 79% | € 29,93 |
+
+Ter vergelijking, dezelfde periode op Google zelf: "relatiegeschenken met logo" 22 klikken
+op 94 vertoningen (23%), "gepersonaliseerd kerstcadeau" 10 op 103 (10%), "persoonlijk
+afscheidscadeau collega" 9 op 160 (5,6%).
+
+Twee dingen die dit erger maken dan alleen verspild geld:
+
+1. Een klikratio van 87% op een brede commerciële term is geen menselijk gedrag.
+2. Het zijn uitgerekend de **best passende** zoektermen van het hele account. Precies de
+   drie termen waarop je zou willen sturen, zijn dus onbruikbaar zolang partners aanstaan.
+
+**Let op bij het lezen van de nul conversies:** de meting was tot 29 oktober stuk. Die nul
+zegt dus net zoveel over onze tracking als over het verkeer. Vanaf nu meet hij wel.
