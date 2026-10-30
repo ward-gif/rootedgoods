@@ -47,6 +47,10 @@ fi
 SHA=$(git rev-parse HEAD)
 echo "HEAD: $SHA"
 
+# --- Edge-toestand vóór het purgen, om straks te weten of er iets veranderde ---
+voor_css=$(curl -s --max-time 30 "https://cdn.jsdelivr.net/$REPO/rootedgoods.css" | shasum | cut -d' ' -f1)
+voor_js=$(curl -s --max-time 30 "https://cdn.jsdelivr.net/$REPO/rootedgoods.js" | shasum | cut -d' ' -f1)
+
 # --- Purgen ---
 for f in "${BESTANDEN[@]}"; do
   code=$(curl -s -o /dev/null -w '%{http_code}' "https://purge.jsdelivr.net/$REPO/$f")
@@ -67,21 +71,49 @@ for f in rootedgoods.css rootedgoods.js; do
   fi
 done
 
-# --- En de .min-varianten die de site echt laadt, moeten vers opgehaald zijn ---
-for f in rootedgoods.min.css rootedgoods.min.js; do
-  leeftijd=$(curl -sI --max-time 30 "https://cdn.jsdelivr.net/$REPO/$f" | awk 'tolower($1)=="age:"{print $2+0}')
-  leeftijd=${leeftijd:-onbekend}
-  if [ "$leeftijd" != "onbekend" ] && [ "$leeftijd" -lt 120 ]; then
-    echo "OK      $f vers op de edge (age ${leeftijd}s)"
+# --- De .min-varianten, die de site echt laadt ---
+# Toets op inhoud, niet op de age-header. Die loog op 30 oktober 2026: na een purge
+# stond age op 0 terwijl er nog de oude CSS uit kwam.
+#
+# Alleen toetsen als de bron op de edge ook werkelijk veranderde. jsDelivr minificeert
+# zelf, en een @main die met een oudere minifier-versie gebouwd is wijkt af van een
+# verse SHA-build zonder dat er inhoudelijk iets mis is: op 30 oktober scheelde
+# rootedgoods.min.js 36 bytes terwijl de onverkorte js op @main, op de SHA en lokaal
+# byte voor byte gelijk was. Daar hard op falen is vals alarm.
+for paar in "rootedgoods.css:rootedgoods.min.css:$voor_css" "rootedgoods.js:rootedgoods.min.js:$voor_js"; do
+  bron=${paar%%:*}; rest=${paar#*:}; min=${rest%%:*}; voor=${rest#*:}
+  na=$(curl -s --max-time 30 "https://cdn.jsdelivr.net/$REPO/$bron" | shasum | cut -d' ' -f1)
+  if [ "$voor" = "$na" ]; then
+    echo "OVERGESLAGEN $min, $bron was al gelijk op de edge"
+    continue
+  fi
+  vers=$(curl -s --max-time 40 "https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@$SHA/$min" | shasum | cut -d' ' -f1)
+  nu=$(curl -s --max-time 40 "https://cdn.jsdelivr.net/$REPO/$min" | shasum | cut -d' ' -f1)
+  if [ "$vers" = "$nu" ]; then
+    echo "OK      $min op @main is gelijk aan @$(echo "$SHA" | cut -c1-7)"
   else
-    echo "STALE   $f heeft age ${leeftijd}s, de purge is niet doorgekomen" >&2
+    echo "STALE   $min op @main wijkt af van @$(echo "$SHA" | cut -c1-7)" >&2
+    echo "        De site laadt dit bestand, dus de bezoeker ziet nog het oude." >&2
     mislukt=1
   fi
 done
 
 if [ "$mislukt" -ne 0 ]; then
-  echo
-  echo "Niet alles is vers. Draai 'bin/publiceer.sh --alleen-purge' nog eens." >&2
+  cat >&2 <<'UITLEG'
+
+Niet alles is vers. Draai 'bin/publiceer.sh --alleen-purge' nog eens.
+
+Blijft een .min-bestand afwijken, dan is het geen tijdelijke vertraging maar het
+probleem van @main: jsDelivr geeft 200 op de purge en zet de age op 0, maar
+serveert de oude geminificeerde inhoud door. Herhaald purgen helpt dan niet.
+Gezien op 30 oktober 2026, en docs/kaart-assets.md waarschuwde er al voor bij de
+kaart-SVG's: "een purge komt niet altijd door".
+
+De echte oplossing zit in de thema-head, en die is van Promidata: een SHA of een
+versie-query achter de twee URL's in plaats van @main. Zie punt A3 in
+docs/promidata-vragen.md. Tot die tijd zakt de edge vanzelf binnen twaalf uur
+(s-maxage=43200).
+UITLEG
   exit 1
 fi
 

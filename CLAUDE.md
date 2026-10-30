@@ -15,22 +15,31 @@ iets over, dan hoort het hier of daar, nooit in allebei.
    in de repo; jsDelivr maakt ze zelf en **cachet ze apart van de onverkorte versies.**
    Purge je alleen `rootedgoods.css`, dan verandert er niets op de site. Dat is jarenlang
    zo gegaan. Gebruik `bin/publiceer.sh`, die purget alle vier en controleert het.
-2. **Purgen raakt de edge, niet de bezoeker.** De bestanden komen binnen met
+2. **`@main` laat zich niet betrouwbaar purgen, en dat is erger dan het klinkt.**
+   Op 30 oktober 2026 gemeten: na een purge gaf `rootedgoods.min.css` op `@main`
+   keurig 200 en `age: 0`, maar serveerde nog de oude inhoud. Drie purges later nog
+   steeds. Dezelfde commit via een SHA-URL gaf wel meteen de nieuwe. De `age`-header
+   is dus geen bewijs van versheid; `bin/publiceer.sh` toetst daarom op inhoud.
+   `docs/kaart-assets.md` waarschuwde hier al voor bij de kaart-SVG's, en de thema-head
+   laadt precies dat `@main`. De oplossing zit in de thema-head en is van Promidata:
+   een SHA of een versie-query. Zie punt A3 in `docs/promidata-vragen.md`. Tot die tijd
+   zakt de edge vanzelf binnen twaalf uur (`s-maxage=43200`).
+3. **Purgen raakt de edge, niet de bezoeker.** De bestanden komen binnen met
    `max-age=604800`: zeven dagen in de browser, en die controleert in die week niet of er
    iets nieuws is. Wie de site deze week bezocht, ziet je wijziging pas na die week of na
    een harde ververs. Zeg dat erbij als iemand vraagt waarom hij het nog niet ziet. De
    oplossing is een versie-query in de thema-URL, punt A3 in `docs/promidata-vragen.md`,
    nog niet aangevraagd.
-3. **Brace-check vóór elke push.** Eén ontbrekende `}` in `rootedgoods.css` sloopt stil
+4. **Brace-check vóór elke push.** Eén ontbrekende `}` in `rootedgoods.css` sloopt stil
    alles eronder. `bin/publiceer.sh` breekt af bij een diepte die niet 0 is.
-4. **Verwijs naar assets met een vaste commit-SHA, niet met `@main`.** Zie
+5. **Verwijs naar assets met een vaste commit-SHA, niet met `@main`.** Zie
    `docs/kaart-assets.md`. Bij `@main` komt een purge er niet altijd door en serveert de
    CDN per bestand nog het oude, waardoor kaarten onderling niet meer kloppen. Dat is twee
    keer misgegaan.
-5. **Elke wijziging via Promidata kost geld.** Verzamel ze in
+6. **Elke wijziging via Promidata kost geld.** Verzamel ze in
    `docs/promidata-vragen.md` en stuur ze in één mail, met de reden en het gemeten effect
    erbij. Navigatie is €250 tot €500, PDP boven de configurator €1000.
-6. **Meet in code, niet met het oog.** Ruwe uitvoer gaat naar `docs/metingen/`, ook als
+7. **Meet in code, niet met het oog.** Ruwe uitvoer gaat naar `docs/metingen/`, ook als
    hij lelijk is. Een export die je niet bewaart is een meting die nooit heeft
    plaatsgevonden. Zie de LEESMIJ daar.
 
