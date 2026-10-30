@@ -1,3 +1,32 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ===== HERO =====
+
+     ===== SIGNATUUR: TECHNIEK-TEGELS =====
+
+     ===== RIJ 1: advies over de juiste techniek =====
+
+     ===== RIJ 2 (gespiegeld): drukproef vooraf =====
+
+     ===== DONKERGROEN PANEEL: WAT MOGELIJK IS =====
+
+     ===== FAQ (subset; volledige FAQPage-schema staat op /faq) =====
+
+     ===== COMPACTE AFSLUIT-CTA =====
+-->
+<!-- ============================================================
+     SERVICE-DETAIL: PERSONALISATIE & DRUKWERK
+     Plak dit in EEN CMS HTML-blok op de service-pagina.
+     - Zelfde look & feel als de andere service-pagina's (.rg-sd), met als
+       signatuur-sectie de TECHNIEK-TEGELS (graveren/bedrukken/borduren/
+       foliedruk) i.p.v. de tijdlijn (full-service) of 3 stappen (warehousing).
+     - Vervang src="..." door echte product-close-ups per techniek (relatief
+       /media/... pad).
+     - FAQ-antwoorden zijn voorzetten — check de feiten voor livegang.
+     - Plak ONDER dit blok NIETS extra's: de compacte afsluit-CTA zit er al in.
+     ============================================================ -->
 <section class="rg-sd">
 
     <div class="rg-sd__hero">
@@ -151,6 +180,10 @@
     "serviceType": "Personalisatie en bedrukking van relatiegeschenken"
   }
   </script>
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

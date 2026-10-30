@@ -1,3 +1,32 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ===== HERO =====
+
+     ===== SIGNATUUR: EUROPA-KAART (distributie-bereik) =====
+
+     ===== RIJ 1: adreslijst =====
+
+     ===== RIJ 2 (gespiegeld): persoonlijk bezorgd =====
+
+     ===== DONKERGROEN PANEEL: WAT WIJ REGELEN =====
+
+     ===== FAQ (subset; volledige FAQPage-schema staat op /faq) =====
+
+     ===== COMPACTE AFSLUIT-CTA =====
+-->
+<!-- ============================================================
+     SERVICE-DETAIL: VERZENDING NAAR MEERDERE LOCATIES
+     Plak dit in EEN CMS HTML-blok op de service-pagina.
+     - Zelfde look & feel als de andere service-pagina's (.rg-sd), met als
+       signatuur-sectie de EUROPA-KAART (distributie-bereik) i.p.v. de tijdlijn
+       (full-service), 3 stappen (warehousing) of techniek-tegels (personalisatie).
+     - Vervang src="..." door echte sfeerbeelden (relatief /media/... pad).
+     - De kaart-SVG + pins zijn hergebruikt van de homepage-statement.
+     - FAQ-antwoorden zijn voorzetten — check de feiten voor livegang.
+     - De compacte afsluit-CTA zit al onderaan dit blok.
+     ============================================================ -->
 <section class="rg-sd">
 
     <div class="rg-sd__hero">
@@ -152,6 +181,10 @@
     "serviceType": "Verzending van relatiegeschenken naar meerdere adressen"
   }
   </script>
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

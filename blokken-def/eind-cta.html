@@ -1,4 +1,23 @@
-<section class="rg-endcta" aria-labelledby="rg-endcta-title">
+<!-- ============================================================
+     EIND-CTA — afsluitend statement-blok, als LAATSTE blok vóór de footer.
+     Sitebreed herbruikbaar (homepage, thema-, services-, merkenpagina's).
+     CSS staat in rootedgoods.css (sectie 39). Vervangt het oude
+     split-CTA-blok (.rg-cta).
+
+     Opzet: kop op het crème canvas (zelfde typografie-recept als de
+     Europa-statement, incl. .rg-em-accent), daaronder een compacte groene
+     actie-kaart met knoppen + beloftes + Richard. (Een handgeschreven
+     marge-notitie naast de kaart is geprobeerd en bewust weer verwijderd:
+     oogde zwevend/onaf naast de strakke kaart. De "vrijblijvend"-
+     geruststelling zit al in de subregel.)
+
+     Knoppen: "Vraag een offerte aan" -> /offerte, "Plan een kennismaking"
+     -> cal.com-popup (via data-cal-link, GEEN href/target). Richard-blok
+     eronder -> /contact.
+     TE VERVANGEN (optioneel): de kop per pagina (bv. Services-pagina:
+       "Ontzorging nodig? <em class="rg-em">Wij regelen alles.</em>")
+     ============================================================ -->
+  <section class="rg-endcta" aria-labelledby="rg-endcta-title">
 
     <div class="rg-endcta__head">
       <h2 class="rg-endcta__title" id="rg-endcta-title">Van idee tot ingepakt<br><em class="rg-em">Wij regelen alles</em></h2>
@@ -12,6 +31,8 @@
         <a class="btn rg-endcta__ghost" data-cal-link="rootedgoods/kennismakingsgesprek" data-cal-namespace="kennismakingsgesprek" data-cal-config='{"layout":"month_view","theme":"light"}' role="button" tabindex="0">Plan een kennismaking</a>
       </div>
 
+      <!-- Zelfde drie beloftes als in de hero: de pagina eindigt waar 'ie
+          begon (boekensteun). Bewust "geassembleerd", niet "100% gemaakt". -->
       <p class="rg-endcta__trust">
         <span class="rg-endcta__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.6l4 4 9-9.6"/></svg>Geassembleerd in Europa</span>
         <span class="rg-endcta__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.6l4 4 9-9.6"/></svg>Digitale drukproef</span>

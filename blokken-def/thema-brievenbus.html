@@ -1,3 +1,15 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ============================================================
+     THEMA-PAGINA: Brievenbuscadeaus
+     Plak dit als CMS-content op de thema-categoriepagina (/brievenbus).
+     Opbouw (elke sectie heeft een  ===== NAAM =====
+
+     ===== PRODUCT SLIDER: plaats hier het Shopware product-slider-element (thema brievenbus) =====
+-->
+<!-- ===== HERO ===== -->
 <section class="rg-page-hero">
   <div class="rg-page-hero__copy">
     <h1 class="rg-page-hero__title">Brievenbuscadeaus</h1>
@@ -19,6 +31,7 @@
   </div>
 </section>
 
+<!-- ===== INTRO + FEATURE-RIJ ===== -->
 <div class="rg-block-title rg-block-title--left">
   <h2 class="rg-block-title__title">Klein pakket, grote indruk</h2>
   <p class="rg-block-title__sub">Een cadeau dat gewoon op de mat valt, waar je medewerkers of klanten ook zitten.</p>
@@ -39,6 +52,7 @@
   </div>
 </div>
 
+<!-- ===== VERGELIJK-BLOK: positionering (niet/wel) ===== -->
 <section class="rg-compare">
   <div class="rg-compare__head">
     <p class="rg-compare__eyebrow">Klein formaat, grote indruk</p>
@@ -80,6 +94,7 @@
   </div>
 </section>
 
+  <!-- ===== FAQ (subset; volledige FAQPage-schema staat op /faq) ===== -->
   <div class="rg-sd__faq">
     <div class="rg-sd__head">
       <h2 class="rg-sd__head-title">Veelgestelde vragen</h2>
@@ -110,6 +125,7 @@
     <div class="rg-spec-cta"><a href="/faq" class="btn btn-outline-primary">Bekijk alle veelgestelde vragen</a></div>
   </div>
 
+  <!-- ===== SERVICES & ONTZORGING (3 spec-cards) ===== -->
   <div class="rg-block-title rg-block-title--left">
     <h2 class="rg-block-title__title">Services <span class="rg-amp">&amp;</span> ontzorging</h2>
     <p class="rg-block-title__sub">Wij leveren niet alleen het geschenk. Van personalisatie tot opslag en verzending nemen we het hele traject uit handen, jij houdt één aanspreekpunt.</p>
@@ -141,6 +157,7 @@
     <a href="/services/" class="btn btn-outline-primary">Bekijk alle services</a>
   </div>
 
+<!-- ===== EIND-CTA ===== -->
   <section class="rg-endcta" aria-labelledby="rg-endcta-title">
     <div class="rg-endcta__head">
       <h2 class="rg-endcta__title" id="rg-endcta-title">Van idee tot ingepakt<br><em class="rg-em">Wij regelen alles</em></h2>
@@ -172,6 +189,10 @@
     </div>
   </section>
 
+<!-- FAQPage-subset (exact de zichtbare vragen hierboven op deze pagina) —
+     LET OP: als Shopware het <script type="application/ld+json"> uit een
+     HTML-blok strípt bij opslaan, verplaats dit dan naar het thema (<head>)
+     i.p.v. hier — zelfde risico als faq.html al documenteert. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

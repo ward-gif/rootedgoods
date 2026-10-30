@@ -1,3 +1,22 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ============================================================
+     SERVICES-OVERZICHT — plak dit in een CMS HTML-blok op de Services-pagina.
+     - 4 services in EEN rij op desktop (2x2 op tablet, gestapeld op mobiel).
+     - Elke service = beeld + Playfair-titel + korte omschrijving + link.
+     - Vervang src="..." door een sfeerbeeld en href="#" door de juiste URL.
+     - .rg-service-card__link is optioneel per card (weglaten mag).
+     ============================================================
+-->
+<!-- Structured data (CollectionPage + ItemList van services) -- ontbrak
+     hier volledig (live gecheckt sep 2026). Elke service-detailpagina heeft
+     al z'n eigen Service-schema (zie de 4 service-detail-*.html-bestanden);
+     dit is alleen de overzichtslaag erboven. Namen/URL's hieronder komen
+     letterlijk overeen met de kaarten verderop in dit bestand.
+     LET OP: als Shopware dit script uit het HTML-blok strípt bij
+     opslaan, verplaats dan naar het thema (<head>) i.p.v. hier. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,6 +91,11 @@
   </div>
 </section>
 
+<!-- ============================================================
+     Afsluitende CTA — zelfde sitebrede blok als homepage/thema/merken
+     (zie eind-cta.html), hier met een kop specifiek voor deze pagina.
+     Ontbrak hiervoor: pagina stopte abrupt na de service-grid.
+     ============================================================ -->
 <section class="rg-endcta" aria-labelledby="rg-endcta-title">
 
   <div class="rg-endcta__head">

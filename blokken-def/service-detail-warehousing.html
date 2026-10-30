@@ -1,3 +1,32 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ===== HERO =====
+
+     ===== ZO WERKT HET: 3 STAPPEN =====
+
+     ===== RIJ 1: beeld links, tekst rechts =====
+
+     ===== RIJ 2 (gespiegeld): tekst links, beeld rechts =====
+
+     ===== DONKERGROEN PANEEL: WAT WIJ REGELEN =====
+
+     ===== FAQ (subset; volledige FAQPage-schema staat op /faq) =====
+
+     ===== COMPACTE AFSLUIT-CTA (i.p.v. het grote groene eind-CTA-blok) =====
+-->
+<!-- ============================================================
+     SERVICE-DETAIL: WAREHOUSING & FULFILLMENT
+     Plak dit in EEN CMS HTML-blok op de service-pagina.
+     - Dit is het template voor alle 4 service-pagina's; dupliceer en
+       pas eyebrow, titel, teksten, checklists en FAQ aan per service.
+     - Vervang src="..." door echte sfeerbeelden (relatief /media/... pad).
+     - FAQ-antwoorden zijn voorzetten — check de feiten (tarieven,
+       levertijden, voorwaarden) voordat dit live gaat.
+     - Plak ONDER dit blok het bestaande eind-CTA-blok (eind-cta.html)
+       als afsluiter met het Richard-contactblok.
+     ============================================================ -->
 <section class="rg-sd">
 
     <div class="rg-sd__hero">
@@ -141,6 +170,10 @@
     "serviceType": "Opslag en fulfillment van relatiegeschenken"
   }
   </script>
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

@@ -1,3 +1,19 @@
+<!-- ============================================================
+     PAGINA-LANDING — titel + subline + 2 cta's + logo's, beeld rechts.
+     Voor de landingssectie bovenaan pagina's als Thema's/Services (dus NIET
+     de homepage-hero). CSS staat al in rootedgoods.css (sectie 36, .rg-page-hero).
+     Plak dit als eerste blok op de pagina, in een CMS HTML-block.
+
+     TE VERVANGEN:
+       - Titel, subline
+       - 2x href="#" in de CTA's
+       - 3 beelden (src) in .rg-page-hero__media-item--a/b/c (a=klein
+         linksboven, b=klein linksonder, c=groot rechts, volle hoogte).
+         Elk beeld heeft een losse wrapper (.rg-page-hero__media-item) i.p.v.
+         style rechtstreeks op de <img> — nodig voor de filmkorrel-overlay
+         (::after op de wrapper, niet op de <img> zelf).
+       - Logo's in .rg-page-hero__logos (grayscale, kleuren in op hover)
+     ============================================================ -->
 <section class="rg-page-hero">
   <div class="rg-page-hero__copy">
     <h1 class="rg-page-hero__title">Titel van deze pagina</h1>

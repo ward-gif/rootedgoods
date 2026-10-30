@@ -1,3 +1,25 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ============================================================
+     THEMA-OVERZICHT — plak dit in een CMS HTML-blok op de Thema's-pagina.
+     Opzet: eyebrow-kop, daaronder een hero (1 uitgelicht + 2 middelgroot)
+     en een rij van 4, afgesloten met een "Bekijk alle producten"-CTA.
+     Doel (feedback Ward): het uitgelichte thema moet er duidelijk
+     uitspringen (hiërarchie), maar zonder dat de pagina eindeloos
+     scrollt -- op mobiel/tablet staan de middelgrote/kleine tegels dus
+     per twee naast elkaar i.p.v. allemaal vol-breed gestapeld.
+     - Uitgelicht = de tegel met class "rg-theme-tile--feature".
+     - CSS staat in rootedgoods.css (sectie 41.10/41.11 + .rg-theme-tile).
+     ============================================================
+-->
+<!-- Structured data (CollectionPage + ItemList van thema's) -- ontbrak hier
+     volledig (live gecheckt sep 2026). Thema's/URL's hieronder komen
+     letterlijk overeen met de tegels verderop -- bij toevoegen/verwijderen
+     van een thema daar, hier meenemen.
+     LET OP: als Shopware dit script uit het HTML-blok strípt bij
+     opslaan, verplaats dan naar het thema (<head>) i.p.v. hier. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,6 +48,7 @@
   <h1 class="rg-theme-heading">Shop op thema</h1>
   <p class="rg-theme-intro">Elke gelegenheid vraagt om een ander cadeau. Vind snel wat past bij het moment, van feestdagen tot events en van welkom-nieuwe-collega tot merchandise voor je collega's.</p>
 
+  <!-- ===== HERO: 1 uitgelicht + 2 middelgroot ===== -->
   <div class="rg-theme-hero">
     <a class="rg-theme-tile rg-theme-tile--feature" href="/eindejaarsgeschenken">
       <img class="rg-theme-tile__img" src="/media/d8/96/ae/1786435459/Kerst en Eindejaar (1).jpg" alt="Kerst en eindejaar">
@@ -56,6 +79,7 @@
     </a>
   </div>
 
+  <!-- ===== RIJ VAN 4 (2x2 op mobiel/tablet) ===== -->
   <div class="rg-theme-row4">
     <a class="rg-theme-tile" href="/dag-van-de-leraar">
       <img class="rg-theme-tile__img" src="/media/0b/4f/33/1785442348/Dag van de Leraar (1).jpg" alt="Dag van de leraar" loading="lazy" decoding="async">
@@ -95,6 +119,11 @@
   </div>
 </section>
 
+<!-- ============================================================
+     Afsluitende CTA — zelfde sitebrede blok als homepage/services/merken
+     (zie eind-cta.html), hier met een kop specifiek voor deze pagina.
+     Ontbrak hiervoor: pagina stopte na de "Bekijk alle producten"-link.
+     ============================================================ -->
 <section class="rg-endcta" aria-labelledby="rg-endcta-title">
 
   <div class="rg-endcta__head">

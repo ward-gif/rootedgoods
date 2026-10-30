@@ -1,3 +1,34 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ===== HERO =====
+
+     ===== PROCES-TIJDLIJN: DE COMPLETE ROUTE =====
+
+     ===== RIJ 1: één aanspreekpunt =====
+
+     ===== RIJ 2 (gespiegeld): drukproef / kwaliteit =====
+
+     ===== DEEL-DIENSTEN (hub -> spokes) =====
+
+     ===== DONKERGROEN PANEEL: WAAROM FULL-SERVICE =====
+
+     ===== FAQ (subset; volledige FAQPage-schema staat op /faq) =====
+
+     ===== COMPACTE AFSLUIT-CTA (i.p.v. het grote groene eind-CTA-blok) =====
+-->
+<!-- ============================================================
+     SERVICE-DETAIL: FULL-SERVICE ONTZORGING  (de "paraplu"-dienst / hub)
+     Plak dit in EEN CMS HTML-blok op de service-pagina.
+     - Zelfde look & feel als de warehousing-pagina (.rg-sd), maar bewust een
+       andere opbouw: proces-TIJDLIJN i.p.v. 3 stappen, plus een sectie die
+       doorlinkt naar de 3 deel-diensten (personalisatie / warehousing /
+       verzending) zodat de site-hiërarchie duidelijk blijft.
+     - Vervang src="..." door echte sfeerbeelden (relatief /media/... pad).
+     - Pas de deel-dienst-links aan als de slugs anders worden.
+     - Plak ONDER dit blok het bestaande eind-CTA-blok (eind-cta.html).
+     ============================================================ -->
 <section class="rg-sd">
 
     <div class="rg-sd__hero">
@@ -182,6 +213,10 @@
     "serviceType": "Full-service ontzorging relatiegeschenken"
   }
   </script>
+  <!-- Structured data: Service + FAQPage (subset, exact de vragen hierboven).
+       LET OP: als Shopware het script-tag uit dit CMS-blok strípt bij
+       opslaan, verplaats dit naar het thema (<head>) — zelfde risico als
+       faq.html al documenteert. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

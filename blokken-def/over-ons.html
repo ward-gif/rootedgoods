@@ -1,3 +1,81 @@
+<!-- Commentaar uit de oude conceptversie dat niet meer op een regel in dit
+     blok te verankeren was. Het blok is sinds het schrijven veranderd, dus
+     lees het als achtergrond, niet als beschrijving van de code hieronder.
+
+     ============================================================
+     OVER ONS v7 — "De Route van Rooted" (FASE 1: skelet, nog geen animatie)
+     Plak dit in een CMS HTML-blok op de Over ons-pagina (/over-ons).
+     CSS: rootedgoods.css sectie 42 (.rg-route). JS volgt in fase 2.
+
+     LET OP - assets (svg/ en beeld/) staan op een VASTE commit-SHA in de
+     jsDelivr-URL, niet op @main. Reden: @main wordt door de CDN gecached en
+     een purge komt niet altijd door, waardoor kaarten onderling inconsistent
+     renderen (oude en nieuwe versie door elkaar). Een SHA-URL is
+     onveranderlijk en dus altijd meteen correct. Wijzig je een asset, dan
+     moet de SHA in dit blok mee (en dus opnieuw plakken).
+
+     Opzet: een doorlopende kaartreis. De routelijn verbindt vier stops
+     (Porto -> Savoie -> Zwarte Woud -> Ede). Per stop schuift een
+     kaartlaag mee op de achtergrond. Sluit de pagina af met het bestaande
+     EIND-CTA-blok als volgend CMS-blok.
+
+     STRUCTUUR PER SEGMENT: elke routelijn bestaat uit twee identieke paden:
+       .rg-route__seg-base = zwakke stippellijn (nog af te leggen)
+       .rg-route__seg-line = solide cognac (afgelegd; fase 2 animeert deze)
+     Desktop- en mobielsegmenten zijn aparte SVG's met een VASTE aspect-ratio
+     (geen preserveAspectRatio="none", zie plan) zodat de lijn-animatie klopt.
+
+     Sfeerbeelden: kleine zwevende foto's per stop (.rg-route__shots), positie
+     en grootte per beeld via inline --x/--y/--w/--r. Nu nog dummy-media.
+     Kaartlagen: echte land-outlines uit svg/ (via jsDelivr). Hoogte per
+     stop via --map-h; ze bloeden naar de schermrand. Andere landen zijn
+     beschikbaar in svg/ (zie docs/kaart-assets.md).
+     ============================================================
+
+     Eén doorlopende routelijn over de volle hoogte. Het pad wordt door
+         rootedgoods.js (sectie 1.6) opgebouwd uit de werkelijke posities van
+         de stopmarkers: y strikt oplopend, alle variatie in x, dus de lijn
+         kan zichzelf niet kruisen. Loopt achter tekst en beelden langs.
+
+     het reizende merkteken (fase 2: reist mee op de punt van de lijn en
+         lost bij thuiskomst op in het volledige logo)
+
+     ===== PROLOOG =====
+
+     scroll-cue: los van de tekstkolom, gecentreerd onderaan de hero.
+         Geen koppeling meer met het merkteken/de route -- puur een
+         uitnodiging om te scrollen.
+
+     ===== DE ROUTE =====
+
+     segment: proloog -> stop 1
+
+     ===== STOP 1: PORTO =====
+
+     segment: stop 1 -> stop 2
+
+     ===== STOP 2: SAVOIE =====
+
+     segment: stop 2 -> stop 3
+
+     ===== STOP 3: ZWARTE WOUD (onze naam) =====
+
+     segment: stop 3 -> stop 4 (thuiskomst)
+
+     ===== STOP 4: EDE (thuis, de belofte) =====
+
+     ===== EPILOOG: HET TEAM =====
+
+     collage: de founders-foto zweeft, met kleine beelden eromheen
+
+     contactkaart: ingezoomd Nederland met een pin op Ede
+-->
+<!-- Structured data (AboutPage) -- ontbrak hier volledig (live gecheckt
+     sep 2026, zie ook de LET-OP in rootedgoods.html over de drie los-
+     gegroeide plakversies). Tekst hier komt letterlijk overeen met de
+     live title/meta-description van deze pagina, niet verzonnen.
+     LET OP: als Shopware dit script uit het HTML-blok strípt bij
+     opslaan, verplaats dan naar het thema (<head>) i.p.v. hier. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
