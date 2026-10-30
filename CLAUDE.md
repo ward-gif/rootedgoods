@@ -127,9 +127,18 @@ niet in de CSS.
 python3 "../merk/merk-gelijk.py"
 ```
 
-Stand 30 oktober 2026: 25 gedeelde tokens site tegen skill, allemaal gelijk; 8 gedeeld
-skill tegen showroom, allemaal gelijk. Alleen de vijf `--rg-space-*` van de site staan
-niet in de skill.
+Stand 30 oktober 2026, na het opruimen: 19 gedeelde tokens site tegen skill, allemaal
+gelijk; 8 gedeeld skill tegen showroom, allemaal gelijk. Wat hier wel staat en in de
+skill niet: `--rg-space-md/lg/xl` en `--rg-text-display`, lay-out van deze site en geen
+huisstijl.
+
+**Begin geen vierde spacingschaal.** Er waren er drie. `--rg-e1..e6` werd door de
+merkgids voorgeschreven voor nieuw werk en werd nul keer aangeroepen; die is geschrapt,
+net als `--rg-space-xs` en `-sm`. Wat overblijft en echt gebruikt wordt is
+`--rg-space-md/lg/xl` (5 aanroepen, de verticale ritmiek van eyebrow naar kop naar subkop
+naar knop) en `--rg-s2/s3/s4` (7 aanroepen). `--rg-s1` en `--rg-s5` zijn ook dood maar
+staan er nog. Een ritme kiezen is een open besluit; gebruik tot die tijd wat er in de
+buurt al staat.
 
 **De showroom bewaakt zijn kant zelf:** sinds 30 oktober breekt de showroom-build af als
 zijn tokens afwijken van de merkgids, met beide waarden in de melding. Aan deze kant is

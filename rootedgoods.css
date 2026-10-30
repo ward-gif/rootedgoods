@@ -5062,7 +5062,6 @@ h2.rg-story__title,
   --rg-text-display: clamp(2.6rem, 1.4rem + 3.5vw, 4.5rem);
   /* Spacing-ritme: strak binnen een groep (eyebrow+kop+sub), ruimer als
      groep-breuk (sub -> actie). Dat groepeert i.p.v. "los zand". */
-  --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);   /* knop -> reassurance */
   --rg-space-md: clamp(0.8rem, 0.7rem + 0.4vw, 1.05rem);   /* eyebrow -> kop */
   --rg-space-lg: clamp(1rem, 0.8rem + 0.7vw, 1.35rem);     /* kop -> subkop */
   --rg-space-xl: clamp(1.75rem, 1.3rem + 1.4vw, 2.6rem);   /* subkop -> knop */
@@ -8371,17 +8370,13 @@ h1.rg-contact-head__title,
   --rg-sh-rest:0 1px 0 rgba(45,69,40,.04);
   --rg-sh-soft:0 12px 28px -20px rgba(45,69,40,.38);
   --rg-sh-deep:0 26px 50px -30px rgba(45,69,40,.45);
-  /* niet-lineaire spacing */
-  --rg-e1:.5rem; --rg-e2:.85rem; --rg-e3:1.35rem; --rg-e4:2.25rem;
-  --rg-e5:3.75rem; --rg-e6:6rem;
   /* Spacing-ritme xs-xl: was alleen gescoped op .rg-statement (sectie 29),
      maar wordt inmiddels ook buiten die sectie aangeroepen (o.a. .rg-route)
      -- daar loste var(--rg-space-lg) dus naar niets op. Hier globaal
-     gemaakt met dezelfde waarden, plus xs erbij. .rg-statement's eigen
+     gemaakt met dezelfde waarden. xs en sm stonden hier ook, maar riep niemand
+     aan; op 30 oktober 2026 geschrapt. .rg-statement's eigen
      kopie blijft gewoon staan en wint lokaal (gelijke specificiteit, maar
      dichter bij het element in de boom via scoping op de class zelf). */
-  --rg-space-xs: clamp(0.3rem, 0.25rem + 0.2vw, 0.5rem);
-  --rg-space-sm: clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
   --rg-space-md: clamp(0.8rem, 0.7rem + 0.4vw, 1.05rem);
   --rg-space-lg: clamp(1rem, 0.8rem + 0.7vw, 1.35rem);
   --rg-space-xl: clamp(1.75rem, 1.3rem + 1.4vw, 2.6rem);
