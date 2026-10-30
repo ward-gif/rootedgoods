@@ -83,8 +83,15 @@ done
 for paar in "rootedgoods.css:rootedgoods.min.css:$voor_css" "rootedgoods.js:rootedgoods.min.js:$voor_js"; do
   bron=${paar%%:*}; rest=${paar#*:}; min=${rest%%:*}; voor=${rest#*:}
   na=$(curl -s --max-time 30 "https://cdn.jsdelivr.net/$REPO/$bron" | shasum | cut -d' ' -f1)
+  lokaal=$(shasum "$HIER/$bron" | cut -d' ' -f1)
+  if [ "$na" != "$lokaal" ]; then
+    # De bron zelf is nog niet vers; dat is hierboven al gemeld. De geminificeerde
+    # variant hierop toetsen zegt dan niets.
+    echo "OVERGESLAGEN $min, $bron staat zelf nog niet vers op de edge"
+    continue
+  fi
   if [ "$voor" = "$na" ]; then
-    echo "OVERGESLAGEN $min, $bron was al gelijk op de edge"
+    echo "OVERGESLAGEN $min, $bron was al vers en onveranderd"
     continue
   fi
   vers=$(curl -s --max-time 40 "https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@$SHA/$min" | shasum | cut -d' ' -f1)

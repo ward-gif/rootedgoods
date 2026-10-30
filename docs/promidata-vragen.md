@@ -225,9 +225,19 @@ pushten en purgeden:
 | `@<commit-sha>/rootedgoods.min.css` | 207.953 bytes | nee, dus actueel |
 
 De purge gaf `HTTP 200` en de `age`-header stond op `0`, maar de inhoud was de oude.
-Na drie purges nog steeds. De onverkorte variant verversde wél meteen. Een
-SHA-URL van dezelfde commit gaf ook meteen het nieuwe bestand. Het zit dus in de
-combinatie van `@main` en de minificatie van jsDelivr.
+Na drie purges nog steeds. Een SHA-URL van dezelfde commit gaf wél meteen het
+nieuwe bestand.
+
+Later die dag werd het erger: ook de ónverkorte `@main/rootedgoods.css` liet zich
+niet meer verversen. De purge gaf `HTTP 200`, maar de `age`-header liep gewoon
+door (481 seconden) en de inhoud bleef de oude. Dezelfde commit via de SHA-URL
+stond op `age: 0` met de nieuwe inhoud. De commit stond op dat moment bevestigd
+op GitHub. De purge-aanroep slaagt dus wel, maar doet niets; vermoedelijk een
+limiet op het aantal purges per periode.
+
+**Dat betekent dat wij geen enkele manier hebben om een wijziging af te dwingen.**
+Wij kunnen pushen en purgen, maar of de bezoeker het krijgt bepaalt de cache van
+jsDelivr.
 
 **Gevolg:** een CSS-wijziging bereikt de bezoeker niet op het moment dat wij hem
 publiceren, maar pas als de edge vanzelf vervalt, tot twaalf uur later, en daarna
@@ -240,11 +250,16 @@ terugkerende bezoekers pas na maximaal een week.
 ophogen? Dan krijgt elke wijziging vanzelf een nieuwe URL die nooit uit een cache
 komt, en zijn purges en harde ververs niet meer nodig.
 
-Werkt een query niet, dan is een vaste commit-SHA in plaats van `@main` net zo
-goed: `cdn.jsdelivr.net/gh/ward-gif/rootedgoods@<sha>/rootedgoods.min.css`. Die URL
-is onveranderlijk en dus per definitie vers. Wij leveren de nieuwe SHA aan bij
-elke release. Dat kost wel een themawijziging per release, dus de query heeft onze
-voorkeur.
+**Beter nog: een vaste commit-SHA in plaats van `@main`**, dus
+`cdn.jsdelivr.net/gh/ward-gif/rootedgoods@<sha>/rootedgoods.min.css`. Die URL is
+onveranderlijk en daarom per definitie vers; er valt niets te cachen wat verkeerd
+kan gaan. Wij leveren de nieuwe SHA aan bij elke release.
+
+Allebei de oplossingen kosten evenveel: bij een versie-query moet `?v=2` naar `?v=3`
+bij elke release, bij een SHA moet de SHA mee. In beide gevallen is dat één
+themawijziging per release. Omdat de SHA niet van een cache afhangt en de query
+wel, heeft de SHA onze voorkeur. Het liefst zouden wij die regel zelf kunnen
+bijwerken; kan dat, dan hoeft het jullie na de eerste keer geen tijd meer te kosten.
 
 **Prioriteit:** hoog. Dit is de enige van de lijst die alle andere wijzigingen
 sneller laat landen, en sinds de meting van 30 oktober weten we dat het niet alleen

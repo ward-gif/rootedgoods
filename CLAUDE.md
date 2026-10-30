@@ -15,15 +15,21 @@ iets over, dan hoort het hier of daar, nooit in allebei.
    in de repo; jsDelivr maakt ze zelf en **cachet ze apart van de onverkorte versies.**
    Purge je alleen `rootedgoods.css`, dan verandert er niets op de site. Dat is jarenlang
    zo gegaan. Gebruik `bin/publiceer.sh`, die purget alle vier en controleert het.
-2. **`@main` laat zich niet betrouwbaar purgen, en dat is erger dan het klinkt.**
-   Op 30 oktober 2026 gemeten: na een purge gaf `rootedgoods.min.css` op `@main`
-   keurig 200 en `age: 0`, maar serveerde nog de oude inhoud. Drie purges later nog
-   steeds. Dezelfde commit via een SHA-URL gaf wel meteen de nieuwe. De `age`-header
-   is dus geen bewijs van versheid; `bin/publiceer.sh` toetst daarom op inhoud.
+2. **Een purge op `@main` is geen garantie, en soms doet hij niets.** Gemeten op
+   30 oktober 2026: `purge.jsdelivr.net` gaf `HTTP 200`, de `age`-header stond op `0`,
+   en `rootedgoods.min.css` serveerde nog de oude inhoud. Drie purges later nog steeds.
+   Later die dag ververste ook de onverkorte `@main` niet meer: `HTTP 200` op de purge,
+   maar `age` liep gewoon door naar 481 en de inhoud bleef oud. Dezelfde commit via een
+   SHA-URL stond op `age: 0` met de nieuwe inhoud.
+
+   **Wij kunnen een wijziging dus niet afdwingen.** `bin/publiceer.sh` toetst daarom op
+   inhoud en niet op de `age`-header, en zegt het eerlijk als het niet gelukt is. Loopt
+   het vast: de edge zakt vanzelf binnen twaalf uur (`s-maxage=43200`), of je controleert
+   met een SHA-URL of de commit wél goed op jsDelivr staat.
+
    `docs/kaart-assets.md` waarschuwde hier al voor bij de kaart-SVG's, en de thema-head
-   laadt precies dat `@main`. De oplossing zit in de thema-head en is van Promidata:
-   een SHA of een versie-query. Zie punt A3 in `docs/promidata-vragen.md`. Tot die tijd
-   zakt de edge vanzelf binnen twaalf uur (`s-maxage=43200`).
+   laadt precies dat `@main`. De structurele oplossing is van Promidata: een SHA in de
+   thema-head. Zie punt A3 in `docs/promidata-vragen.md`.
 3. **Purgen raakt de edge, niet de bezoeker.** De bestanden komen binnen met
    `max-age=604800`: zeven dagen in de browser, en die controleert in die week niet of er
    iets nieuws is. Wie de site deze week bezocht, ziet je wijziging pas na die week of na
