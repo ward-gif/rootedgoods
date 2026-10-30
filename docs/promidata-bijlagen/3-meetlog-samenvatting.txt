@@ -1,0 +1,22 @@
+dict_keys(['tijdstip', 'pagina', 'http', 'ttfb_s', 'age', 'bytes'])
+/huis-keuken/ 29 min 0.952068 med 3.95 p90 6.74037 max 18.273571
+/ 29 min 0.793578 med 2.07 p90 4.218181 max 10.685947
+/Pulltap-s-kelnersmes/A267-8050.100-1KL 29 min 0.651583 med 0.91 p90 1.322738 max 4.780432
+/checkout/cart 29 min 0.277152 med 0.35 p90 0.392373 max 0.450599
+/robots.txt 29 min 0.188127 med 0.22 p90 0.241069 max 0.252272
+2026-10-12 10:06:35 2026-10-12 14:50:56
+Counter({'200': 145})
+--- age
+('/', '0-1') 13 med 1.01 max 1.686271
+('/', '>1') 16 med 3.45 max 10.685947
+('/Pulltap-s-kelnersmes/A267-8050.100-1KL', '0-1') 29 med 0.91 max 4.780432
+('/checkout/cart', 'leeg') 29 med 0.35 max 0.450599
+('/huis-keuken/', '0-1') 21 med 2.79 max 5.375675
+('/huis-keuken/', '>1') 8 med 6.28 max 18.273571
+('/robots.txt', 'leeg') 29 med 0.22 max 0.252272
+--- per uur /huis-keuken/
+10 6 med 1.13 max 2.794409
+11 6 med 4.8 max 18.273571
+12 6 med 4.45 max 6.74037
+13 5 med 4.05 max 7.705364
+14 6 med 3.39 max 5.826238

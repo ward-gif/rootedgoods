@@ -17,6 +17,8 @@ is een meting die nooit heeft plaatsgevonden.
 | `tagassistant/` | Sessies uit GTM-voorbeeldmodus, per onderwerp, met datum voorop. |
 | `psi-*.json` | PageSpeed Insights, ruwe uitvoer van `bin/psi.sh`. |
 | `nulmeting-*.md` | Een vastgelegd vertrekpunt met de filters erbij, zodat de nameting dezelfde vraag stelt. |
+| `2026-10-12-traagheid/` | TTFB van vijf paginatypes, elke tien minuten gelogd door `meet.sh`. Stond tot 30 oktober los naast de repo. |
+| `2026-10-27-beeldgewicht/` | Gewicht van de productbeelden per pagina (`omzetlijst.csv`) plus vier omgezette JPEG's. Stond tot 30 oktober los naast de repo. |
 
 ## Naamgeving
 

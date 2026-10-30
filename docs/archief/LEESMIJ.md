@@ -12,6 +12,7 @@ verbeterplan.
 | `post-golive-audit.md` | bevindingen ná livegang, 28 aug | Idem. |
 | `plan-van-aanpak-optimalisatie.md` | uitvoeringsplan na livegang, 28 aug | Geen enkel open punt meer, en vervangen door de Q4-diagnose. |
 | `promidata-todos.md` | Promidata-lijst, april tot augustus | De twee punten die nog openstonden zijn op 28 oktober overgezet naar `docs/promidata-vragen.md` als A3 en B4. A3 is de browsercache van zeven dagen, en dat is belangrijker dan het ooit leek. |
+| `2026-04-project-context.md` | de eerste contextnotitie, april 2026 | Beschrijft de Promidata-beperkingen en de oude huisstijl. Wat er nog van klopt staat in `docs/promidata-vragen.md` en in de `rootedgoods` skill. |
 
 **Blijft bewust buiten het archief:** `pdp-optimizations-backlog.md`. Dat is geen
 afgerond document maar een lopende ideeënlijst voor de product- en

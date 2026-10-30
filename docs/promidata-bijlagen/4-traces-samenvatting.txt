@@ -1,0 +1,17 @@
+Chrome Performance-traces, 2026-10-12, rootedgoods.eu, desktop Chrome, kliks vanuit de browser.
+Wachttijd = van start navigatie tot ontvangst HTML (commit). Per klik, n=1 per regel.
+
+Trace 14:45 (19,9 s)
+  klik 1: start 7,28 s, commit 8,45 s, wachttijd 1,17 s, FCP 8,63 s
+  klik 2: start 11,76 s, commit 15,71 s, wachttijd 3,95 s, FCP 15,88 s
+  hoofdthread in de 4 s na klik 2: 47 ms RunTask (stil)
+
+Trace 14:47 (193 s)
+  opening /                      0,84 s
+  klik naar /drinkwaren/        12,04 s   (hoofdthread 6 tot 11% bezet)
+  klik naar /kantoor-schrijfwaren/ 5,64 s
+  klik naar /                    0,82 s
+  na commit: FCP binnen 0,17 tot 0,25 s; 7 taken boven 50 ms in de hele trace, langste 215 ms
+
+Afleiding: klikmomenten bepaald uit navigationStart zonder eerdere commit; kloktijden van de klikken niet vastgelegd.
+De ruwe traces en de HAR zijn niet bijgevoegd (HAR bevat cookies en headers). Op verzoek te leveren na opschonen.
