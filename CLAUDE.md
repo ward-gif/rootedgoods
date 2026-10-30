@@ -69,6 +69,25 @@ Override-extensie in de browser `rootedgoods.min.css` van de live site vervangen
 `http://localhost:8000/rootedgoods.css`. Zo zie je je verse CSS op de echte site zonder
 te pushen. Het venster open laten staan; sluiten stopt de server.
 
+Het script stopt eerst wat er op 8000 draait, van onszelf of niet, en controleert daarna
+of het `rootedgoods.css` ook werkelijk kan leveren: 200, en evenveel bytes als het bestand
+op schijf. Lukt dat niet, dan stopt het en zegt waarom. Daarna kijkt het elke minuut
+opnieuw en roept in hetzelfde venster als het alsnog misgaat.
+
+**Als de site er ineens kaal uitziet, kijk hier eerst.** Op 30 oktober 2026 stond er een
+losse `python3 -m http.server 8000`, gestart uit een map die daarna verplaatst was. Hij
+bleef luisteren en gaf 404 op alles. Resource Override haalde die foutpagina van 469 bytes
+op als stylesheet, dus alle eigen CSS viel weg en alleen het Shopware-thema bleef over. Er
+zei niets waarom, en het leek op een CDN- of cacheprobleem. Een server die draait is niet
+hetzelfde als een server die werkt:
+
+```bash
+curl -s -o /dev/null -w '%{http_code} %{size_download}\n' http://localhost:8000/rootedgoods.css
+```
+
+Je wilt hetzelfde aantal bytes zien als `wc -c < rootedgoods.css`. Krijg je `404 469`, dan
+is dit het. Ook snel: Resource Override uitzetten, dan laadt de site weer van jsDelivr.
+
 **Losse preview.** `_preview.html` op poort 8010, voor een blok los van de site. Staat in
 `.gitignore` en blijft lokaal. Alleen renderen als Ward erom vraagt.
 
