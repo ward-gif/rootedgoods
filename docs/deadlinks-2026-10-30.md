@@ -3,35 +3,52 @@
 Aanleiding: twee Clarity-sessie-inzichten die allebei op een **dead click** wezen.
 Alles hieronder is nagemeten, niet gegokt.
 
-## 1. "Bekijk alle producten" in de hoofdnavigatie gaat nergens heen
+## 1. De lege `/search?search=`-link is van onszelf, en hij staat verborgen
 
-**Dit is de belangrijkste, en het verklaart precies wat Clarity meldde.**
+**Herzien op 30 oktober 2026. De eerste versie van dit punt klopte niet, en de
+conclusie draait om.**
 
-In de flyout "Onze categorieën" staat een knop *Bekijk alle producten* met:
+Er bestaat inderdaad een link met `href="/search?search="` en de tekst
+*Bekijk alle producten*. Maar:
 
-```
-href="/search?search="
-```
+1. **Wij maken hem zelf.** `rootedgoods.js`, sectie 1.3, regel 221 tot 242, zet na
+   `DOMContentLoaded` een extra kolom in de categorie-flyout en vult die met
+   `<a href="/search?search=" class="btn btn-primary">Bekijk alle producten</a>`.
+   Het is geen instelling in Shopware en geen onderdeel van het thema.
+2. **Wij verbergen hem zelf weer.** `rootedgoods.css` rond regel 1425:
 
-Een zoekopdracht zonder zoekterm. Die URL geeft http 200, maar rendert **de homepage
-opnieuw, met nul producten**. De bezoeker klikt op "bekijk alle producten" en belandt op
-iets dat eruitziet als de pagina waar hij vandaan kwam.
+   ```css
+   /* CTA-knop in de categorie-flyout verbergen. */
+   .flyout-cta-col,
+   .flyout-cta-col a.btn { display: none !important; }
+   ```
 
-Clarity zag het zo: *"Rond 00:08 klikte de gebruiker op Bekijk alle producten, maar dit
-resulteerde in een dead click. Er werden geen verdere interacties geregistreerd, waarna
-de sessie kort daarna eindigde."*
+Gemeten op de live site, desktop 1440 en mobiel 390: de ouder
+`.col-md-3.navigation-flyout-category.flyout-cta-col` heeft `display: none` en het
+element meet 0 bij 0 pixels. **Geen bezoeker kan erop klikken.**
 
-De knop staat in de **hoofdnavigatie**, dus op elke pagina van de site.
+**Dus:** dit is dode code, geen dode link. Er valt in Shopware niets te repareren.
+De opruiming is het verwijderen van sectie 1.3 uit `rootedgoods.js` plus de twee
+regels in de CSS die hem verbergen. Dat kan mee met de volgende plakronde.
 
-**Wat het moet zijn:** `/alle-producten/`.
+**En dus ook:** de dode klik die Clarity meldde (*"klikte op Bekijk alle producten,
+dead click, sessie eindigde"*) is hiermee **niet** verklaard. Alle zichtbare knoppen
+met die tekst zijn nagelopen en werken:
 
-**Waar het zit:** niet in onze blokken. De link staat niet in de server-HTML en wordt
-client-side opgebouwd in `div.navigation-flyouts`. Dat is de mega-menu van het thema.
-Onze eigen JS (sectie 2.0b) verplaatst op mobiel wel een link met die tekst, maar maakt
-de `href` niet; die komt uit de navigatie-instelling.
+| Link | Status |
+|---|---|
+| `/alle-producten/` (hero) | 200 |
+| `/thema-s/dag-van-de/` | 200 |
+| `/thema-s/made-in-nl/` | 200 |
+| `/thema-s/medewerker-merchandise/` | 200 |
+| `/thema-s/events-conferenties/` | 200 |
+| `/thema-s/brievenbus/` | 200 |
+| `/thema-s/kerstpakketten-eindejaar/` | 200 |
+| `/thema-s/onboarding/` | 301 naar `/thema-s/onboarding-welkom/` |
 
-**Te controleren:** in Shopware onder Catalogus of Inhoud, bij de categorie "Onze
-categorieën", staat waarschijnlijk een ingestelde link die leeg is gebleven.
+De oorzaak blijft dus open. De waarschijnlijkste verklaring die overblijft is traagheid:
+de catalogus weegt mobiel 8,4 MB, en een klik waarna acht seconden niets gebeurt telt
+in Clarity als een dode klik. Bewezen is dat niet.
 
 ## 2. Een klantlogo op de homepage linkt naar een bestandsnaam
 

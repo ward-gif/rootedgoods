@@ -161,12 +161,47 @@ Op `/alle-producten/` treden twee fouten op: `json parse error: unexpected eof` 
 terug waar JSON verwacht wordt. Lage frequentie (2 sessies in oktober), maar het is een
 echte fout.
 
-### E2. Layoutverschuiving op de desktopcatalogus
+### E2. De categorienavigatie staat niet op mobiel
 
-`/alle-producten/` heeft op desktop een CLS van 0,343, ruim boven de slechte-drempel.
-Het meest aangeklikte element daar is een lege `DIV.cms-section-sidebar-sidebar-content`
-met 9 klikken op iets dat geen link is. Vermoedelijk schuift de categorielijst na het
-laden weg onder de cursor.
+**Herzien op 30 oktober 2026, na eigen meting. De oorspronkelijke vraag ging over een
+layoutverschuiving; die is er niet.**
+
+Wat ik gemeten heb op `/alle-producten/`, met Chrome en een `layout-shift`-observer,
+vier keer, inclusief doorscrollen tot onderaan:
+
+| Conditie | CLS |
+|---|---:|
+| desktop 1440, snelle verbinding | 0,0139 |
+| desktop 1440, 1,6 Mbps, scrollend | 0,0028 |
+| mobiel 390, 1,6 Mbps, scrollend | 0,0362 |
+
+Allemaal ruim onder de 0,1 die "goed" heet. De 0,343 uit Clarity krijg ik niet
+gereproduceerd. Die komt uit veldmetingen en kan uit een deelverzameling sessies komen.
+**Niets te vragen aan Promidata, en niets te doen, tot Clarity het opnieuw meldt.**
+
+De negen klikken op `DIV.cms-section-sidebar-sidebar-content` zijn ook verklaard, en
+anders dan gedacht. Die kolom is op desktop 340 px breed en **4.377 px hoog**, terwijl de
+dertien categorielinks al op 688 px ophouden. Daaronder zit dus **3.902 px lege,
+aanklikbare kolom** naast het productraster. Daar landen die klikken. Geen kapotte link,
+wel een kolom die doorloopt zonder inhoud.
+
+**Wat wél een echt punt is, en nieuw:** op schermen onder 768 px wordt het hele blok
+verborgen door
+
+```css
+@media (max-width: 767.98px) { .cms-block-category-navigation { display: none } }
+```
+
+Die regel komt **niet uit onze CSS** maar uit het thema. Gevolg: de dertien
+categorielinks staan wel in de HTML, maar renderen op 0 bij 0 pixels. Een
+mobiele bezoeker op de catalogus heeft dus geen categorienavigatie in de pagina, alleen
+de flyout achter het hamburgermenu. Mobiel is 67 procent van al het verkeer en 87 procent
+van het advertentieverkeer.
+
+**Vraag aan Promidata:** is dat een bewuste themakeuze, en kunnen we die regel
+overschrijven zonder dat er iets anders stukgaat? Wij kunnen hem zelf overrulen in
+`rootedgoods.css`, maar als het thema erop rekent dat dat blok mobiel weg is, willen we
+dat eerst weten.
 
 ### E3. Redirect op de kerstpagina
 
