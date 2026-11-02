@@ -97,15 +97,41 @@ Daarmee valt de letterlijke Listed Wines-hero af, tenzij we de hero opsplitsen: 
 de kop, en daaronder meteen het Shopware-blok. Dat is geen compromis maar waarschijnlijk beter,
 want het scheelt het handmatig bijhouden van prijzen in geplakte HTML.
 
-**Open vragen voor Shopware**, en dit bepaalt wat er kan:
+**Beantwoord door Ward op 2 november 2026:**
 
-1. Is `/eindejaarsgeschenken` een **categorie** of een **landingspagina**? Een categorie geeft
-   toegang tot het product-listing-element, en dat is een echt raster met paginering. Een
-   landingspagina heeft alleen de slider. Nu staat er een slider, maar dat kan een keuze zijn
-   in plaats van een beperking.
-2. Staat die slider op **handmatige selectie** of op een dynamische productgroep?
-3. Welke **bloktypes** biedt de editor? Eén schermafbeelding van de blokkenkiezer beantwoordt
-   dit in één keer.
+1. `/eindejaarsgeschenken` is een **landingspagina**, geen categorie. Daarmee vervalt het
+   product-listing-element, want dat leest de categoriecontext en werkt op een LP niet.
+2. De slider staat op een **dynamische productgroep**, niet op handmatige selectie. Dat
+   verklaart de negen producten en het betekent dat we de volgorde niet zelf bepalen; wil je
+   drie bepaalde producten bovenaan, dan moet dat via de sortering van de stream of via losse
+   product boxes.
+3. Ward maakt een testpagina met alle kandidaatblokken erop. Zie hieronder.
+
+**De route die hierdoor open blijft:** Shopware heeft naast de slider een los
+**Product box**-element, één product per blok. Drie of vier naast elkaar in één rij is een
+echt raster met echte productdata, ook op een landingspagina. Dat zou het rasterpunt alsnog
+mogelijk maken, en het is het eerste wat de testpagina moet uitwijzen.
+
+### De testpagina
+
+Als landingspagina maken, niet als categorie, anders gelden de verkeerde beperkingen. Eén van
+elk:
+
+| | Waarom |
+|---|---|
+| **Product box**, en als het kan drie naast elkaar | de belangrijkste test: kan er een raster op een LP |
+| **Product slider** met handmatige selectie | bestaat die optie naast de dynamische groep |
+| **Product listing** | puur om te zien óf hij er is en wat hij op een LP doet |
+| **Formulier-element** | bepaalt of het Gemnote-formulier haalbaar is |
+| De beeld- en tekstblokken die in beeld zijn | om de markup te kennen voordat we erop stylen |
+
+Herkenbare naam, bijvoorbeeld `/blokkentest`. **Op noindex zetten**, of in elk geval uit de
+navigatie en de sitemap houden; hij staat anders gewoon live.
+
+Wat eruit komt: de klassenstructuur van elk element zodat er CSS voor te schrijven is zonder
+gokken, of product boxes in meerdere kolommen passen, welke markup het formulier geeft, en of
+het thema de productbeelden met `srcset` uitlevert. Dat laatste raakt meteen het beeldgewicht
+uit de plakronde.
 
 ---
 
