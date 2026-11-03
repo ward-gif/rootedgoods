@@ -5,9 +5,9 @@ de rest zijn verzoeken.
 
 **Nog invullen:** het ticketnummer bij `[TICKET]`.
 
-De volledige meting staat in `docs/promidata-vragen.md` onder C4, voor als ze
-doorvragen. Bewust niet in de mail; dan wordt het een rapport in plaats van een
-melding.
+Bewust geen reproductiestappen en geen controlecommando erin: zij weten hoe ze dat
+doen. De volledige meting staat in `docs/promidata-vragen.md` onder C4, voor als ze
+doorvragen.
 
 ---
 
@@ -18,29 +18,20 @@ Hallo,
 Google leest onze sitemap sinds 16 september niet. Search Console meldt "Fout bij
 compressie" en 0 ontdekte pagina's.
 
-De oorzaak zit in het bestand. Het `.xml.gz` bevat **meerdere achter elkaar geplakte
-gzip-leden**, elk met een eigen `<?xml ?>` en `<urlset>`, en alleen het laatste met
-een `</urlset>`. Een gewone XML-parser weigert het: *"XML or text declaration not at
-start of entity: line 1, column 12201"*. Dat is dus geen Google-kwestie.
+Het `.xml.gz` blijkt **meerdere achter elkaar geplakte gzip-leden** te bevatten, elk
+met een eigen `<?xml ?>` en `<urlset>`, en alleen het laatste met een `</urlset>`.
+Een XML-parser struikelt over de tweede declaratie: *"XML or text declaration not at
+start of entity: line 1, column 12201"*.
 
-Het ontstaat bij het genereren. Met Refresh strategy op Live geeft het verzoek dat de
-generatie aftrapt **HTTP 500**, en blijft de half geschreven uitvoer in het bestand
-staan. Vanochtend stonden er twee byte-identieke fragmenten van 82 URLs in, gevolgd
-door het complete document van 1.523. Het is wisselvallig: de volgende run kwam wel
-in één keer door, dus op dit moment is de sitemap toevallig geldig.
+Met Refresh strategy tijdelijk op Live zagen we waar het ontstaat: het verzoek dat de
+generatie aftrapt geeft **HTTP 500**, en de half geschreven uitvoer blijft in het
+bestand staan. Vanochtend stonden er twee byte-identieke fragmenten van 82 URLs in,
+gevolgd door het complete document van 1.523. Het is wisselvallig; de volgende run
+kwam wel in één keer door, dus op dit moment is de sitemap toevallig geldig.
 
-**In jullie log staan stacktraces op 3 november 09:22:45 en 09:24:06 UTC.** Dat is
-het enige wat wij niet kunnen zien.
+Stacktraces zouden in het log moeten staan op **3 november 09:22:45 en 09:24:06 UTC**.
 
-Zelf nakijken, ongeveer één op de twee keer raak:
-
-```bash
-curl -s "<sitemap-gz-url>" | gunzip | grep -o '<?xml' | wc -l
-```
-
-Eén is goed. Meer dan één is de fout.
-
-**Vraag:** waarom werpt de generatie die uitzondering, en kan de gedeeltelijke uitvoer
+Vraag: waarom werpt de generatie die uitzondering, en kan de gedeeltelijke uitvoer
 opgeruimd worden als het misgaat?
 
 Verder staat **[TICKET]** over de snelheid van de site nog open, daar hebben we nog
