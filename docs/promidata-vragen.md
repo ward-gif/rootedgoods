@@ -218,6 +218,54 @@ print(n,'gzip-leden')"
 
 Eén lid is goed. Meer dan één is dezelfde fout.
 
+### De proef is gedaan, 3 november 2026: het ligt aan de generator
+
+Ward heeft de Refresh strategy in Shopware van `Scheduled` op `Live` gezet en de
+sitemap opgevraagd. Drie dingen gebeurden.
+
+**1. De browser kreeg een foutpagina.** `/sitemap.xml` toonde de
+storefront-foutmelding "Er is helaas een fout opgetreden". Het genereren klapt er
+dus uit. Latere verzoeken geven gewoon weer de geldige index; het is het verzoek
+dat de generatie aftrapt dat faalt.
+
+**2. Het bestand is wél opnieuw geschreven**, en kleiner geworden:
+
+| | 1 november | 3 november, na Live |
+|---|---:|---:|
+| Bestandsgrootte | 21.999 B | **19.122 B** |
+| gzip-leden | 4 | **3** |
+
+Kleiner en met mínder leden betekent **overschrijven, niet toevoegen**. Mijn eerdere
+vermoeden dat er aan het bestand werd geplakt klopt dus niet.
+
+**3. En dat is erger, want dan schrijft één enkele run al kapotte uitvoer:**
+
+| Lid | Uitgepakt | `<urlset>` open | dicht | `<url>` |
+|---:|---:|---:|---:|---:|
+| 1 | 12.535 B | 1 | **0** | 82 |
+| 2 | 12.535 B | 1 | **0** | 82 |
+| 3 | 272.844 B | 1 | 1 | 1.523 |
+
+**Lid 1 en 2 zijn byte voor byte gelijk.** Twee identieke, afgekapte fragmenten van
+82 URLs, gevolgd door het complete document van 1.523 URLs.
+
+**Wat dat samen vertelt.** Het genereren begint, schrijft 82 URLs, loopt vast
+(dat is de foutpagina), begint opnieuw, schrijft weer precies dezelfde 82 URLs,
+loopt weer vast, en pas de derde poging komt door en schrijft het hele document.
+De brokstukken van de eerste twee pogingen blijven in het bestand staan.
+
+Dit is dus **één fout, niet twee**: de generatie werpt een uitzondering en ruimt de
+gedeeltelijke uitvoer niet op.
+
+**Reproduceerbaar in twee minuten, volledig aan jullie kant:** zet Refresh strategy
+op Live, vraag `/sitemap.xml` op, en tel de leden met de regel hieronder. De
+foutmelding die daarbij in de logs komt te staan is het beginpunt.
+
+**Tweede waarneming, mogelijk dezelfde oorzaak:** met Refresh strategy op `Scheduled`
+en een interval van 3.600 seconden was het bestand **44 uur oud** (laatst gewijzigd
+1 november 13:32, gemeten 3 november 09:16). De geplande taak lijkt dus niet te
+draaien, of hij loopt op dezelfde fout vast.
+
 **De proef die de discussie beslecht.** Verwijder het bestand, genereer één keer
 opnieuw, en draai de regel hierboven.
 
