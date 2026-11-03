@@ -112,26 +112,84 @@ want het scheelt het handmatig bijhouden van prijzen in geplakte HTML.
 echt raster met echte productdata, ook op een landingspagina. Dat zou het rasterpunt alsnog
 mogelijk maken, en het is het eerste wat de testpagina moet uitwijzen.
 
-### De testpagina
+## De architectuur, besloten 2 november 2026
 
-Als landingspagina maken, niet als categorie, anders gelden de verkeerde beperkingen. Eén van
-elk:
+**De LP blijft de bestemming van de advertenties, met de categorie erachter.** Dat is wat er
+nu staat en het blijft zo.
 
-| | Waarom |
+Elk thema bestaat op **twee URL's**, en dat is geen fout maar een rolverdeling:
+
+| | `/brievenbus` (LP) | `/thema-s/brievenbus/` (categorie) |
+|---|---|---|
+| Controller | `is-ctl-landingpage` | `is-ctl-navigation` |
+| Onze eigen secties | ja: `rg-page-hero`, `rg-compare`, `rg-endcta` | **geen** |
+| h1 | "Brievenbuscadeaus" | **geen** |
+| Producten | 18, in een slider | 18, listing met filters |
+| Canonical | via JS, `rootedgoods.js` sectie 1.5d | serverzijdig |
+
+Ik had eerst voorgesteld om alles naar de categorie te sturen. Dat was fout. De categorie
+heeft geen h1 en geen enkele inhoud buiten het raster; advertentieverkeer daarheen sturen is
+mensen op een kaal overzicht zetten. En een LP geeft de lay-outvrijheid die een advertentieklik
+nodig heeft. De LP linkt ook gewoon door: **vier links naar de categorie**, waarvan drie met
+het label "Bekijk alle producten" (2×) en "Ontdek de producten", de eerste op 28% van de
+pagina.
+
+**Wat er wél niet klopt, is het productblok op die LP.** Een slider die mobiel twee producten
+per scherm toont. De carrouselpijl kreeg op de kerstpagina **90 van de 317 taps**, 28,4%, en
+is daarmee na de cookiebanner het meest aangeraakte element van de pagina. De knop eronder
+kreeg 25 taps, de offerteknop in de hero 4. Mensen zijn aan het werk om producten te zien.
+
+Dat is de ingreep: niet verhuizen, maar op de LP meer producten tegelijk tonen en de doorklik
+naar de categorie zichtbaar maken vóór het scrollen.
+
+**Naamgeving.** Zodra de LP zelf producten toont, wordt "Bekijk alle producten" een
+tegenstrijdig label, want ze staan er al. Beter is een aantal: "Alle 18 kerstgeschenken".
+Dat zegt tegelijk dat er meer is en hoeveel.
+
+**Geparkeerd tot januari: de dubbeling zelf.** Twee URL's met dezelfde achttien producten en
+een categorie zonder h1 is een echt SEO-probleem. Maar SEO levert dit kwartaal 103 vertoningen
+en 20 klikken in 29 dagen op, dus er valt nu weinig te verliezen en vier weken voor het einde
+van het seizoen is het verkeerde moment. In januari is de vraag: één pagina per thema, en
+welke van de twee wint.
+
+### De testpagina, uitgevoerd en doorgelicht
+
+Ward zette `https://rootedgoods.eu/test` neer als landingspagina met alle kandidaatblokken
+erop. Doorgelicht op 2 november 2026; de ruwe HTML en alle getallen staan in
+`docs/metingen/2026-11-02-blokkentest/`.
+
+**De hoofdvraag is ja.** `cms-block-product-three-column` werkt op een landingspagina: drie
+`cms-element-product-box` in `col-md-4`, met echte productdata, prijs en link. Het raster uit
+punt 15 kan dus zonder Promidata.
+
+| | Uitkomst |
 |---|---|
-| **Product box**, en als het kan drie naast elkaar | de belangrijkste test: kan er een raster op een LP |
-| **Product slider** met handmatige selectie | bestaat die optie naast de dynamische groep |
-| **Product listing** | puur om te zien óf hij er is en wat hij op een LP doet |
-| **Formulier-element** | bepaalt of het Gemnote-formulier haalbaar is |
-| De beeld- en tekstblokken die in beeld zijn | om de markup te kennen voordat we erop stylen |
+| Product box, drie naast elkaar | **werkt** |
+| Product slider met handmatige selectie | werkt, `productboxMinWidth: "300px"` |
+| Gallery-buybox | werkt, **en rendert de volledige staffeltabel** |
+| Formulier (cioform) | werkt, maar in de test alleen vrije tekstvelden |
+| Cross-selling | lege kolom, geen productcontext op een LP |
+| Product listing | bestaat niet op een LP, zoals verwacht |
 
-Herkenbare naam, bijvoorbeeld `/blokkentest`. **Op noindex zetten**, of in elk geval uit de
-navigatie en de sitemap houden; hij staat anders gewoon live.
+**De onverwachte winst: `cms-element-buy-box` geeft de staffel.** "Hoeveelheid / Prijs per
+eenheid", van "Tot 4: € 18,13" tot "Tot 999: € 14,63". Dat is punt 12 van het verbeterplan,
+kant en klaar, zonder aantalveld of bestelknop. Een los blok per product, dus niet geschikt
+voor het raster, maar wel voor één uitgelicht product.
 
-Wat eruit komt: de klassenstructuur van elk element zodat er CSS voor te schrijven is zonder
-gokken, of product boxes in meerdere kolommen passen, welke markup het formulier geeft, en of
-het thema de productbeelden met `srcset` uitlevert. Dat laatste raakt meteen het beeldgewicht
-uit de plakronde.
+**Drie dingen maken de kaarten nu te hoog, alle drie oplosbaar:**
+
+1. `col-md-4` breekt op 768 px, dus één kaart per rij op mobiel. Onze CSS.
+2. `productboxMinWidth: 300px` laat één sliderkaart per mobiel scherm zien. CMS-veld.
+3. **De volledige productbeschrijving staat in de kaart**, 604 tot 1.611 tekens. Bij circa
+   veertig tekens per regel is dat ruim 450 px tekst per kaart. Onze CSS.
+
+**Een aanname gecorrigeerd.** De productelementen leveren wél `srcset` (50 van de 57 beelden)
+en wijzen naar `/shared/thumbnail/`. De "0 met srcset" uit `q4-aanvragen-plan.md` gaat over
+onze eigen geplakte blokken, niet over het thema.
+
+**Nog open:** of de cioform-plugin keuzevelden kan (select, radio, checkbox, datum). Dat
+bepaalt of het Gemnote-formulier met chips en bandbreedtes haalbaar is. Te zien in de
+formulierbeheerder, niet in de HTML.
 
 ---
 
@@ -140,24 +198,34 @@ uit de plakronde.
 Mobiel is 67% van al het verkeer en 87% van het advertentieverkeer. De kerstpagina is 7.429 px
 hoog en bezoekers zien er gemiddeld een derde van. Dat stuurt alles hieronder.
 
+Bijgewerkt op 2 november 2026 na de blokkentest: punt 2 en 4 zijn samengevoegd, want de test
+wees uit dat het raster kan en dat het de slider dus kan vervangen in plaats van aanvullen.
+
 **1. Hero inkorten tot één scherm.** Kop, één regel die prijs per stuk, minimale afname en
 levertijd beantwoordt, één knop. Dat is punt 13 en het kan in onze eigen HTML, zonder
-Shopware. Grootste effect, laagste kosten.
+Shopware. Gerekend uit de CSS op 390 px breed is de hero nu 769 px; het doel is circa 350 px,
+zodat er een rij productkaarten in het eerste scherm past.
 
-**2. De productslider direct daaronder.** Dat is slepen in de CMS-editor, kost niets. Nu staat
-hij ver onder de vouw op een pagina die niemand uitleest.
+**2. `cms-block-product-three-column` direct onder de hero**, in plaats van de slider.
+Bewezen werkend op een LP. Op mobiel twee kolommen via onze CSS, door `col-md-4` onder
+768 px op 50% te zetten. Dat is punt 15, en het maakt de carrouselpijl overbodig die nu
+90 van de 317 taps krijgt.
 
-**3. De productkaart laten zeggen wat een inkoper vraagt.** Per stuk, excl. btw, vanaf hoeveel.
-Dat is punt 12 en het kan via onze eigen CSS en JS. Let op de valkuil die daar al genoteerd
-staat: de listing ververst via AJAX, dus er is een MutationObserver nodig.
+**3. De productbeschrijving in de kaart afkappen.** Nu 604 tot 1.611 tekens per kaart. Twee
+regels met `line-clamp` is genoeg; de kaart hoort naar de productpagina te leiden, niet die
+pagina te vervangen. Dit is de goedkoopste hoogtewinst van de hele lijst.
 
-**4. Op mobiel een raster in plaats van de carrousel.** De carrouselpijl kreeg 90 van de 317
-taps, oftewel 28,4%, en toont twee producten per scherm. Zes producten in twee kolommen plus
-een knop is minder werk voor de bezoeker. Dat is punt 15.
+**4. De productkaart laten zeggen wat een inkoper vraagt.** Nu staat er "Van € 5,73", zonder
+per stuk, zonder excl. btw en zonder minimale afname. Dat is punt 12. **De staffeltabel uit
+`cms-element-buy-box` is hier het antwoord**, maar dat is een blok per product, dus bruikbaar
+voor één uitgelicht product en niet voor het raster. Voor de kaarten zelf blijft het onze CSS
+en JS; let op de valkuil die daar al genoteerd staat, de listing ververst via AJAX dus er is
+een MutationObserver nodig.
 
 **5. Het Gemnote-formulier als afsluiting.** Chips, bandbreedtes, een leverdatum, geen vrij
-tekstveld. Dit is het goedkoopste punt met de meeste kans, want het is een formulier en geen
-lay-out.
+tekstveld. **Hangt aan één onbekende**: of de cioform-plugin keuzevelden kan. Kan dat niet,
+dan is het beste haalbare een kortere versie van wat er nu staat, en dan moet eerst het
+voorgevulde spatieteken in het naamveld eruit en de titel "Formular Titel".
 
 **Wat ik zou uitstellen: de geanimeerde hero.** Het is het duurste onderdeel, het kan niet
 zonder Shopware-werk omdat onze HTML geen productdata heeft, en animatie op een pagina met een
