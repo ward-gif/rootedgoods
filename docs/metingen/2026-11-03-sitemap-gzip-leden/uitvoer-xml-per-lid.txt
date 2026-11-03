@@ -1,0 +1,72 @@
+===== sitemap-2026-11-01.xml.gz
+--- lid 1: 12201 bytes
+   XML-parser: FOUT: no element found: line 1, column 12201
+   ruwe <url>-tellingen: 80 </url>: 80 <urlset: 1 </urlset>: 0 <?xml: 1
+--- lid 2: 29818 bytes
+   XML-parser: FOUT: no element found: line 1, column 29818
+   ruwe <url>-tellingen: 180 </url>: 180 <urlset: 1 </urlset>: 0 <?xml: 1
+--- lid 3: 29818 bytes
+   XML-parser: FOUT: no element found: line 1, column 29818
+   ruwe <url>-tellingen: 180 </url>: 180 <urlset: 1 </urlset>: 0 <?xml: 1
+--- lid 4: 268784 bytes
+   XML-parser: OK, root: {http://www.sitemaps.org/schemas/sitemap/0.9}urlset
+   url-elementen: 1503 unieke loc: 1503
+   hosts: {'rootedgoods.eu'}
+   loc > 2048 tekens: 0
+   loc met non-ascii: 0 []
+   loc met onge-escapete &: 0
+   loc met spatie: 0 []
+   lastmod afwijkend: 0 []  ontbrekend: 0
+   changefreq-waarden: {'hourly', 'daily'}
+   priority-waarden: {'1.0', '0.5'}
+   overige kindelementen: set()
+   dubbele loc: 0 []
+   eerste padsegment: [('Pulltap-s-kelnersmes', 51), ('Delftsblauw-blik', 25), ('Tubyard-lanyard-met-elastische-buis', 20), ('Tubyard-lanyard-telefoonhouder-met-elastische-buis', 20), ('Clic-clac-natuurlijke-pepermunt', 19), ('tassen-reizen', 13), ('Join-The-Pipe-Nairobi-Ring-Bottle-Black-500ml-waterfles', 11), ('Join-The-Pipe-Nairobi-Ring-Bottle-White-500ml-waterfles', 11)]
+--- aaneengeschakeld (alle leden): 340621 bytes
+   XML-parser: FOUT: XML or text declaration not at start of entity: line 1, column 12201
+   ruwe <url>-tellingen: 1943 </url>: 1943 <urlset: 4 </urlset>: 1 <?xml: 4
+   lid-inhoud identiek?  [False, False, False, True, False, False]
+   lid 1 is prefix van laatste lid: True
+   lid 1 eindigt op: b'2026-08-27</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>'
+===== sitemap-2026-11-03-0922.xml.gz
+--- lid 1: 12535 bytes
+   XML-parser: FOUT: no element found: line 1, column 12535
+   ruwe <url>-tellingen: 82 </url>: 82 <urlset: 1 </urlset>: 0 <?xml: 1
+--- lid 2: 12535 bytes
+   XML-parser: FOUT: no element found: line 1, column 12535
+   ruwe <url>-tellingen: 82 </url>: 82 <urlset: 1 </urlset>: 0 <?xml: 1
+--- lid 3: 272844 bytes
+   XML-parser: OK, root: {http://www.sitemaps.org/schemas/sitemap/0.9}urlset
+   url-elementen: 1523 unieke loc: 1523
+   hosts: {'rootedgoods.eu'}
+   loc > 2048 tekens: 0
+   loc met non-ascii: 0 []
+   loc met onge-escapete &: 0
+   loc met spatie: 0 []
+   lastmod afwijkend: 0 []  ontbrekend: 0
+   changefreq-waarden: {'hourly', 'daily'}
+   priority-waarden: {'1.0', '0.5'}
+   overige kindelementen: set()
+   dubbele loc: 0 []
+   eerste padsegment: [('Pulltap-s-kelnersmes', 51), ('Delftsblauw-blik', 25), ('Tubyard-lanyard-met-elastische-buis', 20), ('Tubyard-lanyard-telefoonhouder-met-elastische-buis', 20), ('Clic-clac-natuurlijke-pepermunt', 19), ('tassen-reizen', 13), ('huis-keuken', 11), ('Join-The-Pipe-Nairobi-Ring-Bottle-Black-500ml-waterfles', 11)]
+--- aaneengeschakeld (alle leden): 297914 bytes
+   XML-parser: FOUT: XML or text declaration not at start of entity: line 1, column 12535
+   ruwe <url>-tellingen: 1687 </url>: 1687 <urlset: 3 </urlset>: 1 <?xml: 3
+   lid-inhoud identiek?  [True, False, False]
+   lid 1 is prefix van laatste lid: True
+   lid 1 eindigt op: b'2026-08-27</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>'
+===== sitemap-2026-11-03-0924.xml.gz
+--- lid 1: 272844 bytes
+   XML-parser: OK, root: {http://www.sitemaps.org/schemas/sitemap/0.9}urlset
+   url-elementen: 1523 unieke loc: 1523
+   hosts: {'rootedgoods.eu'}
+   loc > 2048 tekens: 0
+   loc met non-ascii: 0 []
+   loc met onge-escapete &: 0
+   loc met spatie: 0 []
+   lastmod afwijkend: 0 []  ontbrekend: 0
+   changefreq-waarden: {'hourly', 'daily'}
+   priority-waarden: {'1.0', '0.5'}
+   overige kindelementen: set()
+   dubbele loc: 0 []
+   eerste padsegment: [('Pulltap-s-kelnersmes', 51), ('Delftsblauw-blik', 25), ('Tubyard-lanyard-met-elastische-buis', 20), ('Tubyard-lanyard-telefoonhouder-met-elastische-buis', 20), ('Clic-clac-natuurlijke-pepermunt', 19), ('tassen-reizen', 13), ('huis-keuken', 11), ('Join-The-Pipe-Nairobi-Ring-Bottle-Black-500ml-waterfles', 11)]

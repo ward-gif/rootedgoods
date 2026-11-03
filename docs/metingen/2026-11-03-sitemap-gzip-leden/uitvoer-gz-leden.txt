@@ -1,0 +1,50 @@
+===== sitemap-2026-11-01.xml.gz bytes: 21999
+gzip-magic posities: [0, 990, 2741, 4492]
+  lid 1: offset 0, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 982, uitgepakt 12201 bytes, trailer crc=0xb9f7e2f0 isize=12201
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: a5ff77a47f000000ffff0300
+  lid 2: offset 990, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 2733, uitgepakt 29818 bytes, trailer crc=0x65404a6e isize=29818
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 3fbc2ff81f000000ffff0300
+  lid 3: offset 2741, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 4484, uitgepakt 29818 bytes, trailer crc=0x65404a6e isize=29818
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 3fbc2ff81f000000ffff0300
+  lid 4: offset 4492, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 21991, uitgepakt 268784 bytes, trailer crc=0x89558869 isize=268784
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 44e27fff7f000000ffff0300
+  totaal leden: 4 uitgepakt totaal: 340621
+  gzip.decompress OK: 340621
+  begin: b'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://root'
+  einde: b'freq>hourly</changefreq><priority>0.5</priority></url><url><loc>https://rootedgoods.eu/blog/test</loc><lastmod>2026-08-19</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url></urlset>'
+===== sitemap-2026-11-03-0922.xml.gz bytes: 19122
+gzip-magic posities: [0, 1007, 2014]
+  lid 1: offset 0, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 999, uitgepakt 12535 bytes, trailer crc=0x82affc79 isize=12535
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 65fe77a47f000000ffff0300
+  lid 2: offset 1007, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 2006, uitgepakt 12535 bytes, trailer crc=0x82affc79 isize=12535
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 65fe77a47f000000ffff0300
+  lid 3: offset 2014, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 19114, uitgepakt 272844 bytes, trailer crc=0xa1a67646 isize=272844
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 26c9bfff7f000000ffff0300
+  totaal leden: 3 uitgepakt totaal: 297914
+  gzip.decompress OK: 297914
+  begin: b'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://root'
+  einde: b'freq>hourly</changefreq><priority>0.5</priority></url><url><loc>https://rootedgoods.eu/blog/test</loc><lastmod>2026-08-19</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url></urlset>'
+===== sitemap-2026-11-03-0924.xml.gz bytes: 17108
+gzip-magic posities: [0]
+  lid 1: offset 0, FLG=0x00, MTIME=0, XFL=0, OS=3
+   deflate eindigt op 17100, uitgepakt 272844 bytes, trailer crc=0xa1a67646 isize=272844
+   crc klopt: True, isize klopt: True
+   laatste 12 bytes deflate: 26c9bfff7f000000ffff0300
+  totaal leden: 1 uitgepakt totaal: 272844
+  gzip.decompress OK: 272844
+  begin: b'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://root'
+  einde: b'freq>hourly</changefreq><priority>0.5</priority></url><url><loc>https://rootedgoods.eu/blog/test</loc><lastmod>2026-08-19</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url></urlset>'

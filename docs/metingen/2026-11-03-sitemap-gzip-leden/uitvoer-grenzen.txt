@@ -1,0 +1,37 @@
+===== sitemap-2026-11-01.xml.gz volledig lid: 1503 urls
+  partieel lid met 80 urls; eindigt precies op </url>-grens: True
+    url #79: https://rootedgoods.eu/thema-s/medewerker-merchandise/  2026-08-27 0.5
+    url #80: https://rootedgoods.eu/thema-s/dag-van-de/  2026-08-27 0.5
+    url #81: https://rootedgoods.eu/Samsonite-Essens-Spinner-75/A510-146912-1374  2026-10-21 0.5
+    url #82: https://rootedgoods.eu/Samsonite-Essens-Spinner-75/A510-146912-1549  2026-10-21 0.5
+  partieel lid met 180 urls; eindigt precies op </url>-grens: True
+    url #179: https://rootedgoods.eu/Samsonite-C-Lite-Spinner-55-EXP./A510-134679-1198  2026-08-27 0.5
+    url #180: https://rootedgoods.eu/Samsonite-C-Lite-Spinner-55-EXP./A510-134679-1542  2026-08-27 0.5
+    url #181: https://rootedgoods.eu/Samsonite-C-Lite-Spinner-55-20-Exp/A510-134679-1491  2026-08-27 0.5
+    url #182: https://rootedgoods.eu/Ligstoel-Chillout/A190-08494014-00000  2026-09-16 0.5
+  partieel lid met 180 urls; eindigt precies op </url>-grens: True
+    url #179: https://rootedgoods.eu/Samsonite-C-Lite-Spinner-55-EXP./A510-134679-1198  2026-08-27 0.5
+    url #180: https://rootedgoods.eu/Samsonite-C-Lite-Spinner-55-EXP./A510-134679-1542  2026-08-27 0.5
+    url #181: https://rootedgoods.eu/Samsonite-C-Lite-Spinner-55-20-Exp/A510-134679-1491  2026-08-27 0.5
+    url #182: https://rootedgoods.eu/Ligstoel-Chillout/A190-08494014-00000  2026-09-16 0.5
+  (changefreq, priority) verdeling: Counter({('hourly', '0.5'): 1422, ('daily', '0.5'): 79, ('daily', '1.0'): 2})
+  eerste hourly-url op positie: 81
+  grootte per url gemiddeld: 178.8 bytes
+===== sitemap-2026-11-03-0922.xml.gz volledig lid: 1523 urls
+  partieel lid met 82 urls; eindigt precies op </url>-grens: True
+    url #81: https://rootedgoods.eu/thema-s/medewerker-merchandise/  2026-08-27 0.5
+    url #82: https://rootedgoods.eu/thema-s/dag-van-de/  2026-08-27 0.5
+    url #83: https://rootedgoods.eu/Samsonite-Essens-Spinner-75/A510-146912-1374  2026-10-21 0.5
+    url #84: https://rootedgoods.eu/Samsonite-Essens-Spinner-75/A510-146912-1549  2026-10-21 0.5
+  partieel lid met 82 urls; eindigt precies op </url>-grens: True
+    url #81: https://rootedgoods.eu/thema-s/medewerker-merchandise/  2026-08-27 0.5
+    url #82: https://rootedgoods.eu/thema-s/dag-van-de/  2026-08-27 0.5
+    url #83: https://rootedgoods.eu/Samsonite-Essens-Spinner-75/A510-146912-1374  2026-10-21 0.5
+    url #84: https://rootedgoods.eu/Samsonite-Essens-Spinner-75/A510-146912-1549  2026-10-21 0.5
+  (changefreq, priority) verdeling: Counter({('hourly', '0.5'): 1440, ('daily', '0.5'): 81, ('daily', '1.0'): 2})
+  eerste hourly-url op positie: 83
+  grootte per url gemiddeld: 179.1 bytes
+===== sitemap-2026-11-03-0924.xml.gz volledig lid: 1523 urls
+  (changefreq, priority) verdeling: Counter({('hourly', '0.5'): 1440, ('daily', '0.5'): 81, ('daily', '1.0'): 2})
+  eerste hourly-url op positie: 83
+  grootte per url gemiddeld: 179.1 bytes
