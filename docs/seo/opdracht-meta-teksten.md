@@ -37,34 +37,15 @@ Niets aan veranderen, ze zijn af. Het gaat om deze twaalf:
 
 Dit doe je in Claude, gewoon in de browser. Tien tegelijk.
 
-**Per ronde van tien:**
+### Ronde 1
 
-1. Ga naar claude.ai en begin een **nieuw gesprek**
+1. Ga naar **claude.ai** en begin een nieuw gesprek
 2. Sleep het bestand **`categorie-feiten.md`** in het tekstvak
-3. Plak de hele prompt hieronder
-4. Zet er tien paden onder uit de lijst achterin dit bestand
-5. Verstuur
-6. Claude geeft tien regels terug. Zet die onder elkaar in een bestand of spreadsheet,
-   met drie kolommen: pad, titel, omschrijving
+3. Plak de hele prompt hieronder, hij is al ingevuld met de eerste tien
+4. Verstuur
 
-**Begin elke ronde in een nieuw gesprek.** Doe je ze allemaal in één gesprek, dan gaan
-de teksten op elkaar lijken en moet je overnieuw.
-
-**Na de eerste twintig: stuur het bestand naar Ward.** Hij laat er een controle
-overheen lopen en zegt of het goed gaat. Dan weet je het na twintig in plaats van na
-drieënzestig.
-
-**Daarna zet je ze zelf in Shopware.** Er is geen importfunctie, dus het is per
-categorie de titel en de omschrijving in de SEO-velden plakken. Vanuit een spreadsheet
-gaat dat het snelst: cel aanklikken, kopiëren, plakken.
-
-Reken op 75 categorieën met twee velden. Doe het in blokken en niet in één ruk.
-
----
-
-## De prompt
-
-Plak dit hele blok, van "Je schrijft" tot en met "De tien categorieën:".
+Claude geeft tien regels terug. Zet die onder elkaar in een spreadsheet, met drie
+kolommen: **pad**, **titel**, **omschrijving**.
 
 > Je schrijft meta-titels en meta-descriptions voor de categoriepagina's van
 > rootedgoods.eu, een B2B-webshop in relatiegeschenken die met het logo van de klant
@@ -72,33 +53,64 @@ Plak dit hele blok, van "Je schrijft" tot en met "De tien categorieën:".
 > aantal producten, prijsbereik, merknamen, en wat er alleen in die categorie staat.
 > Gebruik die, verzin niets bij.
 >
-> **Toon:** warm, eerlijk, concreet, nuchter-Nederlands. Korte zinnen, af en toe een
+> Toon: warm, eerlijk, concreet, nuchter-Nederlands. Korte zinnen, af en toe een
 > langere. Wij zijn de gids, de klant is de held. Noem een product of een merk, niet
 > "hoogwaardige producten".
 >
-> **Hard:**
-> - Titel 35 tot 60 tekens, eindigt op " | Rooted Goods", géén punt erachter.
-> - Description 120 tot 155 tekens, eindigt wél op een punt.
+> Hard:
+> - Titel 35 tot 60 tekens, eindigt op " | Rooted Goods", geen punt erachter.
+> - Description 120 tot 155 tekens, eindigt wel op een punt.
 > - Je en jij, nooit "u". Nederlands. Geen em-dashes, geen uitroeptekens.
 >
-> **Niet beweren:** "gemaakt in Europa" (het is "geassembleerd in Europa"), 100%
-> duurzaam, CO2-neutraal, een minimale afname (die is er niet), een concrete levertijd,
-> "binnen 24 uur" (het is "binnen één werkdag").
+> Niet beweren: "gemaakt in Europa" (het is "geassembleerd in Europa"), 100% duurzaam,
+> CO2-neutraal, een minimale afname (die is er niet), een concrete levertijd, "binnen
+> 24 uur" (het is "binnen een werkdag").
 >
-> **Niet gebruiken:** cruciaal, naadloos, optimaliseren, faciliteren, robuust,
-> hoogwaardig, premium kwaliteit, unieke selectie, ruim assortiment, uitgebreide
-> collectie, "op zoek naar", "het juiste adres", "de beste", "scherpe prijzen",
-> "snelle levering", "ontdek onze", "in het hart van".
+> Niet gebruiken: cruciaal, naadloos, optimaliseren, faciliteren, robuust, hoogwaardig,
+> premium kwaliteit, unieke selectie, ruim assortiment, uitgebreide collectie, "op zoek
+> naar", "het juiste adres", "de beste", "scherpe prijzen", "snelle levering", "ontdek
+> onze", "in het hart van".
 >
-> **Varieer, dit is de belangrijkste regel.** Bij zestig teksten valt niet een lelijke
-> zin op, maar dat ze allemaal dezelfde vorm hebben. In een eerdere ronde begon negen
-> van de eenendertig met "Van een". Niet meer dan twee van de tien mogen met hetzelfde
-> woord beginnen, en niet elke tekst dezelfde bouw. Soms één zin, soms twee.
+> Varieer, dit is de belangrijkste regel. Bij zestig teksten valt niet een lelijke zin
+> op, maar dat ze allemaal dezelfde vorm hebben. In een eerdere ronde begon negen van
+> de eenendertig met "Van een". Niet meer dan twee van de tien mogen met hetzelfde
+> woord beginnen, en niet elke tekst dezelfde bouw. Soms een zin, soms twee.
 >
 > Geef tabgescheiden regels, zonder kopregel:
-> `pad<TAB>titel<TAB>description`
+> pad<TAB>titel<TAB>description
 >
-> De tien categorieën:
+> De tien categorieen:
+>
+> /thema-s/
+> /thema-s/made-in-nl/
+> /thema-s/dag-van-de/
+> /thema-s/medewerker-merchandise/
+> /drinkwaren/drinkflessen/
+> /huis-keuken/keukenartikelen/
+> /drinkwaren/glazen/
+> /outdoor/zakmessen-multi-tools/
+> /huis-keuken/planten/
+> /huis-keuken/lunchboxen-en-zakjes/
+
+### Ronde 2 en verder
+
+Precies hetzelfde, met twee verschillen:
+
+- **Begin elke ronde in een nieuw gesprek.** Doe je ze allemaal in één gesprek, dan
+  gaan de teksten op elkaar lijken en moet je overnieuw.
+- Vervang de tien paden onderaan de prompt door de volgende tien uit de lijst
+  achterin dit bestand.
+
+### Tussendoor en daarna
+
+**Na ronde 2 stuur je de spreadsheet naar Ward.** Er loopt dan een controle overheen
+en je hoort of het goed gaat. Zo weet je het na twintig in plaats van na drieënzestig.
+
+**Als alles klaar is** zet je ze zelf in Shopware. Er is geen importfunctie, dus het is
+per categorie de titel en de omschrijving in de SEO-velden plakken. Vanuit de
+spreadsheet gaat dat het snelst: cel aanklikken, kopiëren, plakken.
+
+Reken op 75 categorieën met twee velden. Doe het in blokken en niet in één ruk.
 
 ---
 
