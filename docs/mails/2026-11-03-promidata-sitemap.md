@@ -3,30 +3,56 @@
 Verzendklaar. Los van `docs/promidata-vragen.md`: dit is een bug, de rest zijn
 verzoeken.
 
-Bewust één onderwerp, geen reproductiestappen en geen controlecommando. De volledige
-meting staat onder C4 in de vragenlijst, voor als ze doorvragen.
+**Opgezet om hetzelfde antwoord te voorkomen.** Hun eerdere reactie controleerde het
+transport (200, geen omleidingen, content-type, "gzip pakt foutloos uit") en de
+bereikbaarheid (firewall, Googlebot in de logs). Dat klopt allemaal en is nooit de
+vraag geweest. Daarom begint deze mail met dat toe te geven.
+
+Het scharnierpunt staat in hun eigen getal: zij meldden ~268 KB, en dat is precies de
+grootte van het **laatste** van vier gzip-leden, en precies wat de gzip-trailer
+teruggeeft. Het hele bestand pakt uit naar 340.621 bytes.
+
+| | Bytes | `<url>` |
+|---|---:|---:|
+| Hele bestand uitgepakt | 340.621 | 1.943 |
+| Alleen het laatste lid | 268.784 | 1.503 |
+| Promidata meldde | ~268 KB | ~1.497 |
 
 ---
 
-**Onderwerp:** Bug: sitemap bevat meerdere gzip-leden, generatie geeft HTTP 500
+**Onderwerp:** Sitemap, aanvulling: het bestand bevat vier gzip-leden
 
 Hallo,
 
-Google leest onze sitemap sinds 16 september niet. Search Console meldt "Fout bij
-compressie" en 0 ontdekte pagina's.
+Dank voor de controle van vorige keer. Alles wat jullie daarin nakeken klopt, en ik
+denk dat we daardoor langs elkaar heen praatten: HTTP 200, geen omleidingen, de juiste
+content-types, het gzip pakt foutloos uit, de firewall blokkeert niets en Googlebot
+komt binnen. Dat is allemaal in orde en dat betwisten we niet.
 
-Het `.xml.gz` blijkt meerdere achter elkaar geplakte gzip-leden te bevatten, elk met
-een eigen `<?xml ?>` en `<urlset>`, en alleen het laatste met een `</urlset>`. Een
-XML-parser struikelt over de tweede declaratie: "XML or text declaration not at start
-of entity: line 1, column 12201".
+Wat niet is nagekeken, is of de **uitgepakte inhoud één XML-document** is. Dat is het
+niet.
 
-Met Refresh strategy tijdelijk op Live zagen we waar het ontstaat: het verzoek dat de
-generatie aftrapt geeft HTTP 500, en de half geschreven uitvoer blijft in het bestand
+Het verschil zit in jullie eigen cijfer. Jullie melden een ongecomprimeerde grootte van
+ongeveer 268 KB. Het bestand pakt uit naar **340.621 bytes**. Die 268.784 bytes zijn de
+grootte van het **laatste** van vier achter elkaar geplakte gzip-leden, en dat is ook
+precies wat de gzip-trailer teruggeeft. Een controle die 268 KB oplevert, heeft dus één
+lid gelezen en niet het hele bestand.
+
+Uitgepakt staan er vier losse documenten achter elkaar, elk met een eigen
+`<?xml ?>` en `<urlset>`, en alleen het laatste met een `</urlset>`. Een XML-parser
+stopt op de tweede declaratie: *"XML or text declaration not at start of entity: line
+1, column 12201"*.
+
+Dat verklaart ook jullie eigen test met `sitemap2.xml`. Een platte kopie van de
+uitgepakte inhoud is geldig, dus die haalde Google probleemloos op. De inhoud is niet
+het probleem, de verpakking wel.
+
+**Waar het ontstaat.** Met Refresh strategy tijdelijk op Live geeft het verzoek dat de
+generatie aftrapt **HTTP 500**, en blijft de half geschreven uitvoer in het bestand
 staan. Vanochtend stonden er twee byte-identieke fragmenten van 82 URLs in, gevolgd
-door het complete document van 1.523. Het is wisselvallig; de volgende run kwam wel in
-één keer door, dus op dit moment is de sitemap toevallig geldig.
-
-Stacktraces zouden in het log moeten staan op 3 november 09:22:45 en 09:24:06 UTC.
+door het complete document van 1.523. Het is wisselvallig: de volgende run kwam wel in
+één keer door, dus op dit moment is de sitemap toevallig geldig. Stacktraces zouden in
+het log moeten staan op **3 november 09:22:45 en 09:24:06 UTC**.
 
 Waarom werpt de generatie die uitzondering, en kan de gedeeltelijke uitvoer opgeruimd
 worden als het misgaat?
