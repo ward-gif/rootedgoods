@@ -331,7 +331,27 @@ Promidata. Staat als punt 28 in het plan.
 `/thema-s/kerstpakketten/` geeft een 301 naar `/thema-s/kerstpakketten-eindejaar/`. Een
 knop op onze landingspagina wijst naar de eerste. Kan die rechtstreeks?
 
-### E4. "Weigeren" en "Configureren" op de cookiebalk doen niets
+### E4. Vervallen: de weigerknop werkt wel
+
+**Vervallen op 3 november 2026.** Ward heeft het nagedaan in een privévenster, zonder
+Resource Override en zonder onze eigen CSS: klikken op "Weigeren" laat de balk gewoon
+verdwijnen. Niet versturen.
+
+Waarom de meting van 28 oktober dan iets anders zei, weten we niet. Twee mogelijkheden,
+geen van beide bevestigd: het is sindsdien aan hun kant opgelost, of de meting zelf
+deugde niet. Die liep met Playwright, en een synthetische klik kan afgaan voordat de
+afhandelaar eraan hangt. Dat laatste is een valkuil om te onthouden: **een klik die
+niets doet in Playwright is niet hetzelfde als een knop die stuk is.**
+
+Nog niet nagekeken: of "Configureren" inmiddels wél een scherm opent. Dat was de tweede
+helft van deze melding.
+
+De meting van 28 oktober staat hieronder, voor als het terugkomt.
+
+<details>
+<summary>De oorspronkelijke melding, 28 oktober 2026</summary>
+
+#### "Weigeren" en "Configureren" op de cookiebalk doen niets
 
 **Gemeten op 28 oktober met Playwright, mobiel en desktop, op de live homepage.**
 Klikken op "Aanvaard alle cookies" werkt: de balk verdwijnt en `cookie-preference`,
@@ -351,6 +371,8 @@ en het is ook de reden dat de balk voor een deel van de bezoekers blijft staan.
 
 **Prioriteit:** hoog. Dit is core-gedrag van Shopware, niet iets wat wij stuk kunnen
 maken met CSS.
+
+</details>
 
 ---
 
