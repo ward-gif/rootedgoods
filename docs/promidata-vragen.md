@@ -101,9 +101,14 @@ productomschrijvingen herschrijven.
 
 ### C1. Koppen op de categoriepagina's
 
-**Wat:** 78 van de 98 contentpagina's missen een `<h1>` en 68 missen een
-meta-omschrijving. Dat is vrijwel de hele categoriestructuur, inclusief
-`/alle-producten/` en `/thema-s/kerstpakketten-eindejaar/`.
+**Wat:** opnieuw gemeten op 3 november 2026 over alle categoriepagina's:
+**75 van de 75 missen een `<h1>`** en **75 van de 75 hebben een lege
+meta-omschrijving**. Dat is de hele categoriestructuur, inclusief `/alle-producten/`
+en `/thema-s/kerstpakketten-eindejaar/`. De eerdere telling (78 van 98) ging over een
+bredere set pagina's.
+
+De meta-omschrijvingen vullen we zelf; daarvoor loopt een aparte opdracht. **De h1 is
+het punt voor Promidata.**
 
 **Vraag:** zit de h1 in een template of is hij per categorie in te stellen? En kunnen
 wij de meta-omschrijvingen zelf per categorie invullen?
@@ -129,6 +134,66 @@ ongeveer 45.
 **Vraag:** kunnen de CMS-landingspagina's automatisch mee in de XML-sitemap?
 
 **Prioriteit:** laag voor dit kwartaal.
+
+### C4. De XML-sitemap is kapot, en is sinds 16 september nooit gelezen
+
+**Dit is het zwaarste punt van de hele lijst.** Search Console meldt bij de sitemap
+"Fout bij compressie" en **0 ontdekte pagina's**, met als verzenddatum 16 september
+2026 en laatst gelezen 1 november 2026. Google heeft in die ruim zes weken dus geen
+enkele URL uit de sitemap opgehaald.
+
+**Wat er mis is.** Het bestand
+`.../003cda8a1ed34df1860b226ae97dcc39-sitemap-rootedgoods-eu-1.xml.gz` is geen gzip
+met één inhoud, maar **vier achter elkaar geplakte gzip-leden**:
+
+| Lid | Gecomprimeerd | Uitgepakt | `<urlset>` open | `</urlset>` dicht | `<url>` |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 990 B | 12.201 B | 1 | **0** | 80 |
+| 2 | 1.751 B | 29.818 B | 1 | **0** | 180 |
+| 3 | 1.751 B | 29.818 B | 1 | **0** | 180 |
+| 4 | 17.507 B | 268.784 B | 1 | 1 | 1.503 |
+
+Elk lid begint opnieuw met `<?xml version="1.0"?><urlset ...>`. Alleen het laatste lid
+is een compleet en geldig document; de eerste drie zijn **afgekapte restanten van
+eerdere generaties**, zonder sluittag. Lid 2 en 3 zijn byte voor byte gelijk.
+
+`gunzip` plakt alle vier aan elkaar en levert dan 340.621 bytes met vier
+XML-declaraties en vier geopende `<urlset>`-elementen waarvan er één gesloten wordt.
+Dat is ongeldige XML. Googles sitemapverwerker leest het eerste lid, vindt geen
+`</urlset>`, en meldt een compressiefout.
+
+**Waar het niet aan ligt**, zodat dat niet onderzocht hoeft te worden:
+
+- `/sitemap.xml` geeft `HTTP 200` met `content-type: text/xml`
+- het `.gz`-bestand geeft `HTTP 200` met `content-type: application/x-gzip`
+- er is **geen** dubbele compressie: met en zonder `Accept-Encoding: gzip` komen
+  dezelfde 21.999 bytes binnen, zonder `content-encoding`-header
+- `robots.txt` noemt de sitemap en blokkeert hem niet
+- een steekproef van 30 URLs uit de sitemap gaf **30 keer 200, geen omleidingen**
+
+**Vraag:** waarom wordt bij het genereren aan het bestaande bestand toegevoegd in
+plaats van het te overschrijven? Verwijder het bestand, genereer de sitemap één keer
+opnieuw, en controleer dat er daarna **één** gzip-lid in zit.
+
+**Wat het oplevert.** Dit verklaart waarom de categoriestructuur nauwelijks bestaat
+voor Google. Gemeten over 89 dagen (5 augustus tot 1 november): van de 75
+categoriepagina's zijn er **12 ooit vertoond**, samen 188 vertoningen en 2 klikken.
+Eén enkele subcategorie haalde ooit een vertoning. Waar ze wél getoond worden staan ze
+op positie 4,7 tot 7,5, dus ranken is het probleem niet; gevonden worden wel.
+
+**Prioriteit: hoog.** Dit is een kapot bestand, geen wens. Het staat los van C1, C2 en
+C3, en die drie hebben weinig zin zolang dit niet klopt.
+
+**Controle achteraf**, in één regel:
+
+```bash
+curl -s <sitemap-url> | python3 -c "import sys,zlib;d=sys.stdin.buffer.read();n=0
+while d:
+    o=zlib.decompressobj(zlib.MAX_WBITS|16); o.decompress(d); n+=1; d=o.unused_data
+print(n,'gzip-leden')"
+```
+
+Eén lid is goed. Meer dan één is dezelfde fout.
 
 ---
 
