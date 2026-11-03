@@ -20,20 +20,24 @@ teruggeeft. Het hele bestand pakt uit naar 340.621 bytes.
 
 ---
 
-**Onderwerp:** Sitemap, aanvulling: het bestand bevat vier gzip-leden
+**Onderwerp:** Sitemap, aanvulling op jullie reactie van 23 september: het bestand bevat vier gzip-leden
 
 Hallo,
 
-Dank voor de controle van vorige keer. Alles wat jullie daarin nakeken klopt, en ik
-denk dat we daardoor langs elkaar heen praatten: HTTP 200, geen omleidingen, de juiste
-content-types, het gzip pakt foutloos uit, de firewall blokkeert niets en Googlebot
-komt binnen. Dat is allemaal in orde en dat betwisten we niet.
+Ik kom terug op jullie reactie van **23 september** over de sitemap. Die stond sinds
+16 september ingediend, en vandaag, zes weken later, meldt Search Console nog steeds
+**0 ontdekte pagina's**.
+
+Alles wat jullie toen nakeken klopt, en ik denk dat we daardoor langs elkaar heen
+praatten: HTTP 200, geen omleidingen, de juiste content-types, het gzip pakt foutloos
+uit, de firewall blokkeert niets en Googlebot komt binnen. Dat is allemaal in orde en
+dat betwisten we niet.
 
 Wat niet is nagekeken, is of de **uitgepakte inhoud één XML-document** is. Dat is het
 niet.
 
-Het verschil zit in jullie eigen cijfer. Jullie melden een ongecomprimeerde grootte van
-ongeveer 268 KB. Het bestand pakt uit naar **340.621 bytes**. Die 268.784 bytes zijn de
+Het verschil zit in jullie eigen cijfer. Jullie meldden toen een ongecomprimeerde
+grootte van ongeveer 268 KB. Het bestand pakt uit naar **340.621 bytes**. Die 268.784 bytes zijn de
 grootte van het **laatste** van vier achter elkaar geplakte gzip-leden, en dat is ook
 precies wat de gzip-trailer teruggeeft. Een controle die 268 KB oplevert, heeft dus één
 lid gelezen en niet het hele bestand.
@@ -43,9 +47,9 @@ Uitgepakt staan er vier losse documenten achter elkaar, elk met een eigen
 stopt op de tweede declaratie: *"XML or text declaration not at start of entity: line
 1, column 12201"*.
 
-Dat verklaart ook jullie eigen test met `sitemap2.xml`. Een platte kopie van de
-uitgepakte inhoud is geldig, dus die haalde Google probleemloos op. De inhoud is niet
-het probleem, de verpakking wel.
+Dat verklaart ook jullie eigen test met `sitemap2.xml` destijds. Een platte kopie van
+de uitgepakte inhoud is geldig, dus die haalde Google probleemloos op. De inhoud is
+niet het probleem, de verpakking wel.
 
 **Waar het ontstaat.** Met Refresh strategy tijdelijk op Live geeft het verzoek dat de
 generatie aftrapt **HTTP 500**, en blijft de half geschreven uitvoer in het bestand
