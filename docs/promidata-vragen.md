@@ -171,6 +171,29 @@ Dat is ongeldige XML. Googles sitemapverwerker leest het eerste lid, vindt geen
 - `robots.txt` noemt de sitemap en blokkeert hem niet
 - een steekproef van 30 URLs uit de sitemap gaf **30 keer 200, geen omleidingen**
 
+### Dit is geen Google-kwestie, en dat is te bewijzen zonder Google
+
+Promidata heeft eerder gemeld dat er aan hun kant niets mis is en dat we Google
+support moeten benaderen. Dat is te weerleggen met een gewone XML-parser. Het
+bestand is op geen enkele manier geldig te lezen:
+
+| Hoe je het leest | Resultaat |
+|---|---|
+| `gunzip`, dus alle vier de leden achter elkaar | **ongeldig**: `XML or text declaration not at start of entity: line 1, column 12201` |
+| alleen het eerste gzip-lid, zoals een strikte lezer doet | **ongeldig**: `no element found: line 1, column 12201` |
+| alleen het laatste lid, los | **geldig**, 1.503 URLs |
+
+De tweede `<?xml ... ?>`-declaratie staat op byte 12.201, precies waar lid 2 begint.
+Een XML-document mag er maar één hebben, aan het begin.
+
+Dus: het enige geldige document zit in dit bestand begraven onder drie restanten.
+Welke lezer je ook neemt, strikt of soepel, je krijgt nooit een geldige sitemap.
+Daar komt Google niet aan te pas.
+
+**Ook nagekeken, en in orde:** `/sitemap.xml` is 494 bytes, geldige XML, en verwijst
+naar één sitemap. Een variant zonder `.gz` bestaat niet (404). De fout zit dus
+volledig in dat ene `.xml.gz`.
+
 **Vraag:** waarom wordt bij het genereren aan het bestaande bestand toegevoegd in
 plaats van het te overschrijven? Verwijder het bestand, genereer de sitemap één keer
 opnieuw, en controleer dat er daarna **één** gzip-lid in zit.
@@ -194,6 +217,22 @@ print(n,'gzip-leden')"
 ```
 
 Eén lid is goed. Meer dan één is dezelfde fout.
+
+**De proef die de discussie beslecht.** Verwijder het bestand, genereer één keer
+opnieuw, en draai de regel hierboven.
+
+- Komt er **1 gzip-lid** uit, dan was het een blijven staan van afgebroken runs en is
+  het daarmee opgelost.
+- Komt er **weer meer dan één** uit, dan wordt er bij het genereren toegevoegd in
+  plaats van overschreven, en zit de fout in de code.
+
+In beide gevallen weten we het binnen een minuut, zonder dat iemand Google hoeft te
+bellen.
+
+**Pas daarna opnieuw indienen in Search Console**, en dan met de index
+`https://rootedgoods.eu/sitemap.xml`, niet met het `.gz` rechtstreeks. De index is
+een vast adres, hij staat al in `robots.txt`, en hij blijft kloppen als Shopware de
+sitemap ooit over meerdere bestanden verdeelt. Nu staat het `.gz` zelf ingediend.
 
 ---
 
