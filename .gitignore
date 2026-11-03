@@ -20,3 +20,4 @@ _*.html
 __pycache__/
 *.pyc
 _werkrommel/
+*.mp4
