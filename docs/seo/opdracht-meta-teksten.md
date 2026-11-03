@@ -1,104 +1,76 @@
-# Meta-teksten voor de categoriepagina's
+# Meta-teksten categoriepagina's — start hier
 
-Alle 75 categoriepagina's hebben een lege meta description. 63 hebben alleen de
-categorienaam als titel. Jij vult ze.
-
-## Wat je doet, in deze volgorde
-
-**1. Plak de twaalf die al klaarliggen.** In `docs/meta-teksten-concept.md` staan
-afgeronde descriptions voor de hoofdcategorieën. Die zijn nooit in Shopware gezet.
-Geen schrijfwerk, alleen plakken.
-
-**2. Vraag Ward of het in bulk kan.** 75 keer twee velden met de hand is een
-middag. Shopware kan categorieën im- en exporteren. Vraag dat vóórdat je begint.
-
-**3. Schrijf de 63 die onderaan dit bestand staan.** Tien per keer.
-
-## De regels
-
-| | |
-|---|---|
-| Titel | 35 tot 60 tekens, eindigt op ` \| Rooted Goods`, **geen punt** |
-| Description | 120 tot 155 tekens, **wel** een punt |
-| Aanspreekvorm | je en jij, nooit "u" |
-| Nooit | em-dashes, uitroeptekens, Engelse wendingen |
-
-## Wat je niet mag beweren
-
-| Wel | Niet |
-|---|---|
-| geassembleerd in Europa | gemaakt in Europa, 100% duurzaam, CO2-neutraal |
-| binnen één werkdag een vrijblijvend voorstel | binnen 24 uur, binnen 2 dagen |
-| digitale drukproef vooraf, gratis ontwerp | |
-| er is **geen** vaste minimale afname | vanaf 25 stuks |
-| levertijd is productafhankelijk | elke concrete levertijd |
-
-## Woorden die er niet in mogen
-
-cruciaal · naadloos · optimaliseren · faciliteren · robuust · hoogwaardig ·
-premium kwaliteit · unieke selectie · ruim assortiment · uitgebreide collectie ·
-"op zoek naar" · "het juiste adres" · "voor ieder wat wils" · "de beste" ·
-"scherpe prijzen" · "snelle levering" · "ontdek onze" · "in het hart van"
-
-## De belangrijkste regel
-
-Bij 63 teksten is de valkuil niet een lelijke zin, maar dat ze allemaal dezelfde
-vorm hebben. In het bestaande concept begon **9 van de 31** met "Van een".
-
-Varieer de opening, de zinsbouw en het aantal zinnen. De controle breekt af als
-meer dan 20% hetzelfde begint of dezelfde woordgroep gebruikt.
+**Waar werk je:** gewoon Claude in de browser, een normaal gesprek. Geen code, geen
+Cowork. Het is schrijfwerk.
 
 ---
 
-## Dit plak je in Claude
+## Stap 1. Plak wat er al klaarligt. Geen schrijfwerk.
+
+In `docs/meta-teksten-concept.md` staan twaalf afgeronde meta-descriptions voor de
+hoofdcategorieën. Die zijn nooit in Shopware gezet, terwijl de titels er wel staan.
+Overnemen in de SEO-velden van die twaalf categorieën.
+
+## Stap 2. Vraag Ward of het in bulk kan.
+
+Shopware kan categorieën im- en exporteren. 75 keer met de hand plakken is een middag.
+Vraag dit vóórdat je begint.
+
+## Stap 3. De 63 die nog niets hebben.
+
+Tien per keer:
+
+1. Nieuw gesprek in Claude
+2. Sleep **`categorie-feiten.md`** erbij
+3. Plak de prompt hieronder
+4. Noem tien paden uit de lijst onderaan dit bestand
+
+**Na de eerste twintig: stuur het bestand naar Ward.** Dan draait hij de controle en
+weet je of je op de goede weg zit. Anders schrijf je er zestig in dezelfde vorm en mag
+je opnieuw.
+
+**Inleveren:** één bestand, tabs ertussen, drie kolommen: `pad`, `titel`,
+`description`.
+
+---
+
+## De prompt
 
 > Je schrijft meta-titels en meta-descriptions voor de categoriepagina's van
-> rootedgoods.eu, een B2B-webshop in relatiegeschenken die met het logo van de
-> klant gepersonaliseerd worden.
+> rootedgoods.eu, een B2B-webshop in relatiegeschenken die met het logo van de klant
+> gepersonaliseerd worden. Ik heb de feiten per categorie als bestand bijgevoegd:
+> aantal producten, prijsbereik, merknamen, en wat er alleen in die categorie staat.
+> Gebruik die, verzin niets bij.
 >
-> Toon: warm, eerlijk, concreet, nuchter-Nederlands. Korte zinnen, af en toe een
-> langere. Wij zijn de gids, de klant is de held. Concreet boven abstract: noem
-> een product of een merk, niet "hoogwaardige producten".
+> **Toon:** warm, eerlijk, concreet, nuchter-Nederlands. Korte zinnen, af en toe een
+> langere. Wij zijn de gids, de klant is de held. Noem een product of een merk, niet
+> "hoogwaardige producten".
 >
-> Regels, hard:
-> - Titel 35 tot 60 tekens, eindigt op " | Rooted Goods", geen punt erachter.
-> - Description 120 tot 155 tekens, eindigt wel op een punt.
+> **Hard:**
+> - Titel 35 tot 60 tekens, eindigt op " | Rooted Goods", géén punt erachter.
+> - Description 120 tot 155 tekens, eindigt wél op een punt.
 > - Je en jij, nooit "u". Nederlands. Geen em-dashes, geen uitroeptekens.
-> - Niet beweren: "gemaakt in Europa" (het is "geassembleerd in Europa"),
->   100% duurzaam, CO2-neutraal, een minimale afname, een concrete levertijd,
->   "binnen 24 uur" (het is "binnen één werkdag").
-> - Niet gebruiken: cruciaal, naadloos, optimaliseren, faciliteren, robuust,
->   hoogwaardig, premium kwaliteit, unieke selectie, ruim assortiment,
->   uitgebreide collectie, "op zoek naar", "het juiste adres", "de beste",
->   "scherpe prijzen", "snelle levering", "ontdek onze", "in het hart van".
-> - **Varieer.** Niet meer dan twee van de tien mogen met hetzelfde woord
->   beginnen. Niet elke tekst dezelfde bouw. Soms één zin, soms twee.
 >
-> Ik geef je per categorie de feiten: aantal producten, prijsbereik, merken, en
-> wat er alleen in die categorie staat. Gebruik die, verzin niets bij.
+> **Niet beweren:** "gemaakt in Europa" (het is "geassembleerd in Europa"), 100%
+> duurzaam, CO2-neutraal, een minimale afname (die is er niet), een concrete levertijd,
+> "binnen 24 uur" (het is "binnen één werkdag").
 >
-> Geef je antwoord als tabgescheiden regels, zonder kopregel:
-> pad<TAB>titel<TAB>description
+> **Niet gebruiken:** cruciaal, naadloos, optimaliseren, faciliteren, robuust,
+> hoogwaardig, premium kwaliteit, unieke selectie, ruim assortiment, uitgebreide
+> collectie, "op zoek naar", "het juiste adres", "de beste", "scherpe prijzen",
+> "snelle levering", "ontdek onze", "in het hart van".
+>
+> **Varieer, dit is de belangrijkste regel.** Bij zestig teksten valt niet een lelijke
+> zin op, maar dat ze allemaal dezelfde vorm hebben. In een eerdere ronde begon negen
+> van de eenendertig met "Van een". Niet meer dan twee van de tien mogen met hetzelfde
+> woord beginnen, en niet elke tekst dezelfde bouw. Soms één zin, soms twee.
+>
+> Geef tabgescheiden regels, zonder kopregel:
+> `pad<TAB>titel<TAB>description`
+>
+> De tien categorieën:
 
-Plak daaronder het stuk uit `docs/seo/categorie-feiten.md` voor de tien
-categorieën die je doet. Niet alle 75 tegelijk, dan gaan ze op elkaar lijken.
-
-## Controleren
-
-Zet alles onder elkaar in `docs/seo/meta-teksten.tsv`, met bovenaan één kopregel
-`pad	titel	description`. Dan:
-
-```bash
-bin/meta-check.py docs/seo/meta-teksten.tsv
-```
-
-Fouten moeten weg, waarschuwingen mag je negeren als je weet waarom. Draai hem
-telkens over het hele bestand, niet over de laatste tien.
-
-## Inleveren
-
-`docs/seo/meta-teksten.tsv`, door de controle heen. Twijfel je over de feiten van
-een categorie, zet hem dan apart in plaats van iets aannemelijks te verzinnen.
+Daaronder plak je tien paden uit de lijst hieronder.
 
 ---
 
