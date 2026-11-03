@@ -1,0 +1,92 @@
+Properties waar dit account bij kan:
+   sc-domain:rootedgoods.eu  (siteRestrictedUser)
+
+Search Console sc-domain:rootedgoods.eu | 2026-08-05 t/m 2026-11-01
+Search Console loopt ongeveer twee dagen achter; de laatste dagen zijn incompleet.
+
+### 1. Waarop wordt je site in Google gevonden?
+    basis: Organische zoekvragen. Dit is wat Google je toont zonder dat je ervoor betaalt. Leg het naast de betaalde zoektermen.
+    zoekvraag                                           vert.   klik     CTR  positie
+    rooted goods                                           40     20   50.0%      1.2
+    amuse tylla                                             2      0    0.0%     21.0
+    be o                                                    1      0    0.0%     53.0
+    be o cup                                                2      0    0.0%     69.0
+    be original                                             1      0    0.0%     61.0
+    be'o                                                    1      0    0.0%     48.0
+    be-o                                                    1      0    0.0%     51.0
+    box geel                                                1      0    0.0%     47.0
+    custom made handdoeken                                  5      0    0.0%     50.2
+    duurzaam notitieblok                                    6      0    0.0%     68.5
+    duurzame notitieboeken                                 13      0    0.0%     70.2
+    duurzame notitieboekjes                                10      0    0.0%     66.1
+    eco notitieboek                                         2      0    0.0%     70.5
+    essens 55                                               1      0    0.0%     22.0
+    janzen euphoria                                         2      0    0.0%     47.5
+    janzen giftset euphoria                                 1      0    0.0%     76.0
+    janzen goud                                             2      0    0.0%     31.0
+    janzen gracious                                         4      0    0.0%     43.0
+    janzen pakket goud                                      1      0    0.0%     35.0
+    luxe strandlakens leverancier                           2      0    0.0%     57.0
+    notitieboek duurzaam                                    3      0    0.0%     61.7
+    oasus                                                   1      0    0.0%     91.0
+    polarbox 20l                                            3      0    0.0%     28.3
+    poptracker                                              1      0    0.0%     30.0
+    pulltex hybrid                                          2      0    0.0%     60.5
+    raja chrome                                             7      0    0.0%     66.6
+    rooted goods lockport                                   1      0    0.0%     15.0
+    rooted jewelry                                          1      0    0.0%     56.0
+    samsonite essens spinner 55/20                          1      0    0.0%     33.0
+    tony reep personaliseren                                2      0    0.0%     38.0
+
+### 2. Welke pagina's halen vertoningen?
+    basis: Als je eigen landingspagina's hier ontbreken, bevestigt dat de sitemapbevinding.
+    pagina                                                          vert.   klik     CTR  positie
+    https://rootedgoods.eu/                                            93     50   53.8%      2.1
+    https://rootedgoods.eu/over-ons                                    54      3    5.6%      3.4
+    https://rootedgoods.eu/Custom-made-sport-handdoek-50-x-100          9      1   11.1%     29.1
+    https://rootedgoods.eu/Plank-met-handvat-beuken-28x11-cm/A          1      1  100.0%      5.0
+    https://rootedgoods.eu/Schoudertas-CANCAN/A1352-CGB2261             2      1   50.0%      1.0
+    https://rootedgoods.eu/alle-producten/                             72      1    1.4%      5.4
+    https://rootedgoods.eu/faq                                         43      1    2.3%      3.7
+    https://rootedgoods.eu/verzorging/                                 11      1    9.1%     25.8
+    https://rootedgoods.eu/12-nights-of-wine-2026-rPET-12-x-10          2      0    0.0%      8.5
+    https://rootedgoods.eu/Amuse-Recycled-PP-Lunch-Box/A24-269          1      0    0.0%     61.0
+    https://rootedgoods.eu/Amuse-Recycled-PP-Lunch-Box/A24-269          1      0    0.0%     64.0
+    https://rootedgoods.eu/Amuse-Tylla-Food-Bowl-Duo-600-ml/A2          1      0    0.0%     18.0
+    https://rootedgoods.eu/Amuse-Tylla-Food-Bowl-Duo-600-ml/A2          2      0    0.0%      7.5
+    https://rootedgoods.eu/Amuse-Tylla-Food-Bowl-Duo-600-ml/A2          2      0    0.0%     28.5
+    https://rootedgoods.eu/BE-O-Coffee-Cup-340-ml-koffiebeker/          4      0    0.0%     56.5
+    https://rootedgoods.eu/BE-O-Coffee-Cup-340-ml-koffiebeker/          3      0    0.0%     67.3
+    https://rootedgoods.eu/Bambook-Classic-Hardcover-Notebook-          1      0    0.0%      5.0
+    https://rootedgoods.eu/Bambook-Classic-Hardcover-Notebook-          2      0    0.0%      1.5
+    https://rootedgoods.eu/BioSocks-Sport-in-Giftbox/A127-BSSG          1      0    0.0%     10.0
+    https://rootedgoods.eu/Borrelpakket-groot-met-sap/A1352-ZH          1      0    0.0%     11.0
+    https://rootedgoods.eu/Bottloop-L-stock/A127-BOLS                   1      0    0.0%     10.0
+    https://rootedgoods.eu/Citizen-Green-Charmant-25-stadspara          1      0    0.0%      3.0
+    https://rootedgoods.eu/Citizen-Green-Milou-gerecyclede-ler          1      0    0.0%     11.0
+    https://rootedgoods.eu/Congreet-plantpots-small-Christmas-          1      0    0.0%      5.0
+    https://rootedgoods.eu/Custom-made-strandlaken-100-x-190-2          1      0    0.0%     58.0
+
+### 3. Per apparaat
+    basis: Zelfde verhaal als bij de advertenties?
+    apparaat                  vert.   klik     CTR  positie
+    MOBILE                      110     29   26.4%      6.9
+    DESKTOP                     214     28   13.1%     26.3
+    TABLET                        1      0    0.0%     11.0
+
+### 4. Per land
+    basis: Verwacht: vrijwel alles Nederland.
+    land                      vert.   klik     CTR  positie
+    nld                         220     55   25.0%     19.2
+    aut                           2      1   50.0%      3.0
+    bel                          18      1    5.6%     13.6
+    arg                           1      0    0.0%      5.0
+    bgd                           1      0    0.0%     70.0
+    blr                           1      0    0.0%      6.0
+    bra                           7      0    0.0%     31.0
+    can                           2      0    0.0%      4.0
+
+### Totaal
+    325 vertoningen, 57 klikken, CTR 17.5%, gemiddelde positie 19.7
+
+Klaar.
