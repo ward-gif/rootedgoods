@@ -35,23 +35,25 @@ Niets aan veranderen, ze zijn af. Het gaat om deze twaalf:
 
 ## Klus 2: 63 categorieën hebben nog niets
 
-Dit doe je in Claude, gewoon in de browser. Tien tegelijk.
+Dit doe je in Claude, gewoon in de browser. **Alles in één gesprek**, tien tegelijk.
+Niet elke ronde een nieuw gesprek beginnen: in hetzelfde gesprek ziet Claude wat hij al
+geschreven heeft en kan hij zichzelf ontwijken. Dat is precies wat we willen.
 
-### Ronde 1
+### De eerste keer
 
 1. Ga naar **claude.ai** en begin een nieuw gesprek
 2. Sleep het bestand **`categorie-feiten.md`** in het tekstvak
-3. Plak de hele prompt hieronder, hij is al ingevuld met de eerste tien
+3. Plak de prompt hieronder, hij is al ingevuld met de eerste tien
 4. Verstuur
-
-Claude geeft tien regels terug. Zet die onder elkaar in een spreadsheet, met drie
-kolommen: **pad**, **titel**, **omschrijving**.
 
 > Je schrijft meta-titels en meta-descriptions voor de categoriepagina's van
 > rootedgoods.eu, een B2B-webshop in relatiegeschenken die met het logo van de klant
 > gepersonaliseerd worden. Ik heb de feiten per categorie als bestand bijgevoegd:
 > aantal producten, prijsbereik, merknamen, en wat er alleen in die categorie staat.
 > Gebruik die, verzin niets bij.
+>
+> Ik ga je dit in rondes van tien vragen, drieenzestig in totaal. Houd bij welke
+> openingswoorden en zinsbouw je al gebruikt hebt en herhaal ze niet.
 >
 > Toon: warm, eerlijk, concreet, nuchter-Nederlands. Korte zinnen, af en toe een
 > langere. Wij zijn de gids, de klant is de held. Noem een product of een merk, niet
@@ -79,7 +81,7 @@ kolommen: **pad**, **titel**, **omschrijving**.
 > Geef tabgescheiden regels, zonder kopregel:
 > pad<TAB>titel<TAB>description
 >
-> De tien categorieen:
+> De eerste tien:
 >
 > /thema-s/
 > /thema-s/made-in-nl/
@@ -92,19 +94,26 @@ kolommen: **pad**, **titel**, **omschrijving**.
 > /huis-keuken/planten/
 > /huis-keuken/lunchboxen-en-zakjes/
 
-### Ronde 2 en verder
+### Elke ronde daarna
 
-Precies hetzelfde, met twee verschillen:
+In **hetzelfde gesprek** typ je alleen dit, met tien nieuwe paden uit de lijst achterin:
 
-- **Begin elke ronde in een nieuw gesprek.** Doe je ze allemaal in één gesprek, dan
-  gaan de teksten op elkaar lijken en moet je overnieuw.
-- Vervang de tien paden onderaan de prompt door de volgende tien uit de lijst
-  achterin dit bestand.
+> Volgende tien. Let op de variatie: gebruik geen openingswoord en geen zinsbouw die je
+> hierboven al gebruikt hebt.
+>
+> /pad-een/
+> /pad-twee/
+> ...
 
-### Tussendoor en daarna
+Meer niet. De regels uit de eerste prompt blijven gelden, die hoef je niet te herhalen.
 
-**Na ronde 2 stuur je de spreadsheet naar Ward.** Er loopt dan een controle overheen
-en je hoort of het goed gaat. Zo weet je het na twintig in plaats van na drieënzestig.
+### Wat je met de antwoorden doet
+
+Claude geeft per ronde tien regels terug, met tabs ertussen. Zet die onder elkaar in
+een spreadsheet met drie kolommen: **pad**, **titel**, **omschrijving**.
+
+**Na ronde 2 stuur je de spreadsheet naar Ward.** Er loopt dan een controle overheen en
+je hoort of het goed gaat. Zo weet je het na twintig in plaats van na drieënzestig.
 
 **Als alles klaar is** zet je ze zelf in Shopware. Er is geen importfunctie, dus het is
 per categorie de titel en de omschrijving in de SEO-velden plakken. Vanuit de
