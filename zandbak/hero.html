@@ -1,0 +1,41 @@
+<!-- ===== HERO ===== -->
+<!-- Korte variant voor de raster-opzet (punt 13 + 15 van het verbeterplan).
+     Drie dingen zijn anders dan de oude hero:
+
+     1. .rg-page-hero--raster is de MARKER. Zonder die class doet de
+        raster-JS en -CSS niets, op geen enkele pagina. Pas als dit blok
+        geplakt is, verandert er iets. Terugdraaien = oude blok terugplakken.
+     2. Het sfeerbeeld staat als custom property in de style, niet als <img>.
+        De CSS gebruikt 'm alleen vanaf 992px, en een background-image in een
+        media-query die niet matcht wordt niet opgehaald. Mobiel downloadt
+        het beeld dus niet, in plaats van het te verbergen nadat het binnen is.
+     3. Eén knop. De tweede ("Bekijk alle producten") zit nu onder het raster,
+        in de fade, waar hij logischer staat: pas nadat je producten gezien hebt.
+
+     data-rg-raster-href/-label voeden die knop. Per pagina aanpassen. -->
+<section class="rg-page-hero rg-page-hero--raster"
+         style="--rg-hero-beeld:url('/media/39/75/1d/1787736741/Zuivelhoeve pakket.jpg')"
+         data-rg-raster-href="/thema-s/kerstpakketten-eindejaar/"
+         data-rg-raster-label="Bekijk alle kerstgeschenken">
+  <div class="rg-page-hero__copy">
+    <!-- Eyebrow met de cognac hairline ervoor. Die hairline stond al als
+         --rg-hair in de tokens en als principe in de merkgids, maar werd
+         nergens aangeroepen. Hier geeft hij de hero zijn eigen aanzet. -->
+    <p class="rg-page-hero__eyebrow">Eindejaarsgeschenken</p>
+    <h1 class="rg-page-hero__title">Kerstpakketten <span class="rg-amp">&amp;</span> eindejaar</h1>
+    <!-- Ingekort van 137 naar 70 tekens: 4 regels werden er 2 op mobiel.
+         Dit is een trim van de bestaande zin, geen nieuwe belofte. Wil je
+         hier punt 13 echt afmaken (prijs per stuk, minimale afname,
+         levertijd), dan heb ik die drie getallen van je nodig. -->
+    <p class="rg-page-hero__sub">Bedank medewerkers en relaties met iets dat oprecht en doordacht voelt.</p>
+    <div class="rg-page-hero__cta">
+      <a class="btn btn-primary" href="/offerte">Vraag een offerte aan</a>
+    </div>
+    <div class="rg-page-hero__logos" aria-label="Vertrouwd door">
+      <img src="/media/6f/40/25/1787233896/Erasmus MC.png" alt="Erasmus MC">
+      <img src="/media/e7/2a/d6/1787233896/Ifes.png" alt="Ifes" loading="lazy" decoding="async">
+      <img src="/media/f9/5c/8d/1787233896/Huisartsen G.C. Zuiderzorg.png" alt="Huisartsen G.C. Zuiderzorg" loading="lazy" decoding="async">
+      <img src="/media/c5/9e/20/1787233897/Wezijnwille.png" alt="Wezijnwille" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>

@@ -137,6 +137,10 @@ ongeveer 45.
 
 ### C4. De XML-sitemap is kapot, en is sinds 16 september nooit gelezen
 
+> **Verstuurd op 3 november 2026** als losse bugmelding, zie
+> `docs/mails/2026-11-03-promidata-sitemap.md`. De sitemap is dezelfde dag opnieuw
+> ingediend in Search Console. Blijft hier staan tot Promidata antwoordt.
+
 **Dit is het zwaarste punt van de hele lijst.** Search Console meldt bij de sitemap
 "Fout bij compressie" en **0 ontdekte pagina's**, met als verzenddatum 16 september
 2026 en laatst gelezen 1 november 2026. Google heeft in die ruim zes weken dus geen

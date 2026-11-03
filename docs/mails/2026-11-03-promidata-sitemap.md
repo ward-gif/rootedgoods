@@ -1,6 +1,6 @@
 # Mail aan Promidata, 3 november 2026
 
-Verzendklaar. Los van `docs/promidata-vragen.md`: dit is een bug, de rest zijn
+**Verstuurd op 3 november 2026.** Los van `docs/promidata-vragen.md`: dit is een bug, de rest zijn
 verzoeken.
 
 ## Herschreven na een onafhankelijke controle
