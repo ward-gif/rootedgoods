@@ -13,7 +13,8 @@ die je straks plakt.
 
 ## Klus 1: twaalf staan al klaar
 
-Half uurtje, geen schrijfwerk.
+Half uurtje, geen schrijfwerk. Begin hiermee, dan heb je de route in Shopware meteen
+te pakken voordat je gaat schrijven.
 
 In het bestand **`meta-teksten-concept.md`** staan twaalf afgeronde omschrijvingen voor
 de grote categorieën. Die zijn geschreven maar nooit in Shopware gezet.
@@ -53,8 +54,11 @@ de teksten op elkaar lijken en moet je overnieuw.
 overheen lopen en zegt of het goed gaat. Dan weet je het na twintig in plaats van na
 drieënzestig.
 
-**Als alles klaar is** stuur je het bestand naar Ward. Hij zegt dan of het in één keer
-geïmporteerd kan worden of dat het met de hand in Shopware moet.
+**Daarna zet je ze zelf in Shopware.** Er is geen importfunctie, dus het is per
+categorie de titel en de omschrijving in de SEO-velden plakken. Vanuit een spreadsheet
+gaat dat het snelst: cel aanklikken, kopiëren, plakken.
+
+Reken op 75 categorieën met twee velden. Doe het in blokken en niet in één ruk.
 
 ---
 
