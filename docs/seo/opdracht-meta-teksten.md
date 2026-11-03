@@ -1,40 +1,66 @@
-# Meta-teksten categoriepagina's — start hier
+# Meta-teksten voor de categoriepagina's
 
-**Waar werk je:** gewoon Claude in de browser, een normaal gesprek. Geen code, geen
-Cowork. Het is schrijfwerk.
+## Wat dit is
+
+Elke categoriepagina hoort twee stukjes tekst te hebben: een **titel** en een
+**omschrijving** van een regel of twee. Dat is wat iemand in Google ziet staan als onze
+pagina in de zoekresultaten verschijnt. Bij ons zijn die bijna overal leeg.
+
+Jij schrijft ze. Je hoeft er niets van SEO te weten; alle regels zitten in de prompt
+die je straks plakt.
 
 ---
 
-## Stap 1. Plak wat er al klaarligt. Geen schrijfwerk.
+## Klus 1: twaalf staan al klaar
 
-In `docs/meta-teksten-concept.md` staan twaalf afgeronde meta-descriptions voor de
-hoofdcategorieën. Die zijn nooit in Shopware gezet, terwijl de titels er wel staan.
-Overnemen in de SEO-velden van die twaalf categorieën.
+Half uurtje, geen schrijfwerk.
 
-## Stap 2. Vraag Ward of het in bulk kan.
+In het bestand **`meta-teksten-concept.md`** staan twaalf afgeronde omschrijvingen voor
+de grote categorieën. Die zijn geschreven maar nooit in Shopware gezet.
 
-Shopware kan categorieën im- en exporteren. 75 keer met de hand plakken is een middag.
-Vraag dit vóórdat je begint.
+Per categorie:
 
-## Stap 3. De 63 die nog niets hebben.
+1. Zoek in dat bestand het kopje met het juiste pad, bijvoorbeeld `/drinkwaren/`
+2. Kopieer de regel achter **Meta-description:**
+3. Zet hem in het SEO-veld van die categorie in Shopware
 
-Tien per keer:
+Niets aan veranderen, ze zijn af. Het gaat om deze twaalf:
 
-1. Nieuw gesprek in Claude
-2. Sleep **`categorie-feiten.md`** erbij
-3. Plak de prompt hieronder
-4. Noem tien paden uit de lijst onderaan dit bestand
+`/alle-producten/` · `/drinkwaren/` · `/kantoor-schrijfwaren/` · `/kleding-textiel/` ·
+`/tassen-reizen/` · `/verzorging/` · `/sport-spel/` · `/huis-keuken/` ·
+`/elektronica/` · `/giveaways/` · `/eten-drinken/` · `/outdoor/`
 
-**Na de eerste twintig: stuur het bestand naar Ward.** Dan draait hij de controle en
-weet je of je op de goede weg zit. Anders schrijf je er zestig in dezelfde vorm en mag
-je opnieuw.
+---
 
-**Inleveren:** één bestand, tabs ertussen, drie kolommen: `pad`, `titel`,
-`description`.
+## Klus 2: 63 categorieën hebben nog niets
+
+Dit doe je in Claude, gewoon in de browser. Tien tegelijk.
+
+**Per ronde van tien:**
+
+1. Ga naar claude.ai en begin een **nieuw gesprek**
+2. Sleep het bestand **`categorie-feiten.md`** in het tekstvak
+3. Plak de hele prompt hieronder
+4. Zet er tien paden onder uit de lijst achterin dit bestand
+5. Verstuur
+6. Claude geeft tien regels terug. Zet die onder elkaar in een bestand of spreadsheet,
+   met drie kolommen: pad, titel, omschrijving
+
+**Begin elke ronde in een nieuw gesprek.** Doe je ze allemaal in één gesprek, dan gaan
+de teksten op elkaar lijken en moet je overnieuw.
+
+**Na de eerste twintig: stuur het bestand naar Ward.** Hij laat er een controle
+overheen lopen en zegt of het goed gaat. Dan weet je het na twintig in plaats van na
+drieënzestig.
+
+**Als alles klaar is** stuur je het bestand naar Ward. Hij zegt dan of het in één keer
+geïmporteerd kan worden of dat het met de hand in Shopware moet.
 
 ---
 
 ## De prompt
+
+Plak dit hele blok, van "Je schrijft" tot en met "De tien categorieën:".
 
 > Je schrijft meta-titels en meta-descriptions voor de categoriepagina's van
 > rootedgoods.eu, een B2B-webshop in relatiegeschenken die met het logo van de klant
@@ -69,8 +95,6 @@ je opnieuw.
 > `pad<TAB>titel<TAB>description`
 >
 > De tien categorieën:
-
-Daaronder plak je tien paden uit de lijst hieronder.
 
 ---
 
