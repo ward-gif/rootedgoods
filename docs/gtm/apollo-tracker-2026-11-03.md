@@ -342,3 +342,48 @@ verwijderd. **Niet gepubliceerd.**
 2. **De privacyverklaring noemt geen bezoekerherkenning.** Snitcher stond er niet
    in en Apollo dus ook niet. Nu Apollo bewust zonder toestemmingsgrens laadt,
    is dat het enige wat de bezoeker er nog over kan lezen.
+
+## Nagekeken op 3 november: er komt wél iets binnen, er is alleen niets te herkennen
+
+Ward zag in Apollo een vlakke lijn op nul over 90 dagen en "Identified 0/100".
+Drie dingen gecontroleerd, en het is geen van de voor de hand liggende oorzaken.
+
+**1. De tag staat in de gepubliceerde container.** Opgehaald met
+`curl https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK`, 478.430 bytes. Daarin
+staat `tag_id` 52, een custom-HTML-tag die
+`assets.apollo.io/micro/website-tracker/tracker.iife.js` laadt en aanroept met
+`appId: 67b4e32b5720930019c20ae8`.
+
+**2. Dat appId is het juiste account.** Apollo's eigen trackerconfiguratie geeft
+`id: 67b4e32b5720930019c20ae8`, exact hetzelfde. En `rootedgoods.eu` staat erin als
+toegestane verwijzer, naast `bambook.org`. Domeinlimiet 3, `credits_exhausted: false`.
+
+**3. Apollo heeft vandaag gegevens ontvangen.** In diezelfde configuratie staat
+`last_data_received_at: 2026-11-03T07:53:08Z`, oftewel vanochtend 08:53 Nederlandse
+tijd. Het veld `data_received` staat er tegelijk op `false`; die twee spreken elkaar
+tegen, en wij kunnen van buitenaf niet zien wat Apollo met dat tweede veld bedoelt.
+Vermoedelijk: wel binnengekomen, nog niets dat tot een bedrijf te herleiden was.
+
+### Waarom er niets herkend wordt, en dit is het echte antwoord
+
+Apollo herkent bedrijven door het IP-adres van de bezoeker terug te zoeken. Een
+mobiele bezoeker komt binnen op een IP van KPN, Vodafone of Odido, en dat is geen
+bedrijf. Zulke ISP-adressen vallen weg.
+
+Apparaatverdeling in GA4:
+
+| Periode | Mobiel | Desktop | Tablet |
+|---|---:|---:|---:|
+| 4 okt t/m 2 nov | 240 sessies (68,6%) | 99 (28,3%) | 11 (3,1%) |
+| 29 okt t/m 2 nov | 86 (89,6%) | 10 (10,4%) | 0 |
+
+In de laatste vijf dagen waren er **zes desktopgebruikers**. Dat is het hele
+potentieel waar Apollo iets mee kan, en daarvan wordt in de praktijk maar een deel
+herkend.
+
+**Dus: de opzet werkt, maar het verkeer dat we kopen is het soort dat een
+IP-herkenner niet kan thuisbrengen.** Dat is geen instelling die we kunnen aanzetten.
+Wie hier iets uit wil halen, moet eerst desktopverkeer hebben, en dat is een
+advertentiekeuze en geen trackingkwestie.
+
+De vlakke lijn over 90 dagen klopt overigens gewoon: de tag staat nog geen dag live.

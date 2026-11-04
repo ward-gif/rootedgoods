@@ -338,3 +338,99 @@ Promidata.
 
 De slider en de catalogus zijn wel Promidata, want daar wordt het `sizes`-attribuut
 door het thema gezet. Dat staat nu als D2 op de lijst.
+
+---
+
+# Stand 4 november 2026: hero en raster staan, de uitnodiging is nu aan de beurt
+
+Gebouwd in `zandbak/`, nog niet geplakt. Alle getallen hieronder zijn gemeten in een
+browser op de zandbakpagina, niet geschat. Zie `zandbak/LEESMIJ.md` en
+`docs/metingen/2026-11-04-hero-feiten/`.
+
+## Wat van de negen punten nu af is
+
+| | Punt | Stand |
+|---|---|---|
+| 1 | Feitenblok onder de h1 | **af.** € 25 tot € 70 per persoon, vanaf 10 stuks, met jouw logo. Boven de vouw. |
+| 2 | Besteldeadline met datum | **af, maar onbevestigd.** 27 november staat er; de termijn van vijftien werkdagen eronder is nooit gemeten. |
+| 3 | Offerteknop als eerste knop | **af.** Eén knop in de hero, en dat is de offerteknop. De catalogusknop is naar onder het raster verhuisd. |
+| 4 | Echte antwoorden in de FAQ | open. Ander blok. De tegenspraak over minimale afname staat er nog: de FAQ zegt "geen vaste minimale afname", gemeten is tien bij alle elf. |
+| 5 | Sfeerfoto van 320×240 weg bij y=1739 | open. |
+| 6 | Pakketten groter, met prijs en vanaf-aantal | **half.** Groter is gelukt: van 133×90 naar 175×175 op een scherm van 390. De prijs staat eronder. Het vanaf-aantal nog niet. |
+| 7 | "Proefdruk binnen één werkdag" in de pagina | open. Staat nog alleen in de sitebrede balk. |
+| 8 | Vergelijkblok hoger | open. |
+| 9 | Alles wat een beslissing ondersteunt boven y=1700 | deels. De drie feiten en de deadline staan nu boven y=500. |
+
+**Wat dat betekent voor de klif.** De twee vragen die 83% van de bezoekers nooit
+beantwoord kreeg, prijs en minimale afname, staan nu boven de vouw in plaats van op
+54% diepte. Dat is de kern van punt 13 en die is binnen.
+
+**Niet hermeten:** de totale paginahoogte en de nieuwe y-posities van de blokken
+eronder. De 6.794 px en de klif op y=1400 tot 1700 zijn nog de cijfers van 29 oktober.
+De browserverbinding viel weg voordat ik die ronde af had.
+
+## Nu aan de beurt: stap 3, de uitnodiging
+
+Van de vier stappen uit de herziene opdracht staan er twee: de oriëntatie (in de
+hero) en de inspiratie (het raster). **Stap 3 is de kern van de nieuwe opdracht en
+bestaat nog niet.**
+
+> **Of daag ons uit.**
+> Heb je zelf een idee? Vertel wat je wil weggeven, dan zoeken we uit of het kan.
+> We maken het als het een goed verhaal heeft, origineel is en in Europa gemaakt
+> kan worden.
+
+### Waar hij komt te staan
+
+Direct onder het raster, vóór het bewijs (klantlogo's staan al in de hero, het
+vergelijkblok en de services komen daarna). Niet ervoor: wie nog niet gezien heeft
+wat voor dingen we maken, kan de vraag "wat wil jij weggeven" niet beantwoorden.
+
+### Het probleem dat eerst opgelost moet worden
+
+**Er staat al een knop op die plek.** De raster-JS zet onderaan het afgekapte raster
+een fade met `btn btn-primary`: "Bekijk alle kerstgeschenken". Zet je de uitnodiging
+daar direct onder, dan staan er twee primaire knoppen onder elkaar, en dat is precies
+wat de herziene opdracht verbiedt: "Twee gelijkwaardige knoppen, 'koop dit pakket'
+naast 'vertel je idee', laat mensen stilstaan."
+
+**Voorstel: de rasterknop wordt een rustige tekstlink, de uitnodiging krijgt de
+enige primaire knop.** Dat volgt rechtstreeks uit "Eén hoofdknop" en uit "de
+pakketten houden elk hun eigen rustige link".
+
+Dat is één regel in `zandbak/rootedgoods.js`, in het raster-blok onderaan:
+`knop.className = 'btn btn-primary rg-raster__knop'` wordt een linkklasse. **Nog niet
+gedaan**, want zolang de uitnodiging er niet is, zou de pagina na het raster helemaal
+geen duidelijke vervolgstap meer hebben. Die twee horen in dezelfde plakronde.
+
+### Wat de uitnodiging moet kunnen
+
+1. **Eén tekstveld, geen formulier van twaalf vragen.** De vraag is "vertel wat je
+   wil weggeven", niet "vul je bedrijfsgegevens in". Hoe meer velden, hoe meer het
+   op een offerteaanvraag lijkt, en die bestaat al.
+2. **De drie eisen als kader, niet als drempel.** Goed verhaal, origineel, in Europa
+   te maken. Ze zeggen wat voor opdracht we leuk vinden en waar we voor staan.
+3. **Een eigen gebeurtenis in de meting.** Dit is punt 26, en het is nu concreet
+   geworden: sinds 3 november weten we dat de twee bestaande offertestromen uit
+   elkaar te halen zijn via `customEvent:form_id` (`offerte-aanvraag` tegenover
+   `product-aanvraag`). De uitdaging hoort daar een derde waarde te krijgen, anders
+   zie je in GA4 niet of iemand koopt of uitdaagt. Zie
+   `docs/metingen/2026-11-03-conversies/`.
+4. **Dit is de eerste echte ingang van de showroom** (punt 18). "Vertel wat je wil
+   weggeven" en dan binnen een werkdag een voorstel terugsturen, dat is wat de
+   showroom doet. De kerstpagina is de plek waar dat begint.
+
+### Wat ik nog van Ward nodig heb
+
+| | Waarom |
+|---|---|
+| **Bevestiging van de levertijd** | Vijftien werkdagen is een aanname. Hij bepaalt of de deadline 20 november, 27 november of 4 december is. Zonder dit kan het heroblok niet geplakt worden. |
+| **Waar de uitdaging naartoe gaat** | Een eigen pagina, een extra veld op `/offerte`, of een los formulier in het blok? Dat bepaalt of er een nieuwe `form_id` bij kan. |
+| **Of het vanaf-aantal onder elke tegel moet** | Punt 6 vraagt erom, maar alle elf staan op tien. Eén keer "vanaf 10 stuks" in de hero zegt hetzelfde en scheelt elf keer een regel onder een tegel. Mijn voorkeur is: niet herhalen. |
+
+## Wat er daarna nog ligt
+
+De punten 4, 5, 7 en 8 zijn alle vier blokken die al bestaan en alleen verplaatst of
+herschreven hoeven worden. Die kunnen in één plakronde mee zodra de uitnodiging er
+staat. Punt 4 is de enige met een inhoudelijke beslissing erin: de FAQ zegt iets dat
+aantoonbaar niet klopt, en dat moet hoe dan ook weg, los van dit ontwerp.

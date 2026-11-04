@@ -1,0 +1,11 @@
+ronde,url,http,ttfb_s,totaal_s,bytes,age,x_served_by
+1,rootedgoods.min.css,200,0.074545,0.085154,32403,13,cache-fra-eddf8230080-FRA,
+1,rootedgoods.min.js,200,1.348739,1.349330,10299,0,cache-fra-etou8220077-FRA,
+2,rootedgoods.min.css,200,0.091566,0.102058,32403,15,cache-fra-eddf8230080-FRA,
+2,rootedgoods.min.js,200,0.083718,0.083828,10299,0,cache-fra-etou8220077-FRA,
+3,rootedgoods.min.css,200,0.069567,0.076199,32403,15,cache-fra-eddf8230080-FRA,
+3,rootedgoods.min.js,200,0.093761,0.093991,10299,0,cache-fra-etou8220077-FRA,
+4,rootedgoods.min.css,200,0.066093,0.074874,32403,15,cache-fra-eddf8230080-FRA,
+4,rootedgoods.min.js,200,0.064998,0.065311,10299,1,cache-fra-etou8220077-FRA,
+5,rootedgoods.min.css,200,0.062113,0.071985,32403,16,cache-fra-eddf8230080-FRA,
+5,rootedgoods.min.js,200,0.099141,0.099304,10299,1,cache-fra-etou8220077-FRA,

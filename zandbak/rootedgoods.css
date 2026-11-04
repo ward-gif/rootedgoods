@@ -10973,12 +10973,73 @@ h2.rg-route__team-title{
 .rg-page-hero--raster .rg-page-hero__sub { margin-bottom: 1.4rem; max-width: 42ch; }
 .rg-page-hero--raster .rg-page-hero__cta { margin-bottom: 1.4rem; }
 
+/* ---------- 51.1b het feitenblok ---------- */
+/* Punt 1 van kerstpagina-herzien.md: prijs, vanaf-aantal en levertijd boven
+   de vouw. De pagina beantwoordde nul van de vier vragen die een zoeker
+   heeft; deze drie regels doen er drie van.
+
+   Een <ul> en geen <p>, want het is een opsomming van losse feiten en een
+   schermlezer hoort dan drie items in plaats van één regel.
+
+   GEEN SCHEIDINGSTEKENS, en dat is met opzet. Er stond eerst een cognac
+   punt via `li + li::before`. Op 390 px breed breekt de lijst na twee
+   items, en dan begint regel twee met een los zwevend puntje. Dat gebeurt
+   bij elke pseudo-element-oplossing, want CSS weet niet waar een regel
+   afbreekt. Het vet-tegen-zacht-contrast scheidt de drie feiten al; een
+   gat van 1,3rem tegen een spatie van ~4px is ruim genoeg verschil om ze
+   uit elkaar te houden, en het kan op geen enkele breedte mislukken. */
+.rg-page-hero--raster .rg-page-hero__feiten {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.3rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--rg-soft);
+}
+.rg-page-hero--raster .rg-page-hero__feiten strong {
+  font-weight: 600;
+  color: var(--rg-ink);
+}
+
+/* ---------- 51.1c de besteldeadline ---------- */
+/* Het sterkste argument dat een seizoenspagina heeft, en het stond nergens
+   op de pagina. Cognac, want dit is het enige element in de hero dat om
+   urgentie vraagt; de hairline-aanzet bij de eyebrow en dit punt zijn
+   samen de enige twee cognac-accenten, zodat het er niet twee keer om
+   vraagt. */
+.rg-page-hero--raster .rg-page-hero__deadline {
+  margin: 0 0 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--rg-cognac);
+  font-weight: 600;
+}
+.rg-page-hero--raster .rg-page-hero__deadline time { font-weight: 700; }
+
 @media (max-width: 991px) {
   /* Het hoogtebudget. Doel is onder de ~340px blijven zodat de eerste rij
-     tegels boven de vouw uitkomt; de oude hero zat op ~769px. */
+     tegels boven de vouw uitkomt; de oude hero zat op ~769px.
+
+     De sfeerregel gaat hier weg en de feiten komen ervoor. Dat is de
+     ruilhandel uit kerstpagina-herzien.md: "het gevoel staat vooraan en de
+     feiten ontbreken, en voor een advertentiebezoeker is dat andersom".
+     Op desktop staan ze allebei, want daar kost het niets. */
+  .rg-page-hero--raster .rg-page-hero__sub { display: none; }
+
   .rg-page-hero--raster { padding: 0.6rem 20px 1rem; }
-  .rg-page-hero--raster .rg-page-hero__sub { margin-bottom: 1rem; }
-  .rg-page-hero--raster .rg-page-hero__cta { margin-bottom: 1rem; }
+  .rg-page-hero--raster .rg-page-hero__feiten {
+    margin-bottom: 0.55rem;
+    gap: 0.15rem 1.1rem;
+    font-size: 0.88rem;
+  }
+  .rg-page-hero--raster .rg-page-hero__deadline {
+    margin-bottom: 0.75rem;
+    font-size: 0.88rem;
+  }
+  .rg-page-hero--raster .rg-page-hero__cta { margin-bottom: 0.8rem; }
 }
 
 @media (min-width: 992px) {
@@ -11032,6 +11093,11 @@ h2.rg-route__team-title{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px 10px;
+  /* De zijmarge hoort op de rand van het raster, niet op elk item (zie de
+     regel bij .product-slider-item hieronder). 15px, want dat is waar de
+     "Inspiratie"-kop van het CMS-blok ernaast begint; zonder dit liepen de
+     tegels tot tegen de schermrand terwijl de kop inspringt. */
+  padding-inline: 15px;
   /* start, niet stretch: anders rekt elke kaart mee met de langste van
      zijn rij en groeit het beeldvlak daarin mee. Dat was precies de
      "lange tegels". Samen met flex-grow:0 hieronder is het opgelost. */
@@ -11045,6 +11111,21 @@ h2.rg-route__team-title{
   .rg-raster .product-slider-container { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 }
 
+/* De carrouselgoot eruit. Het thema zet `padding: 0 15px` op elk
+   slider-item, want in een slider is dat de ruimte tussen de slides. In
+   een raster doet `gap` dat al, dus die padding is dubbel: gemeten op
+   4 november hield hij een tegel van 190 px op een beeldvlak van 160 px.
+   Dertig pixels per tegel, en juist de beeldbreedte is waar het hier om
+   gaat ("groter en minder", kerstpagina-herzien.md).
+
+   Ook hier `!important`, en om dezelfde reden als in 51.4: sectie 16 zet
+   `padding: 0 15px !important` op `.home-productslider .product-slider-item`.
+   Gelijke specificiteit, dus de laatste regel in het bestand wint. */
+.rg-raster .product-slider-item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* Ritme, zodat het geen catalogus wordt. Bewust pas vanaf 768px: op
    mobiel is verticale ruimte het schaarse goed en wil je dichtheid. */
 @media (min-width: 768px) {
@@ -11054,32 +11135,56 @@ h2.rg-route__team-title{
 
 /* ---------- 51.4 de kaart, bijna vierkant ---------- */
 /* De productfoto's zijn 1:1. Het beeldvlak blijft dus 1:1 en de tekst
-   eronder is zo kort dat de hele tegel net iets hoger is dan breed. */
+   eronder is zo kort dat de hele tegel net iets hoger is dan breed.
+   De brede tegel krijgt een liggend beeld, anders wordt hij een blok.
+
+   HIER GING HET EERST MIS, EN NIET DOOR HET THEMA MAAR DOOR ONSZELF.
+   Deze sectie zette eerst `aspect-ratio` op de wrapper. Gemeten in de
+   browser op 4 november kwam daar een beeldvlak van 169x143 uit in plaats
+   van een vierkant. De oorzaak staat 9.000 regels hierboven: sectie 16
+   (de homepage-slider) zet op dezelfde wrapper
+
+       height: 0 !important; padding-bottom: 85% !important;
+
+   en die slider heet op deze pagina ook `.home-productslider`, dus die
+   regel matcht gewoon mee. Tegen `!important` wint geen specificiteit, en
+   twee verhoudingssystemen naast elkaar leverden de verkeerde van de twee.
+
+   Daarom nu MEEDOEN met de machinerie die er al staat in plaats van hem
+   bevechten: dezelfde height:0 + padding-bottom-truc, alleen met een
+   ander percentage. Dat scheelt ook de overrides op .product-image-link
+   en .product-image, want die zijn daar al absoluut gepositioneerd.
+   100% = vierkant, 56,25% = 16/9.
+
+   De `!important` hieronder is geen slordigheid maar noodzaak: sectie 16
+   gebruikt hem ook en bij gelijke specificiteit wint de laatste regel in
+   het bestand. Sectie 51 staat achteraan, dus dit wint. Verplaats deze
+   sectie niet naar voren. */
 
 .rg-raster .product-box {
   border: 0;
   background: transparent;
   height: auto;           /* het thema zet height:100%; dat rekt in een raster */
 }
-.rg-raster .card-body { padding: 0; display: block; }
+/* Sectie 16 zet hier 1.75rem 1.5rem !important; in een raster is dat lucht
+   die de tegel alleen maar hoger maakt. */
+.rg-raster .product-box .card-body { padding: 0 !important; }
 
 .rg-raster .product-image-wrapper {
-  /* flex-grow:1 van het thema is DE oorzaak van de rek: het beeldvlak
-     groeide mee met de kaarthoogte en negeerde zo de aspect-ratio. */
-  flex: 0 0 auto;
-  height: auto;
-  aspect-ratio: 1;
-  margin-bottom: 8px;
-  border-radius: var(--rg-r-fn);
-  overflow: hidden;
-  background: #fff;
+  padding-bottom: 100% !important;     /* vierkant */
+  margin-bottom: 8px !important;       /* sectie 16 zet 1rem */
+  border-radius: var(--rg-r-fn) !important;
 }
-.rg-raster .product-image-wrapper img,
-.rg-raster .product-image { width: 100%; height: 100%; object-fit: cover; max-height: none; }
 
-/* De brede tegel krijgt een liggend beeld, anders wordt hij een blok. */
+/* Object-fit blijft `contain` zoals sectie 16 hem zet, bewust. Een pakket
+   moet je helemaal kunnen zien; `cover` snijdt er net de helft van de
+   inhoud af, en "zien wat erin zit" is de hele functie van dit blok
+   (kerstpagina-herzien.md, "Inspiratie, niet een schap"). */
+
 @media (min-width: 768px) {
-  .rg-raster .product-slider-item:nth-child(7n+1) .product-image-wrapper { aspect-ratio: 16 / 9; }
+  .rg-raster .product-slider-item:nth-child(7n+1) .product-image-wrapper {
+    padding-bottom: 56.25% !important;   /* 16/9 voor de brede tegel */
+  }
 }
 
 /* Weg: beeld is waar mensen naar kijken. Naam en beeld zijn allebei al
@@ -11087,6 +11192,24 @@ h2.rg-route__team-title{
 .rg-raster .product-description,
 .rg-raster .product-action,
 .rg-raster .product-badges { display: none; }
+
+/* De rij variant-swatches eronder ook weg, en dat is de grootste van de
+   vier. Gemeten op 4 november: 35 px hoog plus 9,6 en 10 px marge, samen
+   55 px per tegel, tussen de foto en de productnaam in. Op een telefoon
+   van 360 px was dat precies het verschil tussen een eerste rij tegels die
+   wel en niet boven de vouw past (758 i.p.v. 813, vouw op 780).
+
+   Inhoudelijk hoort hij hier ook niet: dit blok is inspiratie, geen
+   configurator. Wie een kleur wil kiezen doet dat op de productpagina.
+
+   LET OP, DIT SCHEELT GEEN GEWICHT, hoe graag je dat ook zou willen. Hier
+   stond eerst dat het de 148 variant-miniaturen uit punt B1 van
+   docs/promidata-vragen.md zou schelen. Nagemeten: de negen swatch-rijen
+   op deze pagina bevatten samen NUL img-tags, want deze elf kerstpakketten
+   hebben geen varianten. Het waren dus negen lege bakjes van 55 px.
+   Op een categoriepagina mét varianten kan dat anders liggen; daar is dit
+   niet gemeten en daar draait dit raster ook niet. */
+.rg-raster .variant-thumbnail { display: none !important; }
 
 .rg-raster .product-info { padding: 0; }
 .rg-raster .product-name {

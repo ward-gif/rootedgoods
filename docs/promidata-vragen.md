@@ -288,6 +288,48 @@ sitemap ooit over meerdere bestanden verdeelt. Nu staat het `.gz` zelf ingediend
 
 ---
 
+### C5. Een CMS-pagina kan niet op noindex
+
+**Wat:** een categoriepagina krijgt van het thema netjes
+`<meta name="robots" content="index,follow">` mee. Een CMS-pagina krijgt
+`<meta name="robots" content="">`, dus een lege waarde. Gemeten op 4 november 2026:
+
+| Pagina | Soort | robots-meta |
+|---|---|---|
+| `/` | categorie | `index,follow` |
+| `/thema-s/kerstpakketten-eindejaar/` | categorie | `index,follow` |
+| `/eindejaarsgeschenken` | CMS | **leeg** |
+| `/over-ons` | CMS | **leeg** |
+| `/test` | CMS | **leeg** |
+
+Een lege waarde is geen instructie, dus zo'n pagina mag gewoon geindexeerd worden.
+In de beheeromgeving is voor dit paginatype geen veld te vinden om dat te sturen.
+
+**Waarom we dit nodig hebben:** we willen een wijziging aan een landingspagina
+eerst op een kopie kunnen zien, op de echte site met echte gegevens, zonder dat
+die kopie in Google belandt. Dat is nu niet mogelijk. Hetzelfde geldt voor elke
+pagina die we tijdelijk offline-achtig willen houden.
+
+**De vraag:** kunnen jullie een robots-veld op CMS-pagina's beschikbaar maken, of
+anders een vaste map (bijvoorbeeld alles onder `/intern/`) die het thema altijd op
+`noindex` zet?
+
+**Wat we nu doen, en waarom dat niet goed genoeg is:** onze eigen JS zet de
+robots-meta op `noindex` voor een handmatige lijst met paden (sectie 0 van
+`rootedgoods.js`). Google leest dat wel, maar pas bij het renderen, en dat is later
+dan het ophalen van de HTML. Het werkt in de praktijk en het is geen vervanging
+voor een tag die de server meestuurt.
+
+**Hangt samen met C3:** CMS-pagina's staan ook niet in de sitemap. Gemeten op
+4 november: 1.523 URL's in de sitemap, en `/eindejaarsgeschenken`, `/over-ons`,
+`/offerte` en `/contact` zitten er geen van alle bij. Dat beperkt nu toevallig de
+schade, want een werkpagina wordt zo niet via de sitemap gevonden. Lost C3 op,
+dan wordt C5 urgenter.
+
+**Prioriteit:** midden. Geen omzet, wel een blokkade voor elke veilige proef.
+
+---
+
 ## D. Webp
 
 ### D1. Kan Shopware 6.5 zelf webp genereren?
@@ -442,6 +484,51 @@ bijwerken; kan dat, dan hoeft het jullie na de eerste keer geen tijd meer te kos
 **Prioriteit:** hoog. Dit is de enige van de lijst die alle andere wijzigingen
 sneller laat landen, en sinds de meting van 30 oktober weten we dat het niet alleen
 traag is maar dat een wijziging domweg niet aankomt zolang de edge hem niet loslaat.
+
+### A4. De cache is bijna altijd koud, en dat kost 2 tot 5 seconden
+
+**Wat:** een categoriepagina komt binnen in 0,22 s als hij in de cache staat, en in
+2,4 tot 5,7 s als dat niet zo is. Gemeten op 4 november 2026, de elf categorieën uit
+het hoofdmenu, drie rondes achter elkaar. Ruwe uitvoer in
+`docs/metingen/2026-11-04-menutraagheid/ruw.csv`.
+
+| Ronde | Mediaan TTFB | Boven 1 seconde |
+|---|---:|---:|
+| 1 | **3,19 s** | 8 van 11 |
+| 2 | 0,20 s | 0 van 11 |
+| 3 | 0,21 s | 0 van 11 |
+
+Negen van de elf waren koud toen wij ze voor het eerst opvroegen. De slechtste was
+`/tassen-reizen/` met **5,68 s**. Na onze eigen eerste aanvraag zat elke pagina op
+0,2 s en bleef daar.
+
+**Wat we niet kunnen zien, en wat we jullie dus vragen.** De pagina's komen binnen met
+`cache-control: no-cache` en hebben tegelijk een `age`-header die oploopt. Er staat dus
+een cache vóór Shopware die zijn eigen bewaartijd aanhoudt. Wij zien die bewaartijd
+niet; we zagen een regel oplopen tot 762 seconden zonder terug te springen, dus hij is
+minstens dertien minuten.
+
+1. **Welke cache staat hier voor, en wat is de bewaartijd?** Als die kort is, is bijna
+   elke bezoeker de eerste op zijn pagina en betaalt hij de volle 2 tot 5 seconden.
+2. **Kan de bewaartijd omhoog?** Het assortiment en de prijzen veranderen bij ons
+   hoogstens dagelijks, niet per minuut. Een bewaartijd van uren in plaats van minuten
+   zou niets stuk maken.
+3. **Kan er een cache-warmer draaien?** Shopware heeft daar een console-opdracht voor.
+   Als die na elke import de categoriepagina's één keer ophaalt, staat alles warm
+   voordat de eerste bezoeker komt. Het gaat om een handvol URL's, niet om de hele
+   catalogus.
+
+**Waarom het telt:** dit raakt precies de pagina's waar een bezoeker na de
+advertentielandingspagina op klikt. Wie via het menu de catalogus in gaat, is bijna
+altijd de eerste op die pagina en wacht dus seconden. Ward merkte het zelf op als
+"mensen navigeren niet soepel door de site", en dit is de meting daarachter.
+
+**Hangt samen met B1 en D2:** die gaan over het gewicht van de pagina als hij er is,
+deze over de tijd voordat er iets komt. Op een categoriepagina stapelen ze: eerst 2 tot
+5 seconden wachten op de HTML, dan 3,75 MB beeld dat direct inlaadt.
+
+**Prioriteit:** hoog, en vermoedelijk goedkoop. Punt 2 is een instelling, punt 3 een
+opdracht in een cronjob.
 
 ### B4. Productslider, productboxMinWidth van 300 naar 400
 

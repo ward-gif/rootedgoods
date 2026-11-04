@@ -1,6 +1,6 @@
 <!-- ===== HERO ===== -->
 <!-- Korte variant voor de raster-opzet (punt 13 + 15 van het verbeterplan).
-     Drie dingen zijn anders dan de oude hero:
+     Vier dingen zijn anders dan de oude hero:
 
      1. .rg-page-hero--raster is de MARKER. Zonder die class doet de
         raster-JS en -CSS niets, op geen enkele pagina. Pas als dit blok
@@ -11,8 +11,13 @@
         het beeld dus niet, in plaats van het te verbergen nadat het binnen is.
      3. Eén knop. De tweede ("Bekijk alle producten") zit nu onder het raster,
         in de fade, waar hij logischer staat: pas nadat je producten gezien hebt.
+     4. Het feitenblok staat IN de hero, niet erna. Dat is punt 1 van
+        kerstpagina-herzien.md: van de vier vragen die een zoeker heeft
+        (wat kan ik krijgen, wat kost het, vanaf hoeveel, haal ik kerst nog)
+        beantwoordde de pagina er nul boven de vouw.
 
-     data-rg-raster-href/-label voeden die knop. Per pagina aanpassen. -->
+     data-rg-raster-href/-label voeden de knop onder het raster. Per pagina
+     aanpassen. -->
 <section class="rg-page-hero rg-page-hero--raster"
          style="--rg-hero-beeld:url('/media/39/75/1d/1787736741/Zuivelhoeve pakket.jpg')"
          data-rg-raster-href="/thema-s/kerstpakketten-eindejaar/"
@@ -23,14 +28,50 @@
          nergens aangeroepen. Hier geeft hij de hero zijn eigen aanzet. -->
     <p class="rg-page-hero__eyebrow">Eindejaarsgeschenken</p>
     <h1 class="rg-page-hero__title">Kerstpakketten <span class="rg-amp">&amp;</span> eindejaar</h1>
-    <!-- Ingekort van 137 naar 70 tekens: 4 regels werden er 2 op mobiel.
-         Dit is een trim van de bestaande zin, geen nieuwe belofte. Wil je
-         hier punt 13 echt afmaken (prijs per stuk, minimale afname,
-         levertijd), dan heb ik die drie getallen van je nodig. -->
+
+    <!-- De sfeerregel blijft, maar is in de CSS verborgen onder 992px. Op
+         mobiel is verticale ruimte het schaarse goed en gaan de feiten voor;
+         op desktop staat de tweede kolom er toch en kost deze regel niets.
+         Ingekort van 137 naar 70 tekens, een trim van de bestaande zin en
+         geen nieuwe belofte. -->
     <p class="rg-page-hero__sub">Bedank medewerkers en relaties met iets dat oprecht en doordacht voelt.</p>
+
+    <!-- FEITEN. Alle drie nagemeten op de live site op 4 november 2026, over
+         de elf pakketten in /thema-s/kerstpakketten-eindejaar/:
+           - prijs    € 25,00 (Bak pakket) tot € 70,00 (Offline pakket)
+           - afname   min="10" op alle elf, zonder uitzondering
+         Ruwe uitvoer: docs/metingen/2026-11-04-hero-feiten/pakketten.csv
+         Verandert het assortiment, dan moeten deze twee getallen mee. -->
+    <ul class="rg-page-hero__feiten">
+      <li><strong>&euro; 25 tot &euro; 70</strong> per persoon</li>
+      <li><strong>Vanaf 10</strong> stuks</li>
+      <li>Met <strong>jouw logo</strong> erop</li>
+    </ul>
+
+    <!-- DEADLINE. Dit is het sterkste argument dat een seizoenspagina heeft
+         en het stond nergens op de pagina.
+
+         LET OP, VOOR WARD: de DATUM is narekenbaar, de TERMIJN eronder niet.
+         27 november is vijftien werkdagen terug vanaf vrijdag 18 december,
+         kerstdag als vrije dag meegerekend. Die rekensom klopt. Maar die
+         VIJFTIEN WERKDAGEN is een aanname uit het plan, niet iets dat ik heb
+         kunnen meten: de structured data op de productpagina's zegt alleen
+         "1-3 dagen", en dat is de verzending, niet het personaliseren.
+         Bevestig de termijn voordat je dit blok plakt. Klopt vijftien niet,
+         dan is het bij tien werkdagen vrijdag 4 december en bij twintig
+         vrijdag 20 november. -->
+    <p class="rg-page-hero__deadline">
+      Bestel v&oacute;&oacute;r <time datetime="2026-11-27">27 november</time>,
+      dan ligt het er de week voor kerst.
+    </p>
+
     <div class="rg-page-hero__cta">
       <a class="btn btn-primary" href="/offerte">Vraag een offerte aan</a>
     </div>
+
+    <!-- Blijft, en blijft bovenin: dit is het enige echte sociale bewijs op
+         de pagina en het staat in kerstpagina-herzien.md onder "wat wel goed
+         is en moet blijven". -->
     <div class="rg-page-hero__logos" aria-label="Vertrouwd door">
       <img src="/media/6f/40/25/1787233896/Erasmus MC.png" alt="Erasmus MC">
       <img src="/media/e7/2a/d6/1787233896/Ifes.png" alt="Ifes" loading="lazy" decoding="async">

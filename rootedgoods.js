@@ -4,6 +4,8 @@
  * Last updated: 2026-07-02
  *
  * STRUCTUUR (bijgewerkt -- was verouderd, noemde maar 3 grove items):
+ *   SECTIE 0 — TIJDELIJK  : werkpagina's op noindex zetten. Weghalen zodra
+ *                           de pagina's uit de lijst verdwenen zijn.
  *   SECTIE 1 — GLOBAL     : 1.1 search overlay, 1.2 header-scroll-gedrag
  *                           (mobiel hide/show, desktop sticky topbar/nav), 1.3 flyout CTA,
  *                           1.4 offerteknop (header-actions), 1.4b nav-main
@@ -34,6 +36,48 @@
  * - Selectors zijn defensief: niets crasht als element niet bestaat.
  * - Page-detection via body class (is-ctl-product) voor expliciete scoping.
  * ===================================================================== */
+
+
+/* =====================================================================
+ * SECTIE 0 — WERKPAGINA'S UIT DE INDEX HOUDEN
+ * ---------------------------------------------------------------------
+ * TIJDELIJK. Haal de paden hieronder weg zodra de pagina weg is.
+ *
+ * WAAROM DIT HIER STAAT EN NIET IN SHOPWARE. Gemeten op 4 november 2026:
+ * een categoriepagina krijgt van het thema `<meta name="robots"
+ * content="index,follow">`, maar een CMS-pagina krijgt `content=""`, leeg.
+ * Dat geldt net zo goed voor /over-ons en /eindejaarsgeschenken, dus het is
+ * geen vergeten vinkje maar een veld dat voor dit paginatype niet bestaat.
+ * Leeg is geen noindex; zo'n pagina mag gewoon geindexeerd worden.
+ *
+ * WAT DIT WEL EN NIET IS. Google leest een robots-meta die met JavaScript
+ * wordt gezet, maar pas als hij de pagina rendert, en dat is later dan het
+ * ophalen van de HTML. Dit is dus zwakker dan een tag die de server zelf
+ * meestuurt. Het is wat we zonder themabestanden kunnen, niet wat we zouden
+ * willen. De echte oplossing staat als C5 in docs/promidata-vragen.md.
+ *
+ * Een expliciete lijst, geen patroon: zo kan een echte pagina er nooit per
+ * ongeluk in vallen. Hernoem je de testpagina, pas dan ook deze lijst aan,
+ * anders staat hij ineens weer open.
+ * ===================================================================== */
+(function () {
+  var WERKPADEN = ['/test-page-concepts12'];
+
+  /* Kleine letters aan beide kanten. De URL staat als /Test-page-concepts12
+     in Shopware, met een hoofdletter, en een vergelijking op de letter
+     precies had dus nooit aangeslagen. (Terzijde: de huisregel is dat
+     interne URL's lowercase zijn; deze is dat niet.) */
+  var pad = location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
+  if (WERKPADEN.indexOf(pad) === -1) return;
+
+  var meta = document.querySelector('meta[name="robots"]');
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.setAttribute('name', 'robots');
+    document.head.appendChild(meta);
+  }
+  meta.setAttribute('content', 'noindex, nofollow');
+})();
 
 
 /* =====================================================================
@@ -2330,4 +2374,83 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }).observe(document.body, { childList: true, subtree: true });
   }
+})();
+
+/* =====================================================================
+   PRODUCTSLIDER NAAR RASTER — thema-landingspagina's
+   ---------------------------------------------------------------------
+   Punt 15 van het verbeterplan. Op de kerstpagina kreeg de carrouselpijl
+   90 van de 317 taps (28,4%), het meest aangeraakte element na de
+   cookiebanner, terwijl de slider mobiel twee producten per scherm laat
+   zien. Mensen zijn dus aan het werk om producten te zien. Een raster
+   laat er zes zien zonder één tik.
+
+   WAAROM DIT WERKT, EN WAAROM NIET ANDERSOM
+   De thema-head laadt onze bundel op byte 6.403 en die van het thema op
+   11.268, allebei met defer. Scripts met defer voeren uit in
+   documentvolgorde, dus wij zijn gegarandeerd eerst. We halen
+   data-product-slider weg VOORDAT het thema tiny-slider start, waarna de
+   serverzijdige markup gewoon blijft staan: een stapel
+   .product-slider-item in .product-slider-container, met kale CSS tot een
+   raster te maken.
+
+   Een al draaiende tiny-slider achteraf overrulen kan niet betrouwbaar:
+   die zet inline width en transform op een eigen track en herberekent bij
+   elke resize. Daar win je niet van met CSS.
+
+   PRECISIE: alleen data-product-slider (1 per pagina, de grote slider).
+   Elke productkaart heeft zelf een beeldgalerij op data-slider (9 per
+   pagina); die laten we met rust.
+
+   INERT ZONDER DE MARKER: draait alleen als er een .rg-page-hero--raster
+   op de pagina staat. Dit bestand mag dus vooruit gepubliceerd worden; er
+   verandert pas iets op de pagina waar Ward het nieuwe heroblok plakt.
+   Dat is ook waarom de homepage-slider hier niets van merkt.
+   ===================================================================== */
+(function () {
+  var marker = document.querySelector('.rg-page-hero--raster');
+  if (!marker) return;
+
+  /* Haak voor sectie 51 van de CSS. Op <html> en niet op <body>, zodat de
+     regels al gelden voordat de rest van de pagina geverfd wordt. */
+  document.documentElement.classList.add('rg-raster-pagina');
+
+  var sliders = document.querySelectorAll('[data-product-slider]');
+  if (!sliders.length) return;
+
+  var href  = marker.getAttribute('data-rg-raster-href');
+  var label = marker.getAttribute('data-rg-raster-label') || 'Bekijk alle producten';
+
+  Array.prototype.forEach.call(sliders, function (slider) {
+    /* Dit is de hele truc: zonder dit attribuut initialiseert het thema
+       niets en blijft de markup staan zoals de server hem stuurde. */
+    slider.removeAttribute('data-product-slider');
+    slider.classList.add('rg-raster');
+    /* has-nav stuurt in de thema-CSS ruimte voor pijlen die er nu niet
+       komen; weg ermee zodat er geen lege marge overblijft. */
+    slider.classList.remove('has-nav');
+
+    /* De lege controls-houder die het thema serverzijdig meestuurt. */
+    var controls = slider.querySelector('[data-product-slider-controls]');
+    if (controls) controls.remove();
+
+    /* De fade met de link. Alleen als er een doel is opgegeven, anders
+       loopt het raster gewoon door -- liever geen link dan een dode.
+
+       BEWUST GEEN btn-primary. kerstpagina-herzien.md zegt "Eén
+       hoofdknop": twee gelijkwaardige knoppen, "bekijk alle producten"
+       naast "vraag een offerte aan", laat mensen stilstaan. De
+       offerteknop in de hero is de hoofdknop, deze is een rustige link.
+       De opmaak staat in CSS-sectie 51.5. */
+    if (!href) return;
+    var meer = document.createElement('div');
+    meer.className = 'rg-raster__meer';
+    var knop = document.createElement('a');
+    knop.className = 'rg-raster__knop';
+    knop.setAttribute('href', href);
+    knop.textContent = label;
+    meer.appendChild(knop);
+    slider.appendChild(meer);
+    slider.classList.add('rg-raster--afgekapt');
+  });
 })();

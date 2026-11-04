@@ -1,0 +1,5 @@
+bron,url,http,dns_s,connect_s,ttfb_s,totaal_s,bytes,cache_control
+logotool-images.s3.eu-central-1.amazonaws.com,https://logotool-images.s3.eu-central-1.amazonaws.com/Promifonto/css/promifonto.css,200,0.028753,0.029312,0.154711,0.154781,8806,
+rootedgoods.eu,https://rootedgoods.eu/theme/77d7b073552ff6b97a9a618222ca5efb/css/all.css?1789660648,200,0.001691,0.002154,0.160019,0.233856,195215,max-age=31104000
+cdn.jsdelivr.net,https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css,200,0.009539,0.010074,3.083437,3.090365,32403,public,max-age=604800,s-maxage=43200
+rootedgoods.eu,https://rootedgoods.eu/bundles/cioincludefontawesome/assets/css/all.min.css?1789660645,200,0.002319,0.002875,0.177237,0.201237,21501,max-age=31104000
