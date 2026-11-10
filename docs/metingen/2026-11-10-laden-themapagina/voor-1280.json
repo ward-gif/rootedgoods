@@ -1,0 +1,253 @@
+{
+ "shifts": [
+  {
+   "t": 2795,
+   "v": 0.0773,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-page",
+    "DIV.rg-page-hero__copy"
+   ]
+  },
+  {
+   "t": 2942,
+   "v": 0.0001,
+   "n": false,
+   "bronnen": [
+    "IMG"
+   ]
+  },
+  {
+   "t": 2952,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "IMG",
+    "IMG"
+   ]
+  },
+  {
+   "t": 2966,
+   "v": 0.0006,
+   "n": false,
+   "bronnen": [
+    "IMG",
+    "IMG",
+    "IMG"
+   ]
+  },
+  {
+   "t": 3883,
+   "v": 0.0011,
+   "n": false,
+   "bronnen": [
+    "P.rg-page-hero__noot",
+    "DIV.top-bar-container.container--1",
+    "DIV.top-bar-container.container--4",
+    "DIV.top-bar-container.container--2",
+    "DIV.top-bar-container.container--5"
+   ]
+  },
+  {
+   "t": 4046,
+   "v": 0.0002,
+   "n": false,
+   "bronnen": [
+    "A.nav-link.main-navigation-link",
+    "A.nav-link.main-navigation-link",
+    "A.nav-link.main-navigation-link",
+    "A.nav-link.main-navigation-link"
+   ]
+  },
+  {
+   "t": 4455,
+   "v": 0.0005,
+   "n": false,
+   "bronnen": [
+    "A.btn.btn-primary"
+   ]
+  },
+  {
+   "t": 5061,
+   "v": 0.0035,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "undefined",
+    "DIV.rg-page-hero__cta",
+    "DIV.rg-page-hero__logos",
+    "P.rg-page-hero__noot"
+   ]
+  },
+  {
+   "t": 5170,
+   "v": 0.0134,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "DIV.rg-page-hero__logos",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2509,
+  "sliderRuw": 2509,
+  "band": 2761,
+  "klonen": 2761
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2592,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 289,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 352,
+   "f": "voor-1280-f01-352ms.jpg"
+  },
+  {
+   "t": 2675,
+   "f": "voor-1280-f02-2675ms.jpg"
+  },
+  {
+   "t": 2906,
+   "f": "voor-1280-f03-2906ms.jpg"
+  },
+  {
+   "t": 2999,
+   "f": "voor-1280-f04-2999ms.jpg"
+  },
+  {
+   "t": 3100,
+   "f": "voor-1280-f05-3100ms.jpg"
+  },
+  {
+   "t": 3197,
+   "f": "voor-1280-f06-3197ms.jpg"
+  },
+  {
+   "t": 3299,
+   "f": "voor-1280-f07-3299ms.jpg"
+  },
+  {
+   "t": 3396,
+   "f": "voor-1280-f08-3396ms.jpg"
+  },
+  {
+   "t": 3491,
+   "f": "voor-1280-f09-3491ms.jpg"
+  },
+  {
+   "t": 3588,
+   "f": "voor-1280-f10-3588ms.jpg"
+  },
+  {
+   "t": 3687,
+   "f": "voor-1280-f11-3687ms.jpg"
+  },
+  {
+   "t": 3781,
+   "f": "voor-1280-f12-3781ms.jpg"
+  },
+  {
+   "t": 3882,
+   "f": "voor-1280-f13-3882ms.jpg"
+  },
+  {
+   "t": 3995,
+   "f": "voor-1280-f14-3995ms.jpg"
+  },
+  {
+   "t": 4095,
+   "f": "voor-1280-f15-4095ms.jpg"
+  },
+  {
+   "t": 4190,
+   "f": "voor-1280-f16-4190ms.jpg"
+  },
+  {
+   "t": 4289,
+   "f": "voor-1280-f17-4289ms.jpg"
+  },
+  {
+   "t": 4382,
+   "f": "voor-1280-f18-4382ms.jpg"
+  },
+  {
+   "t": 4483,
+   "f": "voor-1280-f19-4483ms.jpg"
+  },
+  {
+   "t": 4586,
+   "f": "voor-1280-f20-4586ms.jpg"
+  },
+  {
+   "t": 4686,
+   "f": "voor-1280-f21-4686ms.jpg"
+  },
+  {
+   "t": 4787,
+   "f": "voor-1280-f22-4787ms.jpg"
+  },
+  {
+   "t": 4890,
+   "f": "voor-1280-f23-4890ms.jpg"
+  },
+  {
+   "t": 4988,
+   "f": "voor-1280-f24-4988ms.jpg"
+  },
+  {
+   "t": 5089,
+   "f": "voor-1280-f25-5089ms.jpg"
+  },
+  {
+   "t": 5203,
+   "f": "voor-1280-f26-5203ms.jpg"
+  },
+  {
+   "t": 5303,
+   "f": "voor-1280-f27-5303ms.jpg"
+  },
+  {
+   "t": 5403,
+   "f": "voor-1280-f28-5403ms.jpg"
+  },
+  {
+   "t": 5503,
+   "f": "voor-1280-f29-5503ms.jpg"
+  },
+  {
+   "t": 5603,
+   "f": "voor-1280-f30-5603ms.jpg"
+  },
+  {
+   "t": 5704,
+   "f": "voor-1280-f31-5704ms.jpg"
+  },
+  {
+   "t": 5805,
+   "f": "voor-1280-f32-5805ms.jpg"
+  },
+  {
+   "t": 5905,
+   "f": "voor-1280-f33-5905ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 1280,
+  "H": 800,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "voor"
+ }
+}

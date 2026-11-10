@@ -1,0 +1,57 @@
+{
+ "shifts": [
+  {
+   "t": 3844,
+   "v": 0.0197,
+   "n": true,
+   "bronnen": [
+    "A.rg-cta__contact"
+   ]
+  },
+  {
+   "t": 4109,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 6347,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 6376,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "::after",
+    "::after"
+   ]
+  }
+ ],
+ "t": {
+  "sliderRuw": 3799,
+  "dcl": 10875,
+  "tiny": 11309
+ },
+ "marks": [],
+ "lcp": {
+  "t": 3796,
+  "el": "IMG.",
+  "url": "b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg"
+ },
+ "schermafdrukken": [],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "home-preload"
+ }
+}

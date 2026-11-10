@@ -49,6 +49,16 @@ iets over, dan hoort het hier of daar, nooit in allebei.
    hij lelijk is. Een export die je niet bewaart is een meting die nooit heeft
    plaatsgevonden. Zie de LEESMIJ daar.
 
+8. **Secties 59 en 60 kopiëren de stand "na de JS".** Alle band-opmaak hangt aan
+   `.rg-band-pagina`, en die klasse zet pas de band-JS. Sectie 59 (themapagina) en 60
+   (mobiele header) zetten dezelfde maten alvast neer zolang die klasse er niet is,
+   zodat er niets verspringt bij het laden. Verander je de hoogte van de band, de strook,
+   de getallenregel, de logo's of de header-rij, pas dan ook 59 of 60 aan en meet het
+   verschil vóór en na de JS opnieuw: `docs/metingen/2026-11-10-laden-themapagina/
+   meet-hoogtes.mjs` (themapagina, `BLOCK=js` voor de stand vóór de JS) en
+   `docs/metingen/2026-11-10-site-laden/meet-kop-voor-na.mjs` (header). Zie
+   `docs/laden-en-gebruikservaring-2026-11-10.md`.
+
 ## Publiceren
 
 ```bash

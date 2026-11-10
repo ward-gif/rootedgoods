@@ -1,0 +1,16 @@
+@media (max-width: 991px) {
+  .header-row .header-logo-col { grid-column: 2; grid-row: 1; }
+  .header-row .header-actions-col { grid-column: 3; grid-row: 1; }
+  .header-row .rg-header-hamburger-slot { grid-column: 1; grid-row: 1; }
+  .header-row .header-search-col { grid-column: 1 / -1; grid-row: 2; }
+  /* vóór de JS: de hamburger zit nog in het icoonblok; uit de flow halen en op de plek van straks zetten */
+  .header-actions-col:has(.menu-button) { position: static; }
+  .header-actions-col .col:has(.menu-button) { position: absolute; left: 12px; top: calc(50% + 4px); transform: translateY(-50%); padding-left: 12px; }
+  .header-search-col:has(> .row > .col-sm-auto.d-none.d-sm-block.d-lg-none) { position: static; }
+  .header-search-col > .row > .col-sm-auto.d-none.d-sm-block.d-lg-none { position: absolute; left: 12px; top: calc(50% + 4px); transform: translateY(-50%); padding-left: 12px; }
+  .top-bar:not(:has(.rg-usp-slider)) { min-height: 29.6px; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .header-actions-col .col:has(.menu-button),
+  .header-search-col > .row > .col-sm-auto.d-none.d-sm-block.d-lg-none { padding-left: 16px; }
+}

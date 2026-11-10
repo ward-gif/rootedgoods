@@ -1,0 +1,223 @@
+{
+ "shifts": [
+  {
+   "t": 2547,
+   "v": 0.0078,
+   "n": true,
+   "bronnen": [
+    "DIV.rg-page-hero__cta",
+    "P.rg-page-hero__noot"
+   ]
+  },
+  {
+   "t": 2679,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 3773,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "undefined"
+   ]
+  },
+  {
+   "t": 3795,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 3968,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2387,
+  "sliderRuw": 2489,
+  "band": 2633,
+  "klonen": 2633,
+  "cijfers": 2633
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2484,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 274,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 334,
+   "f": "t-geenplayfair-390-f01-334ms.jpg"
+  },
+  {
+   "t": 2632,
+   "f": "t-geenplayfair-390-f02-2632ms.jpg"
+  },
+  {
+   "t": 2774,
+   "f": "t-geenplayfair-390-f03-2774ms.jpg"
+  },
+  {
+   "t": 2867,
+   "f": "t-geenplayfair-390-f04-2867ms.jpg"
+  },
+  {
+   "t": 2970,
+   "f": "t-geenplayfair-390-f05-2970ms.jpg"
+  },
+  {
+   "t": 3066,
+   "f": "t-geenplayfair-390-f06-3066ms.jpg"
+  },
+  {
+   "t": 3158,
+   "f": "t-geenplayfair-390-f07-3158ms.jpg"
+  },
+  {
+   "t": 3248,
+   "f": "t-geenplayfair-390-f08-3248ms.jpg"
+  },
+  {
+   "t": 3340,
+   "f": "t-geenplayfair-390-f09-3340ms.jpg"
+  },
+  {
+   "t": 3434,
+   "f": "t-geenplayfair-390-f10-3434ms.jpg"
+  },
+  {
+   "t": 3531,
+   "f": "t-geenplayfair-390-f11-3531ms.jpg"
+  },
+  {
+   "t": 3625,
+   "f": "t-geenplayfair-390-f12-3625ms.jpg"
+  },
+  {
+   "t": 3725,
+   "f": "t-geenplayfair-390-f13-3725ms.jpg"
+  },
+  {
+   "t": 3815,
+   "f": "t-geenplayfair-390-f14-3815ms.jpg"
+  },
+  {
+   "t": 3908,
+   "f": "t-geenplayfair-390-f15-3908ms.jpg"
+  },
+  {
+   "t": 4000,
+   "f": "t-geenplayfair-390-f16-4000ms.jpg"
+  },
+  {
+   "t": 4099,
+   "f": "t-geenplayfair-390-f17-4099ms.jpg"
+  },
+  {
+   "t": 4191,
+   "f": "t-geenplayfair-390-f18-4191ms.jpg"
+  },
+  {
+   "t": 4284,
+   "f": "t-geenplayfair-390-f19-4284ms.jpg"
+  },
+  {
+   "t": 4382,
+   "f": "t-geenplayfair-390-f20-4382ms.jpg"
+  },
+  {
+   "t": 4477,
+   "f": "t-geenplayfair-390-f21-4477ms.jpg"
+  },
+  {
+   "t": 4573,
+   "f": "t-geenplayfair-390-f22-4573ms.jpg"
+  },
+  {
+   "t": 4666,
+   "f": "t-geenplayfair-390-f23-4666ms.jpg"
+  },
+  {
+   "t": 4756,
+   "f": "t-geenplayfair-390-f24-4756ms.jpg"
+  },
+  {
+   "t": 4850,
+   "f": "t-geenplayfair-390-f25-4850ms.jpg"
+  },
+  {
+   "t": 4942,
+   "f": "t-geenplayfair-390-f26-4942ms.jpg"
+  },
+  {
+   "t": 5034,
+   "f": "t-geenplayfair-390-f27-5034ms.jpg"
+  },
+  {
+   "t": 5133,
+   "f": "t-geenplayfair-390-f28-5133ms.jpg"
+  },
+  {
+   "t": 5225,
+   "f": "t-geenplayfair-390-f29-5225ms.jpg"
+  },
+  {
+   "t": 5309,
+   "f": "t-geenplayfair-390-f30-5309ms.jpg"
+  },
+  {
+   "t": 5403,
+   "f": "t-geenplayfair-390-f31-5403ms.jpg"
+  },
+  {
+   "t": 5493,
+   "f": "t-geenplayfair-390-f32-5493ms.jpg"
+  },
+  {
+   "t": 5583,
+   "f": "t-geenplayfair-390-f33-5583ms.jpg"
+  },
+  {
+   "t": 5674,
+   "f": "t-geenplayfair-390-f34-5674ms.jpg"
+  },
+  {
+   "t": 5758,
+   "f": "t-geenplayfair-390-f35-5758ms.jpg"
+  },
+  {
+   "t": 5850,
+   "f": "t-geenplayfair-390-f36-5850ms.jpg"
+  },
+  {
+   "t": 5934,
+   "f": "t-geenplayfair-390-f37-5934ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "t-geenplayfair"
+ }
+}

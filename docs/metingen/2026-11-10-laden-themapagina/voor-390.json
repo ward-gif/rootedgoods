@@ -1,0 +1,151 @@
+{
+ "shifts": [
+  {
+   "t": 4390,
+   "v": 0.8791,
+   "n": true,
+   "bronnen": [
+    "DIV.cms-page",
+    "DIV.cms-section.pos-2"
+   ]
+  },
+  {
+   "t": 4468,
+   "v": 0.0003,
+   "n": true,
+   "bronnen": [
+    "undefined"
+   ]
+  },
+  {
+   "t": 5520,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 5549,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 5801,
+   "v": 0.0029,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "undefined",
+    "P.rg-page-hero__cijfers"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 3977,
+  "sliderRuw": 3978,
+  "band": 4344,
+  "klonen": 4344,
+  "cijfers": 4344
+ },
+ "marks": [],
+ "lcp": {
+  "t": 4152,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 1555,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 1618,
+   "f": "voor-390-f01-1618ms.jpg"
+  },
+  {
+   "t": 4248,
+   "f": "voor-390-f02-4248ms.jpg"
+  },
+  {
+   "t": 4480,
+   "f": "voor-390-f03-4480ms.jpg"
+  },
+  {
+   "t": 4580,
+   "f": "voor-390-f04-4580ms.jpg"
+  },
+  {
+   "t": 4688,
+   "f": "voor-390-f05-4688ms.jpg"
+  },
+  {
+   "t": 4781,
+   "f": "voor-390-f06-4781ms.jpg"
+  },
+  {
+   "t": 4878,
+   "f": "voor-390-f07-4878ms.jpg"
+  },
+  {
+   "t": 4970,
+   "f": "voor-390-f08-4970ms.jpg"
+  },
+  {
+   "t": 5064,
+   "f": "voor-390-f09-5064ms.jpg"
+  },
+  {
+   "t": 5162,
+   "f": "voor-390-f10-5162ms.jpg"
+  },
+  {
+   "t": 5254,
+   "f": "voor-390-f11-5254ms.jpg"
+  },
+  {
+   "t": 5346,
+   "f": "voor-390-f12-5346ms.jpg"
+  },
+  {
+   "t": 5439,
+   "f": "voor-390-f13-5439ms.jpg"
+  },
+  {
+   "t": 5538,
+   "f": "voor-390-f14-5538ms.jpg"
+  },
+  {
+   "t": 5638,
+   "f": "voor-390-f15-5638ms.jpg"
+  },
+  {
+   "t": 5725,
+   "f": "voor-390-f16-5725ms.jpg"
+  },
+  {
+   "t": 5828,
+   "f": "voor-390-f17-5828ms.jpg"
+  },
+  {
+   "t": 5933,
+   "f": "voor-390-f18-5933ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "voor"
+ }
+}

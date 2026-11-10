@@ -1,0 +1,61 @@
+{
+ "shifts": [
+  {
+   "t": 3803,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 6207,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "::after",
+    "::after"
+   ]
+  },
+  {
+   "t": 6914,
+   "v": 0.0878,
+   "n": false,
+   "bronnen": [
+    "DIV.rg-hero-v2__mosaic",
+    "DIV.rg-hero-v2__cta",
+    "EM",
+    "A.rg-hero-v2__tile",
+    "A.rg-hero-v2__tile"
+   ]
+  },
+  {
+   "t": 6940,
+   "v": 0.0016,
+   "n": false,
+   "bronnen": [
+    "undefined"
+   ]
+  }
+ ],
+ "t": {
+  "sliderRuw": 3449,
+  "dcl": 10603,
+  "tiny": 11028
+ },
+ "marks": [],
+ "lcp": {
+  "t": 3540,
+  "el": "H1.rg-hero-v2__title",
+  "url": ""
+ },
+ "schermafdrukken": [],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "home-zonder"
+ }
+}

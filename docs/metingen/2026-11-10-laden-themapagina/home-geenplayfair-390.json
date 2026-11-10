@@ -1,0 +1,56 @@
+{
+ "shifts": [
+  {
+   "t": 3757,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 5807,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 5978,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 5996,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "::after"
+   ]
+  }
+ ],
+ "t": {
+  "sliderRuw": 3455,
+  "dcl": 10358,
+  "tiny": 10779
+ },
+ "marks": [],
+ "lcp": {
+  "t": 3452,
+  "el": "IMG.",
+  "url": "b/1782216567/Opinel%20Colorama%20No%2008%20Groen_800x800.jpg"
+ },
+ "schermafdrukken": [],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "home-geenplayfair"
+ }
+}

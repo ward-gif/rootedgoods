@@ -1,0 +1,433 @@
+{
+ "instelling": {
+  "W": 390,
+  "H": 844,
+  "CPU": 2,
+  "net": "snel"
+ },
+ "uit": {
+  "/eindejaarsgeschenken": {
+   "geladen": true,
+   "fcp": 624,
+   "lcp": {
+    "t": 624,
+    "el": "h1.rg-page-hero__title",
+    "url": "",
+    "size": 36504
+   },
+   "cls": 0.0565,
+   "shifts": [
+    {
+     "t": 823,
+     "v": 0.0536,
+     "b": [
+      "div.cms-section.pos-1",
+      "div.rg-page-hero__cta",
+      "#",
+      "p.rg-page-hero__noot",
+      "div.cms-section.pos-2"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.cms-section.pos-1 0.056",
+    "::after 0.000"
+   ],
+   "verzoeken": 38,
+   "kb": 2048,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 21
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 726
+    },
+    "Image": {
+     "n": 22,
+     "kb": 696
+    },
+    "Script": {
+     "n": 2,
+     "kb": 322
+    },
+    "Font": {
+     "n": 8,
+     "kb": 282
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "505k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "154k Image rootedgoods.eu/shared/thumbnail/0c/ed/2c/1234567890/2758449bb2705a3524248b14f0dbfbb8ad45fa",
+    "144k Script cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.js"
+   ],
+   "beelden": [
+    "9k [parser Medium +263ms ] media/2a/71/e6/1786449349/Logo Rooted.svg?1786449349",
+    "9k [parser Medium +267ms ] media/6f/40/25/1787233896/Erasmus MC.png",
+    "13k [parser Medium +268ms ] media/19/5c/87/1775141463/Wero Ideal.png",
+    "6k [parser Medium +268ms ] media/07/1f/2f/1775141463/Mastercard.png",
+    "5k [parser Medium +268ms ] media/0d/3b/b9/1775141593/DHL.png",
+    "7k [parser Low +268ms ] media/27/17/32/1775141593/dpd.png",
+    "6k [parser Low +268ms ] media/22/32/9c/1775133752/ideal-icon.svg?1775133752",
+    "4k [parser Low +268ms ] media/d4/ff/49/1775133751/creditcard-icon.svg?1775133751",
+    "0k [parser Low +579ms ] data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' strok",
+    "0k [parser Low +584ms ] data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#000' fill-rule='evenodd' d='M12 2",
+    "12k [parser Low +584ms ] cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain4 small.jpg",
+    "0k [parser Low +586ms ] data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' strok",
+    "21k [parser Low +586ms ] cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain5.jpg",
+    "71k [parser Low +615ms ] media/3e/7f/ef/1787736741/Smiling Coworkers.jpg",
+    "0k [parser Low +649ms ] data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2.4' str",
+    "5k [parser Low +665ms ] media/e7/2a/d6/1787233896/Ifes.png",
+    "6k [parser Low +665ms ] media/f9/5c/8d/1787233896/Huisartsen G.C. Zuiderzorg.png",
+    "109k [parser Low +665ms ] shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab2ea920c6ef93597818a084d860_400x400.png?1786530715",
+    "73k [parser Low +665ms ] shared/thumbnail/b5/11/5d/1234567890/e808835a523ab5bf1c4b0746f1cf6016d41234740e6b78604dc7f141bfc0eb5d_400x400.png?1787232687",
+    "48k [parser Low +665ms ] shared/thumbnail/93/ea/05/1234567890/88859cc5f71738072cfaadb121a23be907290405342ab1ed3c122847ad89fced_400x400.png?1787232685",
+    "154k [other Low +5068ms ] shared/thumbnail/0c/ed/2c/1234567890/2758449bb2705a3524248b14f0dbfbb8ad45fa7c9da1e1d311991ebb8cf547f4_400x400.png?1787232687",
+    "138k [other Low +10269ms ] shared/thumbnail/5a/41/aa/1234567890/4c2cf2a590a03ae6cee451390c1b08eb76e0c9ed42109fa12f3dc4fbf6a6166c_400x400.png?1786530714"
+   ],
+   "fonts": [
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-500.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-700.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+    "155k rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 100,
+   "langeTaken": 1,
+   "dom": 1145,
+   "imgs": 52,
+   "imgZonderWH": 51,
+   "imgLazy": 44,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 6269,
+   "titel": "Kerstpakketten & eindejaarsgeschenken zakelijk | R"
+  },
+  "/alle-producten/": {
+   "geladen": true,
+   "fcp": 488,
+   "lcp": {
+    "t": 1828,
+    "el": "div.col.cookie-permission-content",
+    "url": "",
+    "size": 9504
+   },
+   "cls": 0.0006,
+   "shifts": [],
+   "topBronnen": [
+    "div.slides 0.000",
+    "# 0.000"
+   ],
+   "verzoeken": 89,
+   "kb": 2663,
+   "perType": {
+    "Stylesheet": {
+     "n": 4,
+     "kb": 727
+    },
+    "Document": {
+     "n": 1,
+     "kb": 51
+    },
+    "Image": {
+     "n": 74,
+     "kb": 1324
+    },
+    "Script": {
+     "n": 2,
+     "kb": 322
+    },
+    "Font": {
+     "n": 6,
+     "kb": 237
+    },
+    "XHR": {
+     "n": 2,
+     "kb": 2
+    }
+   },
+   "grootste": [
+    "505k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "144k Script cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.js",
+    "132k Image rootedgoods.eu/shared/thumbnail/10/30/7e/1234567890/bd8a288293f06302f7aec01529691da0c4ff7d"
+   ],
+   "beelden": [
+    "9k [parser Medium +152ms ] media/2a/71/e6/1786449349/Logo Rooted.svg?1786449349",
+    "13k [parser Medium +178ms ] media/19/5c/87/1775141463/Wero Ideal.png",
+    "6k [parser Medium +178ms ] media/07/1f/2f/1775141463/Mastercard.png",
+    "5k [parser Medium +178ms ] media/0d/3b/b9/1775141593/DHL.png",
+    "7k [parser Medium +178ms ] media/27/17/32/1775141593/dpd.png",
+    "6k [parser Low +178ms ] media/22/32/9c/1775133752/ideal-icon.svg?1775133752",
+    "4k [parser Low +178ms ] media/d4/ff/49/1775133751/creditcard-icon.svg?1775133751",
+    "0k [parser Low +472ms ] data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='#2d",
+    "0k [parser Low +484ms ] shared/thumbnail/ce/26/59/1234567890/f0a5f9e5c2cc4e5fa1a42eef3f5b9db6995f1d82b475a00192d7d95807b2f808_800x800.png?1787641279",
+    "0k [parser Low +484ms ] shared/thumbnail/0c/5c/41/1234567890/3c5a29495fb65547527028f28a1826ec0972a37798025fae238fed0e2c3f68a9_800x800.jpg?1786691184",
+    "10k [parser Low +484ms ] shared/thumbnail/9a/7a/97/1234567890/5d0c130d38b397df717f8ba3dd8bab04ca7e31719738d4499f3dee8efda24414_400x400.jpg?1786691184",
+    "10k [parser Low +484ms ] shared/thumbnail/fd/da/d6/1234567890/4ba50a0ed9a3abfb244a3a6d9d346a3f333d30f0ca645f9ba8ba63ab12ee4760_400x400.jpg?1786691184",
+    "10k [parser Low +484ms ] shared/thumbnail/08/b7/b4/1234567890/4e8d82f1e045a5c6c000250b9bb69301751e293646d6bda4d485bb8a6e10eac5_400x400.jpg?1786691184",
+    "10k [parser Low +484ms ] shared/thumbnail/9d/be/fe/1234567890/f785c38a67dddfa0949d15cb80d3461704225222e1d49fe5e39caf356452b517_400x400.jpg?1789370019",
+    "0k [parser Low +485ms ] shared/thumbnail/ca/2a/f5/1234567890/79fd423f8eec4005b612ef0d58e4fa8a945543037fca28a8895450b840e8d8d7_800x800.jpg?1783072899",
+    "7k [parser Low +485ms ] shared/thumbnail/be/80/cd/1234567890/88fd2d0ff1eba5c2f2ca333b5e52380329155d25d413d547cc586196e7963bf7_400x400.jpg?1783072899",
+    "8k [parser Low +485ms ] shared/thumbnail/29/d6/91/1234567890/708ae5e42b01300502c735eab4dd752e3abcf6b70402f7ad0843dc53a6cd7635_400x400.jpg?1783072899",
+    "7k [parser Low +485ms ] shared/thumbnail/ca/2a/f5/1234567890/79fd423f8eec4005b612ef0d58e4fa8a945543037fca28a8895450b840e8d8d7_400x400.jpg?1783072899",
+    "5k [parser Low +485ms ] shared/thumbnail/69/34/68/1234567890/a21cb9c2c42f737d779ab36dd8158adf089735180be4fbfdc6c035dde99d604e_400x400.jpg?1783072899",
+    "0k [parser Low +485ms ] shared/thumbnail/d5/a2/58/1234567890/037598ebf721b09824898e2fdf34b54d8c1dad6cd1b3775dd8c4eb8f5d6e4562_800x800.jpg?1783072865",
+    "9k [parser Low +485ms ] shared/thumbnail/d0/3f/80/1234567890/8f2389a9f16e7aad36f437739717bb22c9a885e71c4f80c6397e2beb86ca0d79_400x400.jpg?1783072865",
+    "9k [parser Low +485ms ] shared/thumbnail/cb/e2/13/1234567890/e521c2bc3813b3e37a8648fd0a6b6a63aa90650608591337179520d775a00c66_400x400.jpg?1783072865",
+    "9k [parser Low +485ms ] shared/thumbnail/7f/c5/c0/1234567890/12355ec5a6c92b46df93fa48ee2b41d31e37a019543d701342fe246af58f8d47_400x400.jpg?1783072865",
+    "8k [parser Low +485ms ] shared/thumbnail/f1/a5/20/1234567890/eac9229525ee9f4f00c82e23590feab0cf8c5184b0329a4aa91db422844dac01_400x400.jpg?1783072865",
+    "0k [parser Low +485ms ] shared/thumbnail/d9/72/8d/1234567890/50285e3c86e87b60275a600a14db70a9ceb11567ffb40aebc7bfa073cbe8386d_800x800.png?1786082489",
+    "39k [parser Low +485ms ] shared/thumbnail/00/1c/b2/1234567890/41dafeec82eaa596da70ecb8346e95da21793946c689bd253fb2e016bc1849d9_400x400.png?1786082491",
+    "39k [parser Low +485ms ] shared/thumbnail/d9/72/8d/1234567890/50285e3c86e87b60275a600a14db70a9ceb11567ffb40aebc7bfa073cbe8386d_400x400.png?1786082489",
+    "41k [parser Low +485ms ] shared/thumbnail/8d/8d/4d/1234567890/f8a751c753acf4149888aff287476432875f200e69ed3065cc8ceae910e6851d_400x400.png?1786082490",
+    "37k [parser Low +485ms ] shared/thumbnail/5c/fd/cb/1234567890/2d01e9c6462f00f030e97ae75ec3bee016f5780df3564d35b237dab16ddab784_400x400.png?1786082490",
+    "0k [parser Low +486ms ] shared/thumbnail/ec/e2/24/1234567890/5db14a300a18c71fd0ac783c0a85f6a168740dbd58d8365ddf2b98255fd2057a_800x800.png?1775147853",
+    "9k [parser Low +486ms ] shared/thumbnail/86/00/34/1234567890/c7a4df7a1a7f714ba186d05e98b19e314bfc81266344bcdbc92595b68e6b3241_400x400.png?1775147853",
+    "63k [parser Low +486ms ] shared/thumbnail/36/b0/ed/1234567890/833cbbd42c87b6264980cc7dd80e92656c42cfd25d531f24fcb2803373ba9153_400x400.png?1775147853",
+    "54k [parser Low +486ms ] shared/thumbnail/6c/c4/8b/1234567890/990dc24672cffba829341c5e951ea59e6a580c55e42c6a77af6489e81e208efb_400x400.png?1792568464",
+    "90k [parser Low +486ms ] shared/thumbnail/b2/c0/14/1234567890/757e1bebadf97ce2f435073008a6c69c049547cdbba77b587949460f7e835cf0_400x400.png?1775147853",
+    "0k [parser Low +486ms ] shared/thumbnail/7a/6b/4a/1234567890/d18e01159fdd1c0cc01a983267d763a2e4960641982371f2f364d73e1cdb1500_800x800.jpg?1787207669",
+    "16k [parser Low +486ms ] shared/thumbnail/85/b3/da/1234567890/93df5b3e70524ca83a31ae9df60a30c09eba690714365f7edfa7992b28b49ea2_400x400.jpg?1787207669",
+    "16k [parser Low +486ms ] shared/thumbnail/fe/bc/97/1234567890/a12ea8a79d1e5e40d913ca2e32ba439c039e852b390def3ef90af021b1e58f2c_400x400.jpg?1787207669",
+    "13k [parser Low +486ms ] shared/thumbnail/7a/6b/4a/1234567890/d18e01159fdd1c0cc01a983267d763a2e4960641982371f2f364d73e1cdb1500_400x400.jpg?1787207669",
+    "0k [parser Low +520ms ] shared/thumbnail/ef/c7/58/1234567890/050be7bbc73e9ec83b946beecd910cbcdca3288cc6add58afb2b1d002a9998c5_800x800.jpg?1783072873",
+    "11k [parser Low +520ms ] shared/thumbnail/93/fd/70/1234567890/50ccd91e02c8d629c467b1feb0b9c37ba059cec1625be72e6c12d4b0ebbb43d0_400x400.jpg?1783072873",
+    "13k [parser Low +520ms ] shared/thumbnail/ef/c7/58/1234567890/050be7bbc73e9ec83b946beecd910cbcdca3288cc6add58afb2b1d002a9998c5_400x400.jpg?1783072873",
+    "12k [parser Low +520ms ] shared/thumbnail/03/2b/52/1234567890/783b7c4f615fc4d90932cc48c270b799ff8cc110cac20eee4a0d013336702719_400x400.jpg?1783072874",
+    "13k [parser Low +520ms ] shared/thumbnail/c6/f7/73/1234567890/f14d41b03c14ec3a3f4a17c1ee6efd47586d96cb752ef431ce7d0de95aff2669_400x400.jpg?1783072873",
+    "0k [parser Low +520ms ] shared/thumbnail/a7/f0/af/1234567890/c725369427fd6e4eb866a5bd9cbdea76d778845a0a0830fd396153b71315d804_800x800.jpg?1775149111",
+    "0k [parser Low +520ms ] shared/thumbnail/47/90/05/1234567890/d4ad5cd50c4b5003428bec30e5a44b8253dc24e284f5bb2dd10944e01f91bb76_800x800.png?1786082486",
+    "36k [parser Low +520ms ] shared/thumbnail/47/90/05/1234567890/d4ad5cd50c4b5003428bec30e5a44b8253dc24e284f5bb2dd10944e01f91bb76_400x400.png?1786082486",
+    "34k [parser Low +520ms ] shared/thumbnail/c6/15/e7/1234567890/74f3682eddefbbb815438760303c42a7f17a61942ff89fa77b8fe471cab79e95_400x400.png?1786082485",
+    "39k [parser Low +520ms ] shared/thumbnail/b7/ee/2e/1234567890/1bf180c7a28ab0568510735740c2ad55ad2017723e7d1b8d251529cd38e7f57d_400x400.png?1786082486",
+    "37k [parser Low +520ms ] shared/thumbnail/5c/db/e8/1234567890/c2f7b2ec1db88a4671fad65bfcbc7240fa3aaf4ef482bb53e819a70e33e0fe2f_400x400.png?1786082486",
+    "0k [parser Low +520ms ] shared/thumbnail/76/34/87/1234567890/3cd4d7ecaca29168f315f13b43d11cb301ad12552d3dd8e0b22063e19ca3c6ff_800x800.jpg?1783072894",
+    "13k [parser Low +520ms ] shared/thumbnail/76/34/87/1234567890/3cd4d7ecaca29168f315f13b43d11cb301ad12552d3dd8e0b22063e19ca3c6ff_400x400.jpg?1783072894",
+    "13k [parser Low +520ms ] shared/thumbnail/2c/51/85/1234567890/309c4269bd3f7199130da5b8e3bf4684fd80cce12ea544a1779935b46c5e90fc_400x400.jpg?1783072894",
+    "12k [parser Low +520ms ] shared/thumbnail/d0/e8/bb/1234567890/e5526ac298e80386484c8c15727bb60ab8061b1a0c0a81c4d56cc8aa8bb22f6c_400x400.jpg?1783072894",
+    "0k [parser Low +520ms ] shared/thumbnail/20/2d/20/1234567890/fefd5f9a2eca3574fe99824566b48f03e97842f48e09502a5760fa81d3219e5e_800x800.jpg?1783072896",
+    "10k [parser Low +520ms ] shared/thumbnail/20/2d/20/1234567890/fefd5f9a2eca3574fe99824566b48f03e97842f48e09502a5760fa81d3219e5e_400x400.jpg?1783072896",
+    "10k [parser Low +520ms ] shared/thumbnail/88/ca/b1/1234567890/f02c53bb01c7a65c5a2f5afee4246f7c34bc52821bca3ae1a075cbe02a51853b_400x400.jpg?1783072895",
+    "9k [parser Low +520ms ] shared/thumbnail/16/42/71/1234567890/39e1418b0e80b5901987afec11f3b6abdf21d136d22d4576d12c68f9a6a3a9db_400x400.jpg?1783072895",
+    "11k [parser Low +520ms ] shared/thumbnail/87/d0/0f/1234567890/16a2392c63c475e3c50168276d3a1d8babfba461f717b48727a12e9b6743ea99_400x400.jpg?1783072895",
+    "0k [parser Low +520ms ] shared/thumbnail/30/f8/e9/1234567890/d26632ff24e3807a14712605dcd6941533e76a0b797992e82a79d0a18228a9fc_800x800.jpg?1779201860",
+    "0k [parser Low +520ms ] shared/thumbnail/ab/53/1c/1234567890/61f0e1727f09a087ab724ed1bd54284a7c2f7ea3921dfee8d66568e3a8100bb5_800x800.jpg?1785742120",
+    "0k [parser Low +520ms ] shared/thumbnail/2e/8e/36/1234567890/5a73cdc30f6409826c431ecea01b427e649e7044a0e1d3c312dea6cf3bd7f960_800x800.jpg?1783072888",
+    "10k [parser Low +520ms ] shared/thumbnail/2e/8e/36/1234567890/5a73cdc30f6409826c431ecea01b427e649e7044a0e1d3c312dea6cf3bd7f960_400x400.jpg?1783072888",
+    "10k [parser Low +520ms ] shared/thumbnail/9a/fe/93/1234567890/f54dd7284de2959a4d8687d810d2bbaf6634cef13a74107bd0acbebc5b20b277_400x400.jpg?1783072888",
+    "11k [parser Low +520ms ] shared/thumbnail/f9/f7/a3/1234567890/5e99639e005b24fb9f57203a820d6fec35b0687a5364498e579592bbc1690126_400x400.jpg?1783072888",
+    "0k [parser Low +520ms ] shared/thumbnail/23/2e/f1/1234567890/73b8249fdbc7d4897a0f738d4a2dd6170e7a6de6615381331bdee1bb08113b64_800x800.jpg?1775153304",
+    "14k [parser Low +521ms ] shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_400x400.jpg?1775153304",
+    "14k [parser Low +521ms ] shared/thumbnail/23/2e/f1/1234567890/73b8249fdbc7d4897a0f738d4a2dd6170e7a6de6615381331bdee1bb08113b64_400x400.jpg?1775153304",
+    "15k [parser Low +521ms ] shared/thumbnail/72/b7/bf/1234567890/1fcea4307e8e62ba133a5b6f1ed818892a862e461fa1bc3e527ed5a549c1a680_400x400.jpg?1775153304",
+    "0k [parser Low +521ms ] shared/thumbnail/2c/4a/1b/1234567890/44aa89fe3a63ac7f2a7edabd6128aadf046dd56d781da34d25f5ef6984161b5b_800x800.jpg?1779200500",
+    "10k [parser Low +521ms ] shared/thumbnail/2a/f7/2b/1234567890/18552494ef086c4842d1b422715abeb821c112b82fdbbe4a4e5a9b695bbb7b45_400x400.jpg?1779200500",
+    "12k [parser Low +521ms ] shared/thumbnail/a2/c0/a1/1234567890/45ad632f3ffb30554423719e904b49ac90268a54929a19e37065a88cef81ac78_400x400.jpg?1779200500",
+    "11k [parser Low +521ms ] shared/thumbnail/2c/4a/1b/1234567890/44aa89fe3a63ac7f2a7edabd6128aadf046dd56d781da34d25f5ef6984161b5b_400x400.jpg?1779200500",
+    "11k [parser Low +521ms ] shared/thumbnail/9c/99/02/1234567890/1264a1db6a809268470a3c008556539a3ef7d7054797a7780acc31d4b97cae98_400x400.jpg?1779200500",
+    "0k [parser Low +521ms ] shared/thumbnail/10/30/7e/1234567890/bd8a288293f06302f7aec01529691da0c4ff7d4d0de1b83db9f50f907bab8e17_800x800.png?1786082479",
+    "0k [parser Low +521ms ] shared/thumbnail/e2/60/32/1234567890/c4ed8d3a8a47700b001c53d618766265a4a3899ad0c47e357a8eca73ac79c90b_800x800.jpg?1779199879",
+    "0k [parser Low +521ms ] shared/thumbnail/cb/a8/ef/1234567890/3fbd20d1c9480f14857aa98e086c8f621426406897a9a0a1d7a24c7e125149a0_800x800.jpg?1779201944",
+    "0k [parser Low +521ms ] shared/thumbnail/8b/cb/d5/1234567890/52119baae27c409489a8a14c1d74912fa198bc25d43e89a660c276891a19cc52_800x800.jpg?1779375511",
+    "0k [parser Low +521ms ] shared/thumbnail/74/3f/ed/1234567890/41db8ab5c08b9e9de961775bbd9dc5eacaea266005d697a2cfce5c3e5f3814ef_800x800.jpg?1779201487",
+    "0k [parser Low +521ms ] shared/thumbnail/35/c3/9b/1234567890/ce08052bb6e0e29369f978fb168d47de0704fc9f498b861176a60e53120a42f8_800x800.jpg?1787221820",
+    "0k [parser Low +521ms ] shared/thumbnail/87/0a/66/1234567890/f113240a0bca50b95c4f6f13d6c1979d3006eabb956023561146ee87009ac274_800x800.jpg?1775149186",
+    "9k [parser Low +521ms ] shared/thumbnail/87/0a/66/1234567890/f113240a0bca50b95c4f6f13d6c1979d3006eabb956023561146ee87009ac274_400x400.jpg?1775149186",
+    "9k [parser Low +521ms ] shared/thumbnail/7d/07/2d/1234567890/cd7ab56ca5013cd1a566441b83a5ebda3ab3f5ac62a79fcba4d74b5c6ca70cdb_400x400.jpg?1775149186",
+    "9k [parser Low +522ms ] shared/thumbnail/34/32/4b/1234567890/49f6ca5ab817075838cee6a0478f11d911c25c6580741e4166c09080a7519853_400x400.jpg?1775149186",
+    "8k [parser Low +522ms ] shared/thumbnail/1a/61/ca/1234567890/3e837ffad1555c5c35719d06d89f6a3d0ef58122d844d9b820046e6c2ecb8656_400x400.jpg?1775149186",
+    "9k [script Low +534ms (anon)@rootedgoods.min.js:2950 < pas@rootedgoods.min.js:2949 < (anon)@rootedgoods.min.js:2955] shared/thumbnail/0c/5c/41/1234567890/3c5a29495fb65547527028f28a1826ec0972a37798025fae238fed0e2c3f68a9_400x400.jpg?1786691184",
+    "10k [script Low +537ms (anon)@rootedgoods.min.js:2950 < pas@rootedgoods.min.js:2949 < (anon)@rootedgoods.min.js:2955] shared/thumbnail/d5/a2/58/1234567890/037598ebf721b09824898e2fdf34b54d8c1dad6cd1b3775dd8c4eb8f5d6e4562_400x400.jpg?1783072865",
+    "56k [script Low +537ms (anon)@rootedgoods.min.js:2950 < pas@rootedgoods.min.js:2949 < (anon)@rootedgoods.min.js:2955] shared/thumbnail/ec/e2/24/1234567890/5db14a300a18c71fd0ac783c0a85f6a168740dbd58d8365ddf2b98255fd2057a_400x400.png?1775147853",
+    "21k [parser Low +538ms ] shared/thumbnail/ce/26/59/1234567890/f0a5f9e5c2cc4e5fa1a42eef3f5b9db6995f1d82b475a00192d7d95807b2f808_400x400.png?1787641279",
+    "8k [parser Low +538ms ] shared/thumbnail/a7/f0/af/1234567890/c725369427fd6e4eb866a5bd9cbdea76d778845a0a0830fd396153b71315d804_400x400.jpg?1775149111",
+    "15k [parser Low +538ms ] shared/thumbnail/30/f8/e9/1234567890/d26632ff24e3807a14712605dcd6941533e76a0b797992e82a79d0a18228a9fc_400x400.jpg?1779201860",
+    "8k [parser Low +538ms ] shared/thumbnail/ab/53/1c/1234567890/61f0e1727f09a087ab724ed1bd54284a7c2f7ea3921dfee8d66568e3a8100bb5_400x400.jpg?1785742120",
+    "132k [parser Low +538ms ] shared/thumbnail/10/30/7e/1234567890/bd8a288293f06302f7aec01529691da0c4ff7d4d0de1b83db9f50f907bab8e17_400x400.png?1786082479",
+    "7k [parser Low +538ms ] shared/thumbnail/e2/60/32/1234567890/c4ed8d3a8a47700b001c53d618766265a4a3899ad0c47e357a8eca73ac79c90b_400x400.jpg?1779199879",
+    "11k [parser Low +538ms ] shared/thumbnail/cb/a8/ef/1234567890/3fbd20d1c9480f14857aa98e086c8f621426406897a9a0a1d7a24c7e125149a0_400x400.jpg?1779201944",
+    "21k [parser Low +538ms ] shared/thumbnail/8b/cb/d5/1234567890/52119baae27c409489a8a14c1d74912fa198bc25d43e89a660c276891a19cc52_400x400.jpg?1779375511",
+    "18k [parser Low +538ms ] shared/thumbnail/74/3f/ed/1234567890/41db8ab5c08b9e9de961775bbd9dc5eacaea266005d697a2cfce5c3e5f3814ef_400x400.jpg?1779201487",
+    "11k [parser Low +539ms ] shared/thumbnail/35/c3/9b/1234567890/ce08052bb6e0e29369f978fb168d47de0704fc9f498b861176a60e53120a42f8_400x400.jpg?1787221820",
+    "0k [parser Low +1811ms ] data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2.4' str"
+   ],
+   "fonts": [
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "155k rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 11,
+   "langeTaken": 1,
+   "dom": 1609,
+   "imgs": 105,
+   "imgZonderWH": 105,
+   "imgLazy": 98,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 4270,
+   "titel": "Alle relatiegeschenken met logo | Rooted Goods"
+  },
+  "/": {
+   "geladen": true,
+   "fcp": 768,
+   "lcp": {
+    "t": 768,
+    "el": "h1.rg-hero-v2__title",
+    "url": "",
+    "size": 21960
+   },
+   "cls": 0.0894,
+   "shifts": [
+    {
+     "t": 1298,
+     "v": 0.0878,
+     "b": [
+      "div.rg-hero-v2__mosaic",
+      "div.rg-hero-v2__cta",
+      "em",
+      "a.rg-hero-v2__tile",
+      "a.rg-hero-v2__tile"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.rg-hero-v2__mosaic 0.088",
+    "# 0.002",
+    "::after 0.000"
+   ],
+   "verzoeken": 71,
+   "kb": 3242,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 37
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 726
+    },
+    "Image": {
+     "n": 56,
+     "kb": 1897
+    },
+    "Script": {
+     "n": 2,
+     "kb": 322
+    },
+    "Font": {
+     "n": 7,
+     "kb": 259
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "514k Image rootedgoods.eu/shared/thumbnail/f8/1e/47/1234567890/51dacbe5cc43e398f0b102dd9e536e7c905f36",
+    "505k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "144k Script cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.js"
+   ],
+   "beelden": [
+    "9k [parser Medium +169ms ] media/2a/71/e6/1786449349/Logo Rooted.svg?1786449349",
+    "27k [parser Low +169ms ] media/6a/0f/ff/1782906551/Richard Media JPEG.jpg",
+    "97k [parser High +169ms ] thumbnail/d6/62/2b/1782216567/Opinel Colorama No 08 Groen_800x800.jpg",
+    "67k [parser Medium +170ms ] thumbnail/87/21/14/1782213859/Social Ad Creation Bambook_800x800.jpg",
+    "133k [parser Medium +170ms ] thumbnail/77/d7/45/1782215119/Lifestyle Image 0747_800x800.jpg",
+    "43k [parser Medium +170ms ] thumbnail/1a/0a/c8/1782217587/Janzen Home Fragrance Sticks Earth 200ml_800x800.jpg",
+    "5k [parser Low +170ms ] bambook.08.promidata.shop/media/fb/71/70/1787233896/ABN AMRO.png",
+    "9k [parser Low +170ms ] bambook.08.promidata.shop/media/6f/40/25/1787233896/Erasmus MC.png",
+    "3k [parser Low +170ms ] bambook.08.promidata.shop/media/8e/a3/5b/1787233896/EY.png",
+    "6k [parser Low +170ms ] bambook.08.promidata.shop/media/1a/02/df/1787233896/Franciscus.png",
+    "6k [parser Low +170ms ] bambook.08.promidata.shop/media/f9/5c/8d/1787233896/Huisartsen G.C. Zuiderzorg.png",
+    "5k [parser Low +170ms ] bambook.08.promidata.shop/media/e7/2a/d6/1787233896/Ifes.png",
+    "11k [parser Low +170ms ] bambook.08.promidata.shop/media/45/a3/b2/1787233896/Kenniscentrum Sport en bewegen.png",
+    "8k [parser Low +170ms ] bambook.08.promidata.shop/media/12/a1/f9/1787233897/Laag 1.png",
+    "7k [parser Low +170ms ] bambook.08.promidata.shop/media/38/a2/8b/1787233897/Laag 2.png",
+    "4k [parser Low +170ms ] bambook.08.promidata.shop/media/c9/ef/ef/1787233897/Laag 3.png",
+    "12k [parser Low +170ms ] bambook.08.promidata.shop/media/5e/57/d3/1787233897/Laag 4.png",
+    "10k [parser Low +170ms ] bambook.08.promidata.shop/media/ee/32/45/1787233897/Laag 5.png",
+    "13k [parser Low +170ms ] bambook.08.promidata.shop/media/64/79/1b/1787233897/Laag 7.png",
+    "4k [parser Low +170ms ] bambook.08.promidata.shop/media/b9/2b/80/1776774978/Logo Heineken.svg",
+    "6k [parser Low +170ms ] bambook.08.promidata.shop/media/48/36/91/1787233896/Natuurhuisje.png",
+    "7k [parser Low +170ms ] bambook.08.promidata.shop/media/05/5b/89/1787233897/Royal Kaak Logo 2025.png",
+    "6k [parser Low +170ms ] bambook.08.promidata.shop/media/c1/7e/91/1787233896/Simplex.png",
+    "8k [parser Low +170ms ] bambook.08.promidata.shop/media/4c/8f/09/1787233897/VJA.png",
+    "8k [parser Low +170ms ] bambook.08.promidata.shop/media/c5/9e/20/1787233897/Wezijnwille.png",
+    "9k [parser Low +170ms ] bambook.08.promidata.shop/media/ce/90/0c/1787233896/Deloitte logo.png",
+    "30k [parser Low +175ms ] media/a1/2c/24/1785830625/Logo in window (1).jpg",
+    "42k [parser Low +175ms ] media/1b/72/57/1785499466/Foto Verklaring Compressie.jpg",
+    "76k [parser Low +175ms ] media/cd/g0/21/1785500254/Full Service JPEG.jpg",
+    "127k [parser Low +175ms ] media/5d/dd/b7/1785500254/Warehousing 2 (1).jpg",
+    "94k [parser Low +175ms ] media/4a/2e/d4/1785831536/Verzending naar locaties doosjes.jpg",
+    "13k [parser Low +175ms ] media/19/5c/87/1775141463/Wero Ideal.png",
+    "6k [parser Low +175ms ] media/07/1f/2f/1775141463/Mastercard.png",
+    "5k [parser Low +175ms ] media/0d/3b/b9/1775141593/DHL.png",
+    "7k [parser Low +175ms ] media/27/17/32/1775141593/dpd.png",
+    "6k [parser Low +175ms ] media/22/32/9c/1775133752/ideal-icon.svg?1775133752",
+    "4k [parser Low +175ms ] media/d4/ff/49/1775133751/creditcard-icon.svg?1775133751",
+    "0k [parser Low +723ms ] data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' strok",
+    "124k [parser Low +755ms ] media/d8/96/ae/1786435459/Kerst en Eindejaar (1).jpg",
+    "63k [parser Low +756ms ] media/3a/c8/55/1785442349/Eindejaarsgeschenken.jpg",
+    "26k [parser Low +756ms ] media/c0/ba/fe/1785442349/Media Events (1).jpg",
+    "18k [parser Low +756ms ] media/a4/8c/a1/1785442348/Merchandise JPEG.jpg",
+    "18k [parser Low +756ms ] media/0b/4f/33/1785442348/Dag van de Leraar (1).jpg",
+    "99k [parser Low +756ms ] media/46/df/f2/1782222667/Europa Kaart.svg",
+    "25k [parser Low +756ms ] shared/thumbnail/c3/23/0d/1234567890/24c973e9aff89a0d953c124efea1ec26ec530b35f8bd50402160b16d9858adca_800x800.jpg?1779202436",
+    "8k [parser Low +756ms ] shared/thumbnail/c3/23/0d/1234567890/24c973e9aff89a0d953c124efea1ec26ec530b35f8bd50402160b16d9858adca_400x400.jpg?1779202436",
+    "8k [parser Low +756ms ] shared/thumbnail/1c/9e/36/1234567890/ba2e0b0669ba0363cad22de7a1af809cce161c8c7740715d0df5644e2bea2285_400x400.jpg?1779202436",
+    "514k [parser Low +756ms ] shared/thumbnail/f8/1e/47/1234567890/51dacbe5cc43e398f0b102dd9e536e7c905f3600be2606d8f291fe2123f8343a_800x800.png?1786082477",
+    "16k [parser Low +756ms ] shared/thumbnail/be/80/cd/1234567890/88fd2d0ff1eba5c2f2ca333b5e52380329155d25d413d547cc586196e7963bf7_800x800.jpg?1783072899",
+    "7k [parser Low +756ms ] shared/thumbnail/be/80/cd/1234567890/88fd2d0ff1eba5c2f2ca333b5e52380329155d25d413d547cc586196e7963bf7_400x400.jpg?1783072899",
+    "8k [parser Low +756ms ] shared/thumbnail/29/d6/91/1234567890/708ae5e42b01300502c735eab4dd752e3abcf6b70402f7ad0843dc53a6cd7635_400x400.jpg?1783072899",
+    "7k [parser Low +756ms ] shared/thumbnail/ca/2a/f5/1234567890/79fd423f8eec4005b612ef0d58e4fa8a945543037fca28a8895450b840e8d8d7_400x400.jpg?1783072899",
+    "5k [parser Low +756ms ] shared/thumbnail/69/34/68/1234567890/a21cb9c2c42f737d779ab36dd8158adf089735180be4fbfdc6c035dde99d604e_400x400.jpg?1783072899",
+    "0k [parser Low +786ms ] data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#000' fill-rule='evenodd' d='M12 2",
+    "21k [parser Low +787ms ] cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain5.jpg",
+    "0k [parser Low +822ms ] data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2.4' str"
+   ],
+   "fonts": [
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+    "155k rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 153,
+   "langeTaken": 1,
+   "dom": 2084,
+   "imgs": 217,
+   "imgZonderWH": 211,
+   "imgLazy": 99,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 7788,
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europ"
+  }
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "instelling": {
+  "W": 390,
+  "H": 844,
+  "CPU": 2,
+  "net": "snel"
+ },
+ "uit": {
+  "/eindejaarsgeschenken": {
+   "geladen": true,
+   "fcp": 660,
+   "lcp": {
+    "t": 4620,
+    "el": "img.product-image.is-contain",
+    "url": "79d9a66e1fe5f8df14aab2ea920c6ef93597818a084d860_800x800.png?1786530715",
+    "size": 49896
+   },
+   "cls": 0.0104,
+   "shifts": [
+    {
+     "t": 979,
+     "v": 0.0103,
+     "b": [
+      "#"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "# 0.010",
+    "div.cms-section.pos-2 0.000"
+   ],
+   "verzoeken": 30,
+   "kb": 1560,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 21
+    },
+    "Image": {
+     "n": 16,
+     "kb": 975
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Font": {
+     "n": 7,
+     "kb": 127
+    },
+    "Script": {
+     "n": 1,
+     "kb": 179
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "443k Image rootedgoods.eu/shared/thumbnail/ab/21/21/1234567890/c65447fb6f87f2f5ee96525e682f127d99a49d",
+    "370k Image rootedgoods.eu/shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "71k Image rootedgoods.eu/media/3e/7f/ef/1787736741/Smiling%20Coworkers.jpg",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css"
+   ],
+   "fonts": [
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-500.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-700.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2"
+   ],
+   "tbt": 95,
+   "langeTaken": 1,
+   "dom": 1021,
+   "imgs": 27,
+   "imgZonderWH": 26,
+   "imgLazy": 19,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 6272,
+   "titel": "Kerstpakketten & eindejaarsgeschenken zakelijk | R"
+  }
+ }
+}

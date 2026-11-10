@@ -2502,6 +2502,38 @@ document.addEventListener('DOMContentLoaded', function () {
   var marker = document.querySelector('.rg-page-hero--band');
   if (!marker) return;
 
+  /* 0. De foto's op de juiste maat, VÓÓR de klasse hieronder en dus vóór de
+     eerste layout. Gemeten: de klonen van kloonSet (stap 4) vragen hun
+     tegelfoto in 800w aan, 3.242 kB voor negen tegels, ook als sizes op de
+     originelen al klopt: cloneNode zet srcset op de kloon vóór sizes er is,
+     en de browser kiest dan op de standaard "100vw". Daarom kiest deze stap
+     zelf: uit de srcset van elke tegelfoto de kleinste kandidaat die de
+     getoonde breedte bij maximaal 2x dichtheid dekt (160 px op een telefoon,
+     232 px vanaf 576 px), zet die als src en haalt srcset en sizes weg. De
+     klonen krijgen dan alleen een src mee. Telefoon 3x: 160 x 2 = 320, dus
+     400w; scherm 1x: 232, dus 400w; scherm 2x: 464, dus 800w. Zonder
+     herkenbare srcset blijft de tegel zoals Shopware hem zet. De algemene
+     stap onderaan het bestand doet de rest van de producttegels. */
+  (function () {
+    var sl = document.querySelector('[data-product-slider]');
+    if (!sl) return;
+    var doel = (window.innerWidth <= 575 ? 160 : 232) * Math.min(window.devicePixelRatio || 1, 2);
+    Array.prototype.forEach.call(sl.querySelectorAll('img[srcset]'), function (img) {
+      if (img.complete && img.naturalWidth) return;
+      var kand = img.getAttribute('srcset').split(',').map(function (deel) {
+        var m = /^\s*(\S+)\s+(\d+)w\s*$/.exec(deel);
+        return m ? { url: m[1], w: parseInt(m[2], 10) } : null;
+      }).filter(Boolean).sort(function (a, b) { return a.w - b.w; });
+      if (!kand.length) return;
+      var kies = kand[kand.length - 1];
+      for (var k = 0; k < kand.length; k++) { if (kand[k].w >= doel) { kies = kand[k]; break; } }
+      img.src = kies.url;
+      img.removeAttribute('srcset');
+      img.removeAttribute('sizes');
+      img.dataset.rgSizes = 'ok';
+    });
+  })();
+
   var html = document.documentElement;
   html.classList.add('rg-band-pagina');
 
@@ -2621,6 +2653,32 @@ document.addEventListener('DOMContentLoaded', function () {
     var sets = setBreedte > 0 ? 3 + Math.ceil(scherm / setBreedte) : 4;
     track.insertBefore(kloonSet(), items[0]);
     for (var s = 2; s < sets; s++) track.appendChild(kloonSet());
+  }
+
+  /* 4b. Foto's zacht laten verschijnen. De tegels staan er meteen (de ruimte
+     ligt vast), maar de foto's komen een voor een binnen en poppen dan in
+     beeld, wit op wit. Elke foto die er nog niet is begint op opacity 0 en
+     fadet in zodra hij geladen is. Alleen opacity, geen layout. Staat ook
+     voor de klonen (zelfde bron, dus uit de cache). Achtervang: na 6 s
+     komt alles in beeld, ook als een load- of error-gebeurtenis uitblijft
+     (een lazy foto ver buiten beeld die niet start). Niet bij
+     prefers-reduced-motion. */
+  if (!stil) {
+    var nogTeLaden = [];
+    Array.prototype.forEach.call(slider.querySelectorAll('img'), function (img) {
+      if (img.complete && img.naturalWidth) return;
+      img.style.opacity = '0';
+      var klaar = function () {
+        img.style.transition = 'opacity 0.35s ease';
+        img.style.opacity = '';
+      };
+      nogTeLaden.push(klaar);
+      img.addEventListener('load', klaar, { once: true });
+      img.addEventListener('error', klaar, { once: true });
+    });
+    if (nogTeLaden.length) {
+      setTimeout(function () { nogTeLaden.forEach(function (f) { f(); }); }, 6000);
+    }
   }
 
   /* 5. Slepen. */
@@ -2851,3 +2909,55 @@ document.addEventListener('DOMContentLoaded', function () {
    pagina hangt. Zie sectie 56 voor de afweging.
    ===================================================================== */
 document.documentElement.classList.add('rg-cirkelpijl');
+
+
+/* =====================================================================
+   PRODUCTFOTO'S OP DE JUISTE MAAT — 10 november 2026
+   =====================================================================
+   Gemeten op de live site (docs/metingen/2026-11-10-site-laden/): de
+   producttegels (listing, slider, band, zoekresultaten) hebben een srcset
+   met een 400w- en een 800w-bestand, maar het thema zet sizes op
+   "(min-width: 0px) 500px, 100vw". Een tegel is 122 tot 232 px breed, dus
+   de browser had aan 400w ruim genoeg, en pakt toch 800w. Op de eindejaars-
+   pagina zijn dat voor de negen tegels van de band 3.238 kB (800w) tegenover
+   936 kB (400w): 72% minder, met dezelfde scherpte op de getoonde maat.
+   Wat dit doet: voor elke tegelfoto die nog niet geladen is, de echte
+   getoonde breedte in sizes zetten, begrensd op 2x dichtheid (een telefoon
+   met 3x vraagt dan niet om 3x; productfoto's op een witte tegel verdragen
+   dat, en de bronnen zijn vaak maar 500 px). Foto's die al geladen zijn of al
+   onderweg (currentSrc gezet) blijven met rust: opnieuw kiezen zou ze dubbel ophalen. Foto's zonder getoonde
+   breedte (verborgen) worden later nog eens geprobeerd, maximaal 20 keer.
+   Staat achteraan omdat de band-JS hierboven eerst de klonen moet maken
+   en de breedte van de tegels vast moet leggen.
+   Niet de PDP-galerij: die heeft de grote variant nodig. */
+(function () {
+  var echt = window.devicePixelRatio || 1;
+  var dichtheid = Math.min(echt, 2);
+  var wacht = 0;
+
+  function pas() {
+    var lijst = document.querySelectorAll('.product-box img[srcset], .product-image-wrapper img[srcset]');
+    var metingen = [];
+    Array.prototype.forEach.call(lijst, function (img) {
+      if (img.dataset.rgSizes === 'ok') return;
+      if ((img.complete && img.naturalWidth) || (!img.complete && img.currentSrc)) { img.dataset.rgSizes = 'ok'; return; }
+      var poging = parseInt(img.dataset.rgSizes || '0', 10);
+      if (poging >= 20) return;
+      var w = img.getBoundingClientRect().width;
+      if (w > 0) metingen.push([img, w]);
+      else img.dataset.rgSizes = String(poging + 1);
+    });
+    metingen.forEach(function (m) {
+      m[0].sizes = Math.max(1, Math.round(m[1] * dichtheid / echt)) + 'px';
+      m[0].dataset.rgSizes = 'ok';
+    });
+  }
+
+  pas();
+  if (window.MutationObserver && document.body) {
+    new MutationObserver(function () {
+      if (wacht) return;
+      wacht = requestAnimationFrame(function () { wacht = 0; pas(); });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+})();

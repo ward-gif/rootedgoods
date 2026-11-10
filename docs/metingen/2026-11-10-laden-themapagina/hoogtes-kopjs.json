@@ -1,0 +1,46 @@
+{
+ "390x844": {
+  "header": {
+   "y": 0,
+   "h": 78.8
+  },
+  "topbar": {
+   "y": 0,
+   "h": 12.8
+  },
+  "usp": null,
+  "nav": {
+   "y": 93,
+   "h": 0
+  },
+  "main": {
+   "y": 0,
+   "h": 5655.7
+  },
+  "content": {
+   "y": 102,
+   "h": 5553.7
+  },
+  "cmsPage": {
+   "y": 138,
+   "h": 5497.7
+  },
+  "sec1": {
+   "y": 418.9,
+   "h": 466.2
+  },
+  "hero": {
+   "y": 138,
+   "h": 280.9
+  },
+  "breadcrumb": {
+   "y": 122,
+   "h": 0
+  },
+  "bodyPad": "0px",
+  "mainPad": "102px",
+  "contentPad": "20px",
+  "htmlPad": "0px",
+  "headerPos": "fixed"
+ }
+}

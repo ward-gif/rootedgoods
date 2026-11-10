@@ -638,6 +638,18 @@ bestand.
 van het beeldgewicht. Met een 200w-formaat erbij wordt het meer. Op de catalogus praat
 je over megabytes, zonder dat er iets aan het ontwerp verandert.
 
+**Bijgewerkt 10 november 2026: wij vangen dit nu zelf af, voor de producttegels.**
+De band-JS en een algemene stap onderaan `rootedgoods.js` kiezen vóór het laden zelf
+de kleinste kandidaat uit de `srcset` die de getoonde breedte bij maximaal 2x dichtheid
+dekt. Gemeten op de live site (docs/metingen/2026-11-10-site-laden/, 12 s na laden,
+10 Mbit): beeldgewicht op `/eindejaarsgeschenken` 3.415 kB naar 696 kB (negen tegels,
+800w naar 400w), op `/alle-producten/` 2.625 kB naar 1.324 kB, op `/huis-keuken/` 1.493 kB
+naar 793 kB, op `/thema-s/` 2.191 kB naar 892 kB. De home is niet gewonnen (de slider daar
+laadt zijn foto's vóór onze JS draait). **Dit blijft een omweg:** het werkt pas ná het laden
+van onze JS, het kan niet onder de 400w komen, en het raakt de PDP, de zoekresultaten die
+via AJAX binnenkomen en de home maar half. De vraag aan Promidata blijft dus staan, met
+de twee kleinere formaten als de echte winst.
+
 ### Er is een tweede helft, en die twee werken alleen samen
 
 De productbeelden staan in de mediamap **Shared Media**. Daar staan maar twee
@@ -670,6 +682,42 @@ op `eager`), deze over hun *formaat*. Samen zijn ze de verklaring voor een catal
 8,4 MB.
 
 **Prioriteit:** hoog.
+
+---
+
+### A5. Twee Playfair-lettertypen voorladen in de head
+
+**Wat we meten:** de kop op de home, de kerstpagina en over-ons wisselt van lettertype nadat
+de pagina al getoond is. Playfair staat in onze CSS op `font-display: optional`, maar de
+browser wisselt toch, en dan verspringt de kop. Op een eerste bezoek met Slow 4G en CPU 4x trager
+(live, 10 november 2026, docs/metingen/2026-11-10-laden-themapagina/):
+
+| | Layout-shift door het lettertype | LCP |
+|---|---:|---:|
+| Kerstpagina, zoals nu | 0,0557 | 2,49 tot 2,57 s |
+| Kerstpagina, met preload van Playfair 500 en 700 | 0,0013 en 0,0023 | 2,78 tot 2,82 s |
+| Home, zoals nu | 0,0878 | 3,54 s |
+| Home, met preload van 500, 600 en 700 | 0,0197 | 3,80 s |
+
+Zonder Playfair (geblokkeerd) is de shift 0,0091 op de kerstpagina en 0,0000 op de home, dus het
+lettertype is de oorzaak. De prijs is een kwart seconde later LCP op een trage verbinding.
+
+**Wat we vragen:** drie regels bovenaan de `<head>`:
+
+```html
+<link rel="preload" href="/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+```
+
+**Waarom dit hier staat en niet bij ons:** een `<link rel="preload">` hoort in de `<head>`.
+Via een HTML-blok in de CMS komt hij in de body terecht. Of Shopware hem daar laat staan en of de
+browser hem dan nog op tijd oppakt, is niet getest. In de meting hierboven is de link wel zo vroeg
+mogelijk in de head gezet, dus dit is het beste geval. Dit hoort in dezelfde wijziging als A3
+(versienummer in de CSS- en JS-URL): één keer in de themahead, één factuur.
+
+**Prioriteit:** laag tot midden. Op de kerstpagina blijft de shift met 0,06 onder de 0,1 die als
+goed telt. Op de home komt hij met 0,09 op de grens, en daar staan nog andere shifts naast.
 
 ---
 

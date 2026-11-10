@@ -1,0 +1,230 @@
+{
+ "shifts": [
+  {
+   "t": 2716,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 3954,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "undefined"
+   ]
+  },
+  {
+   "t": 4193,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 4212,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 4672,
+   "v": 0.0029,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "undefined",
+    "P.rg-page-hero__cijfers"
+   ]
+  },
+  {
+   "t": 4691,
+   "v": 0.0557,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "P.rg-page-hero__cijfers",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2481,
+  "sliderRuw": 2482,
+  "band": 2676,
+  "klonen": 2676,
+  "cijfers": 2676
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2560,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 285,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 348,
+   "f": "na59-r1-390-f01-348ms.jpg"
+  },
+  {
+   "t": 2640,
+   "f": "na59-r1-390-f02-2640ms.jpg"
+  },
+  {
+   "t": 2827,
+   "f": "na59-r1-390-f03-2827ms.jpg"
+  },
+  {
+   "t": 2920,
+   "f": "na59-r1-390-f04-2920ms.jpg"
+  },
+  {
+   "t": 3022,
+   "f": "na59-r1-390-f05-3022ms.jpg"
+  },
+  {
+   "t": 3118,
+   "f": "na59-r1-390-f06-3118ms.jpg"
+  },
+  {
+   "t": 3209,
+   "f": "na59-r1-390-f07-3209ms.jpg"
+  },
+  {
+   "t": 3300,
+   "f": "na59-r1-390-f08-3300ms.jpg"
+  },
+  {
+   "t": 3394,
+   "f": "na59-r1-390-f09-3394ms.jpg"
+  },
+  {
+   "t": 3494,
+   "f": "na59-r1-390-f10-3494ms.jpg"
+  },
+  {
+   "t": 3593,
+   "f": "na59-r1-390-f11-3593ms.jpg"
+  },
+  {
+   "t": 3692,
+   "f": "na59-r1-390-f12-3692ms.jpg"
+  },
+  {
+   "t": 3786,
+   "f": "na59-r1-390-f13-3786ms.jpg"
+  },
+  {
+   "t": 3884,
+   "f": "na59-r1-390-f14-3884ms.jpg"
+  },
+  {
+   "t": 3976,
+   "f": "na59-r1-390-f15-3976ms.jpg"
+  },
+  {
+   "t": 4073,
+   "f": "na59-r1-390-f16-4073ms.jpg"
+  },
+  {
+   "t": 4175,
+   "f": "na59-r1-390-f17-4175ms.jpg"
+  },
+  {
+   "t": 4292,
+   "f": "na59-r1-390-f18-4292ms.jpg"
+  },
+  {
+   "t": 4386,
+   "f": "na59-r1-390-f19-4386ms.jpg"
+  },
+  {
+   "t": 4484,
+   "f": "na59-r1-390-f20-4484ms.jpg"
+  },
+  {
+   "t": 4576,
+   "f": "na59-r1-390-f21-4576ms.jpg"
+  },
+  {
+   "t": 4669,
+   "f": "na59-r1-390-f22-4669ms.jpg"
+  },
+  {
+   "t": 4776,
+   "f": "na59-r1-390-f23-4776ms.jpg"
+  },
+  {
+   "t": 4867,
+   "f": "na59-r1-390-f24-4867ms.jpg"
+  },
+  {
+   "t": 4967,
+   "f": "na59-r1-390-f25-4967ms.jpg"
+  },
+  {
+   "t": 5060,
+   "f": "na59-r1-390-f26-5060ms.jpg"
+  },
+  {
+   "t": 5153,
+   "f": "na59-r1-390-f27-5153ms.jpg"
+  },
+  {
+   "t": 5252,
+   "f": "na59-r1-390-f28-5252ms.jpg"
+  },
+  {
+   "t": 5350,
+   "f": "na59-r1-390-f29-5350ms.jpg"
+  },
+  {
+   "t": 5443,
+   "f": "na59-r1-390-f30-5443ms.jpg"
+  },
+  {
+   "t": 5535,
+   "f": "na59-r1-390-f31-5535ms.jpg"
+  },
+  {
+   "t": 5635,
+   "f": "na59-r1-390-f32-5635ms.jpg"
+  },
+  {
+   "t": 5726,
+   "f": "na59-r1-390-f33-5726ms.jpg"
+  },
+  {
+   "t": 5817,
+   "f": "na59-r1-390-f34-5817ms.jpg"
+  },
+  {
+   "t": 5911,
+   "f": "na59-r1-390-f35-5911ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "na59-r1"
+ }
+}

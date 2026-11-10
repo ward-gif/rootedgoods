@@ -1,0 +1,27 @@
+/* ============================================================
+   62. VINKJES IN DE USP-BALK ZONDER FONT AWESOME, 10 november 2026
+   ============================================================
+   De vier vinkjes in de USP-balk zijn <i class="fa-solid fa-check"> in het
+   CMS. Dat is het ENIGE Font Awesome-icoon op de site (gecontroleerd op
+   home, kerst, PDP en over ons: 4 keer fa-check, verder niets), maar het
+   haalt op elke pagina fa-solid-900.woff2 binnen: 155 kB, gemeten op 11
+   paginatypes. Hier de glyph vervangen door een SVG-masker in dezelfde
+   kleur (currentColor) en grootte (1em, zie sectie 5), zodat de browser het
+   lettertype niet meer nodig heeft en niet ophaalt. Gemeten met deze regel:
+   lettertypen op /huis-keuken/ 237 kB naar 82 kB, op de kerstpagina 282 kB
+   naar 127 kB, op de PDP 251 kB naar 97 kB; geen Font Awesome-verzoek meer.
+   Zonder deze regel verandert er niets aan de site; met is het vinkje
+   visueel gelijk (schermafdrukken: docs/metingen/2026-11-10-site-laden/
+   topbar-fa.png tegen topbar-masker.png).
+   Komt er ooit een ander Font Awesome-icoon op de site, dan haalt de browser
+   het lettertype alleen voor dat icoon weer op. */
+.top-bar-nav .fa-solid.fa-check { font-family: inherit !important; font-weight: inherit; }
+.top-bar-nav .fa-solid.fa-check::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.6l5 5 10-10.6'/%3E%3C/svg%3E") center / 118% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.6l5 5 10-10.6'/%3E%3C/svg%3E") center / 118% no-repeat;
+}

@@ -1,0 +1,520 @@
+{
+ "360x740": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 138,
+   "h": 280.9,
+   "w": 360,
+   "x": 0,
+   "onder": 418.9
+  },
+  "titel": {
+   "y": 154,
+   "h": 114.5,
+   "w": 320,
+   "x": 20,
+   "onder": 268.5
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 280.5,
+   "h": 48.1,
+   "w": 320,
+   "x": 20,
+   "onder": 328.5
+  },
+  "noot": {
+   "y": 340.5,
+   "h": 20.4,
+   "w": 320,
+   "x": 20,
+   "onder": 360.9
+  },
+  "logos": {
+   "y": 360.9,
+   "h": 34,
+   "w": 320,
+   "x": 20,
+   "onder": 394.9
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 446.9,
+   "h": 407.8,
+   "w": 360,
+   "x": 0,
+   "onder": 854.7
+  },
+  "sliderSectie": {
+   "y": 418.9,
+   "h": 445.8,
+   "w": 360,
+   "x": 0,
+   "onder": 864.7
+  },
+  "tegel": {
+   "y": 446.9,
+   "h": 358.8,
+   "w": 360,
+   "x": -360,
+   "onder": 805.7
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 6316,
+  "titelMarginOnder": "12px",
+  "tileVar": ""
+ },
+ "390x844": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 138,
+   "h": 280.9,
+   "w": 390,
+   "x": 0,
+   "onder": 418.9
+  },
+  "titel": {
+   "y": 154,
+   "h": 114.5,
+   "w": 350,
+   "x": 20,
+   "onder": 268.5
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 280.5,
+   "h": 48.1,
+   "w": 350,
+   "x": 20,
+   "onder": 328.5
+  },
+  "noot": {
+   "y": 340.5,
+   "h": 20.4,
+   "w": 350,
+   "x": 20,
+   "onder": 360.9
+  },
+  "logos": {
+   "y": 360.9,
+   "h": 34,
+   "w": 350,
+   "x": 20,
+   "onder": 394.9
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 446.9,
+   "h": 428.2,
+   "w": 390,
+   "x": 0,
+   "onder": 875.1
+  },
+  "sliderSectie": {
+   "y": 418.9,
+   "h": 466.2,
+   "w": 390,
+   "x": 0,
+   "onder": 885.1
+  },
+  "tegel": {
+   "y": 446.9,
+   "h": 379.2,
+   "w": 390,
+   "x": -390,
+   "onder": 826.1
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 6327,
+  "titelMarginOnder": "12px",
+  "tileVar": ""
+ },
+ "430x932": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 138,
+   "h": 280.9,
+   "w": 430,
+   "x": 0,
+   "onder": 418.9
+  },
+  "titel": {
+   "y": 154,
+   "h": 114.5,
+   "w": 390,
+   "x": 20,
+   "onder": 268.5
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 280.5,
+   "h": 48.1,
+   "w": 390,
+   "x": 20,
+   "onder": 328.5
+  },
+  "noot": {
+   "y": 340.5,
+   "h": 20.4,
+   "w": 390,
+   "x": 20,
+   "onder": 360.9
+  },
+  "logos": {
+   "y": 360.9,
+   "h": 34,
+   "w": 390,
+   "x": 20,
+   "onder": 394.9
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 446.9,
+   "h": 455.4,
+   "w": 430,
+   "x": 0,
+   "onder": 902.3
+  },
+  "sliderSectie": {
+   "y": 418.9,
+   "h": 493.4,
+   "w": 430,
+   "x": 0,
+   "onder": 912.3
+  },
+  "tegel": {
+   "y": 446.9,
+   "h": 406.4,
+   "w": 430,
+   "x": -430,
+   "onder": 853.3
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 6213,
+  "titelMarginOnder": "12px",
+  "tileVar": ""
+ },
+ "768x1024": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 138,
+   "h": 259.1,
+   "w": 768,
+   "x": 0,
+   "onder": 397.1
+  },
+  "titel": {
+   "y": 154,
+   "h": 92.7,
+   "w": 645.2,
+   "x": 20,
+   "onder": 246.7
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 258.7,
+   "h": 48.1,
+   "w": 728,
+   "x": 20,
+   "onder": 306.7
+  },
+  "noot": {
+   "y": 318.7,
+   "h": 20.4,
+   "w": 576.2,
+   "x": 20,
+   "onder": 339.1
+  },
+  "logos": {
+   "y": 339.1,
+   "h": 34,
+   "w": 728,
+   "x": 20,
+   "onder": 373.1
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 425.1,
+   "h": 517.5,
+   "w": 768,
+   "x": 0,
+   "onder": 942.6
+  },
+  "sliderSectie": {
+   "y": 397.1,
+   "h": 555.5,
+   "w": 768,
+   "x": 0,
+   "onder": 952.6
+  },
+  "tegel": {
+   "y": 425.1,
+   "h": 468.5,
+   "w": 384,
+   "x": -768,
+   "onder": 893.6
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 5611,
+  "titelMarginOnder": "12px",
+  "tileVar": ""
+ },
+ "1024x768": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 175.5,
+   "h": 340.3,
+   "w": 928,
+   "x": 48,
+   "onder": 515.7
+  },
+  "titel": {
+   "y": 199.5,
+   "h": 111.1,
+   "w": 773.6,
+   "x": 125.2,
+   "onder": 310.6
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 328.2,
+   "h": 55.2,
+   "w": 773.6,
+   "x": 125.2,
+   "onder": 383.3
+  },
+  "noot": {
+   "y": 407.3,
+   "h": 20.4,
+   "w": 576.2,
+   "x": 223.9,
+   "onder": 427.7
+  },
+  "logos": {
+   "y": 451.7,
+   "h": 40,
+   "w": 773.6,
+   "x": 125.2,
+   "onder": 491.7
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 539.7,
+   "h": 508.3,
+   "w": 784,
+   "x": 120,
+   "onder": 1048
+  },
+  "sliderSectie": {
+   "y": 515.7,
+   "h": 542.3,
+   "w": 1024,
+   "x": 0,
+   "onder": 1058
+  },
+  "tegel": {
+   "y": 539.7,
+   "h": 475.3,
+   "w": 392,
+   "x": -664,
+   "onder": 1015
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 5088,
+  "titelMarginOnder": "17.6px",
+  "tileVar": ""
+ },
+ "1280x800": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 176.4,
+   "h": 358.7,
+   "w": 1184,
+   "x": 48,
+   "onder": 535.1
+  },
+  "titel": {
+   "y": 200.4,
+   "h": 129.6,
+   "w": 902.1,
+   "x": 188.9,
+   "onder": 330
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 347.6,
+   "h": 55.2,
+   "w": 902.1,
+   "x": 188.9,
+   "onder": 402.7
+  },
+  "noot": {
+   "y": 426.7,
+   "h": 20.4,
+   "w": 576.2,
+   "x": 351.9,
+   "onder": 447.1
+  },
+  "logos": {
+   "y": 471.1,
+   "h": 40,
+   "w": 902.1,
+   "x": 188.9,
+   "onder": 511.1
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 559.1,
+   "h": 469.7,
+   "w": 1040,
+   "x": 120,
+   "onder": 1028.9
+  },
+  "sliderSectie": {
+   "y": 535.1,
+   "h": 503.7,
+   "w": 1280,
+   "x": 0,
+   "onder": 1038.9
+  },
+  "tegel": {
+   "y": 559.1,
+   "h": 436.7,
+   "w": 346.7,
+   "x": -920,
+   "onder": 995.9
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 5169,
+  "titelMarginOnder": "17.6px",
+  "tileVar": ""
+ },
+ "1931x1112": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 177.4,
+   "h": 447.2,
+   "w": 1504,
+   "x": 213.5,
+   "onder": 624.6
+  },
+  "titel": {
+   "y": 253.4,
+   "h": 135.7,
+   "w": 944.6,
+   "x": 493.2,
+   "onder": 389
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 413,
+   "h": 55.2,
+   "w": 944.6,
+   "x": 493.2,
+   "onder": 468.2
+  },
+  "noot": {
+   "y": 492.2,
+   "h": 20.4,
+   "w": 576.2,
+   "x": 677.4,
+   "onder": 512.6
+  },
+  "logos": {
+   "y": 540.6,
+   "h": 44,
+   "w": 944.6,
+   "x": 493.2,
+   "onder": 584.6
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 648.6,
+   "h": 464.1,
+   "w": 1360,
+   "x": 285.5,
+   "onder": 1112.7
+  },
+  "sliderSectie": {
+   "y": 624.6,
+   "h": 498.1,
+   "w": 1931,
+   "x": 0,
+   "onder": 1122.7
+  },
+  "tegel": {
+   "y": 648.6,
+   "h": 431.1,
+   "w": 340,
+   "x": -1754.5,
+   "onder": 1079.7
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 5275,
+  "titelMarginOnder": "24px",
+  "tileVar": ""
+ }
+}

@@ -1,0 +1,234 @@
+{
+ "shifts": [
+  {
+   "t": 2539,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 3861,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 4060,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 4416,
+   "v": 0.0029,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "undefined",
+    "P.rg-page-hero__cijfers"
+   ]
+  },
+  {
+   "t": 4491,
+   "v": 0.0557,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "P.rg-page-hero__cijfers",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2255,
+  "sliderRuw": 2255,
+  "band": 2502,
+  "klonen": 2502,
+  "cijfers": 2502
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2340,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 292,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 354,
+   "f": "lokaal-r1-390-f01-354ms.jpg"
+  },
+  {
+   "t": 2498,
+   "f": "lokaal-r1-390-f02-2498ms.jpg"
+  },
+  {
+   "t": 2642,
+   "f": "lokaal-r1-390-f03-2642ms.jpg"
+  },
+  {
+   "t": 2733,
+   "f": "lokaal-r1-390-f04-2733ms.jpg"
+  },
+  {
+   "t": 2826,
+   "f": "lokaal-r1-390-f05-2826ms.jpg"
+  },
+  {
+   "t": 2916,
+   "f": "lokaal-r1-390-f06-2916ms.jpg"
+  },
+  {
+   "t": 3007,
+   "f": "lokaal-r1-390-f07-3007ms.jpg"
+  },
+  {
+   "t": 3100,
+   "f": "lokaal-r1-390-f08-3100ms.jpg"
+  },
+  {
+   "t": 3196,
+   "f": "lokaal-r1-390-f09-3196ms.jpg"
+  },
+  {
+   "t": 3291,
+   "f": "lokaal-r1-390-f10-3291ms.jpg"
+  },
+  {
+   "t": 3383,
+   "f": "lokaal-r1-390-f11-3383ms.jpg"
+  },
+  {
+   "t": 3474,
+   "f": "lokaal-r1-390-f12-3474ms.jpg"
+  },
+  {
+   "t": 3568,
+   "f": "lokaal-r1-390-f13-3568ms.jpg"
+  },
+  {
+   "t": 3667,
+   "f": "lokaal-r1-390-f14-3667ms.jpg"
+  },
+  {
+   "t": 3758,
+   "f": "lokaal-r1-390-f15-3758ms.jpg"
+  },
+  {
+   "t": 3849,
+   "f": "lokaal-r1-390-f16-3849ms.jpg"
+  },
+  {
+   "t": 3959,
+   "f": "lokaal-r1-390-f17-3959ms.jpg"
+  },
+  {
+   "t": 4049,
+   "f": "lokaal-r1-390-f18-4049ms.jpg"
+  },
+  {
+   "t": 4141,
+   "f": "lokaal-r1-390-f19-4141ms.jpg"
+  },
+  {
+   "t": 4225,
+   "f": "lokaal-r1-390-f20-4225ms.jpg"
+  },
+  {
+   "t": 4316,
+   "f": "lokaal-r1-390-f21-4316ms.jpg"
+  },
+  {
+   "t": 4408,
+   "f": "lokaal-r1-390-f22-4408ms.jpg"
+  },
+  {
+   "t": 4499,
+   "f": "lokaal-r1-390-f23-4499ms.jpg"
+  },
+  {
+   "t": 4594,
+   "f": "lokaal-r1-390-f24-4594ms.jpg"
+  },
+  {
+   "t": 4691,
+   "f": "lokaal-r1-390-f25-4691ms.jpg"
+  },
+  {
+   "t": 4784,
+   "f": "lokaal-r1-390-f26-4784ms.jpg"
+  },
+  {
+   "t": 4874,
+   "f": "lokaal-r1-390-f27-4874ms.jpg"
+  },
+  {
+   "t": 4965,
+   "f": "lokaal-r1-390-f28-4965ms.jpg"
+  },
+  {
+   "t": 5060,
+   "f": "lokaal-r1-390-f29-5060ms.jpg"
+  },
+  {
+   "t": 5158,
+   "f": "lokaal-r1-390-f30-5158ms.jpg"
+  },
+  {
+   "t": 5251,
+   "f": "lokaal-r1-390-f31-5251ms.jpg"
+  },
+  {
+   "t": 5351,
+   "f": "lokaal-r1-390-f32-5351ms.jpg"
+  },
+  {
+   "t": 5440,
+   "f": "lokaal-r1-390-f33-5440ms.jpg"
+  },
+  {
+   "t": 5539,
+   "f": "lokaal-r1-390-f34-5539ms.jpg"
+  },
+  {
+   "t": 5632,
+   "f": "lokaal-r1-390-f35-5632ms.jpg"
+  },
+  {
+   "t": 5726,
+   "f": "lokaal-r1-390-f36-5726ms.jpg"
+  },
+  {
+   "t": 5824,
+   "f": "lokaal-r1-390-f37-5824ms.jpg"
+  },
+  {
+   "t": 5917,
+   "f": "lokaal-r1-390-f38-5917ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "lokaal-r1"
+ }
+}

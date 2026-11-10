@@ -1,0 +1,32 @@
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .container-main { padding-top: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-breadcrumb,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .breadcrumb.container { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-page,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-sections { margin-top: 0 !important; padding-top: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) .cms-block-container,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) .cms-block-container[style] { padding-top: 0 !important; padding-bottom: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) { margin-top: 0; margin-bottom: 0; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) .cms-block-container,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) .cms-block-container[style] { padding-top: 0 !important; padding-bottom: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { margin-bottom: 0; overflow: hidden; height: 435px; animation: rg-pre-vrij 0s 4s forwards; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { visibility: hidden; animation: rg-pre-vrij-slider 0s 4s forwards; }
+@keyframes rg-pre-vrij { to { height: auto; overflow: visible; } }
+@keyframes rg-pre-vrij-slider { to { visibility: visible; } }
+@media (min-width: 576px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { height: calc(clamp(168px, 20vw, 216px) + 279px); }
+}
+@media (min-width: 992px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band { padding-top: 2.5rem; }
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { height: calc(clamp(168px, 20vw, 216px) + 234.5px); }
+}
+@media (min-width: 1600px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band { padding-top: 4.5rem; }
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { height: 500.5px; }
+}
+@media (max-width: 991px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero__logos { display: none; }
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band:has(.rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit) .rg-page-hero__title { margin-bottom: calc(.75rem + 22.8px + 20px); }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band:has(.rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit) .rg-page-hero__title { margin-bottom: calc(.75rem + 24px + 20px); }
+}

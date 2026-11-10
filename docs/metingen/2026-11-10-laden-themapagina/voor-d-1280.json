@@ -1,0 +1,257 @@
+{
+ "shifts": [
+  {
+   "t": 2597,
+   "v": 0.0012,
+   "n": false,
+   "bronnen": [
+    "A.nav-link.main-navigation-link"
+   ]
+  },
+  {
+   "t": 2812,
+   "v": 0.0773,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-page",
+    "DIV.rg-page-hero__copy"
+   ]
+  },
+  {
+   "t": 2961,
+   "v": 0.0001,
+   "n": false,
+   "bronnen": [
+    "IMG"
+   ]
+  },
+  {
+   "t": 2967,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "IMG",
+    "IMG"
+   ]
+  },
+  {
+   "t": 2992,
+   "v": 0.0006,
+   "n": false,
+   "bronnen": [
+    "IMG",
+    "IMG",
+    "IMG"
+   ]
+  },
+  {
+   "t": 4058,
+   "v": 0.0011,
+   "n": false,
+   "bronnen": [
+    "P.rg-page-hero__noot",
+    "DIV.top-bar-container.container--1",
+    "DIV.top-bar-container.container--4",
+    "DIV.top-bar-container.container--2",
+    "DIV.top-bar-container.container--5"
+   ]
+  },
+  {
+   "t": 4108,
+   "v": 0.0002,
+   "n": false,
+   "bronnen": [
+    "A.nav-link.main-navigation-link",
+    "A.nav-link.main-navigation-link",
+    "A.nav-link.main-navigation-link",
+    "A.nav-link.main-navigation-link"
+   ]
+  },
+  {
+   "t": 4490,
+   "v": 0.0005,
+   "n": false,
+   "bronnen": [
+    "A.btn.btn-primary"
+   ]
+  },
+  {
+   "t": 5121,
+   "v": 0.0035,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "undefined",
+    "DIV.rg-page-hero__cta",
+    "DIV.rg-page-hero__logos",
+    "P.rg-page-hero__noot"
+   ]
+  },
+  {
+   "t": 5204,
+   "v": 0.0134,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "DIV.rg-page-hero__logos",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2523,
+  "sliderRuw": 2523,
+  "band": 2779,
+  "klonen": 2779
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2608,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 303,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 364,
+   "f": "voor-d-1280-f01-364ms.jpg"
+  },
+  {
+   "t": 2694,
+   "f": "voor-d-1280-f02-2694ms.jpg"
+  },
+  {
+   "t": 2919,
+   "f": "voor-d-1280-f03-2919ms.jpg"
+  },
+  {
+   "t": 3021,
+   "f": "voor-d-1280-f04-3021ms.jpg"
+  },
+  {
+   "t": 3121,
+   "f": "voor-d-1280-f05-3121ms.jpg"
+  },
+  {
+   "t": 3222,
+   "f": "voor-d-1280-f06-3222ms.jpg"
+  },
+  {
+   "t": 3329,
+   "f": "voor-d-1280-f07-3329ms.jpg"
+  },
+  {
+   "t": 3429,
+   "f": "voor-d-1280-f08-3429ms.jpg"
+  },
+  {
+   "t": 3533,
+   "f": "voor-d-1280-f09-3533ms.jpg"
+  },
+  {
+   "t": 3637,
+   "f": "voor-d-1280-f10-3637ms.jpg"
+  },
+  {
+   "t": 3738,
+   "f": "voor-d-1280-f11-3738ms.jpg"
+  },
+  {
+   "t": 3845,
+   "f": "voor-d-1280-f12-3845ms.jpg"
+  },
+  {
+   "t": 3946,
+   "f": "voor-d-1280-f13-3946ms.jpg"
+  },
+  {
+   "t": 4048,
+   "f": "voor-d-1280-f14-4048ms.jpg"
+  },
+  {
+   "t": 4197,
+   "f": "voor-d-1280-f15-4197ms.jpg"
+  },
+  {
+   "t": 4297,
+   "f": "voor-d-1280-f16-4297ms.jpg"
+  },
+  {
+   "t": 4405,
+   "f": "voor-d-1280-f17-4405ms.jpg"
+  },
+  {
+   "t": 4506,
+   "f": "voor-d-1280-f18-4506ms.jpg"
+  },
+  {
+   "t": 4622,
+   "f": "voor-d-1280-f19-4622ms.jpg"
+  },
+  {
+   "t": 4724,
+   "f": "voor-d-1280-f20-4724ms.jpg"
+  },
+  {
+   "t": 4831,
+   "f": "voor-d-1280-f21-4831ms.jpg"
+  },
+  {
+   "t": 4931,
+   "f": "voor-d-1280-f22-4931ms.jpg"
+  },
+  {
+   "t": 5032,
+   "f": "voor-d-1280-f23-5032ms.jpg"
+  },
+  {
+   "t": 5129,
+   "f": "voor-d-1280-f24-5129ms.jpg"
+  },
+  {
+   "t": 5231,
+   "f": "voor-d-1280-f25-5231ms.jpg"
+  },
+  {
+   "t": 5347,
+   "f": "voor-d-1280-f26-5347ms.jpg"
+  },
+  {
+   "t": 5448,
+   "f": "voor-d-1280-f27-5448ms.jpg"
+  },
+  {
+   "t": 5548,
+   "f": "voor-d-1280-f28-5548ms.jpg"
+  },
+  {
+   "t": 5669,
+   "f": "voor-d-1280-f29-5669ms.jpg"
+  },
+  {
+   "t": 5789,
+   "f": "voor-d-1280-f30-5789ms.jpg"
+  },
+  {
+   "t": 5890,
+   "f": "voor-d-1280-f31-5890ms.jpg"
+  },
+  {
+   "t": 5984,
+   "f": "voor-d-1280-f32-5984ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 1280,
+  "H": 800,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "voor-d"
+ }
+}

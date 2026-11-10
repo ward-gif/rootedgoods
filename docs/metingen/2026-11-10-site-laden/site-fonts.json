@@ -1,0 +1,204 @@
+{
+ "instelling": {
+  "W": 390,
+  "H": 844,
+  "CPU": 2,
+  "net": "snel"
+ },
+ "uit": {
+  "/": {
+   "geladen": true,
+   "fcp": 896,
+   "lcp": {
+    "t": 896,
+    "el": "h1.rg-hero-v2__title",
+    "url": "",
+    "size": 21960
+   },
+   "cls": 0.1084,
+   "shifts": [
+    {
+     "t": 1404,
+     "v": 0.088,
+     "b": [
+      "div.rg-hero-v2__mosaic",
+      "div.rg-hero-v2__cta",
+      "em",
+      "a.rg-hero-v2__tile",
+      "a.rg-hero-v2__tile"
+     ]
+    },
+    {
+     "t": 2326,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.rg-hero-v2__mosaic 0.088",
+    "div.row.align-items-center 0.020",
+    "::after 0.000"
+   ],
+   "verzoeken": 71,
+   "kb": 2644,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 37
+    },
+    "Image": {
+     "n": 56,
+     "kb": 1898
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 191
+    },
+    "Font": {
+     "n": 7,
+     "kb": 259
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "514k Image rootedgoods.eu/shared/thumbnail/f8/1e/47/1234567890/51dacbe5cc43e398f0b102dd9e536e7c905f36",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "133k Image rootedgoods.eu/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg",
+    "127k Image rootedgoods.eu/media/5d/dd/b7/1785500254/Warehousing%202%20(1).jpg"
+   ],
+   "fonts": [
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+    "155k rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 248,
+   "langeTaken": 1,
+   "dom": 2084,
+   "imgs": 217,
+   "imgZonderWH": 211,
+   "imgLazy": 99,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 7788,
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europ"
+  },
+  "/eindejaarsgeschenken": {
+   "geladen": true,
+   "fcp": 468,
+   "lcp": {
+    "t": 468,
+    "el": "h1.rg-page-hero__title",
+    "url": "",
+    "size": 36504
+   },
+   "cls": 0.9594,
+   "shifts": [
+    {
+     "t": 506,
+     "v": 0.8791,
+     "b": [
+      "div.cms-page",
+      "div.cms-section.pos-2"
+     ]
+    },
+    {
+     "t": 787,
+     "v": 0.0557,
+     "b": [
+      "div.cms-section.pos-1",
+      "div.rg-page-hero__cta",
+      "#",
+      "p.rg-page-hero__cijfers",
+      "p.rg-page-hero__noot"
+     ]
+    },
+    {
+     "t": 1472,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.cms-page 0.879",
+    "div.cms-section.pos-1 0.059",
+    "div.row.align-items-center 0.020",
+    "# 0.001"
+   ],
+   "verzoeken": 42,
+   "kb": 4168,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 21
+    },
+    "Image": {
+     "n": 26,
+     "kb": 3415
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 8,
+     "kb": 282
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "550k Image rootedgoods.eu/shared/thumbnail/0c/ed/2c/1234567890/2758449bb2705a3524248b14f0dbfbb8ad45fa",
+    "469k Image rootedgoods.eu/shared/thumbnail/5a/41/aa/1234567890/4c2cf2a590a03ae6cee451390c1b08eb76e0c9",
+    "443k Image rootedgoods.eu/shared/thumbnail/ab/21/21/1234567890/c65447fb6f87f2f5ee96525e682f127d99a49d",
+    "429k Image rootedgoods.eu/shared/thumbnail/70/09/76/1234567890/b9514bb0c822d42bd0bf4adc5b37202f617d7d",
+    "424k Image rootedgoods.eu/shared/thumbnail/6f/fe/00/1234567890/df14e9d05012e62763116938456e181ffd52db",
+    "370k Image rootedgoods.eu/shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab"
+   ],
+   "fonts": [
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-500.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-700.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+    "155k rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 3,
+   "langeTaken": 1,
+   "dom": 1145,
+   "imgs": 52,
+   "imgZonderWH": 51,
+   "imgLazy": 44,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 6269,
+   "titel": "Kerstpakketten & eindejaarsgeschenken zakelijk | R"
+  }
+ }
+}

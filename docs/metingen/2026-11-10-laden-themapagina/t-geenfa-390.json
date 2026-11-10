@@ -1,0 +1,242 @@
+{
+ "shifts": [
+  {
+   "t": 2658,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 3841,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "undefined"
+   ]
+  },
+  {
+   "t": 4056,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 4194,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 4533,
+   "v": 0.0029,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "undefined",
+    "P.rg-page-hero__cijfers"
+   ]
+  },
+  {
+   "t": 4546,
+   "v": 0.0557,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "P.rg-page-hero__cijfers",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2383,
+  "sliderRuw": 2383,
+  "band": 2624,
+  "klonen": 2624,
+  "cijfers": 2624
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2468,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 281,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 343,
+   "f": "t-geenfa-390-f01-343ms.jpg"
+  },
+  {
+   "t": 2625,
+   "f": "t-geenfa-390-f02-2625ms.jpg"
+  },
+  {
+   "t": 2759,
+   "f": "t-geenfa-390-f03-2759ms.jpg"
+  },
+  {
+   "t": 2845,
+   "f": "t-geenfa-390-f04-2845ms.jpg"
+  },
+  {
+   "t": 2935,
+   "f": "t-geenfa-390-f05-2935ms.jpg"
+  },
+  {
+   "t": 3028,
+   "f": "t-geenfa-390-f06-3028ms.jpg"
+  },
+  {
+   "t": 3124,
+   "f": "t-geenfa-390-f07-3124ms.jpg"
+  },
+  {
+   "t": 3217,
+   "f": "t-geenfa-390-f08-3217ms.jpg"
+  },
+  {
+   "t": 3309,
+   "f": "t-geenfa-390-f09-3309ms.jpg"
+  },
+  {
+   "t": 3406,
+   "f": "t-geenfa-390-f10-3406ms.jpg"
+  },
+  {
+   "t": 3501,
+   "f": "t-geenfa-390-f11-3501ms.jpg"
+  },
+  {
+   "t": 3599,
+   "f": "t-geenfa-390-f12-3599ms.jpg"
+  },
+  {
+   "t": 3692,
+   "f": "t-geenfa-390-f13-3692ms.jpg"
+  },
+  {
+   "t": 3793,
+   "f": "t-geenfa-390-f14-3793ms.jpg"
+  },
+  {
+   "t": 3882,
+   "f": "t-geenfa-390-f15-3882ms.jpg"
+  },
+  {
+   "t": 3972,
+   "f": "t-geenfa-390-f16-3972ms.jpg"
+  },
+  {
+   "t": 4062,
+   "f": "t-geenfa-390-f17-4062ms.jpg"
+  },
+  {
+   "t": 4156,
+   "f": "t-geenfa-390-f18-4156ms.jpg"
+  },
+  {
+   "t": 4248,
+   "f": "t-geenfa-390-f19-4248ms.jpg"
+  },
+  {
+   "t": 4341,
+   "f": "t-geenfa-390-f20-4341ms.jpg"
+  },
+  {
+   "t": 4434,
+   "f": "t-geenfa-390-f21-4434ms.jpg"
+  },
+  {
+   "t": 4533,
+   "f": "t-geenfa-390-f22-4533ms.jpg"
+  },
+  {
+   "t": 4632,
+   "f": "t-geenfa-390-f23-4632ms.jpg"
+  },
+  {
+   "t": 4717,
+   "f": "t-geenfa-390-f24-4717ms.jpg"
+  },
+  {
+   "t": 4809,
+   "f": "t-geenfa-390-f25-4809ms.jpg"
+  },
+  {
+   "t": 4901,
+   "f": "t-geenfa-390-f26-4901ms.jpg"
+  },
+  {
+   "t": 4992,
+   "f": "t-geenfa-390-f27-4992ms.jpg"
+  },
+  {
+   "t": 5083,
+   "f": "t-geenfa-390-f28-5083ms.jpg"
+  },
+  {
+   "t": 5172,
+   "f": "t-geenfa-390-f29-5172ms.jpg"
+  },
+  {
+   "t": 5260,
+   "f": "t-geenfa-390-f30-5260ms.jpg"
+  },
+  {
+   "t": 5349,
+   "f": "t-geenfa-390-f31-5349ms.jpg"
+  },
+  {
+   "t": 5433,
+   "f": "t-geenfa-390-f32-5433ms.jpg"
+  },
+  {
+   "t": 5517,
+   "f": "t-geenfa-390-f33-5517ms.jpg"
+  },
+  {
+   "t": 5599,
+   "f": "t-geenfa-390-f34-5599ms.jpg"
+  },
+  {
+   "t": 5685,
+   "f": "t-geenfa-390-f35-5685ms.jpg"
+  },
+  {
+   "t": 5775,
+   "f": "t-geenfa-390-f36-5775ms.jpg"
+  },
+  {
+   "t": 5858,
+   "f": "t-geenfa-390-f37-5858ms.jpg"
+  },
+  {
+   "t": 5950,
+   "f": "t-geenfa-390-f38-5950ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "t-geenfa"
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "390x844": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 102,
+   "h": 289.7,
+   "w": 390,
+   "x": 0,
+   "onder": 391.7
+  },
+  "titel": {
+   "y": 118,
+   "h": 114.5,
+   "w": 350,
+   "x": 20,
+   "onder": 232.5
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 287.3,
+   "h": 48.1,
+   "w": 350,
+   "x": 20,
+   "onder": 335.3
+  },
+  "noot": {
+   "y": 347.3,
+   "h": 20.4,
+   "w": 350,
+   "x": 20,
+   "onder": 367.7
+  },
+  "logos": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "logosDisplay": "none",
+  "slider": {
+   "y": 391.7,
+   "h": 428.2,
+   "w": 390,
+   "x": 0,
+   "onder": 819.9
+  },
+  "sliderSectie": {
+   "y": 391.7,
+   "h": 438.2,
+   "w": 390,
+   "x": 0,
+   "onder": 829.9
+  },
+  "tegel": {
+   "y": 391.7,
+   "h": 379.2,
+   "w": 390,
+   "x": -390,
+   "onder": 770.9
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 6272,
+  "titelMarginOnder": "54.8px",
+  "tileVar": "",
+  "vis": "visible",
+  "lucht": "",
+  "vh": 844
+ },
+ "1280x800": {
+  "band": false,
+  "klaar": false,
+  "hero": {
+   "y": 140.4,
+   "h": 374.7,
+   "w": 1184,
+   "x": 48,
+   "onder": 515.1
+  },
+  "titel": {
+   "y": 180.4,
+   "h": 129.6,
+   "w": 902.1,
+   "x": 188.9,
+   "onder": 310
+  },
+  "cijfers": null,
+  "knop": {
+   "y": 327.6,
+   "h": 55.2,
+   "w": 902.1,
+   "x": 188.9,
+   "onder": 382.7
+  },
+  "noot": {
+   "y": 406.7,
+   "h": 20.4,
+   "w": 576.2,
+   "x": 351.9,
+   "onder": 427.1
+  },
+  "logos": {
+   "y": 451.1,
+   "h": 40,
+   "w": 902.1,
+   "x": 188.9,
+   "onder": 491.1
+  },
+  "logosDisplay": "flex",
+  "slider": {
+   "y": 515.1,
+   "h": 469.7,
+   "w": 1040,
+   "x": 120,
+   "onder": 984.9
+  },
+  "sliderSectie": {
+   "y": 515.1,
+   "h": 479.7,
+   "w": 1280,
+   "x": 0,
+   "onder": 994.9
+  },
+  "tegel": {
+   "y": 515.1,
+   "h": 436.7,
+   "w": 346.7,
+   "x": -920,
+   "onder": 951.9
+  },
+  "strook": {
+   "y": 0,
+   "h": 0,
+   "w": 0,
+   "x": 0,
+   "onder": 0
+  },
+  "strookHidden": true,
+  "meer": null,
+  "scrollH": 5125,
+  "titelMarginOnder": "17.6px",
+  "tileVar": "",
+  "vis": "visible",
+  "lucht": "",
+  "vh": 800
+ }
+}

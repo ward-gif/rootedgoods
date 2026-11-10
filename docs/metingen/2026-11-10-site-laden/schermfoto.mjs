@@ -1,0 +1,26 @@
+// Eén schermafdruk van een deel van een pagina, met optioneel extra CSS. Gebruik: URL=... CSS=... KLIP=x,y,b,h SCHAAL=2 UIT=naam.png node schermfoto.mjs
+import { spawn } from 'node:child_process';
+import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path';
+const BIN = process.env.HOME + '/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell';
+const [W, H] = (process.env.VP || '1280x800').split('x').map(Number);
+const klip = (process.env.KLIP || `0,0,${W},60`).split(',').map(Number);
+const css = process.env.CSS ? fs.readFileSync(process.env.CSS, 'utf8') : '';
+const chrome = spawn(BIN, ['--headless', '--remote-debugging-port=0', '--hide-scrollbars', '--no-first-run', '--user-data-dir=' + fs.mkdtempSync(path.join(os.tmpdir(), 'rg-sf-')), `--window-size=${W},${H}`, 'about:blank']);
+const wsUrl = await new Promise((res, rej) => { let b = ''; chrome.stderr.on('data', d => { b += d; const m = b.match(/DevTools listening on (ws:\/\/\S+)/); if (m) res(m[1]); }); setTimeout(() => rej(new Error('x')), 15000); });
+const ws = new WebSocket(wsUrl); await new Promise(r => ws.onopen = r);
+let id = 0; const pending = new Map(); const events = [];
+ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { const { res, rej } = pending.get(m.id); pending.delete(m.id); m.error ? rej(new Error(JSON.stringify(m.error))) : res(m.result); } else events.push(m); };
+const send = (method, params = {}, sessionId) => new Promise((res, rej) => { const i = ++id; pending.set(i, { res, rej }); ws.send(JSON.stringify({ id: i, method, params, sessionId })); });
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const { targetId } = await send('Target.createTarget', { url: 'about:blank' });
+const { sessionId: sid } = await send('Target.attachToTarget', { targetId, flatten: true });
+await send('Page.enable', {}, sid); await send('Network.enable', {}, sid);
+await send('Network.setBlockedURLs', { urls: ['*googletagmanager*', '*google-analytics*', '*clarity.ms*', '*facebook*', '*doubleclick*', '*cal.com*'] }, sid);
+await send('Emulation.setDeviceMetricsOverride', { width: W, height: H, deviceScaleFactor: Number(process.env.SCHAAL || 2), mobile: W < 992 }, sid);
+await send('Page.navigate', { url: process.env.URL || 'https://rootedgoods.eu/' }, sid);
+for (let i = 0; i < 60 && !events.some(e => e.method === 'Page.loadEventFired'); i++) await sleep(250);
+if (css) await send('Runtime.evaluate', { expression: `(()=>{const s=document.createElement('style');s.textContent=${JSON.stringify(css)};document.head.appendChild(s)})()` }, sid);
+await sleep(2500);
+const s = await send('Page.captureScreenshot', { format: 'png', clip: { x: klip[0], y: klip[1], width: klip[2], height: klip[3], scale: 1 } }, sid);
+fs.writeFileSync(path.join(path.dirname(process.argv[1]), process.env.UIT || 'foto.png'), Buffer.from(s.data, 'base64'));
+await send('Browser.close'); chrome.kill(); process.exit(0);

@@ -1,0 +1,246 @@
+{
+ "shifts": [
+  {
+   "t": 2635,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 3921,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "undefined"
+   ]
+  },
+  {
+   "t": 4128,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 4158,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  },
+  {
+   "t": 4624,
+   "v": 0.0029,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "undefined",
+    "P.rg-page-hero__cijfers"
+   ]
+  },
+  {
+   "t": 4705,
+   "v": 0.0557,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "P.rg-page-hero__cijfers",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2425,
+  "sliderRuw": 2425,
+  "band": 2601,
+  "klonen": 2601,
+  "cijfers": 2601
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2492,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 267,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 330,
+   "f": "zonderpreload-390-f01-330ms.jpg"
+  },
+  {
+   "t": 2568,
+   "f": "zonderpreload-390-f02-2568ms.jpg"
+  },
+  {
+   "t": 2720,
+   "f": "zonderpreload-390-f03-2720ms.jpg"
+  },
+  {
+   "t": 2810,
+   "f": "zonderpreload-390-f04-2810ms.jpg"
+  },
+  {
+   "t": 2899,
+   "f": "zonderpreload-390-f05-2899ms.jpg"
+  },
+  {
+   "t": 2992,
+   "f": "zonderpreload-390-f06-2992ms.jpg"
+  },
+  {
+   "t": 3079,
+   "f": "zonderpreload-390-f07-3079ms.jpg"
+  },
+  {
+   "t": 3165,
+   "f": "zonderpreload-390-f08-3165ms.jpg"
+  },
+  {
+   "t": 3256,
+   "f": "zonderpreload-390-f09-3256ms.jpg"
+  },
+  {
+   "t": 3348,
+   "f": "zonderpreload-390-f10-3348ms.jpg"
+  },
+  {
+   "t": 3440,
+   "f": "zonderpreload-390-f11-3440ms.jpg"
+  },
+  {
+   "t": 3532,
+   "f": "zonderpreload-390-f12-3532ms.jpg"
+  },
+  {
+   "t": 3622,
+   "f": "zonderpreload-390-f13-3622ms.jpg"
+  },
+  {
+   "t": 3714,
+   "f": "zonderpreload-390-f14-3714ms.jpg"
+  },
+  {
+   "t": 3804,
+   "f": "zonderpreload-390-f15-3804ms.jpg"
+  },
+  {
+   "t": 3889,
+   "f": "zonderpreload-390-f16-3889ms.jpg"
+  },
+  {
+   "t": 3999,
+   "f": "zonderpreload-390-f17-3999ms.jpg"
+  },
+  {
+   "t": 4096,
+   "f": "zonderpreload-390-f18-4096ms.jpg"
+  },
+  {
+   "t": 4204,
+   "f": "zonderpreload-390-f19-4204ms.jpg"
+  },
+  {
+   "t": 4289,
+   "f": "zonderpreload-390-f20-4289ms.jpg"
+  },
+  {
+   "t": 4385,
+   "f": "zonderpreload-390-f21-4385ms.jpg"
+  },
+  {
+   "t": 4480,
+   "f": "zonderpreload-390-f22-4480ms.jpg"
+  },
+  {
+   "t": 4571,
+   "f": "zonderpreload-390-f23-4571ms.jpg"
+  },
+  {
+   "t": 4663,
+   "f": "zonderpreload-390-f24-4663ms.jpg"
+  },
+  {
+   "t": 4748,
+   "f": "zonderpreload-390-f25-4748ms.jpg"
+  },
+  {
+   "t": 4838,
+   "f": "zonderpreload-390-f26-4838ms.jpg"
+  },
+  {
+   "t": 4922,
+   "f": "zonderpreload-390-f27-4922ms.jpg"
+  },
+  {
+   "t": 5013,
+   "f": "zonderpreload-390-f28-5013ms.jpg"
+  },
+  {
+   "t": 5100,
+   "f": "zonderpreload-390-f29-5100ms.jpg"
+  },
+  {
+   "t": 5188,
+   "f": "zonderpreload-390-f30-5188ms.jpg"
+  },
+  {
+   "t": 5272,
+   "f": "zonderpreload-390-f31-5272ms.jpg"
+  },
+  {
+   "t": 5364,
+   "f": "zonderpreload-390-f32-5364ms.jpg"
+  },
+  {
+   "t": 5447,
+   "f": "zonderpreload-390-f33-5447ms.jpg"
+  },
+  {
+   "t": 5529,
+   "f": "zonderpreload-390-f34-5529ms.jpg"
+  },
+  {
+   "t": 5615,
+   "f": "zonderpreload-390-f35-5615ms.jpg"
+  },
+  {
+   "t": 5708,
+   "f": "zonderpreload-390-f36-5708ms.jpg"
+  },
+  {
+   "t": 5798,
+   "f": "zonderpreload-390-f37-5798ms.jpg"
+  },
+  {
+   "t": 5889,
+   "f": "zonderpreload-390-f38-5889ms.jpg"
+  },
+  {
+   "t": 5971,
+   "f": "zonderpreload-390-f39-5971ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "zonderpreload"
+ }
+}

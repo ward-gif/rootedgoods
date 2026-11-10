@@ -12467,3 +12467,181 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
      compenseert een vaste hoogte (22 px logo i.p.v. 26 px gaf 3,7 px minder) */
   .header-logo-col { padding-top: 2px !important; padding-bottom: 2px !important; }
 }
+
+/* ============================================================
+   59. LADEN VAN DE THEMAPAGINA: DE STAND VÓÓR DE BAND-JS GELIJKTREKKEN MET
+   DIE ERNA. 10 november 2026.
+   ============================================================
+   Gemeten op de live /eindejaarsgeschenken, 390 x 844, eerste bezoek,
+   netwerk Slow 4G en CPU 4x trager (docs/metingen/2026-11-10-laden-themapagina/):
+   de pagina schoof één keer met layout-shift 0,8791 en toonde vóór dat
+   moment de ruwe Shopware-slider als één tegel van 379 x 390 px.
+   Oorzaak: alles in secties 53 tot 57 hangt aan .rg-band-pagina, en die klasse
+   zet pas de band-JS (defer, extern van jsDelivr) op <html>. Tot dan staat de
+   pagina in de kale stand: 36 px extra boven de hero (padding van
+   .container-main en de lege breadcrumb), de ruwe slider (428 px hoog op
+   390 px, 518 op 768) in plaats van de band (261 en 273), de klantlogo's in
+   de hero, en nog geen getallenregel onder de kop.
+   Wat hier staat is een kopie van die stand-erna, alleen zolang de klasse er
+   niet is: html:not(.rg-band-pagina):has(.rg-page-hero--band). Zodra de JS
+   de klasse zet, schakelen deze regels uit en nemen 53 tot 57 het over, met
+   dezelfde maten. Op 12 breedtes van 360 tot 1931 px is de hero vóór en na
+   de JS op de pixel gelijk (hero, kop, knop, noot, slider), en de sectie met
+   de band ook, behalve vanaf ~1900 px bij een hoog venster: daar verdeelt de
+   JS de overgebleven schermruimte (--rg-lucht, stap 9), en dat is van hieruit
+   niet te voorspellen.
+   De hoogte van de slidersectie volgt de band: 435 px tot 575, tile + 279 px
+   van 576 tot 991, tile + 234,5 px vanaf 992 (tile = clamp(168px, 20vw,
+   216px)), 500,5 px vanaf 1600. Verandert de band of de strook eronder,
+   meet dat dan opnieuw (meet-hoogtes.mjs in de metingenmap).
+   ACHTERVANG: komt de JS niet (geblokkeerd, jsDelivr traag), dan toont na
+   4 s de ruwe slider alsnog en valt de vaste hoogte weg (zie --rg-pre-d). De pagina blijft
+   dan bruikbaar, alleen minder mooi.
+   ACHTERAAN LATEN STAAN, net als 53 tot 57: dezelfde selectors, de laatste
+   wint. */
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .container-main { padding-top: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-breadcrumb,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .breadcrumb.container { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-page,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-sections { margin-top: 0 !important; padding-top: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) .cms-block-container,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) .cms-block-container[style] { padding-top: 0 !important; padding-bottom: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) { margin-top: 0; margin-bottom: 0; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) .cms-block-container,
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) .cms-block-container[style] { padding-top: 0 !important; padding-bottom: 0 !important; }
+html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) {
+  --rg-pre-d: none;
+  margin-bottom: 0;
+  overflow: hidden;
+  height: 435px;
+  animation: rg-pre-vrij 0s 4s forwards;
+}
+/* display: none en niet visibility: hidden. Gemeten (docs/metingen/2026-11-10-
+   site-laden/, JS geblokkeerd, 5 s): met visibility: hidden of height: 0
+   haalt de browser alle negen tegelfoto's in 800w al op voordat de JS er is
+   (3.403 kB aan beelden op de pagina), met display: none niet (1.178 kB). De
+   foto's zijn lazy en beginnen pas als de tegel een vak heeft. De achtervang
+   zit in een aangepaste eigenschap die de animatie na 4 s omzet: een
+   animatie draait niet op een element met display: none, maar wel op de
+   sectie eromheen, en --rg-pre-d erft door. */
+html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { display: var(--rg-pre-d, none); }
+@keyframes rg-pre-vrij { to { height: auto; overflow: visible; --rg-pre-d: block; } }
+@media (min-width: 576px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { height: calc(clamp(168px, 20vw, 216px) + 279px); }
+}
+@media (min-width: 992px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band { padding-top: 2.5rem; }
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { height: calc(clamp(168px, 20vw, 216px) + 234.5px); }
+}
+@media (min-width: 1600px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band { padding-top: 4.5rem; }
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) { height: 500.5px; }
+}
+/* Onder 992 px: de JS haalt de klantlogo's uit de hero en zet de getallenregel
+   (22,8 px, vanaf 400 px 24 px, plus 20 px marge) onder de kop, alleen op
+   blokken met drie feiten in de strook (kerst). Hier alvast dezelfde ruimte. */
+@media (max-width: 991px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero__logos { display: none; }
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band:has(.rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit) .rg-page-hero__title { margin-bottom: calc(.75rem + 22.8px + 20px); }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  html:not(.rg-band-pagina):has(.rg-page-hero--band) .rg-page-hero--band:has(.rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit ~ .rg-page-hero__strook-feit) .rg-page-hero__title { margin-bottom: calc(.75rem + 24px + 20px); }
+}
+
+/* ============================================================
+   60. MOBIELE HEADER (<992px): DE STAND VÓÓR DE JS GELIJK AAN DIE ERNA
+   ============================================================
+   Gemeten op de live site, 10 november 2026, op /huis-keuken/ (de header is
+   overal gelijk), 390 px, met en zonder rootedgoods.min.js
+   (docs/metingen/2026-11-10-site-laden/meet-kop-voor-na.mjs): vóór de JS
+   stond het logo links (x=12, 109 px breed), de drie iconen er direct achter
+   (x=133 tot 247) en de balk bovenaan 12,8 px hoog. Erna: logo gecentreerd,
+   hamburger links, zoeken en mandje rechts, balk 29,6 px. De header sprong
+   dus bij elk laden, op elke pagina: layout-shift 0,0204 in elke meting
+   (home, producten, categorieën, PDP, over ons), en zichtbaar als een
+   verspringend menu. Het sprong niet mee met de inhoud (de header is fixed),
+   dus het werd niet gezien als een verschuiving van de pagina, wel als
+   flikkering.
+   Oorzaak: JS 1.4d zet het raster van sectie 58 pas na het laden in elkaar
+   (de hamburger verhuist uit het icoonblok naar vóór het logo), en de
+   USP-balk (1.4e) bouwt zijn regel pas dan.
+   Hier de stand-vooraf: dezelfde kolommen met expliciete plek (dus
+   onafhankelijk van de DOM-volgorde die de JS later verandert), de
+   hamburger vooraf uit het icoonblok gehaald met position: absolute op
+   dezelfde plek, dezelfde rij-padding als de JS inline zet (0,75 rem), en
+   de balk alvast op zijn hoogte. Op 7 breedtes van 320 tot 991 px zijn rij,
+   logo, hamburger, zoeken en mandje vóór en na de JS gelijk (op 320 px
+   0,1 px verschil). Zodra de JS de hamburger verplaatst heeft, valt de
+   absolute regel vanzelf af (de selector :has(.menu-button) matcht dan
+   niet meer in het icoonblok) en neemt het raster van 58 het over. */
+@media (max-width: 991px) {
+  .header-main .header-row { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+  .header-row .header-logo-col { grid-column: 2; grid-row: 1; width: auto; max-width: none; }
+  .header-row .header-actions-col { grid-column: 3; grid-row: 1; width: auto; max-width: none; }
+  .header-row .rg-header-hamburger-slot { grid-column: 1; grid-row: 1; }
+  .header-row .header-search-col { grid-column: 1 / -1; grid-row: 2; }
+  /* Vooraf zit de hamburger nog in het icoonblok (mobiel) of in de zoekkolom
+     (tablet). Het blok dat hem bevat is daarvoor even position: static, zodat
+     de absolute plaatsing de rij als referentie heeft. */
+  .header-actions-col:has(.menu-button) { position: static; }
+  .header-actions-col .col:has(.menu-button) {
+    position: absolute; left: 12px; top: calc(50% + 4px); transform: translateY(-50%); padding-left: 12px;
+  }
+  .header-search-col:has(> .row > .col-sm-auto.d-none.d-sm-block.d-lg-none) { position: static; }
+  .header-search-col > .row > .col-sm-auto.d-none.d-sm-block.d-lg-none {
+    position: absolute; left: 12px; top: calc(50% + 4px); transform: translateY(-50%); padding-left: 12px;
+  }
+  /* De USP-balk: 29,6 px zodra de JS zijn regel heeft gebouwd, 12,8 px ervoor.
+     De groene achtergrond zit op .top-bar-nav, dus de minimale hoogte ook daar:
+     op .top-bar zelf gaf het een crème strook onder de groene balk. */
+  .top-bar:not(:has(.rg-usp-slider)) .top-bar-nav { min-height: 29.6px; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .header-actions-col .col:has(.menu-button),
+  .header-search-col > .row > .col-sm-auto.d-none.d-sm-block.d-lg-none { padding-left: 16px; }
+}
+
+/* ============================================================
+   61. ZACHT VERSCHIJNEN op de themapagina's, 10 november 2026
+   ============================================================
+   Wat de band-JS na het laden bouwt (de band, de getallenregel, de strook,
+   de link en de klantlogo's onder de band) verscheen in één frame. De
+   ruimte ligt sinds sectie 59 al vast, dus dit verandert niets aan de
+   layout: alleen een fade van 0,4 s. Foto's in de band doen dat per foto
+   zodra hij binnen is (JS, stap 4b). Niet bij prefers-reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rg-in { from { opacity: 0; } to { opacity: 1; } }
+  .rg-band-pagina .rg-band { animation: rg-in 0.4s ease both; }
+  .rg-band-pagina .rg-page-hero__cijfers,
+  .rg-band-pagina .rg-page-hero__strook,
+  .rg-band-pagina .rg-band__meer,
+  .rg-band-pagina .rg-page-hero__logos--onder { animation: rg-in 0.4s ease 0.1s both; }
+}
+
+/* ============================================================
+   62. VINKJES IN DE USP-BALK ZONDER FONT AWESOME, 10 november 2026
+   ============================================================
+   De vier vinkjes in de USP-balk zijn <i class="fa-solid fa-check"> in het
+   CMS. Dat is het ENIGE Font Awesome-icoon op de site (gecontroleerd op
+   home, kerst, PDP en over ons: 4 keer fa-check, verder niets), maar het
+   haalt op elke pagina fa-solid-900.woff2 binnen: 155 kB, gemeten op 11
+   paginatypes. Hier de glyph vervangen door een SVG-masker in dezelfde
+   kleur (currentColor) en grootte (1em, zie sectie 5), zodat de browser het
+   lettertype niet meer nodig heeft en niet ophaalt. Gemeten met deze regel:
+   lettertypen op /huis-keuken/ 237 kB naar 82 kB, op de kerstpagina 282 kB
+   naar 127 kB, op de PDP 251 kB naar 97 kB; geen Font Awesome-verzoek meer.
+   Zonder deze regel verandert er niets aan de site; met is het vinkje
+   visueel gelijk (schermafdrukken: docs/metingen/2026-11-10-site-laden/
+   topbar-fa.png tegen topbar-masker.png).
+   Komt er ooit een ander Font Awesome-icoon op de site, dan haalt de browser
+   het lettertype alleen voor dat icoon weer op. */
+.top-bar-nav .fa-solid.fa-check { font-family: inherit !important; font-weight: inherit; }
+.top-bar-nav .fa-solid.fa-check::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.6l5 5 10-10.6'/%3E%3C/svg%3E") center / 118% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.6l5 5 10-10.6'/%3E%3C/svg%3E") center / 118% no-repeat;
+}

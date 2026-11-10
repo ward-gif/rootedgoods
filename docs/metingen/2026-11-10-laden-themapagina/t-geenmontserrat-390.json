@@ -1,0 +1,219 @@
+{
+ "shifts": [
+  {
+   "t": 2723,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 3142,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "IMG"
+   ]
+  },
+  {
+   "t": 4158,
+   "v": 0.0029,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "undefined",
+    "P.rg-page-hero__cijfers"
+   ]
+  },
+  {
+   "t": 4264,
+   "v": 0.0557,
+   "n": false,
+   "bronnen": [
+    "DIV.cms-section.pos-1",
+    "DIV.rg-page-hero__cta",
+    "undefined",
+    "P.rg-page-hero__cijfers",
+    "P.rg-page-hero__noot"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2396,
+  "sliderRuw": 2396,
+  "band": 2677,
+  "klonen": 2677,
+  "cijfers": 2677
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2500,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 274,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 338,
+   "f": "t-geenmontserrat-390-f01-338ms.jpg"
+  },
+  {
+   "t": 2676,
+   "f": "t-geenmontserrat-390-f02-2676ms.jpg"
+  },
+  {
+   "t": 2826,
+   "f": "t-geenmontserrat-390-f03-2826ms.jpg"
+  },
+  {
+   "t": 2913,
+   "f": "t-geenmontserrat-390-f04-2913ms.jpg"
+  },
+  {
+   "t": 3002,
+   "f": "t-geenmontserrat-390-f05-3002ms.jpg"
+  },
+  {
+   "t": 3093,
+   "f": "t-geenmontserrat-390-f06-3093ms.jpg"
+  },
+  {
+   "t": 3185,
+   "f": "t-geenmontserrat-390-f07-3185ms.jpg"
+  },
+  {
+   "t": 3277,
+   "f": "t-geenmontserrat-390-f08-3277ms.jpg"
+  },
+  {
+   "t": 3369,
+   "f": "t-geenmontserrat-390-f09-3369ms.jpg"
+  },
+  {
+   "t": 3458,
+   "f": "t-geenmontserrat-390-f10-3458ms.jpg"
+  },
+  {
+   "t": 3543,
+   "f": "t-geenmontserrat-390-f11-3543ms.jpg"
+  },
+  {
+   "t": 3635,
+   "f": "t-geenmontserrat-390-f12-3635ms.jpg"
+  },
+  {
+   "t": 3718,
+   "f": "t-geenmontserrat-390-f13-3718ms.jpg"
+  },
+  {
+   "t": 3809,
+   "f": "t-geenmontserrat-390-f14-3809ms.jpg"
+  },
+  {
+   "t": 3894,
+   "f": "t-geenmontserrat-390-f15-3894ms.jpg"
+  },
+  {
+   "t": 3985,
+   "f": "t-geenmontserrat-390-f16-3985ms.jpg"
+  },
+  {
+   "t": 4081,
+   "f": "t-geenmontserrat-390-f17-4081ms.jpg"
+  },
+  {
+   "t": 4168,
+   "f": "t-geenmontserrat-390-f18-4168ms.jpg"
+  },
+  {
+   "t": 4268,
+   "f": "t-geenmontserrat-390-f19-4268ms.jpg"
+  },
+  {
+   "t": 4369,
+   "f": "t-geenmontserrat-390-f20-4369ms.jpg"
+  },
+  {
+   "t": 4466,
+   "f": "t-geenmontserrat-390-f21-4466ms.jpg"
+  },
+  {
+   "t": 4560,
+   "f": "t-geenmontserrat-390-f22-4560ms.jpg"
+  },
+  {
+   "t": 4649,
+   "f": "t-geenmontserrat-390-f23-4649ms.jpg"
+  },
+  {
+   "t": 4743,
+   "f": "t-geenmontserrat-390-f24-4743ms.jpg"
+  },
+  {
+   "t": 4841,
+   "f": "t-geenmontserrat-390-f25-4841ms.jpg"
+  },
+  {
+   "t": 4932,
+   "f": "t-geenmontserrat-390-f26-4932ms.jpg"
+  },
+  {
+   "t": 5028,
+   "f": "t-geenmontserrat-390-f27-5028ms.jpg"
+  },
+  {
+   "t": 5125,
+   "f": "t-geenmontserrat-390-f28-5125ms.jpg"
+  },
+  {
+   "t": 5216,
+   "f": "t-geenmontserrat-390-f29-5216ms.jpg"
+  },
+  {
+   "t": 5309,
+   "f": "t-geenmontserrat-390-f30-5309ms.jpg"
+  },
+  {
+   "t": 5399,
+   "f": "t-geenmontserrat-390-f31-5399ms.jpg"
+  },
+  {
+   "t": 5492,
+   "f": "t-geenmontserrat-390-f32-5492ms.jpg"
+  },
+  {
+   "t": 5584,
+   "f": "t-geenmontserrat-390-f33-5584ms.jpg"
+  },
+  {
+   "t": 5674,
+   "f": "t-geenmontserrat-390-f34-5674ms.jpg"
+  },
+  {
+   "t": 5767,
+   "f": "t-geenmontserrat-390-f35-5767ms.jpg"
+  },
+  {
+   "t": 5857,
+   "f": "t-geenmontserrat-390-f36-5857ms.jpg"
+  },
+  {
+   "t": 5951,
+   "f": "t-geenmontserrat-390-f37-5951ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "t-geenmontserrat"
+ }
+}

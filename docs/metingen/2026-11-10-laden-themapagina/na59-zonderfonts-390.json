@@ -1,0 +1,194 @@
+{
+ "shifts": [
+  {
+   "t": 3092,
+   "v": 0,
+   "n": true,
+   "bronnen": [
+    "::after"
+   ]
+  },
+  {
+   "t": 4978,
+   "v": 0.0003,
+   "n": false,
+   "bronnen": [
+    "undefined"
+   ]
+  },
+  {
+   "t": 5560,
+   "v": 0.001,
+   "n": false,
+   "bronnen": [
+    "undefined",
+    "undefined",
+    "undefined",
+    "::after"
+   ]
+  },
+  {
+   "t": 5799,
+   "v": 0,
+   "n": false,
+   "bronnen": [
+    "svg"
+   ]
+  }
+ ],
+ "t": {
+  "hero": 2707,
+  "sliderRuw": 2708,
+  "band": 3052,
+  "klonen": 3052,
+  "cijfers": 3052
+ },
+ "marks": [],
+ "lcp": {
+  "t": 2792,
+  "el": "H1.rg-page-hero__title",
+  "url": ""
+ },
+ "schermafdrukken": [
+  {
+   "t": 343,
+   "fout": "Error: {\"code\":-32000,\"message\":\"Not attached to an active page\"}"
+  },
+  {
+   "t": 406,
+   "f": "na59-zonderfonts-390-f01-406ms.jpg"
+  },
+  {
+   "t": 2872,
+   "f": "na59-zonderfonts-390-f02-2872ms.jpg"
+  },
+  {
+   "t": 3172,
+   "f": "na59-zonderfonts-390-f03-3172ms.jpg"
+  },
+  {
+   "t": 3262,
+   "f": "na59-zonderfonts-390-f04-3262ms.jpg"
+  },
+  {
+   "t": 3355,
+   "f": "na59-zonderfonts-390-f05-3355ms.jpg"
+  },
+  {
+   "t": 3454,
+   "f": "na59-zonderfonts-390-f06-3454ms.jpg"
+  },
+  {
+   "t": 3554,
+   "f": "na59-zonderfonts-390-f07-3554ms.jpg"
+  },
+  {
+   "t": 3645,
+   "f": "na59-zonderfonts-390-f08-3645ms.jpg"
+  },
+  {
+   "t": 3736,
+   "f": "na59-zonderfonts-390-f09-3736ms.jpg"
+  },
+  {
+   "t": 3827,
+   "f": "na59-zonderfonts-390-f10-3827ms.jpg"
+  },
+  {
+   "t": 3922,
+   "f": "na59-zonderfonts-390-f11-3922ms.jpg"
+  },
+  {
+   "t": 4020,
+   "f": "na59-zonderfonts-390-f12-4020ms.jpg"
+  },
+  {
+   "t": 4112,
+   "f": "na59-zonderfonts-390-f13-4112ms.jpg"
+  },
+  {
+   "t": 4210,
+   "f": "na59-zonderfonts-390-f14-4210ms.jpg"
+  },
+  {
+   "t": 4303,
+   "f": "na59-zonderfonts-390-f15-4303ms.jpg"
+  },
+  {
+   "t": 4397,
+   "f": "na59-zonderfonts-390-f16-4397ms.jpg"
+  },
+  {
+   "t": 4487,
+   "f": "na59-zonderfonts-390-f17-4487ms.jpg"
+  },
+  {
+   "t": 4580,
+   "f": "na59-zonderfonts-390-f18-4580ms.jpg"
+  },
+  {
+   "t": 4679,
+   "f": "na59-zonderfonts-390-f19-4679ms.jpg"
+  },
+  {
+   "t": 4778,
+   "f": "na59-zonderfonts-390-f20-4778ms.jpg"
+  },
+  {
+   "t": 4869,
+   "f": "na59-zonderfonts-390-f21-4869ms.jpg"
+  },
+  {
+   "t": 4962,
+   "f": "na59-zonderfonts-390-f22-4962ms.jpg"
+  },
+  {
+   "t": 5070,
+   "f": "na59-zonderfonts-390-f23-5070ms.jpg"
+  },
+  {
+   "t": 5155,
+   "f": "na59-zonderfonts-390-f24-5155ms.jpg"
+  },
+  {
+   "t": 5247,
+   "f": "na59-zonderfonts-390-f25-5247ms.jpg"
+  },
+  {
+   "t": 5341,
+   "f": "na59-zonderfonts-390-f26-5341ms.jpg"
+  },
+  {
+   "t": 5430,
+   "f": "na59-zonderfonts-390-f27-5430ms.jpg"
+  },
+  {
+   "t": 5515,
+   "f": "na59-zonderfonts-390-f28-5515ms.jpg"
+  },
+  {
+   "t": 5616,
+   "f": "na59-zonderfonts-390-f29-5616ms.jpg"
+  },
+  {
+   "t": 5710,
+   "f": "na59-zonderfonts-390-f30-5710ms.jpg"
+  },
+  {
+   "t": 5796,
+   "f": "na59-zonderfonts-390-f31-5796ms.jpg"
+  },
+  {
+   "t": 5902,
+   "f": "na59-zonderfonts-390-f32-5902ms.jpg"
+  }
+ ],
+ "instelling": {
+  "URL": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "W": 390,
+  "H": 844,
+  "NET": "traag",
+  "CPU": 4,
+  "variant": "na59-zonderfonts"
+ }
+}

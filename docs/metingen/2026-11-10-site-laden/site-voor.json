@@ -1,0 +1,888 @@
+{
+ "instelling": {
+  "W": 390,
+  "H": 844,
+  "CPU": 4,
+  "net": "traag"
+ },
+ "uit": {
+  "/": {
+   "geladen": true,
+   "fcp": 3872,
+   "lcp": {
+    "t": 4088,
+    "el": "h1.rg-hero-v2__title",
+    "url": "",
+    "size": 21960
+   },
+   "cls": 0.1098,
+   "shifts": [
+    {
+     "t": 7339,
+     "v": 0.0878,
+     "b": [
+      "div.rg-hero-v2__mosaic",
+      "div.rg-hero-v2__cta",
+      "em",
+      "a.rg-hero-v2__tile",
+      "a.rg-hero-v2__tile"
+     ]
+    },
+    {
+     "t": 12070,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.rg-hero-v2__mosaic 0.088",
+    "div.row.align-items-center 0.020",
+    "# 0.002",
+    "::after 0.000"
+   ],
+   "verzoeken": 71,
+   "kb": 2644,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 37
+    },
+    "Image": {
+     "n": 56,
+     "kb": 1898
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 191
+    },
+    "Font": {
+     "n": 7,
+     "kb": 259
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "514k Image rootedgoods.eu/shared/thumbnail/f8/1e/47/1234567890/51dacbe5cc43e398f0b102dd9e536e7c905f36",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "133k Image rootedgoods.eu/thumbnail/77/d7/45/1782215119/Lifestyle%20Image%200747_800x800.jpg",
+    "127k Image rootedgoods.eu/media/5d/dd/b7/1785500254/Warehousing%202%20(1).jpg"
+   ],
+   "tbt": 823,
+   "langeTaken": 1,
+   "dom": 2084,
+   "imgs": 217,
+   "imgZonderWH": 211,
+   "imgLazy": 99,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 7788,
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europ"
+  },
+  "/alle-producten/": {
+   "geladen": false,
+   "fcp": 28768,
+   "lcp": {
+    "t": 41000,
+    "el": "div.col.cookie-permission-content",
+    "url": "",
+    "size": 9504
+   },
+   "cls": 0.1327,
+   "shifts": [
+    {
+     "t": 28799,
+     "v": 0.1117,
+     "b": [
+      "div.cms-page"
+     ]
+    },
+    {
+     "t": 40990,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.cms-page 0.112",
+    "div.row.align-items-center 0.020",
+    "div.slides 0.000",
+    "# 0.000"
+   ],
+   "verzoeken": 100,
+   "kb": 3364,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 51
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Image": {
+     "n": 85,
+     "kb": 2625
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 6,
+     "kb": 237
+    },
+    "XHR": {
+     "n": 2,
+     "kb": 2
+    }
+   },
+   "grootste": [
+    "443k Image rootedgoods.eu/shared/thumbnail/10/30/7e/1234567890/bd8a288293f06302f7aec01529691da0c4ff7d",
+    "217k Image rootedgoods.eu/shared/thumbnail/ec/e2/24/1234567890/5db14a300a18c71fd0ac783c0a85f6a168740d",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "142k Image rootedgoods.eu/shared/thumbnail/d9/72/8d/1234567890/50285e3c86e87b60275a600a14db70a9ceb115"
+   ],
+   "tbt": 123,
+   "langeTaken": 1,
+   "dom": 1609,
+   "imgs": 105,
+   "imgZonderWH": 105,
+   "imgLazy": 98,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 4270,
+   "titel": "Alle relatiegeschenken met logo | Rooted Goods"
+  },
+  "/huis-keuken/": {
+   "geladen": true,
+   "fcp": 2376,
+   "lcp": {
+    "t": 10784,
+    "el": "div.col.cookie-permission-content",
+    "url": "",
+    "size": 9504
+   },
+   "cls": 0.0209,
+   "shifts": [
+    {
+     "t": 10773,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.row.align-items-center 0.020",
+    "div.slides 0.000",
+    "# 0.000"
+   ],
+   "verzoeken": 101,
+   "kb": 2234,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 53
+    },
+    "Image": {
+     "n": 86,
+     "kb": 1493
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 6,
+     "kb": 237
+    },
+    "XHR": {
+     "n": 2,
+     "kb": 2
+    }
+   },
+   "grootste": [
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "57k Image rootedgoods.eu/shared/thumbnail/cd/f1/e2/1234567890/e570edb59ead4ad424d00c445b3744ff91610c",
+    "55k Image rootedgoods.eu/shared/thumbnail/e9/cc/b9/1234567890/f075f06e326f03cb9b42cd44d480049a9be06b",
+    "53k Document rootedgoods.eu/huis-keuken/"
+   ],
+   "tbt": 88,
+   "langeTaken": 1,
+   "dom": 1634,
+   "imgs": 96,
+   "imgZonderWH": 96,
+   "imgLazy": 89,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 4270,
+   "titel": "Relatiegeschenken voor huis & keuken | Rooted Good"
+  },
+  "/Borrelplank/A1352-Kerst1": {
+   "geladen": true,
+   "fcp": 3244,
+   "lcp": {
+    "t": 5336,
+    "el": "img.img-fluid.gallery-slider-image",
+    "url": "79d9a66e1fe5f8df14aab2ea920c6ef93597818a084d860_800x800.png?1786530715",
+    "size": 50456
+   },
+   "cls": 0.0894,
+   "shifts": [
+    {
+     "t": 5610,
+     "v": 0.0885,
+     "b": [
+      "div.collapse-group.product-detail-configurator-group",
+      "div.row.align-items-center",
+      "div",
+      "div.collapse-group.product-detail-configurator-group",
+      "div.collapse-group.product-detail-configurator-group"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.collapse-group.product-detail-configurator-group 0.088",
+    "li.breadcrumb-item 0.001",
+    "th.text-end 0.000",
+    "# 0.000"
+   ],
+   "verzoeken": 28,
+   "kb": 1152,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 31
+    },
+    "Image": {
+     "n": 11,
+     "kb": 419
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "XHR": {
+     "n": 3,
+     "kb": 0
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 7,
+     "kb": 251
+    }
+   },
+   "grootste": [
+    "370k Image rootedgoods.eu/shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "31k Document rootedgoods.eu/Borrelplank/A1352-Kerst1"
+   ],
+   "tbt": 64,
+   "langeTaken": 1,
+   "dom": 960,
+   "imgs": 9,
+   "imgZonderWH": 9,
+   "imgLazy": 0,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 2501,
+   "titel": "Borrelplank | A1352-Kerst1"
+  },
+  "/eindejaarsgeschenken": {
+   "geladen": false,
+   "fcp": 2372,
+   "lcp": {
+    "t": 2372,
+    "el": "h1.rg-page-hero__title",
+    "url": "",
+    "size": 36504
+   },
+   "cls": 0.9594,
+   "shifts": [
+    {
+     "t": 2547,
+     "v": 0.8791,
+     "b": [
+      "div.cms-page",
+      "div.cms-section.pos-2"
+     ]
+    },
+    {
+     "t": 4586,
+     "v": 0.0557,
+     "b": [
+      "div.cms-section.pos-1",
+      "div.rg-page-hero__cta",
+      "#",
+      "p.rg-page-hero__cijfers",
+      "p.rg-page-hero__noot"
+     ]
+    },
+    {
+     "t": 7194,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.cms-page 0.879",
+    "div.cms-section.pos-1 0.059",
+    "div.row.align-items-center 0.020",
+    "# 0.001"
+   ],
+   "verzoeken": 37,
+   "kb": 1854,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 21
+    },
+    "Image": {
+     "n": 21,
+     "kb": 1101
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 8,
+     "kb": 282
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "370k Image rootedgoods.eu/shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab",
+    "247k Image rootedgoods.eu/shared/thumbnail/b5/11/5d/1234567890/e808835a523ab5bf1c4b0746f1cf6016d41234",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "156k Image rootedgoods.eu/shared/thumbnail/93/ea/05/1234567890/88859cc5f71738072cfaadb121a23be9072904",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 84,
+   "langeTaken": 1,
+   "dom": 1145,
+   "imgs": 52,
+   "imgZonderWH": 51,
+   "imgLazy": 44,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 6269,
+   "titel": "Kerstpakketten & eindejaarsgeschenken zakelijk | R"
+  },
+  "/thema-s/": {
+   "geladen": false,
+   "fcp": 3292,
+   "lcp": {
+    "t": 11072,
+    "el": "div.col.cookie-permission-content",
+    "url": "",
+    "size": 9504
+   },
+   "cls": 0.0434,
+   "shifts": [
+    {
+     "t": 3322,
+     "v": 0.0228,
+     "b": [
+      "div.cms-page"
+     ]
+    },
+    {
+     "t": 11065,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.cms-page 0.023",
+    "div.row.align-items-center 0.020",
+    "# 0.000"
+   ],
+   "verzoeken": 91,
+   "kb": 3350,
+   "perType": {
+    "?": {
+     "n": 1,
+     "kb": 424
+    },
+    "Document": {
+     "n": 1,
+     "kb": 47
+    },
+    "Image": {
+     "n": 75,
+     "kb": 2191
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 6,
+     "kb": 237
+    },
+    "XHR": {
+     "n": 2,
+     "kb": 2
+    }
+   },
+   "grootste": [
+    "514k Image rootedgoods.eu/shared/thumbnail/f8/1e/47/1234567890/51dacbe5cc43e398f0b102dd9e536e7c905f36",
+    "443k Image rootedgoods.eu/shared/thumbnail/10/30/7e/1234567890/bd8a288293f06302f7aec01529691da0c4ff7d",
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "66k Image rootedgoods.eu/shared/thumbnail/ce/26/59/1234567890/f0a5f9e5c2cc4e5fa1a42eef3f5b9db6995f1d"
+   ],
+   "tbt": 99,
+   "langeTaken": 1,
+   "dom": 1573,
+   "imgs": 79,
+   "imgZonderWH": 79,
+   "imgLazy": 72,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 4270,
+   "titel": "Relatiegeschenken per thema | Rooted Goods"
+  },
+  "/offerte": {
+   "geladen": true,
+   "fcp": 2540,
+   "lcp": {
+    "t": 2540,
+    "el": "p.rg-contact-head__sub",
+    "url": "",
+    "size": 16848
+   },
+   "cls": 0.0344,
+   "shifts": [
+    {
+     "t": 3253,
+     "v": 0.0123,
+     "b": [
+      "div.cms-section.pos-1",
+      "span.rg-team__text"
+     ]
+    },
+    {
+     "t": 3668,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.row.align-items-center 0.020",
+    "div.cms-section.pos-1 0.012",
+    "# 0.002"
+   ],
+   "verzoeken": 24,
+   "kb": 778,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 15
+    },
+    "Image": {
+     "n": 10,
+     "kb": 76
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 6,
+     "kb": 237
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "27k Image rootedgoods.eu/media/6a/0f/ff/1782906551/Richard%20Media%20JPEG.jpg",
+    "23k Font rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-800.wo"
+   ],
+   "tbt": 24,
+   "langeTaken": 1,
+   "dom": 592,
+   "imgs": 8,
+   "imgZonderWH": 7,
+   "imgLazy": 0,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 1988,
+   "titel": "Vraag een offerte aan | Rooted Goods"
+  },
+  "/over-ons": {
+   "geladen": true,
+   "fcp": 2588,
+   "lcp": {
+    "t": 5312,
+    "el": "img",
+    "url": "ds@7423192da0a8a2d4228e81274f668bf4080db077/svg/land-europa-mobiel.svg",
+    "size": 133029
+   },
+   "cls": 0.03,
+   "shifts": [
+    {
+     "t": 3715,
+     "v": 0.0087,
+     "b": [
+      "p.rg-route__question",
+      "h1.rg-route__title",
+      "#",
+      "em",
+      "#"
+     ]
+    },
+    {
+     "t": 5945,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.row.align-items-center 0.020",
+    "p.rg-route__question 0.009",
+    "div.rg-route__hint 0.001",
+    "span.rg-route__dot 0.000"
+   ],
+   "verzoeken": 29,
+   "kb": 896,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 17
+    },
+    "Image": {
+     "n": 12,
+     "kb": 128
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 4,
+     "kb": 233
+    },
+    "Font": {
+     "n": 7,
+     "kb": 259
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "58k Image cdn.jsdelivr.net/gh/ward-gif/rootedgoods@7423192da0a8a2d4228e81274f668bf4080db077/svg/land",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "25k Script cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+   ],
+   "tbt": 3298,
+   "langeTaken": 6,
+   "dom": 693,
+   "imgs": 28,
+   "imgZonderWH": 26,
+   "imgLazy": 20,
+   "cssBlokkerend": 3,
+   "scriptsHead": 2,
+   "cookie": true,
+   "hoogte": 6546,
+   "titel": "Over Rooted Goods | Waarom wij voor Europa kiezen"
+  },
+  "/merken/": {
+   "geladen": true,
+   "fcp": 2496,
+   "lcp": {
+    "t": 2496,
+    "el": "p.rg-theme-intro",
+    "url": "",
+    "size": 23472
+   },
+   "cls": 0.0207,
+   "shifts": [
+    {
+     "t": 5254,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.row.align-items-center 0.020",
+    "# 0.000"
+   ],
+   "verzoeken": 45,
+   "kb": 1089,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 16
+    },
+    "Image": {
+     "n": 31,
+     "kb": 378
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 6,
+     "kb": 245
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "49k Image rootedgoods.eu/media/cb/58/16/1786632432/Tony-s%20Chocolonely.png",
+    "48k Image rootedgoods.eu/media/8f/05/a5/1786529432/Bambook%20Logo%20Colour.png",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css"
+   ],
+   "tbt": 17,
+   "langeTaken": 1,
+   "dom": 617,
+   "imgs": 29,
+   "imgZonderWH": 29,
+   "imgLazy": 21,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 2658,
+   "titel": "Onze merken | Rooted Goods"
+  },
+  "/search?search=kerstbal": {
+   "geladen": true,
+   "fcp": 3016,
+   "lcp": {
+    "t": 3016,
+    "el": "h1.search-headline",
+    "url": "",
+    "size": 14960
+   },
+   "cls": 0.0216,
+   "shifts": [
+    {
+     "t": 5056,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.row.align-items-center 0.020",
+    "# 0.001",
+    "div.slides 0.001"
+   ],
+   "verzoeken": 35,
+   "kb": 954,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 19
+    },
+    "Image": {
+     "n": 21,
+     "kb": 249
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 6,
+     "kb": 237
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "47k Image rootedgoods.eu/shared/thumbnail/2d/20/8a/1234567890/39bbbcc7742487da502ba227a403be3c2fbd93",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+    "23k Font rootedgoods.eu/webfonts/Playfair%20Display%20v40%20Latin/playfair-display-v40-latin-600.wo"
+   ],
+   "tbt": 28,
+   "langeTaken": 1,
+   "dom": 701,
+   "imgs": 21,
+   "imgZonderWH": 21,
+   "imgLazy": 14,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 1302,
+   "titel": "Rooted Goods"
+  },
+  "/contact": {
+   "geladen": true,
+   "fcp": 2536,
+   "lcp": {
+    "t": 2536,
+    "el": "p.rg-contact-head__sub",
+    "url": "",
+    "size": 11970
+   },
+   "cls": 0.0316,
+   "shifts": [
+    {
+     "t": 3593,
+     "v": 0.0107,
+     "b": [
+      "div.cms-section.pos-1",
+      "#",
+      "img",
+      "img",
+      "span.rg-contact-head__callcard-avatars"
+     ]
+    },
+    {
+     "t": 4695,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.row.align-items-center 0.020",
+    "div.cms-section.pos-1 0.011",
+    "# 0.001"
+   ],
+   "verzoeken": 30,
+   "kb": 994,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 19
+    },
+    "Image": {
+     "n": 14,
+     "kb": 242
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 192
+    },
+    "Font": {
+     "n": 8,
+     "kb": 282
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "191k Stylesheet rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+    "179k Script rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189",
+    "155k Font rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+    "82k Image rootedgoods.eu/media/4d/ea/dc/1786085851/Ward%20afbeelding.jpg",
+    "63k Image rootedgoods.eu/media/9c/98/c5/1786085851/Marco%20afbeelding.jpg",
+    "37k Stylesheet cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css"
+   ],
+   "tbt": 35,
+   "langeTaken": 1,
+   "dom": 737,
+   "imgs": 13,
+   "imgZonderWH": 7,
+   "imgLazy": 0,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 6965,
+   "titel": "Contact | Rooted Goods relatiegeschenken"
+  }
+ }
+}

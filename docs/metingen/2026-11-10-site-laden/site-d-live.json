@@ -1,0 +1,140 @@
+{
+ "instelling": {
+  "W": 390,
+  "H": 844,
+  "CPU": 2,
+  "net": "snel"
+ },
+ "uit": {
+  "/eindejaarsgeschenken": {
+   "geladen": true,
+   "fcp": 688,
+   "lcp": {
+    "t": 688,
+    "el": "h1.rg-page-hero__title",
+    "url": "",
+    "size": 36504
+   },
+   "cls": 0.9594,
+   "shifts": [
+    {
+     "t": 722,
+     "v": 0.8791,
+     "b": [
+      "div.cms-page",
+      "div.cms-section.pos-2"
+     ]
+    },
+    {
+     "t": 983,
+     "v": 0.0557,
+     "b": [
+      "div.cms-section.pos-1",
+      "div.rg-page-hero__cta",
+      "#",
+      "p.rg-page-hero__cijfers",
+      "p.rg-page-hero__noot"
+     ]
+    },
+    {
+     "t": 1704,
+     "v": 0.0204,
+     "b": [
+      "div.row.align-items-center"
+     ]
+    }
+   ],
+   "topBronnen": [
+    "div.cms-page 0.879",
+    "div.cms-section.pos-1 0.059",
+    "div.row.align-items-center 0.020",
+    "# 0.001"
+   ],
+   "verzoeken": 42,
+   "kb": 4168,
+   "perType": {
+    "Document": {
+     "n": 1,
+     "kb": 21
+    },
+    "Image": {
+     "n": 26,
+     "kb": 3415
+    },
+    "Stylesheet": {
+     "n": 4,
+     "kb": 258
+    },
+    "Script": {
+     "n": 2,
+     "kb": 191
+    },
+    "Font": {
+     "n": 8,
+     "kb": 282
+    },
+    "XHR": {
+     "n": 1,
+     "kb": 0
+    }
+   },
+   "grootste": [
+    "550k Image rootedgoods.eu/shared/thumbnail/0c/ed/2c/1234567890/2758449bb2705a3524248b14f0dbfbb8ad45fa",
+    "469k Image rootedgoods.eu/shared/thumbnail/5a/41/aa/1234567890/4c2cf2a590a03ae6cee451390c1b08eb76e0c9",
+    "443k Image rootedgoods.eu/shared/thumbnail/ab/21/21/1234567890/c65447fb6f87f2f5ee96525e682f127d99a49d",
+    "429k Image rootedgoods.eu/shared/thumbnail/70/09/76/1234567890/b9514bb0c822d42bd0bf4adc5b37202f617d7d",
+    "424k Image rootedgoods.eu/shared/thumbnail/6f/fe/00/1234567890/df14e9d05012e62763116938456e181ffd52db",
+    "370k Image rootedgoods.eu/shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab"
+   ],
+   "beelden": [
+    "9k media/2a/71/e6/1786449349/Logo Rooted.svg?1786449349",
+    "9k media/6f/40/25/1787233896/Erasmus MC.png",
+    "13k media/19/5c/87/1775141463/Wero Ideal.png",
+    "6k media/07/1f/2f/1775141463/Mastercard.png",
+    "5k media/0d/3b/b9/1775141593/DHL.png",
+    "7k media/27/17/32/1775141593/dpd.png",
+    "6k media/22/32/9c/1775133752/ideal-icon.svg?1775133752",
+    "4k media/d4/ff/49/1775133751/creditcard-icon.svg?1775133751",
+    "0k data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' strok",
+    "0k data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#000' fill-rule='evenodd' d='M12 2",
+    "12k cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain4 small.jpg",
+    "0k data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' strok",
+    "21k cdn.jsdelivr.net/gh/ward-gif/rootedgoods@5203deeee3ddfbeed6214d63ad17003b44558f1e/beeld/rg-panel-grain5.jpg",
+    "5k media/e7/2a/d6/1787233896/Ifes.png",
+    "6k media/f9/5c/8d/1787233896/Huisartsen G.C. Zuiderzorg.png",
+    "370k shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab2ea920c6ef93597818a084d860_800x800.png?1786530715",
+    "247k shared/thumbnail/b5/11/5d/1234567890/e808835a523ab5bf1c4b0746f1cf6016d41234740e6b78604dc7f141bfc0eb5d_800x800.png?1787232687",
+    "156k shared/thumbnail/93/ea/05/1234567890/88859cc5f71738072cfaadb121a23be907290405342ab1ed3c122847ad89fced_800x800.png?1787232685",
+    "550k shared/thumbnail/0c/ed/2c/1234567890/2758449bb2705a3524248b14f0dbfbb8ad45fa7c9da1e1d311991ebb8cf547f4_800x800.png?1787232687",
+    "469k shared/thumbnail/5a/41/aa/1234567890/4c2cf2a590a03ae6cee451390c1b08eb76e0c9ed42109fa12f3dc4fbf6a6166c_800x800.png?1786530714",
+    "154k shared/thumbnail/4e/88/06/1234567890/3dcab6b9d8269564c1c3ddf1bf30ef34f5b5f3ad0ce4b3b4b75a7ad3a3cca2d6_800x800.png?1787232686",
+    "424k shared/thumbnail/6f/fe/00/1234567890/df14e9d05012e62763116938456e181ffd52db4b92f5107632ba8595f177745c_800x800.png?1786530714",
+    "429k shared/thumbnail/70/09/76/1234567890/b9514bb0c822d42bd0bf4adc5b37202f617d7d90541f1dd7b38e624ecc6837cf_800x800.png?1786530715",
+    "443k shared/thumbnail/ab/21/21/1234567890/c65447fb6f87f2f5ee96525e682f127d99a49db12807a172bbea458a634a4eef_800x800.png?1787232686",
+    "0k data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2.4' str",
+    "71k media/3e/7f/ef/1787736741/Smiling Coworkers.jpg"
+   ],
+   "fonts": [
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-500.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-regular.wof",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-700.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+    "23k rootedgoods.eu/webfonts/Playfair Display v40 Latin/playfair-display-v40-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+    "15k rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+    "155k rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+   ],
+   "tbt": 99,
+   "langeTaken": 1,
+   "dom": 1147,
+   "imgs": 52,
+   "imgZonderWH": 51,
+   "imgLazy": 44,
+   "cssBlokkerend": 3,
+   "scriptsHead": 0,
+   "cookie": true,
+   "hoogte": 6269,
+   "titel": "Kerstpakketten & eindejaarsgeschenken zakelijk | R"
+  }
+ }
+}
