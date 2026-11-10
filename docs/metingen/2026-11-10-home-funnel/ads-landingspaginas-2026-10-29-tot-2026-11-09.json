@@ -1,0 +1,49 @@
+{
+ "bron": "Google Ads API via de MCP-koppeling (Bambook-MCC 2357303641), account Rooted Goods 9393286984",
+ "opgehaald": "2026-11-10",
+ "periode": "2026-10-29 t/m 2026-11-09 (12 dagen, na de toestemmingsreparatie van 28 oktober)",
+ "query_landing": "SELECT landing_page_view.unexpanded_final_url, segments.device, metrics.clicks, metrics.impressions, metrics.cost_micros, metrics.conversions FROM landing_page_view WHERE segments.date BETWEEN '2026-10-29' AND '2026-11-09' ORDER BY metrics.clicks DESC LIMIT 40",
+ "landing": [
+  {"url": "https://rootedgoods.eu/eindejaarsgeschenken", "device": "MOBILE", "clicks": 145, "impressions": 2254, "cost_micros": 272400000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/alle-producten/", "device": "MOBILE", "clicks": 129, "impressions": 919, "cost_micros": 220170000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/", "device": "MOBILE", "clicks": 109, "impressions": 1472, "cost_micros": 179690000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/thema-s/kerstpakketten-eindejaar/", "device": "MOBILE", "clicks": 63, "impressions": 508, "cost_micros": 122250000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/", "device": "DESKTOP", "clicks": 21, "impressions": 201, "cost_micros": 24760000, "conversions": 0},
+  {"url": "https://rootedgoods.eu", "device": "MOBILE", "clicks": 17, "impressions": 1589, "cost_micros": 30050000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/eindejaarsgeschenken", "device": "DESKTOP", "clicks": 11, "impressions": 228, "cost_micros": 20040000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/merken/", "device": "MOBILE", "clicks": 8, "impressions": 1632, "cost_micros": 13870000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/alle-producten/", "device": "DESKTOP", "clicks": 6, "impressions": 69, "cost_micros": 10330000, "conversions": 1},
+  {"url": "https://rootedgoods.eu/alle-producten/", "device": "TABLET", "clicks": 3, "impressions": 44, "cost_micros": 4170000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/thema-s/kerstpakketten-eindejaar/", "device": "DESKTOP", "clicks": 2, "impressions": 47, "cost_micros": 3950000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/", "device": "TABLET", "clicks": 2, "impressions": 44, "cost_micros": 3440000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/merken/", "device": "DESKTOP", "clicks": 1, "impressions": 172, "cost_micros": 1740000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/eindejaarsgeschenken", "device": "TABLET", "clicks": 1, "impressions": 90, "cost_micros": 1930000, "conversions": 0},
+  {"url": "https://rootedgoods.eu/thema-s/kerstpakketten-eindejaar/", "device": "TABLET", "clicks": 1, "impressions": 8, "cost_micros": 2000000, "conversions": 0},
+  {"url": "https://rootedgoods.eu", "device": "DESKTOP", "clicks": 0, "impressions": 179, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/made-in-nl", "device": "DESKTOP", "clicks": 0, "impressions": 78, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/onboarding-welkomstpakket", "device": "DESKTOP", "clicks": 0, "impressions": 23, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/made-in-nl", "device": "MOBILE", "clicks": 0, "impressions": 904, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/onboarding-welkomstpakket", "device": "MOBILE", "clicks": 0, "impressions": 886, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/merken/", "device": "TABLET", "clicks": 0, "impressions": 71, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu", "device": "TABLET", "clicks": 0, "impressions": 67, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/made-in-nl", "device": "TABLET", "clicks": 0, "impressions": 36, "cost_micros": 0, "conversions": 0},
+  {"url": "https://rootedgoods.eu/onboarding-welkomstpakket", "device": "TABLET", "clicks": 0, "impressions": 37, "cost_micros": 0, "conversions": 0}
+ ],
+ "query_campagnes": "SELECT campaign.name, campaign.status, metrics.clicks, metrics.impressions, metrics.cost_micros, metrics.conversions FROM campaign WHERE segments.date BETWEEN '2026-10-29' AND '2026-11-09' ORDER BY metrics.clicks DESC",
+ "campagnes": [
+  {"campaign": "NL-Search-AlwaysOn", "status": "ENABLED", "clicks": 293, "impressions": 1992, "cost_micros": 493450000, "conversions": 1},
+  {"campaign": "NL-Search-Thema", "status": "ENABLED", "clicks": 216, "impressions": 1535, "cost_micros": 412410000, "conversions": 0},
+  {"campaign": "NL-Search-Branded", "status": "ENABLED", "clicks": 10, "impressions": 20, "cost_micros": 4930000, "conversions": 0}
+ ],
+ "afgeleid": {
+  "totaal_klikken": 519,
+  "totaal_kosten_eur": 910.79,
+  "home_klikken_alle_apparaten": 149,
+  "home_klikken_toelichting": "109 mobiel + 21 desktop + 2 tablet op https://rootedgoods.eu/ plus 17 mobiel op https://rootedgoods.eu zonder slash (sitelink of andere eind-URL)",
+  "home_kosten_eur": 237.94,
+  "home_aandeel_klikken": 0.287,
+  "home_aandeel_mobiel": 0.846,
+  "conversies_in_ads": 1,
+  "conversies_toelichting": "1 conversie, landingspagina /alle-producten/ op desktop; Ads telt conversies op klikdatum, dus dit zegt niets over de home"
+ }
+}

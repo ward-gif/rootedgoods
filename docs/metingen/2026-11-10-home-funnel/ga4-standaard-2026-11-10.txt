@@ -1,0 +1,138 @@
+gelezen als: ga4-lezer@rootedgoods-analytics.iam.gserviceaccount.com | quota-project: rootedgoods-analytics
+credentials: /Users/wardhaarsma/.config/gcloud-rootedgoods/application_default_credentials.json
+GA4-property 551909322 | 2026-10-06 t/m 2026-11-10 (36 dagen)
+Alles hieronder is wat GA4 ziet. Consent Mode staat standaard op denied,
+dus dit is een ondergrens van het werkelijke verkeer, niet een telling.
+
+### 1. Verkeer per kanaal: zien we de advertentieklikken terug?
+    basis: GA4-sessies 2026-10-06 t/m 2026-11-10. Leg 'Paid Search' naast de 662 Ads-klikken van 6-26 okt. Het verschil is wat consent en adblockers kosten.
+    sessionDefaultChannelGroup                     sessions      totalUsers engagedSessions  engagementRate       keyEvents
+    Paid Search                                         234             216             212           90.6%               0
+    Direct                                              198             163             153           77.3%               4
+    Organic Search                                       29              12              18           62.1%               0
+    Unassigned                                            5               5               0            0.0%               0
+    Cross-network                                         2               2               2          100.0%               0
+    Referral                                              1               1               1          100.0%               0
+
+### 2. Landingspagina x apparaat, alleen betaald zoekverkeer
+    basis: Wordt de pagina gelezen of alleen geopend? Lage betrokkenheid op mobiel bij hoge op desktop is het snelheidsprobleem, niet het copyprobleem.
+    landingPagePlusQueryString                   deviceCate         sessions  engagementRateuserEngagementDuration      bounceRate
+    /eindejaarsgeschenken                        mobile                   73           86.3%            1607           13.7%
+    /                                            mobile                   53           94.3%            2032            5.7%
+    /alle-producten/                             mobile                   48           93.8%            4319            6.2%
+    /thema-s/kerstpakketten-eindejaar/           mobile                   28          100.0%             595            0.0%
+    /                                            tablet                    4           25.0%               0           75.0%
+    /merken/                                     mobile                    3          100.0%              78            0.0%
+    /Bambook-Classic-Original-Notebook-A4-notiti mobile                    2          100.0%              49            0.0%
+    /alle-producten/                             desktop                   2          100.0%              24            0.0%
+    /alle-producten/                             tablet                    2           50.0%              18           50.0%
+    (not set)                                    mobile                    1            0.0%               0          100.0%
+    /                                            desktop                   1            0.0%               0          100.0%
+    /Ontspan-pakket/A1352-Kerst5                 mobile                    1          100.0%               2            0.0%
+    /TURA-Tas-organisch-katoen-EU/A36-MO6850-13  mobile                    1          100.0%               6            0.0%
+    /TURA-Tas-organisch-katoen-EU/A36-MO6850-13  tablet                    1          100.0%              20            0.0%
+    /alle-producten/?order=rooted-sortering&p=1& mobile                    1          100.0%             123            0.0%
+    /alle-thema-s                                desktop                   1          100.0%              79            0.0%
+    /alle-thema-s                                mobile                    1          100.0%              30            0.0%
+    /eindejaarsgeschenken                        desktop                   1          100.0%              14            0.0%
+    /eindejaarsgeschenken                        tablet                    1          100.0%               0            0.0%
+    /elektronica/                                desktop                   1          100.0%             173            0.0%
+    /giveaways/                                  desktop                   1          100.0%             196            0.0%
+    /offerte                                     mobile                    1          100.0%             112            0.0%
+    /over-ons                                    mobile                    1          100.0%               0            0.0%
+    /search?search=kerstbal                      desktop                   1          100.0%             105            0.0%
+    /search?search=stressbal+                    mobile                    1          100.0%              14            0.0%
+    ... 28 rijen totaal, 25 getoond
+
+### 3. Welke events vuren er eigenlijk?
+    basis: Staat generate_lead hier niet tussen, dan is de meetketen stuk en niet de site. Staat hij er wel met nul, dan is het de site.
+    eventName                                    eventCount      totalUsers
+    page_view                                          1919             386
+    user_engagement                                    1234             359
+    session_start                                       463             383
+    first_visit                                         374             374
+    scroll                                              266             178
+    view_item_list                                      170             120
+    view_item                                           111              47
+    form_start                                           81              36
+    select_item                                          62              39
+    view_search_results                                  37              18
+    form_submit                                          20              10
+    generate_lead                                         3               2
+    add_to_cart                                           1               1
+    confirm_order                                         1               1
+    purchase                                              1               1
+    view_cart                                             1               1
+
+### 4. Wat typen mensen in je eigen zoekbalk?
+    basis: De goedkoopste contentbron die er is: je doelgroep zegt letterlijk wat ze niet vindt. Leeg betekent meestal dat site search niet gemeten wordt, niet dat niemand zoekt.
+    searchTerm                                   eventCount
+                                                       4707
+    paraplu                                               3
+    kerstbal                                              2
+    kersthanger                                           2
+    mepal lunchpot                                        2
+    sleutelhangers                                        2
+    social brand club handoek                             2
+    sokken                                                2
+    TapOut                                                1
+    bidon                                                 1
+    fles                                                  1
+    gieter                                                1
+    kaas                                                  1
+    king pepermunt                                        1
+    koffie                                                1
+    koffiebeker                                           1
+    kracht                                                1
+    laptop                                                1
+    luchtverfrisser                                       1
+    lunchpot                                              1
+    mentos                                                1
+    muts                                                  1
+    resqme                                                1
+    rolmaat                                               1
+    schaaf                                                1
+    stressbal                                             1
+    tablet                                                1
+    tapout                                                1
+    trui                                                  1
+    waterfles                                             1
+
+### 5. Meest bekeken pagina's
+    basis: Kijk waar /offerte staat. Komt die niet voor, dan bereikt niemand het formulier.
+    pagePath                                              screenPageViewsuserEngagementDuration
+    /alle-producten/                                                  457            5886
+    /                                                                 238            2352
+    /eindejaarsgeschenken                                             229            2286
+    /thema-s/kerstpakketten-eindejaar/                                143            1510
+    /search                                                            45             375
+    /over-ons                                                          28             423
+    /thema-s/                                                          27             640
+    /alle-thema-s                                                      22             156
+    /drinkwaren/                                                       17             260
+    /huis-keuken/                                                      17             318
+    /merken/                                                           17             184
+    /outdoor/                                                          17             236
+    /verzorging/                                                       17             284
+    /tassen-reizen/                                                    16             258
+    /Borrelplank/A1352-Kerst1                                          15             238
+    /medewerker-merchandise                                            15             205
+    /Test-page-concepts12                                              14              76
+    /eten-drinken/                                                     14             319
+    /Alle-Producten/                                                   13             401
+    /giveaways/                                                        13             683
+    /onboarding-welkomstpakket                                         13             221
+    /Amuse-Tylla-Food-Bowl-Duo-600-ml/A24-262687-4849999               12             188
+    /Gezellig-warm/A1352-Kerst6                                        12              35
+    /contact                                                           12             108
+    /kantoor-schrijfwaren/                                             11             146
+    ... 210 rijen totaal, 25 getoond
+
+### 6. Nieuw tegenover terugkerend
+    basis: Zakelijke geschenkinkoop is bijna nooit een sessie. Komt niemand terug, dan is remarketing het ontbrekende stuk en niet de landingspagina.
+    newVsReturning                                 sessions  engagementRate       keyEvents
+    new                                                 378           87.3%               1
+    returning                                            77           72.7%               3
+    (not set)                                            14            0.0%               0
+
+Klaar. Elk getal hierboven geldt voor 2026-10-06 t/m 2026-11-10 en alleen voor sessies waarin toestemming is gegeven.

@@ -1,0 +1,78 @@
+Properties waar dit account bij kan:
+   sc-domain:rootedgoods.eu  (siteRestrictedUser)
+
+Search Console sc-domain:rootedgoods.eu | 2026-10-11 t/m 2026-11-08
+Search Console loopt ongeveer twee dagen achter; de laatste dagen zijn incompleet.
+
+### 1. Waarop wordt je site in Google gevonden?
+    basis: Organische zoekvragen. Dit is wat Google je toont zonder dat je ervoor betaalt. Leg het naast de betaalde zoektermen.
+    zoekvraag                                           vert.   klik     CTR  positie
+    rooted goods                                           13      6   46.2%      1.0
+    be o                                                    1      0    0.0%     53.0
+    be o cup                                                2      0    0.0%     69.0
+    be'o                                                    1      0    0.0%     48.0
+    be-o                                                    1      0    0.0%     51.0
+    box geel                                                1      0    0.0%     47.0
+    canalu                                                  2      0    0.0%      6.5
+    plank rond                                              1      0    0.0%     41.0
+    raja chrome                                             1      0    0.0%     94.0
+    rooted goods lockport                                   1      0    0.0%     15.0
+    samsonite essens spinner 55                             1      0    0.0%     38.0
+    tony reep personaliseren                                2      0    0.0%     38.0
+    travel size massage oil                                 1      0    0.0%      9.0
+    treatments giftbox                                      1      0    0.0%     23.0
+    victorinox cadet                                        1      0    0.0%     79.0
+    wat is de prijs                                         1      0    0.0%      1.0
+
+### 2. Welke pagina's halen vertoningen?
+    basis: Als je eigen landingspagina's hier ontbreken, bevestigt dat de sitemapbevinding.
+    pagina                                                          vert.   klik     CTR  positie
+    https://rootedgoods.eu/                                            40     11   27.5%      2.1
+    https://rootedgoods.eu/Amuse-Tylla-Food-Bowl-Duo-600-ml/A2          4      1   25.0%     16.2
+    https://rootedgoods.eu/Schoudertas-CANCAN/A1352-CGB2261             2      1   50.0%      1.0
+    https://rootedgoods.eu/over-ons                                    20      1    5.0%      2.8
+    https://rootedgoods.eu/12-nights-of-wine-2026-rPET-12-x-10          2      0    0.0%      8.5
+    https://rootedgoods.eu/3-Delige-DIY-mocktail-box-van-de-Du          1      0    0.0%     11.0
+    https://rootedgoods.eu/Americano-POP-350-ml-geisoleerde-be          1      0    0.0%      1.0
+    https://rootedgoods.eu/Amuse-Recycled-PP-Lunch-Box/A24-269          1      0    0.0%     61.0
+    https://rootedgoods.eu/Amuse-Recycled-PP-Lunch-Box/A24-269          1      0    0.0%     64.0
+    https://rootedgoods.eu/Amuse-Tylla-Bowl-1-L/A24-262686-063          1      0    0.0%      3.0
+    https://rootedgoods.eu/Amuse-Tylla-Food-Bowl-Duo-600-ml/A2          1      0    0.0%      6.0
+    https://rootedgoods.eu/BE-O-Coffee-Cup-340-ml-koffiebeker/          4      0    0.0%     56.5
+    https://rootedgoods.eu/BE-O-Coffee-Cup-340-ml-koffiebeker/          2      0    0.0%     70.5
+    https://rootedgoods.eu/Bambook-Classic-Hardcover-Notebook-          1      0    0.0%      1.0
+    https://rootedgoods.eu/BioSocks-Sport-in-Giftbox/A127-BSSG          1      0    0.0%     10.0
+    https://rootedgoods.eu/Citizen-Green-Charmant-25-stadspara          1      0    0.0%      3.0
+    https://rootedgoods.eu/Citizen-Green-Cloud-25-opvouwbare-p          1      0    0.0%     11.0
+    https://rootedgoods.eu/Congreet-plantpots-small-Christmas-          1      0    0.0%      5.0
+    https://rootedgoods.eu/Custom-made-sport-handdoek-50-x-100          1      0    0.0%      3.0
+    https://rootedgoods.eu/Duffeltas-RIGODON/A1352-CGB2260.J            1      0    0.0%      6.0
+    https://rootedgoods.eu/Fles-450-ml-CANALU/A1352-CGO2514.B           3      0    0.0%      7.3
+    https://rootedgoods.eu/GoodTowel-Stock-170x100cm/A127-GTST          1      0    0.0%     10.0
+    https://rootedgoods.eu/JANZEN-Giftset-Skin-90-3-items/A508          1      0    0.0%      7.0
+    https://rootedgoods.eu/JANZEN-Home-Fragrance-Sticks-Gracio          1      0    0.0%      5.0
+    https://rootedgoods.eu/Opinel-Inox-No-08-zakmes/A508-26535          3      0    0.0%      1.0
+
+### 3. Per apparaat
+    basis: Zelfde verhaal als bij de advertenties?
+    apparaat                  vert.   klik     CTR  positie
+    DESKTOP                      90      8    8.9%     14.6
+    MOBILE                       77      6    7.8%      7.4
+    TABLET                        2      0    0.0%     10.5
+
+### 4. Per land
+    basis: Verwacht: vrijwel alles Nederland.
+    land                      vert.   klik     CTR  positie
+    nld                         111     13   11.7%      9.0
+    che                           1      1  100.0%      1.0
+    arg                           1      0    0.0%      5.0
+    bel                          14      0    0.0%     10.3
+    bgd                           1      0    0.0%     41.0
+    blr                           1      0    0.0%      6.0
+    bra                           7      0    0.0%     31.0
+    can                           1      0    0.0%      1.0
+
+### Totaal
+    169 vertoningen, 14 klikken, CTR 8.3%, gemiddelde positie 11.3
+
+Klaar.

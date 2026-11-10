@@ -1,0 +1,174 @@
+Clarity y9d3vyhhk8 | laatste 3 dagen (ongeveer 2026-11-07 t/m 2026-11-09) | dimensies: URL, Device
+Let op: deze API geeft alleen de laatste dagen. Voor oktober is een handmatige
+export uit het dashboard nodig; opnames leven daar ongeveer 30 dagen.
+
+### DeadClickCount
+    sessionsCount               sessionsWithMetricPercenta  sessionsWithoutMetricPerce  pagesViews                  subTotal                    Url                         Device                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/poc  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/out  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/ein  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/dri  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/Gez  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/med  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/eve  PC                          
+
+### ExcessiveScroll
+    sessionsCount               sessionsWithMetricPercenta  sessionsWithoutMetricPerce  pagesViews                  subTotal                    Url                         Device                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/poc  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/out  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/ein  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/dri  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/Gez  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/med  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/eve  PC                          
+
+### RageClickCount
+    sessionsCount               sessionsWithMetricPercenta  sessionsWithoutMetricPerce  pagesViews                  subTotal                    Url                         Device                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/poc  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/out  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/ein  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/dri  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/Gez  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/med  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/eve  PC                          
+
+### QuickbackClick
+    sessionsCount               sessionsWithMetricPercenta  sessionsWithoutMetricPerce  pagesViews                  subTotal                    Url                         Device                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/poc  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           100                         0                           1                           1                           https://rootedgoods.eu/out  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/ein  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/dri  PC                          
+    1                           100                         0                           2                           2                           https://rootedgoods.eu/all  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/Gez  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/med  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/eve  PC                          
+
+### ScriptErrorCount
+    sessionsCount               sessionsWithMetricPercenta  sessionsWithoutMetricPerce  pagesViews                  subTotal                    Url                         Device                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/poc  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/out  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/ein  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/dri  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/Gez  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/med  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/eve  PC                          
+
+### ErrorClickCount
+    sessionsCount               sessionsWithMetricPercenta  sessionsWithoutMetricPerce  pagesViews                  subTotal                    Url                         Device                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/poc  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/out  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/ein  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  PC                          
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/dri  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/all  Mobile                      
+    2                           0                           100                         0                           0                           https://rootedgoods.eu/Gez  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/med  Mobile                      
+    1                           0                           100                         0                           0                           https://rootedgoods.eu/eve  PC                          
+
+### ScrollDepth
+    averageScrollDepth          Url                         Device                      
+    36                          https://rootedgoods.eu/the  PC                          
+    85                          https://rootedgoods.eu/poc  PC                          
+    30                          https://rootedgoods.eu/the  Mobile                      
+    90.5                        https://rootedgoods.eu/out  Mobile                      
+    19                          https://rootedgoods.eu/ein  Mobile                      
+    13                          https://rootedgoods.eu/?ga  Mobile                      
+    20                          https://rootedgoods.eu/all  Mobile                      
+    53.33                       https://rootedgoods.eu/all  Mobile                      
+    100                         https://rootedgoods.eu/dri  PC                          
+    31                          https://rootedgoods.eu/all  PC                          
+    55.5                        https://rootedgoods.eu/Gez  Mobile                      
+    100                         https://rootedgoods.eu/the  Mobile                      
+    49                          https://rootedgoods.eu/Mep  PC                          
+    82                          https://rootedgoods.eu/med  Mobile                      
+    100                         https://rootedgoods.eu/eve  PC                          
+
+### Traffic
+    totalSessionCount           totalBotSessionCount        distinctUserCount           pagesPerSessionPercentage   Url                         Device                      
+    1                           0                           1                           1                           https://rootedgoods.eu/Tes  PC                          
+    1                           0                           1                           1                           https://rootedgoods.eu/faq  PC                          
+    1                           0                           1                           1                           https://rootedgoods.eu/Mep  PC                          
+    1                           0                           1                           1                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           1                           1                           https://rootedgoods.eu/all  Mobile                      
+    6                           0                           6                           1                           https://rootedgoods.eu/hui  PC                          
+    5                           0                           4                           1.8                         https://rootedgoods.eu/ove  Mobile                      
+    4                           0                           4                           1                           https://rootedgoods.eu/hui  PC                          
+    1                           0                           1                           1                           https://rootedgoods.eu/?ga  Mobile                      
+    1                           0                           1                           1                           https://rootedgoods.eu/Bam  Mobile                      
+    1                           0                           1                           1                           https://rootedgoods.eu/req  PC                          
+    1                           0                           1                           8                           https://rootedgoods.eu/the  Mobile                      
+    1                           0                           1                           1                           https://rootedgoods.eu/dri  PC                          
+    1                           0                           1                           6                           https://rootedgoods.eu/all  Mobile                      
+    1                           0                           1                           1                           https://rootedgoods.eu/?ga  Mobile                      
+
+    totaal sessies: 486 | waarvan bot: 17
+
+### EngagementTime
+    totalTime                   activeTime                  Url                         Device                      
+    1505                        399                         https://rootedgoods.eu/Tes  PC                          
+    44                          44                          https://rootedgoods.eu/faq  PC                          
+    41                          41                          https://rootedgoods.eu/Mep  PC                          
+    3                           3                           https://rootedgoods.eu/all  Mobile                      
+    8                           8                           https://rootedgoods.eu/all  Mobile                      
+    16                          13                          https://rootedgoods.eu/hui  PC                          
+    13                          13                          https://rootedgoods.eu/ove  Mobile                      
+    6                           6                           https://rootedgoods.eu/hui  PC                          
+    17                          17                          https://rootedgoods.eu/?ga  Mobile                      
+    6                           5                           https://rootedgoods.eu/Bam  Mobile                      
+    6814                        17                          https://rootedgoods.eu/req  PC                          
+    15                          15                          https://rootedgoods.eu/the  Mobile                      
+    8                           8                           https://rootedgoods.eu/dri  PC                          
+    13                          13                          https://rootedgoods.eu/all  Mobile                      
+    2                           2                           https://rootedgoods.eu/?ga  Mobile                      
+
+### De vergelijking die ertoe doet
+    Clarity telde 486 sessies over deze 3 dagen.
+    Draai nu hetzelfde venster in GA4 en leg het ernaast:
+      bin/ga4.sh --van 2026-11-07 --tot 2026-11-09
+    Vergelijkbaar  -> toestemming verklaart het meetgat volledig.
+    Clarity hoger  -> GA4 heeft daarbovenop een eigen probleem.

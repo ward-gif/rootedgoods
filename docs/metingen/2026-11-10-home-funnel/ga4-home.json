@@ -1,0 +1,1688 @@
+{
+ "property": "551909322",
+ "uit": {
+  "A1": {
+   "titel": "Sessies en events per dag",
+   "basis": "alle sessies met toestemming",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "date",
+    "sessions",
+    "eventCount",
+    "keyEvents"
+   ],
+   "rijen": [
+    [
+     "20261006",
+     "8",
+     "64",
+     "0"
+    ],
+    [
+     "20261007",
+     "4",
+     "46",
+     "0"
+    ],
+    [
+     "20261008",
+     "13",
+     "99",
+     "0"
+    ],
+    [
+     "20261009",
+     "11",
+     "51",
+     "0"
+    ],
+    [
+     "20261010",
+     "3",
+     "24",
+     "0"
+    ],
+    [
+     "20261011",
+     "3",
+     "17",
+     "0"
+    ],
+    [
+     "20261012",
+     "7",
+     "52",
+     "0"
+    ],
+    [
+     "20261013",
+     "12",
+     "180",
+     "0"
+    ],
+    [
+     "20261014",
+     "13",
+     "157",
+     "0"
+    ],
+    [
+     "20261015",
+     "11",
+     "56",
+     "0"
+    ],
+    [
+     "20261016",
+     "8",
+     "48",
+     "0"
+    ],
+    [
+     "20261017",
+     "2",
+     "20",
+     "0"
+    ],
+    [
+     "20261018",
+     "4",
+     "19",
+     "0"
+    ],
+    [
+     "20261019",
+     "10",
+     "81",
+     "0"
+    ],
+    [
+     "20261020",
+     "13",
+     "66",
+     "0"
+    ],
+    [
+     "20261021",
+     "9",
+     "67",
+     "0"
+    ],
+    [
+     "20261022",
+     "19",
+     "165",
+     "0"
+    ],
+    [
+     "20261023",
+     "11",
+     "115",
+     "0"
+    ],
+    [
+     "20261024",
+     "15",
+     "107",
+     "0"
+    ],
+    [
+     "20261025",
+     "10",
+     "48",
+     "0"
+    ],
+    [
+     "20261026",
+     "20",
+     "137",
+     "0"
+    ],
+    [
+     "20261027",
+     "18",
+     "192",
+     "1"
+    ],
+    [
+     "20261028",
+     "23",
+     "175",
+     "0"
+    ],
+    [
+     "20261029",
+     "15",
+     "252",
+     "0"
+    ],
+    [
+     "20261030",
+     "19",
+     "245",
+     "0"
+    ],
+    [
+     "20261031",
+     "25",
+     "301",
+     "0"
+    ],
+    [
+     "20261101",
+     "20",
+     "287",
+     "0"
+    ],
+    [
+     "20261102",
+     "17",
+     "159",
+     "0"
+    ],
+    [
+     "20261103",
+     "13",
+     "162",
+     "2"
+    ],
+    [
+     "20261104",
+     "19",
+     "247",
+     "0"
+    ],
+    [
+     "20261105",
+     "8",
+     "82",
+     "0"
+    ],
+    [
+     "20261106",
+     "12",
+     "93",
+     "0"
+    ],
+    [
+     "20261107",
+     "16",
+     "211",
+     "0"
+    ],
+    [
+     "20261108",
+     "22",
+     "198",
+     "0"
+    ],
+    [
+     "20261109",
+     "26",
+     "429",
+     "0"
+    ],
+    [
+     "20261110",
+     "9",
+     "92",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 36
+  },
+  "A2": {
+   "titel": "Welke events zijn als key event gemarkeerd",
+   "basis": "eventName x keyEvents, alleen events met keyEvents > 0 staan er echt in",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "eventName",
+    "eventCount",
+    "keyEvents"
+   ],
+   "rijen": [
+    [
+     "page_view",
+     "1919",
+     "0"
+    ],
+    [
+     "user_engagement",
+     "1234",
+     "0"
+    ],
+    [
+     "session_start",
+     "463",
+     "0"
+    ],
+    [
+     "first_visit",
+     "374",
+     "0"
+    ],
+    [
+     "scroll",
+     "266",
+     "0"
+    ],
+    [
+     "view_item_list",
+     "170",
+     "0"
+    ],
+    [
+     "view_item",
+     "111",
+     "0"
+    ],
+    [
+     "form_start",
+     "81",
+     "0"
+    ],
+    [
+     "select_item",
+     "62",
+     "0"
+    ],
+    [
+     "view_search_results",
+     "37",
+     "0"
+    ],
+    [
+     "form_submit",
+     "20",
+     "0"
+    ],
+    [
+     "generate_lead",
+     "3",
+     "3"
+    ],
+    [
+     "add_to_cart",
+     "1",
+     "0"
+    ],
+    [
+     "confirm_order",
+     "1",
+     "0"
+    ],
+    [
+     "purchase",
+     "1",
+     "1"
+    ],
+    [
+     "view_cart",
+     "1",
+     "0"
+    ]
+   ],
+   "totaal_rijen": 16
+  },
+  "A3": {
+   "titel": "Hostnames",
+   "basis": "staat er verkeer van een andere host in (staging, test)?",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "hostName",
+    "sessions",
+    "eventCount"
+   ],
+   "rijen": [
+    [
+     "rootedgoods.eu",
+     "469",
+     "4744"
+    ]
+   ],
+   "totaal_rijen": 1
+  },
+  "A4": {
+   "titel": "Bron/medium van de sessies",
+   "basis": "controle op auto-tagging van Ads (google / cpc) en rommel",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "sessionSourceMedium",
+    "sessions",
+    "engagedSessions",
+    "keyEvents"
+   ],
+   "rijen": [
+    [
+     "google / cpc",
+     "234",
+     "212",
+     "0"
+    ],
+    [
+     "(direct) / (none)",
+     "198",
+     "153",
+     "4"
+    ],
+    [
+     "google / organic",
+     "28",
+     "17",
+     "0"
+    ],
+    [
+     "(not set)",
+     "5",
+     "0",
+     "0"
+    ],
+    [
+     "(data not available)",
+     "2",
+     "2",
+     "0"
+    ],
+    [
+     "bing / organic",
+     "1",
+     "1",
+     "0"
+    ],
+    [
+     "euc-excel.officeapps.live.com / referral",
+     "1",
+     "1",
+     "0"
+    ]
+   ],
+   "totaal_rijen": 7
+  },
+  "A5": {
+   "titel": "Landing (not set) en onbekende kanalen",
+   "basis": "sessies zonder landingspagina zijn meestal een meetbreuk",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "sessionDefaultChannelGroup",
+    "deviceCategory",
+    "sessions",
+    "engagementRate"
+   ],
+   "rijen": [
+    [
+     "Paid Search",
+     "mobile",
+     "216",
+     "0.92129629629629628"
+    ],
+    [
+     "Direct",
+     "mobile",
+     "109",
+     "0.76146788990825687"
+    ],
+    [
+     "Direct",
+     "desktop",
+     "86",
+     "0.79069767441860461"
+    ],
+    [
+     "Organic Search",
+     "mobile",
+     "20",
+     "0.6"
+    ],
+    [
+     "Paid Search",
+     "desktop",
+     "10",
+     "0.9"
+    ],
+    [
+     "Organic Search",
+     "desktop",
+     "9",
+     "0.66666666666666663"
+    ],
+    [
+     "Paid Search",
+     "tablet",
+     "8",
+     "0.5"
+    ],
+    [
+     "Direct",
+     "tablet",
+     "3",
+     "0.66666666666666663"
+    ],
+    [
+     "Unassigned",
+     "desktop",
+     "3",
+     "0"
+    ],
+    [
+     "Cross-network",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "Unassigned",
+     "mobile",
+     "2",
+     "0"
+    ],
+    [
+     "Referral",
+     "desktop",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 12
+  },
+  "B1": {
+   "titel": "Landing op de home per kanaal en apparaat",
+   "basis": "sessies met landingPage exact '/'",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "sessionDefaultChannelGroup",
+    "deviceCategory",
+    "sessions",
+    "engagedSessions",
+    "engagementRate",
+    "averageSessionDuration",
+    "keyEvents"
+   ],
+   "rijen": [
+    [
+     "Paid Search",
+     "mobile",
+     "53",
+     "50",
+     "0.94339622641509435",
+     "134.27064005660378",
+     "0"
+    ],
+    [
+     "Direct",
+     "desktop",
+     "20",
+     "16",
+     "0.8",
+     "593.714956",
+     "0"
+    ],
+    [
+     "Organic Search",
+     "mobile",
+     "11",
+     "9",
+     "0.81818181818181823",
+     "86.98900990909091",
+     "0"
+    ],
+    [
+     "Direct",
+     "mobile",
+     "9",
+     "7",
+     "0.77777777777777779",
+     "125.02487022222221",
+     "0"
+    ],
+    [
+     "Organic Search",
+     "desktop",
+     "4",
+     "4",
+     "1",
+     "143.9293325",
+     "0"
+    ],
+    [
+     "Paid Search",
+     "tablet",
+     "4",
+     "1",
+     "0.25",
+     "121.8639565",
+     "0"
+    ],
+    [
+     "Paid Search",
+     "desktop",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "totaal_rijen": 7
+  },
+  "B2": {
+   "titel": "Home, alle weergaven per apparaat",
+   "basis": "page_view op pagePath '/' (ook niet-landing)",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "deviceCategory",
+    "screenPageViews",
+    "totalUsers",
+    "userEngagementDuration"
+   ],
+   "rijen": [
+    [
+     "mobile",
+     "170",
+     "62",
+     "1265"
+    ],
+    [
+     "desktop",
+     "63",
+     "23",
+     "1087"
+    ],
+    [
+     "tablet",
+     "5",
+     "4",
+     "0"
+    ]
+   ],
+   "totaal_rijen": 3
+  },
+  "B3": {
+   "titel": "Scrollevent op de home per apparaat",
+   "basis": "GA4 'scroll' = 90% diepte, eenmaal per pagina; noemer is de weergaven in B2",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "deviceCategory",
+    "eventCount",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "desktop",
+     "7",
+     "5"
+    ],
+    [
+     "mobile",
+     "5",
+     "5"
+    ]
+   ],
+   "totaal_rijen": 2
+  },
+  "B4": {
+   "titel": "Tweede pagina: waar gaan ze heen vanaf de home",
+   "basis": "page_view waarvan pageReferrer exact de home is",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "deviceCategory",
+    "screenPageViews",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "/alle-producten/",
+     "mobile",
+     "19",
+     "5"
+    ],
+    [
+     "/alle-producten/",
+     "desktop",
+     "13",
+     "8"
+    ],
+    [
+     "/eindejaarsgeschenken",
+     "desktop",
+     "10",
+     "8"
+    ],
+    [
+     "/Amuse-Tylla-Food-Bowl-Duo-600-ml/A24-262687-484999999",
+     "desktop",
+     "8",
+     "1"
+    ],
+    [
+     "/eindejaarsgeschenken",
+     "mobile",
+     "7",
+     "4"
+    ],
+    [
+     "/kantoor-schrijfwaren/",
+     "desktop",
+     "7",
+     "5"
+    ],
+    [
+     "/over-ons",
+     "desktop",
+     "7",
+     "4"
+    ],
+    [
+     "/search",
+     "desktop",
+     "6",
+     "3"
+    ],
+    [
+     "/onboarding-welkomstpakket",
+     "desktop",
+     "4",
+     "4"
+    ],
+    [
+     "/contact",
+     "desktop",
+     "3",
+     "2"
+    ],
+    [
+     "/medewerker-merchandise",
+     "desktop",
+     "3",
+     "2"
+    ],
+    [
+     "/over-ons",
+     "mobile",
+     "3",
+     "2"
+    ],
+    [
+     "/",
+     "desktop",
+     "2",
+     "1"
+    ],
+    [
+     "/alle-thema-s",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/drinkwaren/",
+     "desktop",
+     "2",
+     "2"
+    ],
+    [
+     "/elektronica/phone-tablet-accessoires/",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/eten-drinken/",
+     "desktop",
+     "2",
+     "1"
+    ],
+    [
+     "/onboarding-welkomstpakket",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/search",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/services/",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/tassen-reizen/",
+     "desktop",
+     "2",
+     "2"
+    ],
+    [
+     "/tassen-reizen/laptoptassen/",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/tassen-reizen/sporttassen/",
+     "mobile",
+     "2",
+     "1"
+    ],
+    [
+     "/Alle-Producten/",
+     "mobile",
+     "1",
+     "1"
+    ],
+    [
+     "/POLARBOX-KOELBOX-GEEL-12L/A1352-PLB12GL",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/Plank-rond-met-handvat-beuken-31-cm/A134-BE3100",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/alle-thema-s",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/contact",
+     "mobile",
+     "1",
+     "1"
+    ],
+    [
+     "/elektronica/",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/events-conferenties",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/huis-keuken/",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/thema-s/",
+     "desktop",
+     "1",
+     "1"
+    ],
+    [
+     "/verzorging/",
+     "desktop",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 33
+  },
+  "B5": {
+   "titel": "Tweede pagina: groepering per type bestemming (dezelfde data als B4 per apparaat samen)",
+   "basis": "idem, alleen pagePath",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "screenPageViews",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "/alle-producten/",
+     "32",
+     "13"
+    ],
+    [
+     "/eindejaarsgeschenken",
+     "17",
+     "12"
+    ],
+    [
+     "/over-ons",
+     "10",
+     "6"
+    ],
+    [
+     "/Amuse-Tylla-Food-Bowl-Duo-600-ml/A24-262687-484999999",
+     "8",
+     "1"
+    ],
+    [
+     "/search",
+     "8",
+     "4"
+    ],
+    [
+     "/kantoor-schrijfwaren/",
+     "7",
+     "5"
+    ],
+    [
+     "/onboarding-welkomstpakket",
+     "6",
+     "5"
+    ],
+    [
+     "/contact",
+     "4",
+     "3"
+    ],
+    [
+     "/alle-thema-s",
+     "3",
+     "2"
+    ],
+    [
+     "/medewerker-merchandise",
+     "3",
+     "2"
+    ],
+    [
+     "/",
+     "2",
+     "1"
+    ],
+    [
+     "/drinkwaren/",
+     "2",
+     "2"
+    ],
+    [
+     "/elektronica/phone-tablet-accessoires/",
+     "2",
+     "1"
+    ],
+    [
+     "/eten-drinken/",
+     "2",
+     "1"
+    ],
+    [
+     "/services/",
+     "2",
+     "1"
+    ],
+    [
+     "/tassen-reizen/",
+     "2",
+     "2"
+    ],
+    [
+     "/tassen-reizen/laptoptassen/",
+     "2",
+     "1"
+    ],
+    [
+     "/tassen-reizen/sporttassen/",
+     "2",
+     "1"
+    ],
+    [
+     "/Alle-Producten/",
+     "1",
+     "1"
+    ],
+    [
+     "/POLARBOX-KOELBOX-GEEL-12L/A1352-PLB12GL",
+     "1",
+     "1"
+    ],
+    [
+     "/Plank-rond-met-handvat-beuken-31-cm/A134-BE3100",
+     "1",
+     "1"
+    ],
+    [
+     "/elektronica/",
+     "1",
+     "1"
+    ],
+    [
+     "/events-conferenties",
+     "1",
+     "1"
+    ],
+    [
+     "/huis-keuken/",
+     "1",
+     "1"
+    ],
+    [
+     "/thema-s/",
+     "1",
+     "1"
+    ],
+    [
+     "/verzorging/",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 26
+  },
+  "B6": {
+   "titel": "Zoekacties vanaf de home",
+   "basis": "view_search_results met pageReferrer de home",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "eventCount"
+   ],
+   "rijen": [
+    [
+     "/search",
+     "7"
+    ]
+   ],
+   "totaal_rijen": 1
+  },
+  "C1": {
+   "titel": "form_start per pagina",
+   "basis": "waar beginnen mensen aan een formulier",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "eventCount",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "/",
+     "8",
+     "5"
+    ],
+    [
+     "/Amuse-Tylla-Food-Bowl-Duo-600-ml/A24-262687-484999999",
+     "5",
+     "1"
+    ],
+    [
+     "/search",
+     "5",
+     "4"
+    ],
+    [
+     "/alle-producten/",
+     "4",
+     "4"
+    ],
+    [
+     "/Borrelplank/A1352-Kerst1",
+     "3",
+     "3"
+    ],
+    [
+     "/Plank-met-handvat-beuken-28x11-cm/A134-BE2811",
+     "3",
+     "3"
+    ],
+    [
+     "/Bottloop-L-stock/A127-BOLS",
+     "2",
+     "1"
+    ],
+    [
+     "/Mepal-Ellipse-Mini-300-120-ml-lunchpot/A34-11318452",
+     "2",
+     "2"
+    ],
+    [
+     "/Pet-velours-6-panelen/A1352-CAS03-1",
+     "2",
+     "2"
+    ],
+    [
+     "/Plank-met-leren-handvat-beuken-33x16-cm/A134-BE3316L",
+     "2",
+     "1"
+    ],
+    [
+     "/Plastic-Bank-Recycled-Ice-Scraper-ijskrabber/A508-269146-005999999",
+     "2",
+     "1"
+    ],
+    [
+     "/Sweater-met-rits-biologisch-katoen-340g/A1352-TEX04.1",
+     "2",
+     "1"
+    ],
+    [
+     "/Amuse-Tylla-Food-Bowl-Duo-600-ml/A24-262687-357999999",
+     "1",
+     "1"
+    ],
+    [
+     "/BE-O-Coffee-Cup-340-ml-koffiebeker/A508-269429-004999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Bambook-Classic-Hardcover-Notebook-A5-notitieboek/A508-262470-823999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Bambook-Classic-Original-Notebook-A4-notitieboek/A508-263068-374999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Bambook-Classic-Original-Notebook-A4-notitieboek/A508-263068-536999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Bierglas-Vaasje-340-ml/A508-262644-970999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Borrelpakket-groot/A1352-ZH002ZL",
+     "1",
+     "1"
+    ],
+    [
+     "/Day-to-Day-Snackbox-Small-200-ml/A24-262734-005999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Fles-Tonys-Bambook/A1352-Kerst9",
+     "1",
+     "1"
+    ],
+    [
+     "/Giftbox-1-x-zwarte-peper-53-gram-1-x-Himalaya-zout-123-gram-1-x-traditionele-olijfolie-100-ML-1-x-beukenhouten-houder-Glas/A173-4000",
+     "1",
+     "1"
+    ],
+    [
+     "/Giftbox-Rombeau-Wine-Chocolate-2-x-100-ML-1-x-8-truffels-Glas/A173-2002",
+     "1",
+     "1"
+    ],
+    [
+     "/Goodsocks-Sport-Short/A127-GSSS",
+     "1",
+     "1"
+    ],
+    [
+     "/Join-The-Pipe-Atlantis-Bottle-500-ml-waterfles/A508-269447-001999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Join-The-Pipe-Nairobi-Bottle-500-ml-waterfles/A508-269340-002999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Koffiebeker-lunchbox-en-Bambook/A1352-Kerst8",
+     "1",
+     "1"
+    ],
+    [
+     "/MAR-SEAQUAL-hamamdoek-70x140cm/A36-MO2057-04",
+     "1",
+     "1"
+    ],
+    [
+     "/Mepal-Ellipse-Mini-300-120-ml-lunchpot/A34-11318491",
+     "1",
+     "1"
+    ],
+    [
+     "/Mepal-Ellipse-snackpot-van-500-ml/A34-11314441",
+     "1",
+     "1"
+    ],
+    [
+     "/POLARBOX-KOELBOX-GEEL-12L/A1352-PLB12GL",
+     "1",
+     "1"
+    ],
+    [
+     "/Plank-met-handvat-walnoot-33x16-cm/A134-FWA3316",
+     "1",
+     "1"
+    ],
+    [
+     "/Plank-rond-met-handvat-beuken-31-cm/A134-BE3100",
+     "1",
+     "1"
+    ],
+    [
+     "/RPET-Bottle-500-ml-waterfles/A24-1506841-001999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Rebottled-Short-Tumbler-250-ml-drinkglas/A508-262580-004999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Rebottled-Short-Tumbler-250-ml-drinkglas/A508-262580-402999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Rebottled-Short-Tumbler-250-ml-drinkglas/A508-262580-970999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Rebottled-Tumbler-2-pack-set-glazen/A508-261430-004999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Recycled-Felt-Laptop-Sleeve-14/A508-269492-001999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Recycled-Felt-Laptop-Sleeve-14/A508-269492-113999999",
+     "1",
+     "1"
+    ],
+    [
+     "/Senator-Evoxx-Polished-Recycled-White-Clip-pennen/A508-261212-001999128",
+     "1",
+     "1"
+    ],
+    [
+     "/Stilolinea-Raja-Chrome-Recycled-pennen/A508-262659-001999128",
+     "1",
+     "1"
+    ],
+    [
+     "/Stilolinea-Raja-Chrome-Recycled-pennen/A508-262659-002999128",
+     "1",
+     "1"
+    ],
+    [
+     "/Strandtas-BEACHEUR/A1352-CGB2236.G",
+     "1",
+     "1"
+    ],
+    [
+     "/Thermos-Drinkfles-500-ml/A1352-ROOT002BE",
+     "1",
+     "1"
+    ],
+    [
+     "/Tony-s-Chocolonely-reep/A1352-TCBARS",
+     "1",
+     "1"
+    ],
+    [
+     "/WAVE-SEAQUAL-hamamdoek-100x170/A36-MO2058-04",
+     "1",
+     "1"
+    ],
+    [
+     "/checkout/confirm",
+     "1",
+     "1"
+    ],
+    [
+     "/events-conferenties",
+     "1",
+     "1"
+    ],
+    [
+     "/merken/",
+     "1",
+     "1"
+    ],
+    [
+     "/poconfigurator/request",
+     "1",
+     "1"
+    ],
+    [
+     "/poconfigurator/request/cart",
+     "1",
+     "1"
+    ],
+    [
+     "/verzorging/",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 53
+  },
+  "C2": {
+   "titel": "form_submit en generate_lead per pagina",
+   "basis": "waar worden formulieren verstuurd en geteld als lead",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "eventName",
+    "pagePath",
+    "eventCount",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "form_submit",
+     "/",
+     "5",
+     "4"
+    ],
+    [
+     "form_submit",
+     "/search",
+     "5",
+     "4"
+    ],
+    [
+     "form_submit",
+     "/poconfigurator/request/cart",
+     "2",
+     "1"
+    ],
+    [
+     "generate_lead",
+     "/poconfigurator/request/cart",
+     "2",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/BE-O-Coffee-Cup-340-ml-koffiebeker/A508-269429-004999999",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/Bottloop-L-stock/A127-BOLS",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/Goodsocks-Sport-Short/A127-GSSS",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/Thermos-Drinkfles-500-ml/A1352-ROOT002BE",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/account/order",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/alle-producten/",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/poconfigurator/request",
+     "1",
+     "1"
+    ],
+    [
+     "form_submit",
+     "/verzorging/",
+     "1",
+     "1"
+    ],
+    [
+     "generate_lead",
+     "/poconfigurator/request",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 13
+  },
+  "C3": {
+   "titel": "form_start met de home als verwijzer",
+   "basis": "pageReferrer is de home; ketenmeting home naar formulier",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "eventName",
+    "eventCount",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "/Amuse-Tylla-Food-Bowl-Duo-600-ml/A24-262687-484999999",
+     "form_start",
+     "4",
+     "1"
+    ],
+    [
+     "/search",
+     "form_start",
+     "2",
+     "2"
+    ],
+    [
+     "/search",
+     "form_submit",
+     "2",
+     "2"
+    ],
+    [
+     "/POLARBOX-KOELBOX-GEEL-12L/A1352-PLB12GL",
+     "form_start",
+     "1",
+     "1"
+    ],
+    [
+     "/alle-producten/",
+     "form_start",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 5
+  },
+  "C4": {
+   "titel": "Sessies met een lead per kanaal",
+   "basis": "keyEvents per kanaal en apparaat; noemer = sessies in dezelfde rij",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "sessionDefaultChannelGroup",
+    "deviceCategory",
+    "sessions",
+    "keyEvents"
+   ],
+   "rijen": [
+    [
+     "Paid Search",
+     "mobile",
+     "216",
+     "0"
+    ],
+    [
+     "Direct",
+     "mobile",
+     "109",
+     "0"
+    ],
+    [
+     "Direct",
+     "desktop",
+     "86",
+     "4"
+    ],
+    [
+     "Organic Search",
+     "mobile",
+     "20",
+     "0"
+    ],
+    [
+     "Paid Search",
+     "desktop",
+     "10",
+     "0"
+    ],
+    [
+     "Organic Search",
+     "desktop",
+     "9",
+     "0"
+    ],
+    [
+     "Paid Search",
+     "tablet",
+     "8",
+     "0"
+    ],
+    [
+     "Direct",
+     "tablet",
+     "3",
+     "0"
+    ],
+    [
+     "Unassigned",
+     "desktop",
+     "3",
+     "0"
+    ],
+    [
+     "Cross-network",
+     "mobile",
+     "2",
+     "0"
+    ],
+    [
+     "Unassigned",
+     "mobile",
+     "2",
+     "0"
+    ],
+    [
+     "Referral",
+     "desktop",
+     "1",
+     "0"
+    ]
+   ],
+   "totaal_rijen": 12
+  },
+  "C5": {
+   "titel": "De offerte- en contactpagina's zelf",
+   "basis": "page_view en events op de pagina's waar een lead zou moeten ontstaan",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "eventName",
+    "eventCount",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "/contact",
+     "page_view",
+     "12",
+     "7"
+    ],
+    [
+     "/offerte",
+     "page_view",
+     "8",
+     "6"
+    ],
+    [
+     "/poconfigurator/request",
+     "page_view",
+     "3",
+     "2"
+    ],
+    [
+     "/poconfigurator/request/cart",
+     "form_submit",
+     "2",
+     "1"
+    ],
+    [
+     "/poconfigurator/request/cart",
+     "generate_lead",
+     "2",
+     "1"
+    ],
+    [
+     "/poconfigurator/request/cart",
+     "page_view",
+     "2",
+     "1"
+    ],
+    [
+     "/poconfigurator/request",
+     "form_start",
+     "1",
+     "1"
+    ],
+    [
+     "/poconfigurator/request",
+     "form_submit",
+     "1",
+     "1"
+    ],
+    [
+     "/poconfigurator/request",
+     "generate_lead",
+     "1",
+     "1"
+    ],
+    [
+     "/poconfigurator/request/cart",
+     "form_start",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 10
+  },
+  "D2": {
+   "titel": "select_item per pagina",
+   "basis": "waar klikken mensen op een product in een lijst",
+   "van": "2026-10-06",
+   "tot": "2026-11-10",
+   "kolommen": [
+    "pagePath",
+    "eventCount",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "/alle-producten/",
+     "19",
+     "13"
+    ],
+    [
+     "/thema-s/kerstpakketten-eindejaar/",
+     "16",
+     "12"
+    ],
+    [
+     "/eindejaarsgeschenken",
+     "13",
+     "9"
+    ],
+    [
+     "/huis-keuken/lunchboxen-en-zakjes/",
+     "3",
+     "1"
+    ],
+    [
+     "/",
+     "2",
+     "2"
+    ],
+    [
+     "/thema-s/",
+     "2",
+     "1"
+    ],
+    [
+     "/giveaways/lanyards/",
+     "1",
+     "1"
+    ],
+    [
+     "/huis-keuken/",
+     "1",
+     "1"
+    ],
+    [
+     "/kantoor-schrijfwaren/balpennen-inktpennen-en-sets/",
+     "1",
+     "1"
+    ],
+    [
+     "/kantoor-schrijfwaren/kantoor-accessoires/",
+     "1",
+     "1"
+    ],
+    [
+     "/kleding-textiel/caps-hoeden/caps/",
+     "1",
+     "1"
+    ],
+    [
+     "/outdoor/",
+     "1",
+     "1"
+    ],
+    [
+     "/outdoor/outdoor/",
+     "1",
+     "1"
+    ]
+   ],
+   "totaal_rijen": 13
+  },
+  "E1": {
+   "titel": "Betaalde sessies in het Ads-venster 29 okt t/m 9 nov",
+   "basis": "GA4 'Paid Search'-sessies; leg naast 519 Ads-klikken (Fable, 29 okt t/m 9 nov)",
+   "van": "2026-10-29",
+   "tot": "2026-11-09",
+   "kolommen": [
+    "sessionDefaultChannelGroup",
+    "sessions",
+    "totalUsers"
+   ],
+   "rijen": [
+    [
+     "Paid Search",
+     "170",
+     "159"
+    ]
+   ],
+   "totaal_rijen": 1
+  }
+ },
+ "mislukt": [
+  [
+   "D1",
+   "400 Please remove itemListName to make the request compatible for example. The request's dimensions & metrics are incompatible. To learn more, see https://ga-dev-tools.web.app/ga4/dimensions-metrics-e"
+  ]
+ ]
+}

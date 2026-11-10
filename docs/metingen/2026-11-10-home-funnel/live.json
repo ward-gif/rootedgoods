@@ -1,0 +1,4398 @@
+{
+ "label": "live",
+ "gemeten": "2026-11-10T15:52:05.877Z",
+ "viewports": {
+  "375x667": {
+   "vw": 375,
+   "vh": 667,
+   "dpr": 2,
+   "url": "https://rootedgoods.eu/?rgkoud=1794325925399375",
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europa",
+   "scrollHoogte": 7830,
+   "imgs": 217,
+   "imgsLazy": 93,
+   "headerOnder": 95.6,
+   "mainTop": 0,
+   "mainPaddingTop": "102px",
+   "cookie": {
+    "zichtbaar": true,
+    "hoogte": 245.2,
+    "rect": {
+     "x": 0,
+     "y": 421.8,
+     "w": 375,
+     "h": 245.2,
+     "onder": 667
+    },
+    "knoppen": [
+     {
+      "tekst": "Weigeren",
+      "rect": {
+       "x": 122.7,
+       "y": 492.8,
+       "w": 141.7,
+       "h": 50.1,
+       "onder": 542.9
+      }
+     },
+     {
+      "tekst": "Configureren",
+      "rect": {
+       "x": 109.5,
+       "y": 550.9,
+       "w": 168,
+       "h": 50.1,
+       "onder": 600.9
+      }
+     },
+     {
+      "tekst": "Aanvaard alle cookies",
+      "rect": {
+       "x": 77.2,
+       "y": 608.9,
+       "w": 232.5,
+       "h": 50.1,
+       "onder": 659
+      }
+     }
+    ],
+    "vrijBovenBalk": 421.8
+   },
+   "secties": [
+    {
+     "i": 0,
+     "pos": "pos-0",
+     "klasse": "rg-hero-v2",
+     "kop": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 0,
+      "y": 138,
+      "w": 375,
+      "h": 877.1,
+      "onder": 1015.1
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 1,
+     "pos": "pos-1",
+     "klasse": "rg-cat-head",
+     "kop": "Cadeaus per moment",
+     "rect": {
+      "x": 0,
+      "y": 1015.1,
+      "w": 375,
+      "h": 943.6,
+      "onder": 1958.7
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 2,
+     "pos": "pos-2",
+     "klasse": "rg-statement",
+     "kop": "Europa maakt het nogWij weten waar",
+     "rect": {
+      "x": 0,
+      "y": 1958.7,
+      "w": 375,
+      "h": 873.8,
+      "onder": 2832.5
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 3,
+     "pos": "pos-3",
+     "klasse": "rg-cat-head",
+     "kop": "Ontdek Europese producten",
+     "rect": {
+      "x": 0,
+      "y": 2832.5,
+      "w": 375,
+      "h": 542.1,
+      "onder": 3374.5
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 4,
+     "pos": "pos-4",
+     "klasse": "rg-feature-row",
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 0,
+      "y": 3374.5,
+      "w": 375,
+      "h": 944.3,
+      "onder": 4318.8
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 5,
+     "pos": "pos-5",
+     "klasse": "rg-feature-row",
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 0,
+      "y": 4318.8,
+      "w": 375,
+      "h": 894.1,
+      "onder": 5213
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 6,
+     "pos": "pos-6",
+     "klasse": "rg-block-title",
+     "kop": "Services & ontzorging",
+     "rect": {
+      "x": 0,
+      "y": 5213,
+      "w": 375,
+      "h": 1031.1,
+      "onder": 6244.1
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 7,
+     "pos": "pos-7",
+     "klasse": "rg-endcta",
+     "kop": "Van idee tot ingepaktWij regelen alles",
+     "rect": {
+      "x": 0,
+      "y": 6244.1,
+      "w": 375,
+      "h": 909.5,
+      "onder": 7153.5
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 8,
+     "pos": "pos-8",
+     "klasse": null,
+     "kop": null,
+     "rect": {
+      "x": 0,
+      "y": 7153.5,
+      "w": 375,
+      "h": 0,
+      "onder": 7153.5
+     },
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "hero": {
+    "sectie": {
+     "x": 0,
+     "y": 138,
+     "w": 375,
+     "h": 765.1,
+     "onder": 903.1
+    },
+    "kicker": null,
+    "titel": {
+     "tekst": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 20,
+      "y": 150,
+      "w": 335,
+      "h": 166.4,
+      "onder": 316.4
+     },
+     "fontSize": "41.6px",
+     "regels": 4
+    },
+    "sub": null,
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "href": "/offerte",
+      "rect": {
+       "x": 20,
+       "y": 372.4,
+       "w": 335,
+       "h": 55.2,
+       "onder": 427.5
+      }
+     },
+     {
+      "tekst": "Bekijk alle producten",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 20,
+       "y": 455.5,
+       "w": 335,
+       "h": 18.2,
+       "onder": 473.8
+      }
+     }
+    ],
+    "tegels": [
+     {
+      "label": "Bekijk Opinel producten",
+      "cap": "OpinelZakmes uit Frankrijk",
+      "rect": {
+       "x": 20,
+       "y": 505.8,
+       "w": 162.5,
+       "h": 121.9,
+       "onder": 627.6
+      }
+     },
+     {
+      "label": "Bekijk Bambook producten",
+      "cap": "BambookNotitieboek uit Nederland",
+      "rect": {
+       "x": 20,
+       "y": 637.6,
+       "w": 162.5,
+       "h": 121.9,
+       "onder": 759.5
+      }
+     },
+     {
+      "label": "Bekijk Rebottled producten",
+      "cap": "RebottledUpcycled wijnflessen",
+      "rect": {
+       "x": 192.5,
+       "y": 505.8,
+       "w": 162.5,
+       "h": 121.9,
+       "onder": 627.6
+      }
+     },
+     {
+      "label": "Bekijk Janzen producten",
+      "cap": "JanzenHuisgeur uit Nederland",
+      "rect": {
+       "x": 192.5,
+       "y": 637.6,
+       "w": 162.5,
+       "h": 121.9,
+       "onder": 759.5
+      }
+     }
+    ],
+    "richard": {
+     "x": 20,
+     "y": 813.9,
+     "w": 335,
+     "h": 57.2,
+     "onder": 871.1
+    },
+    "logoCarousel": null
+   },
+   "thema": {
+    "head": {
+     "x": 0,
+     "y": 1133.1,
+     "w": 375,
+     "h": 158.6,
+     "onder": 1291.7
+    },
+    "kop": "Cadeaus per moment",
+    "eyebrow": null,
+    "link": {
+     "tekst": "Alle thema's",
+     "rect": {
+      "x": 15,
+      "y": 1268.9,
+      "w": 119.7,
+      "h": 22.8,
+      "onder": 1291.7
+     }
+    },
+    "tegels": [
+     {
+      "titel": "Kerst & eindejaar",
+      "href": "/eindejaarsgeschenken",
+      "rect": {
+       "x": 15,
+       "y": 1311.7,
+       "w": 345,
+       "h": 230,
+       "onder": 1541.7
+      }
+     },
+     {
+      "titel": "Onboarding & welkom",
+      "href": "/onboarding-welkomstpakket",
+      "rect": {
+       "x": 15,
+       "y": 1561.7,
+       "w": 162.5,
+       "h": 162.5,
+       "onder": 1724.2
+      }
+     },
+     {
+      "titel": "Events & conferenties",
+      "href": "/events-conferenties",
+      "rect": {
+       "x": 197.5,
+       "y": 1561.7,
+       "w": 162.5,
+       "h": 162.5,
+       "onder": 1724.2
+      }
+     },
+     {
+      "titel": "Medewerker merchandise",
+      "href": "/medewerker-merchandise",
+      "rect": {
+       "x": 15,
+       "y": 1744.2,
+       "w": 162.5,
+       "h": 162.5,
+       "onder": 1906.7
+      }
+     },
+     {
+      "titel": "Dag van de leraar",
+      "href": "/dag-van-de-leraar",
+      "rect": {
+       "x": 197.5,
+       "y": 1744.2,
+       "w": 162.5,
+       "h": 162.5,
+       "onder": 1906.7
+      }
+     }
+    ]
+   },
+   "statement": {
+    "rect": {
+     "x": 0,
+     "y": 2054.7,
+     "w": 375,
+     "h": 681.8,
+     "onder": 2736.5
+    },
+    "knoppen": [
+     {
+      "tekst": "Offerte aanvragen",
+      "href": "/offerte",
+      "rect": {
+       "x": 24,
+       "y": 2321.8,
+       "w": 327,
+       "h": 55.6,
+       "onder": 2377.3
+      }
+     },
+     {
+      "tekst": "Zelf producten zoeken",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 24,
+       "y": 2405.3,
+       "w": 210.4,
+       "h": 18.2,
+       "onder": 2423.5
+      }
+     }
+    ],
+    "kaart": {
+     "x": 24,
+     "y": 2507.7,
+     "w": 327,
+     "h": 206.7,
+     "onder": 2714.5
+    }
+   },
+   "slider": {
+    "rect": {
+     "x": 0,
+     "y": 2962,
+     "w": 375,
+     "h": 328.5,
+     "onder": 3290.5
+    },
+    "producten": 28,
+    "zichtbaar": 28,
+    "kop": null
+   },
+   "ontdekHead": [
+    {
+     "tekst": "Cadeaus per moment",
+     "rect": {
+      "x": 15,
+      "y": 1133.1,
+      "w": 345,
+      "h": 32.8,
+      "onder": 1165.9
+     }
+    },
+    {
+     "tekst": "Ontdek Europese producten",
+     "rect": {
+      "x": 15,
+      "y": 2880.5,
+      "w": 345,
+      "h": 69.9,
+      "onder": 2950.4
+     }
+    }
+   ],
+   "features": [
+    {
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 15,
+      "y": 3394.5,
+      "w": 345,
+      "h": 904.3,
+      "onder": 4298.8
+     },
+     "knop": "Ontdek ons verhaal"
+    },
+    {
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 15,
+      "y": 4338.8,
+      "w": 345,
+      "h": 854.1,
+      "onder": 5193
+     },
+     "knop": "Vertel wat je zoekt"
+    }
+   ],
+   "services": {
+    "rect": {
+     "x": 0,
+     "y": 5455.8,
+     "w": 375,
+     "h": 730,
+     "onder": 6185.8
+    },
+    "kaarten": [
+     {
+      "titel": "Full-service ontzorging",
+      "rect": {
+       "x": 15,
+       "y": 5455.8,
+       "w": 345,
+       "h": 230,
+       "onder": 5685.8
+      }
+     },
+     {
+      "titel": "Fulfillment & warehousing",
+      "rect": {
+       "x": 15,
+       "y": 5705.8,
+       "w": 345,
+       "h": 230,
+       "onder": 5935.8
+      }
+     },
+     {
+      "titel": "Verzending naar meerdere locaties",
+      "rect": {
+       "x": 15,
+       "y": 5955.8,
+       "w": 345,
+       "h": 230,
+       "onder": 6185.8
+      }
+     }
+    ]
+   },
+   "endcta": {
+    "rect": {
+     "x": 0,
+     "y": 6366.1,
+     "w": 375,
+     "h": 731.5,
+     "onder": 7097.5
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "rect": {
+       "x": 39,
+       "y": 6706,
+       "w": 297,
+       "h": 48.1,
+       "onder": 6754.1
+      }
+     },
+     {
+      "tekst": "Plan een kennismaking",
+      "rect": {
+       "x": 39,
+       "y": 6770.1,
+       "w": 297,
+       "h": 50.1,
+       "onder": 6820.2
+      }
+     }
+    ]
+   },
+   "footer": {
+    "x": 0,
+    "y": 7206.9,
+    "w": 375,
+    "h": 377.7,
+    "onder": 7584.6
+   },
+   "klikbaarBovenVouw": [
+    {
+     "tekst": "Menu",
+     "href": null,
+     "rect": {
+      "x": 4,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 109.1,
+      "y": 53.6,
+      "w": 156.8,
+      "h": 26,
+      "onder": 79.6
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 281,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 327,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 20,
+      "y": 372.4,
+      "w": 335,
+      "h": 55.2,
+      "onder": 427.5
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 20,
+      "y": 455.5,
+      "w": 335,
+      "h": 18.2,
+      "onder": 473.8
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 20,
+      "y": 505.8,
+      "w": 162.5,
+      "h": 121.9,
+      "onder": 627.6
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 20,
+      "y": 637.6,
+      "w": 162.5,
+      "h": 121.9,
+      "onder": 759.5
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 192.5,
+      "y": 505.8,
+      "w": 162.5,
+      "h": 121.9,
+      "onder": 627.6
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 192.5,
+      "y": 637.6,
+      "w": 162.5,
+      "h": 121.9,
+      "onder": 759.5
+     }
+    },
+    {
+     "tekst": "Meer informatie...",
+     "href": "/widgets/cms/019d4ea36d10738b955d60613f13e018",
+     "rect": {
+      "x": 135.4,
+      "y": 466.8,
+      "w": 104.3,
+      "h": 18,
+      "onder": 484.8
+     }
+    },
+    {
+     "tekst": "Weigeren",
+     "href": null,
+     "rect": {
+      "x": 122.7,
+      "y": 492.8,
+      "w": 141.7,
+      "h": 50.1,
+      "onder": 542.9
+     }
+    },
+    {
+     "tekst": "Configureren",
+     "href": null,
+     "rect": {
+      "x": 109.5,
+      "y": 550.9,
+      "w": 168,
+      "h": 50.1,
+      "onder": 600.9
+     }
+    },
+    {
+     "tekst": "Aanvaard alle cookies",
+     "href": null,
+     "rect": {
+      "x": 77.2,
+      "y": 608.9,
+      "w": 232.5,
+      "h": 50.1,
+      "onder": 659
+     }
+    }
+   ],
+   "klikbaarBovenCookie": [
+    {
+     "tekst": "Menu",
+     "href": null,
+     "rect": {
+      "x": 4,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 109.1,
+      "y": 53.6,
+      "w": 156.8,
+      "h": 26,
+      "onder": 79.6
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 281,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 327,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    }
+   ],
+   "aantalKlikbaarTotaal": 185
+  },
+  "390x844": {
+   "vw": 390,
+   "vh": 844,
+   "dpr": 2,
+   "url": "https://rootedgoods.eu/?rgkoud=1794325925399390",
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europa",
+   "scrollHoogte": 7730,
+   "imgs": 217,
+   "imgsLazy": 93,
+   "headerOnder": 95.6,
+   "mainTop": 0,
+   "mainPaddingTop": "102px",
+   "cookie": {
+    "zichtbaar": true,
+    "hoogte": 245.2,
+    "rect": {
+     "x": 0,
+     "y": 598.8,
+     "w": 390,
+     "h": 245.2,
+     "onder": 844
+    },
+    "knoppen": [
+     {
+      "tekst": "Weigeren",
+      "rect": {
+       "x": 130.2,
+       "y": 669.8,
+       "w": 141.7,
+       "h": 50.1,
+       "onder": 719.9
+      }
+     },
+     {
+      "tekst": "Configureren",
+      "rect": {
+       "x": 117,
+       "y": 727.9,
+       "w": 168,
+       "h": 50.1,
+       "onder": 777.9
+      }
+     },
+     {
+      "tekst": "Aanvaard alle cookies",
+      "rect": {
+       "x": 84.7,
+       "y": 785.9,
+       "w": 232.5,
+       "h": 50.1,
+       "onder": 836
+      }
+     }
+    ],
+    "vrijBovenBalk": 598.8
+   },
+   "secties": [
+    {
+     "i": 0,
+     "pos": "pos-0",
+     "klasse": "rg-hero-v2",
+     "kop": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 0,
+      "y": 138,
+      "w": 390,
+      "h": 849.4,
+      "onder": 987.4
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 1,
+     "pos": "pos-1",
+     "klasse": "rg-cat-head",
+     "kop": "Cadeaus per moment",
+     "rect": {
+      "x": 0,
+      "y": 987.4,
+      "w": 390,
+      "h": 968.7,
+      "onder": 1956.1
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 2,
+     "pos": "pos-2",
+     "klasse": "rg-statement",
+     "kop": "Europa maakt het nogWij weten waar",
+     "rect": {
+      "x": 0,
+      "y": 1956.1,
+      "w": 390,
+      "h": 883.5,
+      "onder": 2839.6
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 3,
+     "pos": "pos-3",
+     "klasse": "rg-cat-head",
+     "kop": "Ontdek Europese producten",
+     "rect": {
+      "x": 0,
+      "y": 2839.6,
+      "w": 390,
+      "h": 547.2,
+      "onder": 3386.8
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 4,
+     "pos": "pos-4",
+     "klasse": "rg-feature-row",
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 0,
+      "y": 3386.8,
+      "w": 390,
+      "h": 922.7,
+      "onder": 4309.5
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 5,
+     "pos": "pos-5",
+     "klasse": "rg-feature-row",
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 0,
+      "y": 4309.5,
+      "w": 390,
+      "h": 905.4,
+      "onder": 5214.9
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 6,
+     "pos": "pos-6",
+     "klasse": "rg-block-title",
+     "kop": "Services & ontzorging",
+     "rect": {
+      "x": 0,
+      "y": 5214.9,
+      "w": 390,
+      "h": 1034.7,
+      "onder": 6249.6
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 7,
+     "pos": "pos-7",
+     "klasse": "rg-endcta",
+     "kop": "Van idee tot ingepaktWij regelen alles",
+     "rect": {
+      "x": 0,
+      "y": 6249.6,
+      "w": 390,
+      "h": 846.8,
+      "onder": 7096.4
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 8,
+     "pos": "pos-8",
+     "klasse": null,
+     "kop": null,
+     "rect": {
+      "x": 0,
+      "y": 7096.4,
+      "w": 390,
+      "h": 0,
+      "onder": 7096.4
+     },
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "hero": {
+    "sectie": {
+     "x": 0,
+     "y": 138,
+     "w": 390,
+     "h": 734.8,
+     "onder": 872.8
+    },
+    "kicker": null,
+    "titel": {
+     "tekst": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 20,
+      "y": 150,
+      "w": 350,
+      "h": 124.8,
+      "onder": 274.8
+     },
+     "fontSize": "41.6px",
+     "regels": 3
+    },
+    "sub": null,
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "href": "/offerte",
+      "rect": {
+       "x": 20,
+       "y": 330.8,
+       "w": 350,
+       "h": 55.2,
+       "onder": 385.9
+      }
+     },
+     {
+      "tekst": "Bekijk alle producten",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 20,
+       "y": 413.9,
+       "w": 350,
+       "h": 18.2,
+       "onder": 432.2
+      }
+     }
+    ],
+    "tegels": [
+     {
+      "label": "Bekijk Opinel producten",
+      "cap": "OpinelZakmes uit Frankrijk",
+      "rect": {
+       "x": 20,
+       "y": 464.2,
+       "w": 170,
+       "h": 127.5,
+       "onder": 591.7
+      }
+     },
+     {
+      "label": "Bekijk Bambook producten",
+      "cap": "BambookNotitieboek uit Nederland",
+      "rect": {
+       "x": 20,
+       "y": 601.7,
+       "w": 170,
+       "h": 127.5,
+       "onder": 729.2
+      }
+     },
+     {
+      "label": "Bekijk Rebottled producten",
+      "cap": "RebottledUpcycled wijnflessen",
+      "rect": {
+       "x": 200,
+       "y": 464.2,
+       "w": 170,
+       "h": 127.5,
+       "onder": 591.7
+      }
+     },
+     {
+      "label": "Bekijk Janzen producten",
+      "cap": "JanzenHuisgeur uit Nederland",
+      "rect": {
+       "x": 200,
+       "y": 601.7,
+       "w": 170,
+       "h": 127.5,
+       "onder": 729.2
+      }
+     }
+    ],
+    "richard": {
+     "x": 20,
+     "y": 783.6,
+     "w": 350,
+     "h": 57.2,
+     "onder": 840.8
+    },
+    "logoCarousel": null
+   },
+   "thema": {
+    "head": {
+     "x": 0,
+     "y": 1105.4,
+     "w": 390,
+     "h": 158.7,
+     "onder": 1264.1
+    },
+    "kop": "Cadeaus per moment",
+    "eyebrow": null,
+    "link": {
+     "tekst": "Alle thema's",
+     "rect": {
+      "x": 15,
+      "y": 1241.3,
+      "w": 119.7,
+      "h": 22.8,
+      "onder": 1264.1
+     }
+    },
+    "tegels": [
+     {
+      "titel": "Kerst & eindejaar",
+      "href": "/eindejaarsgeschenken",
+      "rect": {
+       "x": 15,
+       "y": 1284.1,
+       "w": 360,
+       "h": 240,
+       "onder": 1524.1
+      }
+     },
+     {
+      "titel": "Onboarding & welkom",
+      "href": "/onboarding-welkomstpakket",
+      "rect": {
+       "x": 15,
+       "y": 1544.1,
+       "w": 170,
+       "h": 170,
+       "onder": 1714.1
+      }
+     },
+     {
+      "titel": "Events & conferenties",
+      "href": "/events-conferenties",
+      "rect": {
+       "x": 205,
+       "y": 1544.1,
+       "w": 170,
+       "h": 170,
+       "onder": 1714.1
+      }
+     },
+     {
+      "titel": "Medewerker merchandise",
+      "href": "/medewerker-merchandise",
+      "rect": {
+       "x": 15,
+       "y": 1734.1,
+       "w": 170,
+       "h": 170,
+       "onder": 1904.1
+      }
+     },
+     {
+      "titel": "Dag van de leraar",
+      "href": "/dag-van-de-leraar",
+      "rect": {
+       "x": 205,
+       "y": 1734.1,
+       "w": 170,
+       "h": 170,
+       "onder": 1904.1
+      }
+     }
+    ]
+   },
+   "statement": {
+    "rect": {
+     "x": 0,
+     "y": 2052.1,
+     "w": 390,
+     "h": 691.5,
+     "onder": 2743.6
+    },
+    "knoppen": [
+     {
+      "tekst": "Offerte aanvragen",
+      "href": "/offerte",
+      "rect": {
+       "x": 24,
+       "y": 2319.4,
+       "w": 342,
+       "h": 55.6,
+       "onder": 2375
+      }
+     },
+     {
+      "tekst": "Zelf producten zoeken",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 24,
+       "y": 2403,
+       "w": 210.4,
+       "h": 18.2,
+       "onder": 2421.2
+      }
+     }
+    ],
+    "kaart": {
+     "x": 24,
+     "y": 2505.4,
+     "w": 342,
+     "h": 216.2,
+     "onder": 2721.6
+    }
+   },
+   "slider": {
+    "rect": {
+     "x": 0,
+     "y": 2969.1,
+     "w": 390,
+     "h": 333.6,
+     "onder": 3302.7
+    },
+    "producten": 28,
+    "zichtbaar": 28,
+    "kop": null
+   },
+   "ontdekHead": [
+    {
+     "tekst": "Cadeaus per moment",
+     "rect": {
+      "x": 15,
+      "y": 1105.4,
+      "w": 360,
+      "h": 32.8,
+      "onder": 1138.2
+     }
+    },
+    {
+     "tekst": "Ontdek Europese producten",
+     "rect": {
+      "x": 15,
+      "y": 2887.6,
+      "w": 360,
+      "h": 69.9,
+      "onder": 2957.5
+     }
+    }
+   ],
+   "features": [
+    {
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 15,
+      "y": 3406.8,
+      "w": 360,
+      "h": 882.7,
+      "onder": 4289.5
+     },
+     "knop": "Ontdek ons verhaal"
+    },
+    {
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 15,
+      "y": 4329.5,
+      "w": 360,
+      "h": 865.4,
+      "onder": 5194.9
+     },
+     "knop": "Vertel wat je zoekt"
+    }
+   ],
+   "services": {
+    "rect": {
+     "x": 0,
+     "y": 5431.3,
+     "w": 390,
+     "h": 760,
+     "onder": 6191.3
+    },
+    "kaarten": [
+     {
+      "titel": "Full-service ontzorging",
+      "rect": {
+       "x": 15,
+       "y": 5431.3,
+       "w": 360,
+       "h": 240,
+       "onder": 5671.3
+      }
+     },
+     {
+      "titel": "Fulfillment & warehousing",
+      "rect": {
+       "x": 15,
+       "y": 5691.3,
+       "w": 360,
+       "h": 240,
+       "onder": 5931.3
+      }
+     },
+     {
+      "titel": "Verzending naar meerdere locaties",
+      "rect": {
+       "x": 15,
+       "y": 5951.3,
+       "w": 360,
+       "h": 240,
+       "onder": 6191.3
+      }
+     }
+    ]
+   },
+   "endcta": {
+    "rect": {
+     "x": 0,
+     "y": 6375.5,
+     "w": 390,
+     "h": 664.9,
+     "onder": 7040.4
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "rect": {
+       "x": 39,
+       "y": 6648.6,
+       "w": 312,
+       "h": 48.1,
+       "onder": 6696.7
+      }
+     },
+     {
+      "tekst": "Plan een kennismaking",
+      "rect": {
+       "x": 39,
+       "y": 6712.7,
+       "w": 312,
+       "h": 50.1,
+       "onder": 6762.8
+      }
+     }
+    ]
+   },
+   "footer": {
+    "x": 0,
+    "y": 7158.6,
+    "w": 390,
+    "h": 384.3,
+    "onder": 7542.9
+   },
+   "klikbaarBovenVouw": [
+    {
+     "tekst": "Menu",
+     "href": null,
+     "rect": {
+      "x": 4,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 116.6,
+      "y": 53.6,
+      "w": 156.8,
+      "h": 26,
+      "onder": 79.6
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 296,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 342,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 20,
+      "y": 330.8,
+      "w": 350,
+      "h": 55.2,
+      "onder": 385.9
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 20,
+      "y": 413.9,
+      "w": 350,
+      "h": 18.2,
+      "onder": 432.2
+     }
+    },
+    {
+     "tekst": "Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem c",
+     "href": "/contact",
+     "rect": {
+      "x": 20,
+      "y": 783.6,
+      "w": 350,
+      "h": 57.2,
+      "onder": 840.8
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 20,
+      "y": 464.2,
+      "w": 170,
+      "h": 127.5,
+      "onder": 591.7
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 20,
+      "y": 601.7,
+      "w": 170,
+      "h": 127.5,
+      "onder": 729.2
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 200,
+      "y": 464.2,
+      "w": 170,
+      "h": 127.5,
+      "onder": 591.7
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 200,
+      "y": 601.7,
+      "w": 170,
+      "h": 127.5,
+      "onder": 729.2
+     }
+    },
+    {
+     "tekst": "Meer informatie...",
+     "href": "/widgets/cms/019d4ea36d10738b955d60613f13e018",
+     "rect": {
+      "x": 142.9,
+      "y": 643.8,
+      "w": 104.3,
+      "h": 18,
+      "onder": 661.8
+     }
+    },
+    {
+     "tekst": "Weigeren",
+     "href": null,
+     "rect": {
+      "x": 130.2,
+      "y": 669.8,
+      "w": 141.7,
+      "h": 50.1,
+      "onder": 719.9
+     }
+    },
+    {
+     "tekst": "Configureren",
+     "href": null,
+     "rect": {
+      "x": 117,
+      "y": 727.9,
+      "w": 168,
+      "h": 50.1,
+      "onder": 777.9
+     }
+    },
+    {
+     "tekst": "Aanvaard alle cookies",
+     "href": null,
+     "rect": {
+      "x": 84.7,
+      "y": 785.9,
+      "w": 232.5,
+      "h": 50.1,
+      "onder": 836
+     }
+    }
+   ],
+   "klikbaarBovenCookie": [
+    {
+     "tekst": "Menu",
+     "href": null,
+     "rect": {
+      "x": 4,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 116.6,
+      "y": 53.6,
+      "w": 156.8,
+      "h": 26,
+      "onder": 79.6
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 296,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 342,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 20,
+      "y": 330.8,
+      "w": 350,
+      "h": 55.2,
+      "onder": 385.9
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 20,
+      "y": 413.9,
+      "w": 350,
+      "h": 18.2,
+      "onder": 432.2
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 20,
+      "y": 464.2,
+      "w": 170,
+      "h": 127.5,
+      "onder": 591.7
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 200,
+      "y": 464.2,
+      "w": 170,
+      "h": 127.5,
+      "onder": 591.7
+     }
+    }
+   ],
+   "aantalKlikbaarTotaal": 185
+  },
+  "430x932": {
+   "vw": 430,
+   "vh": 932,
+   "dpr": 2,
+   "url": "https://rootedgoods.eu/?rgkoud=1794325925399430",
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europa",
+   "scrollHoogte": 7808,
+   "imgs": 217,
+   "imgsLazy": 93,
+   "headerOnder": 95.6,
+   "mainTop": 0,
+   "mainPaddingTop": "102px",
+   "cookie": {
+    "zichtbaar": true,
+    "hoogte": 169.1,
+    "rect": {
+     "x": 0,
+     "y": 762.9,
+     "w": 430,
+     "h": 169.1,
+     "onder": 932
+    },
+    "knoppen": [
+     {
+      "tekst": "Weigeren",
+      "rect": {
+       "x": 62.2,
+       "y": 815.9,
+       "w": 141.7,
+       "h": 50.1,
+       "onder": 865.9
+      }
+     },
+     {
+      "tekst": "Configureren",
+      "rect": {
+       "x": 211.8,
+       "y": 815.9,
+       "w": 168,
+       "h": 50.1,
+       "onder": 865.9
+      }
+     },
+     {
+      "tekst": "Aanvaard alle cookies",
+      "rect": {
+       "x": 104.7,
+       "y": 873.9,
+       "w": 232.5,
+       "h": 50.1,
+       "onder": 924
+      }
+     }
+    ],
+    "vrijBovenBalk": 762.9
+   },
+   "secties": [
+    {
+     "i": 0,
+     "pos": "pos-0",
+     "klasse": "rg-hero-v2",
+     "kop": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 0,
+      "y": 138,
+      "w": 430,
+      "h": 840.8,
+      "onder": 978.8
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 1,
+     "pos": "pos-1",
+     "klasse": "rg-cat-head",
+     "kop": "Cadeaus per moment",
+     "rect": {
+      "x": 0,
+      "y": 978.8,
+      "w": 430,
+      "h": 1035.9,
+      "onder": 2014.7
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 2,
+     "pos": "pos-2",
+     "klasse": "rg-statement",
+     "kop": "Europa maakt het nogWij weten waar",
+     "rect": {
+      "x": 0,
+      "y": 2014.7,
+      "w": 430,
+      "h": 910.8,
+      "onder": 2925.4
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 3,
+     "pos": "pos-3",
+     "klasse": "rg-cat-head",
+     "kop": "Ontdek Europese producten",
+     "rect": {
+      "x": 0,
+      "y": 2925.4,
+      "w": 430,
+      "h": 525.8,
+      "onder": 3451.2
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 4,
+     "pos": "pos-4",
+     "klasse": "rg-feature-row",
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 0,
+      "y": 3451.2,
+      "w": 430,
+      "h": 931,
+      "onder": 4382.3
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 5,
+     "pos": "pos-5",
+     "klasse": "rg-feature-row",
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 0,
+      "y": 4382.3,
+      "w": 430,
+      "h": 866,
+      "onder": 5248.2
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 6,
+     "pos": "pos-6",
+     "klasse": "rg-block-title",
+     "kop": "Services & ontzorging",
+     "rect": {
+      "x": 0,
+      "y": 5248.2,
+      "w": 430,
+      "h": 1115.3,
+      "onder": 6363.5
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 7,
+     "pos": "pos-7",
+     "klasse": "rg-endcta",
+     "kop": "Van idee tot ingepaktWij regelen alles",
+     "rect": {
+      "x": 0,
+      "y": 6363.5,
+      "w": 430,
+      "h": 838,
+      "onder": 7201.5
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 8,
+     "pos": "pos-8",
+     "klasse": null,
+     "kop": null,
+     "rect": {
+      "x": 0,
+      "y": 7201.5,
+      "w": 430,
+      "h": 0,
+      "onder": 7201.5
+     },
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "hero": {
+    "sectie": {
+     "x": 0,
+     "y": 138,
+     "w": 430,
+     "h": 720.9,
+     "onder": 858.9
+    },
+    "kicker": null,
+    "titel": {
+     "tekst": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 21.5,
+      "y": 150,
+      "w": 387,
+      "h": 83.2,
+      "onder": 233.2
+     },
+     "fontSize": "41.6px",
+     "regels": 2
+    },
+    "sub": null,
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "href": "/offerte",
+      "rect": {
+       "x": 21.5,
+       "y": 289.2,
+       "w": 387,
+       "h": 55.2,
+       "onder": 344.3
+      }
+     },
+     {
+      "tekst": "Bekijk alle producten",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 21.5,
+       "y": 372.3,
+       "w": 387,
+       "h": 18.2,
+       "onder": 390.6
+      }
+     }
+    ],
+    "tegels": [
+     {
+      "label": "Bekijk Opinel producten",
+      "cap": "OpinelZakmes uit Frankrijk",
+      "rect": {
+       "x": 21.5,
+       "y": 422.6,
+       "w": 188.5,
+       "h": 141.4,
+       "onder": 564
+      }
+     },
+     {
+      "label": "Bekijk Bambook producten",
+      "cap": "BambookNotitieboek uit Nederland",
+      "rect": {
+       "x": 21.5,
+       "y": 574,
+       "w": 188.5,
+       "h": 141.4,
+       "onder": 715.3
+      }
+     },
+     {
+      "label": "Bekijk Rebottled producten",
+      "cap": "RebottledUpcycled wijnflessen",
+      "rect": {
+       "x": 220,
+       "y": 422.6,
+       "w": 188.5,
+       "h": 141.4,
+       "onder": 564
+      }
+     },
+     {
+      "label": "Bekijk Janzen producten",
+      "cap": "JanzenHuisgeur uit Nederland",
+      "rect": {
+       "x": 220,
+       "y": 574,
+       "w": 188.5,
+       "h": 141.4,
+       "onder": 715.3
+      }
+     }
+    ],
+    "richard": {
+     "x": 21.5,
+     "y": 769.7,
+     "w": 387,
+     "h": 57.2,
+     "onder": 826.9
+    },
+    "logoCarousel": null
+   },
+   "thema": {
+    "head": {
+     "x": 0,
+     "y": 1096.8,
+     "w": 430,
+     "h": 159.2,
+     "onder": 1256
+    },
+    "kop": "Cadeaus per moment",
+    "eyebrow": null,
+    "link": {
+     "tekst": "Alle thema's",
+     "rect": {
+      "x": 15,
+      "y": 1233.2,
+      "w": 119.7,
+      "h": 22.8,
+      "onder": 1256
+     }
+    },
+    "tegels": [
+     {
+      "titel": "Kerst & eindejaar",
+      "href": "/eindejaarsgeschenken",
+      "rect": {
+       "x": 15,
+       "y": 1276,
+       "w": 400,
+       "h": 266.7,
+       "onder": 1542.7
+      }
+     },
+     {
+      "titel": "Onboarding & welkom",
+      "href": "/onboarding-welkomstpakket",
+      "rect": {
+       "x": 15,
+       "y": 1562.7,
+       "w": 190,
+       "h": 190,
+       "onder": 1752.7
+      }
+     },
+     {
+      "titel": "Events & conferenties",
+      "href": "/events-conferenties",
+      "rect": {
+       "x": 225,
+       "y": 1562.7,
+       "w": 190,
+       "h": 190,
+       "onder": 1752.7
+      }
+     },
+     {
+      "titel": "Medewerker merchandise",
+      "href": "/medewerker-merchandise",
+      "rect": {
+       "x": 15,
+       "y": 1772.7,
+       "w": 190,
+       "h": 190,
+       "onder": 1962.7
+      }
+     },
+     {
+      "titel": "Dag van de leraar",
+      "href": "/dag-van-de-leraar",
+      "rect": {
+       "x": 225,
+       "y": 1772.7,
+       "w": 190,
+       "h": 190,
+       "onder": 1962.7
+      }
+     }
+    ]
+   },
+   "statement": {
+    "rect": {
+     "x": 0,
+     "y": 2111.3,
+     "w": 430,
+     "h": 717.6,
+     "onder": 2828.8
+    },
+    "knoppen": [
+     {
+      "tekst": "Offerte aanvragen",
+      "href": "/offerte",
+      "rect": {
+       "x": 24,
+       "y": 2379.3,
+       "w": 382,
+       "h": 55.6,
+       "onder": 2434.9
+      }
+     },
+     {
+      "tekst": "Zelf producten zoeken",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 24,
+       "y": 2462.9,
+       "w": 210.4,
+       "h": 18.2,
+       "onder": 2481.1
+      }
+     }
+    ],
+    "kaart": {
+     "x": 24,
+     "y": 2565.3,
+     "w": 382,
+     "h": 241.5,
+     "onder": 2806.8
+    }
+   },
+   "slider": {
+    "rect": {
+     "x": 0,
+     "y": 3020,
+     "w": 430,
+     "h": 347.2,
+     "onder": 3367.2
+    },
+    "producten": 28,
+    "zichtbaar": 28,
+    "kop": null
+   },
+   "ontdekHead": [
+    {
+     "tekst": "Cadeaus per moment",
+     "rect": {
+      "x": 15,
+      "y": 1096.8,
+      "w": 400,
+      "h": 32.8,
+      "onder": 1129.6
+     }
+    },
+    {
+     "tekst": "Ontdek Europese producten",
+     "rect": {
+      "x": 15,
+      "y": 2973.4,
+      "w": 378.4,
+      "h": 35,
+      "onder": 3008.4
+     }
+    }
+   ],
+   "features": [
+    {
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 15,
+      "y": 3471.2,
+      "w": 400,
+      "h": 891,
+      "onder": 4362.3
+     },
+     "knop": "Ontdek ons verhaal"
+    },
+    {
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 15,
+      "y": 4402.3,
+      "w": 400,
+      "h": 826,
+      "onder": 5228.2
+     },
+     "knop": "Vertel wat je zoekt"
+    }
+   ],
+   "services": {
+    "rect": {
+     "x": 0,
+     "y": 5465.3,
+     "w": 430,
+     "h": 840,
+     "onder": 6305.3
+    },
+    "kaarten": [
+     {
+      "titel": "Full-service ontzorging",
+      "rect": {
+       "x": 15,
+       "y": 5465.3,
+       "w": 400,
+       "h": 266.7,
+       "onder": 5732
+      }
+     },
+     {
+      "titel": "Fulfillment & warehousing",
+      "rect": {
+       "x": 15,
+       "y": 5752,
+       "w": 400,
+       "h": 266.7,
+       "onder": 6018.6
+      }
+     },
+     {
+      "titel": "Verzending naar meerdere locaties",
+      "rect": {
+       "x": 15,
+       "y": 6038.6,
+       "w": 400,
+       "h": 266.7,
+       "onder": 6305.3
+      }
+     }
+    ]
+   },
+   "endcta": {
+    "rect": {
+     "x": 0,
+     "y": 6497.4,
+     "w": 430,
+     "h": 648.1,
+     "onder": 7145.5
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "rect": {
+       "x": 39,
+       "y": 6772.2,
+       "w": 352,
+       "h": 48.1,
+       "onder": 6820.3
+      }
+     },
+     {
+      "tekst": "Plan een kennismaking",
+      "rect": {
+       "x": 39,
+       "y": 6836.3,
+       "w": 352,
+       "h": 50.1,
+       "onder": 6886.4
+      }
+     }
+    ]
+   },
+   "footer": {
+    "x": 0,
+    "y": 7268.1,
+    "w": 430,
+    "h": 370.4,
+    "onder": 7638.5
+   },
+   "klikbaarBovenVouw": [
+    {
+     "tekst": "Menu",
+     "href": null,
+     "rect": {
+      "x": 8,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 136.6,
+      "y": 53.6,
+      "w": 156.8,
+      "h": 26,
+      "onder": 79.6
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 332,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 378,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 21.5,
+      "y": 289.2,
+      "w": 387,
+      "h": 55.2,
+      "onder": 344.3
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 21.5,
+      "y": 372.3,
+      "w": 387,
+      "h": 18.2,
+      "onder": 390.6
+     }
+    },
+    {
+     "tekst": "Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem c",
+     "href": "/contact",
+     "rect": {
+      "x": 21.5,
+      "y": 769.7,
+      "w": 387,
+      "h": 57.2,
+      "onder": 826.9
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 21.5,
+      "y": 422.6,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 564
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 21.5,
+      "y": 574,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 715.3
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 220,
+      "y": 422.6,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 564
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 220,
+      "y": 574,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 715.3
+     }
+    },
+    {
+     "tekst": "Meer informatie...",
+     "href": "/widgets/cms/019d4ea36d10738b955d60613f13e018",
+     "rect": {
+      "x": 266.3,
+      "y": 789.9,
+      "w": 104.3,
+      "h": 18,
+      "onder": 807.9
+     }
+    },
+    {
+     "tekst": "Weigeren",
+     "href": null,
+     "rect": {
+      "x": 62.2,
+      "y": 815.9,
+      "w": 141.7,
+      "h": 50.1,
+      "onder": 865.9
+     }
+    },
+    {
+     "tekst": "Configureren",
+     "href": null,
+     "rect": {
+      "x": 211.8,
+      "y": 815.9,
+      "w": 168,
+      "h": 50.1,
+      "onder": 865.9
+     }
+    },
+    {
+     "tekst": "Aanvaard alle cookies",
+     "href": null,
+     "rect": {
+      "x": 104.7,
+      "y": 873.9,
+      "w": 232.5,
+      "h": 50.1,
+      "onder": 924
+     }
+    }
+   ],
+   "klikbaarBovenCookie": [
+    {
+     "tekst": "Menu",
+     "href": null,
+     "rect": {
+      "x": 8,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 136.6,
+      "y": 53.6,
+      "w": 156.8,
+      "h": 26,
+      "onder": 79.6
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 332,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 378,
+      "y": 49.6,
+      "w": 46,
+      "h": 34,
+      "onder": 83.6
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 21.5,
+      "y": 289.2,
+      "w": 387,
+      "h": 55.2,
+      "onder": 344.3
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 21.5,
+      "y": 372.3,
+      "w": 387,
+      "h": 18.2,
+      "onder": 390.6
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 21.5,
+      "y": 422.6,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 564
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 21.5,
+      "y": 574,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 715.3
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 220,
+      "y": 422.6,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 564
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 220,
+      "y": 574,
+      "w": 188.5,
+      "h": 141.4,
+      "onder": 715.3
+     }
+    }
+   ],
+   "aantalKlikbaarTotaal": 185
+  },
+  "1280x800": {
+   "vw": 1280,
+   "vh": 800,
+   "dpr": 1,
+   "url": "https://rootedgoods.eu/?rgkoud=17943259253991280",
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europa",
+   "scrollHoogte": 6197,
+   "imgs": 217,
+   "imgsLazy": 93,
+   "headerOnder": 140.4,
+   "mainTop": 140.4,
+   "mainPaddingTop": "0px",
+   "cookie": {
+    "zichtbaar": true,
+    "hoogte": 67.1,
+    "rect": {
+     "x": 0,
+     "y": 732.9,
+     "w": 1280,
+     "h": 67.1,
+     "onder": 800
+    },
+    "knoppen": [
+     {
+      "tekst": "Weigeren",
+      "rect": {
+       "x": 685.9,
+       "y": 741.9,
+       "w": 141.7,
+       "h": 50.1,
+       "onder": 792
+      }
+     },
+     {
+      "tekst": "Configureren",
+      "rect": {
+       "x": 835.5,
+       "y": 741.9,
+       "w": 168,
+       "h": 50.1,
+       "onder": 792
+      }
+     },
+     {
+      "tekst": "Aanvaard alle cookies",
+      "rect": {
+       "x": 1011.5,
+       "y": 741.9,
+       "w": 232.5,
+       "h": 50.1,
+       "onder": 792
+      }
+     }
+    ],
+    "vrijBovenBalk": 732.9
+   },
+   "secties": [
+    {
+     "i": 0,
+     "pos": "pos-0",
+     "klasse": "rg-hero-v2",
+     "kop": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 0,
+      "y": 176.4,
+      "w": 1280,
+      "h": 652,
+      "onder": 828.4
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 1,
+     "pos": "pos-1",
+     "klasse": "rg-cat-head",
+     "kop": "Cadeaus per moment",
+     "rect": {
+      "x": 0,
+      "y": 828.4,
+      "w": 1280,
+      "h": 676,
+      "onder": 1504.4
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 2,
+     "pos": "pos-2",
+     "klasse": "rg-statement",
+     "kop": "Europa maakt het nogWij weten waar",
+     "rect": {
+      "x": 0,
+      "y": 1504.4,
+      "w": 1280,
+      "h": 819.3,
+      "onder": 2323.6
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 3,
+     "pos": "pos-3",
+     "klasse": "rg-cat-head",
+     "kop": "Ontdek Europese producten",
+     "rect": {
+      "x": 0,
+      "y": 2323.6,
+      "w": 1280,
+      "h": 622,
+      "onder": 2945.7
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 4,
+     "pos": "pos-4",
+     "klasse": "rg-feature-row",
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 0,
+      "y": 2945.7,
+      "w": 1280,
+      "h": 597.4,
+      "onder": 3543.1
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 5,
+     "pos": "pos-5",
+     "klasse": "rg-feature-row",
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 0,
+      "y": 3543.1,
+      "w": 1280,
+      "h": 575.8,
+      "onder": 4118.9
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 6,
+     "pos": "pos-6",
+     "klasse": "rg-block-title",
+     "kop": "Services & ontzorging",
+     "rect": {
+      "x": 0,
+      "y": 4118.9,
+      "w": 1280,
+      "h": 820.3,
+      "onder": 4939.2
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 7,
+     "pos": "pos-7",
+     "klasse": "rg-endcta",
+     "kop": "Van idee tot ingepaktWij regelen alles",
+     "rect": {
+      "x": 0,
+      "y": 4939.2,
+      "w": 1280,
+      "h": 770.3,
+      "onder": 5709.5
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 8,
+     "pos": "pos-8",
+     "klasse": null,
+     "kop": null,
+     "rect": {
+      "x": 0,
+      "y": 5709.5,
+      "w": 1280,
+      "h": 0,
+      "onder": 5709.5
+     },
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "hero": {
+    "sectie": {
+     "x": 0,
+     "y": 176.4,
+     "w": 1280,
+     "h": 540,
+     "onder": 716.4
+    },
+    "kicker": null,
+    "titel": {
+     "tekst": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 80,
+      "y": 205,
+      "w": 548,
+      "h": 195.8,
+      "onder": 400.8
+     },
+     "fontSize": "65.28px",
+     "regels": 3
+    },
+    "sub": {
+     "x": 80,
+     "y": 424.8,
+     "w": 548,
+     "h": 88.3,
+     "onder": 513.1
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "href": "/offerte",
+      "rect": {
+       "x": 80,
+       "y": 537.1,
+       "w": 287.9,
+       "h": 55.2,
+       "onder": 592.3
+      }
+     },
+     {
+      "tekst": "Bekijk alle producten",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 391.9,
+       "y": 555.6,
+       "w": 201.3,
+       "h": 18.2,
+       "onder": 573.8
+      }
+     }
+    ],
+    "tegels": [
+     {
+      "label": "Bekijk Opinel producten",
+      "cap": "OpinelZakmes uit Frankrijk",
+      "rect": {
+       "x": 740,
+       "y": 200.4,
+       "w": 224,
+       "h": 224,
+       "onder": 424.4
+      }
+     },
+     {
+      "label": "Bekijk Bambook producten",
+      "cap": "BambookNotitieboek uit Nederland",
+      "rect": {
+       "x": 740,
+       "y": 436.4,
+       "w": 224,
+       "h": 224,
+       "onder": 660.4
+      }
+     },
+     {
+      "label": "Bekijk Rebottled producten",
+      "cap": "RebottledUpcycled wijnflessen",
+      "rect": {
+       "x": 976,
+       "y": 232.4,
+       "w": 224,
+       "h": 224,
+       "onder": 456.4
+      }
+     },
+     {
+      "label": "Bekijk Janzen producten",
+      "cap": "JanzenHuisgeur uit Nederland",
+      "rect": {
+       "x": 976,
+       "y": 468.4,
+       "w": 224,
+       "h": 224,
+       "onder": 692.4
+      }
+     }
+    ],
+    "richard": {
+     "x": 80,
+     "y": 630.7,
+     "w": 316.7,
+     "h": 57.2,
+     "onder": 687.9
+    },
+    "logoCarousel": null
+   },
+   "thema": {
+    "head": {
+     "x": 80,
+     "y": 946.4,
+     "w": 1120,
+     "h": 114,
+     "onder": 1060.4
+    },
+    "kop": "Cadeaus per moment",
+    "eyebrow": null,
+    "link": {
+     "tekst": "Alle thema's",
+     "rect": {
+      "x": 1080.3,
+      "y": 1032,
+      "w": 119.7,
+      "h": 28.4,
+      "onder": 1060.4
+     }
+    },
+    "tegels": [
+     {
+      "titel": "Kerst & eindejaar",
+      "href": "/eindejaarsgeschenken",
+      "rect": {
+       "x": 80,
+       "y": 1080.4,
+       "w": 444.7,
+       "h": 384,
+       "onder": 1464.4
+      }
+     },
+     {
+      "titel": "Onboarding & welkom",
+      "href": "/onboarding-welkomstpakket",
+      "rect": {
+       "x": 544.7,
+       "y": 1080.4,
+       "w": 317.6,
+       "h": 182,
+       "onder": 1262.4
+      }
+     },
+     {
+      "titel": "Events & conferenties",
+      "href": "/events-conferenties",
+      "rect": {
+       "x": 882.3,
+       "y": 1080.4,
+       "w": 317.7,
+       "h": 182,
+       "onder": 1262.4
+      }
+     },
+     {
+      "titel": "Medewerker merchandise",
+      "href": "/medewerker-merchandise",
+      "rect": {
+       "x": 544.7,
+       "y": 1282.4,
+       "w": 317.6,
+       "h": 182,
+       "onder": 1464.4
+      }
+     },
+     {
+      "titel": "Dag van de leraar",
+      "href": "/dag-van-de-leraar",
+      "rect": {
+       "x": 882.3,
+       "y": 1282.4,
+       "w": 317.7,
+       "h": 182,
+       "onder": 1464.4
+      }
+     }
+    ]
+   },
+   "statement": {
+    "rect": {
+     "x": 80,
+     "y": 1618,
+     "w": 1120,
+     "h": 592.1,
+     "onder": 2210
+    },
+    "knoppen": [
+     {
+      "tekst": "Offerte aanvragen",
+      "href": "/offerte",
+      "rect": {
+       "x": 80,
+       "y": 2042.3,
+       "w": 254.4,
+       "h": 55.6,
+       "onder": 2097.9
+      }
+     },
+     {
+      "tekst": "Zelf producten zoeken",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 362.4,
+       "y": 2061,
+       "w": 210.4,
+       "h": 18.2,
+       "onder": 2079.2
+      }
+     }
+    ],
+    "kaart": {
+     "x": 705.5,
+     "y": 1757.7,
+     "w": 494.5,
+     "h": 312.6,
+     "onder": 2070.3
+    }
+   },
+   "slider": {
+    "rect": {
+     "x": 0,
+     "y": 2441.9,
+     "w": 1280,
+     "h": 503.7,
+     "onder": 2945.7
+    },
+    "producten": 28,
+    "zichtbaar": 28,
+    "kop": null
+   },
+   "ontdekHead": [
+    {
+     "tekst": "Cadeaus per moment",
+     "rect": {
+      "x": 80,
+      "y": 946.4,
+      "w": 682.1,
+      "h": 46.3,
+      "onder": 992.7
+     }
+    },
+    {
+     "tekst": "Ontdek Europese producten",
+     "rect": {
+      "x": 80,
+      "y": 2371.6,
+      "w": 533.7,
+      "h": 46.3,
+      "onder": 2417.9
+     }
+    }
+   ],
+   "features": [
+    {
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 48,
+      "y": 2945.7,
+      "w": 1184,
+      "h": 597.4,
+      "onder": 3543.1
+     },
+     "knop": "Ontdek ons verhaal"
+    },
+    {
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 48,
+      "y": 3543.1,
+      "w": 1184,
+      "h": 575.8,
+      "onder": 4118.9
+     },
+     "knop": "Vertel wat je zoekt"
+    }
+   ],
+   "services": {
+    "rect": {
+     "x": 80,
+     "y": 4362.5,
+     "w": 1120,
+     "h": 518.4,
+     "onder": 4880.9
+    },
+    "kaarten": [
+     {
+      "titel": "Full-service ontzorging",
+      "rect": {
+       "x": 80,
+       "y": 4362.5,
+       "w": 661,
+       "h": 518.4,
+       "onder": 4880.9
+      }
+     },
+     {
+      "titel": "Fulfillment & warehousing",
+      "rect": {
+       "x": 759.3,
+       "y": 4362.5,
+       "w": 440.6,
+       "h": 250,
+       "onder": 4612.5
+      }
+     },
+     {
+      "titel": "Verzending naar meerdere locaties",
+      "rect": {
+       "x": 759.3,
+       "y": 4630.9,
+       "w": 440.6,
+       "h": 250,
+       "onder": 4880.9
+      }
+     }
+    ]
+   },
+   "endcta": {
+    "rect": {
+     "x": 0,
+     "y": 5061.2,
+     "w": 1280,
+     "h": 592.3,
+     "onder": 5653.5
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "rect": {
+       "x": 383.2,
+       "y": 5388.9,
+       "w": 251.5,
+       "h": 50.1,
+       "onder": 5438.9
+      }
+     },
+     {
+      "tekst": "Plan een kennismaking",
+      "rect": {
+       "x": 650.7,
+       "y": 5388.9,
+       "w": 246,
+       "h": 50.1,
+       "onder": 5438.9
+      }
+     }
+    ]
+   },
+   "footer": {
+    "x": 0,
+    "y": 5769.5,
+    "w": 1280,
+    "h": 361,
+    "onder": 6130.5
+   },
+   "klikbaarBovenVouw": [
+    {
+     "tekst": "FAQ",
+     "href": "/faq",
+     "rect": {
+      "x": 1144,
+      "y": 9,
+      "w": 26.8,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "Contact",
+     "href": "/contact",
+     "rect": {
+      "x": 1198,
+      "y": 9,
+      "w": 50,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 32,
+      "y": 42.2,
+      "w": 271.4,
+      "h": 45,
+      "onder": 87.2
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 829.2,
+      "y": 44.1,
+      "w": 54,
+      "h": 41.2,
+      "onder": 85.3
+     }
+    },
+    {
+     "tekst": "Offerte aanvragen",
+     "href": "/offerte",
+     "rect": {
+      "x": 1003.2,
+      "y": 51.7,
+      "w": 152.8,
+      "h": 30.4,
+      "onder": 82.1
+     }
+    },
+    {
+     "tekst": "Jouw account",
+     "href": null,
+     "rect": {
+      "x": 1156,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 1202,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Onze categorieën",
+     "href": "#",
+     "rect": {
+      "x": 404.6,
+      "y": 95.2,
+      "w": 140,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Thema's",
+     "href": "https://rootedgoods.eu/alle-thema-s",
+     "rect": {
+      "x": 568.6,
+      "y": 95.2,
+      "w": 59.5,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Merken",
+     "href": "https://rootedgoods.eu/merken/",
+     "rect": {
+      "x": 652,
+      "y": 95.2,
+      "w": 54,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Services",
+     "href": "https://rootedgoods.eu/services/",
+     "rect": {
+      "x": 730,
+      "y": 95.2,
+      "w": 58.4,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Over ons",
+     "href": "https://rootedgoods.eu/over-ons",
+     "rect": {
+      "x": 812.5,
+      "y": 95.2,
+      "w": 62.9,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 80,
+      "y": 537.1,
+      "w": 287.9,
+      "h": 55.2,
+      "onder": 592.3
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 391.9,
+      "y": 555.6,
+      "w": 201.3,
+      "h": 18.2,
+      "onder": 573.8
+     }
+    },
+    {
+     "tekst": "Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem c",
+     "href": "/contact",
+     "rect": {
+      "x": 80,
+      "y": 630.7,
+      "w": 316.7,
+      "h": 57.2,
+      "onder": 687.9
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 740,
+      "y": 200.4,
+      "w": 224,
+      "h": 224,
+      "onder": 424.4
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 740,
+      "y": 436.4,
+      "w": 224,
+      "h": 224,
+      "onder": 660.4
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 976,
+      "y": 232.4,
+      "w": 224,
+      "h": 224,
+      "onder": 456.4
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 976,
+      "y": 468.4,
+      "w": 224,
+      "h": 224,
+      "onder": 692.4
+     }
+    },
+    {
+     "tekst": "Meer informatie...",
+     "href": "/widgets/cms/019d4ea36d10738b955d60613f13e018",
+     "rect": {
+      "x": 48,
+      "y": 767,
+      "w": 104.3,
+      "h": 18,
+      "onder": 785
+     }
+    },
+    {
+     "tekst": "Weigeren",
+     "href": null,
+     "rect": {
+      "x": 685.9,
+      "y": 741.9,
+      "w": 141.7,
+      "h": 50.1,
+      "onder": 792
+     }
+    },
+    {
+     "tekst": "Configureren",
+     "href": null,
+     "rect": {
+      "x": 835.5,
+      "y": 741.9,
+      "w": 168,
+      "h": 50.1,
+      "onder": 792
+     }
+    },
+    {
+     "tekst": "Aanvaard alle cookies",
+     "href": null,
+     "rect": {
+      "x": 1011.5,
+      "y": 741.9,
+      "w": 232.5,
+      "h": 50.1,
+      "onder": 792
+     }
+    }
+   ],
+   "klikbaarBovenCookie": [
+    {
+     "tekst": "FAQ",
+     "href": "/faq",
+     "rect": {
+      "x": 1144,
+      "y": 9,
+      "w": 26.8,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "Contact",
+     "href": "/contact",
+     "rect": {
+      "x": 1198,
+      "y": 9,
+      "w": 50,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 32,
+      "y": 42.2,
+      "w": 271.4,
+      "h": 45,
+      "onder": 87.2
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 829.2,
+      "y": 44.1,
+      "w": 54,
+      "h": 41.2,
+      "onder": 85.3
+     }
+    },
+    {
+     "tekst": "Offerte aanvragen",
+     "href": "/offerte",
+     "rect": {
+      "x": 1003.2,
+      "y": 51.7,
+      "w": 152.8,
+      "h": 30.4,
+      "onder": 82.1
+     }
+    },
+    {
+     "tekst": "Jouw account",
+     "href": null,
+     "rect": {
+      "x": 1156,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 1202,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Onze categorieën",
+     "href": "#",
+     "rect": {
+      "x": 404.6,
+      "y": 95.2,
+      "w": 140,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Thema's",
+     "href": "https://rootedgoods.eu/alle-thema-s",
+     "rect": {
+      "x": 568.6,
+      "y": 95.2,
+      "w": 59.5,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Merken",
+     "href": "https://rootedgoods.eu/merken/",
+     "rect": {
+      "x": 652,
+      "y": 95.2,
+      "w": 54,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Services",
+     "href": "https://rootedgoods.eu/services/",
+     "rect": {
+      "x": 730,
+      "y": 95.2,
+      "w": 58.4,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Over ons",
+     "href": "https://rootedgoods.eu/over-ons",
+     "rect": {
+      "x": 812.5,
+      "y": 95.2,
+      "w": 62.9,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 80,
+      "y": 537.1,
+      "w": 287.9,
+      "h": 55.2,
+      "onder": 592.3
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 391.9,
+      "y": 555.6,
+      "w": 201.3,
+      "h": 18.2,
+      "onder": 573.8
+     }
+    },
+    {
+     "tekst": "Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem c",
+     "href": "/contact",
+     "rect": {
+      "x": 80,
+      "y": 630.7,
+      "w": 316.7,
+      "h": 57.2,
+      "onder": 687.9
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 740,
+      "y": 200.4,
+      "w": 224,
+      "h": 224,
+      "onder": 424.4
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 740,
+      "y": 436.4,
+      "w": 224,
+      "h": 224,
+      "onder": 660.4
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 976,
+      "y": 232.4,
+      "w": 224,
+      "h": 224,
+      "onder": 456.4
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 976,
+      "y": 468.4,
+      "w": 224,
+      "h": 224,
+      "onder": 692.4
+     }
+    }
+   ],
+   "aantalKlikbaarTotaal": 203
+  },
+  "1440x900": {
+   "vw": 1440,
+   "vh": 900,
+   "dpr": 1,
+   "url": "https://rootedgoods.eu/?rgkoud=17943259253991440",
+   "titel": "Rooted Goods | Relatiegeschenken, gemaakt in Europa",
+   "scrollHoogte": 6298,
+   "imgs": 217,
+   "imgsLazy": 93,
+   "headerOnder": 140.4,
+   "mainTop": 140.4,
+   "mainPaddingTop": "0px",
+   "cookie": {
+    "zichtbaar": true,
+    "hoogte": 67.1,
+    "rect": {
+     "x": 0,
+     "y": 832.9,
+     "w": 1440,
+     "h": 67.1,
+     "onder": 900
+    },
+    "knoppen": [
+     {
+      "tekst": "Weigeren",
+      "rect": {
+       "x": 845.9,
+       "y": 841.9,
+       "w": 141.7,
+       "h": 50.1,
+       "onder": 892
+      }
+     },
+     {
+      "tekst": "Configureren",
+      "rect": {
+       "x": 995.5,
+       "y": 841.9,
+       "w": 168,
+       "h": 50.1,
+       "onder": 892
+      }
+     },
+     {
+      "tekst": "Aanvaard alle cookies",
+      "rect": {
+       "x": 1171.5,
+       "y": 841.9,
+       "w": 232.5,
+       "h": 50.1,
+       "onder": 892
+      }
+     }
+    ],
+    "vrijBovenBalk": 832.9
+   },
+   "secties": [
+    {
+     "i": 0,
+     "pos": "pos-0",
+     "klasse": "rg-hero-v2",
+     "kop": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 0,
+      "y": 176.4,
+      "w": 1440,
+      "h": 699.6,
+      "onder": 876
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 1,
+     "pos": "pos-1",
+     "klasse": "rg-cat-head",
+     "kop": "Cadeaus per moment",
+     "rect": {
+      "x": 0,
+      "y": 876,
+      "w": 1440,
+      "h": 724.3,
+      "onder": 1600.3
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 2,
+     "pos": "pos-2",
+     "klasse": "rg-statement",
+     "kop": "Europa maakt het nogWij weten waar",
+     "rect": {
+      "x": 0,
+      "y": 1600.3,
+      "w": 1440,
+      "h": 859,
+      "onder": 2459.3
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 3,
+     "pos": "pos-3",
+     "klasse": "rg-cat-head",
+     "kop": "Ontdek Europese producten",
+     "rect": {
+      "x": 0,
+      "y": 2459.3,
+      "w": 1440,
+      "h": 582.7,
+      "onder": 3042
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 4,
+     "pos": "pos-4",
+     "klasse": "rg-feature-row",
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 0,
+      "y": 3042,
+      "w": 1440,
+      "h": 578,
+      "onder": 3620
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 5,
+     "pos": "pos-5",
+     "klasse": "rg-feature-row",
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 0,
+      "y": 3620,
+      "w": 1440,
+      "h": 578,
+      "onder": 4198
+     },
+     "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+     "i": 6,
+     "pos": "pos-6",
+     "klasse": "rg-block-title",
+     "kop": "Services & ontzorging",
+     "rect": {
+      "x": 0,
+      "y": 4198,
+      "w": 1440,
+      "h": 821.6,
+      "onder": 5019.6
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 7,
+     "pos": "pos-7",
+     "klasse": "rg-endcta",
+     "kop": "Van idee tot ingepaktWij regelen alles",
+     "rect": {
+      "x": 0,
+      "y": 5019.6,
+      "w": 1440,
+      "h": 779.3,
+      "onder": 5799
+     },
+     "bg": "rgb(247, 245, 242)"
+    },
+    {
+     "i": 8,
+     "pos": "pos-8",
+     "klasse": null,
+     "kop": null,
+     "rect": {
+      "x": 0,
+      "y": 5799,
+      "w": 1440,
+      "h": 0,
+      "onder": 5799
+     },
+     "bg": "rgb(255, 255, 255)"
+    }
+   ],
+   "hero": {
+    "sectie": {
+     "x": 0,
+     "y": 176.4,
+     "w": 1440,
+     "h": 581.6,
+     "onder": 758
+    },
+    "kicker": null,
+    "titel": {
+     "tekst": "Relatie­geschenken gemaakt in Europa",
+     "rect": {
+      "x": 80,
+      "y": 253.3,
+      "w": 628,
+      "h": 140.8,
+      "onder": 394.1
+     },
+     "fontSize": "70.4px",
+     "regels": 2
+    },
+    "sub": {
+     "x": 80,
+     "y": 418.1,
+     "w": 584.7,
+     "h": 88.3,
+     "onder": 506.4
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "href": "/offerte",
+      "rect": {
+       "x": 80,
+       "y": 530.4,
+       "w": 287.9,
+       "h": 55.2,
+       "onder": 585.5
+      }
+     },
+     {
+      "tekst": "Bekijk alle producten",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 391.9,
+       "y": 548.8,
+       "w": 201.3,
+       "h": 18.2,
+       "onder": 567.1
+      }
+     }
+    ],
+    "tegels": [
+     {
+      "label": "Bekijk Opinel producten",
+      "cap": "OpinelZakmes uit Frankrijk",
+      "rect": {
+       "x": 900,
+       "y": 221.2,
+       "w": 224,
+       "h": 224,
+       "onder": 445.2
+      }
+     },
+     {
+      "label": "Bekijk Bambook producten",
+      "cap": "BambookNotitieboek uit Nederland",
+      "rect": {
+       "x": 900,
+       "y": 457.2,
+       "w": 224,
+       "h": 224,
+       "onder": 681.2
+      }
+     },
+     {
+      "label": "Bekijk Rebottled producten",
+      "cap": "RebottledUpcycled wijnflessen",
+      "rect": {
+       "x": 1136,
+       "y": 253.2,
+       "w": 224,
+       "h": 224,
+       "onder": 477.2
+      }
+     },
+     {
+      "label": "Bekijk Janzen producten",
+      "cap": "JanzenHuisgeur uit Nederland",
+      "rect": {
+       "x": 1136,
+       "y": 489.2,
+       "w": 224,
+       "h": 224,
+       "onder": 713.2
+      }
+     }
+    ],
+    "richard": {
+     "x": 80,
+     "y": 623.9,
+     "w": 316.7,
+     "h": 57.2,
+     "onder": 681.1
+    },
+    "logoCarousel": null
+   },
+   "thema": {
+    "head": {
+     "x": 80,
+     "y": 994,
+     "w": 1280,
+     "h": 114.3,
+     "onder": 1108.3
+    },
+    "kop": "Cadeaus per moment",
+    "eyebrow": null,
+    "link": {
+     "tekst": "Alle thema's",
+     "rect": {
+      "x": 1240.3,
+      "y": 1079.9,
+      "w": 119.7,
+      "h": 28.4,
+      "onder": 1108.3
+     }
+    },
+    "tegels": [
+     {
+      "titel": "Kerst & eindejaar",
+      "href": "/eindejaarsgeschenken",
+      "rect": {
+       "x": 80,
+       "y": 1128.3,
+       "w": 510.6,
+       "h": 432,
+       "onder": 1560.3
+      }
+     },
+     {
+      "titel": "Onboarding & welkom",
+      "href": "/onboarding-welkomstpakket",
+      "rect": {
+       "x": 610.6,
+       "y": 1128.3,
+       "w": 364.7,
+       "h": 206,
+       "onder": 1334.3
+      }
+     },
+     {
+      "titel": "Events & conferenties",
+      "href": "/events-conferenties",
+      "rect": {
+       "x": 995.3,
+       "y": 1128.3,
+       "w": 364.7,
+       "h": 206,
+       "onder": 1334.3
+      }
+     },
+     {
+      "titel": "Medewerker merchandise",
+      "href": "/medewerker-merchandise",
+      "rect": {
+       "x": 610.6,
+       "y": 1354.3,
+       "w": 364.7,
+       "h": 206,
+       "onder": 1560.3
+      }
+     },
+     {
+      "titel": "Dag van de leraar",
+      "href": "/dag-van-de-leraar",
+      "rect": {
+       "x": 995.3,
+       "y": 1354.3,
+       "w": 364.7,
+       "h": 206,
+       "onder": 1560.3
+      }
+     }
+    ]
+   },
+   "statement": {
+    "rect": {
+     "x": 80,
+     "y": 1717.1,
+     "w": 1280,
+     "h": 625.4,
+     "onder": 2342.5
+    },
+    "knoppen": [
+     {
+      "tekst": "Offerte aanvragen",
+      "href": "/offerte",
+      "rect": {
+       "x": 80,
+       "y": 2166.8,
+       "w": 254.4,
+       "h": 55.6,
+       "onder": 2222.3
+      }
+     },
+     {
+      "tekst": "Zelf producten zoeken",
+      "href": "/alle-producten/",
+      "rect": {
+       "x": 362.4,
+       "y": 2185.4,
+       "w": 210.4,
+       "h": 18.2,
+       "onder": 2203.7
+      }
+     }
+    ],
+    "kaart": {
+     "x": 794.5,
+     "y": 1851.1,
+     "w": 565.5,
+     "h": 357.5,
+     "onder": 2208.6
+    }
+   },
+   "slider": {
+    "rect": {
+     "x": 0,
+     "y": 2578,
+     "w": 1440,
+     "h": 464.1,
+     "onder": 3042
+    },
+    "producten": 28,
+    "zichtbaar": 28,
+    "kop": null
+   },
+   "ontdekHead": [
+    {
+     "tekst": "Cadeaus per moment",
+     "rect": {
+      "x": 80,
+      "y": 994,
+      "w": 682.1,
+      "h": 46.7,
+      "onder": 1040.7
+     }
+    },
+    {
+     "tekst": "Ontdek Europese producten",
+     "rect": {
+      "x": 80,
+      "y": 2507.3,
+      "w": 537.7,
+      "h": 46.7,
+      "onder": 2554
+     }
+    }
+   ],
+   "features": [
+    {
+     "kop": "Waarom Rooted Goods",
+     "rect": {
+      "x": 48,
+      "y": 3042,
+      "w": 1344,
+      "h": 578,
+      "onder": 3620
+     },
+     "knop": "Ontdek ons verhaal"
+    },
+    {
+     "kop": "Zo werkt het",
+     "rect": {
+      "x": 48,
+      "y": 3620,
+      "w": 1344,
+      "h": 578,
+      "onder": 4198
+     },
+     "knop": "Vertel wat je zoekt"
+    }
+   ],
+   "services": {
+    "rect": {
+     "x": 80,
+     "y": 4443,
+     "w": 1280,
+     "h": 518.4,
+     "onder": 4961.4
+    },
+    "kaarten": [
+     {
+      "titel": "Full-service ontzorging",
+      "rect": {
+       "x": 80,
+       "y": 4443,
+       "w": 757,
+       "h": 518.4,
+       "onder": 4961.4
+      }
+     },
+     {
+      "titel": "Fulfillment & warehousing",
+      "rect": {
+       "x": 855.3,
+       "y": 4443,
+       "w": 504.6,
+       "h": 250,
+       "onder": 4693
+      }
+     },
+     {
+      "titel": "Verzending naar meerdere locaties",
+      "rect": {
+       "x": 855.3,
+       "y": 4711.4,
+       "w": 504.6,
+       "h": 250,
+       "onder": 4961.4
+      }
+     }
+    ]
+   },
+   "endcta": {
+    "rect": {
+     "x": 0,
+     "y": 5150.6,
+     "w": 1440,
+     "h": 592.3,
+     "onder": 5743
+    },
+    "knoppen": [
+     {
+      "tekst": "Vraag een offerte aan",
+      "rect": {
+       "x": 463.2,
+       "y": 5478.4,
+       "w": 251.5,
+       "h": 50.1,
+       "onder": 5528.4
+      }
+     },
+     {
+      "tekst": "Plan een kennismaking",
+      "rect": {
+       "x": 730.7,
+       "y": 5478.4,
+       "w": 246,
+       "h": 50.1,
+       "onder": 5528.4
+      }
+     }
+    ]
+   },
+   "footer": {
+    "x": 0,
+    "y": 5864,
+    "w": 1440,
+    "h": 367,
+    "onder": 6230.9
+   },
+   "klikbaarBovenVouw": [
+    {
+     "tekst": "FAQ",
+     "href": "/faq",
+     "rect": {
+      "x": 1304,
+      "y": 9,
+      "w": 26.8,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "Contact",
+     "href": "/contact",
+     "rect": {
+      "x": 1358,
+      "y": 9,
+      "w": 50,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 32,
+      "y": 42.2,
+      "w": 271.4,
+      "h": 45,
+      "onder": 87.2
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 966,
+      "y": 44.1,
+      "w": 54,
+      "h": 41.2,
+      "onder": 85.3
+     }
+    },
+    {
+     "tekst": "Offerte aanvragen",
+     "href": "/offerte",
+     "rect": {
+      "x": 1163.2,
+      "y": 51.7,
+      "w": 152.8,
+      "h": 30.4,
+      "onder": 82.1
+     }
+    },
+    {
+     "tekst": "Jouw account",
+     "href": null,
+     "rect": {
+      "x": 1316,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 1362,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Onze categorieën",
+     "href": "#",
+     "rect": {
+      "x": 484.6,
+      "y": 95.2,
+      "w": 140,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Thema's",
+     "href": "https://rootedgoods.eu/alle-thema-s",
+     "rect": {
+      "x": 648.6,
+      "y": 95.2,
+      "w": 59.5,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Merken",
+     "href": "https://rootedgoods.eu/merken/",
+     "rect": {
+      "x": 732,
+      "y": 95.2,
+      "w": 54,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Services",
+     "href": "https://rootedgoods.eu/services/",
+     "rect": {
+      "x": 810,
+      "y": 95.2,
+      "w": 58.4,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Over ons",
+     "href": "https://rootedgoods.eu/over-ons",
+     "rect": {
+      "x": 892.5,
+      "y": 95.2,
+      "w": 62.9,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 80,
+      "y": 530.4,
+      "w": 287.9,
+      "h": 55.2,
+      "onder": 585.5
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 391.9,
+      "y": 548.8,
+      "w": 201.3,
+      "h": 18.2,
+      "onder": 567.1
+     }
+    },
+    {
+     "tekst": "Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem c",
+     "href": "/contact",
+     "rect": {
+      "x": 80,
+      "y": 623.9,
+      "w": 316.7,
+      "h": 57.2,
+      "onder": 681.1
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 900,
+      "y": 221.2,
+      "w": 224,
+      "h": 224,
+      "onder": 445.2
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 900,
+      "y": 457.2,
+      "w": 224,
+      "h": 224,
+      "onder": 681.2
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 1136,
+      "y": 253.2,
+      "w": 224,
+      "h": 224,
+      "onder": 477.2
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 1136,
+      "y": 489.2,
+      "w": 224,
+      "h": 224,
+      "onder": 713.2
+     }
+    },
+    {
+     "tekst": "Meer informatie...",
+     "href": "/widgets/cms/019d4ea36d10738b955d60613f13e018",
+     "rect": {
+      "x": 574.5,
+      "y": 858,
+      "w": 104.3,
+      "h": 18,
+      "onder": 876
+     }
+    },
+    {
+     "tekst": "Weigeren",
+     "href": null,
+     "rect": {
+      "x": 845.9,
+      "y": 841.9,
+      "w": 141.7,
+      "h": 50.1,
+      "onder": 892
+     }
+    },
+    {
+     "tekst": "Configureren",
+     "href": null,
+     "rect": {
+      "x": 995.5,
+      "y": 841.9,
+      "w": 168,
+      "h": 50.1,
+      "onder": 892
+     }
+    },
+    {
+     "tekst": "Aanvaard alle cookies",
+     "href": null,
+     "rect": {
+      "x": 1171.5,
+      "y": 841.9,
+      "w": 232.5,
+      "h": 50.1,
+      "onder": 892
+     }
+    }
+   ],
+   "klikbaarBovenCookie": [
+    {
+     "tekst": "FAQ",
+     "href": "/faq",
+     "rect": {
+      "x": 1304,
+      "y": 9,
+      "w": 26.8,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "Contact",
+     "href": "/contact",
+     "rect": {
+      "x": 1358,
+      "y": 9,
+      "w": 50,
+      "h": 15,
+      "onder": 24
+     }
+    },
+    {
+     "tekst": "",
+     "href": "/",
+     "rect": {
+      "x": 32,
+      "y": 42.2,
+      "w": 271.4,
+      "h": 45,
+      "onder": 87.2
+     }
+    },
+    {
+     "tekst": "Zoeken",
+     "href": null,
+     "rect": {
+      "x": 966,
+      "y": 44.1,
+      "w": 54,
+      "h": 41.2,
+      "onder": 85.3
+     }
+    },
+    {
+     "tekst": "Offerte aanvragen",
+     "href": "/offerte",
+     "rect": {
+      "x": 1163.2,
+      "y": 51.7,
+      "w": 152.8,
+      "h": 30.4,
+      "onder": 82.1
+     }
+    },
+    {
+     "tekst": "Jouw account",
+     "href": null,
+     "rect": {
+      "x": 1316,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Winkelmandje",
+     "href": "/checkout/cart",
+     "rect": {
+      "x": 1362,
+      "y": 51.7,
+      "w": 46,
+      "h": 34,
+      "onder": 85.7
+     }
+    },
+    {
+     "tekst": "Onze categorieën",
+     "href": "#",
+     "rect": {
+      "x": 484.6,
+      "y": 95.2,
+      "w": 140,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Thema's",
+     "href": "https://rootedgoods.eu/alle-thema-s",
+     "rect": {
+      "x": 648.6,
+      "y": 95.2,
+      "w": 59.5,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Merken",
+     "href": "https://rootedgoods.eu/merken/",
+     "rect": {
+      "x": 732,
+      "y": 95.2,
+      "w": 54,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Services",
+     "href": "https://rootedgoods.eu/services/",
+     "rect": {
+      "x": 810,
+      "y": 95.2,
+      "w": 58.4,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Over ons",
+     "href": "https://rootedgoods.eu/over-ons",
+     "rect": {
+      "x": 892.5,
+      "y": 95.2,
+      "w": 62.9,
+      "h": 45.2,
+      "onder": 140.4
+     }
+    },
+    {
+     "tekst": "Vraag een offerte aan",
+     "href": "/offerte",
+     "rect": {
+      "x": 80,
+      "y": 530.4,
+      "w": 287.9,
+      "h": 55.2,
+      "onder": 585.5
+     }
+    },
+    {
+     "tekst": "Bekijk alle producten",
+     "href": "/alle-producten/",
+     "rect": {
+      "x": 391.9,
+      "y": 548.8,
+      "w": 201.3,
+      "h": 18.2,
+      "onder": 567.1
+     }
+    },
+    {
+     "tekst": "Hi, ik ben Richard. Vertel wat je zoekt, ik denk mee. Neem c",
+     "href": "/contact",
+     "rect": {
+      "x": 80,
+      "y": 623.9,
+      "w": 316.7,
+      "h": 57.2,
+      "onder": 681.1
+     }
+    },
+    {
+     "tekst": "Bekijk Opinel producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=33eca2d02759d49f9b56fedc50b453ac",
+     "rect": {
+      "x": 900,
+      "y": 221.2,
+      "w": 224,
+      "h": 224,
+      "onder": 445.2
+     }
+    },
+    {
+     "tekst": "Bekijk Bambook producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=9039e23c7cee4e8c14098551ca00ca4b",
+     "rect": {
+      "x": 900,
+      "y": 457.2,
+      "w": 224,
+      "h": 224,
+      "onder": 681.2
+     }
+    },
+    {
+     "tekst": "Bekijk Rebottled producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=2addeadc02b8c430ea26de34a7dc5049",
+     "rect": {
+      "x": 1136,
+      "y": 253.2,
+      "w": 224,
+      "h": 224,
+      "onder": 477.2
+     }
+    },
+    {
+     "tekst": "Bekijk Janzen producten",
+     "href": "https://rootedgoods.eu/alle-producten/?order=rooted-sortering&p=1&properties=7a6616495be9a40d54364bb411c5307b",
+     "rect": {
+      "x": 1136,
+      "y": 489.2,
+      "w": 224,
+      "h": 224,
+      "onder": 713.2
+     }
+    }
+   ],
+   "aantalKlikbaarTotaal": 203
+  }
+ }
+}
