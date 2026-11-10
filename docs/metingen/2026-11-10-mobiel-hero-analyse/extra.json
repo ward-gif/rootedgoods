@@ -1,0 +1,311 @@
+{
+ "pad": [
+  {
+   "tag": "SECTION",
+   "cls": "rg-page-hero.rg-page-hero--band",
+   "y": 102,
+   "pt": "16px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-element-text",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "col-12",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-block-container-row.row.cms-row",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-block-container",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-block.pos-0.cms-block-text",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-section-default.full-width",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-section.pos-0.cms-section-default",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-sections",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "cms-page",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "DIV",
+   "cls": "container-main",
+   "y": 102,
+   "pt": "0px",
+   "mt": "0px"
+  },
+  {
+   "tag": "MAIN",
+   "cls": "content-main",
+   "y": 0,
+   "pt": "102px",
+   "mt": "0px"
+  }
+ ],
+ "breedtes": {
+  "16": {
+   "punt": 316.6,
+   "komma": 311.8,
+   "en": 333.1,
+   "feit1": 190,
+   "feit2": 114.2,
+   "feit3": 225
+  },
+  "17.6": {
+   "punt": 348.3,
+   "komma": 343,
+   "en": 366.4,
+   "feit1": 209,
+   "feit2": 125.7,
+   "feit3": 247.5
+  },
+  "16.8": {
+   "punt": 332.3,
+   "komma": 327.2,
+   "en": 349.5,
+   "feit1": 199.3,
+   "feit2": 119.9,
+   "feit3": 236.1
+  },
+  "15.2": {
+   "punt": 300.8,
+   "komma": 296.2,
+   "en": 316.4,
+   "feit1": 180.5,
+   "feit2": 108.5,
+   "feit3": 213.7
+  },
+  "14.4": {
+   "punt": 285,
+   "komma": 280.6,
+   "en": 299.8,
+   "feit1": 171,
+   "feit2": 102.8,
+   "feit3": 202.5
+  }
+ },
+ "naamBreedte": {
+  "12": [
+   [
+    "Borrelplank",
+    71
+   ],
+   [
+    "Gezellig & warm",
+    98
+   ],
+   [
+    "Fles, Tonys & Bambook",
+    139
+   ],
+   [
+    "Ontspan pakket",
+    98
+   ],
+   [
+    "Borrelplank, Wijn & Spel",
+    147
+   ],
+   [
+    "Paraplu, Lunchpot en Fles",
+    158
+   ],
+   [
+    "Borrelplank & Spel",
+    112
+   ],
+   [
+    "Borrelplank & Wijn",
+    114
+   ],
+   [
+    "Koffiebeker, lunchbox en Bambook",
+    214
+   ]
+  ],
+  "12.8": [
+   [
+    "Borrelplank",
+    76
+   ],
+   [
+    "Gezellig & warm",
+    105
+   ],
+   [
+    "Fles, Tonys & Bambook",
+    149
+   ],
+   [
+    "Ontspan pakket",
+    105
+   ],
+   [
+    "Borrelplank, Wijn & Spel",
+    156
+   ],
+   [
+    "Paraplu, Lunchpot en Fles",
+    169
+   ],
+   [
+    "Borrelplank & Spel",
+    120
+   ],
+   [
+    "Borrelplank & Wijn",
+    122
+   ],
+   [
+    "Koffiebeker, lunchbox en Bambook",
+    229
+   ]
+  ],
+  "11.2": [
+   [
+    "Borrelplank",
+    67
+   ],
+   [
+    "Gezellig & warm",
+    92
+   ],
+   [
+    "Fles, Tonys & Bambook",
+    130
+   ],
+   [
+    "Ontspan pakket",
+    92
+   ],
+   [
+    "Borrelplank, Wijn & Spel",
+    137
+   ],
+   [
+    "Paraplu, Lunchpot en Fles",
+    148
+   ],
+   [
+    "Borrelplank & Spel",
+    105
+   ],
+   [
+    "Borrelplank & Wijn",
+    107
+   ],
+   [
+    "Koffiebeker, lunchbox en Bambook",
+    200
+   ]
+  ]
+ },
+ "logos": [
+  {
+   "alt": "Erasmus MC",
+   "getoond": "83.0x34.0",
+   "blokken": [
+    {
+     "vanPx": 0,
+     "totPx": 34,
+     "hoogteCssPx": 34
+    }
+   ],
+   "donkersteContrast": 6.76
+  },
+  {
+   "alt": "Ifes",
+   "getoond": "61.1x34.0",
+   "blokken": [
+    {
+     "vanPx": 0,
+     "totPx": 23,
+     "hoogteCssPx": 23
+    },
+    {
+     "vanPx": 28.5,
+     "totPx": 34,
+     "hoogteCssPx": 5.5
+    }
+   ],
+   "donkersteContrast": 6.76
+  },
+  {
+   "alt": "Huisartsen G.C. Zuiderzorg",
+   "getoond": "72.6x34.0",
+   "blokken": [
+    {
+     "vanPx": 0,
+     "totPx": 4,
+     "hoogteCssPx": 4
+    },
+    {
+     "vanPx": 7,
+     "totPx": 9,
+     "hoogteCssPx": 2
+    },
+    {
+     "vanPx": 12,
+     "totPx": 16,
+     "hoogteCssPx": 4
+    },
+    {
+     "vanPx": 19.5,
+     "totPx": 30,
+     "hoogteCssPx": 10.5
+    },
+    {
+     "vanPx": 32,
+     "totPx": 34,
+     "hoogteCssPx": 2
+    }
+   ],
+   "donkersteContrast": 6.76
+  }
+ ],
+ "headerOnder": 95.625,
+ "heroTop": 102
+}

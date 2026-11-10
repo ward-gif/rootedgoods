@@ -12272,3 +12272,120 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
     padding-top: calc(4.5rem + var(--rg-lucht) * 0.4);
   }
 }
+
+/* ============================================================
+   57. KERSTHERO OP MOBIEL, 10 november 2026, onder 992 px, achter de markers
+   ============================================================
+   Hoort bij docs/hero-mobiel-verbeterplan-2026-11-10.md en bij stap 8b van
+   de band-JS (rootedgoods.js). Alles hieronder staat in een
+   max-width: 991px-query; desktop verandert niet (gemeten: 1280x800 en
+   1931x1112 identiek vóór en na, docs/metingen/2026-11-10-mobiel-hero-analyse/).
+   ACHTERAAN LATEN STAAN: 53, 55 en 55.12/55.13 zetten dezelfde marges, en bij
+   gelijke specificiteit wint de laatste regel.
+
+   Gemeten vóór deze sectie, replica van de live pagina, 375 x 667:
+   kolom op x=40 (CMS-blokpadding 20 + hero-padding 20), kop 4 regels met
+   "Kerstpak-ketten" en een losse "met", band op 453, prijsregel tot 682
+   (15 px ONDER de vouw), 0 px tegel boven de cookiebalk, strook 3 regels,
+   link 36,6 px hoog. Erna: kolom op x=20, kop 3 regels, band op 396,
+   prijs tot 612 (55 px marge), 27 px tegel boven de cookiebalk.
+   ============================================================ */
+@media (max-width: 991px) {
+  /* 57.1 Eén linkerlijn. De CMS-blokcontainer van de hero heeft inline
+     padding 20px rondom en de hero zelf ook 20 px: samen 40, terwijl band,
+     strook en link op 20 staan. Op 375 px kost die 20 px extra een hele
+     kopregel. Ward kan de blokpadding ook in de editor op 0 zetten; dit
+     vangt het af als dat niet gebeurd is. */
+  .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
+  .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 57.2 De kop breekt nooit met een streepje. Sectie 36 zet hyphens: auto;
+     op een kolom van 295 px gaf dat "Kerstpak-" / "ketten met". */
+  .rg-page-hero--band .rg-page-hero__title {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+    margin-bottom: 0.75rem;
+  }
+
+  /* 57.3 De twee getallen in de hero, één regel direct onder de kop. De
+     band-JS (stap 8b) zet onder 992 px de eerste twee feiten van de strook
+     in dit element. 0,95 rem onder 400 px: gemeten 300,8 px bij 15,2 px en
+     316,6 px bij 16 px, en de kolom op een 360-toestel is 320 px. */
+  .rg-page-hero--band .rg-page-hero__cijfers {
+    display: block;
+    margin: 0 0 1.25rem;
+    max-width: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--rg-soft);
+  }
+  .rg-page-hero--band .rg-page-hero__cijfers strong { font-weight: 700; color: var(--rg-ink); }
+  .rg-page-hero--band .rg-page-hero__cijfers .rg-page-hero__strook-feit { display: inline; }
+  .rg-page-hero--band .rg-page-hero__cijfers .rg-page-hero__strook-punt { display: inline; margin: 0 0.3rem; color: var(--rg-muted); }
+
+  /* 57.4 Ritme: 16 boven de kop, 12 kop-cijfers, 20 cijfers-knop, 12
+     knop-noot (de noot hoort bij de knop), 24 noot-band. De logo's staan
+     op mobiel niet meer in de hero (57.7). */
+  .rg-page-hero--band { padding-top: 1rem; padding-bottom: 1.5rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 0.75rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 0; }
+
+  /* 57.5 Band: 4 px boven de tegels in plaats van 8. De versprong staat
+     onder 992 px uit (55.7), dus die ruimte was leeg; 4 px blijft voor de
+     focusring van 3 px. */
+  .rg-band-pagina .rg-band { padding-top: 4px !important; }
+
+  /* 57.6 Onder de band: het derde feit ("stel je eigen pakket samen") als
+     regel boven de link, met hoofdletter; de link als tikdoel van 51 px
+     (was 36,6). */
+  .rg-band-pagina .rg-page-hero__strook--onder {
+    margin: 0 0 0 var(--rg-band-inzet, 20px);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .rg-band-pagina .rg-page-hero__strook--onder .rg-page-hero__strook-feit { display: block; }
+  .rg-band-pagina .rg-page-hero__strook--onder .rg-page-hero__strook-feit::first-letter { text-transform: uppercase; }
+  .rg-band-pagina .rg-band__meer { margin-top: 0.25rem; padding: 0.85rem 0.1rem; }
+
+  /* 57.7 De klantlogo's op mobiel onder de band, na de link: dezelfde drie
+     logo's op dezelfde 34 px (55.5 matcht ze daar niet meer, en sectie 36
+     zou ze op 22 px zetten). De JS verplaatst ze (stap 8b). */
+  .rg-band-pagina .rg-page-hero__logos--onder {
+    margin: 1.5rem 0 0 var(--rg-band-inzet, 20px);
+    gap: 0.75rem 1.25rem;
+  }
+  .rg-band-pagina .rg-page-hero__logos--onder img { height: 34px; }
+
+  /* 57.8 Tegelnaam: leesbaar in plaats van een kicker. Zinsletters,
+     bosgroen (10,5:1 op wit), 12,8 px, geen spatiëring; twee regels blijven
+     de grens (ellips). Prijs 15,2 px. De !important's zijn tegen sectie 10
+     en 53.4, die dezelfde eigenschappen met !important zetten. */
+  .rg-band-pagina .rg-band .product-name {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 500 !important;
+    color: var(--rg-green) !important;
+    min-height: 2.6em;
+    margin-bottom: 6px !important;
+  }
+  .rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac) !important; }
+  .rg-band-pagina .rg-band .product-price-wrapper,
+  .rg-band-pagina .rg-band .product-price { font-size: 0.95rem !important; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .rg-page-hero--band .rg-page-hero__cijfers { font-size: 1rem; }
+}
+@media (max-width: 575px) {
+  /* 57.9 Tegel 156 in plaats van 168: op 375 px komt de derde tegel 19 px in
+     beeld bij het laden (was 0), de tegel wordt 7 px lager, het packshot
+     136 px breed in plaats van 148. */
+  .rg-band-pagina .rg-band { --rg-band-tile: 156px; }
+  .rg-band-pagina .rg-band .product-box .card-body { padding: 8px 8px 12px !important; }
+}

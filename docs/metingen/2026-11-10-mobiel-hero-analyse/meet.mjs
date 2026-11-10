@@ -22,7 +22,8 @@ const URL = 'http://127.0.0.1:8777/replica-http.html';
 const [variant = 'voor', protoCssPad, protoJsPad] = process.argv.slice(2);
 const protoCss = protoCssPad ? fs.readFileSync(protoCssPad, 'utf8') : '';
 const protoJs = protoJsPad ? fs.readFileSync(protoJsPad, 'utf8') : '';
-const VIEWPORTS = [[360, 740], [375, 667], [390, 844], [430, 932]];
+const VIEWPORTS = process.env.VP ? process.env.VP.split(',').map(v => v.split('x').map(Number)) : [[360, 740], [375, 667], [390, 844], [430, 932]];
+// VP="1280x800,1931x1112" node meet.mjs voor-desktop  (desktop ter controle; dpr 1)
 const COOKIE = 244; // gemeten hoogte van de Shopware-cookiebalk op mobiel, 5 november
 
 const chrome = spawn(BIN, ['--headless', '--remote-debugging-port=0', '--hide-scrollbars', '--no-first-run',
@@ -62,7 +63,7 @@ const METING = `(() => {
 
   const header = q('.header-main') || q('header'), topbar = q('.top-bar') || q('.rg-topbar') || q('.header-top');
   const hero = q('.rg-page-hero--band'), title = q('.rg-page-hero__title'), btn = q('.rg-page-hero__cta .btn'), noot = q('.rg-page-hero__noot'), logos = q('.rg-page-hero__logos');
-  const feiten = q('.rg-page-hero__feiten');
+  const feiten = q('.rg-page-hero__feiten') || q('.rg-page-hero__cijfers');
   const band = q('.rg-band'), track = q('.rg-band .product-slider-container');
   const strook = q('.rg-page-hero__strook'), strook2 = q('.rg-page-hero__strook--onder'), meer = q('.rg-band__meer'), volgende = q('.rg-block-title__title');
   const cookie = q('.cookie-permission-container');
@@ -99,7 +100,7 @@ const METING = `(() => {
 
 const uit = {};
 for (const [w, h] of VIEWPORTS) {
-  await send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: 2, mobile: true }, sid);
+  await send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: w >= 992 ? 1 : 2, mobile: w < 992 }, sid);
   events.length = 0;
   await send('Page.navigate', { url: URL }, sid);
   await waitEvent('Page.loadEventFired', sid);

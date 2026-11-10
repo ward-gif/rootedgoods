@@ -1,0 +1,11 @@
+/* Prototype A2 = A met strakkere marges, om te zien of de prijs op 375 x 667
+   dan weer minstens 23 px boven de vouw komt met de logo's in de hero. */
+@media (max-width: 991px) {
+  .rg-page-hero--band .rg-page-hero__title { margin-bottom: 0.6rem; }
+  .rg-page-hero--band .rg-page-hero__feiten { margin-bottom: 1.1rem; font-size: 0.95rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 1rem; }
+  .rg-page-hero--band { padding-bottom: 1rem; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .rg-page-hero--band .rg-page-hero__feiten { font-size: 1rem; }
+}

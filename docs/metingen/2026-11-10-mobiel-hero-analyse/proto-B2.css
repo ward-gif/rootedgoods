@@ -1,0 +1,18 @@
+/* Prototype B2 = A, met de klantlogo's onder de band (na de link), op 34 px,
+   en de feitenregel op 0,95 rem onder 400 px zodat hij ook op een kolom van
+   320 px (360-toestellen) één regel blijft (gemeten: 300,8 px bij 15,2 px;
+   316,6 px bij 16 px). Alleen mobiel. */
+@media (max-width: 991px) {
+  .rg-band-pagina .rg-page-hero__logos--onder {
+    margin: 1.5rem 0 0 var(--rg-band-inzet, 20px);
+    gap: 0.75rem 1.25rem;
+  }
+  .rg-band-pagina .rg-page-hero__logos--onder img { height: 34px; }
+  .rg-page-hero--band .rg-page-hero__feiten { font-size: 0.95rem; }
+  /* zonder logo's in de hero: de noot sluit de hero af, 24 px naar de band */
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 0; }
+  .rg-page-hero--band { padding-bottom: 1.5rem; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .rg-page-hero--band .rg-page-hero__feiten { font-size: 1rem; }
+}

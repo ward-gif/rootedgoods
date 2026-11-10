@@ -1,0 +1,3846 @@
+{
+ "360x740": {
+  "vw": 360,
+  "vh": 740,
+  "scrollW": 360,
+  "header": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 95.6,
+    "onder": 95.6
+   },
+   "topbar": {
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 29.6,
+    "onder": 29.6
+   }
+  },
+  "hero": {
+   "rect": {
+    "x": 0,
+    "y": 102,
+    "w": 360,
+    "h": 289.7,
+    "onder": 391.7
+   },
+   "pad": {
+    "padding-top": "16px",
+    "padding-bottom": "24px",
+    "padding-left": "20px"
+   }
+  },
+  "title": {
+   "tekst": "Kerstpakketten met jouw logo, van Europese makers",
+   "rect": {
+    "x": 20,
+    "y": 118,
+    "w": 320,
+    "h": 114.5,
+    "onder": 232.5
+   },
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo, van",
+    "Europese makers"
+   ],
+   "fontSize": "36px",
+   "lineHeight": "38.16px",
+   "fontWeight": "500",
+   "fontFamily": "\"Playfair Display\"",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "-0.432px",
+   "textTransform": "none",
+   "contrast": 9.68
+  },
+  "feiten": {
+   "tekst": "Vanaf € 25 per persoon · vanaf 10 stuks",
+   "rect": {
+    "x": 20,
+    "y": 244.5,
+    "w": 320,
+    "h": 22.8,
+    "onder": 267.3
+   },
+   "regels": [
+    "Vanaf € 25 per persoon · vanaf 10 stuks"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 287.3,
+    "w": 260.4,
+    "h": 48.1,
+    "onder": 335.3
+   },
+   "tekst": "Vertel ons wat je zoekt",
+   "fontSize": "14.4px",
+   "padding": "14.4px 32px",
+   "bg": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "contrast": 4.56
+  },
+  "noot": {
+   "tekst": "Nog op tijd voor kerst? Vraag het vandaag.",
+   "rect": {
+    "x": 20,
+    "y": 347.3,
+    "w": 320,
+    "h": 20.4,
+    "onder": 367.7
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag."
+   ],
+   "fontSize": "13.6px",
+   "lineHeight": "20.4px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 782.8,
+    "w": 340,
+    "h": 34,
+    "onder": 816.8
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 83,
+     "h": 34,
+     "natuurlijk": "327x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Ifes",
+     "w": 61.1,
+     "h": 34,
+     "natuurlijk": "212x118",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 72.6,
+     "h": 34,
+     "natuurlijk": "286x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 0,
+     "h": 0,
+     "natuurlijk": "0x0",
+     "display": "none",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    }
+   ],
+   "gap": {
+    "gap": "12px 20px",
+    "margin-bottom": "0px"
+   }
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 391.7,
+    "w": 360,
+    "h": 261.3,
+    "onder": 653
+   },
+   "pad": {
+    "padding-top": "4px",
+    "padding-bottom": "28px"
+   },
+   "tile": "156px",
+   "gapVar": "clamp(12px, 1.4vw, 20px)",
+   "n": 36,
+   "originelen": 9,
+   "zichtbaar": [
+    {
+     "links": -148,
+     "breedte": 156,
+     "zichtbaar": 8,
+     "kloon": true
+    },
+    {
+     "links": 20,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 188,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 356,
+     "breedte": 156,
+     "zichtbaar": 4,
+     "kloon": false
+    }
+   ],
+   "eersteTegel": {
+    "x": 20,
+    "y": 395.7,
+    "w": 156,
+    "h": 229.3,
+    "onder": 625
+   },
+   "prijsRect": {
+    "x": 32,
+    "y": 593,
+    "w": 132.8,
+    "h": 19,
+    "onder": 612
+   },
+   "tegels": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 28,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank",
+      "rect": {
+       "x": 32,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 32 per persoon",
+      "rect": {
+       "x": 32,
+       "y": 593,
+       "w": 132.8,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 32 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 32 per persoon"
+    },
+    {
+     "rect": {
+      "x": 188,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 196,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Gezellig & warm",
+      "rect": {
+       "x": 200,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Gezellig & warm"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 47 per persoon",
+      "rect": {
+       "x": 200,
+       "y": 593,
+       "w": 134.1,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 47 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 47 per persoon"
+    },
+    {
+     "rect": {
+      "x": 356,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 364,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Fles, Tonys & Bambook",
+      "rect": {
+       "x": 368,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Fles, Tonys &",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 31 per persoon",
+      "rect": {
+       "x": 368,
+       "y": 593,
+       "w": 129.8,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 31 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 31 per persoon"
+    },
+    {
+     "rect": {
+      "x": 524,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 532,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Ontspan pakket",
+      "rect": {
+       "x": 536,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Ontspan pakket"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 67 per persoon",
+      "rect": {
+       "x": 536,
+       "y": 593,
+       "w": 133.9,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 67 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 67 per persoon"
+    },
+    {
+     "rect": {
+      "x": 692,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 700,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank, Wijn & Spel",
+      "rect": {
+       "x": 704,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank, Wijn &",
+       "Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 58 per persoon",
+      "rect": {
+       "x": 704,
+       "y": 593,
+       "w": 134,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 58 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 58 per persoon"
+    },
+    {
+     "rect": {
+      "x": 860,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 868,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Paraplu, Lunchpot en Fles",
+      "rect": {
+       "x": 872,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Paraplu, Lunchpot",
+       "en Fles"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 69 per persoon",
+      "rect": {
+       "x": 872,
+       "y": 593,
+       "w": 134.3,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 69 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 69 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1028,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1036,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank & Spel",
+      "rect": {
+       "x": 1040,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank & Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 48 per persoon",
+      "rect": {
+       "x": 1040,
+       "y": 593,
+       "w": 135.6,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 48 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 48 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1196,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1204,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank & Wijn",
+      "rect": {
+       "x": 1208,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank & Wijn"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 40 per persoon",
+      "rect": {
+       "x": 1208,
+       "y": 593,
+       "w": 135.7,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 40 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 40 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1364,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1372,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Koffiebeker, lunchbox en Bambook",
+      "rect": {
+       "x": 1376,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Koffiebeker,",
+       "lunchbox en",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": true,
+      "clientH": 33,
+      "scrollH": 50
+     },
+     "prijs": {
+      "tekst": "€ 34 per persoon",
+      "rect": {
+       "x": 1376,
+       "y": 593,
+       "w": 134.3,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 34 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 34 per persoon"
+    }
+   ],
+   "animatie": "none"
+  },
+  "strook": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 653,
+    "w": 320,
+    "h": 22.8,
+    "onder": 675.8
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1,
+   "hidden": false,
+   "display": "block",
+   "feiten": [
+    {
+     "tekst": "Vanaf € 25 per persoon",
+     "rect": {
+      "x": 20,
+      "y": 245.5,
+      "w": 180.5,
+      "h": 19,
+      "onder": 264.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "vanaf 10 stuks",
+     "rect": {
+      "x": 221.9,
+      "y": 245.5,
+      "w": 108.5,
+      "h": 19,
+      "onder": 264.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "stel je eigen pakket samen",
+     "rect": {
+      "x": 20,
+      "y": 653,
+      "w": 320,
+      "h": 22.8,
+      "onder": 675.8
+     },
+     "display": "block"
+    }
+   ],
+   "punten": [
+    "inline"
+   ],
+   "strong": {
+    "tekst": "stel je eigen pakket",
+    "rect": {
+     "x": 20,
+     "y": 654,
+     "w": 157.8,
+     "h": 19,
+     "onder": 673
+    },
+    "regels": [
+     "stel je eigen pakket"
+    ],
+    "fontSize": "15.2px",
+    "lineHeight": "22.8px",
+    "fontWeight": "700",
+    "fontFamily": "Montserrat",
+    "color": "rgb(44, 42, 38)",
+    "letterSpacing": "normal",
+    "textTransform": "none",
+    "contrast": 13.16
+   }
+  },
+  "strook2": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 653,
+    "w": 320,
+    "h": 22.8,
+    "onder": 675.8
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "meer": {
+   "tekst": "Alle kerstpakketten",
+   "rect": {
+    "x": 20,
+    "y": 679.8,
+    "w": 179.9,
+    "h": 51,
+    "onder": 730.8
+   },
+   "regels": [
+    "Alle kerstpakketten"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "600",
+   "fontFamily": "Montserrat",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 9.68,
+   "padding": "13.6px 1.6px",
+   "tapHoogte": 50.984375
+  },
+  "volgende": {
+   "x": 35,
+   "y": 878.8,
+   "w": 290,
+   "h": 65.7,
+   "onder": 944.4
+  },
+  "cookie": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "onder": 0
+   },
+   "display": "none"
+  },
+  "afstanden": {
+   "titleNaarBtn": 54.8,
+   "btnNaarNoot": 12,
+   "nootNaarLogos": 415.1,
+   "logosNaarBand": -425.1,
+   "logosNaarTegel": -421.1,
+   "heroNaarBand": 0,
+   "tegelNaarStrook": 28,
+   "strookNaarMeer": 4,
+   "meerNaarVolgende": 148
+  },
+  "vouw": {
+   "prijsOnder": 612,
+   "margePrijs": 128,
+   "tegelOnder": 625,
+   "bandTop": 391.7,
+   "strookOnder": 675.8,
+   "meerOnder": 730.8,
+   "bovenCookie": {
+    "grens": 496,
+    "tegelPxBovenBalk": 100.3,
+    "prijsZichtbaar": false,
+    "laatsteElementBovenBalk": "noot"
+   }
+  },
+  "cookieGemeten": {
+   "top": 494.8,
+   "h": 245.2
+  }
+ },
+ "375x667": {
+  "vw": 375,
+  "vh": 667,
+  "scrollW": 375,
+  "header": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 95.6,
+    "onder": 95.6
+   },
+   "topbar": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 29.6,
+    "onder": 29.6
+   }
+  },
+  "hero": {
+   "rect": {
+    "x": 0,
+    "y": 102,
+    "w": 375,
+    "h": 289.7,
+    "onder": 391.7
+   },
+   "pad": {
+    "padding-top": "16px",
+    "padding-bottom": "24px",
+    "padding-left": "20px"
+   }
+  },
+  "title": {
+   "tekst": "Kerstpakketten met jouw logo, van Europese makers",
+   "rect": {
+    "x": 20,
+    "y": 118,
+    "w": 335,
+    "h": 114.5,
+    "onder": 232.5
+   },
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo, van",
+    "Europese makers"
+   ],
+   "fontSize": "36px",
+   "lineHeight": "38.16px",
+   "fontWeight": "500",
+   "fontFamily": "\"Playfair Display\"",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "-0.432px",
+   "textTransform": "none",
+   "contrast": 9.68
+  },
+  "feiten": {
+   "tekst": "Vanaf € 25 per persoon · vanaf 10 stuks",
+   "rect": {
+    "x": 20,
+    "y": 244.5,
+    "w": 335,
+    "h": 22.8,
+    "onder": 267.3
+   },
+   "regels": [
+    "Vanaf € 25 per persoon · vanaf 10 stuks"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 287.3,
+    "w": 260.4,
+    "h": 48.1,
+    "onder": 335.3
+   },
+   "tekst": "Vertel ons wat je zoekt",
+   "fontSize": "14.4px",
+   "padding": "14.4px 32px",
+   "bg": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "contrast": 4.56
+  },
+  "noot": {
+   "tekst": "Nog op tijd voor kerst? Vraag het vandaag.",
+   "rect": {
+    "x": 20,
+    "y": 347.3,
+    "w": 335,
+    "h": 20.4,
+    "onder": 367.7
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag."
+   ],
+   "fontSize": "13.6px",
+   "lineHeight": "20.4px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 782.8,
+    "w": 355,
+    "h": 34,
+    "onder": 816.8
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 83,
+     "h": 34,
+     "natuurlijk": "327x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Ifes",
+     "w": 61.1,
+     "h": 34,
+     "natuurlijk": "212x118",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 72.6,
+     "h": 34,
+     "natuurlijk": "286x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 0,
+     "h": 0,
+     "natuurlijk": "0x0",
+     "display": "none",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    }
+   ],
+   "gap": {
+    "gap": "12px 20px",
+    "margin-bottom": "0px"
+   }
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 391.7,
+    "w": 375,
+    "h": 261.3,
+    "onder": 653
+   },
+   "pad": {
+    "padding-top": "4px",
+    "padding-bottom": "28px"
+   },
+   "tile": "156px",
+   "gapVar": "clamp(12px, 1.4vw, 20px)",
+   "n": 36,
+   "originelen": 9,
+   "zichtbaar": [
+    {
+     "links": -148,
+     "breedte": 156,
+     "zichtbaar": 8,
+     "kloon": true
+    },
+    {
+     "links": 20,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 188,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 356,
+     "breedte": 156,
+     "zichtbaar": 19,
+     "kloon": false
+    }
+   ],
+   "eersteTegel": {
+    "x": 20,
+    "y": 395.7,
+    "w": 156,
+    "h": 229.3,
+    "onder": 625
+   },
+   "prijsRect": {
+    "x": 32,
+    "y": 593,
+    "w": 132.8,
+    "h": 19,
+    "onder": 612
+   },
+   "tegels": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 28,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank",
+      "rect": {
+       "x": 32,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 32 per persoon",
+      "rect": {
+       "x": 32,
+       "y": 593,
+       "w": 132.8,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 32 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 32 per persoon"
+    },
+    {
+     "rect": {
+      "x": 188,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 196,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Gezellig & warm",
+      "rect": {
+       "x": 200,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Gezellig & warm"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 47 per persoon",
+      "rect": {
+       "x": 200,
+       "y": 593,
+       "w": 134.1,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 47 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 47 per persoon"
+    },
+    {
+     "rect": {
+      "x": 356,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 364,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Fles, Tonys & Bambook",
+      "rect": {
+       "x": 368,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Fles, Tonys &",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 31 per persoon",
+      "rect": {
+       "x": 368,
+       "y": 593,
+       "w": 129.8,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 31 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 31 per persoon"
+    },
+    {
+     "rect": {
+      "x": 524,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 532,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Ontspan pakket",
+      "rect": {
+       "x": 536,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Ontspan pakket"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 67 per persoon",
+      "rect": {
+       "x": 536,
+       "y": 593,
+       "w": 133.9,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 67 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 67 per persoon"
+    },
+    {
+     "rect": {
+      "x": 692,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 700,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank, Wijn & Spel",
+      "rect": {
+       "x": 704,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank, Wijn &",
+       "Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 58 per persoon",
+      "rect": {
+       "x": 704,
+       "y": 593,
+       "w": 134,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 58 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 58 per persoon"
+    },
+    {
+     "rect": {
+      "x": 860,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 868,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Paraplu, Lunchpot en Fles",
+      "rect": {
+       "x": 872,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Paraplu, Lunchpot",
+       "en Fles"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 69 per persoon",
+      "rect": {
+       "x": 872,
+       "y": 593,
+       "w": 134.3,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 69 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 69 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1028,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1036,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank & Spel",
+      "rect": {
+       "x": 1040,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank & Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 48 per persoon",
+      "rect": {
+       "x": 1040,
+       "y": 593,
+       "w": 135.6,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 48 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 48 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1196,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1204,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank & Wijn",
+      "rect": {
+       "x": 1208,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank & Wijn"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 40 per persoon",
+      "rect": {
+       "x": 1208,
+       "y": 593,
+       "w": 135.7,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 40 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 40 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1364,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1372,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Koffiebeker, lunchbox en Bambook",
+      "rect": {
+       "x": 1376,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Koffiebeker,",
+       "lunchbox en",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": true,
+      "clientH": 33,
+      "scrollH": 50
+     },
+     "prijs": {
+      "tekst": "€ 34 per persoon",
+      "rect": {
+       "x": 1376,
+       "y": 593,
+       "w": 134.3,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 34 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 34 per persoon"
+    }
+   ],
+   "animatie": "none"
+  },
+  "strook": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 653,
+    "w": 335,
+    "h": 22.8,
+    "onder": 675.8
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1,
+   "hidden": false,
+   "display": "block",
+   "feiten": [
+    {
+     "tekst": "Vanaf € 25 per persoon",
+     "rect": {
+      "x": 20,
+      "y": 245.5,
+      "w": 180.5,
+      "h": 19,
+      "onder": 264.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "vanaf 10 stuks",
+     "rect": {
+      "x": 221.9,
+      "y": 245.5,
+      "w": 108.5,
+      "h": 19,
+      "onder": 264.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "stel je eigen pakket samen",
+     "rect": {
+      "x": 20,
+      "y": 653,
+      "w": 335,
+      "h": 22.8,
+      "onder": 675.8
+     },
+     "display": "block"
+    }
+   ],
+   "punten": [
+    "inline"
+   ],
+   "strong": {
+    "tekst": "stel je eigen pakket",
+    "rect": {
+     "x": 20,
+     "y": 654,
+     "w": 157.8,
+     "h": 19,
+     "onder": 673
+    },
+    "regels": [
+     "stel je eigen pakket"
+    ],
+    "fontSize": "15.2px",
+    "lineHeight": "22.8px",
+    "fontWeight": "700",
+    "fontFamily": "Montserrat",
+    "color": "rgb(44, 42, 38)",
+    "letterSpacing": "normal",
+    "textTransform": "none",
+    "contrast": 13.16
+   }
+  },
+  "strook2": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 653,
+    "w": 335,
+    "h": 22.8,
+    "onder": 675.8
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "meer": {
+   "tekst": "Alle kerstpakketten",
+   "rect": {
+    "x": 20,
+    "y": 679.8,
+    "w": 179.9,
+    "h": 51,
+    "onder": 730.8
+   },
+   "regels": [
+    "Alle kerstpakketten"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "600",
+   "fontFamily": "Montserrat",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 9.68,
+   "padding": "13.6px 1.6px",
+   "tapHoogte": 50.984375
+  },
+  "volgende": {
+   "x": 35,
+   "y": 878.8,
+   "w": 305,
+   "h": 65.7,
+   "onder": 944.4
+  },
+  "cookie": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "onder": 0
+   },
+   "display": "none"
+  },
+  "afstanden": {
+   "titleNaarBtn": 54.8,
+   "btnNaarNoot": 12,
+   "nootNaarLogos": 415.1,
+   "logosNaarBand": -425.1,
+   "logosNaarTegel": -421.1,
+   "heroNaarBand": 0,
+   "tegelNaarStrook": 28,
+   "strookNaarMeer": 4,
+   "meerNaarVolgende": 148
+  },
+  "vouw": {
+   "prijsOnder": 612,
+   "margePrijs": 55,
+   "tegelOnder": 625,
+   "bandTop": 391.7,
+   "strookOnder": 675.8,
+   "meerOnder": 730.8,
+   "bovenCookie": {
+    "grens": 423,
+    "tegelPxBovenBalk": 27.3,
+    "prijsZichtbaar": false,
+    "laatsteElementBovenBalk": "noot"
+   }
+  },
+  "cookieGemeten": {
+   "top": 421.8,
+   "h": 245.2
+  }
+ },
+ "390x844": {
+  "vw": 390,
+  "vh": 844,
+  "scrollW": 390,
+  "header": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 95.6,
+    "onder": 95.6
+   },
+   "topbar": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 29.6,
+    "onder": 29.6
+   }
+  },
+  "hero": {
+   "rect": {
+    "x": 0,
+    "y": 102,
+    "w": 390,
+    "h": 289.7,
+    "onder": 391.7
+   },
+   "pad": {
+    "padding-top": "16px",
+    "padding-bottom": "24px",
+    "padding-left": "20px"
+   }
+  },
+  "title": {
+   "tekst": "Kerstpakketten met jouw logo, van Europese makers",
+   "rect": {
+    "x": 20,
+    "y": 118,
+    "w": 350,
+    "h": 114.5,
+    "onder": 232.5
+   },
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo,",
+    "van Europese makers"
+   ],
+   "fontSize": "36px",
+   "lineHeight": "38.16px",
+   "fontWeight": "500",
+   "fontFamily": "\"Playfair Display\"",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "-0.432px",
+   "textTransform": "none",
+   "contrast": 9.68
+  },
+  "feiten": {
+   "tekst": "Vanaf € 25 per persoon · vanaf 10 stuks",
+   "rect": {
+    "x": 20,
+    "y": 244.5,
+    "w": 350,
+    "h": 22.8,
+    "onder": 267.3
+   },
+   "regels": [
+    "Vanaf € 25 per persoon · vanaf 10 stuks"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 287.3,
+    "w": 260.4,
+    "h": 48.1,
+    "onder": 335.3
+   },
+   "tekst": "Vertel ons wat je zoekt",
+   "fontSize": "14.4px",
+   "padding": "14.4px 32px",
+   "bg": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "contrast": 4.56
+  },
+  "noot": {
+   "tekst": "Nog op tijd voor kerst? Vraag het vandaag.",
+   "rect": {
+    "x": 20,
+    "y": 347.3,
+    "w": 350,
+    "h": 20.4,
+    "onder": 367.7
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag."
+   ],
+   "fontSize": "13.6px",
+   "lineHeight": "20.4px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 782.8,
+    "w": 370,
+    "h": 34,
+    "onder": 816.8
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 83,
+     "h": 34,
+     "natuurlijk": "327x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Ifes",
+     "w": 61.1,
+     "h": 34,
+     "natuurlijk": "212x118",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 72.6,
+     "h": 34,
+     "natuurlijk": "286x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 0,
+     "h": 0,
+     "natuurlijk": "0x0",
+     "display": "none",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    }
+   ],
+   "gap": {
+    "gap": "12px 20px",
+    "margin-bottom": "0px"
+   }
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 391.7,
+    "w": 390,
+    "h": 261.3,
+    "onder": 653
+   },
+   "pad": {
+    "padding-top": "4px",
+    "padding-bottom": "28px"
+   },
+   "tile": "156px",
+   "gapVar": "clamp(12px, 1.4vw, 20px)",
+   "n": 36,
+   "originelen": 9,
+   "zichtbaar": [
+    {
+     "links": -148,
+     "breedte": 156,
+     "zichtbaar": 8,
+     "kloon": true
+    },
+    {
+     "links": 20,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 188,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 356,
+     "breedte": 156,
+     "zichtbaar": 34,
+     "kloon": false
+    }
+   ],
+   "eersteTegel": {
+    "x": 20,
+    "y": 395.7,
+    "w": 156,
+    "h": 229.3,
+    "onder": 625
+   },
+   "prijsRect": {
+    "x": 32,
+    "y": 593,
+    "w": 132.8,
+    "h": 19,
+    "onder": 612
+   },
+   "tegels": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 28,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank",
+      "rect": {
+       "x": 32,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 32 per persoon",
+      "rect": {
+       "x": 32,
+       "y": 593,
+       "w": 132.8,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 32 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 32 per persoon"
+    },
+    {
+     "rect": {
+      "x": 188,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 196,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Gezellig & warm",
+      "rect": {
+       "x": 200,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Gezellig & warm"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 47 per persoon",
+      "rect": {
+       "x": 200,
+       "y": 593,
+       "w": 134.1,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 47 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 47 per persoon"
+    },
+    {
+     "rect": {
+      "x": 356,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 364,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Fles, Tonys & Bambook",
+      "rect": {
+       "x": 368,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Fles, Tonys &",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 31 per persoon",
+      "rect": {
+       "x": 368,
+       "y": 593,
+       "w": 129.8,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 31 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 31 per persoon"
+    },
+    {
+     "rect": {
+      "x": 524,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 532,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Ontspan pakket",
+      "rect": {
+       "x": 536,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Ontspan pakket"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 67 per persoon",
+      "rect": {
+       "x": 536,
+       "y": 593,
+       "w": 133.9,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 67 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 67 per persoon"
+    },
+    {
+     "rect": {
+      "x": 692,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 700,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank, Wijn & Spel",
+      "rect": {
+       "x": 704,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank, Wijn &",
+       "Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 58 per persoon",
+      "rect": {
+       "x": 704,
+       "y": 593,
+       "w": 134,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 58 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 58 per persoon"
+    },
+    {
+     "rect": {
+      "x": 860,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 868,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Paraplu, Lunchpot en Fles",
+      "rect": {
+       "x": 872,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Paraplu, Lunchpot",
+       "en Fles"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 69 per persoon",
+      "rect": {
+       "x": 872,
+       "y": 593,
+       "w": 134.3,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 69 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 69 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1028,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1036,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank & Spel",
+      "rect": {
+       "x": 1040,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank & Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 48 per persoon",
+      "rect": {
+       "x": 1040,
+       "y": 593,
+       "w": 135.6,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 48 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 48 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1196,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1204,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Borrelplank & Wijn",
+      "rect": {
+       "x": 1208,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Borrelplank & Wijn"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 40 per persoon",
+      "rect": {
+       "x": 1208,
+       "y": 593,
+       "w": 135.7,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 40 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 40 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1364,
+      "y": 395.7,
+      "w": 156,
+      "h": 229.3,
+      "onder": 625
+     },
+     "beeld": {
+      "x": 1372,
+      "y": 403.7,
+      "w": 140,
+      "h": 140,
+      "onder": 543.7
+     },
+     "naam": {
+      "tekst": "Koffiebeker, lunchbox en Bambook",
+      "rect": {
+       "x": 1376,
+       "y": 553.7,
+       "w": 132,
+       "h": 33.3,
+       "onder": 587
+      },
+      "regels": [
+       "Koffiebeker,",
+       "lunchbox en",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": true,
+      "clientH": 33,
+      "scrollH": 50
+     },
+     "prijs": {
+      "tekst": "€ 34 per persoon",
+      "rect": {
+       "x": 1376,
+       "y": 593,
+       "w": 134.3,
+       "h": 19,
+       "onder": 612
+      },
+      "regels": [
+       "€ 34 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 34 per persoon"
+    }
+   ],
+   "animatie": "none"
+  },
+  "strook": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 653,
+    "w": 350,
+    "h": 22.8,
+    "onder": 675.8
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1,
+   "hidden": false,
+   "display": "block",
+   "feiten": [
+    {
+     "tekst": "Vanaf € 25 per persoon",
+     "rect": {
+      "x": 20,
+      "y": 245.5,
+      "w": 180.5,
+      "h": 19,
+      "onder": 264.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "vanaf 10 stuks",
+     "rect": {
+      "x": 221.9,
+      "y": 245.5,
+      "w": 108.5,
+      "h": 19,
+      "onder": 264.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "stel je eigen pakket samen",
+     "rect": {
+      "x": 20,
+      "y": 653,
+      "w": 350,
+      "h": 22.8,
+      "onder": 675.8
+     },
+     "display": "block"
+    }
+   ],
+   "punten": [
+    "inline"
+   ],
+   "strong": {
+    "tekst": "stel je eigen pakket",
+    "rect": {
+     "x": 20,
+     "y": 654,
+     "w": 157.8,
+     "h": 19,
+     "onder": 673
+    },
+    "regels": [
+     "stel je eigen pakket"
+    ],
+    "fontSize": "15.2px",
+    "lineHeight": "22.8px",
+    "fontWeight": "700",
+    "fontFamily": "Montserrat",
+    "color": "rgb(44, 42, 38)",
+    "letterSpacing": "normal",
+    "textTransform": "none",
+    "contrast": 13.16
+   }
+  },
+  "strook2": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 653,
+    "w": 350,
+    "h": 22.8,
+    "onder": 675.8
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "meer": {
+   "tekst": "Alle kerstpakketten",
+   "rect": {
+    "x": 20,
+    "y": 679.8,
+    "w": 179.9,
+    "h": 51,
+    "onder": 730.8
+   },
+   "regels": [
+    "Alle kerstpakketten"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "600",
+   "fontFamily": "Montserrat",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 9.68,
+   "padding": "13.6px 1.6px",
+   "tapHoogte": 50.984375
+  },
+  "volgende": {
+   "x": 35,
+   "y": 878.8,
+   "w": 320,
+   "h": 65.7,
+   "onder": 944.4
+  },
+  "cookie": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "onder": 0
+   },
+   "display": "none"
+  },
+  "afstanden": {
+   "titleNaarBtn": 54.8,
+   "btnNaarNoot": 12,
+   "nootNaarLogos": 415.1,
+   "logosNaarBand": -425.1,
+   "logosNaarTegel": -421.1,
+   "heroNaarBand": 0,
+   "tegelNaarStrook": 28,
+   "strookNaarMeer": 4,
+   "meerNaarVolgende": 148
+  },
+  "vouw": {
+   "prijsOnder": 612,
+   "margePrijs": 232,
+   "tegelOnder": 625,
+   "bandTop": 391.7,
+   "strookOnder": 675.8,
+   "meerOnder": 730.8,
+   "bovenCookie": {
+    "grens": 600,
+    "tegelPxBovenBalk": 204.3,
+    "prijsZichtbaar": false,
+    "laatsteElementBovenBalk": "noot"
+   }
+  },
+  "cookieGemeten": {
+   "top": 598.8,
+   "h": 245.2
+  }
+ },
+ "430x932": {
+  "vw": 430,
+  "vh": 932,
+  "scrollW": 430,
+  "header": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 95.6,
+    "onder": 95.6
+   },
+   "topbar": {
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 29.6,
+    "onder": 29.6
+   }
+  },
+  "hero": {
+   "rect": {
+    "x": 0,
+    "y": 102,
+    "w": 430,
+    "h": 290.9,
+    "onder": 392.9
+   },
+   "pad": {
+    "padding-top": "16px",
+    "padding-bottom": "24px",
+    "padding-left": "20px"
+   }
+  },
+  "title": {
+   "tekst": "Kerstpakketten met jouw logo, van Europese makers",
+   "rect": {
+    "x": 20,
+    "y": 118,
+    "w": 390,
+    "h": 114.5,
+    "onder": 232.5
+   },
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo,",
+    "van Europese makers"
+   ],
+   "fontSize": "36px",
+   "lineHeight": "38.16px",
+   "fontWeight": "500",
+   "fontFamily": "\"Playfair Display\"",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "-0.432px",
+   "textTransform": "none",
+   "contrast": 9.68
+  },
+  "feiten": {
+   "tekst": "Vanaf € 25 per persoon · vanaf 10 stuks",
+   "rect": {
+    "x": 20,
+    "y": 244.5,
+    "w": 390,
+    "h": 24,
+    "onder": 268.5
+   },
+   "regels": [
+    "Vanaf € 25 per persoon · vanaf 10 stuks"
+   ],
+   "fontSize": "16px",
+   "lineHeight": "24px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 288.5,
+    "w": 260.4,
+    "h": 48.1,
+    "onder": 336.5
+   },
+   "tekst": "Vertel ons wat je zoekt",
+   "fontSize": "14.4px",
+   "padding": "14.4px 32px",
+   "bg": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "contrast": 4.56
+  },
+  "noot": {
+   "tekst": "Nog op tijd voor kerst? Vraag het vandaag.",
+   "rect": {
+    "x": 20,
+    "y": 348.5,
+    "w": 390,
+    "h": 20.4,
+    "onder": 368.9
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag."
+   ],
+   "fontSize": "13.6px",
+   "lineHeight": "20.4px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 784,
+    "w": 410,
+    "h": 34,
+    "onder": 818
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 83,
+     "h": 34,
+     "natuurlijk": "327x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Ifes",
+     "w": 40.2,
+     "h": 34,
+     "natuurlijk": "0x0",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 72.6,
+     "h": 34,
+     "natuurlijk": "286x134",
+     "display": "block",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 0,
+     "h": 0,
+     "natuurlijk": "0x0",
+     "display": "none",
+     "opacity": "0.65",
+     "filter": "grayscale(1)"
+    }
+   ],
+   "gap": {
+    "gap": "12px 20px",
+    "margin-bottom": "0px"
+   }
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 392.9,
+    "w": 430,
+    "h": 261.3,
+    "onder": 654.2
+   },
+   "pad": {
+    "padding-top": "4px",
+    "padding-bottom": "28px"
+   },
+   "tile": "156px",
+   "gapVar": "clamp(12px, 1.4vw, 20px)",
+   "n": 36,
+   "originelen": 9,
+   "zichtbaar": [
+    {
+     "links": -148,
+     "breedte": 156,
+     "zichtbaar": 8,
+     "kloon": true
+    },
+    {
+     "links": 20,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 188,
+     "breedte": 156,
+     "zichtbaar": 156,
+     "kloon": false
+    },
+    {
+     "links": 356,
+     "breedte": 156,
+     "zichtbaar": 74,
+     "kloon": false
+    }
+   ],
+   "eersteTegel": {
+    "x": 20,
+    "y": 396.9,
+    "w": 156,
+    "h": 229.3,
+    "onder": 626.2
+   },
+   "prijsRect": {
+    "x": 32,
+    "y": 594.2,
+    "w": 132.8,
+    "h": 19,
+    "onder": 613.2
+   },
+   "tegels": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 28,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Borrelplank",
+      "rect": {
+       "x": 32,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Borrelplank"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 32 per persoon",
+      "rect": {
+       "x": 32,
+       "y": 594.2,
+       "w": 132.8,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 32 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 32 per persoon"
+    },
+    {
+     "rect": {
+      "x": 188,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 196,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Gezellig & warm",
+      "rect": {
+       "x": 200,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Gezellig & warm"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 47 per persoon",
+      "rect": {
+       "x": 200,
+       "y": 594.2,
+       "w": 134.1,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 47 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 47 per persoon"
+    },
+    {
+     "rect": {
+      "x": 356,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 364,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Fles, Tonys & Bambook",
+      "rect": {
+       "x": 368,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Fles, Tonys &",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 31 per persoon",
+      "rect": {
+       "x": 368,
+       "y": 594.2,
+       "w": 129.8,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 31 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 31 per persoon"
+    },
+    {
+     "rect": {
+      "x": 524,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 532,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Ontspan pakket",
+      "rect": {
+       "x": 536,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Ontspan pakket"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 67 per persoon",
+      "rect": {
+       "x": 536,
+       "y": 594.2,
+       "w": 133.9,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 67 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 67 per persoon"
+    },
+    {
+     "rect": {
+      "x": 692,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 700,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Borrelplank, Wijn & Spel",
+      "rect": {
+       "x": 704,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Borrelplank, Wijn &",
+       "Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 58 per persoon",
+      "rect": {
+       "x": 704,
+       "y": 594.2,
+       "w": 134,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 58 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 58 per persoon"
+    },
+    {
+     "rect": {
+      "x": 860,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 868,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Paraplu, Lunchpot en Fles",
+      "rect": {
+       "x": 872,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Paraplu, Lunchpot",
+       "en Fles"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 69 per persoon",
+      "rect": {
+       "x": 872,
+       "y": 594.2,
+       "w": 134.3,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 69 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 69 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1028,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 1036,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Borrelplank & Spel",
+      "rect": {
+       "x": 1040,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Borrelplank & Spel"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 48 per persoon",
+      "rect": {
+       "x": 1040,
+       "y": 594.2,
+       "w": 135.6,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 48 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 48 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1196,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 1204,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Borrelplank & Wijn",
+      "rect": {
+       "x": 1208,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Borrelplank & Wijn"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": false,
+      "clientH": 33,
+      "scrollH": 33
+     },
+     "prijs": {
+      "tekst": "€ 40 per persoon",
+      "rect": {
+       "x": 1208,
+       "y": 594.2,
+       "w": 135.7,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 40 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 40 per persoon"
+    },
+    {
+     "rect": {
+      "x": 1364,
+      "y": 396.9,
+      "w": 156,
+      "h": 229.3,
+      "onder": 626.2
+     },
+     "beeld": {
+      "x": 1372,
+      "y": 404.9,
+      "w": 140,
+      "h": 140,
+      "onder": 544.9
+     },
+     "naam": {
+      "tekst": "Koffiebeker, lunchbox en Bambook",
+      "rect": {
+       "x": 1376,
+       "y": 554.9,
+       "w": 132,
+       "h": 33.3,
+       "onder": 588.2
+      },
+      "regels": [
+       "Koffiebeker,",
+       "lunchbox en",
+       "Bambook"
+      ],
+      "fontSize": "12.8px",
+      "lineHeight": "16.64px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat",
+      "color": "rgb(45, 69, 40)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 10.53,
+      "afgekapt": true,
+      "clientH": 33,
+      "scrollH": 50
+     },
+     "prijs": {
+      "tekst": "€ 34 per persoon",
+      "rect": {
+       "x": 1376,
+       "y": 594.2,
+       "w": 134.3,
+       "h": 19,
+       "onder": 613.2
+      },
+      "regels": [
+       "€ 34 per persoon"
+      ],
+      "fontSize": "15.2px",
+      "lineHeight": "20px",
+      "fontWeight": "600",
+      "fontFamily": "Montserrat",
+      "color": "rgb(44, 42, 38)",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "contrast": 14.32
+     },
+     "prijsWrapper": "€ 34 per persoon"
+    }
+   ],
+   "animatie": "none"
+  },
+  "strook": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 654.2,
+    "w": 390,
+    "h": 22.8,
+    "onder": 677
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1,
+   "hidden": false,
+   "display": "block",
+   "feiten": [
+    {
+     "tekst": "Vanaf € 25 per persoon",
+     "rect": {
+      "x": 20,
+      "y": 246.5,
+      "w": 190,
+      "h": 19,
+      "onder": 265.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "vanaf 10 stuks",
+     "rect": {
+      "x": 232,
+      "y": 246.5,
+      "w": 114.3,
+      "h": 19,
+      "onder": 265.5
+     },
+     "display": "inline"
+    },
+    {
+     "tekst": "stel je eigen pakket samen",
+     "rect": {
+      "x": 20,
+      "y": 654.2,
+      "w": 390,
+      "h": 22.8,
+      "onder": 677
+     },
+     "display": "block"
+    }
+   ],
+   "punten": [
+    "inline"
+   ],
+   "strong": {
+    "tekst": "stel je eigen pakket",
+    "rect": {
+     "x": 20,
+     "y": 655.2,
+     "w": 157.8,
+     "h": 19,
+     "onder": 674.2
+    },
+    "regels": [
+     "stel je eigen pakket"
+    ],
+    "fontSize": "15.2px",
+    "lineHeight": "22.8px",
+    "fontWeight": "700",
+    "fontFamily": "Montserrat",
+    "color": "rgb(44, 42, 38)",
+    "letterSpacing": "normal",
+    "textTransform": "none",
+    "contrast": 13.16
+   }
+  },
+  "strook2": {
+   "tekst": "stel je eigen pakket samen",
+   "rect": {
+    "x": 20,
+    "y": 654.2,
+    "w": 390,
+    "h": 22.8,
+    "onder": 677
+   },
+   "regels": [
+    "stel je eigen pakket samen"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "400",
+   "fontFamily": "Montserrat",
+   "color": "rgb(93, 109, 85)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 5.1
+  },
+  "meer": {
+   "tekst": "Alle kerstpakketten",
+   "rect": {
+    "x": 20,
+    "y": 681,
+    "w": 179.9,
+    "h": 51,
+    "onder": 732
+   },
+   "regels": [
+    "Alle kerstpakketten"
+   ],
+   "fontSize": "15.2px",
+   "lineHeight": "22.8px",
+   "fontWeight": "600",
+   "fontFamily": "Montserrat",
+   "color": "rgb(45, 69, 40)",
+   "letterSpacing": "normal",
+   "textTransform": "none",
+   "contrast": 9.68,
+   "padding": "13.6px 1.6px",
+   "tapHoogte": 50.984375
+  },
+  "volgende": {
+   "x": 35,
+   "y": 880,
+   "w": 360,
+   "h": 65.7,
+   "onder": 945.6
+  },
+  "cookie": {
+   "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "onder": 0
+   },
+   "display": "none"
+  },
+  "afstanden": {
+   "titleNaarBtn": 56,
+   "btnNaarNoot": 12,
+   "nootNaarLogos": 415.1,
+   "logosNaarBand": -425.1,
+   "logosNaarTegel": -421.1,
+   "heroNaarBand": 0,
+   "tegelNaarStrook": 28,
+   "strookNaarMeer": 4,
+   "meerNaarVolgende": 148
+  },
+  "vouw": {
+   "prijsOnder": 613.2,
+   "margePrijs": 318.8,
+   "tegelOnder": 626.2,
+   "bandTop": 392.9,
+   "strookOnder": 677,
+   "meerOnder": 732,
+   "bovenCookie": {
+    "grens": 688,
+    "tegelPxBovenBalk": 229.3,
+    "prijsZichtbaar": true,
+    "laatsteElementBovenBalk": "strook"
+   }
+  },
+  "cookieGemeten": {
+   "top": 762.9,
+   "h": 169.1
+  }
+ }
+}

@@ -1,0 +1,94 @@
+/* Prototype A, 10 november 2026. Wordt in de replica NA rootedgoods.css
+   ingevoegd; in het echt hoort dit achteraan in rootedgoods.css als
+   sectie 57, achter de markers .rg-page-hero--band / .rg-band-pagina.
+   Alleen onder 992 px; desktop verandert niet. */
+@media (max-width: 991px) {
+  /* A1. Eén linkerlijn: de hero op dezelfde 20 px als band, strook en link.
+     De CMS-blokcontainer van de hero heeft inline padding 20px rondom; de
+     hero heeft zelf al 20 px. Samen 40, en dat kost op 375 px een kopregel. */
+  .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
+  .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* A2. De kop breekt nooit met een streepje (sectie 36 zet hyphens: auto;
+     op 375 px gaf dat "Kerstpak-ketten"). */
+  .rg-page-hero--band .rg-page-hero__title {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+    margin-bottom: 0.75rem;
+  }
+  /* A3. De twee getallen in de hero, één regel onder de kop. De JS zet de
+     eerste twee feiten uit de strook hier neer (zie proto-A.js). */
+  .rg-page-hero--band .rg-page-hero__feiten {
+    display: block;
+    margin: 0 0 1.25rem;
+    max-width: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--rg-soft);
+  }
+  .rg-page-hero--band .rg-page-hero__feiten strong { font-weight: 700; color: var(--rg-ink); }
+  .rg-page-hero--band .rg-page-hero__feiten .rg-page-hero__strook-feit { display: inline; }
+  .rg-page-hero--band .rg-page-hero__feiten .rg-page-hero__strook-punt { display: inline; margin: 0 0.3rem; color: var(--rg-muted); }
+  /* A4. Ritme: kop 12, feiten 20, knop 12 (de noot hoort bij de knop), noot
+     20, logo's 20 naar de band. */
+  .rg-page-hero--band { padding-top: 1rem; padding-bottom: 1.25rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 0.75rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 1.25rem; }
+  /* A5. Geen 8 px extra boven de tegels: de versprong staat onder 992 px uit,
+     dus die ruimte is leeg. */
+  .rg-band-pagina .rg-band { padding-top: 0 !important; }
+  /* A6. Onder de band: het derde feit als regel boven de link, met hoofdletter;
+     de link als tikdoel van minstens 44 px. */
+  .rg-band-pagina .rg-page-hero__strook--onder {
+    margin: 0 0 0 var(--rg-band-inzet, 20px);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .rg-band-pagina .rg-page-hero__strook--onder .rg-page-hero__strook-feit { display: block; }
+  .rg-band-pagina .rg-page-hero__strook--onder .rg-page-hero__strook-feit::first-letter { text-transform: uppercase; }
+  .rg-band-pagina .rg-band__meer { margin-top: 0.25rem; padding: 0.85rem 0.1rem; }
+  /* A7. Tegelnaam: leesbaar in plaats van een kicker. Zinsletters, bosgroen,
+     12,8 px, geen spatiëring; twee regels blijven de grens (ellips). Prijs
+     iets groter. De !important's zijn tegen sectie 10 en 53.4. */
+  .rg-band-pagina .rg-band .product-name {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 500 !important;
+    color: var(--rg-green) !important;
+    min-height: 2.6em;
+    margin-bottom: 6px !important;
+  }
+  .rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac) !important; }
+  .rg-band-pagina .rg-band .product-price-wrapper,
+  .rg-band-pagina .rg-band .product-price { font-size: 0.95rem !important; }
+}
+@media (max-width: 575px) {
+  /* A8. Tegel 156 in plaats van 168: de derde tegel komt op 375 px 31 px in
+     beeld (nu 0), de tegel wordt 12 px lager, het packshot 136 px breed. */
+  .rg-band-pagina .rg-band { --rg-band-tile: 156px; }
+  .rg-band-pagina .rg-band .product-box .card-body { padding: 8px 8px 12px !important; }
+}
+/* Prototype B2 = A, met de klantlogo's onder de band (na de link), op 34 px,
+   en de feitenregel op 0,95 rem onder 400 px zodat hij ook op een kolom van
+   320 px (360-toestellen) één regel blijft (gemeten: 300,8 px bij 15,2 px;
+   316,6 px bij 16 px). Alleen mobiel. */
+@media (max-width: 991px) {
+  .rg-band-pagina .rg-page-hero__logos--onder {
+    margin: 1.5rem 0 0 var(--rg-band-inzet, 20px);
+    gap: 0.75rem 1.25rem;
+  }
+  .rg-band-pagina .rg-page-hero__logos--onder img { height: 34px; }
+  .rg-page-hero--band .rg-page-hero__feiten { font-size: 0.95rem; }
+  /* zonder logo's in de hero: de noot sluit de hero af, 24 px naar de band */
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 0; }
+  .rg-page-hero--band { padding-bottom: 1.5rem; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .rg-page-hero--band .rg-page-hero__feiten { font-size: 1rem; }
+}

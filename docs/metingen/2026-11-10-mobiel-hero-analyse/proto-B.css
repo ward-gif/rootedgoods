@@ -1,0 +1,7 @@
+/* Prototype B = A plus de klantlogo's onder de band (na de link), alleen mobiel. */
+@media (max-width: 991px) {
+  .rg-band-pagina .rg-page-hero__logos--onder {
+    margin: 1.5rem 0 0 var(--rg-band-inzet, 20px);
+    gap: 0.75rem 1.25rem;
+  }
+}
