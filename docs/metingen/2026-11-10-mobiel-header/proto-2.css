@@ -1,0 +1,21 @@
+@media (max-width: 991px) {
+  .header-main .header-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  }
+  .header-row .rg-header-hamburger-slot { justify-self: start; padding-left: 12px !important; padding-right: 0 !important; }
+  .header-row .header-logo-col { justify-self: center; }
+  .header-logo-picture { width: auto !important; min-width: 0 !important; }
+  .header-row .header-actions-col { justify-self: end; padding-left: 0 !important; padding-right: 12px !important; }
+  .header-actions-col .row { flex-wrap: nowrap !important; }
+  .header-row .header-search-col { grid-column: 1 / -1; }
+  .header-actions-col .header-wishlist { display: none !important; }
+  .header-search-col .collapse.show,
+  .header-search-col .collapsing { padding: 0; }
+  .header-search-col .collapse .header-search { padding: 1rem 0 1.25rem; }
+}
+@media (min-width: 400px) and (max-width: 991px) {
+  .header-row .rg-header-hamburger-slot { padding-left: 16px !important; }
+  .header-row .header-actions-col { padding-right: 16px !important; }
+}

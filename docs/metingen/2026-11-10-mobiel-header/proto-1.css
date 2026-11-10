@@ -1,0 +1,12 @@
+@media (max-width: 991px) {
+  .header-main .header-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  }
+  .header-row .rg-header-hamburger-slot { justify-self: start; }
+  .header-row .header-logo-col { justify-self: center; }
+  .header-row .header-actions-col { justify-self: end; padding-right: 0 !important; }
+  .header-row .header-search-col { grid-column: 1 / -1; }
+  .header-actions-col .header-wishlist { display: none !important; }
+}

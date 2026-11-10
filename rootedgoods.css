@@ -839,12 +839,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   }
 
   /* ---- Actie-rij: alleen zoeken + winkelmandje + (indien gevuld) wishlist ----
-     Wishlist hoort hier NIET onvoorwaardelijk verborgen te worden: sectie 1
-     hierboven (regel ~339) laat 'm al vanzelf verschijnen zodra de wishlist
-     niet leeg is (zelfde :empty-badge-truc als op desktop) -- die had
-     alleen op mobiel geen enkele kans, want dit blokte 'm altijd, gevuld
-     of niet. Zonder zichtbaar icoon/teller ergens had toevoegen aan de
-     wishlist op mobiel geen enkele bevestiging of vindplaats. */
+     Wishlist: het icoon in de header is op mobiel sinds sectie 58 weg (de
+     zwevende knop rechtsonder, JS 1.4g, toont de teller; het icoon in de
+     rij duwde het zoekicoon 46 px naar het logo toe). Dit blok is de
+     oudere stand, bewaard als toelichting. */
   .header-actions-col .account-menu {
     display: none !important;
   }
@@ -12388,4 +12386,84 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
      136 px breed in plaats van 148. */
   .rg-band-pagina .rg-band { --rg-band-tile: 156px; }
   .rg-band-pagina .rg-band .product-box .card-body { padding: 8px 8px 12px !important; }
+}
+
+/* ------------------------------------------------------------
+   58. MOBIELE HEADER (<992px): logo écht in het midden, geen sprong bij
+   een gevulde wishlist, zoekbalk die zonder haperen opent
+   ------------------------------------------------------------
+   Gemeten op de live site, 10 november 2026, op 360/375/390/430/768 px
+   (docs/metingen/2026-11-10-mobiel-header/):
+   - Het logo stond 2 px (360), 17 px (390) en 37 px (430) links van het
+     midden. De oorzaak was niet de flex-rij maar <picture class=
+     "header-logo-picture">, dat van het thema een vaste breedte van 200 px
+     heeft (min-width 200); het logo (157 px) zat links in dat vak. Daarbij
+     waren hamburger (86 px) en iconen (132 px) niet even breed.
+   - Met een gevulde wishlist werd het icoon-blok 46 px breder en schoof het
+     zoekicoon 46 px naar links, tot tegen het logo. De zwevende wishlist-
+     knop rechtsonder (JS 1.4g, sectie 8) toont dezelfde teller al, dus het
+     icoon in de header is op mobiel dubbel en gaat weg. Op desktop blijft
+     het staan.
+   - De zoekbalk opende met een stap: .collapse.show/.collapsing droeg
+     1rem + 1.25rem padding, dus de hoogte sprong in het eerste frame van 0
+     naar 36 px en liep daarna pas door. De padding zit nu op de binnenste
+     .header-search, zodat de animatie bij 0 begint.
+   Aanpak: de rij wordt een raster van drie kolommen (1fr auto 1fr) met het
+   logo in het midden. De volgorde komt nog uit rootedgoods.js 1.4d (order
+   als inline-style); de zoekkolom blijft een eigen volle rij eronder. De
+   iconen krijgen hun ruimte via padding en niet via marge: JS 1.4f zet het
+   icoonblok bij het openen van de zoekbalk absoluut op de gemeten rechter-
+   afstand, en een marge zou daar dan 12 px bovenop komen. */
+@media (max-width: 991px) {
+  /* 58.1 Raster: hamburger links, logo midden, iconen rechts */
+  .header-main .header-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  }
+  .header-row .rg-header-hamburger-slot {
+    justify-self: start;
+    padding-left: 12px !important;
+    padding-right: 0 !important;
+  }
+  .header-row .header-logo-col { justify-self: center; }
+  .header-row .header-actions-col {
+    justify-self: end;
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+  }
+  .header-actions-col .row { flex-wrap: nowrap !important; }
+  .header-row .header-search-col { grid-column: 1 / -1; }
+
+  /* 58.2 Logo-vak op de breedte van het logo, niet van het thema */
+  .header-logo-picture {
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  /* 58.3 Wishlist-icoon uit de header: de zwevende knop heeft de teller */
+  .header-actions-col .header-wishlist { display: none !important; }
+
+  /* 58.4 Zoekbalk: padding op de binnenkant, niet op de animerende laag */
+  .header-search-col .collapse.show,
+  .header-search-col .collapsing { padding: 0; }
+  /* .collapsing heeft de class .collapse niet meer: beide selectors nodig,
+     anders telt Bootstrap de padding niet mee in de doelhoogte en springt de
+     balk aan het eind van de animatie alsnog 36 px omhoog (gemeten) */
+  .header-search-col .collapse .header-search,
+  .header-search-col .collapsing .header-search { padding: 1rem 0 1.25rem; }
+}
+/* Iconen op 16 px van de rand (ikoon zelf 20 px in een knop met 12 px padding) */
+@media (min-width: 400px) and (max-width: 991px) {
+  .header-row .rg-header-hamburger-slot { padding-left: 16px !important; }
+  .header-row .header-actions-col { padding-right: 14px !important; }
+}
+/* Heel smal (iPhone SE 1e generatie en kleiner): logo kleiner, anders is er
+   geen ruimte voor het logo in het midden tussen de twee icoonblokken */
+@media (max-width: 359px) {
+  .header-logo-main-link img,
+  .header-logo img { height: 22px !important; }
+  /* rijhoogte gelijk houden: de header is fixed en de pagina daaronder
+     compenseert een vaste hoogte (22 px logo i.p.v. 26 px gaf 3,7 px minder) */
+  .header-logo-col { padding-top: 2px !important; padding-bottom: 2px !important; }
 }
