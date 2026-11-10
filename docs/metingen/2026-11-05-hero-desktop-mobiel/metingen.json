@@ -1,0 +1,2797 @@
+{
+ "390x844": {
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "scrollW": 390,
+  "clientW": 390,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 390,
+     "h": 95.6
+    },
+    "pos": "fixed"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 5686.4
+  },
+  "mainPaddingTop": {
+   "padding-top": "102px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 0,
+   "y": 138,
+   "w": 390,
+   "h": 392.9
+  },
+  "heroPad": {
+   "padding-top": "16px",
+   "padding-bottom": "17.6px",
+   "padding-left": "20px",
+   "padding-right": "20px",
+   "text-align": "start"
+  },
+  "title": {
+   "rect": {
+    "x": 20,
+    "y": 154,
+    "w": 350,
+    "h": 101.7
+   },
+   "lines": 3,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "32px",
+   "line-height": "33.92px",
+   "font-weight": "700",
+   "letter-spacing": "-0.672px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "495.359px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 20,
+    "y": 268.5,
+    "w": 350,
+    "h": 75.8
+   },
+   "font-size": "16.32px",
+   "line-height": "24.48px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "2.4px 17.6px",
+   "margin-bottom": "11.2px",
+   "items": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 268.5,
+      "w": 350,
+      "h": 48.9
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 20,
+      "y": 319.8,
+      "w": 118.5,
+      "h": 24.5
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 20,
+    "y": 355.5,
+    "w": 350,
+    "h": 50.1
+   },
+   "lines": 2,
+   "font-size": "16.175px",
+   "line-height": "25.0713px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "492.409px",
+   "margin-bottom": "17.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 423.2,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "20px"
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 491.3,
+    "w": 350,
+    "h": 22
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 20,
+      "y": 491.3,
+      "w": 53.7,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 93.7,
+      "y": 491.3,
+      "w": 39.5,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 153.2,
+      "y": 491.3,
+      "w": 47,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+     },
+     "display": "none",
+     "opacity": "0.65",
+     "natural": [
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 530.9,
+    "w": 390,
+    "h": 306.4
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "20px",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -1814.12, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -1794.1,
+      "y": 564.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1614.1,
+      "y": 546.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1434.1,
+      "y": 572.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1254.1,
+      "y": 538.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1074.1,
+      "y": 564.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -894.1,
+      "y": 546.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -714.1,
+      "y": 572.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -534.1,
+      "y": 538.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -354.1,
+      "y": 564.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -174.1,
+      "y": 564.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": 5.9,
+      "y": 546.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": 185.9,
+      "y": 572.9,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 20,
+    "y": 841.2,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "20px"
+  },
+  "next": {
+   "rect": {
+    "x": 35,
+    "y": 967.8,
+    "w": 320,
+    "h": 65.7
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 915.8,
+    "w": 390,
+    "h": 4750.5
+   }
+  }
+ },
+ "360x780": {
+  "vw": 360,
+  "vh": 780,
+  "dpr": 2,
+  "scrollW": 360,
+  "clientW": 360,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 360,
+     "h": 95.6
+    },
+    "pos": "fixed"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 0,
+   "w": 360,
+   "h": 5685.8
+  },
+  "mainPaddingTop": {
+   "padding-top": "102px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 0,
+   "y": 138,
+   "w": 360,
+   "h": 392.6
+  },
+  "heroPad": {
+   "padding-top": "16px",
+   "padding-bottom": "17.6px",
+   "padding-left": "20px",
+   "padding-right": "20px",
+   "text-align": "start"
+  },
+  "title": {
+   "rect": {
+    "x": 20,
+    "y": 154,
+    "w": 320,
+    "h": 101.7
+   },
+   "lines": 3,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "32px",
+   "line-height": "33.92px",
+   "font-weight": "700",
+   "letter-spacing": "-0.672px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "495.359px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 20,
+    "y": 268.5,
+    "w": 320,
+    "h": 75.8
+   },
+   "font-size": "16.32px",
+   "line-height": "24.48px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "2.4px 17.6px",
+   "margin-bottom": "11.2px",
+   "items": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 268.5,
+      "w": 320,
+      "h": 48.9
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 20,
+      "y": 319.8,
+      "w": 118.5,
+      "h": 24.5
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 20,
+    "y": 355.5,
+    "w": 320,
+    "h": 49.9
+   },
+   "lines": 2,
+   "font-size": "16.1px",
+   "line-height": "24.955px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "490.277px",
+   "margin-bottom": "17.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 423,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "20px"
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 491,
+    "w": 320,
+    "h": 22
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 20,
+      "y": 491,
+      "w": 53.7,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 93.7,
+      "y": 491,
+      "w": 39.5,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 153.2,
+      "y": 491,
+      "w": 47,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+     },
+     "display": "none",
+     "opacity": "0.65",
+     "natural": [
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 530.6,
+    "w": 360,
+    "h": 306.4
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "20px",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -1864.91, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -1844.9,
+      "y": 564.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1664.9,
+      "y": 546.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1484.9,
+      "y": 572.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1304.9,
+      "y": 538.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1124.9,
+      "y": 564.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -944.9,
+      "y": 546.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -764.9,
+      "y": 572.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -584.9,
+      "y": 538.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -404.9,
+      "y": 564.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -224.9,
+      "y": 564.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": -44.9,
+      "y": 546.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": 135.1,
+      "y": 572.6,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 20,
+    "y": 841,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "20px"
+  },
+  "next": {
+   "rect": {
+    "x": 35,
+    "y": 967.6,
+    "w": 290,
+    "h": 65.7
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 915.6,
+    "w": 360,
+    "h": 4750.3
+   }
+  }
+ },
+ "414x896": {
+  "vw": 414,
+  "vh": 896,
+  "dpr": 2,
+  "scrollW": 414,
+  "clientW": 414,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 414,
+     "h": 95.6
+    },
+    "pos": "fixed"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 0,
+   "w": 414,
+   "h": 5668.4
+  },
+  "mainPaddingTop": {
+   "padding-top": "102px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 0,
+   "y": 138,
+   "w": 414,
+   "h": 393.1
+  },
+  "heroPad": {
+   "padding-top": "16px",
+   "padding-bottom": "17.6px",
+   "padding-left": "20px",
+   "padding-right": "20px",
+   "text-align": "start"
+  },
+  "title": {
+   "rect": {
+    "x": 20,
+    "y": 154,
+    "w": 374,
+    "h": 101.7
+   },
+   "lines": 3,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "32px",
+   "line-height": "33.92px",
+   "font-weight": "700",
+   "letter-spacing": "-0.672px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "495.359px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 20,
+    "y": 268.5,
+    "w": 374,
+    "h": 75.8
+   },
+   "font-size": "16.32px",
+   "line-height": "24.48px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "2.4px 17.6px",
+   "margin-bottom": "11.2px",
+   "items": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 268.5,
+      "w": 374,
+      "h": 48.9
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 20,
+      "y": 319.8,
+      "w": 118.5,
+      "h": 24.5
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 20,
+    "y": 355.5,
+    "w": 374,
+    "h": 50.3
+   },
+   "lines": 2,
+   "font-size": "16.235px",
+   "line-height": "25.1643px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "494.236px",
+   "margin-bottom": "17.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 423.4,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "20px"
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 491.5,
+    "w": 374,
+    "h": 22
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 20,
+      "y": 491.5,
+      "w": 53.7,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 93.7,
+      "y": 491.5,
+      "w": 39.5,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 153.2,
+      "y": 491.5,
+      "w": 47,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+     },
+     "display": "none",
+     "opacity": "0.65",
+     "natural": [
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 531.1,
+    "w": 414,
+    "h": 306.4
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "20px",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -1914.24, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -1894.2,
+      "y": 565.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1714.2,
+      "y": 547.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1534.2,
+      "y": 573.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1354.2,
+      "y": 539.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1174.2,
+      "y": 565.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -994.2,
+      "y": 547.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -814.2,
+      "y": 573.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -634.2,
+      "y": 539.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -454.2,
+      "y": 565.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -274.2,
+      "y": 565.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": -94.2,
+      "y": 547.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": 85.8,
+      "y": 573.1,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 20,
+    "y": 841.4,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "20px"
+  },
+  "next": {
+   "rect": {
+    "x": 35,
+    "y": 968,
+    "w": 344,
+    "h": 65.7
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 916,
+    "w": 414,
+    "h": 4732.4
+   }
+  }
+ },
+ "520x953": {
+  "vw": 520,
+  "vh": 953,
+  "dpr": 1,
+  "scrollW": 520,
+  "clientW": 520,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 520,
+     "h": 95.6
+    },
+    "pos": "fixed"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 0,
+   "w": 520,
+   "h": 5650.7
+  },
+  "mainPaddingTop": {
+   "padding-top": "102px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 0,
+   "y": 138,
+   "w": 520,
+   "h": 310.8
+  },
+  "heroPad": {
+   "padding-top": "16px",
+   "padding-bottom": "17.6px",
+   "padding-left": "20px",
+   "padding-right": "20px",
+   "text-align": "start"
+  },
+  "title": {
+   "rect": {
+    "x": 20,
+    "y": 154,
+    "w": 480,
+    "h": 68.7
+   },
+   "lines": 2,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "32.4px",
+   "line-height": "34.344px",
+   "font-weight": "700",
+   "letter-spacing": "-0.6804px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "501.551px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 20,
+    "y": 235.5,
+    "w": 480,
+    "h": 51.3
+   },
+   "font-size": "16.32px",
+   "line-height": "24.48px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "2.4px 17.6px",
+   "margin-bottom": "11.2px",
+   "items": [
+    {
+     "rect": {
+      "x": 20,
+      "y": 235.5,
+      "w": 385.7,
+      "h": 24.5
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 20,
+      "y": 262.3,
+      "w": 118.5,
+      "h": 24.5
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 20,
+    "y": 298,
+    "w": 480,
+    "h": 25.6
+   },
+   "lines": 1,
+   "font-size": "16.5px",
+   "line-height": "25.575px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "502.458px",
+   "margin-bottom": "17.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 341.2,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "20px"
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 409.2,
+    "w": 480,
+    "h": 22
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 20,
+      "y": 409.2,
+      "w": 53.7,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 93.7,
+      "y": 409.2,
+      "w": 39.5,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 153.2,
+      "y": 409.2,
+      "w": 47,
+      "h": 22
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+     },
+     "display": "none",
+     "opacity": "0.65",
+     "natural": [
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 448.8,
+    "w": 520,
+    "h": 306.4
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "20px",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -1966.16, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -1946.2,
+      "y": 482.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1766.2,
+      "y": 464.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1586.2,
+      "y": 490.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1406.2,
+      "y": 456.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1226.2,
+      "y": 482.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1046.2,
+      "y": 464.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -866.2,
+      "y": 490.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -686.2,
+      "y": 456.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -506.2,
+      "y": 482.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -326.2,
+      "y": 482.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": -146.2,
+      "y": 464.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": 33.8,
+      "y": 490.8,
+      "w": 168,
+      "h": 236.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 20,
+    "y": 759.2,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "20px"
+  },
+  "next": {
+   "rect": {
+    "x": 35,
+    "y": 885.8,
+    "w": 450,
+    "h": 66.3
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 833.8,
+    "w": 520,
+    "h": 4797
+   }
+  }
+ },
+ "992x900": {
+  "vw": 992,
+  "vh": 900,
+  "dpr": 1,
+  "scrollW": 992,
+  "clientW": 992,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 992,
+     "h": 94.3
+    },
+    "pos": "sticky"
+   },
+   {
+    "sel": "DIV.nav-main",
+    "rect": {
+     "x": 0,
+     "y": 94.3,
+     "w": 992,
+     "h": 45.2
+    },
+    "pos": "sticky"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 139.5,
+   "w": 992,
+   "h": 4391.6
+  },
+  "mainPaddingTop": {
+   "padding-top": "0px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 48,
+   "y": 175.5,
+   "w": 896,
+   "h": 383.1
+  },
+  "heroPad": {
+   "padding-top": "34.72px",
+   "padding-bottom": "24.8px",
+   "padding-left": "40px",
+   "padding-right": "40px",
+   "text-align": "center"
+  },
+  "title": {
+   "rect": {
+    "x": 135.6,
+    "y": 210.2,
+    "w": 720.7,
+    "h": 98.7
+   },
+   "lines": 2,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "46.56px",
+   "line-height": "49.3536px",
+   "font-weight": "700",
+   "letter-spacing": "-0.97776px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "720.747px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 135.6,
+    "y": 324.9,
+    "w": 720.7,
+    "h": 28.7
+   },
+   "font-size": "19.152px",
+   "line-height": "28.728px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "4px 24px",
+   "margin-bottom": "14.4px",
+   "items": [
+    {
+     "rect": {
+      "x": 188.2,
+      "y": 324.9,
+      "w": 452.5,
+      "h": 28.7
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 664.7,
+      "y": 324.9,
+      "w": 139.1,
+      "h": 28.7
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 226.8,
+    "y": 368,
+    "w": 538.4,
+    "h": 27.4
+   },
+   "lines": 1,
+   "font-size": "17.68px",
+   "line-height": "27.404px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "538.391px",
+   "margin-bottom": "25.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 369.7,
+    "y": 421,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "29.76px"
+  },
+  "logos": {
+   "rect": {
+    "x": 135.6,
+    "y": 498.8,
+    "w": 720.7,
+    "h": 35
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 303.7,
+      "y": 498.8,
+      "w": 85.4,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 413.9,
+      "y": 498.8,
+      "w": 62.9,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 501.5,
+      "y": 498.8,
+      "w": 74.7,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 601,
+      "y": 498.8,
+      "w": 87.3,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      247,
+      99
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 558.6,
+    "w": 992,
+    "h": 336.8
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "calc(max((100vw - 1600px) / 2, 0px) + 48px)",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -2371.57, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -2323.6,
+      "y": 592.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2111.3,
+      "y": 574.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1899,
+      "y": 600.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1686.8,
+      "y": 566.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1474.5,
+      "y": 592.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1262.2,
+      "y": 574.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1050,
+      "y": 600.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -837.7,
+      "y": 566.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -625.4,
+      "y": 592.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -413.2,
+      "y": 592.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": -200.9,
+      "y": 574.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": 11.4,
+      "y": 600.6,
+      "w": 198.4,
+      "h": 266.8
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 48,
+    "y": 899.3,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "-32px"
+  },
+  "next": {
+   "rect": {
+    "x": 88,
+    "y": 1023.5,
+    "w": 816,
+    "h": 41.3
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 973.9,
+    "w": 992,
+    "h": 3537.2
+   }
+  }
+ },
+ "1440x900": {
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "scrollW": 1440,
+  "clientW": 1440,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 1440,
+     "h": 95.2
+    },
+    "pos": "sticky"
+   },
+   {
+    "sel": "DIV.nav-main",
+    "rect": {
+     "x": 0,
+     "y": 95.2,
+     "w": 1440,
+     "h": 45.2
+    },
+    "pos": "sticky"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 140.4,
+   "w": 1440,
+   "h": 4525.7
+  },
+  "mainPaddingTop": {
+   "padding-top": "0px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 48,
+   "y": 176.4,
+   "w": 1344,
+   "h": 435.8
+  },
+  "heroPad": {
+   "padding-top": "50.4px",
+   "padding-bottom": "32px",
+   "padding-left": "40px",
+   "padding-right": "40px",
+   "text-align": "center"
+  },
+  "title": {
+   "rect": {
+    "x": 286.6,
+    "y": 226.8,
+    "w": 866.9,
+    "h": 118.7
+   },
+   "lines": 2,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "56px",
+   "line-height": "59.36px",
+   "font-weight": "700",
+   "letter-spacing": "-1.176px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "866.878px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 286.6,
+    "y": 361.5,
+    "w": 866.9,
+    "h": 31.1
+   },
+   "font-size": "20.72px",
+   "line-height": "31.08px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "4px 24px",
+   "margin-bottom": "14.4px",
+   "items": [
+    {
+     "rect": {
+      "x": 387.9,
+      "y": 361.5,
+      "w": 489.7,
+      "h": 31.1
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 901.6,
+      "y": 361.5,
+      "w": 150.5,
+      "h": 31.1
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 439.8,
+    "y": 407,
+    "w": 560.3,
+    "h": 28.5
+   },
+   "lines": 1,
+   "font-size": "18.4px",
+   "line-height": "28.52px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "560.317px",
+   "margin-bottom": "25.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 593.7,
+    "y": 461.1,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "36px"
+  },
+  "logos": {
+   "rect": {
+    "x": 286.6,
+    "y": 545.2,
+    "w": 866.9,
+    "h": 35
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 510.9,
+      "y": 545.2,
+      "w": 85.4,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 632.3,
+      "y": 545.2,
+      "w": 62.9,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 731.1,
+      "y": 545.2,
+      "w": 74.7,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 841.8,
+      "y": 545.2,
+      "w": 87.3,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      247,
+      99
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 612.2,
+    "w": 1440,
+    "h": 370.4
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "calc(max((100vw - 1600px) / 2, 0px) + 48px)",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -2877.82, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -2829.8,
+      "y": 646.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2577.8,
+      "y": 628.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2325.8,
+      "y": 654.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2073.8,
+      "y": 620.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1821.8,
+      "y": 646.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1569.8,
+      "y": 628.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1317.8,
+      "y": 654.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1065.8,
+      "y": 620.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -813.8,
+      "y": 646.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -561.8,
+      "y": 646.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": -309.8,
+      "y": 628.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": -57.8,
+      "y": 654.2,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 48,
+    "y": 986.5,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "-32px"
+  },
+  "next": {
+   "rect": {
+    "x": 88,
+    "y": 1125.1,
+    "w": 1264,
+    "h": 46.7
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 1061.1,
+    "w": 1440,
+    "h": 3585
+   }
+  }
+ },
+ "1738x1001": {
+  "vw": 1738,
+  "vh": 1001,
+  "dpr": 1,
+  "scrollW": 1738,
+  "clientW": 1738,
+  "bandPagina": true,
+  "fontsOk": {
+   "playfair700": true,
+   "montserrat": true
+  },
+  "fixed": [
+   {
+    "sel": "HEADER.header-main",
+    "rect": {
+     "x": 0,
+     "y": 0,
+     "w": 1738,
+     "h": 96.2
+    },
+    "pos": "sticky"
+   },
+   {
+    "sel": "DIV.nav-main",
+    "rect": {
+     "x": 0,
+     "y": 96.2,
+     "w": 1738,
+     "h": 45.2
+    },
+    "pos": "sticky"
+   }
+  ],
+  "main": {
+   "x": 0,
+   "y": 141.4,
+   "w": 1738,
+   "h": 4566
+  },
+  "mainPaddingTop": {
+   "padding-top": "0px",
+   "margin-top": "0px"
+  },
+  "hero": {
+   "x": 117,
+   "y": 177.4,
+   "w": 1504,
+   "h": 441.5
+  },
+  "heroPad": {
+   "padding-top": "56px",
+   "padding-bottom": "32px",
+   "padding-left": "40px",
+   "padding-right": "40px",
+   "text-align": "center"
+  },
+  "title": {
+   "rect": {
+    "x": 435.6,
+    "y": 233.4,
+    "w": 866.9,
+    "h": 118.7
+   },
+   "lines": 2,
+   "text": "Kerstpakketten met jouw logo, van Europese makers",
+   "font-size": "56px",
+   "line-height": "59.36px",
+   "font-weight": "700",
+   "letter-spacing": "-1.176px",
+   "color": "rgb(45, 69, 40)",
+   "max-width": "866.878px",
+   "font-family": "\"Playfair Display\", Georgia, serif"
+  },
+  "feiten": {
+   "rect": {
+    "x": 435.6,
+    "y": 368.1,
+    "w": 866.9,
+    "h": 31.2
+   },
+   "font-size": "20.8px",
+   "line-height": "31.2px",
+   "color": "rgb(93, 109, 85)",
+   "gap": "4px 24px",
+   "margin-bottom": "14.4px",
+   "items": [
+    {
+     "rect": {
+      "x": 535.7,
+      "y": 368.1,
+      "w": 491.5,
+      "h": 31.2
+     },
+     "text": "Voorbeelden tussen € 25 en € 70 per persoon",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    },
+    {
+     "rect": {
+      "x": 1051.3,
+      "y": 368.1,
+      "w": 151,
+      "h": 31.2
+     },
+     "text": "Vanaf 10 stuks",
+     "strong": {
+      "color": "rgb(44, 42, 38)",
+      "font-weight": "700"
+     }
+    }
+   ]
+  },
+  "vraag": {
+   "rect": {
+    "x": 588.8,
+    "y": 413.7,
+    "w": 560.3,
+    "h": 28.5
+   },
+   "lines": 1,
+   "font-size": "18.4px",
+   "line-height": "28.52px",
+   "color": "rgb(93, 109, 85)",
+   "max-width": "560.317px",
+   "margin-bottom": "25.6px"
+  },
+  "btn": {
+   "rect": {
+    "x": 742.7,
+    "y": 467.8,
+    "w": 252.6,
+    "h": 48.1
+   },
+   "text": "Vraag een offerte aan",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px",
+   "background-color": "rgb(173, 99, 49)",
+   "color": "rgb(255, 255, 255)",
+   "border-radius": "50px",
+   "box-shadow": "rgba(173, 99, 49, 0.9) 0px 8px 22px -12px"
+  },
+  "ctaMargin": {
+   "margin-bottom": "36px"
+  },
+  "logos": {
+   "rect": {
+    "x": 435.6,
+    "y": 551.8,
+    "w": 866.9,
+    "h": 35
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "rect": {
+      "x": 659.9,
+      "y": 551.8,
+      "w": 85.4,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      327,
+      134
+     ]
+    },
+    {
+     "alt": "Ifes",
+     "rect": {
+      "x": 781.3,
+      "y": 551.8,
+      "w": 62.9,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      212,
+      118
+     ]
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "rect": {
+      "x": 880.1,
+      "y": 551.8,
+      "w": 74.7,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      286,
+      134
+     ]
+    },
+    {
+     "alt": "Wezijnwille",
+     "rect": {
+      "x": 990.8,
+      "y": 551.8,
+      "w": 87.3,
+      "h": 35
+     },
+     "display": "block",
+     "opacity": "0.65",
+     "natural": [
+      247,
+      99
+     ]
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 618.8,
+    "w": 1738,
+    "h": 370.4
+   },
+   "tile": {
+    "--rg-band-tile": "clamp(168px, 20vw, 232px)",
+    "--rg-band-gap": "clamp(12px, 1.4vw, 20px)",
+    "--rg-band-inzet": "calc(max((100vw - 1600px) / 2, 0px) + 48px)",
+    "padding": "8px 0px 28px"
+   },
+   "anim": {
+    "animation": "46.8s linear infinite rg-band-run",
+    "animation-play-state": "running",
+    "transform": "matrix(1, 0, 0, 1, -2941.23, 0)"
+   },
+   "n": 36,
+   "boxes": [
+    {
+     "rect": {
+      "x": -2824.2,
+      "y": 652.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2572.2,
+      "y": 634.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2320.2,
+      "y": 660.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -2068.2,
+      "y": 626.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Ontspan pakket",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1816.2,
+      "y": 652.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank, Wijn & Spel",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1564.2,
+      "y": 634.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Paraplu, Lunchpot en Fles",
+     "y1": "product-slider-item rg-band__y2 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1312.2,
+      "y": 660.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank & Spel",
+     "y1": "product-slider-item rg-band__y3 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -1060.2,
+      "y": 626.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank & Wijn",
+     "y1": "product-slider-item rg-band__y4 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -808.2,
+      "y": 652.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Koffiebeker, lunchbox en Bambook",
+     "y1": "product-slider-item rg-band__y1 rg-band__kloon"
+    },
+    {
+     "rect": {
+      "x": -556.2,
+      "y": 652.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Borrelplank",
+     "y1": "product-slider-item rg-band__item rg-band__y1"
+    },
+    {
+     "rect": {
+      "x": -304.2,
+      "y": 634.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Gezellig & warm",
+     "y1": "product-slider-item rg-band__item rg-band__y2"
+    },
+    {
+     "rect": {
+      "x": -52.2,
+      "y": 660.8,
+      "w": 232,
+      "h": 300.4
+     },
+     "naam": "Fles, Tonys & Bambook",
+     "y1": "product-slider-item rg-band__item rg-band__y3"
+    }
+   ],
+   "naam": {
+    "font-size": "11.2px",
+    "color": "rgb(173, 99, 49)",
+    "letter-spacing": "0.896px",
+    "font-weight": "600",
+    "min-height": "30.24px"
+   },
+   "prijs": {
+    "font-size": "14.72px",
+    "color": "rgb(44, 42, 38)",
+    "font-weight": "600"
+   },
+   "prijsTekst": "€ 32,00"
+  },
+  "catHead": {
+   "display": "flex"
+  },
+  "meer": {
+   "rect": {
+    "x": 117,
+    "y": 993.2,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "text": "Alle kerstpakketten",
+   "font-size": "15.2px",
+   "color": "rgb(173, 99, 49)",
+   "margin-left": "-32px"
+  },
+  "next": {
+   "rect": {
+    "x": 157,
+    "y": 1131.8,
+    "w": 1424,
+    "h": 46.7
+   },
+   "text": "Een bedankje dat het hele jaar samenvat"
+  },
+  "nextAfterMeer": {
+   "sel": "cms-section  pos-2 cms-section-default",
+   "rect": {
+    "x": 0,
+    "y": 1067.8,
+    "w": 1738,
+    "h": 3619.6
+   }
+  }
+ }
+}

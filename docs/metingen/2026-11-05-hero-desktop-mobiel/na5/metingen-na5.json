@@ -1,0 +1,547 @@
+{
+ "basis": {
+  "390x844": {
+   "vh": 844,
+   "hero": {
+    "y": 102,
+    "h": 276.1
+   },
+   "band": {
+    "y": 378.1,
+    "h": 272.4
+   },
+   "knop": {
+    "y": 239.7,
+    "h": 48.1
+   },
+   "noot": {
+    "y": 307.7,
+    "h": 20.4
+   },
+   "logos": {
+    "y": 336.1,
+    "h": 34
+   },
+   "strook": {
+    "y": 650.5,
+    "h": 50.4
+   },
+   "meer": {
+    "y": 720.8,
+    "h": 36.6
+   },
+   "prijsOnder": 607.34375,
+   "tegelOnder": 622.46875,
+   "kopRegels": 3,
+   "kopH": 114.5,
+   "contour": {
+    "content": "none",
+    "opacity": "1",
+    "width": "auto",
+    "bg": "none"
+   },
+   "cirkel": {
+    "w": "25.1875px",
+    "radius": "50%",
+    "bg": "rgb(247, 245, 242)"
+   }
+  },
+  "375x667": {
+   "vh": 667,
+   "hero": {
+    "y": 102,
+    "h": 276.1
+   },
+   "band": {
+    "y": 378.1,
+    "h": 272.4
+   },
+   "knop": {
+    "y": 239.7,
+    "h": 48.1
+   },
+   "noot": {
+    "y": 307.7,
+    "h": 20.4
+   },
+   "logos": {
+    "y": 336.1,
+    "h": 34
+   },
+   "strook": {
+    "y": 650.5,
+    "h": 50.4
+   },
+   "meer": {
+    "y": 720.8,
+    "h": 36.6
+   },
+   "prijsOnder": 607.34375,
+   "tegelOnder": 622.46875,
+   "kopRegels": 3,
+   "kopH": 114.5,
+   "contour": {
+    "content": "none",
+    "opacity": "1",
+    "width": "auto",
+    "bg": "none"
+   },
+   "cirkel": {
+    "w": "25.1875px",
+    "radius": "50%",
+    "bg": "rgb(247, 245, 242)"
+   }
+  },
+  "1280x800": {
+   "vh": 800,
+   "hero": {
+    "y": 140.4,
+    "h": 358.7
+   },
+   "band": {
+    "y": 499.1,
+    "h": 320.4
+   },
+   "knop": {
+    "y": 311.6,
+    "h": 55.2
+   },
+   "noot": {
+    "y": 390.7,
+    "h": 20.4
+   },
+   "logos": {
+    "y": 435.1,
+    "h": 40
+   },
+   "strook": {
+    "y": 819.5,
+    "h": 27.6
+   },
+   "meer": {
+    "y": 875.1,
+    "h": 36.6
+   },
+   "prijsOnder": 776.359375,
+   "tegelOnder": 791.484375,
+   "kopRegels": 2,
+   "kopH": 129.6,
+   "contour": {
+    "content": "none",
+    "opacity": "1",
+    "width": "auto",
+    "bg": "none"
+   },
+   "cirkel": {
+    "w": "28.5469px",
+    "radius": "50%",
+    "bg": "rgb(247, 245, 242)"
+   }
+  },
+  "1440x900": {
+   "vh": 900,
+   "hero": {
+    "y": 140.4,
+    "h": 364.8
+   },
+   "band": {
+    "y": 505.2,
+    "h": 320.4
+   },
+   "knop": {
+    "y": 317.7,
+    "h": 55.2
+   },
+   "noot": {
+    "y": 396.8,
+    "h": 20.4
+   },
+   "logos": {
+    "y": 441.2,
+    "h": 40
+   },
+   "strook": {
+    "y": 825.6,
+    "h": 27.6
+   },
+   "meer": {
+    "y": 881.2,
+    "h": 36.6
+   },
+   "prijsOnder": 782.453125,
+   "tegelOnder": 797.578125,
+   "kopRegels": 2,
+   "kopH": 135.7,
+   "contour": {
+    "content": "none",
+    "opacity": "1",
+    "width": "auto",
+    "bg": "none"
+   },
+   "cirkel": {
+    "w": "28.5469px",
+    "radius": "50%",
+    "bg": "rgb(247, 245, 242)"
+   }
+  },
+  "1931x1112": {
+   "vh": 1112,
+   "hero": {
+    "y": 161.4,
+    "h": 427.2
+   },
+   "band": {
+    "y": 588.6,
+    "h": 370.4
+   },
+   "knop": {
+    "y": 377,
+    "h": 55.2
+   },
+   "noot": {
+    "y": 456.2,
+    "h": 20.4
+   },
+   "logos": {
+    "y": 504.6,
+    "h": 44
+   },
+   "strook": {
+    "y": 958.9,
+    "h": 27.6
+   },
+   "meer": {
+    "y": 1014.5,
+    "h": 36.6
+   },
+   "prijsOnder": 915.8125,
+   "tegelOnder": 930.9375,
+   "kopRegels": 2,
+   "kopH": 135.7,
+   "contour": {
+    "content": "\"\"",
+    "opacity": "0.5",
+    "width": "760px",
+    "bg": "url(\"https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@f2874f"
+   },
+   "cirkel": {
+    "w": "28.5469px",
+    "radius": "50%",
+    "bg": "rgb(247, 245, 242)"
+   }
+  }
+ },
+ "contour": {},
+ "kop": {
+  "V1 serif + sans regel 2": {
+   "390": {
+    "vh": 844,
+    "hero": {
+     "y": 102,
+     "h": 273.6
+    },
+    "band": {
+     "y": 375.6,
+     "h": 272.4
+    },
+    "knop": {
+     "y": 237.1,
+     "h": 48.1
+    },
+    "noot": {
+     "y": 305.2,
+     "h": 20.4
+    },
+    "logos": {
+     "y": 333.6,
+     "h": 34
+    },
+    "strook": {
+     "y": 648,
+     "h": 50.4
+    },
+    "meer": {
+     "y": 718.3,
+     "h": 36.6
+    },
+    "prijsOnder": 604.828125,
+    "tegelOnder": 619.953125,
+    "kopRegels": 3,
+    "kopH": 112,
+    "contour": {
+     "content": "none",
+     "opacity": "1",
+     "width": "auto",
+     "bg": "none"
+    },
+    "cirkel": {
+     "w": "25.1875px",
+     "radius": "50%",
+     "bg": "rgb(247, 245, 242)"
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "1931": {
+    "vh": 1112,
+    "hero": {
+     "y": 161.4,
+     "h": 422.8
+    },
+    "band": {
+     "y": 584.1,
+     "h": 370.4
+    },
+    "knop": {
+     "y": 372.6,
+     "h": 55.2
+    },
+    "noot": {
+     "y": 451.8,
+     "h": 20.4
+    },
+    "logos": {
+     "y": 500.1,
+     "h": 44
+    },
+    "strook": {
+     "y": 954.5,
+     "h": 27.6
+    },
+    "meer": {
+     "y": 1010.1,
+     "h": 36.6
+    },
+    "prijsOnder": 911.375,
+    "tegelOnder": 926.5,
+    "kopRegels": 2,
+    "kopH": 131.2,
+    "contour": {
+     "content": "\"\"",
+     "opacity": "0.5",
+     "width": "760px",
+     "bg": "url(\"https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@f2874f"
+    },
+    "cirkel": {
+     "w": "28.5469px",
+     "radius": "50%",
+     "bg": "rgb(247, 245, 242)"
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   }
+  },
+  "V2 sans regel 1 + serif accent": {
+   "390": {
+    "vh": 844,
+    "hero": {
+     "y": 102,
+     "h": 263.7
+    },
+    "band": {
+     "y": 365.7,
+     "h": 272.4
+    },
+    "knop": {
+     "y": 227.3,
+     "h": 48.1
+    },
+    "noot": {
+     "y": 295.3,
+     "h": 20.4
+    },
+    "logos": {
+     "y": 323.7,
+     "h": 34
+    },
+    "strook": {
+     "y": 638.1,
+     "h": 50.4
+    },
+    "meer": {
+     "y": 708.4,
+     "h": 36.6
+    },
+    "prijsOnder": 594.9375,
+    "tegelOnder": 610.0625,
+    "kopRegels": 3,
+    "kopH": 102.1,
+    "contour": {
+     "content": "none",
+     "opacity": "1",
+     "width": "auto",
+     "bg": "none"
+    },
+    "cirkel": {
+     "w": "25.1875px",
+     "radius": "50%",
+     "bg": "rgb(247, 245, 242)"
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "1931": {
+    "vh": 1112,
+    "hero": {
+     "y": 161.4,
+     "h": 418.6
+    },
+    "band": {
+     "y": 579.9,
+     "h": 370.4
+    },
+    "knop": {
+     "y": 368.4,
+     "h": 55.2
+    },
+    "noot": {
+     "y": 447.5,
+     "h": 20.4
+    },
+    "logos": {
+     "y": 495.9,
+     "h": 44
+    },
+    "strook": {
+     "y": 950.3,
+     "h": 27.6
+    },
+    "meer": {
+     "y": 1005.9,
+     "h": 36.6
+    },
+    "prijsOnder": 907.171875,
+    "tegelOnder": 922.296875,
+    "kopRegels": 2,
+    "kopH": 127,
+    "contour": {
+     "content": "\"\"",
+     "opacity": "0.5",
+     "width": "760px",
+     "bg": "url(\"https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@f2874f"
+    },
+    "cirkel": {
+     "w": "28.5469px",
+     "radius": "50%",
+     "bg": "rgb(247, 245, 242)"
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   }
+  },
+  "V3 serif + korte sans regel": {
+   "390": {
+    "vh": 844,
+    "hero": {
+     "y": 102,
+     "h": 276.8
+    },
+    "band": {
+     "y": 378.8,
+     "h": 272.4
+    },
+    "knop": {
+     "y": 240.4,
+     "h": 48.1
+    },
+    "noot": {
+     "y": 308.4,
+     "h": 20.4
+    },
+    "logos": {
+     "y": 336.8,
+     "h": 34
+    },
+    "strook": {
+     "y": 651.2,
+     "h": 50.4
+    },
+    "meer": {
+     "y": 721.6,
+     "h": 36.6
+    },
+    "prijsOnder": 608.0625,
+    "tegelOnder": 623.1875,
+    "kopRegels": 3,
+    "kopH": 115.2,
+    "contour": {
+     "content": "none",
+     "opacity": "1",
+     "width": "auto",
+     "bg": "none"
+    },
+    "cirkel": {
+     "w": "25.1875px",
+     "radius": "50%",
+     "bg": "rgb(247, 245, 242)"
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo",
+     "Europese makers"
+    ]
+   },
+   "1931": {
+    "vh": 1112,
+    "hero": {
+     "y": 161.4,
+     "h": 428.5
+    },
+    "band": {
+     "y": 589.8,
+     "h": 370.4
+    },
+    "knop": {
+     "y": 378.3,
+     "h": 55.2
+    },
+    "noot": {
+     "y": 457.5,
+     "h": 20.4
+    },
+    "logos": {
+     "y": 505.8,
+     "h": 44
+    },
+    "strook": {
+     "y": 960.2,
+     "h": 27.6
+    },
+    "meer": {
+     "y": 1015.8,
+     "h": 36.6
+    },
+    "prijsOnder": 917.078125,
+    "tegelOnder": 932.203125,
+    "kopRegels": 2,
+    "kopH": 136.9,
+    "contour": {
+     "content": "\"\"",
+     "opacity": "0.5",
+     "width": "760px",
+     "bg": "url(\"https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@f2874f"
+    },
+    "cirkel": {
+     "w": "28.5469px",
+     "radius": "50%",
+     "bg": "rgb(247, 245, 242)"
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo",
+     "Europese makers"
+    ]
+   }
+  }
+ },
+ "cirkel": {}
+}

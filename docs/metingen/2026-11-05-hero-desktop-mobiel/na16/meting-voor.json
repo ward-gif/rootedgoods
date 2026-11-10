@@ -1,0 +1,187 @@
+[
+ [
+  1931,
+  1112,
+  {
+   "vh": 1112,
+   "pageTop": 141,
+   "titel": {
+    "top": 217,
+    "bot": 353
+   },
+   "knop": {
+    "top": 377,
+    "bot": 432
+   },
+   "logos": {
+    "top": 505,
+    "bot": 549
+   },
+   "band": {
+    "top": 589,
+    "bot": 959
+   },
+   "strook": {
+    "top": 959,
+    "bot": 987
+   },
+   "link": {
+    "top": 1015,
+    "bot": 1051
+   },
+   "prijsOnder": 916,
+   "intro": {
+    "top": 1089,
+    "bot": 4721
+   }
+  }
+ ],
+ [
+  1738,
+  1001,
+  {
+   "vh": 1001,
+   "pageTop": 141,
+   "titel": {
+    "top": 217,
+    "bot": 353
+   },
+   "knop": {
+    "top": 377,
+    "bot": 432
+   },
+   "logos": {
+    "top": 505,
+    "bot": 549
+   },
+   "band": {
+    "top": 589,
+    "bot": 959
+   },
+   "strook": {
+    "top": 959,
+    "bot": 987
+   },
+   "link": {
+    "top": 1015,
+    "bot": 1051
+   },
+   "prijsOnder": 916,
+   "intro": {
+    "top": 1089,
+    "bot": 4709
+   }
+  }
+ ],
+ [
+  1512,
+  890,
+  {
+   "vh": 890,
+   "pageTop": 141,
+   "titel": {
+    "top": 165,
+    "bot": 301
+   },
+   "knop": {
+    "top": 319,
+    "bot": 374
+   },
+   "logos": {
+    "top": 442,
+    "bot": 482
+   },
+   "band": {
+    "top": 506,
+    "bot": 827
+   },
+   "strook": {
+    "top": 827,
+    "bot": 854
+   },
+   "link": {
+    "top": 882,
+    "bot": 919
+   },
+   "prijsOnder": 783,
+   "intro": {
+    "top": 957,
+    "bot": 4552
+   }
+  }
+ ],
+ [
+  1440,
+  900,
+  {
+   "vh": 900,
+   "pageTop": 140,
+   "titel": {
+    "top": 164,
+    "bot": 300
+   },
+   "knop": {
+    "top": 318,
+    "bot": 373
+   },
+   "logos": {
+    "top": 441,
+    "bot": 481
+   },
+   "band": {
+    "top": 505,
+    "bot": 826
+   },
+   "strook": {
+    "top": 826,
+    "bot": 853
+   },
+   "link": {
+    "top": 881,
+    "bot": 918
+   },
+   "prijsOnder": 782,
+   "intro": {
+    "top": 956,
+    "bot": 4541
+   }
+  }
+ ],
+ [
+  1280,
+  800,
+  {
+   "vh": 800,
+   "pageTop": 140,
+   "titel": {
+    "top": 164,
+    "bot": 294
+   },
+   "knop": {
+    "top": 312,
+    "bot": 367
+   },
+   "logos": {
+    "top": 435,
+    "bot": 475
+   },
+   "band": {
+    "top": 499,
+    "bot": 819
+   },
+   "strook": {
+    "top": 819,
+    "bot": 847
+   },
+   "link": {
+    "top": 875,
+    "bot": 912
+   },
+   "prijsOnder": 776,
+   "intro": {
+    "top": 950,
+    "bot": 4592
+   }
+  }
+ ]
+]

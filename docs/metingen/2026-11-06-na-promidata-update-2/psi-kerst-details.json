@@ -1,0 +1,118 @@
+{
+ "total-byte-weight": {
+  "id": "total-byte-weight",
+  "title": "Avoids enormous network payloads",
+  "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/).",
+  "score": 1,
+  "scoreDisplayMode": "metricSavings",
+  "displayValue": "Total size was 2,451 KiB",
+  "details": {
+   "items": [
+    {
+     "totalBytes": 378945,
+     "url": "https://rootedgoods.eu/shared/thumbnail/57/f2/98/1234567890/0fb70c3d014f6372579d9a66e1fe5f8df14aab2ea920c6ef93597818a084d860_800x800.png?1786530715"
+    },
+    {
+     "totalBytes": 252765,
+     "url": "https://rootedgoods.eu/shared/thumbnail/b5/11/5d/1234567890/e808835a523ab5bf1c4b0746f1cf6016d41234740e6b78604dc7f141bfc0eb5d_800x800.png?1787232687"
+    },
+    {
+     "totalBytes": 199474,
+     "url": "https://www.googletagmanager.com/gtag/js?id=G-VT3YF07ZGB&cx=c&gtm=4e6b41h1"
+    },
+    {
+     "url": "https://rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/css/all.css?1793965189",
+     "totalBytes": 195640
+    },
+    {
+     "totalBytes": 183054,
+     "url": "https://rootedgoods.eu/theme/01bd7d15dced734c9c0faa17cbc0b7b6/js/all.js?1793965189"
+    },
+    {
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK",
+     "totalBytes": 161145
+    },
+    {
+     "totalBytes": 158507,
+     "url": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2"
+    },
+    {
+     "totalBytes": 130305,
+     "url": "https://rootedgoods.eu/media/5d/dd/b7/1785500254/Warehousing%202%20(1).jpg"
+    },
+    {
+     "url": "https://rootedgoods.eu/media/4a/2e/d4/1785831536/Verzending%20naar%20locaties%20doosjes.jpg",
+     "totalBytes": 96058
+    },
+    {
+     "totalBytes": 80328,
+     "url": "https://rootedgoods.eu/media/39/75/1d/1787736741/Zuivelhoeve%20pakket.jpg"
+    }
+   ],
+   "headings": [
+    {
+     "label": "URL",
+     "key": "url",
+     "valueType": "url"
+    },
+    {
+     "label": "Transfer Size",
+     "key": "totalBytes",
+     "valueType": "bytes"
+    }
+   ],
+   "type": "table",
+   "sortedBy": [
+    "totalBytes"
+   ]
+  },
+  "numericValue": 2509395,
+  "numericUnit": "byte"
+ },
+ "largest-contentful-paint": {
+  "id": "largest-contentful-paint",
+  "title": "Largest Contentful Paint",
+  "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
+  "score": 0,
+  "scoreDisplayMode": "numeric",
+  "displayValue": "10.3 s",
+  "numericValue": 10307.614734870698,
+  "numericUnit": "millisecond"
+ },
+ "server-response-time": {
+  "id": "server-response-time",
+  "title": "Initial server response time was short",
+  "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).",
+  "score": 1,
+  "scoreDisplayMode": "metricSavings",
+  "displayValue": "Root document took 20 ms",
+  "metricSavings": {
+   "LCP": 0,
+   "FCP": 0
+  },
+  "details": {
+   "type": "opportunity",
+   "overallSavingsMs": 0,
+   "headings": [
+    {
+     "key": "url",
+     "label": "URL",
+     "valueType": "url"
+    },
+    {
+     "key": "responseTime",
+     "valueType": "timespanMs",
+     "label": "Time Spent"
+    }
+   ],
+   "items": [
+    {
+     "responseTime": 20,
+     "url": "https://rootedgoods.eu/eindejaarsgeschenken"
+    }
+   ]
+  },
+  "numericValue": 20,
+  "numericUnit": "millisecond"
+ }
+}

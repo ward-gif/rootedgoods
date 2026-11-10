@@ -1,0 +1,212 @@
+{
+ "struct1931": {
+  "header": [
+   0,
+   96
+  ],
+  "cmsPage": [
+   141,
+   4721
+  ],
+  "hero": [
+   141,
+   589
+  ],
+  "kop": [
+   217,
+   353
+  ],
+  "band": [
+   589,
+   959
+  ],
+  "strook": [
+   959,
+   987
+  ],
+  "link": [
+   1015,
+   1051
+  ],
+  "pseudo": {
+   "content": "\"\"",
+   "top": "0px",
+   "height": "920px",
+   "bg": "rgb(93, 109, 85)",
+   "opacity": "0.22",
+   "mask": "url(\"http://127.0.0.1:8777/repo/svg/europa-contour-vol.svg\")",
+   "maskSize": "auto 118%",
+   "z": "-1"
+  },
+  "prijsOnder": 916,
+  "vh": 1112
+ },
+ "struct1280x800": {
+  "header": [
+   0,
+   95
+  ],
+  "cmsPage": [
+   140,
+   4592
+  ],
+  "hero": [
+   140,
+   499
+  ],
+  "kop": [
+   164,
+   294
+  ],
+  "band": [
+   499,
+   819
+  ],
+  "strook": [
+   819,
+   847
+  ],
+  "link": [
+   875,
+   912
+  ],
+  "pseudo": {
+   "content": "\"\"",
+   "top": "0px",
+   "height": "760px",
+   "bg": "rgb(93, 109, 85)",
+   "opacity": "0.22",
+   "mask": "url(\"http://127.0.0.1:8777/repo/svg/europa-contour-vol.svg\")",
+   "maskSize": "auto 118%",
+   "z": "-1"
+  },
+  "prijsOnder": 776,
+  "vh": 800
+ },
+ "struct1440x900": {
+  "header": [
+   0,
+   95
+  ],
+  "cmsPage": [
+   140,
+   4541
+  ],
+  "hero": [
+   140,
+   505
+  ],
+  "kop": [
+   164,
+   300
+  ],
+  "band": [
+   505,
+   826
+  ],
+  "strook": [
+   826,
+   853
+  ],
+  "link": [
+   881,
+   918
+  ],
+  "pseudo": {
+   "content": "\"\"",
+   "top": "0px",
+   "height": "760px",
+   "bg": "rgb(93, 109, 85)",
+   "opacity": "0.22",
+   "mask": "url(\"http://127.0.0.1:8777/repo/svg/europa-contour-vol.svg\")",
+   "maskSize": "auto 118%",
+   "z": "-1"
+  },
+  "prijsOnder": 782,
+  "vh": 900
+ },
+ "struct390x844": {
+  "header": [
+   0,
+   96
+  ],
+  "cmsPage": [
+   102,
+   5583
+  ],
+  "hero": [
+   102,
+   415
+  ],
+  "kop": [
+   118,
+   232
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "pseudo": {
+   "content": "none",
+   "top": "auto",
+   "height": "auto",
+   "bg": "rgba(0, 0, 0, 0)",
+   "opacity": "1",
+   "mask": "none",
+   "maskSize": "auto",
+   "z": "auto"
+  },
+  "prijsOnder": 644,
+  "vh": 844
+ },
+ "struct375x667": {
+  "header": [
+   0,
+   96
+  ],
+  "cmsPage": [
+   102,
+   5557
+  ],
+  "hero": [
+   102,
+   415
+  ],
+  "kop": [
+   118,
+   232
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "pseudo": {
+   "content": "none",
+   "top": "auto",
+   "height": "auto",
+   "bg": "rgba(0, 0, 0, 0)",
+   "opacity": "1",
+   "mask": "none",
+   "maskSize": "auto",
+   "z": "auto"
+  },
+  "prijsOnder": 644,
+  "vh": 667
+ }
+}

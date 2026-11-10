@@ -2454,3 +2454,365 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.classList.add('rg-raster--afgekapt');
   });
 })();
+
+/* =====================================================================
+   PRODUCTBAND — thema-hero met een doorlopend schuivende band
+   ---------------------------------------------------------------------
+   Derde opzet voor de kerstpagina, 5 november 2026. Zie
+   docs/thema-hero-plan-2026-11-05.md. Hoort bij CSS-sectie 53 en bij het
+   blok blokken-def/thema-eindejaarsgeschenken-band.html.
+
+   INERT ZONDER DE MARKER. Draait alleen als er een .rg-page-hero--band op
+   de pagina staat. Dit bestand mag dus vooruit gepubliceerd worden; op de
+   homepage, die dezelfde slidermarkup heeft, verandert niets.
+
+   WAAROM DIT WERKT. De thema-head laadt onze bundel op byte 6.403 en die
+   van het thema op 11.268, allebei met defer. Scripts met defer voeren uit
+   in documentvolgorde, dus wij zijn gegarandeerd eerst. We halen
+   data-product-slider weg VOORDAT het thema tiny-slider start; de
+   serverzijdige markup blijft dan gewoon staan. Een al draaiende
+   tiny-slider achteraf overrulen kan niet betrouwbaar. Gemeten en werkend
+   op 5 november, op de testpagina.
+
+   WAT HET DOET, OP VOLGORDE
+   1. Zet .rg-band-pagina op <html> en --rg-vw (de breedte zonder
+      scrollbalk) voor de full-bleed van de band.
+   2. Haalt data-product-slider, has-nav en de lege controls-houder weg,
+      en zet .rg-band op de slider.
+   3. Gooit per tegel weg wat de band niet toont (wishlist, varianten,
+      badges, knop, hr) VOORDAT er gekloond wordt, zodat het thema daar
+      geen plugins op start.
+   4. Kloont de tegels: één set vóór de originelen en genoeg sets erna om
+      twee schermbreedtes plus één set te vullen. Klonen zijn aria-hidden
+      en uit de tabvolgorde; hun verborgen inputs gaan eruit.
+   5. Slepen met vinger of muis: zet alleen een CSS-variabele die de CSS
+      als `translate` toepast, via één requestAnimationFrame per beweging.
+      Nooit left, margin of scrollLeft. Een sleep van 6px of meer onderdrukt
+      de klik die erop volgt, anders opent elke veeg een productpagina.
+   6. Pauzeert buiten beeld (IntersectionObserver). Hover en focus pauzeren
+      via CSS.
+   7. Bij toetsenbordfocus op een tegel schuift de band die tegel in beeld,
+      want een getransformeerde tegel scrollt de browser niet zelf in zicht.
+   8. Maakt onder de band de scrollverwijzing uit data-rg-band-label.
+
+   prefers-reduced-motion: reduce slaat 4, 5 en 7 over; de CSS maakt er dan
+   een scrollbare rij van.
+   ===================================================================== */
+(function () {
+  var marker = document.querySelector('.rg-page-hero--band');
+  if (!marker) return;
+
+  var html = document.documentElement;
+  html.classList.add('rg-band-pagina');
+
+  /* 1. De schermbreedte zonder scrollbalk, voor de full-bleed in de CSS.
+     clientWidth van <html> is precies dat. Eén keer nu en bij resize, via
+     rAF zodat een reeks resize-events één schrijfactie wordt. */
+  function zetVw() { html.style.setProperty('--rg-vw', html.clientWidth + 'px'); }
+  zetVw();
+  var vwRaf = 0;
+  window.addEventListener('resize', function () {
+    if (vwRaf) return;
+    vwRaf = requestAnimationFrame(function () { vwRaf = 0; zetVw(); });
+  });
+
+  /* 2. De slider. Alleen data-product-slider (één per pagina, de grote
+     slider); de beeldgalerijen per kaart hangen aan data-slider en die
+     blijven met rust. Faal hard: geen slider is een fout in de opbouw van
+     de pagina, niet iets om stil te laten gaan. */
+  var slider = document.querySelector('[data-product-slider]');
+  if (!slider) {
+    console.warn('rg-band: hero .rg-page-hero--band gevonden, maar geen [data-product-slider] op de pagina. Staat het productslider-element onder de hero?');
+    return;
+  }
+  var track = slider.querySelector('.product-slider-container');
+  var items = track ? Array.prototype.filter.call(track.children, function (el) {
+    return el.classList.contains('product-slider-item');
+  }) : [];
+  if (!track || !items.length) {
+    console.warn('rg-band: slider gevonden, maar geen .product-slider-item erin. De band blijft uit.');
+    return;
+  }
+
+  slider.removeAttribute('data-product-slider');
+  slider.classList.remove('has-nav');
+  slider.classList.add('rg-band');
+  var controls = slider.querySelector('[data-product-slider-controls]');
+  if (controls) controls.remove();
+
+  var stil = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (stil) slider.classList.add('rg-band--stil');
+
+  /* 3. Opschonen en de versprong-class per positie in de set. */
+  var n = items.length;
+  items.forEach(function (item, i) {
+    Array.prototype.forEach.call(
+      item.querySelectorAll('.product-wishlist, .variant-thumbnail, .product-action, .product-badges, hr'),
+      function (el) { el.remove(); }
+    );
+    item.classList.add('rg-band__item', 'rg-band__y' + (i % 4 + 1));
+    zetPrijsPerPersoon(item);
+    /* De title-attributen (Shopware zet de productnaam drie keer per tegel
+       als title) gaan eruit: de band schuift onder muis of vinger door, en
+       dan verschijnt de tooltip op elk moment, in Wards schermafdruk van
+       5 november dwars over de klantlogo's. De naam staat al op de tegel. */
+    Array.prototype.forEach.call(item.querySelectorAll('[title]'), function (el) {
+      el.removeAttribute('title');
+    });
+  });
+
+  /* 3b. De prijs in de eenheid van de hero. Shopware zet "Van" als losse
+     tekst in .product-price-wrapper en "€ 32,00" in .product-price; de hero
+     erboven zegt "€ 25 tot € 70 per persoon". Dezelfde eenheid op 200 px
+     afstand, dus: "€ 32 per persoon", en "€ 32,50 per persoon" als er
+     centen zijn. Vóór het klonen, zodat de klonen het overnemen.
+     Herkent de functie de prijs niet (ander formaat, andere valuta), dan
+     blijft de tekst zoals Shopware hem zette en zegt de console het; een
+     verkeerd herschreven prijs is erger dan een lelijke. */
+  function zetPrijsPerPersoon(item) {
+    var wrapper = item.querySelector('.product-price-wrapper');
+    var prijs = item.querySelector('.product-price');
+    if (!wrapper || !prijs) return;
+    var ruw = prijs.textContent.replace(/ /g, ' ').trim();
+    var m = /^€\s*(\d{1,4})(?:,(\d{2}))?$/.exec(ruw);
+    if (!m) {
+      console.warn('rg-band: prijs niet herkend, blijft zoals Shopware hem zet:', JSON.stringify(ruw));
+      return;
+    }
+    Array.prototype.forEach.call(wrapper.childNodes, function (node) {
+      if (node.nodeType === 3 && /^\s*Van\s*$/.test(node.textContent)) node.textContent = '';
+    });
+    prijs.textContent = '€ ' + m[1] + (m[2] && m[2] !== '00' ? ',' + m[2] : '') + ' per persoon';
+  }
+  slider.style.setProperty('--rg-band-n', String(n));
+
+  /* 4. Klonen. Het aantal sets volgt uit de gemeten setbreedte en de
+     breedte van het scherm (de grootste van venster en beeldscherm, zodat
+     een venster dat later breder wordt getrokken meestal nog dekt). Nodig
+     voor een lus zonder gat én voor sleepruimte: W >= 3 sets + 1 scherm. */
+  function kloonSet() {
+    var frag = document.createDocumentFragment();
+    items.forEach(function (item) {
+      var k = item.cloneNode(true);
+      /* De kloon is geen origineel meer: .rg-band__item blijft zo de
+         selector voor de negen echte tegels. (Tijdens het testen koos
+         een query op .rg-band__item steeds een kloon, en de focus-logica
+         hieronder slaat klonen terecht over.) */
+      k.classList.remove('rg-band__item');
+      k.classList.add('rg-band__kloon');
+      k.setAttribute('aria-hidden', 'true');
+      Array.prototype.forEach.call(k.querySelectorAll('input'), function (el) { el.remove(); });
+      Array.prototype.forEach.call(k.querySelectorAll('a, button, [tabindex]'), function (el) {
+        el.setAttribute('tabindex', '-1');
+      });
+      frag.appendChild(k);
+    });
+    return frag;
+  }
+
+  if (!stil) {
+    /* Eén layout-lezing, nu, om de setbreedte te weten. De CSS van de
+       band is al geladen (defer wacht op stylesheets), dus dit meet de
+       echte tegelbreedte. */
+    var eerste = items[0].getBoundingClientRect().width;
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var setBreedte = n * (eerste + gap);
+    var scherm = Math.max(html.clientWidth, (window.screen && window.screen.width) || 0);
+    var sets = setBreedte > 0 ? 3 + Math.ceil(scherm / setBreedte) : 4;
+    track.insertBefore(kloonSet(), items[0]);
+    for (var s = 2; s < sets; s++) track.appendChild(kloonSet());
+  }
+
+  /* 5. Slepen. */
+  var drag = 0;
+  function zetDrag(waarde) {
+    drag = waarde;
+    track.style.setProperty('--rg-band-drag', drag + 'px');
+  }
+  var grens = { min: 0, max: 0, set: 0 };
+  function meetGrenzen() {
+    /* Alleen bij het begin van een sleep en bij focus, nooit in een lus.
+       offsetLeft/offsetWidth zijn ongevoelig voor transforms. */
+    var set = items[0].offsetLeft - track.children[0].offsetLeft;
+    var W = track.offsetWidth;
+    var vw = slider.clientWidth;
+    grens.set = set;
+    grens.max = set;                         /* één set naar rechts, de voorgeplaatste klonen */
+    grens.min = Math.min(0, 2 * set - W + vw);
+  }
+  function klem(x) { return Math.max(grens.min, Math.min(grens.max, x)); }
+
+  if (!stil) {
+    var actief = false, bewogen = false, startX = 0, startDrag = 0, pointerId = null, raf = 0, volgende = 0;
+    var onderdrukKlik = false;
+
+    slider.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      actief = true; bewogen = false;
+      startX = e.clientX; startDrag = drag; pointerId = e.pointerId;
+      meetGrenzen();
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!actief || e.pointerId !== pointerId) return;
+      var dx = e.clientX - startX;
+      if (!bewogen) {
+        if (Math.abs(dx) < 6) return;
+        bewogen = true;
+        slider.classList.add('is-dragging');
+        try { slider.setPointerCapture(pointerId); } catch (err) { /* oud of weg: dan zonder capture */ }
+      }
+      volgende = klem(startDrag + dx);
+      if (!raf) raf = requestAnimationFrame(function () { raf = 0; zetDrag(volgende); });
+    }, { passive: true });
+    function los(e) {
+      if (!actief || (e && e.pointerId !== pointerId)) return;
+      actief = false;
+      slider.classList.remove('is-dragging');
+      if (bewogen) {
+        /* De klik die op het loslaten volgt is geen klik maar het einde
+           van een veeg. Eén keer onderdrukken, en de vlag na een tik
+           weer weghalen voor het geval er geen klik komt. */
+        onderdrukKlik = true;
+        setTimeout(function () { onderdrukKlik = false; }, 0);
+      }
+    }
+    window.addEventListener('pointerup', los);
+    window.addEventListener('pointercancel', los);
+    slider.addEventListener('click', function (e) {
+      if (!onderdrukKlik) return;
+      onderdrukKlik = false;
+      e.preventDefault();
+      e.stopPropagation();
+    }, true);
+    slider.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+    /* 6. Buiten beeld: stil. Scheelt compositorwerk op de rest van de
+       pagina en daar leest 89,6% van de bezoekers op een telefoon. */
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (entries) {
+        slider.classList.toggle('is-weg', !entries[0].isIntersecting);
+      }, { rootMargin: '120px 0px' }).observe(slider);
+    }
+
+    /* 7. Toetsenbord: de gefocuste tegel in beeld schuiven. De animatie
+       staat op dat moment al stil (focus-within in de CSS), dus de
+       transform die we hier één keer lezen blijft gelden. */
+    slider.addEventListener('focusin', function (e) {
+      var item = e.target.closest ? e.target.closest('.product-slider-item') : null;
+      if (!item || item.classList.contains('rg-band__kloon') || !window.DOMMatrixReadOnly) return;
+      var a;
+      try { a = -(new DOMMatrixReadOnly(getComputedStyle(track).transform).m41); } catch (err) { return; }
+      meetGrenzen();
+      var vw = slider.clientWidth;
+      var links = track.offsetLeft + item.offsetLeft - a + drag;
+      var rechts = links + item.offsetWidth;
+      var nieuw = drag;
+      if (links < 16) nieuw = drag + (16 - links);
+      else if (rechts > vw - 16) nieuw = drag - (rechts - (vw - 16));
+      nieuw = klem(nieuw);
+      if (nieuw !== drag) zetDrag(nieuw);
+    });
+  }
+
+  /* 8. De scrollverwijzing. Label uit het blok; doel de eerstvolgende
+     CMS-sectie na die van de band, of data-rg-band-href als die er is.
+     Geen label of geen doel: geen link. Liever geen link dan een dode. */
+  var label = marker.getAttribute('data-rg-band-label');
+  var href = marker.getAttribute('data-rg-band-href');
+  var doel = null;
+  if (label && !href) {
+    var sectie = slider.closest ? slider.closest('.cms-section') : null;
+    var kandidaat = sectie ? sectie.nextElementSibling : null;
+    while (kandidaat && !kandidaat.classList.contains('cms-section')) kandidaat = kandidaat.nextElementSibling;
+    if (kandidaat) {
+      if (!kandidaat.id) kandidaat.id = 'rg-band-verder';
+      kandidaat.classList.add('rg-band__doel');
+      doel = kandidaat;
+      href = '#' + kandidaat.id;
+    }
+  }
+  if (label && href) {
+    var meer = document.createElement('a');
+    /* Scrolt hij naar een sectie op deze pagina, dan wijst de pijl omlaag;
+       is het een gewone link (data-rg-band-href), dan naar rechts. Sinds
+       5 november is het op de themapagina dat laatste: "Alle kerstpakketten"
+       naar de categoriepagina. */
+    meer.className = doel ? 'rg-band__meer' : 'rg-band__meer rg-band__meer--uit';
+    meer.href = href;
+    var tekst = document.createElement('span');
+    tekst.textContent = label;
+    meer.appendChild(tekst);
+    meer.insertAdjacentHTML('beforeend', doel
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>');
+    if (doel) {
+      meer.addEventListener('click', function (e) {
+        e.preventDefault();
+        doel.scrollIntoView({ behavior: stil ? 'auto' : 'smooth', block: 'start' });
+      });
+    }
+    slider.insertAdjacentElement('afterend', meer);
+  }
+
+  /* 8b. De feitenstrook. Staat verborgen in het heroblok
+     (.rg-page-hero__strook, met `hidden`) zodat de copy in HTML blijft, en
+     hoort onder de band: direct onder de slider, boven de link van stap 8.
+     Ná stap 8 ingevoegd op dezelfde plek, dus hij komt erboven te staan.
+     Geen strook in het blok: niets te doen. */
+  var strook = marker.querySelector('.rg-page-hero__strook');
+  if (strook) {
+    slider.insertAdjacentElement('afterend', strook);
+    strook.removeAttribute('hidden');
+  }
+
+  /* 9. De overgebleven schermruimte verdelen. Ward, 5 november: meer ruimte
+     tussen menu en titel, en de link onder de band "praktisch onderaan"
+     het scherm, met lucht tussen de slider en de link.
+
+     WAAROM JS EN GEEN VASTE GETALLEN. Gemeten op 5 november (replica, link
+     onder de band t.o.v. de vouw): 1931x1112 heeft 61 px over, 1738x1001
+     zit 50 px te kort, 1512x890 29 px te kort, 1280x800 112 px te kort. De
+     ruimte hangt dus af van het venster van de bezoeker, inclusief zoom en
+     browserbalken, en dat is van hieruit niet te raden. Daarom meet dit hoe
+     ver de link van de vouw staat en verdeelt wat er over is, in plaats van
+     een getal te kiezen dat op het ene scherm klopt en op het andere niet.
+
+     Wat er gebeurt: --rg-lucht (px) op <html>, gelezen door CSS-sectie 55.13.
+     Nul als er niets over is (korte schermen, mobiel): dan verandert er
+     niets. Maximaal 220 px, anders wordt een heel hoog scherm een lege
+     pagina. 24 px blijft bewust vrij onder de link. Alleen vanaf 992 px;
+     eronder is de ruimte schaars en bepaalt het 375x667-budget alles. */
+  (function verdeelRuimte() {
+    var wortel = document.documentElement;
+    var link = document.querySelector('.rg-band__meer');
+    if (!link || !window.matchMedia) return;
+    var breed = window.matchMedia('(min-width: 992px)');
+    var LUCHT_ONDER = 24, MAX = 220, wacht = null;
+
+    function meet() {
+      if (!breed.matches) { wortel.style.removeProperty('--rg-lucht'); return; }
+      wortel.style.setProperty('--rg-lucht', '0px');
+      var onder = link.getBoundingClientRect().bottom + window.pageYOffset;
+      var over = window.innerHeight - onder - LUCHT_ONDER;
+      wortel.style.setProperty('--rg-lucht',
+        Math.round(Math.max(0, Math.min(MAX, over))) + 'px');
+    }
+    meet();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(meet);
+    window.addEventListener('load', meet);
+    window.addEventListener('resize', function () {
+      clearTimeout(wacht);
+      wacht = setTimeout(meet, 120);
+    });
+  })();
+})();
+
+/* =====================================================================
+   CIRKELPIJL — proef, 5 november 2026. Zet html.rg-cirkelpijl, waarmee
+   CSS-sectie 56 de pijl in elke primaire knop een crème cirkel geeft,
+   sitewide. Dit is de terugdraaiknop: deze ene regel weg en de knoppen
+   staan weer zoals sectie 8 ze zet, op elke pagina, zonder plakken.
+   Staat hier als losse regel zodat hij niet aan de band of aan een
+   pagina hangt. Zie sectie 56 voor de afweging.
+   ===================================================================== */
+document.documentElement.classList.add('rg-cirkelpijl');

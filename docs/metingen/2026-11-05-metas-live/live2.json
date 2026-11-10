@@ -1,0 +1,602 @@
+[
+ {
+  "pad": "/alle-producten/",
+  "titel": "Alle relatiegeschenken met logo | Rooted Goods",
+  "desc": "Bekijk ons volledige assortiment relatiegeschenken met logo, van drinkwaren tot kantoorartikelen. Europese makers, persoonlijk ontwerp binnen één werkdag.",
+  "titel_len": 46,
+  "desc_len": 154,
+  "had_desc": true
+ },
+ {
+  "pad": "/drinkwaren/",
+  "titel": "Drinkwaren als relatiegeschenk | Rooted Goods",
+  "desc": "Van een gegraveerde thermosfles tot upcycled Rebottled-glazen: drinkwaren met jouw logo, geassembleerd door Europese makers. Bekijk het assortiment.",
+  "titel_len": 45,
+  "desc_len": 148,
+  "had_desc": true
+ },
+ {
+  "pad": "/drinkwaren/drinkflessen/",
+  "titel": "Drinkflessen bedrukken met je logo | Rooted Goods",
+  "desc": "Mepal Vita, Join The Pipe en Thermos staan hier naast een bidon van suikerriet: 42 drinkflessen vanaf € 1,69, elk met jouw logo erop.",
+  "titel_len": 49,
+  "desc_len": 133,
+  "had_desc": true
+ },
+ {
+  "pad": "/drinkwaren/glazen/",
+  "titel": "Glazen en karaffen met logo | Rooted Goods",
+  "desc": "Proost met je logo op een Rebottled tumbler, een Ribbio wijnglas of de Ypsilon karaf met kurk, gekozen uit 31 glazen vanaf € 1,60.",
+  "titel_len": 42,
+  "desc_len": 130,
+  "had_desc": true
+ },
+ {
+  "pad": "/drinkwaren/mokken-bekers/",
+  "titel": "Mokken en koffiebekers bedrukken | Rooted Goods",
+  "desc": "Koffie gaat overal mee. Een CirculCup, een Thermos koffiebeker van rvs of een Mepal Ellipse coffee-to-go, met je logo erop, vanaf € 0,75.",
+  "titel_len": 47,
+  "desc_len": 137,
+  "had_desc": true
+ },
+ {
+  "pad": "/drinkwaren/thermo-drinkwaren/",
+  "titel": "Thermosflessen en geïsoleerde bekers | Rooted Goods",
+  "desc": "Voor de lange vergaderdag of de koude fietsrit: een Thermosfles van 1 liter, een Americano POP met morsbestendig deksel of een Mepal Twist.",
+  "titel_len": 51,
+  "desc_len": 139,
+  "had_desc": false
+ },
+ {
+  "pad": "/elektronica/",
+  "titel": "Elektronica als relatiegeschenk | Rooted Goods",
+  "desc": "Een kleine, zorgvuldig gekozen selectie elektronica als relatiegeschenk, waaronder de Chipolo-tracker en LOKD, gepersonaliseerd met jouw logo.",
+  "titel_len": 46,
+  "desc_len": 142,
+  "had_desc": true
+ },
+ {
+  "pad": "/elektronica/phone-tablet-accessoires/",
+  "titel": "Phone & tablet accessoires",
+  "desc": "",
+  "titel_len": 26,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/eten-drinken/",
+  "titel": "Eten & drinken als relatiegeschenk | Rooted Goods",
+  "desc": "Van een Tony's Chocolonely-proeverij tot een wijn-en-chocolade-pakket: culinaire relatiegeschenken met jouw logo op de verpakking, snel geregeld.",
+  "titel_len": 49,
+  "desc_len": 145,
+  "had_desc": true
+ },
+ {
+  "pad": "/eten-drinken/borrelpakketten/",
+  "titel": "Borrelpakketten als relatiegeschenk | Rooted Goods",
+  "desc": "Tijd voor een borrel. Kies een pakket met wijn of met sap, een borrelplank met spel, of houd het klein met een reep Tony's Chocolonely. Vanaf € 4,95.",
+  "titel_len": 50,
+  "desc_len": 149,
+  "had_desc": true
+ },
+ {
+  "pad": "/eten-drinken/dranken/",
+  "titel": "Wijnproeverijen en mocktailboxen | Rooted Goods",
+  "desc": "Wijn, of juist zonder alcohol. Een wijnproeverij met chocolade truffels, de 12 Nights of wine kalender of een DIY mocktail box van de Dutch Cocktail Club.",
+  "titel_len": 47,
+  "desc_len": 154,
+  "had_desc": false
+ },
+ {
+  "pad": "/eten-drinken/gebak/",
+  "titel": "Gebak",
+  "desc": "",
+  "titel_len": 5,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/eten-drinken/snoepgoed/",
+  "titel": "Snoep, stroopwafels en bakmixen | Rooted Goods",
+  "desc": "Zoet past altijd. Roomboter stroopwafels in een Delftsblauw blik, een doosje snoepjes of een bakmix in een brievenbusdoosje, vanaf € 1,01.",
+  "titel_len": 46,
+  "desc_len": 138,
+  "had_desc": false
+ },
+ {
+  "pad": "/giveaways/",
+  "titel": "Giveaways & goodies met logo | Rooted Goods",
+  "desc": "Van reflecterende hangers tot een compleet EHBO-kitje: betaalbare giveaways met jouw logo erop, ideaal voor beurzen, events en grote aantallen.",
+  "titel_len": 43,
+  "desc_len": 143,
+  "had_desc": true
+ },
+ {
+  "pad": "/giveaways/lanyards/",
+  "titel": "Lanyards bedrukt met je logo | Rooted Goods",
+  "desc": "Badge om de nek, telefoon erbij. Een keycord of Tubyard met elastische buis of een Addie sublimatie lanyard met veiligheidssluiting, voor € 0,64 tot € 2,03.",
+  "titel_len": 43,
+  "desc_len": 156,
+  "had_desc": false
+ },
+ {
+  "pad": "/giveaways/sleutelhangers/",
+  "titel": "Sleutelhangers met logo als giveaway | Rooted Goods",
+  "desc": "Ze hangen aan elke sleutelbos en gaan elke dag mee. Kies gerecycled leer, gerecycled denim of een tennisbal, voor € 0,52 tot € 3,15 per stuk.",
+  "titel_len": 51,
+  "desc_len": 141,
+  "had_desc": false
+ },
+ {
+  "pad": "/huis-keuken/",
+  "titel": "Relatiegeschenken voor huis & keuken | Rooted Goods",
+  "desc": "Victorinox-messen, Mepal-serviesgoed en meer voor huis en keuken, gepersonaliseerd met jouw logo. Ons grootste assortiment, in elk prijsbereik.",
+  "titel_len": 51,
+  "desc_len": 143,
+  "had_desc": true
+ },
+ {
+  "pad": "/huis-keuken/deken/",
+  "titel": "Deken",
+  "desc": "",
+  "titel_len": 5,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/huis-keuken/drinkflessen/",
+  "titel": "Drinkflessen",
+  "desc": "",
+  "titel_len": 12,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/huis-keuken/flesopeners/",
+  "titel": "Flesopeners",
+  "desc": "",
+  "titel_len": 11,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/huis-keuken/geuren-kaarsen/",
+  "titel": "JANZEN geurkaarsen en geurstokjes | Rooted Goods",
+  "desc": "Geurstokjes en geurkaarsen van JANZEN, in geuren als Sage 36, Fuchsia 69, Black 22 en Euphoria. Een warm gebaar, vanaf € 11,13 en met je logo.",
+  "titel_len": 48,
+  "desc_len": 142,
+  "had_desc": true
+ },
+ {
+  "pad": "/huis-keuken/keukenartikelen/",
+  "titel": "Keukenartikelen als relatiegeschenk | Rooted Goods",
+  "desc": "Wie kookt, pakt dit elke dag. Een Diamant Sabatier keukenmes, een beuken plank met leren handvat of een Pulltap's kelnersmes, vanaf € 2,22.",
+  "titel_len": 50,
+  "desc_len": 139,
+  "had_desc": true
+ },
+ {
+  "pad": "/huis-keuken/lunchboxen-en-zakjes/",
+  "titel": "Lunchboxen en snackpotten met logo | Rooted Goods",
+  "desc": "Elke dag mee naar kantoor. Kies een Mepal Take a Break, Ellipse of Cirqula, of een Amuse lunchbox van gerecycled PP, met je logo, vanaf € 1,95.",
+  "titel_len": 49,
+  "desc_len": 143,
+  "had_desc": true
+ },
+ {
+  "pad": "/huis-keuken/planten/",
+  "titel": "Planten met je logo erbij | Rooted Goods",
+  "desc": "Groen op elk bureau, met jouw logo: een Smylieplant in papercup, een Sansevieria van Green Brandingz of een Wardians ecosysteem, van € 1,81 tot € 110.",
+  "titel_len": 40,
+  "desc_len": 150,
+  "had_desc": true
+ },
+ {
+  "pad": "/huis-keuken/wijn-accessories/",
+  "titel": "Wijnaccessoires van Opinel en Vacu Vin | Rooted Goods",
+  "desc": "De fles is open, en dan? Een Opinel No 10 kurkentrekker, een Vacu Vin wijnpomp om hem weer af te sluiten of de Vacu Vin Hexo wijnkoeler.",
+  "titel_len": 53,
+  "desc_len": 136,
+  "had_desc": false
+ },
+ {
+  "pad": "/huis-keuken/woon-accessoires/",
+  "titel": "Wellmark kamerspray, kaarsen en zeep | Rooted Goods",
+  "desc": "Alle vier zijn van Wellmark: een kamerspray, geurstokjes, een geurkaars en een set met handzeepdispenser en kaars. Prijzen van € 15 tot € 27,63.",
+  "titel_len": 51,
+  "desc_len": 144,
+  "had_desc": false
+ },
+ {
+  "pad": "/kantoor-schrijfwaren/",
+  "titel": "Kantoorartikelen met logo | Rooted Goods",
+  "desc": "Van een Bambook-notitieboek tot pennen van gerecycled materiaal: kantoorartikelen die je relaties écht gebruiken, gepersonaliseerd met jouw logo.",
+  "titel_len": 40,
+  "desc_len": 145,
+  "had_desc": true
+ },
+ {
+  "pad": "/kantoor-schrijfwaren/balpennen-inktpennen-en-sets/",
+  "titel": "Parker, Senator en Stilolinea pennen | Rooted Goods",
+  "desc": "Op elk bureau ligt er wel een. Een Parker Jotter XL, een Senator Evoxx of een Stilolinea S45 BIO, met jouw logo erop, vanaf € 0,31 per pen.",
+  "titel_len": 51,
+  "desc_len": 139,
+  "had_desc": false
+ },
+ {
+  "pad": "/kantoor-schrijfwaren/kantoor-accessoires/",
+  "titel": "A5 notitieboeken van Bambook en Novella | Rooted Goods",
+  "desc": "Acht notitieboeken, alle in A5. Kies een Bambook met dot grid, een Novella met harde cover of een navulbaar notebook van gerecycled leer.",
+  "titel_len": 54,
+  "desc_len": 137,
+  "had_desc": false
+ },
+ {
+  "pad": "/kantoor-schrijfwaren/notebooks/",
+  "titel": "Notebooks",
+  "desc": "",
+  "titel_len": 9,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/kleding-textiel/",
+  "titel": "Bedrijfskleding & textiel met logo | Rooted Goods",
+  "desc": "Van een biologisch katoenen T-shirt tot een softshell jas: geborduurde of bedrukte kleding die medewerkers graag dragen, niet in een la belandt.",
+  "titel_len": 49,
+  "desc_len": 144,
+  "had_desc": true
+ },
+ {
+  "pad": "/kleding-textiel/accessoires/",
+  "titel": "Sokken en accessoires met logo | Rooted Goods",
+  "desc": "Warme voeten, jouw logo. BioSocks, GoodSocks, HomeSocks en AquaSocks, sommige verpakt in een giftbox, en al te krijgen vanaf € 1,67.",
+  "titel_len": 45,
+  "desc_len": 132,
+  "had_desc": false
+ },
+ {
+  "pad": "/kleding-textiel/broeken-shorts/",
+  "titel": "Broeken & shorts",
+  "desc": "",
+  "titel_len": 16,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/kleding-textiel/caps-hoeden/",
+  "titel": "Petten en bucket hats met logo | Rooted Goods",
+  "desc": "Bovenop valt je logo het eerst op. Een velours of katoenen pet met zes panelen, een bucket hat van gerecycled polyester of een BottleBeanie.",
+  "titel_len": 45,
+  "desc_len": 140,
+  "had_desc": false
+ },
+ {
+  "pad": "/kleding-textiel/caps-hoeden/caps/",
+  "titel": "Caps",
+  "desc": "",
+  "titel_len": 4,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/kleding-textiel/caps-hoeden/overige/",
+  "titel": "Overige",
+  "desc": "",
+  "titel_len": 7,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/kleding-textiel/handdoeken/",
+  "titel": "Handdoeken, hamamdoeken en strandlakens | Rooted Goods",
+  "desc": "SeaTowel, GoodTowel en SEAQUAL hamamdoeken. Of laat een strandlaken op maat weven in twee kleuren, met je logo erin. Vanaf € 2,94.",
+  "titel_len": 54,
+  "desc_len": 130,
+  "had_desc": true
+ },
+ {
+  "pad": "/kleding-textiel/kleding/",
+  "titel": "Sweaters, polo's en jassen met logo | Rooted Goods",
+  "desc": "Draag je merk de hele week. Een polo piqué, een sweater van biologisch katoen, een fleecejas of een bodywarmer, van € 24 tot € 75 per stuk.",
+  "titel_len": 50,
+  "desc_len": 139,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/",
+  "titel": "Outdoor relatiegeschenken | Rooted Goods",
+  "desc": "Zakmessen van Opinel en Victorinox, koelboxen van POLARBOX. Outdoor-relatiegeschenken met jouw logo, klaar om mee naar buiten te nemen.",
+  "titel_len": 40,
+  "desc_len": 135,
+  "had_desc": true
+ },
+ {
+  "pad": "/outdoor/auto-accessoires/",
+  "titel": "Auto accessoires",
+  "desc": "",
+  "titel_len": 16,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/auto-accessoires/overige/",
+  "titel": "Overige",
+  "desc": "",
+  "titel_len": 7,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/koelbox/",
+  "titel": "Koelbox",
+  "desc": "",
+  "titel_len": 7,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/outdoor/",
+  "titel": "Golf-, storm- en stadsparaplu's | Rooted Goods",
+  "desc": "Regen komt vanzelf. Kies een Citizen Green stadsparaplu, een opvouwbare Pepin of de stormparaplu LIBECCIO, met je logo op het doek, vanaf € 28,60.",
+  "titel_len": 46,
+  "desc_len": 146,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/paraplu-s/",
+  "titel": "Paraplu's",
+  "desc": "",
+  "titel_len": 9,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/strandstoel/",
+  "titel": "strandstoel",
+  "desc": "",
+  "titel_len": 11,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/outdoor/zakmessen-multi-tools/",
+  "titel": "Zakmessen en multitools met je logo | Rooted Goods",
+  "desc": "Opinel en Victorinox, in 27 varianten. Een Spartan, een Huntsman in geschenkdoos of een Opinel No 08 met riemetui, en jouw logo erop.",
+  "titel_len": 50,
+  "desc_len": 133,
+  "had_desc": true
+ },
+ {
+  "pad": "/sport-spel/",
+  "titel": "Sport- & spelrelatiegeschenken | Rooted Goods",
+  "desc": "Een geïsoleerde Mepal-sportfles of gerecyclede golfballen, met jouw logo erop. Sport en spel als relatiegeschenk voor wie graag in beweging is.",
+  "titel_len": 45,
+  "desc_len": 143,
+  "had_desc": true
+ },
+ {
+  "pad": "/sport-spel/golfartikelen/",
+  "titel": "Golfartikelen",
+  "desc": "",
+  "titel_len": 13,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/sport-spel/spelletjes-speelgoed/",
+  "titel": "Spelletjes & speelgoed",
+  "desc": "",
+  "titel_len": 22,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/sport-spel/sportartikelen/",
+  "titel": "Padelballen, yogamatten en meer | Rooted Goods",
+  "desc": "Even bewegen tussen de meetings door? Een tube padelballen, een Papillon yogamat, een houten springtouw of tomorrow golf ballen, vanaf € 2,73.",
+  "titel_len": 46,
+  "desc_len": 142,
+  "had_desc": false
+ },
+ {
+  "pad": "/sport-spel/zomer-strand/",
+  "titel": "Zomer & strand",
+  "desc": "",
+  "titel_len": 14,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/",
+  "titel": "Tassen & reisaccessoires met logo | Rooted Goods",
+  "desc": "Van een Samsonite-koffer tot een gerecycled leren kaarthouder: reisaccessoires met jouw logo erop, geassembleerd door Europese makers. Vraag een offerte aan.",
+  "titel_len": 48,
+  "desc_len": 157,
+  "had_desc": true
+ },
+ {
+  "pad": "/tassen-reizen/heuptassen/",
+  "titel": "Heuptassen",
+  "desc": "",
+  "titel_len": 10,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/koeltassen/",
+  "titel": "Koeltassen en geïsoleerde lunchtassen | Rooted Goods",
+  "desc": "Geïsoleerde katoenen lunchtassen van Citizen Green en Burger Green, of een grote koeltas met rits. Voor de lunch of de picknick, tot € 16,40.",
+  "titel_len": 52,
+  "desc_len": 141,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/koffers-trolleys/",
+  "titel": "Samsonite koffers met je logo | Rooted Goods",
+  "desc": "Samsonite-koffers, laptoptassen en kaarthouders van gerecycled leer. Tassen en reisaccessoires met jouw logo, geassembleerd door Europese makers.",
+  "titel_len": 44,
+  "desc_len": 145,
+  "had_desc": true
+ },
+ {
+  "pad": "/tassen-reizen/laptoptassen/",
+  "titel": "Laptoptassen",
+  "desc": "",
+  "titel_len": 12,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/reis-accessoires/",
+  "titel": "Bagagelabels, paspoorthoesjes en meer | Rooted Goods",
+  "desc": "Klein, maar het gaat elke reis mee. Een bagagelabel of paspoorthoesje van gerecycled leer, een reiskussen of een Circulware bestekset, vanaf € 6,64.",
+  "titel_len": 52,
+  "desc_len": 148,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/reistassen/",
+  "titel": "Duffeltassen en reistassen met logo | Rooted Goods",
+  "desc": "Weekendje weg? De duffeltas RIGODON of POLLUX, de reistas RONDEAU of een katoenen plunjezak gaat mee in de kofferbak of de trein.",
+  "titel_len": 50,
+  "desc_len": 129,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/rugzakken/",
+  "titel": "Rugzakken",
+  "desc": "",
+  "titel_len": 9,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/schoudertassen/",
+  "titel": "Schoudertassen",
+  "desc": "",
+  "titel_len": 14,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/sporttassen/",
+  "titel": "Sporttassen",
+  "desc": "",
+  "titel_len": 11,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/strandtassen/",
+  "titel": "Strandtassen",
+  "desc": "",
+  "titel_len": 12,
+  "desc_len": 0,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/totebags/",
+  "titel": "Totebags van katoen bedrukken | Rooted Goods",
+  "desc": "Boodschappen, een laptop of een stapel papier: de TURA van organisch katoen of de BIOTOTE neemt het mee, met jouw logo groot in beeld.",
+  "titel_len": 44,
+  "desc_len": 134,
+  "had_desc": false
+ },
+ {
+  "pad": "/tassen-reizen/winkeltassen/",
+  "titel": "Winkeltassen en papieren tassen | Rooted Goods",
+  "desc": "Pagari papieren tassen in A5, A4 en A3, een totebag of een Bottlebag van flessen. Allemaal met jouw logo, en al vanaf € 0,25 per stuk.",
+  "titel_len": 46,
+  "desc_len": 134,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/",
+  "titel": "Relatiegeschenken per thema | Rooted Goods",
+  "desc": "Een borrelpakket, een JANZEN geurkaars of een Bambook notitieboek. Kies een thema en vind 199 geschenken die je laat bedrukken met je logo.",
+  "titel_len": 42,
+  "desc_len": 139,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/brievenbus/",
+  "titel": "Brievenbuscadeaus met je logo | Rooted Goods",
+  "desc": "Past door de bus, dus niemand hoeft thuis te zijn. Stuur een Tony's Chocolonely proeverij, een Bambook notitieboek of een JANZEN giftset.",
+  "titel_len": 44,
+  "desc_len": 137,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/dag-van-de/",
+  "titel": "Geschenken voor de Dag van de | Rooted Goods",
+  "desc": "Iemand verdient een bedankje. Geef een Smylieplant, een Mepal lunchbox of JANZEN geurstokjes met je logo erop, al vanaf € 1,81 per stuk.",
+  "titel_len": 44,
+  "desc_len": 136,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/events-conferenties/",
+  "titel": "Goodies voor events en conferenties | Rooted Goods",
+  "desc": "Bezoekers nemen het mee naar huis: een TURA tas van organisch katoen, een Bambook notitieboek of een Join The Pipe fles met je logo, vanaf € 0,27.",
+  "titel_len": 50,
+  "desc_len": 146,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/kerstpakketten-eindejaar/",
+  "titel": "Kerstpakketten en eindejaarsgeschenken | Rooted Goods",
+  "desc": "Het jaar zit erop. Bedank je mensen met een Bak pakket, een Offline pakket of een borrelplank met wijn en spel, voor € 25 tot € 70.",
+  "titel_len": 53,
+  "desc_len": 131,
+  "had_desc": false
+ },
+ {
+  "pad": "/thema-s/made-in-nl/",
+  "titel": "Made in NL relatiegeschenken met logo | Rooted Goods",
+  "desc": "Nederlands, en dat mag je zien. Kies uit 151 producten van onder meer JANZEN, Bambook, Rebottled en Join The Pipe, vanaf € 0,27 en met jouw logo.",
+  "titel_len": 52,
+  "desc_len": 145,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/medewerker-merchandise/",
+  "titel": "Merchandise voor je medewerkers | Rooted Goods",
+  "desc": "Laat je team je logo dragen. Denk aan T-shirts van biologisch katoen, een softshell jas, GoodSocks en SeaTowel handdoeken, van € 1,67 tot € 75.",
+  "titel_len": 46,
+  "desc_len": 143,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/onboarding-welkom/",
+  "titel": "Welkomstpakket voor nieuwe collega's | Rooted Goods",
+  "desc": "Dag één begint goed met een Citizen Green rugzak, een laptophoes van gerecycled leer of een set met koffiebeker, lunchbox en Bambook notitieboek.",
+  "titel_len": 51,
+  "desc_len": 145,
+  "had_desc": true
+ },
+ {
+  "pad": "/thema-s/winter/",
+  "titel": "Wintergeschenken: dekens en een slee | Rooted Goods",
+  "desc": "Buiten vriest het, binnen ligt een gerecyclede deken van Citizen Green van 120 bij 150 cm. Of geef een sleetje, voor wie op sneeuw hoopt.",
+  "titel_len": 51,
+  "desc_len": 137,
+  "had_desc": false
+ },
+ {
+  "pad": "/thema-s/zomer/",
+  "titel": "Zomerse relatiegeschenken | Rooted Goods",
+  "desc": "Zon, strand en iets kouds te drinken. Met een POLARBOX koelbox, ligstoel Chillout of een strandlaken in jouw kleuren kom je de zomer goed door.",
+  "titel_len": 40,
+  "desc_len": 143,
+  "had_desc": true
+ },
+ {
+  "pad": "/verzorging/",
+  "titel": "Verzorgingsproducten als relatiegeschenk | Rooted Goods",
+  "desc": "JANZEN-geuren, bodylotion en handzeep, met jouw logo op de verpakking. Verzorgingsproducten die opgaan in het dagelijks gebruik van je relaties.",
+  "titel_len": 55,
+  "desc_len": 144,
+  "had_desc": true
+ }
+]

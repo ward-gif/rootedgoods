@@ -4029,14 +4029,6 @@ h2.rg-cat-heading,
   margin: 0;
   padding: 0;
 }
-.rg-cat-head__eyebrow {
-  margin: 0 0 0.55rem;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #955529;
-}
 .rg-cat-head__sub {
   margin: 0.55rem 0 0;
   font-size: clamp(0.98rem, 0.92rem + 0.25vw, 1.08rem);
@@ -4824,15 +4816,6 @@ h3.rg-feature-row__title,
     margin-right: 0;
   }
 }
-.rg-compare__eyebrow {
-  margin: 0 0 0.8rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #955529;
-}
 h2.rg-compare__title,
 .cms-element-text h2.rg-compare__title {
   font-family: 'Playfair Display', serif !important;
@@ -4995,15 +4978,6 @@ h2.rg-compare__title,
   padding: clamp(2.5rem, 2rem + 3vw, 5rem) 20px;
   text-align: center;
 }
-.rg-story__eyebrow {
-  margin: 0 0 0.9rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #955529;
-}
 h2.rg-story__title,
 .cms-element-text h2.rg-story__title {
   font-family: 'Playfair Display', serif !important;
@@ -5085,24 +5059,7 @@ h2.rg-story__title,
   }
 }
 
-/* Zelfde styling als de landing-eyebrow ("Stay true to your roots"):
-   lijntjes flankeren het label aan beide kanten. */
-/* Hogere specificiteit (.rg-statement ervoor) zodat dit een eventuele
-   theme-regel '.cms-element-text p' verslaat — anders wordt de <p>-kicker
-   dikker gerenderd dan de hero-eyebrow (<h4>). */
-.rg-statement .rg-statement__kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.9rem;
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-size: clamp(0.82rem, 0.72rem + 0.4vw, 1.05rem);
-  color: #955529;
-  margin: 0 0 var(--rg-space-md) 0;   /* eyebrow hugt de kop (groepering) */
-}
-/* (decoratief streepje verwijderd — kicker zonder streepje) */
+/* De kicker boven de statement-kop is op 5 november geschrapt (kickersweep). */
 /* Dubbel-specifiek + !important is hier NODIG: de globale type-scale zet
    h2 op 3rem/600 mét !important (om Promidata-overrides te verslaan) en
    won dus stilletjes van de kale class — daarom oogde de kop als een
@@ -5807,19 +5764,6 @@ h1.rg-theme-heading, h2.rg-theme-heading,
   justify-content: space-between;
   gap: 0.6rem;
 }
-.rg-theme-tile__eyebrow {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #fff;
-  background: #ad6331;
-  padding: 0.28rem 0.7rem;
-  border-radius: 999px;
-  margin-bottom: 0.65rem;
-}
 h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
   font-family: 'Playfair Display', serif !important;
   color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
@@ -6166,13 +6110,9 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 5.5rem) 40px;
 }
-/* Optionele eyebrow boven de titel -- voor thema-pagina's waar de titel zelf
-   (bv. "Tastbare waardering") niet letterlijk het thema noemt, zodat
-   bezoekers meteen zien dat ze op de juiste pagina zitten. */
-.rg-page-hero__eyebrow {
-  display: block;
-  margin: 0 0 0.75rem;
-}
+/* De optionele eyebrow boven de titel is op 5 november geschrapt
+   (kickersweep); waar de titel het thema niet noemde, noemt hij het nu zelf
+   ("Tastbare waardering voor de Dag van de leraar"). */
 .rg-page-hero__title {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 800;
@@ -6363,14 +6303,6 @@ h2.rg-block-title__title,
 }
 
 /* ---- Copy ---- */
-.rg-hero-v2__kicker {
-  margin: 0 0 var(--rg-s2);
-  font-size: clamp(.8rem, .72rem + .3vw, .95rem);
-  font-weight: 700;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--rg-cognac-light);
-}
 .rg-hero-v2__title {
   margin: 0 0 var(--rg-s3);
   font-family: 'Playfair Display', Georgia, serif;
@@ -6543,7 +6475,6 @@ h2.rg-block-title__title,
   .rg-hero-v2__inner { padding-top: 0.75rem; }
   .rg-hero-v2__copy-top,
   .rg-hero-v2__copy-bottom { text-align: center; }
-  .rg-hero-v2__kicker,
   .rg-hero-v2__title { margin-inline: auto; }
   .rg-hero-v2__sub { display: none; }
   /* Kolom i.p.v. wrap: anders krijgt de 2e (compactere) knop een eigen
@@ -6651,15 +6582,6 @@ h2.rg-block-title__title,
 .rg-endcta__head {
   text-align: center;
   margin: 0 auto 2.6rem;
-}
-.rg-endcta__eyebrow {
-  margin: 0 0 1.1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #955529;
 }
 /* Dubbel-specifieke selector (h2.class + .cms-element-text h2.class):
    de globale type-scale gebruikt ".cms-element-text h2 !important"
@@ -7015,15 +6937,6 @@ body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
   align-items: center;
   margin-bottom: clamp(4rem, 4rem + 3vw, 7rem);
 }
-.rg-sd__eyebrow {
-  margin: 0 0 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #955529;
-}
 h1.rg-sd__title,
 .cms-element-text h1.rg-sd__title {
   /* Geen Georgia in de stack: als Playfair (dat geen italic-face laadt) geen
@@ -7100,7 +7013,6 @@ h1.rg-sd__title em,
   text-align: center;
   margin: 0 auto clamp(1.75rem, 1.5rem + 1vw, 2.75rem);
 }
-.rg-sd__head .rg-sd__eyebrow { margin-bottom: 0.8rem; }
 h2.rg-sd__head-title,
 .cms-element-text h2.rg-sd__head-title {
   font-family: 'Playfair Display', serif !important;
@@ -7236,7 +7148,6 @@ h2.rg-sd__row-title,
   text-align: center;
   box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
-.rg-sd__panel .rg-sd__eyebrow { color: #e9c9a9; }
 h2.rg-sd__panel-title,
 .cms-element-text h2.rg-sd__panel-title {
   font-family: 'Playfair Display', serif !important;
@@ -7865,15 +7776,6 @@ h2.rg-faq-cat,
 .rg-contact-head:has(+ .rg-contact-layout) {
   max-width: 1080px;
 }
-.rg-contact-head__eyebrow {
-  margin: 0 0 0.8rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.92rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #955529;
-}
 h1.rg-contact-head__title,
 .cms-element-text h1.rg-contact-head__title {
   font-family: 'Playfair Display', serif !important;
@@ -8462,21 +8364,11 @@ h2.rg-statement__title em{
   font-weight:600 !important; color:var(--rg-cognac-light) !important;
 }
 
-/* ---- 41.3 EYEBROW-signature: consistente kicker + hairline-aanzet ----
-   Universeel: rustige, strak getrackte oker-caps. */
-.rg-cat-head__eyebrow, .rg-compare__eyebrow, .rg-story__eyebrow,
-.rg-statement__kicker, .rg-hero-v2__kicker,
-.rg-endcta__eyebrow, .rg-sd__eyebrow, .rg-page-hero__eyebrow{
-  font-family:'Montserrat',sans-serif !important;
-  font-weight:700 !important;
-  letter-spacing:.24em !important;
-  text-transform:uppercase !important;
-  color:var(--rg-cognac-light) !important;
-  font-size:clamp(.68rem,.62rem + .2vw,.76rem) !important;
-}
-/* Bewust GEEN lijntje/streepje vóór de eyebrow: dat "hairline + uppercase
-   kicker"-motief is zelf een template/AI-cliché. De eyebrow leunt op strakke
-   tracking + oker-kleur, verder niets. */
+/* ---- 41.3 EYEBROW-signature: VERVALLEN op 5 november 2026 ----
+   Ward: de kicker is zelf een AI-tell, net als de hairline ervoor. Alle 36
+   kickers zijn uit de blokken gehaald en de selectors die ze opmaakten uit
+   dit bestand. Een vangnet voor nog niet herplakte blokken staat in de
+   laatste sectie. Zie docs/plan-themapagina-2026-11-05.md, besluit 4. */
 
 /* ---- 41.4 ASYMMETRIE — redactionele kolommen i.p.v. 50/50 ----
    Alleen >=992px (daaronder stapelt alles al naar 1fr). */
@@ -8514,19 +8406,8 @@ h2.rg-statement__title em{
   padding-block:clamp(2rem,1.5rem + 2vw,4rem);
 }
 
-/* ---- 41.7 Opschoning — theme-tile 'pill-badge' eyebrow -> schone caps-label.
-   Een gevulde pill boven een kop is hetzelfde template/AI-cliché als het
-   eyebrow-lijntje; hier weg. Perzik-caps op de donkere tegel (leesbaar), zelfde
-   tracking als het eyebrow-systeem. CSS-only, geen re-paste. */
-.rg-theme-tile__eyebrow{
-  background:transparent !important;
-  padding:0 !important;
-  border-radius:0 !important;
-  color:var(--rg-peach) !important;
-  font-weight:700 !important;
-  letter-spacing:.22em !important;
-  font-size:.68rem !important;
-}
+/* ---- 41.7 Het "Trending"-label op de themategel is op 5 november uit het
+   blok gehaald (kickersweep); de regels die het opmaakten zijn weg. ---- */
 
 /* ---- 41.10 THEMA-OVERZICHT — terug naar de hero-opzet (1 uitgelicht + 2
    middelgroot) + rij van 4, want die had de juiste hiërarchie (het
@@ -8576,18 +8457,8 @@ h2.rg-statement__title em{
 /* CTA-ruimte onder de rij */
 .rg-theme-section .rg-spec-cta{ margin-top:clamp(1.5rem,1rem + 2vw,2.5rem); }
 
-/* ---- 41.11 Eyebrow boven de overzicht-koppen (thema- + services-overzicht),
-   zelfde look als het service-blok. ---- */
-.rg-theme-eyebrow{
-  display:block;
-  font-family:'Montserrat',sans-serif;
-  font-weight:700;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--rg-cognac-light);
-  font-size:clamp(.68rem,.62rem + .2vw,.76rem);
-  margin:0 0 .7rem;
-}
+/* ---- 41.11 Eyebrow boven de overzicht-koppen: vervallen op 5 november
+   (kickersweep). ---- */
 
 /* ---- 41.12 TYPE-CONSOLIDATIE — sub-/bodytekst naar vaste rollen ----
    Verwijdert de font-size-drift tussen componenten. Drie rollen:
@@ -8701,16 +8572,6 @@ h2.rg-statement__title em{
 .rg-block-title--left{ text-align:left !important; }
 .rg-block-title--left .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
 .rg-block-title--left .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
-.rg-block-title__eyebrow{
-  display:block;
-  font-family:'Montserrat',sans-serif !important;
-  font-weight:700 !important;
-  letter-spacing:.24em !important;
-  text-transform:uppercase !important;
-  color:var(--rg-cognac-light) !important;
-  font-size:clamp(.68rem,.62rem + .2vw,.76rem) !important;
-  margin:0 0 .7rem !important;
-}
 /* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
    zelfde als hero-v2 en de rest van home). Kop + tegels zitten in dezelfde
    container -> beide schuiven mee en blijven onderling uitgelijnd.
@@ -8771,15 +8632,6 @@ h2.rg-statement__title em{
 }
 
 /* ---- Gedeelde typografie ---- */
-.rg-route__eyebrow{
-  font-family:'Montserrat',sans-serif !important;
-  font-weight:700 !important;
-  letter-spacing:.24em !important;
-  text-transform:uppercase !important;
-  color:var(--rg-cognac-light) !important;
-  font-size:clamp(.68rem, .62rem + .2vw, .76rem) !important;
-  margin:0 0 .9rem !important;
-}
 h1.rg-route__title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
@@ -10942,13 +10794,29 @@ h2.rg-route__team-title{
         je ziet dat er meer is.
      3. Eén knop in de hero, niet twee.
 
-   WAT NIET KON, EN WAAROM. Bij The Grid Waves staan de kaarten op een
-   gekleurd vlak met het product erin. Dat werkt hier niet: onze
-   productfoto's zijn JPEG met een ingebakken witte achtergrond (gemeten
-   4 november: 77 van de 80 beelden op de pagina zijn jpeg, nul png met
-   transparantie). Een zandkleurige kaart zou dus een wit blok tonen.
-   De variatie moet daarom uit vorm, ritme en typografie komen, niet uit
-   kleurvlakken.
+   DEZE SECTIE IS SINDS 5 NOVEMBER ONGEBRUIKT. Geen enkel blok draagt nog
+   .rg-page-hero--raster, dus hieronder gebeurt niets. De themapagina
+   gebruikt nu sectie 52: een hero met vier zelfgekozen pakketten. Reden:
+   automatisch alle elf tonen ging stuk op het materiaal (zie hieronder).
+   Bewaard omdat de techniek werkt en we hem nog kunnen willen; weg te
+   gooien zodra dat besluit vastligt.
+
+   WAT HET MATERIAAL WEL EN NIET TOELAAT. Gemeten op 5 november over alle
+   elf kerstpakketten, met een canvas op de hoekpixels:
+
+     - de beeldverhoudingen lopen van 1.00 tot 1.90 (vijf vierkant, de rest
+       liggend in drie verschillende maten);
+     - vijf van de elf zijn uitgeknipte PNG's met een transparante
+       achtergrond, zes staan op dekwit;
+     - vier van de elf zijn varianten op dezelfde borrelplank.
+
+   Die eerste twee door elkaar in een raster is wat "schots en scheef"
+   opleverde. CORRECTIE OP WAT HIER EERDER STOND: ik noteerde op 4 november
+   dat alle productfoto's JPEG met een witte achtergrond zijn en dat een
+   gekleurde kaart daarom onmogelijk was. Dat klopte voor de thumbnails op
+   de categoriepagina, maar niet voor deze originelen: de helft is wel
+   degelijk uitgeknipt. Met de hand kiezen lost het probleem op, want dan
+   kies je beelden die bij elkaar passen.
 
    WAT DE THEMA-CSS AL DOET (nagemeten in all.css, 4.445 regels):
    - .product-slider-container heeft alleen padding-bottom:1px, geen
@@ -10995,28 +10863,9 @@ h2.rg-route__team-title{
   .rg-page-hero--raster .rg-page-hero__aside { padding-bottom: 0.35rem; }
 }
 
-/* De cognac hairline. Stond als --rg-hair al in de tokens en in de
-   merkgids ("hairline boven schaduw"), maar werd nergens aangeroepen.
-   Hier geeft hij de hero zijn aanzet, en verderop de kaarten hun rand. */
-.rg-page-hero--raster .rg-page-hero__eyebrow {
-  color: var(--rg-cognac);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 0 0 0.6rem;
-  padding-left: 2.2rem;
-  position: relative;
-}
-.rg-page-hero--raster .rg-page-hero__eyebrow::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1.6rem;
-  height: 1px;
-  background: var(--rg-hair);
-}
+/* De kicker met de cognac hairline ervoor is op 5 november verwijderd
+   (besluit 4 en 5: nergens meer een kicker, geen hairline). Het blok
+   draagt hem ook niet meer. */
 
 /* Groter dan de oude hero, want hij is nu het enige in het eerste scherm
    en moet die ruimte dragen. */
@@ -11066,7 +10915,6 @@ h2.rg-route__team-title{
     gap: 0.3rem;
     font-size: 1rem;
     padding-top: 0.2rem;
-    border-top: 1px solid var(--rg-hair);
     margin-bottom: 1rem;
   }
 }
@@ -11203,14 +11051,13 @@ h2.rg-route__team-title{
   background: #fff !important;
   height: auto;                        /* het thema zet height:100%; dat rekt in een raster */
   border-radius: var(--rg-r-xp) !important;
-  /* De cognac hairline in plaats van een schaduw. "Hairline boven
-     schaduw" is een principe uit de merkgids en --rg-hair stond tot nu
-     toe zonder gebruiker in de tokens. */
-  box-shadow: inset 0 0 0 1px var(--rg-hair) !important;
+  /* De lichte schaduw uit de tokens. Hier stond de cognac hairline
+     ("hairline boven schaduw"); Ward wees dat motief op 5 november af. */
+  box-shadow: var(--rg-sh-soft) !important;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .rg-raster .product-box:hover {
-  box-shadow: inset 0 0 0 1px var(--rg-cognac), var(--rg-sh-soft) !important;
+  box-shadow: var(--rg-sh-deep) !important;
   transform: translateY(-2px);
 }
 
@@ -11304,10 +11151,1124 @@ h2.rg-route__team-title{
   color: var(--rg-cognac);
   text-decoration: none;
   padding: 0.5rem 0.2rem;
-  border-bottom: 1px solid var(--rg-hair);
+  border-bottom: 1px solid currentColor;
   border-radius: 0;
 }
 .rg-raster__knop:hover {
   color: var(--rg-cognac-deep);
   border-bottom-color: var(--rg-cognac-deep);
+}
+
+/* ============================================================
+   52. THEMA-HERO — hero-v2 met zelfgekozen pakketten
+   ============================================================
+   Opzet van 5 november. Hergebruikt het homepage-component .rg-hero-v2
+   (sectie 38) in plaats van een eigen hero, met een modifier voor wat op
+   een themapagina anders is. ALLES hieronder hangt aan
+   .rg-hero-v2--thema, dus de homepage verandert niet.
+
+   WAAROM DIT ER IS, EN WAT SECTIE 51 NU NOG DOET. Sectie 51 maakte van
+   Shopware's productoverzicht een raster. Dat werkte technisch maar zag
+   er niet uit, en de oorzaak was het materiaal: gemeten over alle elf
+   kerstpakketten lopen de beeldverhoudingen van 1.00 tot 1.90, en vijf
+   zijn uitgeknipte PNG's tegen zes op dekwit. Door ZELF vier vierkante
+   te kiezen is dat probleem weg. Sectie 51 blijft staan maar is inert
+   zolang geen enkel blok .rg-page-hero--raster draagt.
+
+   DE TEGELS, EN WAAROM ZE AFWIJKEN VAN DE HOMEPAGE. Daar staan
+   lifestyle-foto's in de tegels: die vullen het kader (object-fit:cover)
+   en krijgen een donkere verloopband met witte tekst erover. Onze
+   pakketten zijn packshots, geen foto's. Die moet je heel zien, dus
+   contain met lucht eromheen, op wit, met de tekst eronder in plaats van
+   erover. De verloopband gaat daarom uit.
+   ============================================================ */
+
+/* ---------- 52.1 het feitenblok ---------- */
+/* Punt 1 van kerstpagina-herzien.md: prijs, aantal en levertijd boven de
+   vouw. Geen scheidingstekens tussen de drie: op smal breekt de rij af en
+   dan begint regel twee met een zwevend puntje. Het vet-tegen-zacht-
+   contrast scheidt ze al. */
+.rg-hero-v2--thema .rg-hero-v2__feiten {
+  list-style: none;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.3rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--rg-soft);
+}
+.rg-hero-v2--thema .rg-hero-v2__feiten strong {
+  font-weight: 600;
+  color: var(--rg-ink);
+}
+
+/* ---------- 52.2 de besteldeadline ---------- */
+/* Het sterkste argument dat een seizoenspagina heeft, en het stond nergens
+   op de pagina. Cognac, want dit is het enige in de hero dat om urgentie
+   vraagt. (De hairline die erboven stond is op 5 november vervallen.) */
+.rg-hero-v2--thema .rg-hero-v2__deadline {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--rg-cognac);
+  max-width: 38ch;
+}
+.rg-hero-v2--thema .rg-hero-v2__deadline time { font-weight: 700; }
+
+/* ---------- 52.3 de tegels ---------- */
+.rg-hero-v2--thema .rg-hero-v2__tile {
+  /* Vierkant, want alle vier de gekozen beelden zijn 1:1. De homepage
+     staat op 4/3 omdat daar liggende lifestyle-foto's in gaan. */
+  aspect-ratio: 1;
+  background: #fff;
+  /* De lichte schaduw uit de tokens; de cognac hairline die hier stond is
+     op 5 november afgewezen. */
+  box-shadow: var(--rg-sh-soft);
+}
+.rg-hero-v2--thema .rg-hero-v2__tile img {
+  /* contain, niet cover: een packshot moet je heel zien. De padding
+     onderaan houdt ruimte vrij voor het bijschrift, zodat het beeld daar
+     nooit achter verdwijnt. */
+  object-fit: contain;
+  padding: 11% 11% 27%;
+}
+/* De donkere verloopband van de homepage weg: die zat er voor witte tekst
+   over een foto, en onze tegels zijn wit. */
+.rg-hero-v2--thema .rg-hero-v2__tile::after { display: none; }
+
+.rg-hero-v2--thema .rg-hero-v2__cap { left: 0.9rem; right: 0.9rem; bottom: 0.8rem; }
+.rg-hero-v2--thema .rg-hero-v2__cap-brand {
+  color: var(--rg-cognac);
+  font-size: 0.66rem;
+}
+.rg-hero-v2--thema .rg-hero-v2__cap-label {
+  color: var(--rg-ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Hover: de kaart komt iets op. Dezelfde taal als het raster in sectie 51
+   en de band in sectie 53. */
+.rg-hero-v2--thema .rg-hero-v2__tile:hover,
+.rg-hero-v2--thema .rg-hero-v2__tile:focus-visible {
+  box-shadow: var(--rg-sh-deep);
+}
+/* De zoom op de foto hoort bij een vullend beeld, niet bij een packshot
+   met lucht eromheen; die zou gaan zwemmen. */
+.rg-hero-v2--thema .rg-hero-v2__tile:hover img,
+.rg-hero-v2--thema .rg-hero-v2__tile:focus-visible img { transform: none; }
+
+@media (max-width: 991px) {
+  /* VOLGORDE. Onder 992px wordt .rg-hero-v2__copy-bottom display:contents,
+     dus zijn kinderen worden directe rasteritems van __inner en bepaalt
+     `order` de volgorde. Sectie 38 zet die orders voor de homepage
+     (copy-top 1, knoppen 2, mozaïek 3, Richard 4) en kent onze twee nieuwe
+     elementen niet; die stonden dus op 0 en kwamen bovenaan, nog boven de
+     kop. Hier de hele reeks expliciet, alleen binnen deze modifier.
+
+     Beoogde leesvolgorde: kop, feiten, deadline, pakketten, knoppen,
+     Richard. Dat volgt het ritme van de homepage (titel -> beeld ->
+     knoppen) met de feiten ertussen, zodat prijs, aantal en deadline
+     boven de vouw staan. Dat is punt 1 van kerstpagina-herzien.md. */
+  .rg-hero-v2--thema .rg-hero-v2__feiten   { order: 2; }
+  .rg-hero-v2--thema .rg-hero-v2__deadline { order: 3; }
+  .rg-hero-v2--thema .rg-hero-v2__mosaic   { order: 4; }
+  .rg-hero-v2--thema .rg-hero-v2__cta      { order: 5; }
+  .rg-hero-v2--thema .rg-cta__contact      { order: 6; }
+
+  /* Hoogtebudget op mobiel: de feiten en de deadline compacter, zodat de
+     tegels zelf zo hoog mogelijk in het scherm blijven staan. */
+  .rg-hero-v2--thema .rg-hero-v2__feiten {
+    font-size: 0.86rem;
+    gap: 0.15rem 1.1rem;
+    padding-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  .rg-hero-v2--thema .rg-hero-v2__deadline { font-size: 0.86rem; margin-bottom: 0.8rem; }
+  /* Sectie 38 verbergt het bijschriftlabel op mobiel, want op de homepage
+     staat daar een productomschrijving die op een kleine tegel toch niet
+     leesbaar is. Hier staat de PRIJS in dat label, en dat is juist de reden
+     dat deze tegels er zijn: een inkoper wil weten wat het kost voordat hij
+     doorklikt. Dus weer aan, en compact. */
+  .rg-hero-v2--thema .rg-hero-v2__cap-label { display: block; font-size: 0.76rem; }
+}
+
+/* ============================================================
+   53. THEMA-HERO MET PRODUCTBAND — .rg-page-hero--band
+   ============================================================
+   Derde opzet, 5 november 2026. Zie docs/thema-hero-plan-2026-11-05.md.
+   Hoort bij blokken-def/thema-eindejaarsgeschenken-band.html en bij de
+   band-JS, de laatste sectie van rootedgoods.js.
+
+   ALLES HIERONDER HANGT AAN DRIE MARKERS, en die bestaan alleen als het
+   heroblok .rg-page-hero--band draagt:
+     .rg-page-hero--band  de hero zelf (staat in het blok);
+     .rg-band-pagina      zet de JS op <html> zodra hij die hero vindt;
+     .rg-band             zet de JS op de Shopware-slider op die pagina.
+   Zonder de hero gebeurt er niets, ook niet op de homepage, die dezelfde
+   slidermarkup heeft. Dat is de terugdraaiknop.
+
+   WAAROM ACHTERAAN, EN WAAROM !important. Niet tegen het thema, maar
+   tegen onze eigen secties 10, 16 en 30: die zetten met !important
+   padding, hoogte, breedte en overflow op `.home-productslider
+   .base-slider`, op de tegels en op de beeldwrapper, en die selectors
+   matchen hier gewoon mee. Gelijke specificiteit, dus de laatste regel in
+   het bestand wint. VERPLAATS DEZE SECTIE NIET NAAR VOREN; dat is twee
+   keer misgegaan.
+
+   WAT DE BAND DOET. De Shopware-slider blijft de bron (prijzen en links
+   kloppen dan vanzelf). De JS haalt data-product-slider weg voordat het
+   thema tiny-slider start, kloont de tegels tot er ruim twee
+   schermbreedtes staan, en deze CSS laat de rij met een transform-animatie
+   doorlopen. Pauzeert bij hover (alleen op apparaten met een muis), bij
+   focus, tijdens slepen en buiten beeld. Alleen `transform` en `translate`
+   bewegen; nooit left, margin of scrollLeft, want de pagina heeft al een
+   INP rond de 500 ms op mobiel.
+
+   prefers-reduced-motion: reduce zet de beweging volledig uit. De band is
+   dan een gewone horizontaal scrollbare rij met scroll-snap, zonder klonen.
+   ============================================================ */
+
+/* ---------- 53.1 de hero: vijf elementen ---------- */
+/* Vierde opzet, 5 november 2026, avond. Kop, feitenregel, kerstvraag, één
+   knop, klantlogo's. Links op mobiel (89,6% van het verkeer, gemeten
+   29 oktober t/m 2 november), gecentreerd vanaf 992px. Centreren werkt
+   omdat de hero terug is naar vijf elementen; de tien van de derde opzet
+   werden gecentreerd een totempaal (docs/hero-analyse-2026-11-05.md, deel 3).
+
+   Geen kicker en geen hairline (besluit 4 en 5 van 5 november), geen
+   subregel, geen tweede knop, geen Richard: die staat al in de eind-CTA.
+   De hiërarchie is omgedraaid: de feitenregel is het tweede element, op
+   leesmaat met de getallen in inkt, in plaats van 0,88 rem grijs onderaan. */
+
+.rg-page-hero--band {
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: start;
+  padding: clamp(1.5rem, 3.5vw, 3.5rem) 40px clamp(1.25rem, 2.5vw, 2rem);
+}
+/* Geen beeld in de hero. Staat er in een oud blok nog een
+   rg-page-hero__media, dan hoort die hier niet. */
+.rg-page-hero--band .rg-page-hero__media { display: none; }
+
+/* De kop is langer dan de categorienaam die er stond (65 tekens tegen 26).
+   Sectie 36 zet max-width 15ch en sectie 41.1 de grootte met !important;
+   bij 15ch wordt dit vijf regels. Ruimer en een maat kleiner: drie regels
+   op desktop, drie tot vier op 390px. De !important is nodig om 41.1 te
+   overstemmen (gelijke importance, dan wint de hogere specificiteit). */
+.rg-page-hero--band .rg-page-hero__title {
+  margin: 0 0 1rem;
+  max-width: 24ch;
+  line-height: 1.06 !important;
+  font-size: clamp(2rem, 1.05rem + 3vw, 3.5rem) !important;
+}
+
+/* De feitenregel. Een <ul>: drie losse feiten, een schermlezer hoort er
+   drie. GEEN scheidingstekens: op smal breekt de rij af en dan begint regel
+   twee met een zwevend puntje, bij elke pseudo-element-oplossing. Het
+   vet-tegen-zacht-contrast scheidt al. Geen lijn erboven: de hairline is
+   afgewezen, en de witruimte en de maat doen het werk. */
+.rg-page-hero--band .rg-page-hero__feiten {
+  list-style: none;
+  margin: 0 0 0.9rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--rg-soft);
+}
+.rg-page-hero--band .rg-page-hero__feiten strong {
+  font-weight: 700;
+  color: var(--rg-ink);
+}
+
+/* De kerstvraag, in plaats van de besteldeadline. Inkt en niet cognac:
+   cognac is actie, en de actie is de knop eronder. */
+.rg-page-hero--band .rg-page-hero__vraag {
+  margin: 0 0 1.6rem;
+  max-width: 46ch;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--rg-soft);
+}
+.rg-page-hero--band .rg-page-hero__vraag strong {
+  font-weight: 700;
+  color: var(--rg-ink);
+}
+
+.rg-page-hero--band .rg-page-hero__cta {
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  gap: 0.75rem 1rem;
+}
+.rg-page-hero--band .rg-page-hero__logos {
+  margin: 0;
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+@media (min-width: 992px) {
+  /* Gecentreerd boven een band die aan beide kanten van het scherm afloopt:
+     één zwaartepunt in plaats van twee. */
+  .rg-page-hero--band { text-align: center; }
+  .rg-page-hero--band .rg-page-hero__copy { max-width: 64rem; margin-inline: auto; }
+  .rg-page-hero--band .rg-page-hero__title,
+  .rg-page-hero--band .rg-page-hero__vraag { margin-inline: auto; }
+  .rg-page-hero--band .rg-page-hero__feiten,
+  .rg-page-hero--band .rg-page-hero__cta,
+  .rg-page-hero--band .rg-page-hero__logos { justify-content: center; }
+}
+
+@media (max-width: 991px) {
+  /* Hoogtebudget: de band moet zo hoog mogelijk in het scherm beginnen. */
+  .rg-page-hero--band { padding: 1rem 20px 1.1rem; }
+  .rg-page-hero--band .rg-page-hero__title { margin-bottom: 0.8rem; }
+  .rg-page-hero--band .rg-page-hero__feiten {
+    margin-bottom: 0.7rem;
+    gap: 0.15rem 1.1rem;
+    font-size: 1.02rem;
+  }
+  .rg-page-hero--band .rg-page-hero__vraag { margin-bottom: 1.1rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 1.25rem; gap: 0.6rem 1rem; }
+}
+
+/* ---------- 53.2 de vouw: de blokken rond de band ---------- */
+/* Hero, "Inspiratie"-kopje en slider zitten in aparte CMS-blokken, elk met
+   een inline padding. Ward zet de blok-padding van de band in de editor op
+   0, maar hier hangt niets van af: de verticale ruimte gaat hier weg en de
+   horizontale ruimte wordt in 53.3 doorbroken.
+
+   Het "Inspiratie"-tekstblok (de .rg-cat-head met "Bekijk alle producten")
+   gaat uit zolang de band er staat: de band moet direct onder de hero
+   beginnen, en die link duwt sectie 2.0b van de JS op mobiel als tweede
+   primaire knop onder de slider, naast onze eigen scrollverwijzing. */
+.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
+.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] {
+  padding-bottom: 0 !important;
+}
+.rg-band-pagina .cms-section:has(.rg-band) .cms-block-container,
+.rg-band-pagina .cms-section:has(.rg-band) .cms-block-container[style] {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.rg-band-pagina .cms-section:has(.rg-page-hero--band),
+.rg-band-pagina .cms-section:has(.rg-band) { margin-bottom: 0; }
+.rg-band-pagina .cms-section:has(.rg-band) .cms-block-text:has(.rg-cat-head),
+.rg-band-pagina .cms-section:has(.rg-band) .rg-slider-cta-moved { display: none !important; }
+
+/* ---------- 53.3 de band ---------- */
+/* Van schermrand tot schermrand, ongeacht de padding van de blokken erom-
+   heen. De JS zet --rg-vw op <html> (de clientWidth, dus zonder de
+   scrollbalk); 100vw is de achtervang en zou de breedte van de scrollbalk
+   erbij tellen. De omliggende blokken zijn gecentreerd, dus 50% van de
+   ouder min de halve schermbreedte legt de linkerrand precies op 0.
+
+   Alles met !important, want sectie 10 (regel ~1942) en sectie 30
+   (~5565) zetten op `.home-productslider .base-slider` breedte, marge,
+   padding en overflow met !important; gelijke specificiteit, dit staat
+   later. */
+.rg-band-pagina .rg-band {
+  /* Breedte van een tegel en de ruimte ertussen. De JS leest deze niet;
+     de lusafstand hieronder is er een calc van, dus de animatie klopt op
+     elke breedte zonder meting. */
+  --rg-band-tile: clamp(168px, 20vw, 232px);
+  --rg-band-gap: clamp(12px, 1.4vw, 20px);
+  --rg-band-set: calc(var(--rg-band-n, 8) * (var(--rg-band-tile) + var(--rg-band-gap)));
+  /* Waar de eerste tegel begint: op de tekstlijn van de hero (20px op
+     mobiel, de 48px-lijn van sectie 30 op desktop). */
+  --rg-band-inzet: 20px;
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  margin-inline: calc(50% - var(--rg-vw, 100vw) / 2) !important;
+  /* Boven: ruimte voor de versprong zit al in de tegels zelf (margin-top).
+     Onder: 28px voor de schaduw (--rg-sh-soft loopt ~8px onder de kaart). */
+  padding: 8px 0 28px !important;
+  overflow: hidden !important;
+  touch-action: pan-y;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+}
+@media (min-width: 992px) {
+  .rg-band-pagina .rg-band { --rg-band-inzet: calc(max((100vw - 1600px) / 2, 0px) + 48px); }
+}
+.rg-band-pagina .rg-band.is-dragging { cursor: grabbing; }
+.rg-band-pagina .rg-band img { -webkit-user-drag: none; }
+
+/* De rij. Breedte max-content, zodat alle tegels (origineel plus klonen) op
+   één regel staan; de band erboven knipt af. */
+.rg-band-pagina .rg-band .product-slider-container {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--rg-band-gap);
+  width: max-content;
+  margin: 0 !important;
+  padding: 0 0 0 var(--rg-band-inzet) !important;
+  /* De beweging: één set tegels per lus, van -1 set naar -2 sets. De JS
+     zet één set klonen VOOR de originelen, zodat er altijd een set
+     speling naar rechts is om in te slepen. Duur schaalt met het aantal
+     tegels, dus de snelheid is constant: ~5,2 s per tegel. */
+  animation: rg-band-run calc(var(--rg-band-n, 8) * 5.2s) linear infinite;
+  /* Slepen met de vinger of de muis: een losse translate die de JS zet en
+     die bovenop de animatie komt. Allebei composited, geen layout. */
+  translate: var(--rg-band-drag, 0px) 0;
+  will-change: transform;
+  cursor: inherit;
+}
+@keyframes rg-band-run {
+  from { transform: translateX(calc(-1 * var(--rg-band-set))); }
+  to   { transform: translateX(calc(-2 * var(--rg-band-set))); }
+}
+/* Pauzeren. Hover alleen op apparaten die hover hebben: op een telefoon
+   blijft :hover na een tik hangen en dan staat de band stil. */
+@media (hover: hover) {
+  .rg-band-pagina .rg-band:hover .product-slider-container { animation-play-state: paused; }
+}
+.rg-band-pagina .rg-band:focus-within .product-slider-container,
+.rg-band-pagina .rg-band.is-dragging .product-slider-container,
+.rg-band-pagina .rg-band.is-weg .product-slider-container { animation-play-state: paused; }
+
+/* ---------- 53.4 de tegels ---------- */
+.rg-band-pagina .rg-band .product-slider-item {
+  flex: 0 0 var(--rg-band-tile);
+  width: var(--rg-band-tile);
+  padding: 0 !important;             /* sectie 10 zet 0 15px !important */
+  margin: 0;
+}
+/* De ondiepe versprong: een herhalend patroon per positie in de set
+   (0, -18, +8, -26 px, hier verschoven zodat niets negatief wordt: 26, 8,
+   34, 0). De JS geeft de class op basis van de positie BINNEN de set en de
+   klonen erven hem, dus het patroon loopt naadloos door over de lusgrens,
+   ook als het aantal tegels geen veelvoud van vier is.
+
+   margin-top en GEEN transform: een transform verplaatst zonder dat de
+   layout het weet, en dat was precies wat de vorige poging scheef liet
+   hangen. */
+.rg-band-pagina .rg-band .rg-band__y1 { margin-top: 26px; }
+.rg-band-pagina .rg-band .rg-band__y2 { margin-top: 8px; }
+.rg-band-pagina .rg-band .rg-band__y3 { margin-top: 34px; }
+.rg-band-pagina .rg-band .rg-band__y4 { margin-top: 0; }
+
+/* Geen omlijning, wel de lichte schaduw uit de tokens. */
+.rg-band-pagina .rg-band .product-box {
+  border: 0 !important;
+  border-radius: var(--rg-r-xp) !important;
+  background: #fff !important;
+  box-shadow: var(--rg-sh-soft);
+  height: auto;                      /* het thema zet height:100%; in een flex-rij rekt dat */
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.rg-band-pagina .rg-band .product-box:hover,
+.rg-band-pagina .rg-band .product-box:has(.product-name:focus-visible) {
+  box-shadow: var(--rg-sh-deep);
+  transform: translateY(-2px);
+}
+.rg-band-pagina .rg-band .product-box:has(.product-name:focus-visible) {
+  box-shadow: 0 0 0 3px var(--rg-cognac), var(--rg-sh-deep);
+}
+
+/* Sectie 10 zet hier 1.75rem 1.5rem !important; dat is lucht die de tegel
+   alleen hoger maakt. */
+.rg-band-pagina .rg-band .product-box .card-body { padding: 10px 10px 14px !important; }
+
+/* Eén vaste verhouding voor elke tegel: een vierkant beeldvlak, beeld met
+   contain en lucht eromheen. Nodig omdat de beeldverhoudingen van het
+   materiaal van 1.00 tot 1.90 lopen en vijf van de elf uitgeknipte PNG's
+   zijn tegen zes op dekwit; zo valt dat verschil weg.
+
+   height:0 + padding-bottom en niet aspect-ratio, want sectie 10 zet
+   `height:0 !important; padding-bottom:85% !important` op dezelfde
+   wrapper (68% onder 576px) en twee verhoudingssystemen naast elkaar
+   leverden eerder een beeldvlak van 169x143 op. Meedoen met wat er staat. */
+.rg-band-pagina .rg-band .product-image-wrapper {
+  padding-bottom: 100% !important;
+  margin-bottom: 10px !important;
+  border-radius: calc(var(--rg-r-xp) - 8px) !important;
+}
+@media (max-width: 575px) {
+  .rg-band-pagina .rg-band .product-image-wrapper { padding-bottom: 100% !important; }
+}
+.rg-band-pagina .rg-band .product-image {
+  padding: 7% !important;            /* de lucht rond het pakket */
+  box-sizing: border-box !important;
+}
+
+/* Weg: alles wat geen beeld, naam of prijs is. De JS haalt deze ook uit
+   de DOM voordat hij kloont, zodat het thema er geen plugins op start;
+   dit is de achtervang. */
+.rg-band-pagina .rg-band .product-badges,
+.rg-band-pagina .rg-band .product-action,
+.rg-band-pagina .rg-band .product-wishlist,
+.rg-band-pagina .rg-band .variant-thumbnail,
+.rg-band-pagina .rg-band hr { display: none !important; }
+
+/* Naam klein in cognac, prijs eronder. Twee regels voor de naam, met een
+   vaste minimumhoogte zodat alle tegels even hoog zijn ("Koffiebeker,
+   lunchbox en Bambook" past niet op één regel van 168px).
+
+   De !important's zijn tegen sectie 10 (regel ~1858 en ~1917): die zet
+   kleur, gewicht, display en line-clamp op de naam en de prijs met
+   !important, en een gewone declaratie verliest daar altijd van, hoe
+   specifiek ook. Gemeten op 5 november: zonder deze !important's bleef
+   de naam donkergroen. */
+.rg-band-pagina .rg-band .product-info { padding: 0 4px; }
+.rg-band-pagina .rg-band .product-name {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;               /* sectie 10 zet nowrap onder 576px */
+  height: auto !important;
+  min-height: 2.7em;
+  margin: 0 0 4px !important;        /* thema zet margin:0 0 15px 0 */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  color: var(--rg-cognac) !important;
+  text-decoration: none !important;
+}
+.rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac-deep) !important; }
+.rg-band-pagina .rg-band .product-price-info { margin: 0; }
+.rg-band-pagina .rg-band .product-price-wrapper {
+  font-size: 0.92rem;
+  line-height: 1.3;
+  color: var(--rg-ink);
+}
+.rg-band-pagina .rg-band .product-price {
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  margin-left: 0 !important;
+  color: var(--rg-ink) !important;
+}
+
+/* ---------- 53.5 de link onder de band ---------- */
+/* Een benoemde link met een pijl, geen kaal stuiterend pijltje. De JS
+   maakt hem uit data-rg-band-label op de hero. Zonder data-rg-band-href
+   scrolt hij naar de volgende CMS-sectie (pijl omlaag); met een href is
+   het een gewone link (class rg-band__meer--uit, pijl naar rechts). Op de
+   themapagina is het sinds 5 november "Alle kerstpakketten" naar de
+   categoriepagina: de tweede knop uit de hero, op de plek waar hij hoort.
+   Staat op de tekstlijn van de band (dezelfde inzet). Bewust geen knop: de
+   offerteknop in de hero is de hoofdknop. De onderstreping is currentColor,
+   geen hairline. */
+.rg-band-pagina .rg-band__meer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1.75rem var(--rg-band-inzet, 20px);
+  padding: 0.4rem 0.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--rg-cognac);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+}
+@media (min-width: 992px) {
+  /* De inzet van de band geldt vanaf de schermrand; deze link staat in
+     het blok dat al op de 80px-lijn van sectie 30 zit, 32px verder dan de
+     hero-lijn. Terug naar de hero-lijn. */
+  .rg-band-pagina .rg-band__meer { margin-left: -32px; }
+}
+.rg-band-pagina .rg-band__meer svg {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  transition: transform 0.2s ease;
+}
+.rg-band-pagina .rg-band__meer:hover,
+.rg-band-pagina .rg-band__meer:focus-visible { color: var(--rg-cognac-deep); }
+.rg-band-pagina .rg-band__meer:hover svg { transform: translateY(3px); }
+.rg-band-pagina .rg-band__meer--uit:hover svg { transform: translateX(3px); }
+/* Het doel van de link mag niet onder de sticky header schuiven. */
+.rg-band-pagina .rg-band__doel { scroll-margin-top: 96px; }
+
+/* ---------- 53.6 zonder beweging ---------- */
+/* prefers-reduced-motion: reduce. Geen animatie, geen klonen (de JS maakt
+   ze dan niet, en zouden ze er toch zijn dan gaan ze hier uit), geen
+   slepen: een gewone scrollbare rij met scroll-snap. */
+@media (prefers-reduced-motion: reduce) {
+  .rg-band-pagina .rg-band {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: var(--rg-band-inzet, 20px);
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto;
+    cursor: auto;
+  }
+  .rg-band-pagina .rg-band .product-slider-container {
+    animation: none;
+    translate: none;
+    will-change: auto;
+    padding-right: var(--rg-band-inzet) !important;
+  }
+  .rg-band-pagina .rg-band .product-slider-item { scroll-snap-align: start; }
+  .rg-band-pagina .rg-band .rg-band__kloon { display: none !important; }
+  .rg-band-pagina .rg-band__meer svg { transition: none; }
+}
+
+/* ============================================================
+   54. VANGNET — kickers in blokken die nog niet herplakt zijn
+   ============================================================
+   Besluit 4 van 5 november 2026: nergens meer een kicker. De 36 kickers
+   zijn uit de bron (blokken-def/) gehaald en de selectors die ze opmaakten
+   zijn uit dit bestand verwijderd. Maar CSS gaat in één keer naar alle
+   pagina's, en een blok plakt Ward met de hand, blok voor blok. Tot een
+   blok herplakt is, staat de oude <p class="…__eyebrow"> nog op de pagina
+   en zou hij als kale thema-alinea renderen. Deze ene regel verbergt hem
+   zolang.
+
+   WEG TE HALEN zodra alle 22 blokken herplakt zijn; dan matcht hij niets
+   meer. Dit is de enige regel in het bestand die bewust ook de homepage
+   raakt (de kicker van hero-sectie-v2), en dat is de bedoeling.
+
+   De offcanvas-tegel "Trending" (rootedgoods.js, bouwUitgelichteTegels)
+   staat hier bewust niet in: dat is navigatie, geen blok, en nog niet
+   besloten.
+   ============================================================ */
+.rg-cat-head__eyebrow, .rg-compare__eyebrow, .rg-story__eyebrow,
+.rg-statement__kicker, .rg-hero-v2__kicker, .rg-endcta__eyebrow,
+.rg-sd__eyebrow, .rg-page-hero__eyebrow, .rg-contact-head__eyebrow,
+.rg-route__eyebrow, .rg-theme-eyebrow, .rg-block-title__eyebrow,
+.rg-theme-tile__eyebrow { display: none; }
+
+/* ============================================================
+   55. KERSTHERO, VIJFDE OPZET — .rg-page-hero--band, bovenop sectie 53
+   ============================================================
+   5 november 2026, na docs/hero-analyse-desktop-mobiel-2026-11-05.md
+   (deel 4 en 6). Hoort bij blokken-def/thema-eindejaarsgeschenken-band.html.
+
+   Dit is een laag óver sectie 53, geen vervanging: 53 blijft staan en doet
+   de band; hier staat alleen wat de analyse veranderde aan de hero en aan
+   de link onder de band. Achteraan, omdat 53 dezelfde selectors met
+   !important zet en bij gelijke specificiteit de laatste wint. VERPLAATS
+   DEZE SECTIE NIET NAAR VOREN.
+
+   Elke selector hangt aan .rg-page-hero--band of .rg-band-pagina (zet de
+   band-JS op <html> zodra hij die hero vindt). Zonder het blok gebeurt er
+   niets, op geen enkele pagina.
+
+   Gemeten voor deze wijziging, in de replica van de testpagina:
+   390 px: hero 393 px hoog, band op y=531, kop 32 px in 3 regels, feiten
+   16,3 px in 3 regels, kerstvraag 16,2 px, knop 253x48, logo's 22 px.
+   1931 px (Wards scherm): hero 442 px, band op 619, kop 56 px, 92 px lege
+   crème tussen header en kop, knop 253x48, logo's 35 px.
+   De meting ná de wijziging staat in docs/metingen/2026-11-05-hero-desktop-mobiel/.
+   ============================================================ */
+
+/* ---------- 55.1 de ruimte boven de hero ---------- */
+/* Tussen de header en de hero zat 36 px die niet van de hero was: 20 px
+   padding-top op .container-main (Shopware) en 16 px daarboven. Plus de
+   eigen padding van de hero (16 px mobiel, 56 px desktop) gaf dat 57 px
+   lege crème op 390 px en 92 px op 1931 px. Alleen op de bandpagina. */
+.rg-band-pagina .container-main { padding-top: 0 !important; }
+/* De 16 px daarboven: de lege breadcrumb-container (hoogte 0, maar met
+   marge) die Shopware vóór .cms-page zet. */
+.rg-band-pagina .cms-breadcrumb,
+.rg-band-pagina .breadcrumb.container { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+.rg-band-pagina .cms-page,
+.rg-band-pagina .cms-sections { margin-top: 0 !important; padding-top: 0 !important; }
+.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
+.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] { padding-top: 0 !important; }
+.rg-band-pagina .cms-section:has(.rg-page-hero--band) { margin-top: 0; }
+.rg-page-hero--band {
+  padding-top: clamp(1.5rem, 2.2vw, 2.5rem);
+  /* Onder: de band volgt direct; 1,5 rem is genoeg lucht onder de logo's. */
+  padding-bottom: 1.5rem;
+}
+
+/* ---------- 55.2 de kop: 36/64 px, gewicht 500 met het accent in 700 ---------- */
+/* Gemeten: tot en met 70,4 px blijft de kop op desktop twee regels, ook op
+   1280; 36 px kost op mobiel 13 px meer dan 32. Basisgewicht 500 en niet
+   400: op 32 tot 36 px worden de haarlijnen van Playfair 400 op een telefoon
+   ongeveer 1 px. Het accent is een <strong> in dezelfde kleur, geen <em>:
+   de em-regel van 41.1 is inline-block en liet de komma na "logo" naar de
+   volgende regel springen; cognac-licht haalt bovendien 2,78:1 op crème.
+   De !important's zijn tegen 41.1 (gewicht 700 en grootte, beide
+   !important) en tegen sectie 53 (grootte). */
+.rg-page-hero--band .rg-page-hero__title {
+  font-size: clamp(2.25rem, 1.1rem + 3.4vw, 4rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.012em !important;
+  margin-bottom: 0.9rem;
+}
+.rg-page-hero--band .rg-page-hero__title strong {
+  font-weight: 700;
+  letter-spacing: -0.021em;
+}
+
+/* ---------- 55.3 de feitenregel: één zin, het tweede niveau ---------- */
+/* Sectie 53 maakte hiervan een flex-lijst; het is nu een <p>, dus terug
+   naar block, anders worden de tekstknopen losse flex-items. Groter dan de
+   noot eronder (0,85 rem) en kleiner dan de kop: 1,3 rem desktop, 1,1 rem
+   mobiel. Op 390 px past de zin uit het blok daarmee in twee regels; bij
+   1,15 rem of meer worden het er drie, en dat is precies wat er weg moest. */
+.rg-page-hero--band .rg-page-hero__feiten {
+  display: block;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  max-width: 44ch;
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem);
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--rg-soft);
+}
+.rg-page-hero--band .rg-page-hero__feiten strong {
+  font-weight: 700;
+  color: var(--rg-ink);
+}
+
+/* ---------- 55.4 de knop en de noot eronder ---------- */
+/* De kerstvraag staat niet meer boven de knop op de maat van de feiten,
+   maar eronder als small (0,85 rem, de reassurance-maat uit de merkgids),
+   samen met de zoekwerk-regel. Geen vet erin. */
+.rg-page-hero--band .rg-page-hero__cta { margin-bottom: 0.75rem; }
+.rg-page-hero--band .rg-page-hero__noot {
+  margin: 0 0 1.25rem;
+  /* 64ch: twee regels op desktop (gemeten: bij 48ch werden het er drie,
+     en dat kostte de winst van de kleinere bovenmarge weer). */
+  max-width: 64ch;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--rg-soft);
+}
+
+/* ---------- 55.5 de klantlogo's: groter, niet weg ---------- */
+/* Ward houdt ze in de hero. Op 22 px was het woordmerk Zuiderzorg 7 px hoog
+   en de onderregel 1,5 px (gemeten in de pixels van de replica); dat is
+   decoratie, geen bewijs. Op 34 px wordt het woordmerk circa 11 px, de
+   ondergrens waarop een kapitaalwoordmerk nog leest, en de drie logo's
+   die sectie 36 op mobiel toont passen dan nog op één rij van 350 px
+   (gemeten breedtes 83 + 61 + 73 px plus twee keer 1,25 rem). Desktop 44 px,
+   woordmerk circa 14 px. De vierde (Wille) blijft op mobiel verborgen via
+   sectie 36. */
+.rg-page-hero--band .rg-page-hero__logos img { height: 34px; }
+
+/* ---------- 55.6 desktop: heroknop, gecentreerde noot, link onder de band ---------- */
+@media (min-width: 992px) {
+  .rg-page-hero--band .rg-page-hero__feiten,
+  .rg-page-hero--band .rg-page-hero__noot { margin-inline: auto; }
+  /* De heroknopmaat uit design/componenten.md (1,02 rem, 1,05 x 2,4 rem),
+     die deze knop niet kreeg: sectie 8 zet 0,9 rem en 0,9 x 2 rem met
+     !important op elke .btn. Hogere specificiteit én later, dus dit wint.
+     Berekend circa 300 x 53 px in plaats van 253 x 48. Alleen desktop;
+     op mobiel is 48 px hoog en 72% van de kolom al goed. */
+  .rg-page-hero--band .rg-page-hero__cta .btn {
+    font-size: 1.02rem !important;
+    padding: 1.05rem 2.4rem !important;
+  }
+  .rg-page-hero--band .rg-page-hero__logos img { height: 44px; }
+  /* De link onder de band stond op x=213 onder een hero die rond x=965
+     centreert (gemeten op 1931). Zijn ouder is .cms-element-product-slider
+     (block, volle breedte), dus een blok op max-content met auto-marges
+     staat in het midden. Sectie 53.5 zette margin-left: -32px; die vervalt
+     hiermee. */
+  .rg-band-pagina .rg-band__meer {
+    display: flex;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------- 55.7 mobiel: hoogtebudget en versprong uit ---------- */
+@media (max-width: 991px) {
+  /* 12 px boven de kop: bij 8 px stond de kop op 13 px van de vaste header
+     en dat oogde geplakt (gemeten en bekeken op 390 px). */
+  .rg-page-hero--band { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .rg-page-hero--band .rg-page-hero__title { margin-bottom: 0.7rem; }
+  .rg-page-hero--band .rg-page-hero__feiten { font-size: 1.1rem; margin-bottom: 0.85rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 0.6rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 0.9rem; }
+  .rg-page-hero--band .rg-page-hero__logos { gap: 0.75rem 1.25rem; }
+  /* De versprong (26/8/34/0 px) is een ritme dat je met acht tegels ziet
+     en met 2,2 tegels niet: dan hangt er gewoon één tegel lager dan zijn
+     buurman. Onder 992 px alles op één lijn; sectie 53.4 blijft gelden
+     daarboven. */
+  .rg-band-pagina .rg-band .rg-band__y1,
+  .rg-band-pagina .rg-band .rg-band__y2,
+  .rg-band-pagina .rg-band .rg-band__y3 { margin-top: 0; }
+}
+
+/* ---------- 55.8 de link onder de band: bosgroen, cognac op hover ---------- */
+/* Zoals elke secundaire link op de site (design/componenten.md). Cognac op
+   crème haalde 4,19:1, onder AA voor 15,2 px; bosgroen 9,68:1. En het
+   scheelt één cognac-element naast de knop. */
+.rg-band-pagina .rg-band__meer { color: var(--rg-green); }
+.rg-band-pagina .rg-band__meer:hover,
+.rg-band-pagina .rg-band__meer:focus-visible { color: var(--rg-cognac); }
+
+/* ---------- 55.9 desktop: de lucht terug, in twee stappen ---------- */
+/* Ward op 1931 px, na de eerste bouwronde: "wat vol geduwd; slider en knop
+   kunnen nog wat lager, iets meer lucht hier en daar." Terecht: de ruimte
+   ging overal weg omdat mobiel die nodig had, en op desktop was ruimte
+   nooit het probleem. Onder 992 px verandert hier dus niets; de band
+   begint op 390 px op y=482 en dat getal moet zo blijven.
+
+   Twee stappen, omdat een laptop van 1280x800 of 1440x900 veel minder
+   hoogte over heeft dan Wards scherm van 1931x1112. Gemeten na ronde 1:
+   op 1280x800 is 245 px van de 370 px band zichtbaar, op 1931x1112 alles,
+   met 127 px over onder de link. Dezelfde toeslag op allebei zou de band
+   op 1280 halverwege de beelden afsnijden.
+
+   992 tot 1599 px: circa +35 px in totaal (padding-top 40, marges iets
+   ruimer, padding-bottom 32). De 20 px van .container-main blijft hier weg.
+   Vanaf 1600 px: circa +84 px (de 20 px van .container-main terug,
+   padding-top 56, marges ruim, padding-bottom 40). Zo blijft op 1738x1001
+   (Wards scherm op 100%) de prijsregel van de tegels nog net in beeld en
+   op 1931x1112 ook de link onder de band. De nameting staat in
+   docs/metingen/2026-11-05-hero-desktop-mobiel/na/. */
+@media (min-width: 992px) {
+  .rg-page-hero--band {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+  .rg-page-hero--band .rg-page-hero__title { margin-bottom: 1.1rem; }
+  .rg-page-hero--band .rg-page-hero__feiten { margin-bottom: 1.5rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 0.9rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 1.5rem; }
+}
+@media (min-width: 1600px) {
+  .rg-band-pagina .container-main { padding-top: 20px !important; }
+  .rg-page-hero--band {
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .rg-page-hero--band .rg-page-hero__title { margin-bottom: 1.5rem; }
+  .rg-page-hero--band .rg-page-hero__feiten { margin-bottom: 1.75rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 1rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 1.75rem; }
+}
+
+/* ---------- 55.10 de feitenstrook onder de band, en de laptoplaag ---------- */
+/* Ontwerpronde 5 november (docs/hero-ontwerpvoorstel-2026-11-05.md, punt 2
+   en de vouwberekening). De feitenregel staat niet meer in de hero; de
+   regels voor .rg-page-hero__feiten in 55.3 en 55.6 tot 55.9 matchen niets
+   meer en blijven staan als geschiedenis. De band-JS verplaatst
+   .rg-page-hero__strook uit het blok naar direct onder de slider, boven
+   .rg-band__meer, en haalt `hidden` weg.
+
+   De strook: twee feiten, getallen in inkt 700, de rest zachtgroen. Op de
+   tekstlijn van de band op mobiel (20 px), gecentreerd op desktop, boven
+   de link. Geen vlak, geen pill, geen lijn: de nabijheid van de tegels is
+   het voorbehoud dat brand/claims.md vraagt. De band heeft 28 px padding
+   onder voor de schaduw, dus boven de strook weinig extra ruimte. */
+.rg-band-pagina .rg-page-hero__strook {
+  display: block;
+  margin: 0 0 0.1rem var(--rg-band-inzet, 20px);
+  padding: 0;
+  max-width: calc(100% - 40px);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--rg-soft);
+}
+.rg-band-pagina .rg-page-hero__strook strong {
+  font-weight: 700;
+  color: var(--rg-ink);
+}
+.rg-band-pagina .rg-page-hero__strook-punt { margin: 0 0.35rem; color: var(--rg-muted); }
+/* Onder 992 px elk feit op een eigen regel, zonder puntje: op 350 px bleef
+   het puntje anders aan het eind van regel één hangen (gemeten). */
+@media (max-width: 991px) {
+  .rg-band-pagina .rg-page-hero__strook-feit { display: block; }
+  .rg-band-pagina .rg-page-hero__strook-punt { display: none; }
+}
+/* Zolang de JS hem nog niet verplaatst heeft (of niet draait) is hij
+   onzichtbaar: het blok zet `hidden`, en dit houdt dat zo tegen eventuele
+   display-regels van het thema. */
+.rg-page-hero--band .rg-page-hero__strook[hidden] { display: none !important; }
+@media (min-width: 992px) {
+  .rg-band-pagina .rg-page-hero__strook {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    max-width: 100%;
+    text-align: center;
+    font-size: 1.15rem;
+  }
+  /* De link staat direct onder de strook; 55.6 centreert hem al. */
+  .rg-band-pagina .rg-band__meer { margin-top: 0.15rem; }
+}
+
+/* De laptoplaag, 992 tot 1599 px: de prijsregel van de tegels boven een
+   vouw van 800 px. Berekend vóór de bouw: band op circa 518 met de feiten
+   uit de hero; met a (versprong uit, 34 px), b (hero-lucht van 55.9 deels
+   terug, 28 px) en c (tegel 232 naar 216, 16 px) de hoogste tegel op circa
+   782. Vanaf 1600 px verandert hier niets; onder 992 px ook niet. */
+@media (min-width: 992px) and (max-width: 1599px) {
+  /* a: versprong uit. Met 5,3 tegels in beeld is het ritme nog zichtbaar,
+     maar het kost 34 px op precies de breedtes die ze niet hebben. */
+  .rg-band-pagina .rg-band .rg-band__y1,
+  .rg-band-pagina .rg-band .rg-band__y2,
+  .rg-band-pagina .rg-band .rg-band__y3 { margin-top: 0; }
+  /* b: de hero-lucht van 55.9 deels terug. */
+  .rg-page-hero--band {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .rg-page-hero--band .rg-page-hero__logos img { height: 40px; }
+  /* c: tegel 216 in plaats van 232 (tegelhoogte 284 in plaats van 300).
+     Geen 4:3-beeldvlak: het vierkant trekt de beeldverhoudingen van 1,0
+     tot 1,9 gelijk, en 4:3 zou de vierkante packshots 25% kleiner maken. */
+  .rg-band-pagina .rg-band { --rg-band-tile: clamp(168px, 20vw, 216px); }
+}
+
+/* ---------- 55.11 lucht onderin, en de Europa-contour ---------- */
+/* Ward, 5 november, na ronde 3: "er mag wel meer ruimte tussen tekst en
+   knop onderin." Dat is de feitenstrook tegen de link "Alle kerstpakketten"
+   (33 px ertussen op zijn scherm) en de knop tegen de noot in de hero.
+   Op mobiel is elke pixel boven de band er een, dus daar komt de ruimte
+   tussen knop en noot uit de noot-marge en de onderpadding van de hero:
+   de band blijft op 390 px op dezelfde hoogte. */
+/* Gemeten na een eerste poging met 0,6 rem: op desktop vallen de marge
+   onder de strook en die boven de link samen (de link is daar een blok),
+   dus het gat werd 10 px. Daarom de ruimte in één marge, op de link. */
+.rg-band-pagina .rg-page-hero__strook { margin-bottom: 0; }
+.rg-band-pagina .rg-band__meer { margin-top: 1.25rem; }
+@media (max-width: 991px) {
+  .rg-page-hero--band { padding-bottom: 0.5rem; }
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 1.25rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 0.5rem; }
+}
+@media (min-width: 992px) {
+  .rg-page-hero--band .rg-page-hero__cta { margin-bottom: 1.5rem; }
+  .rg-band-pagina .rg-band__meer { margin-top: 1.75rem; }
+}
+
+/* DE EUROPA-CONTOUR. Het motief dat van hen alleen is: niet een lijn maar
+   de claim zelf ("van makers die je kunt aanwijzen"). svg/europa-contour.svg
+   uit de repo (114 paden, 30 kB gecomprimeerd), via jsDelivr op de
+   commit-SHA waarin hij staat (docs/kaart-assets.md: nooit @main voor een
+   kaart).
+
+   WAAR. Gecentreerd ACHTER de hele hero-inhoud, zoals Gainlove zijn kaart
+   zet, variant D uit de keuzeronde van 5 november (beelden in
+   docs/metingen/2026-11-05-hero-desktop-mobiel/na7/). De eerste opzet stond
+   rechts, afgesneden door de schermrand, alleen vanaf 1600 px; die werkte
+   op 1280 niet omdat de tekstkolom daar 1024 van de 1280 px is en de kaart
+   dan toch achter de kop kwam. Gecentreerd hoeft de kaart niet naast de
+   tekst, dus vanaf 992 px. Onder 992 px uit: de kolom is daar vol en de
+   kop drie regels. Het kader is 180% van de herohoogte, de sectie knipt
+   boven en onder (overflow hidden); de tegels van de band snijden hem
+   onderaan af. background-position 42% zet Midden-Europa achter de kop.
+
+   LEESBAARHEID. De kop staat op een raster van lijnen van 0,8 px, niet op
+   een vlak. Berekend (WCAG 2.x): bosgroen op de donkerste lijn 6,88:1 bij
+   20%, 7,40:1 bij 16%, tegen 9,68:1 op kaal crème.
+
+   HOE: EEN MASKER, GEEN ACHTERGRONDBEELD. Derde opzet, na Wards oordeel
+   live op 1931 ("te aanwezig, mag subtieler, lichter van kleur, strak
+   tegen het menu en onder de slider door"). De SVG staat als mask-image op
+   een pseudo-element met een effen achtergrondkleur: de lijnen krijgen dan
+   de kleur van dat vlak. Daarmee is de lijnkleur een variabele
+   (--rg-contour-kleur) in plaats van het bosgroen dat in de SVG zit, en de
+   dekking gewoon `opacity` (--rg-contour-dekking), één laag.
+
+   DE SVG: svg/land-europa.svg, EXACT DIE VAN /OVER-ONS, op dezelfde vaste
+   SHA. Ward, 5 november: "het moet wel die met lijnen zijn, hoezo niet
+   gewoon dezelfde pakken als over-ons?" Wat ik tot dan toe had vergeleken
+   was de verkeerde kaart. Het bestand uit het Europakaart-blok (851,6 x
+   538,4, 114 paden) tekent elk land als eigen gesloten vorm met een kier
+   van circa 0,3 eenheid tussen buren, en langs die kier staan twee lijnen.
+   Over-ons laadt iets anders: land-europa.svg (527,5 x 513,2, 40 paden,
+   fill none, lijn #D1C9BB van 1,5 px), waarin elke grens EEN gedeelde lijn
+   is. Daarom delen Spanje en Portugal daar een streep en bij onze eigen
+   contour twee. Een dikkere lijn (1,4) en de gevulde variant losten dat
+   niet op (gevuld was te onrustig); dit wel, en er is geen nieuw bestand
+   voor nodig.
+
+   GEEN SHA-STAP MEER VOOR DEZE KAART. Het bestand is ongewijzigd en byte
+   voor byte gelijk aan wat over-ons laadt (gecontroleerd 5 november: 220424
+   bytes, cmp gelijk). jsDelivr stuurt access-control-allow-origin: * (nodig
+   voor een masker) en een jaar immutable cache, dus wie /over-ons bezocht
+   heeft hem al in de browser. De twee andere kaarten, europa-contour.svg
+   en europa-vlak.svg, worden hier niet meer gebruikt en zijn teruggezet
+   naar hun gecommitte staat.
+
+   WAAR: op .cms-page, de container die hero én bandsectie omvat (allebei
+   transparant, gemeten), zodat de kaart onder de slider doorloopt en de
+   tegels, de strook en de link eroverheen staan. z-index -1 binnen een
+   eigen stacking context (isolation: isolate) houdt hem achter alle
+   inhoud. Strak onder het menu: .cms-page begint direct onder de header
+   zodra de 20 px padding van .container-main weg is (hieronder, voor
+   >= 1600 px; 55.1 deed dat al voor de rest). Op /over-ons zit volgens
+   Ward dezelfde ruimte; dat is daar vrijwel zeker dezelfde Shopware-
+   padding op .container-main, net als sectie 47.3 die voor de route al
+   wegwerkt. Niet gemeten op die pagina.
+
+   HOE GROOT: DE HELE KAART, niet afgesneden. Ward, live: "hij wordt nu
+   afgesneden aan de onderkant, hij moet doorlopen zodat hij helemaal
+   zichtbaar is." Gemeten op 1931: .cms-page is tot 4721 px transparant en
+   geen enkele sectie heeft een eigen achtergrond; het eerste opake element
+   onder de band is de foto van de feature-rij (y=1347, 680 px breed, dus
+   geen vlak over de volle breedte). Het masker mag dus zo hoog zijn als de
+   kaart. mask-size contain, bovenaan tegen de header: de kaart past in
+   hoogte én breedte en wordt nooit afgesneden. Masker 1140 px hoog vanaf
+   1600 (op 1931 is de kaart dan 1140 hoog en 1803 breed), 900 px op 992
+   tot 1599 (op 1280 knelt de breedte eerst: kaart 1280 breed, 809 hoog;
+   een vaste hoogte van 900 sneed daar links Portugal en rechts Turkije
+   af, gemeten). De onderrand van de SVG is de Middellandse Zee, dus de
+   kaart loopt vanzelf uit, onder de strook en de link, in de intro-sectie
+   en boven de foto van de feature-rij. Vanaf 992 px; eronder uit, de
+   kolom is daar vol.
+
+   KLEUR EN DEKKING: de kleur en lijndikte van /over-ons, niets eigens.
+   #d1c9bb is de lijnkleur die land-europa.svg zelf heeft (stroke 1,5 px,
+   non-scaling), dekking 1. Eerder stonden hier zand #eae3d7 en zachtgroen
+   #5d6d55 als opties voor de gevulde kaart; die horen bij europa-vlak.svg
+   en gelden niet meer. Ward over de gevulde versie: "te onrustig, het moet
+   wel die met lijnen zijn". Wil hij hem zachter: --rg-contour-dekking is
+   de ene knop (lijnen op 1,5 px verdragen een lagere dekking beter dan
+   een gevuld vlak, maar dat is niet gemeten). */
+@media (min-width: 992px) {
+  .rg-band-pagina .cms-page {
+    --rg-contour-kleur: #e8e2d8;   /* nog lichter dan #ddd6ca, op verzoek: moet echt subtiel zijn */
+    --rg-contour-dekking: 1;
+    position: relative;
+    isolation: isolate;
+  }
+  .rg-band-pagina .cms-page::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1200px;
+    background-color: var(--rg-contour-kleur);
+    -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@7f5f6c0688837d585f3bc9d0cb6fc17773a465a7/svg/land-europa.svg");
+    mask-image: url("https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@7f5f6c0688837d585f3bc9d0cb6fc17773a465a7/svg/land-europa.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center top;
+    mask-position: center top;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    opacity: var(--rg-contour-dekking);
+    pointer-events: none;
+  }
+}
+@media (min-width: 1600px) {
+  .rg-band-pagina .cms-page::before { height: 1560px; }
+  /* De 20 px van .container-main (55.9 gaf die hier terug voor lucht)
+     weer weg, zodat de kaart tegen het menu aansluit; de lucht zit nu in
+     de hero zelf (3,5 rem plus 20 px), dus niets verschuift. */
+  .rg-band-pagina .container-main { padding-top: 0 !important; }
+  .rg-page-hero--band { padding-top: calc(3.5rem + 20px); }
+}
+
+/* ============================================================
+   56. CIRKELPIJL OP DE PRIMAIRE KNOP — sitewide, achter html.rg-cirkelpijl
+   ============================================================
+   Proef op verzoek van Ward, 5 november 2026 (referentie: Flowblox). De
+   pijl van sectie 8 (een gemaskerde pijl in currentColor) wordt een crème
+   cirkel van 1,75 em met een cognac pijl erin, rechts in de pil. Bewust
+   sitewide en niet alleen op de kersthero: één knop met een cirkel tussen
+   elf met een kale pijl is een eilandje. De kale tekstlinks
+   (.btn-outline-primary) houden hun pijl: alleen de cognac pil verandert.
+   De header-offerteknop heeft geen pijl (sectie 1.4) en blijft zo.
+
+   DE TERUGDRAAIKNOP IS DE CLASS html.rg-cirkelpijl, die de laatste regel
+   van rootedgoods.js zet. Regel weg, cirkel weg, op elke pagina tegelijk,
+   zonder plakken. Wordt het een besluit, dan hoort het in
+   design/componenten.md van de merkgids en kan de marker eraf.
+
+   De cirkel krijgt zijn pijl als achtergrondbeeld (geen mask): één
+   pseudo-element kan niet tegelijk een vlak in de ene kleur en een
+   gemaskerde vorm in de andere zijn. Hogere specificiteit dan sectie 8
+   (html.class ervoor) én later in het bestand.
+   ============================================================ */
+/* DE KLEUR VAN DE CIRKEL. Ward, na de eerste proef met een volle crème
+   cirkel: "meestal is de cirkel een kleur tussen het wit en de knopkleur
+   in." Daarom doorschijnend wit óver de knopkleur in plaats van een vaste
+   kleur: op de cognac pil wordt het een lichter cognac, op een andere knop
+   een lichtere tint van die knop, zonder tweede kleur per knopsoort. De
+   pijl is wit: berekend (WCAG 2.x) op 20% dekking is de cirkel #bd825a,
+   witte pijl erop 3,23:1 (boven de 3:1 voor niet-tekst), cognac pijl erop
+   1,41:1 en dus onbruikbaar. Bij 15% is wit 3,52:1, bij 25% 2,95:1 en bij
+   30% 2,71:1; de bovengrens voor een pijl die AA haalt ligt dus bij 20%.
+   Ward kiest uit 15, 20 en 30% (beelden in
+   docs/metingen/2026-11-05-hero-desktop-mobiel/na6/); tot dan 20%. */
+html.rg-cirkelpijl { --rg-cirkel-dekking: 0.2; }
+html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-link)::after {
+  width: 1.75em;
+  height: 1.75em;
+  margin: -0.35em -0.85em -0.35em 0.1em;   /* dichter op de rand van de pil, zonder de pil hoger te maken */
+  border-radius: 50%;
+  -webkit-mask: none;
+  mask: none;
+  background-color: rgba(255, 255, 255, var(--rg-cirkel-dekking));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 58%;
+}
+html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-link):hover::after {
+  transform: translateX(3px);
+  background-color: rgba(255, 255, 255, calc(var(--rg-cirkel-dekking) + 0.1));
+}
+
+/* ---------- 55.12 mobiel: de lucht terug tussen de elementen ---------- */
+/* Hoort bij sectie 55, staat hier achter 56 omdat nieuwe CSS achteraan
+   komt. Ward, 5 november, na de beeldronde: "zorg wel voor voldoende
+   ruimte tussen de elementen op mobile." Dat kan nu: na het verplaatsen
+   van de feiten en het inkorten van de noot eindigt de prijsregel van de
+   tegels op 375 x 667 op y=607, dus 60 px boven de vouw. Daarvan zijn hier
+   37 px gebruikt en blijft 23 px marge; de prijs boven de vouw op het
+   kleinste scherm blijft de eis.
+
+   Gemeten vóór deze laag, 390 px: boven de kop 12, kop naar knop 11, knop
+   naar noot 20, noot naar logo's 8, logo's naar band 16 (8 padding plus
+   8 bandpadding). Erna: 16, 24, 20, 16, 28. De krapste overgang (kop naar
+   knop) krijgt het meest; knop naar noot was al goed. Desktop ongemoeid. */
+@media (max-width: 991px) {
+  .rg-page-hero--band { padding-top: 1rem; padding-bottom: 1.25rem; }
+  .rg-page-hero--band .rg-page-hero__title { margin-bottom: 1.5rem; }
+  .rg-page-hero--band .rg-page-hero__noot { margin-bottom: 1rem; }
+}
+
+
+/* ============================================================
+   55.13 RUIMTE VERDELEN (5 november, avond). Staat achteraan met opzet:
+   bij gelijke specificiteit wint de laatste regel, en 55.9 tot 55.11
+   zetten dezelfde marges. NIET NAAR VOREN VERPLAATSEN.
+   ============================================================
+   Ward: "ruimte tussen menu en titel mag groter; de knop onderaan mag
+   praktisch onderaan komen met wat lucht ertussen waar de slider dan
+   weer net boven zit."
+
+   Twee stukken. (a) Een vaste basis, iets ruimer dan voorheen: 40 px
+   tussen menu en titel op laptopbreedtes (was 24) en 72 px plus de 20 van
+   .container-main vanaf 1600 (was 56 plus 20). Op 1280x800 kost dat 16 van
+   de 24 px marge die de prijsregel boven de vouw had; dat is bewust
+   opgegeven en nagemeten. (b) Wat er daarna aan schermruimte over is
+   (--rg-lucht, gemeten door de band-JS, stap 9) wordt verdeeld: 40% boven
+   de titel, 60% tussen de slider en de strook/link. Is er niets over, dan
+   is --rg-lucht 0 en gebeurt er niets extra. Mobiel niet: onder 992 px
+   staat er niets in deze laag. */
+@media (min-width: 992px) {
+  html.rg-band-pagina { --rg-lucht: 0px; }
+  .rg-band-pagina .rg-page-hero--band {
+    padding-top: calc(2.5rem + var(--rg-lucht) * 0.4);
+  }
+  .rg-band-pagina .rg-page-hero__strook {
+    margin-top: calc(var(--rg-lucht) * 0.6);
+  }
+}
+@media (min-width: 1600px) {
+  .rg-band-pagina .rg-page-hero--band {
+    padding-top: calc(4.5rem + var(--rg-lucht) * 0.4);
+  }
 }

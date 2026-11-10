@@ -1,0 +1,11 @@
+Drinkwaren	/widgets/menu/offcanvas?navigationId=a44074b3cd5ee5fcae9166fbf98229c5	https://rootedgoods.eu/drinkwaren/
+Kantoor & Schrijfwaren	/widgets/menu/offcanvas?navigationId=c57719c36edb29b9d83097b4b091aabb	https://rootedgoods.eu/kantoor-schrijfwaren/
+Kleding & Textiel	/widgets/menu/offcanvas?navigationId=1a86eafbdadf4f61d0e28cee96a56940	https://rootedgoods.eu/kleding-textiel/
+Tassen & Reizen	/widgets/menu/offcanvas?navigationId=e03190637d8233da667e1bc181391880	https://rootedgoods.eu/tassen-reizen/
+Sport & Spel	/widgets/menu/offcanvas?navigationId=681393935cbada125b5e3c566a1e6504	https://rootedgoods.eu/sport-spel/
+Huis & Keuken	/widgets/menu/offcanvas?navigationId=710533dd879dd1202e5c73b27705bf02	https://rootedgoods.eu/huis-keuken/
+Elektronica	/widgets/menu/offcanvas?navigationId=1823d2cca6e313eee19092550854d6bd	https://rootedgoods.eu/elektronica/
+Giveaways	/widgets/menu/offcanvas?navigationId=7a9f8ae506d0fa2eab0659ceb07033f6	https://rootedgoods.eu/giveaways/
+Eten & Drinken	/widgets/menu/offcanvas?navigationId=cc9284597026dcc021735c0970ca0c93	https://rootedgoods.eu/eten-drinken/
+Outdoor	/widgets/menu/offcanvas?navigationId=e54de3be93a9c7071403faf31de7ad84	https://rootedgoods.eu/outdoor/
+Thema's	/widgets/menu/offcanvas?navigationId=b7daeb6720debf7b9ea55855615dbf44	https://rootedgoods.eu/thema-s/

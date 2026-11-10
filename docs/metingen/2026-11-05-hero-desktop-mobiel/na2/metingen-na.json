@@ -1,0 +1,1118 @@
+{
+ "390x844": {
+  "vw": 390,
+  "vh": 844,
+  "scrollW": 390,
+  "containerMain": {
+   "rect": {
+    "x": 0,
+    "y": 102,
+    "w": 390,
+    "h": 5501.2
+   },
+   "pt": {
+    "padding-top": "0px"
+   }
+  },
+  "cmsPageY": 102,
+  "voorCmsPage": [
+   {
+    "tag": "DIV",
+    "cls": "breadcrumb.cms-breadcrumb.container",
+    "h": 0,
+    "display": "flex"
+   }
+  ],
+  "hero": {
+   "x": 0,
+   "y": 102,
+   "w": 390,
+   "h": 379.7
+  },
+  "heroPad": {
+   "padding-top": "12px",
+   "padding-bottom": "12px"
+  },
+  "title": {
+   "rect": {
+    "x": 20,
+    "y": 114,
+    "w": 350,
+    "h": 114.5
+   },
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo,",
+    "van Europese makers"
+   ],
+   "font-size": "36px",
+   "font-weight": "500",
+   "letter-spacing": "-0.432px",
+   "color": "rgb(45, 69, 40)",
+   "strong": {
+    "font-weight": "700",
+    "color": "rgb(45, 69, 40)"
+   }
+  },
+  "feiten": {
+   "rect": {
+    "x": 20,
+    "y": 239.7,
+    "w": 350,
+    "h": 49.3
+   },
+   "regels": [
+    "€ 25 tot € 70 per persoon,",
+    "vanaf 10 stuks, zoals hieronder."
+   ],
+   "font-size": "17.6px",
+   "line-height": "24.64px",
+   "display": "block",
+   "color": "rgb(93, 109, 85)"
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 302.5,
+    "w": 261.2,
+    "h": 48.1
+   },
+   "text": "Vertel ons wat je zoekt",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px"
+  },
+  "noot": {
+   "rect": {
+    "x": 20,
+    "y": 360.2,
+    "w": 350,
+    "h": 61.2
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag, binnen",
+    "één werkdag weet je wat kan. Jij zegt voor wie en",
+    "hoeveel, wij doen het zoekwerk."
+   ],
+   "font-size": "13.6px",
+   "line-height": "20.4px",
+   "color": "rgb(93, 109, 85)"
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 435.7,
+    "w": 350,
+    "h": 34
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 83,
+     "h": 34,
+     "display": "block"
+    },
+    {
+     "alt": "Ifes",
+     "w": 61.1,
+     "h": 34,
+     "display": "block"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 72.6,
+     "h": 34,
+     "display": "block"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 0,
+     "h": 0,
+     "display": "none"
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 481.7,
+    "w": 390,
+    "h": 272.4
+   },
+   "eersteTegels": [
+    {
+     "y": 489.7,
+     "h": 236.4
+    },
+    {
+     "y": 489.7,
+     "h": 236.4
+    },
+    {
+     "y": 489.7,
+     "h": 236.4
+    },
+    {
+     "y": 489.7,
+     "h": 236.4
+    }
+   ],
+   "prijzen": [
+    "€ 32 per persoon",
+    "€ 47 per persoon",
+    "€ 31 per persoon",
+    "€ 67 per persoon",
+    "€ 58 per persoon",
+    "€ 69 per persoon",
+    "€ 48 per persoon",
+    "€ 40 per persoon",
+    "€ 34 per persoon"
+   ],
+   "wrapperTekst": "€ 32 per persoon"
+  },
+  "meer": {
+   "rect": {
+    "x": 20,
+    "y": 758.1,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "color": "rgb(45, 69, 40)",
+   "margin-left": "20px",
+   "display": "inline-flex"
+  },
+  "volgende": {
+   "x": 35,
+   "y": 884.7,
+   "w": 320,
+   "h": 65.7
+  }
+ },
+ "375x667": {
+  "vw": 375,
+  "vh": 667,
+  "scrollW": 375,
+  "containerMain": {
+   "rect": {
+    "x": 0,
+    "y": 102,
+    "w": 375,
+    "h": 5475.8
+   },
+   "pt": {
+    "padding-top": "0px"
+   }
+  },
+  "cmsPageY": 102,
+  "voorCmsPage": [
+   {
+    "tag": "DIV",
+    "cls": "breadcrumb.cms-breadcrumb.container",
+    "h": 0,
+    "display": "flex"
+   }
+  ],
+  "hero": {
+   "x": 0,
+   "y": 102,
+   "w": 375,
+   "h": 379.7
+  },
+  "heroPad": {
+   "padding-top": "12px",
+   "padding-bottom": "12px"
+  },
+  "title": {
+   "rect": {
+    "x": 20,
+    "y": 114,
+    "w": 335,
+    "h": 114.5
+   },
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo, van",
+    "Europese makers"
+   ],
+   "font-size": "36px",
+   "font-weight": "500",
+   "letter-spacing": "-0.432px",
+   "color": "rgb(45, 69, 40)",
+   "strong": {
+    "font-weight": "700",
+    "color": "rgb(45, 69, 40)"
+   }
+  },
+  "feiten": {
+   "rect": {
+    "x": 20,
+    "y": 239.7,
+    "w": 335,
+    "h": 49.3
+   },
+   "regels": [
+    "€ 25 tot € 70 per persoon,",
+    "vanaf 10 stuks, zoals hieronder."
+   ],
+   "font-size": "17.6px",
+   "line-height": "24.64px",
+   "display": "block",
+   "color": "rgb(93, 109, 85)"
+  },
+  "btn": {
+   "rect": {
+    "x": 20,
+    "y": 302.5,
+    "w": 261.2,
+    "h": 48.1
+   },
+   "text": "Vertel ons wat je zoekt",
+   "font-size": "14.4px",
+   "padding": "14.4px 32px"
+  },
+  "noot": {
+   "rect": {
+    "x": 20,
+    "y": 360.2,
+    "w": 335,
+    "h": 61.2
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag,",
+    "binnen één werkdag weet je wat kan. Jij zegt",
+    "voor wie en hoeveel, wij doen het zoekwerk."
+   ],
+   "font-size": "13.6px",
+   "line-height": "20.4px",
+   "color": "rgb(93, 109, 85)"
+  },
+  "logos": {
+   "rect": {
+    "x": 20,
+    "y": 435.7,
+    "w": 335,
+    "h": 34
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 83,
+     "h": 34,
+     "display": "block"
+    },
+    {
+     "alt": "Ifes",
+     "w": 61.1,
+     "h": 34,
+     "display": "block"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 72.6,
+     "h": 34,
+     "display": "block"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 0,
+     "h": 0,
+     "display": "none"
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 481.7,
+    "w": 375,
+    "h": 272.4
+   },
+   "eersteTegels": [
+    {
+     "y": 489.7,
+     "h": 236.4
+    },
+    {
+     "y": 489.7,
+     "h": 236.4
+    },
+    {
+     "y": 489.7,
+     "h": 236.4
+    },
+    {
+     "y": 489.7,
+     "h": 236.4
+    }
+   ],
+   "prijzen": [
+    "€ 32 per persoon",
+    "€ 47 per persoon",
+    "€ 31 per persoon",
+    "€ 67 per persoon",
+    "€ 58 per persoon",
+    "€ 69 per persoon",
+    "€ 48 per persoon",
+    "€ 40 per persoon",
+    "€ 34 per persoon"
+   ],
+   "wrapperTekst": "€ 32 per persoon"
+  },
+  "meer": {
+   "rect": {
+    "x": 20,
+    "y": 758.1,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "color": "rgb(45, 69, 40)",
+   "margin-left": "20px",
+   "display": "inline-flex"
+  },
+  "volgende": {
+   "x": 35,
+   "y": 884.7,
+   "w": 305,
+   "h": 65.7
+  }
+ },
+ "1280x800": {
+  "vw": 1280,
+  "vh": 800,
+  "scrollW": 1280,
+  "containerMain": {
+   "rect": {
+    "x": 0,
+    "y": 140.4,
+    "w": 1280,
+    "h": 4561.4
+   },
+   "pt": {
+    "padding-top": "0px"
+   }
+  },
+  "cmsPageY": 140.4,
+  "voorCmsPage": [
+   {
+    "tag": "DIV",
+    "cls": "breadcrumb.cms-breadcrumb.container",
+    "h": 0,
+    "display": "flex"
+   }
+  ],
+  "hero": {
+   "x": 48,
+   "y": 140.4,
+   "w": 1184,
+   "h": 450.6
+  },
+  "heroPad": {
+   "padding-top": "40px",
+   "padding-bottom": "32px"
+  },
+  "title": {
+   "rect": {
+    "x": 188.9,
+    "y": 180.4,
+    "w": 902.1,
+    "h": 129.6
+   },
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "font-size": "61.12px",
+   "font-weight": "500",
+   "letter-spacing": "-0.73344px",
+   "color": "rgb(45, 69, 40)",
+   "strong": {
+    "font-weight": "700",
+    "color": "rgb(45, 69, 40)"
+   }
+  },
+  "feiten": {
+   "rect": {
+    "x": 337.1,
+    "y": 327.6,
+    "w": 605.9,
+    "h": 29.1
+   },
+   "regels": [
+    "€ 25 tot € 70 per persoon, vanaf 10 stuks, zoals hieronder."
+   ],
+   "font-size": "20.8px",
+   "line-height": "29.12px",
+   "display": "block",
+   "color": "rgb(93, 109, 85)"
+  },
+  "btn": {
+   "rect": {
+    "x": 490.5,
+    "y": 380.7,
+    "w": 299,
+    "h": 55.2
+   },
+   "text": "Vertel ons wat je zoekt",
+   "font-size": "16.32px",
+   "padding": "16.8px 38.4px"
+  },
+  "noot": {
+   "rect": {
+    "x": 351.9,
+    "y": 450.2,
+    "w": 576.2,
+    "h": 40.8
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag, binnen één werkdag weet je wat kan.",
+    "Jij zegt voor wie en hoeveel, wij doen het zoekwerk."
+   ],
+   "font-size": "13.6px",
+   "line-height": "20.4px",
+   "color": "rgb(93, 109, 85)"
+  },
+  "logos": {
+   "rect": {
+    "x": 188.9,
+    "y": 515,
+    "w": 902.1,
+    "h": 44
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 107.4,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Ifes",
+     "w": 79,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 93.9,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 109.8,
+     "h": 44,
+     "display": "block"
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 591,
+    "w": 1280,
+    "h": 370.4
+   },
+   "eersteTegels": [
+    {
+     "y": 625,
+     "h": 300.4
+    },
+    {
+     "y": 607,
+     "h": 300.4
+    },
+    {
+     "y": 633,
+     "h": 300.4
+    },
+    {
+     "y": 599,
+     "h": 300.4
+    }
+   ],
+   "prijzen": [
+    "€ 32 per persoon",
+    "€ 47 per persoon",
+    "€ 31 per persoon",
+    "€ 67 per persoon",
+    "€ 58 per persoon",
+    "€ 69 per persoon",
+    "€ 48 per persoon",
+    "€ 40 per persoon",
+    "€ 34 per persoon"
+   ],
+   "wrapperTekst": "€ 32 per persoon"
+  },
+  "meer": {
+   "rect": {
+    "x": 550,
+    "y": 965.4,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "color": "rgb(45, 69, 40)",
+   "margin-left": "470.047px",
+   "display": "flex"
+  },
+  "volgende": {
+   "x": 88,
+   "y": 1104,
+   "w": 1104,
+   "h": 46.3
+  }
+ },
+ "1440x900": {
+  "vw": 1440,
+  "vh": 900,
+  "scrollW": 1440,
+  "containerMain": {
+   "rect": {
+    "x": 0,
+    "y": 140.4,
+    "w": 1440,
+    "h": 4510.7
+   },
+   "pt": {
+    "padding-top": "0px"
+   }
+  },
+  "cmsPageY": 140.4,
+  "voorCmsPage": [
+   {
+    "tag": "DIV",
+    "cls": "breadcrumb.cms-breadcrumb.container",
+    "h": 0,
+    "display": "flex"
+   }
+  ],
+  "hero": {
+   "x": 48,
+   "y": 140.4,
+   "w": 1344,
+   "h": 456.7
+  },
+  "heroPad": {
+   "padding-top": "40px",
+   "padding-bottom": "32px"
+  },
+  "title": {
+   "rect": {
+    "x": 247.7,
+    "y": 180.4,
+    "w": 944.6,
+    "h": 135.7
+   },
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "font-size": "64px",
+   "font-weight": "500",
+   "letter-spacing": "-0.768px",
+   "color": "rgb(45, 69, 40)",
+   "strong": {
+    "font-weight": "700",
+    "color": "rgb(45, 69, 40)"
+   }
+  },
+  "feiten": {
+   "rect": {
+    "x": 417.1,
+    "y": 333.7,
+    "w": 605.9,
+    "h": 29.1
+   },
+   "regels": [
+    "€ 25 tot € 70 per persoon, vanaf 10 stuks, zoals hieronder."
+   ],
+   "font-size": "20.8px",
+   "line-height": "29.12px",
+   "display": "block",
+   "color": "rgb(93, 109, 85)"
+  },
+  "btn": {
+   "rect": {
+    "x": 570.5,
+    "y": 386.8,
+    "w": 299,
+    "h": 55.2
+   },
+   "text": "Vertel ons wat je zoekt",
+   "font-size": "16.32px",
+   "padding": "16.8px 38.4px"
+  },
+  "noot": {
+   "rect": {
+    "x": 431.9,
+    "y": 456.3,
+    "w": 576.2,
+    "h": 40.8
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag, binnen één werkdag weet je wat kan.",
+    "Jij zegt voor wie en hoeveel, wij doen het zoekwerk."
+   ],
+   "font-size": "13.6px",
+   "line-height": "20.4px",
+   "color": "rgb(93, 109, 85)"
+  },
+  "logos": {
+   "rect": {
+    "x": 247.7,
+    "y": 521.1,
+    "w": 944.6,
+    "h": 44
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 107.4,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Ifes",
+     "w": 79,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 93.9,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 109.8,
+     "h": 44,
+     "display": "block"
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 597.1,
+    "w": 1440,
+    "h": 370.4
+   },
+   "eersteTegels": [
+    {
+     "y": 631.1,
+     "h": 300.4
+    },
+    {
+     "y": 613.1,
+     "h": 300.4
+    },
+    {
+     "y": 639.1,
+     "h": 300.4
+    },
+    {
+     "y": 605.1,
+     "h": 300.4
+    }
+   ],
+   "prijzen": [
+    "€ 32 per persoon",
+    "€ 47 per persoon",
+    "€ 31 per persoon",
+    "€ 67 per persoon",
+    "€ 58 per persoon",
+    "€ 69 per persoon",
+    "€ 48 per persoon",
+    "€ 40 per persoon",
+    "€ 34 per persoon"
+   ],
+   "wrapperTekst": "€ 32 per persoon"
+  },
+  "meer": {
+   "rect": {
+    "x": 630,
+    "y": 971.5,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "color": "rgb(45, 69, 40)",
+   "margin-left": "550.047px",
+   "display": "flex"
+  },
+  "volgende": {
+   "x": 88,
+   "y": 1110,
+   "w": 1264,
+   "h": 46.7
+  }
+ },
+ "1738x1001": {
+  "vw": 1738,
+  "vh": 1001,
+  "scrollW": 1738,
+  "containerMain": {
+   "rect": {
+    "x": 0,
+    "y": 141.4,
+    "w": 1738,
+    "h": 4605.2
+   },
+   "pt": {
+    "padding-top": "20px"
+   }
+  },
+  "cmsPageY": 161.4,
+  "voorCmsPage": [
+   {
+    "tag": "DIV",
+    "cls": "breadcrumb.cms-breadcrumb.container",
+    "h": 0,
+    "display": "flex"
+   }
+  ],
+  "hero": {
+   "x": 117,
+   "y": 161.4,
+   "w": 1504,
+   "h": 496.7
+  },
+  "heroPad": {
+   "padding-top": "56px",
+   "padding-bottom": "40px"
+  },
+  "title": {
+   "rect": {
+    "x": 396.7,
+    "y": 217.4,
+    "w": 944.6,
+    "h": 135.7
+   },
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "font-size": "64px",
+   "font-weight": "500",
+   "letter-spacing": "-0.768px",
+   "color": "rgb(45, 69, 40)",
+   "strong": {
+    "font-weight": "700",
+    "color": "rgb(45, 69, 40)"
+   }
+  },
+  "feiten": {
+   "rect": {
+    "x": 566.1,
+    "y": 377,
+    "w": 605.9,
+    "h": 29.1
+   },
+   "regels": [
+    "€ 25 tot € 70 per persoon, vanaf 10 stuks, zoals hieronder."
+   ],
+   "font-size": "20.8px",
+   "line-height": "29.12px",
+   "display": "block",
+   "color": "rgb(93, 109, 85)"
+  },
+  "btn": {
+   "rect": {
+    "x": 719.5,
+    "y": 434.1,
+    "w": 299,
+    "h": 55.2
+   },
+   "text": "Vertel ons wat je zoekt",
+   "font-size": "16.32px",
+   "padding": "16.8px 38.4px"
+  },
+  "noot": {
+   "rect": {
+    "x": 580.9,
+    "y": 505.3,
+    "w": 576.2,
+    "h": 40.8
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag, binnen één werkdag weet je wat kan.",
+    "Jij zegt voor wie en hoeveel, wij doen het zoekwerk."
+   ],
+   "font-size": "13.6px",
+   "line-height": "20.4px",
+   "color": "rgb(93, 109, 85)"
+  },
+  "logos": {
+   "rect": {
+    "x": 396.7,
+    "y": 574.1,
+    "w": 944.6,
+    "h": 44
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 107.4,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Ifes",
+     "w": 79,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 93.9,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 109.8,
+     "h": 44,
+     "display": "block"
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 658.1,
+    "w": 1738,
+    "h": 370.4
+   },
+   "eersteTegels": [
+    {
+     "y": 692.1,
+     "h": 300.4
+    },
+    {
+     "y": 674.1,
+     "h": 300.4
+    },
+    {
+     "y": 700.1,
+     "h": 300.4
+    },
+    {
+     "y": 666.1,
+     "h": 300.4
+    }
+   ],
+   "prijzen": [
+    "€ 32 per persoon",
+    "€ 47 per persoon",
+    "€ 31 per persoon",
+    "€ 67 per persoon",
+    "€ 58 per persoon",
+    "€ 69 per persoon",
+    "€ 48 per persoon",
+    "€ 40 per persoon",
+    "€ 34 per persoon"
+   ],
+   "wrapperTekst": "€ 32 per persoon"
+  },
+  "meer": {
+   "rect": {
+    "x": 779,
+    "y": 1032.4,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "color": "rgb(45, 69, 40)",
+   "margin-left": "630.047px",
+   "display": "flex"
+  },
+  "volgende": {
+   "x": 157,
+   "y": 1171,
+   "w": 1424,
+   "h": 46.7
+  }
+ },
+ "1931x1112": {
+  "vw": 1931,
+  "vh": 1112,
+  "scrollW": 1931,
+  "containerMain": {
+   "rect": {
+    "x": 0,
+    "y": 141.4,
+    "w": 1931,
+    "h": 4617.1
+   },
+   "pt": {
+    "padding-top": "20px"
+   }
+  },
+  "cmsPageY": 161.4,
+  "voorCmsPage": [
+   {
+    "tag": "DIV",
+    "cls": "breadcrumb.cms-breadcrumb.container",
+    "h": 0,
+    "display": "flex"
+   }
+  ],
+  "hero": {
+   "x": 213.5,
+   "y": 161.4,
+   "w": 1504,
+   "h": 496.7
+  },
+  "heroPad": {
+   "padding-top": "56px",
+   "padding-bottom": "40px"
+  },
+  "title": {
+   "rect": {
+    "x": 493.2,
+    "y": 217.4,
+    "w": 944.6,
+    "h": 135.7
+   },
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "font-size": "64px",
+   "font-weight": "500",
+   "letter-spacing": "-0.768px",
+   "color": "rgb(45, 69, 40)",
+   "strong": {
+    "font-weight": "700",
+    "color": "rgb(45, 69, 40)"
+   }
+  },
+  "feiten": {
+   "rect": {
+    "x": 662.6,
+    "y": 377,
+    "w": 605.9,
+    "h": 29.1
+   },
+   "regels": [
+    "€ 25 tot € 70 per persoon, vanaf 10 stuks, zoals hieronder."
+   ],
+   "font-size": "20.8px",
+   "line-height": "29.12px",
+   "display": "block",
+   "color": "rgb(93, 109, 85)"
+  },
+  "btn": {
+   "rect": {
+    "x": 816,
+    "y": 434.1,
+    "w": 299,
+    "h": 55.2
+   },
+   "text": "Vertel ons wat je zoekt",
+   "font-size": "16.32px",
+   "padding": "16.8px 38.4px"
+  },
+  "noot": {
+   "rect": {
+    "x": 677.4,
+    "y": 505.3,
+    "w": 576.2,
+    "h": 40.8
+   },
+   "regels": [
+    "Nog op tijd voor kerst? Vraag het vandaag, binnen één werkdag weet je wat kan.",
+    "Jij zegt voor wie en hoeveel, wij doen het zoekwerk."
+   ],
+   "font-size": "13.6px",
+   "line-height": "20.4px",
+   "color": "rgb(93, 109, 85)"
+  },
+  "logos": {
+   "rect": {
+    "x": 493.2,
+    "y": 574.1,
+    "w": 944.6,
+    "h": 44
+   },
+   "imgs": [
+    {
+     "alt": "Erasmus MC",
+     "w": 107.4,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Ifes",
+     "w": 79,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Huisartsen G.C. Zuiderzorg",
+     "w": 93.9,
+     "h": 44,
+     "display": "block"
+    },
+    {
+     "alt": "Wezijnwille",
+     "w": 109.8,
+     "h": 44,
+     "display": "block"
+    }
+   ]
+  },
+  "band": {
+   "rect": {
+    "x": 0,
+    "y": 658.1,
+    "w": 1931,
+    "h": 370.4
+   },
+   "eersteTegels": [
+    {
+     "y": 692.1,
+     "h": 300.4
+    },
+    {
+     "y": 674.1,
+     "h": 300.4
+    },
+    {
+     "y": 700.1,
+     "h": 300.4
+    },
+    {
+     "y": 666.1,
+     "h": 300.4
+    }
+   ],
+   "prijzen": [
+    "€ 32 per persoon",
+    "€ 47 per persoon",
+    "€ 31 per persoon",
+    "€ 67 per persoon",
+    "€ 58 per persoon",
+    "€ 69 per persoon",
+    "€ 48 per persoon",
+    "€ 40 per persoon",
+    "€ 34 per persoon"
+   ],
+   "wrapperTekst": "€ 32 per persoon"
+  },
+  "meer": {
+   "rect": {
+    "x": 875.5,
+    "y": 1032.4,
+    "w": 179.9,
+    "h": 36.6
+   },
+   "color": "rgb(45, 69, 40)",
+   "margin-left": "630.047px",
+   "display": "flex"
+  },
+  "volgende": {
+   "x": 253.5,
+   "y": 1171,
+   "w": 1424,
+   "h": 46.7
+  }
+ }
+}

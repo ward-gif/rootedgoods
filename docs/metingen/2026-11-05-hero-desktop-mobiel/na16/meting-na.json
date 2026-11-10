@@ -1,0 +1,192 @@
+[
+ [
+  1931,
+  1112,
+  {
+   "vh": 1112,
+   "pageTop": 141,
+   "titel": {
+    "top": 230,
+    "bot": 365
+   },
+   "knop": {
+    "top": 389,
+    "bot": 445
+   },
+   "logos": {
+    "top": 517,
+    "bot": 561
+   },
+   "band": {
+    "top": 601,
+    "bot": 971
+   },
+   "strook": {
+    "top": 996,
+    "bot": 1024
+   },
+   "link": {
+    "top": 1052,
+    "bot": 1088
+   },
+   "prijsOnder": 928,
+   "intro": {
+    "top": 1126,
+    "bot": 4758
+   },
+   "lucht": "41px"
+  }
+ ],
+ [
+  1738,
+  1001,
+  {
+   "vh": 1001,
+   "pageTop": 141,
+   "titel": {
+    "top": 213,
+    "bot": 349
+   },
+   "knop": {
+    "top": 373,
+    "bot": 428
+   },
+   "logos": {
+    "top": 501,
+    "bot": 545
+   },
+   "band": {
+    "top": 585,
+    "bot": 955
+   },
+   "strook": {
+    "top": 955,
+    "bot": 983
+   },
+   "link": {
+    "top": 1011,
+    "bot": 1047
+   },
+   "prijsOnder": 912,
+   "intro": {
+    "top": 1085,
+    "bot": 4705
+   },
+   "lucht": "0px"
+  }
+ ],
+ [
+  1512,
+  890,
+  {
+   "vh": 890,
+   "pageTop": 141,
+   "titel": {
+    "top": 181,
+    "bot": 317
+   },
+   "knop": {
+    "top": 335,
+    "bot": 390
+   },
+   "logos": {
+    "top": 458,
+    "bot": 498
+   },
+   "band": {
+    "top": 522,
+    "bot": 843
+   },
+   "strook": {
+    "top": 843,
+    "bot": 870
+   },
+   "link": {
+    "top": 898,
+    "bot": 935
+   },
+   "prijsOnder": 799,
+   "intro": {
+    "top": 973,
+    "bot": 4568
+   },
+   "lucht": "0px"
+  }
+ ],
+ [
+  1440,
+  900,
+  {
+   "vh": 900,
+   "pageTop": 140,
+   "titel": {
+    "top": 180,
+    "bot": 316
+   },
+   "knop": {
+    "top": 334,
+    "bot": 389
+   },
+   "logos": {
+    "top": 457,
+    "bot": 497
+   },
+   "band": {
+    "top": 521,
+    "bot": 842
+   },
+   "strook": {
+    "top": 842,
+    "bot": 869
+   },
+   "link": {
+    "top": 897,
+    "bot": 934
+   },
+   "prijsOnder": 798,
+   "intro": {
+    "top": 972,
+    "bot": 4557
+   },
+   "lucht": "0px"
+  }
+ ],
+ [
+  1280,
+  800,
+  {
+   "vh": 800,
+   "pageTop": 140,
+   "titel": {
+    "top": 180,
+    "bot": 310
+   },
+   "knop": {
+    "top": 328,
+    "bot": 383
+   },
+   "logos": {
+    "top": 451,
+    "bot": 491
+   },
+   "band": {
+    "top": 515,
+    "bot": 835
+   },
+   "strook": {
+    "top": 835,
+    "bot": 863
+   },
+   "link": {
+    "top": 891,
+    "bot": 928
+   },
+   "prijsOnder": 792,
+   "intro": {
+    "top": 966,
+    "bot": 4608
+   },
+   "lucht": "0px"
+  }
+ ]
+]

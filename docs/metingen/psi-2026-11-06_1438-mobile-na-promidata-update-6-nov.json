@@ -1,0 +1,74 @@
+[
+ {
+  "url": "https://rootedgoods.eu/",
+  "strategy": "mobile",
+  "label": "na promidata-update 6 nov",
+  "runs": 3,
+  "gemeten": "2026-11-06T14:38:38",
+  "alle_scores": [
+   63,
+   63,
+   63
+  ],
+  "score": 63,
+  "largest-contentful-paint": 11739.557573087914,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 243.5,
+  "speed-index": 5177.570014855826,
+  "first-contentful-paint": 2551.011438361837
+ },
+ {
+  "url": "https://rootedgoods.eu/eindejaarsgeschenken",
+  "strategy": "mobile",
+  "label": "na promidata-update 6 nov",
+  "runs": 3,
+  "gemeten": "2026-11-06T14:38:58",
+  "alle_scores": [
+   60,
+   60,
+   60
+  ],
+  "score": 60,
+  "largest-contentful-paint": 10456.69072908043,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 336.0000000000009,
+  "speed-index": 5783.626954922464,
+  "first-contentful-paint": 2401.0398538377017
+ },
+ {
+  "url": "https://rootedgoods.eu/alle-producten/",
+  "strategy": "mobile",
+  "label": "na promidata-update 6 nov",
+  "runs": 3,
+  "gemeten": "2026-11-06T14:39:24",
+  "alle_scores": [
+   75,
+   75,
+   75
+  ],
+  "score": 75,
+  "largest-contentful-paint": 2554.0315391174126,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 547.5,
+  "speed-index": 5424.853569884092,
+  "first-contentful-paint": 2554.0315391174126
+ },
+ {
+  "url": "https://rootedgoods.eu/offerte",
+  "strategy": "mobile",
+  "label": "na promidata-update 6 nov",
+  "runs": 3,
+  "gemeten": "2026-11-06T14:39:49",
+  "alle_scores": [
+   72,
+   74,
+   72
+  ],
+  "score": 72,
+  "largest-contentful-paint": 4368.357512966299,
+  "cumulative-layout-shift": 0.002169996974982558,
+  "total-blocking-time": 406.5,
+  "speed-index": 3075.024780946035,
+  "first-contentful-paint": 2401.1925069818526
+ }
+]

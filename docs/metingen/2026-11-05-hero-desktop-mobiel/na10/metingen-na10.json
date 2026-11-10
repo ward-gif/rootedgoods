@@ -1,0 +1,182 @@
+{
+ "1931x1112": {
+  "vw": 1931,
+  "vh": 1112,
+  "maskBox": [
+   141,
+   1281
+  ],
+  "kaart": {
+   "breedte": 1803,
+   "past": true,
+   "onder": 1281
+  },
+  "hero": [
+   141,
+   589
+  ],
+  "band": [
+   589,
+   959
+  ],
+  "strook": [
+   959,
+   987
+  ],
+  "link": [
+   1015,
+   1051
+  ],
+  "introKop": [
+   1153,
+   1200
+  ],
+  "foto": [
+   1347,
+   1857
+  ],
+  "pseudo": {
+   "content": "\"\"",
+   "bg": "rgb(234, 227, 215)",
+   "op": "1",
+   "size": "contain",
+   "pos": "50% 0%"
+  },
+  "prijsOnder": 916
+ },
+ "1280x800": {
+  "vw": 1280,
+  "vh": 800,
+  "maskBox": [
+   140,
+   1040
+  ],
+  "kaart": {
+   "breedte": 1280,
+   "past": true,
+   "onder": 949
+  },
+  "hero": [
+   140,
+   499
+  ],
+  "band": [
+   499,
+   819
+  ],
+  "strook": [
+   819,
+   847
+  ],
+  "link": [
+   875,
+   912
+  ],
+  "introKop": [
+   1014,
+   1060
+  ],
+  "foto": [
+   1282,
+   1672
+  ],
+  "pseudo": {
+   "content": "\"\"",
+   "bg": "rgb(234, 227, 215)",
+   "op": "1",
+   "size": "contain",
+   "pos": "50% 0%"
+  },
+  "prijsOnder": 776
+ },
+ "390x844": {
+  "vw": 390,
+  "vh": 844,
+  "maskBox": [
+   102,
+   102
+  ],
+  "kaart": {
+   "breedte": 0,
+   "past": true,
+   "onder": 102
+  },
+  "hero": [
+   102,
+   415
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "introKop": [
+   884,
+   950
+  ],
+  "foto": [
+   1094,
+   1334
+  ],
+  "pseudo": {
+   "content": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "op": "1",
+   "size": "auto",
+   "pos": "0% 0%"
+  },
+  "prijsOnder": 644
+ },
+ "375x667": {
+  "vw": 375,
+  "vh": 667,
+  "maskBox": [
+   102,
+   102
+  ],
+  "kaart": {
+   "breedte": 0,
+   "past": true,
+   "onder": 102
+  },
+  "hero": [
+   102,
+   415
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "introKop": [
+   884,
+   950
+  ],
+  "foto": [
+   1094,
+   1322
+  ],
+  "pseudo": {
+   "content": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "op": "1",
+   "size": "auto",
+   "pos": "0% 0%"
+  },
+  "prijsOnder": 644
+ }
+}

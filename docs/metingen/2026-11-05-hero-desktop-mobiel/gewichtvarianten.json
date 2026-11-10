@@ -1,0 +1,230 @@
+{
+ "w400 accent Europese makers": {
+  "390": {
+   "font": "32px",
+   "weight": "400",
+   "lh": "33.92px",
+   "titelH": 101.7,
+   "titelW": 350,
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 392.9,
+   "bandY": 530.9,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1280": {
+   "font": "55.2px",
+   "weight": "400",
+   "lh": "58.512px",
+   "titelH": 117,
+   "titelW": 794.9,
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 427.6,
+   "bandY": 604,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1931": {
+   "font": "56px",
+   "weight": "400",
+   "lh": "59.36px",
+   "titelH": 118.7,
+   "titelW": 806.4,
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 441.5,
+   "bandY": 618.8,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  }
+ },
+ "w400 accent jouw logo": {
+  "390": {
+   "font": "32px",
+   "weight": "400",
+   "lh": "33.92px",
+   "titelH": 101.7,
+   "titelW": 350,
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo ,",
+    "van Europese makers"
+   ],
+   "heroH": 392.9,
+   "bandY": 530.9,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1280": {
+   "font": "55.2px",
+   "weight": "400",
+   "lh": "58.512px",
+   "titelH": 117,
+   "titelW": 794.9,
+   "regels": [
+    "Kerstpakketten met jouw logo ,",
+    "van Europese makers"
+   ],
+   "heroH": 427.6,
+   "bandY": 604,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1931": {
+   "font": "56px",
+   "weight": "400",
+   "lh": "59.36px",
+   "titelH": 118.7,
+   "titelW": 806.4,
+   "regels": [
+    "Kerstpakketten met jouw logo ,",
+    "van Europese makers"
+   ],
+   "heroH": 441.5,
+   "bandY": 618.8,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  }
+ },
+ "w400 64px accent Europese makers": {
+  "390": {
+   "font": "36px",
+   "weight": "400",
+   "lh": "38.16px",
+   "titelH": 114.5,
+   "titelW": 350,
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 405.6,
+   "bandY": 543.6,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1280": {
+   "font": "61.12px",
+   "weight": "400",
+   "lh": "64.7872px",
+   "titelH": 129.6,
+   "titelW": 880.1,
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 440.2,
+   "bandY": 616.6,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1931": {
+   "font": "64px",
+   "weight": "400",
+   "lh": "67.84px",
+   "titelH": 135.7,
+   "titelW": 921.6,
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 458.4,
+   "bandY": 635.8,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  }
+ },
+ "w500 36/64px accent Europese makers": {
+  "390": {
+   "font": "36px",
+   "weight": "500",
+   "lh": "38.16px",
+   "titelH": 114.5,
+   "titelW": 350,
+   "regels": [
+    "Kerstpakketten",
+    "met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 405.6,
+   "bandY": 543.6,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1280": {
+   "font": "61.12px",
+   "weight": "500",
+   "lh": "64.7872px",
+   "titelH": 129.6,
+   "titelW": 902.1,
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 440.2,
+   "bandY": 616.6,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  },
+  "1931": {
+   "font": "64px",
+   "weight": "500",
+   "lh": "67.84px",
+   "titelH": 135.7,
+   "titelW": 944.6,
+   "regels": [
+    "Kerstpakketten met jouw logo,",
+    "van Europese makers"
+   ],
+   "heroH": 458.4,
+   "bandY": 635.8,
+   "em": {
+    "color": "rgb(45, 69, 40)",
+    "weight": "700",
+    "transform": "none"
+   }
+  }
+ }
+}

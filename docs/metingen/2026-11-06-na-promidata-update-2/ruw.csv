@@ -1,0 +1,67 @@
+ronde,label,soort,url,http,ttfb_s,totaal_s,bytes,age,cache_control
+1,"Drinkwaren",widget,/widgets/menu/offcanvas?navigationId=a44074b3cd5ee5fcae9166fbf98229c5,200,0.247124,0.247265,940,2176,no-cache,private
+1,"Drinkwaren",pagina,https://rootedgoods.eu/drinkwaren/,200,0.210221,0.256627,51892,6825,no-cache,private
+1,"Kantoor & Schrijfwaren",widget,/widgets/menu/offcanvas?navigationId=c57719c36edb29b9d83097b4b091aabb,200,0.163495,0.163606,995,2177,no-cache,private
+1,"Kantoor & Schrijfwaren",pagina,https://rootedgoods.eu/kantoor-schrijfwaren/,200,0.194588,0.216466,37680,2176,no-cache,private
+1,"Kleding & Textiel",widget,/widgets/menu/offcanvas?navigationId=1a86eafbdadf4f61d0e28cee96a56940,200,0.194648,0.194785,1072,2175,no-cache,private
+1,"Kleding & Textiel",pagina,https://rootedgoods.eu/kleding-textiel/,200,0.194501,0.238272,43117,2174,no-cache,private
+1,"Tassen & Reizen",widget,/widgets/menu/offcanvas?navigationId=e03190637d8233da667e1bc181391880,200,0.177318,0.177893,1106,2174,no-cache,private
+1,"Tassen & Reizen",pagina,https://rootedgoods.eu/tassen-reizen/,200,0.213190,0.260451,52012,6826,no-cache,private
+1,"Sport & Spel",widget,/widgets/menu/offcanvas?navigationId=681393935cbada125b5e3c566a1e6504,200,0.173318,0.173463,953,2173,no-cache,private
+1,"Sport & Spel",pagina,https://rootedgoods.eu/sport-spel/,200,0.239759,0.260760,33000,2173,no-cache,private
+1,"Huis & Keuken",widget,/widgets/menu/offcanvas?navigationId=710533dd879dd1202e5c73b27705bf02,200,0.171947,0.172070,1098,2173,no-cache,private
+1,"Huis & Keuken",pagina,https://rootedgoods.eu/huis-keuken/,200,0.180083,0.224901,54146,2172,no-cache,private
+1,"Elektronica",widget,/widgets/menu/offcanvas?navigationId=1823d2cca6e313eee19092550854d6bd,200,0.181562,0.181714,887,2171,no-cache,private
+1,"Elektronica",pagina,https://rootedgoods.eu/elektronica/,200,0.174573,0.195410,22701,6824,no-cache,private
+1,"Giveaways",widget,/widgets/menu/offcanvas?navigationId=7a9f8ae506d0fa2eab0659ceb07033f6,200,0.177768,0.177911,887,2171,no-cache,private
+1,"Giveaways",pagina,https://rootedgoods.eu/giveaways/,200,0.204719,0.253191,51563,2171,no-cache,private
+1,"Eten & Drinken",widget,/widgets/menu/offcanvas?navigationId=cc9284597026dcc021735c0970ca0c93,200,0.170806,0.171009,947,2170,no-cache,private
+1,"Eten & Drinken",pagina,https://rootedgoods.eu/eten-drinken/,200,0.191620,0.217040,39933,3159,no-cache,private
+1,"Outdoor",widget,/widgets/menu/offcanvas?navigationId=e54de3be93a9c7071403faf31de7ad84,200,0.204314,0.204470,1094,2170,no-cache,private
+1,"Outdoor",pagina,https://rootedgoods.eu/outdoor/,200,0.196284,0.244516,45066,2170,no-cache,private
+1,"Thema's",widget,/widgets/menu/offcanvas?navigationId=b7daeb6720debf7b9ea55855615dbf44,200,0.173565,0.173678,1092,2169,no-cache,private
+1,"Thema's",pagina,https://rootedgoods.eu/thema-s/,200,0.198529,0.248943,47551,2168,no-cache,private
+2,"Drinkwaren",widget,/widgets/menu/offcanvas?navigationId=a44074b3cd5ee5fcae9166fbf98229c5,200,0.210943,0.212604,940,2191,no-cache,private
+2,"Drinkwaren",pagina,https://rootedgoods.eu/drinkwaren/,200,0.207304,0.255178,51892,6839,no-cache,private
+2,"Kantoor & Schrijfwaren",widget,/widgets/menu/offcanvas?navigationId=c57719c36edb29b9d83097b4b091aabb,200,0.185643,0.185828,995,2191,no-cache,private
+2,"Kantoor & Schrijfwaren",pagina,https://rootedgoods.eu/kantoor-schrijfwaren/,200,0.180887,0.205328,37680,2191,no-cache,private
+2,"Kleding & Textiel",widget,/widgets/menu/offcanvas?navigationId=1a86eafbdadf4f61d0e28cee96a56940,200,0.171889,0.172065,1072,2189,no-cache,private
+2,"Kleding & Textiel",pagina,https://rootedgoods.eu/kleding-textiel/,200,0.202094,0.249092,43117,2189,no-cache,private
+2,"Tassen & Reizen",widget,/widgets/menu/offcanvas?navigationId=e03190637d8233da667e1bc181391880,200,0.186324,0.186506,1106,2188,no-cache,private
+2,"Tassen & Reizen",pagina,https://rootedgoods.eu/tassen-reizen/,200,0.218815,0.269267,52012,6840,no-cache,private
+2,"Sport & Spel",widget,/widgets/menu/offcanvas?navigationId=681393935cbada125b5e3c566a1e6504,200,0.170450,0.170595,953,2188,no-cache,private
+2,"Sport & Spel",pagina,https://rootedgoods.eu/sport-spel/,200,0.213402,0.238248,33000,2187,no-cache,private
+2,"Huis & Keuken",widget,/widgets/menu/offcanvas?navigationId=710533dd879dd1202e5c73b27705bf02,200,0.164514,0.164635,1098,2187,no-cache,private
+2,"Huis & Keuken",pagina,https://rootedgoods.eu/huis-keuken/,200,0.162806,0.206855,54146,2187,no-cache,private
+2,"Elektronica",widget,/widgets/menu/offcanvas?navigationId=1823d2cca6e313eee19092550854d6bd,200,0.212756,0.212861,887,2185,no-cache,private
+2,"Elektronica",pagina,https://rootedgoods.eu/elektronica/,200,0.189114,0.213229,22701,6838,no-cache,private
+2,"Giveaways",widget,/widgets/menu/offcanvas?navigationId=7a9f8ae506d0fa2eab0659ceb07033f6,200,0.176375,0.176481,887,2186,no-cache,private
+2,"Giveaways",pagina,https://rootedgoods.eu/giveaways/,200,0.181808,0.229841,51563,2185,no-cache,private
+2,"Eten & Drinken",widget,/widgets/menu/offcanvas?navigationId=cc9284597026dcc021735c0970ca0c93,200,0.186932,0.187047,947,2184,no-cache,private
+2,"Eten & Drinken",pagina,https://rootedgoods.eu/eten-drinken/,200,0.206957,0.231893,39933,3174,no-cache,private
+2,"Outdoor",widget,/widgets/menu/offcanvas?navigationId=e54de3be93a9c7071403faf31de7ad84,200,0.181442,0.181574,1094,2184,no-cache,private
+2,"Outdoor",pagina,https://rootedgoods.eu/outdoor/,200,0.190293,0.231705,45066,2184,no-cache,private
+2,"Thema's",widget,/widgets/menu/offcanvas?navigationId=b7daeb6720debf7b9ea55855615dbf44,200,0.185821,0.186317,1092,2184,no-cache,private
+2,"Thema's",pagina,https://rootedgoods.eu/thema-s/,200,0.203780,0.250212,47551,2182,no-cache,private
+3,"Drinkwaren",widget,/widgets/menu/offcanvas?navigationId=a44074b3cd5ee5fcae9166fbf98229c5,200,0.191392,0.191514,940,2205,no-cache,private
+3,"Drinkwaren",pagina,https://rootedgoods.eu/drinkwaren/,200,0.188056,0.232586,51892,6853,no-cache,private
+3,"Kantoor & Schrijfwaren",widget,/widgets/menu/offcanvas?navigationId=c57719c36edb29b9d83097b4b091aabb,200,0.178734,0.178866,995,2205,no-cache,private
+3,"Kantoor & Schrijfwaren",pagina,https://rootedgoods.eu/kantoor-schrijfwaren/,200,0.188725,0.212163,37680,2205,no-cache,private
+3,"Kleding & Textiel",widget,/widgets/menu/offcanvas?navigationId=1a86eafbdadf4f61d0e28cee96a56940,200,0.176408,0.176689,1072,2203,no-cache,private
+3,"Kleding & Textiel",pagina,https://rootedgoods.eu/kleding-textiel/,200,0.178539,0.226112,43117,2203,no-cache,private
+3,"Tassen & Reizen",widget,/widgets/menu/offcanvas?navigationId=e03190637d8233da667e1bc181391880,200,0.192668,0.193082,1106,2203,no-cache,private
+3,"Tassen & Reizen",pagina,https://rootedgoods.eu/tassen-reizen/,200,0.212002,0.255982,52012,6854,no-cache,private
+3,"Sport & Spel",widget,/widgets/menu/offcanvas?navigationId=681393935cbada125b5e3c566a1e6504,200,0.164766,0.164883,953,2202,no-cache,private
+3,"Sport & Spel",pagina,https://rootedgoods.eu/sport-spel/,200,0.190402,0.212177,33000,2202,no-cache,private
+3,"Huis & Keuken",widget,/widgets/menu/offcanvas?navigationId=710533dd879dd1202e5c73b27705bf02,200,0.188546,0.188671,1098,2201,no-cache,private
+3,"Huis & Keuken",pagina,https://rootedgoods.eu/huis-keuken/,200,0.180106,0.222359,54146,2201,no-cache,private
+3,"Elektronica",widget,/widgets/menu/offcanvas?navigationId=1823d2cca6e313eee19092550854d6bd,200,0.172736,0.173042,887,2200,no-cache,private
+3,"Elektronica",pagina,https://rootedgoods.eu/elektronica/,200,0.172642,0.197018,22701,6852,no-cache,private
+3,"Giveaways",widget,/widgets/menu/offcanvas?navigationId=7a9f8ae506d0fa2eab0659ceb07033f6,200,0.160288,0.160436,887,2200,no-cache,private
+3,"Giveaways",pagina,https://rootedgoods.eu/giveaways/,200,0.230718,0.277541,51563,2199,no-cache,private
+3,"Eten & Drinken",widget,/widgets/menu/offcanvas?navigationId=cc9284597026dcc021735c0970ca0c93,200,0.187870,0.188054,947,2198,no-cache,private
+3,"Eten & Drinken",pagina,https://rootedgoods.eu/eten-drinken/,200,0.180937,0.204862,39933,3188,no-cache,private
+3,"Outdoor",widget,/widgets/menu/offcanvas?navigationId=e54de3be93a9c7071403faf31de7ad84,200,0.170997,0.171097,1094,2198,no-cache,private
+3,"Outdoor",pagina,https://rootedgoods.eu/outdoor/,200,0.179359,0.225842,45066,2198,no-cache,private
+3,"Thema's",widget,/widgets/menu/offcanvas?navigationId=b7daeb6720debf7b9ea55855615dbf44,200,0.185727,0.185949,1092,2198,no-cache,private
+3,"Thema's",pagina,https://rootedgoods.eu/thema-s/,200,0.186126,0.233434,47551,2196,no-cache,private

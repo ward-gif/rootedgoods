@@ -1,0 +1,146 @@
+{
+ "390x844": {
+  "vh": 844,
+  "headerOnder": 96,
+  "hero": [
+   102,
+   415
+  ],
+  "kop": [
+   118,
+   232
+  ],
+  "knop": [
+   256,
+   305
+  ],
+  "noot": [
+   325,
+   345
+  ],
+  "logos": [
+   361,
+   395
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "tegelTop": 423,
+  "tegelOnder": 659,
+  "prijsOnder": 644,
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "afstanden": {
+   "header naar kop": 22,
+   "kop naar knop": 24,
+   "knop naar noot": 20,
+   "noot naar logos": 16,
+   "logos naar eerste tegel": 28,
+   "tegels naar strook": 28,
+   "strook naar link": 20
+  }
+ },
+ "375x667": {
+  "vh": 667,
+  "headerOnder": 96,
+  "hero": [
+   102,
+   415
+  ],
+  "kop": [
+   118,
+   232
+  ],
+  "knop": [
+   256,
+   305
+  ],
+  "noot": [
+   325,
+   345
+  ],
+  "logos": [
+   361,
+   395
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "tegelTop": 423,
+  "tegelOnder": 659,
+  "prijsOnder": 644,
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "afstanden": {
+   "header naar kop": 22,
+   "kop naar knop": 24,
+   "knop naar noot": 20,
+   "noot naar logos": 16,
+   "logos naar eerste tegel": 28,
+   "tegels naar strook": 28,
+   "strook naar link": 20
+  }
+ },
+ "360x780": {
+  "vh": 780,
+  "headerOnder": 96,
+  "hero": [
+   102,
+   415
+  ],
+  "kop": [
+   118,
+   232
+  ],
+  "knop": [
+   256,
+   305
+  ],
+  "noot": [
+   325,
+   345
+  ],
+  "logos": [
+   361,
+   395
+  ],
+  "band": [
+   415,
+   687
+  ],
+  "tegelTop": 423,
+  "tegelOnder": 659,
+  "prijsOnder": 644,
+  "strook": [
+   687,
+   738
+  ],
+  "link": [
+   758,
+   794
+  ],
+  "afstanden": {
+   "header naar kop": 22,
+   "kop naar knop": 24,
+   "knop naar noot": 20,
+   "noot naar logos": 16,
+   "logos naar eerste tegel": 28,
+   "tegels naar strook": 28,
+   "strook naar link": 20
+  }
+ }
+}

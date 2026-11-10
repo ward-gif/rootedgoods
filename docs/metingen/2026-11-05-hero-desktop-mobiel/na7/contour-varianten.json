@@ -1,0 +1,92 @@
+{
+ "1931-12": {
+  "opacity": "0.408163",
+  "box": [
+   760,
+   427.203
+  ],
+  "img": [
+   676,
+   427
+  ],
+  "imgLeft": 1495,
+  "kopRechts": 1438,
+  "afstandKopKaart": 57,
+  "vw": 1931
+ },
+ "1931-16": {
+  "opacity": "0.544218",
+  "box": [
+   760,
+   427.203
+  ],
+  "img": [
+   676,
+   427
+  ],
+  "imgLeft": 1495,
+  "kopRechts": 1438,
+  "afstandKopKaart": 57,
+  "vw": 1931
+ },
+ "1931-20": {
+  "opacity": "0.680272",
+  "box": [
+   760,
+   427.203
+  ],
+  "img": [
+   676,
+   427
+  ],
+  "imgLeft": 1495,
+  "kopRechts": 1438,
+  "afstandKopKaart": 57,
+  "vw": 1931
+ },
+ "1931-groot16": {
+  "opacity": "0.544218",
+  "box": [
+   1100,
+   700.609
+  ],
+  "img": [
+   1100,
+   695
+  ],
+  "imgLeft": 981,
+  "kopRechts": 1438,
+  "afstandKopKaart": -457,
+  "vw": 1931
+ },
+ "1280-laptop16": {
+  "opacity": "0.544218",
+  "box": [
+   560,
+   279.781
+  ],
+  "img": [
+   443,
+   280
+  ],
+  "imgLeft": 1007,
+  "kopRechts": 1091,
+  "afstandKopKaart": -84,
+  "vw": 1280
+ },
+ "1440-laptop16": {
+  "opacity": "0.544218",
+  "box": [
+   560,
+   284.531
+  ],
+  "img": [
+   450,
+   285
+  ],
+  "imgLeft": 1160,
+  "kopRechts": 1192,
+  "afstandKopKaart": -32,
+  "vw": 1440
+ }
+}

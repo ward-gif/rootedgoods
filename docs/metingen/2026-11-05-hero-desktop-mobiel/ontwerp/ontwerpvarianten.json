@@ -1,0 +1,899 @@
+{
+ "A nu": {
+  "375": {
+   "vh": 667,
+   "hero": {
+    "y": 102,
+    "h": 379.7,
+    "w": 375,
+    "x": 0
+   },
+   "band": {
+    "y": 481.7,
+    "h": 272.4,
+    "w": 375,
+    "x": 0
+   },
+   "tegelOnder": 726.078125,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 114.5,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo, van",
+     "Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 360.2,
+     "h": 61.2,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag,",
+     "binnen één werkdag weet je wat kan. Jij zegt",
+     "voor wie en hoeveel, wij doen het zoekwerk."
+    ]
+   },
+   "knop": {
+    "y": 302.5,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": null,
+   "meer": {
+    "y": 758.1,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "390": {
+   "vh": 844,
+   "hero": {
+    "y": 102,
+    "h": 379.7,
+    "w": 390,
+    "x": 0
+   },
+   "band": {
+    "y": 481.7,
+    "h": 272.4,
+    "w": 390,
+    "x": 0
+   },
+   "tegelOnder": 726.078125,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 114.5,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 360.2,
+     "h": 61.2,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag, binnen",
+     "één werkdag weet je wat kan. Jij zegt voor wie en",
+     "hoeveel, wij doen het zoekwerk."
+    ]
+   },
+   "knop": {
+    "y": 302.5,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": null,
+   "meer": {
+    "y": 758.1,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "1280": {
+   "vh": 800,
+   "hero": {
+    "y": 140.4,
+    "h": 450.6,
+    "w": 1184,
+    "x": 48
+   },
+   "band": {
+    "y": 591,
+    "h": 370.4,
+    "w": 1280,
+    "x": 0
+   },
+   "tegelOnder": 933.375,
+   "kop": {
+    "rect": {
+     "y": 180.4,
+     "h": 129.6,
+     "w": 902.1,
+     "x": 188.9
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 450.2,
+     "h": 40.8,
+     "w": 576.2,
+     "x": 351.9
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag, binnen één werkdag weet je wat kan.",
+     "Jij zegt voor wie en hoeveel, wij doen het zoekwerk."
+    ]
+   },
+   "knop": {
+    "y": 380.7,
+    "h": 55.2,
+    "w": 299,
+    "x": 490.5
+   },
+   "strook": null,
+   "meer": {
+    "y": 965.4,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 550
+   }
+  },
+  "1931": {
+   "vh": 1112,
+   "hero": {
+    "y": 161.4,
+    "h": 496.7,
+    "w": 1504,
+    "x": 213.5
+   },
+   "band": {
+    "y": 658.1,
+    "h": 370.4,
+    "w": 1931,
+    "x": 0
+   },
+   "tegelOnder": 1000.4375,
+   "kop": {
+    "rect": {
+     "y": 217.4,
+     "h": 135.7,
+     "w": 944.6,
+     "x": 493.2
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 505.3,
+     "h": 40.8,
+     "w": 576.2,
+     "x": 677.4
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag, binnen één werkdag weet je wat kan.",
+     "Jij zegt voor wie en hoeveel, wij doen het zoekwerk."
+    ]
+   },
+   "knop": {
+    "y": 434.1,
+    "h": 55.2,
+    "w": 299,
+    "x": 816
+   },
+   "strook": null,
+   "meer": {
+    "y": 1032.4,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 875.5
+   }
+  }
+ },
+ "B zonder feiten, noot 1 regel": {
+  "375": {
+   "vh": 667,
+   "hero": {
+    "y": 102,
+    "h": 276.1,
+    "w": 375,
+    "x": 0
+   },
+   "band": {
+    "y": 378.1,
+    "h": 272.4,
+    "w": 375,
+    "x": 0
+   },
+   "tegelOnder": 622.453125,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 114.5,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo, van",
+     "Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 297.3,
+     "h": 20.4,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 239.7,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": null,
+   "meer": {
+    "y": 654.5,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "390": {
+   "vh": 844,
+   "hero": {
+    "y": 102,
+    "h": 276.1,
+    "w": 390,
+    "x": 0
+   },
+   "band": {
+    "y": 378.1,
+    "h": 272.4,
+    "w": 390,
+    "x": 0
+   },
+   "tegelOnder": 622.453125,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 114.5,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 297.3,
+     "h": 20.4,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 239.7,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": null,
+   "meer": {
+    "y": 654.5,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "1280": {
+   "vh": 800,
+   "hero": {
+    "y": 140.4,
+    "h": 377.1,
+    "w": 1184,
+    "x": 48
+   },
+   "band": {
+    "y": 517.5,
+    "h": 370.4,
+    "w": 1280,
+    "x": 0
+   },
+   "tegelOnder": 859.875,
+   "kop": {
+    "rect": {
+     "y": 180.4,
+     "h": 129.6,
+     "w": 902.1,
+     "x": 188.9
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 397.1,
+     "h": 20.4,
+     "w": 576.2,
+     "x": 351.9
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 327.6,
+    "h": 55.2,
+    "w": 299,
+    "x": 490.5
+   },
+   "strook": null,
+   "meer": {
+    "y": 891.9,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 550
+   }
+  },
+  "1931": {
+   "vh": 1112,
+   "hero": {
+    "y": 161.4,
+    "h": 419.2,
+    "w": 1504,
+    "x": 213.5
+   },
+   "band": {
+    "y": 580.6,
+    "h": 370.4,
+    "w": 1931,
+    "x": 0
+   },
+   "tegelOnder": 922.9375,
+   "kop": {
+    "rect": {
+     "y": 217.4,
+     "h": 135.7,
+     "w": 944.6,
+     "x": 493.2
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 448.2,
+     "h": 20.4,
+     "w": 576.2,
+     "x": 677.4
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 377,
+    "h": 55.2,
+    "w": 299,
+    "x": 816
+   },
+   "strook": null,
+   "meer": {
+    "y": 954.9,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 875.5
+   }
+  }
+ },
+ "C = B + feitenstrook onder band": {
+  "375": {
+   "vh": 667,
+   "hero": {
+    "y": 102,
+    "h": 276.1,
+    "w": 375,
+    "x": 0
+   },
+   "band": {
+    "y": 378.1,
+    "h": 272.4,
+    "w": 375,
+    "x": 0
+   },
+   "tegelOnder": 622.453125,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 114.5,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo, van",
+     "Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 297.3,
+     "h": 20.4,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 239.7,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": {
+    "rect": {
+     "y": 654.5,
+     "h": 50.4,
+     "w": 355,
+     "x": 20
+    },
+    "regels": [
+     "€ 25 tot € 70 per persoon · vanaf 10",
+     "stuks"
+    ]
+   },
+   "meer": {
+    "y": 708.8,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "390": {
+   "vh": 844,
+   "hero": {
+    "y": 102,
+    "h": 276.1,
+    "w": 390,
+    "x": 0
+   },
+   "band": {
+    "y": 378.1,
+    "h": 272.4,
+    "w": 390,
+    "x": 0
+   },
+   "tegelOnder": 622.453125,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 114.5,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 297.3,
+     "h": 20.4,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 239.7,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": {
+    "rect": {
+     "y": 654.5,
+     "h": 25.2,
+     "w": 370,
+     "x": 20
+    },
+    "regels": [
+     "€ 25 tot € 70 per persoon · vanaf 10 stuks"
+    ]
+   },
+   "meer": {
+    "y": 683.6,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "1280": {
+   "vh": 800,
+   "hero": {
+    "y": 140.4,
+    "h": 377.1,
+    "w": 1184,
+    "x": 48
+   },
+   "band": {
+    "y": 517.5,
+    "h": 370.4,
+    "w": 1280,
+    "x": 0
+   },
+   "tegelOnder": 859.875,
+   "kop": {
+    "rect": {
+     "y": 180.4,
+     "h": 129.6,
+     "w": 902.1,
+     "x": 188.9
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 397.1,
+     "h": 20.4,
+     "w": 576.2,
+     "x": 351.9
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 327.6,
+    "h": 55.2,
+    "w": 299,
+    "x": 490.5
+   },
+   "strook": {
+    "rect": {
+     "y": 891.9,
+     "h": 25.2,
+     "w": 1120,
+     "x": 80
+    },
+    "regels": [
+     "€ 25 tot € 70 per persoon · vanaf 10 stuks"
+    ]
+   },
+   "meer": {
+    "y": 921.1,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 550
+   }
+  },
+  "1931": {
+   "vh": 1112,
+   "hero": {
+    "y": 161.4,
+    "h": 419.2,
+    "w": 1504,
+    "x": 213.5
+   },
+   "band": {
+    "y": 580.6,
+    "h": 370.4,
+    "w": 1931,
+    "x": 0
+   },
+   "tegelOnder": 922.9375,
+   "kop": {
+    "rect": {
+     "y": 217.4,
+     "h": 135.7,
+     "w": 944.6,
+     "x": 493.2
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 448.2,
+     "h": 20.4,
+     "w": 576.2,
+     "x": 677.4
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 377,
+    "h": 55.2,
+    "w": 299,
+    "x": 816
+   },
+   "strook": {
+    "rect": {
+     "y": 954.9,
+     "h": 25.2,
+     "w": 1440,
+     "x": 245.5
+    },
+    "regels": [
+     "€ 25 tot € 70 per persoon · vanaf 10 stuks"
+    ]
+   },
+   "meer": {
+    "y": 984.1,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 875.5
+   }
+  }
+ },
+ "D = B + regel 2 in Montserrat 700": {
+  "375": {
+   "vh": 667,
+   "hero": {
+    "y": 102,
+    "h": 308.2,
+    "w": 375,
+    "x": 0
+   },
+   "band": {
+    "y": 410.2,
+    "h": 272.4,
+    "w": 375,
+    "x": 0
+   },
+   "tegelOnder": 654.515625,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 146.5,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese",
+     "makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 329.4,
+     "h": 20.4,
+     "w": 335,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 271.7,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": null,
+   "meer": {
+    "y": 686.5,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "390": {
+   "vh": 844,
+   "hero": {
+    "y": 102,
+    "h": 308.2,
+    "w": 390,
+    "x": 0
+   },
+   "band": {
+    "y": 410.2,
+    "h": 272.4,
+    "w": 390,
+    "x": 0
+   },
+   "tegelOnder": 654.515625,
+   "kop": {
+    "rect": {
+     "y": 114,
+     "h": 146.5,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Kerstpakketten",
+     "met jouw logo,",
+     "van Europese",
+     "makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 329.4,
+     "h": 20.4,
+     "w": 350,
+     "x": 20
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 271.7,
+    "h": 48.1,
+    "w": 261.2,
+    "x": 20
+   },
+   "strook": null,
+   "meer": {
+    "y": 686.5,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 20
+   }
+  },
+  "1280": {
+   "vh": 800,
+   "hero": {
+    "y": 140.4,
+    "h": 371.9,
+    "w": 1184,
+    "x": 48
+   },
+   "band": {
+    "y": 512.3,
+    "h": 370.4,
+    "w": 1280,
+    "x": 0
+   },
+   "tegelOnder": 854.6875,
+   "kop": {
+    "rect": {
+     "y": 180.4,
+     "h": 124.4,
+     "w": 817.1,
+     "x": 231.5
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 391.9,
+     "h": 20.4,
+     "w": 576.2,
+     "x": 351.9
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 322.4,
+    "h": 55.2,
+    "w": 299,
+    "x": 490.5
+   },
+   "strook": null,
+   "meer": {
+    "y": 886.7,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 550
+   }
+  },
+  "1931": {
+   "vh": 1112,
+   "hero": {
+    "y": 161.4,
+    "h": 413.8,
+    "w": 1504,
+    "x": 213.5
+   },
+   "band": {
+    "y": 575.2,
+    "h": 370.4,
+    "w": 1931,
+    "x": 0
+   },
+   "tegelOnder": 917.515625,
+   "kop": {
+    "rect": {
+     "y": 217.4,
+     "h": 130.2,
+     "w": 855.6,
+     "x": 537.7
+    },
+    "regels": [
+     "Kerstpakketten met jouw logo,",
+     "van Europese makers"
+    ]
+   },
+   "noot": {
+    "rect": {
+     "y": 442.8,
+     "h": 20.4,
+     "w": 576.2,
+     "x": 677.4
+    },
+    "regels": [
+     "Nog op tijd voor kerst? Vraag het vandaag."
+    ]
+   },
+   "knop": {
+    "y": 371.6,
+    "h": 55.2,
+    "w": 299,
+    "x": 816
+   },
+   "strook": null,
+   "meer": {
+    "y": 949.5,
+    "h": 36.6,
+    "w": 179.9,
+    "x": 875.5
+   }
+  }
+ }
+}

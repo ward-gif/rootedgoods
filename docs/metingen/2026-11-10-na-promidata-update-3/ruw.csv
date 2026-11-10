@@ -1,0 +1,23 @@
+moment,label,url,http,ttfb_s,totaal_s,bytes,age
+eerste,"Drinkwaren",https://rootedgoods.eu/drinkwaren/,200,1.615251,1.663717,51895,2284
+eerste,"Kantoor & Schrijfwaren",https://rootedgoods.eu/kantoor-schrijfwaren/,200,1.124701,1.143454,37631,0
+eerste,"Kleding & Textiel",https://rootedgoods.eu/kleding-textiel/,200,0.896028,1.092802,43117,0
+eerste,"Tassen & Reizen",https://rootedgoods.eu/tassen-reizen/,200,1.335615,1.398731,52015,0
+eerste,"Sport & Spel",https://rootedgoods.eu/sport-spel/,200,0.204145,0.225146,32999,1616
+eerste,"Huis & Keuken",https://rootedgoods.eu/huis-keuken/,200,1.291593,1.338063,54138,1
+eerste,"Elektronica",https://rootedgoods.eu/elektronica/,200,0.538069,0.560811,22702,0
+eerste,"Giveaways",https://rootedgoods.eu/giveaways/,200,0.222060,0.268319,51563,2551
+eerste,"Eten & Drinken",https://rootedgoods.eu/eten-drinken/,200,0.201892,0.222451,39931,1805
+eerste,"Outdoor",https://rootedgoods.eu/outdoor/,200,0.200596,0.252444,45064,1641
+eerste,"Thema's",https://rootedgoods.eu/thema-s/,200,0.202212,0.250074,47552,4655
+tweede,"Drinkwaren",https://rootedgoods.eu/drinkwaren/,200,0.204017,0.250028,51895,2297
+tweede,"Kantoor & Schrijfwaren",https://rootedgoods.eu/kantoor-schrijfwaren/,200,0.198112,0.216184,37631,12
+tweede,"Kleding & Textiel",https://rootedgoods.eu/kleding-textiel/,200,0.222677,0.268019,43117,11
+tweede,"Tassen & Reizen",https://rootedgoods.eu/tassen-reizen/,200,0.233336,0.274023,52015,10
+tweede,"Sport & Spel",https://rootedgoods.eu/sport-spel/,200,0.198894,0.223182,32999,1626
+tweede,"Huis & Keuken",https://rootedgoods.eu/huis-keuken/,200,0.192162,0.243860,54138,10
+tweede,"Elektronica",https://rootedgoods.eu/elektronica/,200,0.232140,0.258065,22702,8
+tweede,"Giveaways",https://rootedgoods.eu/giveaways/,200,0.194752,0.253288,51563,2559
+tweede,"Eten & Drinken",https://rootedgoods.eu/eten-drinken/,200,0.215328,0.238775,39931,1814
+tweede,"Outdoor",https://rootedgoods.eu/outdoor/,200,0.283022,0.290995,45064,1650
+tweede,"Thema's",https://rootedgoods.eu/thema-s/,200,0.482008,0.527792,47552,4665

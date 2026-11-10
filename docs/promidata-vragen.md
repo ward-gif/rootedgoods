@@ -530,6 +530,13 @@ deze over de tijd voordat er iets komt. Op een categoriepagina stapelen ze: eers
 **Prioriteit:** hoog, en vermoedelijk goedkoop. Punt 2 is een instelling, punt 3 een
 opdracht in een cronjob.
 
+> **Stand 6 november, bij A4.** Promidata meldde performance-updates en vroeg om te
+> controleren. Nagemeten (`docs/metingen/2026-11-06-na-promidata-update/`): een koud
+> eerste bezoek aan een menucategorie was 3,19 s mediaan en is nu 1,09 s; de slechtste
+> ging van 5,68 s naar 1,41 s. Warm onveranderd 0,2 s. De drie vragen van A4 (welke
+> cache, de bewaartijd, een cache-warmer) zijn niet beantwoord en blijven staan, want
+> koud is nog altijd een factor vijf trager dan warm.
+
 ### B4. Productslider, productboxMinWidth van 300 naar 400
 
 In `data-product-slider-options` op `.base-slider.product-slider` staat

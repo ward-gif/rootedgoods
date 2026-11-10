@@ -1,0 +1,10 @@
+soort,url,http,ttfb_s,bytes,age
+home,https://rootedgoods.eu/,200,1.231887,37664,0
+categorie,https://rootedgoods.eu/drinkwaren/,200,0.969300,51903,0
+categorie,https://rootedgoods.eu/huis-keuken/,200,0.596515,54161,1
+categorie,https://rootedgoods.eu/kleding-textiel/,200,0.639788,43132,0
+alle-producten,https://rootedgoods.eu/alle-producten/,200,0.700214,52326,0
+thema-cms,https://rootedgoods.eu/thema-s/kerstpakketten-eindejaar/,200,0.678416,35277,0
+cms,https://rootedgoods.eu/merken/,200,0.397247,16299,0
+cms,https://rootedgoods.eu/over-ons,200,0.358689,17122,0
+pdp,https://rootedgoods.eu/Pulltap-s-kelnersmes/A267-8050.100-1KL,200,0.728289,36221,1
