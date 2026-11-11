@@ -1,0 +1,33 @@
+CSS: 510631 bytes, 1769 blokken gemarkeerd
+mobiel   /                            elementen=2028 VERSCHIL op 0 elementen 
+mobiel   /alle-producten/             elementen=1556 VERSCHIL op 0 elementen 
+mobiel   /huis-keuken/                elementen=1581 VERSCHIL op 0 elementen 
+mobiel   /Borrelplank/A1352-Kerst1    elementen=898 VERSCHIL op 3 elementen [{"el":"h2.card-title","d":["font-size: 32px -> 16px","font-weight: 600 -> 700","line-height: 38.4px -> 19.2px"]},{"el":"h2.card-title::before","d":["font-size: 32px -> 16px","font-weight: 600 -> 700","line-height: 38.4px -> 19.2px"]},{"el":"h2.card-title::after","d":["font-size: 32px -> 16px","font-weight: 600 -> 700","line-height: 38.4px -> 19.2px"]}]
+mobiel   /eindejaarsgeschenken        elementen=1092 VERSCHIL op 0 elementen 
+mobiel   /thema-s/                    elementen=1520 VERSCHIL op 0 elementen 
+mobiel   /offerte                     elementen=540 VERSCHIL op 0 elementen 
+mobiel   /over-ons                    elementen=638 VERSCHIL op 0 elementen 
+mobiel   /merken/                     elementen=565 VERSCHIL op 0 elementen 
+mobiel   /contact                     elementen=684 VERSCHIL op 0 elementen 
+mobiel   /search?search=kerstbal      elementen=649 VERSCHIL op 0 elementen 
+mobiel   /dag-van-de-leraar           elementen=1095 VERSCHIL op 0 elementen 
+mobiel   /events-conferenties         elementen=1043 VERSCHIL op 0 elementen 
+mobiel   /faq                         elementen=624 VERSCHIL op 0 elementen 
+mobiel   /full-service-ontzorging     elementen=651 VERSCHIL op 0 elementen 
+mobiel   /medewerker-merchandise      elementen=1046 VERSCHIL op 0 elementen 
+mobiel   /onboarding-welkomstpakket   elementen=1192 VERSCHIL op 0 elementen 
+mobiel   /services/                   elementen=578 VERSCHIL op 41 elementen [{"el":"html.rg-cirkelpijl.is-touch","d":["block-size: 3580.8px -> 3461.02px","height: 3580.8px -> 3461.02px","perspective-origin: 195px 1790.39px -> 195px 1730.5px","transform-origin: 195px 1790.4px -> 195px 1730.51px"]},{"el":"body.is-ctl-navigation.is-act-index","d":["block-size: 3580.8px -> 3461.02px","height: 3580.8px -> 3461.02px","perspective-origin: 195px 1790.39px -> 195px 1730.5px","transform-origin: 195px 1790.4px -> 195px 1730.51px"]},{"el":"main.content-main","d":["block-size: 2909.28px -> 2789.5px","height: 2909.28px -> 2789.5px","perspective-origin: 195px 1454.64px -> 195px 1394.75px","transform-origin: 195px 1454.64px -> 195px 1394.75px"]},{"el":"div.container-main","d":["block-size: 2807.28px -> 2687.5px","height: 2807.28px -> 2687.5px","perspective-origin: 195px 1403.64px -> 195px 1343.75px","transform-origin: 195px 1403.64px -> 195px 1343.75px"]}]
+mobiel   /verzending-naar-meerdere-locaties elementen=625 VERSCHIL op 0 elementen 
+mobiel   /warehousing-fulfillment     elementen=615 VERSCHIL op 0 elementen 
+mobiel   /alle-thema-s                elementen=575 VERSCHIL op 0 elementen 
+mobiel   /wishlist                    elementen=493 VERSCHIL op 3 elementen [{"el":"h1.text-center.wishlist-listing-header","d":["font-size: 40px -> 23px","font-weight: 600 -> 700"]},{"el":"h1.text-center.wishlist-listing-header::before","d":["font-size: 40px -> 23px","font-weight: 600 -> 700"]},{"el":"h1.text-center.wishlist-listing-header::after","d":["font-size: 40px -> 23px","font-weight: 600 -> 700"]}]
+mobiel   /algemeen/algemene-voorwaarden/ elementen=670 VERSCHIL op 0 elementen 
+mobiel   /thema-s/winter/             elementen=716 VERSCHIL op 0 elementen 
+mobiel   /thema-s/made-in-nl/         elementen=1551 VERSCHIL op 0 elementen 
+mobiel   /thema-s/kerstpakketten-eindejaar/ elementen=858 VERSCHIL op 0 elementen 
+mobiel   /tassen-reizen/              elementen=1748 VERSCHIL op 0 elementen 
+mobiel   /eten-drinken/               elementen=1312 VERSCHIL op 0 elementen 
+mobiel   /informatie/nieuwsbrief/     elementen=557 VERSCHIL op 0 elementen 
+mobiel   /blog/                       elementen=580 VERSCHIL op 26 elementen [{"el":"html.rg-cirkelpijl.is-touch","d":["block-size: 1415.28px -> 1396.08px","height: 1415.28px -> 1396.08px","perspective-origin: 195px 707.641px -> 195px 698.031px","transform-origin: 195px 707.641px -> 195px 698.039px"]},{"el":"body.is-ctl-navigation.is-act-index","d":["block-size: 1415.28px -> 1396.08px","height: 1415.28px -> 1396.08px","perspective-origin: 195px 707.641px -> 195px 698.031px","transform-origin: 195px 707.641px -> 195px 698.039px"]},{"el":"main.content-main","d":["block-size: 743.766px -> 724.562px","height: 743.766px -> 724.562px","perspective-origin: 195px 371.875px -> 195px 362.281px","transform-origin: 195px 371.883px -> 195px 362.281px"]},{"el":"div.container-main","d":["block-size: 641.766px -> 622.562px","height: 641.766px -> 622.562px","perspective-origin: 195px 320.875px -> 195px 311.281px","transform-origin: 195px 320.883px -> 195px 311.281px"]}]
+mobiel   /elektronica/                elementen=630 VERSCHIL op 0 elementen 
+weggeschreven: vergelijk-koppen-mobiel.json

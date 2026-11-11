@@ -141,38 +141,41 @@ h1, h2, h3, h4, h5, h6 {
 em, i { font-style: normal; }
 
 /* Type scale — desktop (modular scale 1.25 / major third).
-   Dubbele selector (generiek + .cms-element-text scope) om Promidata
-   thema-overrides te verslaan die op class-level staan.
+   Dubbele selector (generiek + .cms-element-text scope). Sinds 11 nov 2026
+   zonder !important: component-koppen met een eigen maat (wishlist-kop,
+   service-kaarttitels, blog-/card-title) houden die nu zelf, in plaats van
+   overal 4rem/3rem/2.25rem te krijgen (gemeten op 31 paginatypes, 4 raakten
+   het; docs/metingen/2026-11-11-css-doorlichting/koppen/).
    Headings op weight 600 (semibold) — één tandje boven medium.
    h4 is uitzondering: Montserrat subtitle-stijl voor top-title / eyebrow. */
-h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 600 !important; }
-h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 600 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600; }
+h1, .cms-element-text h1 { font-size: 4rem;    font-weight: 600; }
+h2, .cms-element-text h2 { font-size: 3rem;    font-weight: 600; }
+h3, .cms-element-text h3 { font-size: 2.25rem; font-weight: 600; }
 h4, .cms-element-text h4 {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1.4;
 }
-h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 600 !important; }
-h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !important; }
+h5, .cms-element-text h5 { font-size: 1.25rem; font-weight: 600; }
+h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
 
 /* Type scale — tablet (<992px). h4 blijft vast op 0.875rem als subtitle. */
 @media (max-width: 991px) {
-  h1, .cms-element-text h1 { font-size: 3rem !important; }
-  h2, .cms-element-text h2 { font-size: 2.5rem !important; }
-  h3, .cms-element-text h3 { font-size: 1.875rem !important; }
-  h5, .cms-element-text h5 { font-size: 1.125rem !important; }
+  h1, .cms-element-text h1 { font-size: 3rem; }
+  h2, .cms-element-text h2 { font-size: 2.5rem; }
+  h3, .cms-element-text h3 { font-size: 1.875rem; }
+  h5, .cms-element-text h5 { font-size: 1.125rem; }
 }
 
 /* Type scale — mobile (<577px). h4 blijft vast op 0.875rem als subtitle. */
 @media (max-width: 576px) {
-  h1, .cms-element-text h1 { font-size: 2.5rem !important; }
-  h2, .cms-element-text h2 { font-size: 2rem !important; }
-  h3, .cms-element-text h3 { font-size: 1.625rem !important; }
-  h5, .cms-element-text h5 { font-size: 1.0625rem !important; }
+  h1, .cms-element-text h1 { font-size: 2.5rem; }
+  h2, .cms-element-text h2 { font-size: 2rem; }
+  h3, .cms-element-text h3 { font-size: 1.625rem; }
+  h5, .cms-element-text h5 { font-size: 1.0625rem; }
 }
 
 /* ------------------------------------------------------------

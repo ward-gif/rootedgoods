@@ -17,5 +17,5 @@
     const d = Object.keys(pa).filter(k => pa[k] !== pb[k]).map(k => `${k}: ${pa[k].slice(0, 30)} -> ${(pb[k] || '').slice(0, 30)}`);
     verschil.push({ el: e.tagName.toLowerCase() + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 3).join('.') : '') + ps, d: d.slice(0, 6) });
   }
-  return { elementen: els.length, verschil: verschil.slice(0, 40), nVerschil: verschil.length };
+  return { elementen: els.length, verschil: verschil.slice(0, 600), nVerschil: verschil.length };
 })

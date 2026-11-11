@@ -1,0 +1,33 @@
+CSS: 510631 bytes, 1769 blokken gemarkeerd
+desktop  /                            elementen=2021 VERSCHIL op 0 elementen 
+desktop  /alle-producten/             elementen=1549 VERSCHIL op 0 elementen 
+desktop  /huis-keuken/                elementen=1574 VERSCHIL op 0 elementen 
+desktop  /Borrelplank/A1352-Kerst1    elementen=891 VERSCHIL op 3 elementen [{"el":"h2.card-title","d":["font-size: 48px -> 16px","font-weight: 600 -> 700","line-height: 57.6px -> 19.2px"]},{"el":"h2.card-title::before","d":["font-size: 48px -> 16px","font-weight: 600 -> 700","line-height: 57.6px -> 19.2px"]},{"el":"h2.card-title::after","d":["font-size: 48px -> 16px","font-weight: 600 -> 700","line-height: 57.6px -> 19.2px"]}]
+desktop  /eindejaarsgeschenken        elementen=1085 VERSCHIL op 0 elementen 
+desktop  /thema-s/                    elementen=1513 VERSCHIL op 0 elementen 
+desktop  /offerte                     elementen=533 VERSCHIL op 0 elementen 
+desktop  /over-ons                    elementen=631 VERSCHIL op 0 elementen 
+desktop  /merken/                     elementen=558 VERSCHIL op 0 elementen 
+desktop  /contact                     elementen=677 VERSCHIL op 0 elementen 
+desktop  /search?search=kerstbal      elementen=642 VERSCHIL op 0 elementen 
+desktop  /dag-van-de-leraar           elementen=1088 VERSCHIL op 0 elementen 
+desktop  /events-conferenties         elementen=1036 VERSCHIL op 0 elementen 
+desktop  /faq                         elementen=617 VERSCHIL op 0 elementen 
+desktop  /full-service-ontzorging     elementen=644 VERSCHIL op 0 elementen 
+desktop  /medewerker-merchandise      elementen=1039 VERSCHIL op 0 elementen 
+desktop  /onboarding-welkomstpakket   elementen=1185 VERSCHIL op 0 elementen 
+desktop  /services/                   elementen=571 VERSCHIL op 45 elementen [{"el":"html.rg-cirkelpijl","d":["block-size: 2156.56px -> 2119.02px","height: 2156.56px -> 2119.02px","perspective-origin: 720px 1078.28px -> 720px 1059.5px","transform-origin: 720px 1078.28px -> 720px 1059.51px"]},{"el":"body.is-ctl-navigation.is-act-index","d":["block-size: 2156.56px -> 2119.02px","height: 2156.56px -> 2119.02px","perspective-origin: 720px 1078.28px -> 720px 1059.5px","transform-origin: 720px 1078.28px -> 720px 1059.51px"]},{"el":"main.content-main","d":["block-size: 1537.17px -> 1499.62px","height: 1537.17px -> 1499.62px","perspective-origin: 720px 768.578px -> 720px 749.812px","transform-origin: 720px 768.586px -> 720px 749.812px"]},{"el":"div.container-main","d":["block-size: 1537.17px -> 1499.62px","height: 1537.17px -> 1499.62px","perspective-origin: 720px 768.578px -> 720px 749.812px","transform-origin: 720px 768.586px -> 720px 749.812px"]}]
+desktop  /verzending-naar-meerdere-locaties elementen=618 VERSCHIL op 0 elementen 
+desktop  /warehousing-fulfillment     elementen=608 VERSCHIL op 0 elementen 
+desktop  /alle-thema-s                elementen=568 VERSCHIL op 0 elementen 
+desktop  /wishlist                    elementen=486 VERSCHIL op 3 elementen [{"el":"h1.text-center.wishlist-listing-header","d":["font-size: 64px -> 36px","font-weight: 600 -> 700"]},{"el":"h1.text-center.wishlist-listing-header::before","d":["font-size: 64px -> 36px","font-weight: 600 -> 700"]},{"el":"h1.text-center.wishlist-listing-header::after","d":["font-size: 64px -> 36px","font-weight: 600 -> 700"]}]
+desktop  /algemeen/algemene-voorwaarden/ elementen=663 VERSCHIL op 0 elementen 
+desktop  /thema-s/winter/             elementen=709 VERSCHIL op 0 elementen 
+desktop  /thema-s/made-in-nl/         elementen=1544 VERSCHIL op 0 elementen 
+desktop  /thema-s/kerstpakketten-eindejaar/ elementen=851 VERSCHIL op 0 elementen 
+desktop  /tassen-reizen/              elementen=1741 VERSCHIL op 0 elementen 
+desktop  /eten-drinken/               elementen=1305 VERSCHIL op 0 elementen 
+desktop  /informatie/nieuwsbrief/     elementen=550 VERSCHIL op 0 elementen 
+desktop  /blog/                       elementen=573 VERSCHIL op 26 elementen [{"el":"html.rg-cirkelpijl","d":["block-size: 1354.78px -> 1319.39px","height: 1354.78px -> 1319.39px","perspective-origin: 720px 677.391px -> 720px 659.688px","transform-origin: 720px 677.391px -> 720px 659.695px"]},{"el":"body.is-ctl-navigation.is-act-index","d":["block-size: 1354.78px -> 1319.39px","height: 1354.78px -> 1319.39px","perspective-origin: 720px 677.391px -> 720px 659.688px","transform-origin: 720px 677.391px -> 720px 659.695px"]},{"el":"main.content-main","d":["block-size: 735.391px -> 700px","height: 735.391px -> 700px","perspective-origin: 720px 367.688px -> 720px 350px","transform-origin: 720px 367.695px -> 720px 350px"]},{"el":"div.container-main","d":["block-size: 735.391px -> 700px","height: 735.391px -> 700px","perspective-origin: 720px 367.688px -> 720px 350px","transform-origin: 720px 367.695px -> 720px 350px"]}]
+desktop  /elektronica/                elementen=623 VERSCHIL op 0 elementen 
+weggeschreven: vergelijk-koppen-desktop.json
