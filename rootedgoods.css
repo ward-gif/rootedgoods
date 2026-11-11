@@ -490,9 +490,9 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
    trok daar te veel aandacht en het iconenpaar ernaast verdween er bijna
    naast. Live teruggemeld. */
 .header-actions-col .offerte-link.btn-primary {
-  padding: 0.4rem 0.9rem !important;
-  font-size: 0.8125rem !important;
-  font-weight: 600 !important;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
   box-shadow: none !important;
 }
 .header-actions-col .offerte-link.btn-primary:hover {
@@ -714,8 +714,8 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   top: 0px;
 }
 .header-main .header-search .header-search-btn {
-  line-height: 1.5 !important;
-  padding: 0.6rem 1rem !important;
+  line-height: 1.5;
+  padding: 0.6rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1473,13 +1473,13 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
    :not) zodat 'ie de .btn-maten verslaat. Uitgesloten: de eind-CTA-ghost
    (donker vlak) en de captcha-refresh-icoonknop. */
 .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon) {
-  padding: 0 5px !important;
+  padding: 0 5px;
   border: none !important;
   background: transparent;
   box-shadow: none;
   color: #2d4528;
-  font-weight: 600 !important;
-  font-size: 0.95rem !important;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover {
   background: transparent !important;
