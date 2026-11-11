@@ -1,27 +1,27 @@
-rootedgoods.css: 12648 regels, 54 secties, 1645 !important in 5729 declaraties (28.7%), commentaar niet meegeteld
+../../../rootedgoods.css: 12636 regels, 54 secties, 723 !important in 5718 declaraties (12.6%), commentaar niet meegeteld
   imp  decl     %       regels  titel
-  600  1341    45  r  981-4256   6c. OFFCANVAS-MENU (mobiel/tablet, <992px) — merk-typografie,
-  123   322    38  r    1-980    ROOTED GOODS - CUSTOM STYLESHEET
-   95   149    64  r 8255-8603   41. EDITORIAL SYSTEEM (globaal) — CSS-only, geen re-paste
-   93   198    47  r 9743-10115  49. WINKELMAND + CHECKOUT (.cart-offcanvas / .checkout-*)
-   78   397    20  r 6907-7583   41. SERVICE-DETAIL (.rg-sd) — losse pagina per service
-   75    81    93  r 5345-5668   30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhankelijk)
-   69   117    59  r10496-10616  49.15 CHECKOUT — bevestigingspagina (/checkout/confirm,
-   68   447    15  r 8604-9289   42. OVER ONS (.rg-route) — "De Route van Rooted"
-   44   168    26  r11297-11718  53. THEMA-HERO MET PRODUCTBAND — .rg-page-hero--band
-   37    81    46  r10161-10342  49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)
-   33   153    22  r 7908-8131   40c. CUSTOM OFFERTE- EN AANVRAAGFORMULIEREN (cioform) — één stijl
-   23    69    33  r12274-12470  57. KERSTHERO OP MOBIEL, 10 november 2026, onder 992 px, achter de mar
-   21    97    22  r 4534-4785   27. FEATURE ROW — image + tekst naast elkaar
-   21    83    25  r10406-10495  49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)
-   20   107    19  r 6691-6906   40. AANVRAAGFORMULIER (#request-offer-container) — offerte/contact
-   19   165    12  r 5018-5344   29. BRAND-STATEMENT — typografie links + Europa-kaart rechts
-   19    84    23  r 7584-7699   40b. CONTACTFORMULIER — zelfde premium look als sectie 40
-   16    16   100  r10686-10771  50. COOKIE-CONSENT — teruggezet naar de Shopware-standaard (28 okt 202
-   16   128    12  r10772-11159  51. THEMA-LANDINGSPAGINA — hero zonder beeld + productraster
-   15    90    17  r 5669-5832   31. THEMA-OVERZICHT — bento-grid van thema's (1 uitgelicht)
-   15   124    12  r11744-12169  55. KERSTHERO, VIJFDE OPZET — .rg-page-hero--band, bovenop sectie 53
-   13    19    68  r 4398-4533   26. RESPONSIVE TUNING — desktop + split-screen
-   13    86    15  r 9546-9742   48. FOOTER (.footer-main) — native theme-markup, alleen CSS
-   12    79    15  r 6558-6690   39. EIND-CTA (.rg-endcta) — afsluitend statement, sitebreed
-   10    73    14  r 5833-5955   32. MERKEN-GRID — gelijke logo-tegels op wit, hover-effect
+  195  1341    15  r  984-4259   6c. OFFCANVAS-MENU (mobiel/tablet, <992px) — merk-typografie,
+   93   198    47  r 9731-10103  49. WINKELMAND + CHECKOUT (.cart-offcanvas / .checkout-*)
+   69   117    59  r10484-10604  49.15 CHECKOUT — bevestigingspagina (/checkout/confirm,
+   37    81    46  r10149-10330  49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)
+   32   397     8  r 6910-7586   41. SERVICE-DETAIL (.rg-sd) — losse pagina per service
+   23   168    14  r11285-11706  53. THEMA-HERO MET PRODUCTBAND — .rg-page-hero--band
+   21    81    26  r 5348-5671   30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhankelijk)
+   21    83    25  r10394-10483  49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)
+   20   107    19  r 6694-6909   40. AANVRAAGFORMULIER (#request-offer-container) — offerte/contact
+   20   153    13  r 7911-8134   40c. CUSTOM OFFERTE- EN AANVRAAGFORMULIEREN (cioform) — één stijl
+   19    84    23  r 7587-7702   40b. CONTACTFORMULIER — zelfde premium look als sectie 40
+   16   149    11  r 8258-8606   41. EDITORIAL SYSTEEM (globaal) — CSS-only, geen re-paste
+   16   436     4  r 8607-9277   42. OVER ONS (.rg-route) — "De Route van Rooted"
+   16   128    12  r10760-11147  51. THEMA-LANDINGSPAGINA — hero zonder beeld + productraster
+   15   322     5  r    1-983    ROOTED GOODS - CUSTOM STYLESHEET
+   11    97    11  r 4537-4788   27. FEATURE ROW — image + tekst naast elkaar
+   11   165     7  r 5021-5347   29. BRAND-STATEMENT — typografie links + Europa-kaart rechts
+   10    19    53  r 4401-4536   26. RESPONSIVE TUNING — desktop + split-screen
+   10    29    34  r10331-10393  49.13b CHECKOUT — betaal- en verzendmethode (payment-method/shipping-m
+   10    29    34  r12459-12538  59. LADEN VAN DE THEMAPAGINA: DE STAND VÓÓR DE BAND-JS GELIJKTREKKEN M
+    8    22    36  r10605-10673  49.16 CHECKOUT — footer (.footer-minimal): bewust kaal/rustig
+    8    69    12  r12262-12458  57. KERSTHERO OP MOBIEL, 10 november 2026, onder 992 px, achter de mar
+    6     6   100  r 4374-4400   25b. PRODUCT-SLIDER — uitlijnen met de categorie-sectie + bleed
+    5   124     4  r11732-12157  55. KERSTHERO, VIJFDE OPZET — .rg-page-hero--band, bovenop sectie 53
+    4    86     5  r 9534-9730   48. FOOTER (.footer-main) — native theme-markup, alleen CSS

@@ -200,7 +200,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
    de echte hoogte van topbar+header-row+nav-main in de normale flow. */
 @media (min-width: 992px) {
   .content-main {
-    padding-top: 0 !important;
+    padding-top: 0;
   }
 }
 
@@ -789,7 +789,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
 /* Zoekresultaten-pagina — h1 een stuk kleiner */
 .search-headline,
 .search-headline h1 {
-  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem) !important;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
   line-height: 1.2;
 }
 
@@ -819,7 +819,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   /* ---- Logo kleiner ---- */
   .header-logo-main-link img,
   .header-logo img {
-    height: 26px !important;
+    height: 26px;
     max-width: 100%;
   }
   /* Live gemeld (Ward, /poconfigurator/request-pagina): logo stond
@@ -887,7 +887,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
 @media (min-width: 576px) and (max-width: 991px) {
   .header-logo-main-link img,
   .header-logo img {
-    height: 34px !important;
+    height: 34px;
   }
   /* .header-logo-col is zelf display:flex -- text-align:center (wat op
      <576px wél werkt, daar is de kolom kennelijk geen flex-container)
@@ -939,7 +939,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
     padding: 0.4rem 1rem;
   }
   .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
-    display: none !important;
+    display: none;
   }
 }
 .rg-usp-slider {
@@ -1016,8 +1016,8 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
      de knop collapt 'm, het icoon zelf is met vaste px-afmetingen
      opgebouwd (geen em) en blijft dus onaangetast. */
   .navigation-offcanvas .offcanvas-close.js-offcanvas-close {
-    font-size: 0 !important;
-    padding: 0.5rem !important;
+    font-size: 0;
+    padding: 0.5rem;
     min-width: 0;
   }
   /* Native "categorieën"-headline zit als sibling VÓÓR de <ul> -- landt
@@ -1134,7 +1134,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
     border-top: none !important;
   }
   .rg-offcanvas-featured-row + .navigation-offcanvas-list-item {
-    border-top: none !important;
+    border-top: none;
   }
   .rg-offcanvas-featured-grid {
     display: grid;
@@ -1426,7 +1426,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
 /* CTA-knop in de categorie-flyout verbergen. */
 .flyout-cta-col,
 .flyout-cta-col a.btn {
-  display: none !important;
+  display: none;
 }
 
 /* ------------------------------------------------------------
@@ -1474,7 +1474,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
    (donker vlak) en de captcha-refresh-icoonknop. */
 .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon) {
   padding: 0 5px;
-  border: none !important;
+  border: none;
   background: transparent;
   box-shadow: none;
   color: #2d4528;
@@ -1551,7 +1551,7 @@ img {
   width: 48px;
   height: 48px;
   min-width: 48px;
-  padding: 0 !important;
+  padding: 0;
   border-radius: 10px !important;
   display: inline-flex;
   align-items: center;
@@ -1608,18 +1608,18 @@ img {
 .rg-wishlist-float .header-wishlist-btn {
   width: 100%;
   height: 100%;
-  padding: 0 !important;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 }
 .rg-wishlist-float .icon svg {
-  width: 22px !important;
-  height: 22px !important;
+  width: 22px;
+  height: 22px;
 }
 .rg-wishlist-float .icon svg use {
-  fill: var(--rg-cognac, #ad6331) !important;
+  fill: var(--rg-cognac, #ad6331);
 }
 .rg-wishlist-float .header-wishlist-badge {
   position: absolute;
@@ -1672,8 +1672,8 @@ img {
 :is(.home-productslider, .cms-listing-row) .product-box,
 .home-productslider .product-box.box-image,
 .home-productslider .product-slider-item .product-box {
-  border: none !important;
-  border-radius: 12px !important;
+  border: none;
+  border-radius: 12px;
   background-color: #ffffff;
   overflow: hidden;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -1734,7 +1734,7 @@ img {
    platter en wat minder lucht in de card-body. */
 @media (max-width: 575px) {
   :is(.home-productslider, .cms-listing-row) .product-image-wrapper {
-    padding-bottom: 68% !important;
+    padding-bottom: 68%;
   }
   :is(.home-productslider, .cms-listing-row) .product-box .card-body {
     /* Minder ruimte specifiek boven de afbeelding (top) -- de gelijke
@@ -1892,7 +1892,7 @@ img {
    zijn hier de enige echte beslisinformatie. Naam naar 1 regel i.p.v. 2. */
 @media (max-width: 575px) {
   :is(.home-productslider, .cms-listing-row) .product-description {
-    display: none !important;
+    display: none;
   }
   :is(.home-productslider, .cms-listing-row) .product-name {
     display: block;
@@ -2088,7 +2088,7 @@ img {
     font-family: 'Playfair Display', Georgia, serif !important;
     font-weight: 600;
     letter-spacing: -0.018em;
-    line-height: 1.15 !important;
+    line-height: 1.15;
     color: #2d4528;
     font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
     margin: 0 0 0.35rem !important;
@@ -2450,8 +2450,8 @@ img {
    Negative margin-top trekt 'm iets boven de natuurlijke top van
    de buy-col uit, zodat 'ie wat hoger op de pagina zit. */
 .product-detail-buy .product-detail-name {
-  font-size: 2.5rem !important;
-  font-weight: 700 !important;
+  font-size: 2.5rem;
+  font-weight: 700;
   text-align: left;
   margin: -1rem 0 1.25rem 0;
   line-height: 1.1;
@@ -2460,15 +2460,15 @@ img {
 /* Mobile — h1 blijft in originele positie boven gallery, kleinere font */
 @media (max-width: 991px) {
   .product-detail-name {
-    font-size: 2rem !important;
-    font-weight: 700 !important;
+    font-size: 2rem;
+    font-weight: 700;
     text-align: left;
     margin-bottom: 1rem;
   }
 }
 @media (max-width: 576px) {
   .product-detail-name {
-    font-size: 1.75rem !important;
+    font-size: 1.75rem;
   }
 }
 
@@ -2559,12 +2559,12 @@ img {
 /* Responsive: kleinere image-height op tablet/mobile */
 @media (max-width: 991px) {
   .product-detail-media .gallery-slider-item {
-    min-height: 420px !important;
+    min-height: 420px;
   }
 }
 @media (max-width: 576px) {
   .product-detail-media .gallery-slider-item {
-    min-height: 320px !important;
+    min-height: 320px;
   }
   /* Ruimte tussen productnaam en gallery was 64px (32px eigen margin-top +
      16px naam-margin + wat restant) -- overdreven op een smal scherm. */
@@ -2641,11 +2641,11 @@ body.is-ctl-product .product-detail-ordernumber-container {
 #js-request-offer.btn-outline-primary {
   background-color: #ad6331;
   color: #fff;
-  border: 2px solid #ad6331 !important;
+  border: 2px solid #ad6331;
   box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9);
-  padding: 0.9rem 2rem !important;
-  font-weight: 700 !important;
-  font-size: 0.9rem !important;
+  padding: 0.9rem 2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 #js-request-offer.btn-outline-primary:hover,
 #js-request-offer.btn-outline-primary:focus {
@@ -2766,7 +2766,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
   --bs-table-striped-color: #000000 !important;
 }
 .product-detail-buy .table.table-striped > tbody > tr:nth-of-type(odd) > * {
-  background-color: #EAE3D7 !important;
+  background-color: #EAE3D7;
   color: #000000;
 }
 
@@ -2823,7 +2823,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
   border-top: 1px solid #EAE3D7;
 }
 .product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row:first-child {
-  border-top: none !important;
+  border-top: none;
 }
 
 /* Aantallen (eerste cel) dikgedrukt — incl. de inline qty-click span */
@@ -2928,11 +2928,11 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* Side-padding op eerste/laatste cellen */
 .product-detail-buy .custom-configurator-table > thead > tr > *:first-child,
 .product-detail-buy .custom-configurator-table > tbody > tr > *:first-child {
-  padding-left: 1.5rem !important;
+  padding-left: 1.5rem;
 }
 .product-detail-buy .custom-configurator-table > thead > tr > *:last-child,
 .product-detail-buy .custom-configurator-table > tbody > tr > *:last-child {
-  padding-right: 1.5rem !important;
+  padding-right: 1.5rem;
 }
 
 /* Override striped — alle rijen wit ipv afwisselend */
@@ -2997,8 +2997,8 @@ body.is-ctl-product .product-detail-ordernumber-container {
   .product-detail-buy .product-block-prices-grid > thead > tr > *,
   .product-detail-buy .custom-configurator-table > thead > tr > *,
   .product-detail-buy .custom-configurator-table > tbody > tr > * {
-    padding-top: 0.55rem !important;
-    padding-bottom: 0.55rem !important;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
     font-size: 0.72rem;
     white-space: nowrap;
   }
@@ -3014,13 +3014,13 @@ body.is-ctl-product .product-detail-ordernumber-container {
   .product-detail-buy .product-block-prices-grid > thead > tr > *:first-child,
   .product-detail-buy .custom-configurator-table > thead > tr > *:first-child,
   .product-detail-buy .custom-configurator-table > tbody > tr > *:first-child {
-    padding-left: 0.6rem !important;
+    padding-left: 0.6rem;
   }
   .product-detail-buy .product-block-prices-grid > tbody > tr > *:last-child,
   .product-detail-buy .product-block-prices-grid > thead > tr > *:last-child,
   .product-detail-buy .custom-configurator-table > thead > tr > *:last-child,
   .product-detail-buy .custom-configurator-table > tbody > tr > *:last-child {
-    padding-right: 0.6rem !important;
+    padding-right: 0.6rem;
   }
   /* Besparings-badge iets compacter zodat de kolom niet onnodig breed wordt */
   .product-detail-buy .product-block-prices-grid .badge,
@@ -3102,16 +3102,16 @@ body.is-ctl-product .product-detail-ordernumber-container {
   background: #F7F5F2;
 }
 .product-detail-buy .rg-qty-stepper input.form-control {
-  border: none !important;
-  border-left: 1px solid #EAE3D7 !important;
-  border-right: 1px solid #EAE3D7 !important;
-  border-radius: 0 !important;
+  border: none;
+  border-left: 1px solid #EAE3D7;
+  border-right: 1px solid #EAE3D7;
+  border-radius: 0;
   box-shadow: none;
   text-align: center;
   font-weight: 600;
   width: 64px;
   min-height: 34px;
-  padding: 0 !important;
+  padding: 0;
   -moz-appearance: textfield;
 }
 .product-detail-buy .rg-qty-stepper input[type="number"]::-webkit-outer-spin-button,
@@ -3159,7 +3159,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* Hoofdafbeelding klikbaar — cursor zoom-in als hint. */
 .product-detail-media .gallery-slider-image,
 .product-detail-media .js-magnifier-image {
-  cursor: zoom-in !important;
+  cursor: zoom-in;
 }
 
 /* Zoom-trigger button — wordt via JS toegevoegd aan de gallery-col.
@@ -3367,7 +3367,7 @@ body.is-ctl-product {
 .product-detail-tabs .tab-pane,
 .product-detail-tabs .offcanvas-body {
   background-color: #ffffff;
-  border: none !important;
+  border: none;
 }
 
 .product-detail-tabs .card.card-tabs {
@@ -3531,9 +3531,9 @@ body.is-ctl-product {
   border-radius: 0 !important;
   background-color: transparent;
   color: #2d4528;
-  padding: 0.85rem 0.25rem !important;
-  font-size: 0.95rem !important;
-  font-weight: 600 !important;
+  padding: 0.85rem 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   line-height: 1.2;
 }
 /* Chevron helemaal rechts (titel + count blijven links samen). */
@@ -3589,8 +3589,8 @@ body.is-ctl-product {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.25rem !important;
-  border: 2px solid rgba(45, 69, 40, 0.28) !important;
+  padding: 0.85rem 1.25rem;
+  border: 2px solid rgba(45, 69, 40, 0.28);
   border-radius: 50px;
   background-color: transparent;
   font-weight: 600;
@@ -3602,7 +3602,7 @@ body.is-ctl-product {
    en oogt vol-breed juist te zwaar -- daar gewoon content-breedte. */
 @media (max-width: 991px) {
   .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
-    width: 100% !important;
+    width: 100%;
   }
 }
 /* Op desktop (>=992px) staat de complete filterrij (Afmeting/Eco/Kleur/...)
@@ -3611,7 +3611,7 @@ body.is-ctl-product {
    Overbodige, niet-functionele knop dus weg op desktop. */
 @media (min-width: 992px) {
   .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
-    display: none !important;
+    display: none;
   }
 }
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon):hover {
@@ -3719,7 +3719,7 @@ body.is-ctl-product {
   color: #ad6331;
 }
 .category-navigation .category-navigation-link.is-active {
-  color: #ad6331 !important; /* actieve/geselecteerde categorie in terracotta */
+  color: #ad6331; /* actieve/geselecteerde categorie in terracotta */
   font-weight: 600;
 }
 .category-navigation.level-1 {
@@ -3846,9 +3846,9 @@ body.is-ctl-product {
   color: #ad6331;
 }
 .page-item.active .page-link {
-  background-color: #ad6331 !important;
+  background-color: #ad6331;
   border-color: #ad6331 !important;
-  color: #ffffff !important;
+  color: #ffffff;
 }
 /* Pijl-iconen (« ‹ › ») exact centreren: theme zet 'top: 2px' op de svg, dat
    neutraliseren we en de icon-span centreren we via flex. */
@@ -3895,7 +3895,7 @@ body.is-ctl-product {
   .page-item .page-link {
     min-width: 32px;
     height: 32px;
-    padding: 0 0.4rem !important;
+    padding: 0 0.4rem;
     margin: 0 0.1rem;
     font-size: 0.85rem;
   }
@@ -3956,7 +3956,7 @@ body.is-ctl-product {
     margin-bottom: 16px !important;
   }
   .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
-    padding: 0.65rem 1.25rem !important;
+    padding: 0.65rem 1.25rem;
     margin-bottom: 16px;
   }
   .sorting-label {
@@ -4002,7 +4002,7 @@ body.is-ctl-product {
    maat. Nu dezelfde clamp als alle andere sectie-koppen sitewide. */
 h2.rg-cat-heading,
 .cms-element-text h2.rg-cat-heading {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
 }
 @media (min-width: 576px) {
   .rg-cat-heading { padding: 0 40px; }
@@ -4427,8 +4427,8 @@ h2.rg-cat-heading,
   .header-search-form .form-control,
   .header-search-form input.header-search-input,
   .header-search-form input[type="search"] {
-    padding-top: 0.45rem !important;
-    padding-bottom: 0.45rem !important;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
     font-size: 0.95rem !important;
   }
 }
@@ -4588,7 +4588,7 @@ h2.rg-cat-heading,
    andere maat dan de overige sectie-koppen. Nu dezelfde clamp als de rest. */
 h3.rg-feature-row__title,
 .cms-element-text h3.rg-feature-row__title {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
 }
 
 .rg-feature-row__body p {
@@ -4822,8 +4822,8 @@ h2.rg-compare__title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
-  line-height: 1.12 !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
+  line-height: 1.12;
   margin: 0 0 0.9rem !important;
   text-wrap: balance;
 }
@@ -4984,8 +4984,8 @@ h2.rg-story__title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
-  line-height: 1.12 !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
+  line-height: 1.12;
   margin: 0 0 1.2rem !important;
   text-wrap: balance;
 }
@@ -5072,8 +5072,8 @@ h2.rg-story__title,
    zie de losse >=992px-override hieronder. */
 h2.rg-statement__title,
 .cms-element-text h2.rg-statement__title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.018em;
@@ -5083,8 +5083,8 @@ h2.rg-statement__title,
 @media (min-width: 992px) {
   h2.rg-statement__title,
   .cms-element-text h2.rg-statement__title {
-    font-size: var(--rg-text-display) !important;
-    line-height: 1.05 !important;
+    font-size: var(--rg-text-display);
+    line-height: 1.05;
     letter-spacing: -0.02em;
   }
 }
@@ -5439,8 +5439,8 @@ img.rg-europe-map__svg {
      lijn i.p.v. op de theoretische "schone" 1440-lijn ernaast. */
   .cms-section:has(.rg-page-hero) .cms-block-container,
   .cms-section:has(.rg-page-hero) .cms-block-container[style] {
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 48px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 48px) !important;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 48px);
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 48px);
   }
 
   /* 3. Grids/heading vullen de container (geen eigen horizontale opmaak) */
@@ -5489,7 +5489,7 @@ img.rg-europe-map__svg {
     max-width: none;
     margin: 0;
     padding: 0 !important;
-    overflow: visible !important;
+    overflow: visible;
   }
   /* .cms-element-product-slider: eigen regel + position:relative. Dit is de
      ECHTE ankerpositie voor de nav-knoppen (stap 5): het vult altijd exact
@@ -5588,7 +5588,7 @@ img.rg-europe-map__svg {
      (stap 4 hierboven) -> knoppen op de 1440px-lijn, tegels daar 40px van
      verwijderd: naast elkaar, geen overlap. */
   .home-productslider {
-    overflow: visible !important;
+    overflow: visible;
   }
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
@@ -5629,12 +5629,12 @@ img.rg-europe-map__svg {
     display: none;
   }
   .home-productslider .base-slider-controls button .icon {
-    display: block !important;
-    width: 18px !important;
-    height: 18px !important;
-    border-top: 4.5px solid #2d4528 !important;
-    border-right: 4.5px solid #2d4528 !important;
-    background: none !important;
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-top: 4.5px solid #2d4528;
+    border-right: 4.5px solid #2d4528;
+    background: none;
     transition: border-color 0.2s ease !important;
   }
   .home-productslider .base-slider-controls-prev .icon {
@@ -5664,8 +5664,8 @@ img.rg-europe-map__svg {
      (zoals de cat-row) in dezelfde .cms-section en schuift die 32px naar links. */
   .cms-section:has(.rg-feature-row__content) .cms-block-container-row:has(.rg-feature-row__content) {
     --bs-gutter-x: 4rem;
-    margin-left: calc(var(--bs-gutter-x) * -0.5) !important;
-    margin-right: calc(var(--bs-gutter-x) * -0.5) !important;
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
   }
 }
 
@@ -5694,7 +5694,7 @@ img.rg-europe-map__svg {
    Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
 h1.rg-theme-heading, h2.rg-theme-heading,
 .cms-element-text h1.rg-theme-heading, .cms-element-text h2.rg-theme-heading {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
 }
 .rg-theme-intro {
   color: #4a5a44;
@@ -5708,7 +5708,7 @@ h1.rg-theme-heading, h2.rg-theme-heading,
   display: block;
   overflow: hidden;
   border-radius: 18px;
-  text-decoration: none !important;
+  text-decoration: none;
   aspect-ratio: 1 / 1;
   background-color: #2d4528;
   box-shadow: 0 14px 30px -22px rgba(45, 69, 40, 0.5);
@@ -5767,7 +5767,7 @@ h1.rg-theme-heading, h2.rg-theme-heading,
 }
 h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
   font-family: 'Playfair Display', serif;
-  color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
+  color: #fff;                 /* wint van globale h1..h6 color:#2d4528 !important */
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem) !important;
   font-weight: 600;
   line-height: 1.1;
@@ -5985,7 +5985,7 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   background: #ffffff;
   border-radius: 18px;
   overflow: hidden;
-  text-decoration: none !important;
+  text-decoration: none;
   box-shadow: 0 14px 30px -24px rgba(45, 69, 40, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -6015,11 +6015,11 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
   padding: 1.5rem 1.6rem 1.7rem;
 }
 .rg-service-card__title {
-  font-family: 'Playfair Display', serif !important;
-  color: #2d4528 !important;
+  font-family: 'Playfair Display', serif;
+  color: #2d4528;
   font-size: clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem) !important;
-  font-weight: 600 !important;
-  line-height: 1.15 !important;
+  font-weight: 600;
+  line-height: 1.15;
   margin: 0 0 0.55rem 0;
   /* Voorkom mid-woord-afbreken ("Personalisat-ie") van de globale
      word-break: break-word uit het thema bij smalle kaarten. */
@@ -6057,7 +6057,7 @@ body:has(.rg-brand-grid) .cms-breadcrumb {
 .rg-service-card:hover .rg-service-card__link::after,
 .rg-service-card:focus-visible .rg-service-card__link::after { transform: translateX(4px); }
 
-body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
+body:has(.rg-service-grid) .cms-breadcrumb { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .rg-service-card,
@@ -6243,7 +6243,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
    Nu dezelfde clamp als de rest van de sectie-koppen sitewide. */
 h2.rg-block-title__title,
 .cms-element-text h2.rg-block-title__title {
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
 }
 .rg-block-title__sub {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
@@ -6355,8 +6355,8 @@ h2.rg-block-title__title,
 /* Primaire knop prominenter dan de standaard site-knop: groter + steviger
    schaduw, zodat 'ie als dé actie leest naast de tekstlink-secundair. */
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary {
-  padding: 1.05rem 2.4rem !important;
-  font-size: 1.02rem !important;
+  padding: 1.05rem 2.4rem;
+  font-size: 1.02rem;
   box-shadow: 0 14px 30px -10px rgba(173, 99, 49, 0.95);
 }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover {
@@ -6592,10 +6592,10 @@ h2.rg-block-title__title,
 h2.rg-endcta__title,
 .cms-element-text h2.rg-endcta__title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 600 !important;
+  font-weight: 600;
   color: #2d4528;
-  font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.2rem) !important;
-  line-height: 1.06 !important;
+  font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.2rem);
+  line-height: 1.06;
   letter-spacing: -0.01em;
   margin: 0 !important;
   text-wrap: balance;
@@ -6952,7 +6952,7 @@ h1.rg-sd__title,
      unificerende regel, waardoor deze H1 kleiner oogde dan de andere
      hero-titels sitewide. Nu dezelfde maat als .rg-hero-v2__title. */
   font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem) !important;
-  line-height: 1.06 !important;
+  line-height: 1.06;
   letter-spacing: -0.01em;
   margin: 0 0 1.1rem;
   text-wrap: balance;
@@ -6967,9 +6967,9 @@ h1.rg-sd__title,
 h1.rg-sd__title em,
 .cms-element-text h1.rg-sd__title em,
 .rg-sd__step-nr {
-  font-style: normal !important;
+  font-style: normal;
   font-synthesis: none;
-  font-weight: 600 !important;
+  font-weight: 600;
   display: inline-block;
   transform: skewX(-14deg);
 }
@@ -7019,7 +7019,7 @@ h2.rg-sd__head-title,
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
   line-height: 1.12;
   margin: 0 !important;
   text-wrap: balance;
@@ -7064,7 +7064,7 @@ h3.rg-sd__step-title,
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.45rem) !important;
+  font-size: clamp(1.15rem, 1rem + 0.5vw, 1.45rem);
   line-height: 1.2;
   margin: 0 0 0.5rem;
 }
@@ -7154,8 +7154,8 @@ h2.rg-sd__panel-title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600;
   color: #ffffff;
-  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
-  line-height: 1.12 !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
+  line-height: 1.12;
   margin: 0 0 1.9rem !important;
   text-wrap: balance;
 }
@@ -7341,8 +7341,8 @@ h3.rg-sd__journey-title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem) !important;
-  line-height: 1.2 !important;
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem);
+  line-height: 1.2;
   margin: 0 0 0.4rem;
   text-wrap: balance;
 }
@@ -7471,8 +7471,8 @@ h2.rg-sd__ask-title,
   font-family: 'Playfair Display', serif !important;
   font-weight: 600;
   color: #ffffff;
-  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem) !important;
-  line-height: 1.15 !important;
+  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem);
+  line-height: 1.15;
   margin: 0 0 0.6rem !important;   /* was 0.5rem -- iets ruimer, in lijn met de marge erboven */
 }
 .rg-sd__ask-text {
@@ -7532,9 +7532,9 @@ h2.rg-sd__ask-title,
 h1.rg-faq-title,
 .cms-element-text h1.rg-faq-title {
   font-family: 'Playfair Display', serif;
-  font-weight: 700 !important;
+  font-weight: 700;
   color: #2d4528;
-  font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem) !important;
+  font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem);
   line-height: 1.1;
   margin: 0 0 0.8rem;
   text-wrap: balance;
@@ -7544,7 +7544,7 @@ h2.rg-faq-cat,
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: #2d4528;
-  font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.7rem) !important;
+  font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.7rem);
   line-height: 1.2;
   margin: 2.6rem 0 1rem !important;
   padding-top: 1.4rem;
@@ -7780,9 +7780,9 @@ h2.rg-faq-cat,
 h1.rg-contact-head__title,
 .cms-element-text h1.rg-contact-head__title {
   font-family: 'Playfair Display', serif;
-  font-weight: 800 !important;
+  font-weight: 800;
   color: #2d4528;
-  font-size: clamp(2rem, 1.4rem + 2vw, 3rem) !important;
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
   line-height: 1.1;
   margin: 0 0 0.55rem;
 }
@@ -8108,8 +8108,8 @@ h1.rg-contact-head__title,
   grid-column: 1 / -1;
   justify-self: center;
   margin-top: 0.5rem;
-  padding: 0.95rem 2.5rem !important;
-  font-size: 1.05rem !important;
+  padding: 0.95rem 2.5rem;
+  font-size: 1.05rem;
   min-width: 260px;
 }
 @media (max-width: 575px) {
@@ -8299,7 +8299,7 @@ h1.rg-contact-head__title,
 .rg-sd__title, h1.rg-sd__title,
 .rg-endcta__title, h2.rg-endcta__title{
   font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-weight:700;
   letter-spacing:-.021em !important;
   line-height:1.0;
   color:var(--rg-green);
@@ -8311,8 +8311,8 @@ h1.rg-contact-head__title,
    dezelfde rol speelt -- nu volledig gelijk). .rg-statement__title (Europa-
    kaart-sectie) hoort hier NIET meer bij: dat is semantisch een gewone
    sectie-H2 die per ongeluk hero-schaal had gekregen (sectie 5006/41.2). */
-.rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
+.rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem); }
+.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem); }
 .rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem); }
 .rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem); }
 /* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
@@ -8349,11 +8349,11 @@ h1.rg-contact-head__title,
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:600;
   letter-spacing:-.018em;
-  line-height:1.08 !important;
+  line-height:1.08;
   color:var(--rg-green);
   text-wrap:balance;
 }
-.rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
+.rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff; } /* op groen paneel */
 .rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff; } /* op groen paneel */
 .rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em,
 .rg-compare__title em, .rg-story__title em, .rg-statement__title em,
@@ -8375,7 +8375,7 @@ h2.rg-statement__title em{
    Alleen >=992px (daaronder stapelt alles al naar 1fr). */
 @media (min-width:992px){
   /* Service-hero: kop-dominante copy, ondersteunend beeld */
-  .rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr) !important; }
+  .rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr); }
   /* Feature-rijen (.rg-sd__row/.rg-feature-row) hadden hier bewust een
      1.08/0.92-asymmetrie (beeld altijd de bredere kolom); teruggedraaid naar
      strak 50/50 omdat de gutter bij afwisselend beeld links/rechts anders
@@ -8419,16 +8419,16 @@ h2.rg-statement__title em{
    gestapeld, en de rij van 4 staat als 2x2 vierkant i.p.v. 4 gestapelde
    tegels -- scheelt flink in scrollhoogte t.o.v. de oude opzet. */
 .rg-theme-hero{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin:0 0 0.75rem; }
-.rg-theme-hero .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
-.rg-theme-hero .rg-theme-tile--feature{ grid-column:1/-1; grid-row:auto; aspect-ratio:16/10 !important; }
+.rg-theme-hero .rg-theme-tile{ aspect-ratio:1/1; height:auto; }
+.rg-theme-hero .rg-theme-tile--feature{ grid-column:1/-1; grid-row:auto; aspect-ratio:16/10; }
 
 .rg-theme-row4{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; }
-.rg-theme-row4 .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
+.rg-theme-row4 .rg-theme-tile{ aspect-ratio:1/1; height:auto; }
 
 /* Compacte tegels (middelgroot + klein) -> minder padding en een kleinere
    kop, anders breekt de standaard titelgrootte midden-in-het-woord. */
 .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) .rg-theme-tile__body,
-.rg-theme-row4 .rg-theme-tile__body{ padding:0.85rem !important; }
+.rg-theme-row4 .rg-theme-tile__body{ padding:0.85rem; }
 .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
 .rg-theme-row4 h3.rg-theme-tile__title,
 .cms-element-text .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
@@ -8447,9 +8447,9 @@ h2.rg-statement__title em{
      een vlakkere rij-van-4 (16:9 i.p.v. 4:3) voor minder scrollhoogte. */
   .rg-theme-hero{ grid-template-columns:1.5fr 1fr; grid-template-rows:1fr 1fr; margin-bottom:1rem; }
   .rg-theme-hero .rg-theme-tile{ aspect-ratio:auto !important; height:100%; min-height:220px; }
-  .rg-theme-hero .rg-theme-tile--feature{ grid-column:1 !important; grid-row:1 / 3 !important; }
+  .rg-theme-hero .rg-theme-tile--feature{ grid-column:1; grid-row:1 / 3; }
   .rg-theme-row4{ grid-template-columns:repeat(4,1fr); }
-  .rg-theme-row4 .rg-theme-tile{ aspect-ratio:16/9 !important; height:auto; }
+  .rg-theme-row4 .rg-theme-tile{ aspect-ratio:16/9; height:auto; }
   .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
   .rg-theme-row4 h3.rg-theme-tile__title,
   .cms-element-text .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
@@ -8634,12 +8634,12 @@ h2.rg-statement__title em{
 
 /* ---- Gedeelde typografie ---- */
 h1.rg-route__title{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:700;
   letter-spacing:-.01em;
   line-height:1.05;
   color:var(--rg-green);
-  font-size:var(--rg-text-display) !important;
+  font-size:var(--rg-text-display);
   max-width:16ch;
   margin:0 0 var(--rg-space-lg) !important;
   text-wrap:balance;
@@ -8929,7 +8929,7 @@ h1.rg-route__title em{
 /* In de halve kolommen (stop 1/2) is de display-maat een slag kleiner, anders
    wrapt een kopregel als "De wereld werd grilliger." ongewenst af. */
 .rg-route__stop:not(.rg-route__stop--wide) h2.rg-route__stop-title{
-  font-size:clamp(1.8rem, 1.2rem + 1.5vw, 2.4rem) !important;
+  font-size:clamp(1.8rem, 1.2rem + 1.5vw, 2.4rem);
 }
 .rg-route__stop--right .rg-route__body{ margin-left:auto; }
 .rg-route__stop--wide .rg-route__body{ max-width:none; text-align:center; }
@@ -8961,11 +8961,11 @@ h1.rg-route__title em{
 
 h2.rg-route__stop-title{
   font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-weight:700;
   letter-spacing:-.018em;
   line-height:1.08;
   color:var(--rg-green);
-  font-size:clamp(1.9rem, 1.3rem + 2vw, 3rem) !important;
+  font-size:clamp(1.9rem, 1.3rem + 2vw, 3rem);
   margin:0 0 1.1rem !important;
   text-wrap:balance;
 }
@@ -9016,10 +9016,10 @@ h2.rg-route__stop-title{
   margin:0 auto 1rem;
 }
 .rg-route__root h3{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:700;
   color:var(--rg-green);
-  font-size:1.3rem !important;
+  font-size:1.3rem;
   line-height:1.2;
   margin:0 0 .55rem;
 }
@@ -9049,12 +9049,12 @@ h2.rg-route__stop-title{
   box-shadow: 0 30px 60px -30px rgba(45, 69, 40, 0.45);
 }
 h3.rg-route__panel-title{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:700;
   letter-spacing:-.018em;
   line-height:1.1;
-  color:#fff !important;
-  font-size:clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem) !important;
+  color:#fff;
+  font-size:clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem);
   margin:0 0 1rem;
 }
 .rg-route__panel p{ color:rgba(255,255,255,.88); max-width:56ch; }
@@ -9097,11 +9097,11 @@ h3.rg-route__panel-title{
 }
 h2.rg-route__team-title{
   font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700 !important;
+  font-weight:700;
   letter-spacing:-.018em;
   line-height:1.08;
   color:var(--rg-green);
-  font-size:clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem) !important;
+  font-size:clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
   margin:0 !important;
 }
 .rg-route__team-grid{
@@ -9218,7 +9218,7 @@ h2.rg-route__team-title{
 .rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{
   color:#fff;
 }
-.rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{ color:rgba(255,255,255,.82) !important; }
+.rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{ color:rgba(255,255,255,.82); }
 .rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-arrow{
   background:rgba(255,255,255,.2); color:#fff;
 }
@@ -11348,7 +11348,7 @@ h2.rg-route__team-title{
 .rg-page-hero--band .rg-page-hero__title {
   margin: 0 0 1rem;
   max-width: 24ch;
-  line-height: 1.06 !important;
+  line-height: 1.06;
   font-size: clamp(2rem, 1.05rem + 3vw, 3.5rem);
 }
 
@@ -11562,7 +11562,7 @@ h2.rg-route__team-title{
 
 /* Sectie 10 zet hier 1.75rem 1.5rem !important; dat is lucht die de tegel
    alleen hoger maakt. */
-.rg-band-pagina .rg-band .product-box .card-body { padding: 10px 10px 14px !important; }
+.rg-band-pagina .rg-band .product-box .card-body { padding: 10px 10px 14px; }
 
 /* Eén vaste verhouding voor elke tegel: een vierkant beeldvlak, beeld met
    contain en lucht eromheen. Nodig omdat de beeldverhoudingen van het
@@ -11574,8 +11574,8 @@ h2.rg-route__team-title{
    wrapper (68% onder 576px) en twee verhoudingssystemen naast elkaar
    leverden eerder een beeldvlak van 169x143 op. Meedoen met wat er staat. */
 .rg-band-pagina .rg-band .product-image-wrapper {
-  padding-bottom: 100% !important;
-  margin-bottom: 10px !important;
+  padding-bottom: 100%;
+  margin-bottom: 10px;
   border-radius: calc(var(--rg-r-xp) - 8px) !important;
 }
 @media (max-width: 575px) {
@@ -11606,8 +11606,8 @@ h2.rg-route__team-title{
    de naam donkergroen. */
 .rg-band-pagina .rg-band .product-info { padding: 0 4px; }
 .rg-band-pagina .rg-band .product-name {
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   white-space: normal;               /* sectie 10 zet nowrap onder 576px */
@@ -11619,8 +11619,8 @@ h2.rg-route__team-title{
   line-height: 1.35;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 600 !important;
-  color: var(--rg-cognac) !important;
+  font-weight: 600;
+  color: var(--rg-cognac);
   text-decoration: none;
 }
 .rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac-deep) !important; }
@@ -11631,10 +11631,10 @@ h2.rg-route__team-title{
   color: var(--rg-ink);
 }
 .rg-band-pagina .rg-band .product-price {
-  font-weight: 600 !important;
+  font-weight: 600;
   font-size: 0.92rem;
   margin-left: 0;
-  color: var(--rg-ink) !important;
+  color: var(--rg-ink);
 }
 
 /* ---------- 53.5 de link onder de band ---------- */
@@ -11784,8 +11784,8 @@ h2.rg-route__team-title{
    De !important's zijn tegen 41.1 (gewicht 700 en grootte, beide
    !important) en tegen sectie 53 (grootte). */
 .rg-page-hero--band .rg-page-hero__title {
-  font-size: clamp(2.25rem, 1.1rem + 3.4vw, 4rem) !important;
-  font-weight: 500 !important;
+  font-size: clamp(2.25rem, 1.1rem + 3.4vw, 4rem);
+  font-weight: 500;
   letter-spacing: -0.012em !important;
   margin-bottom: 0.9rem;
 }
@@ -11851,8 +11851,8 @@ h2.rg-route__team-title{
      Berekend circa 300 x 53 px in plaats van 253 x 48. Alleen desktop;
      op mobiel is 48 px hoog en 72% van de kolom al goed. */
   .rg-page-hero--band .rg-page-hero__cta .btn {
-    font-size: 1.02rem !important;
-    padding: 1.05rem 2.4rem !important;
+    font-size: 1.02rem;
+    padding: 1.05rem 2.4rem;
   }
   .rg-page-hero--band .rg-page-hero__logos img { height: 44px; }
   /* De link onder de band stond op x=213 onder een hero die rond x=965
@@ -12356,14 +12356,14 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
     line-height: 1.3;
     letter-spacing: 0;
     text-transform: none;
-    font-weight: 500 !important;
-    color: var(--rg-green) !important;
+    font-weight: 500;
+    color: var(--rg-green);
     min-height: 2.6em;
-    margin-bottom: 6px !important;
+    margin-bottom: 6px;
   }
   .rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac) !important; }
   .rg-band-pagina .rg-band .product-price-wrapper,
-  .rg-band-pagina .rg-band .product-price { font-size: 0.95rem !important; }
+  .rg-band-pagina .rg-band .product-price { font-size: 0.95rem; }
 }
 @media (min-width: 400px) and (max-width: 991px) {
   .rg-page-hero--band .rg-page-hero__cijfers { font-size: 1rem; }
@@ -12443,8 +12443,8 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
 }
 /* Iconen op 16 px van de rand (ikoon zelf 20 px in een knop met 12 px padding) */
 @media (min-width: 400px) and (max-width: 991px) {
-  .header-row .rg-header-hamburger-slot { padding-left: 16px !important; }
-  .header-row .header-actions-col { padding-right: 14px !important; }
+  .header-row .rg-header-hamburger-slot { padding-left: 16px; }
+  .header-row .header-actions-col { padding-right: 14px; }
 }
 /* Heel smal (iPhone SE 1e generatie en kleiner): logo kleiner, anders is er
    geen ruimte voor het logo in het midden tussen de twee icoonblokken */
@@ -12632,4 +12632,53 @@ html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { displ
   background-color: currentColor;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.6l5 5 10-10.6'/%3E%3C/svg%3E") center / 118% no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.6l5 5 10-10.6'/%3E%3C/svg%3E") center / 118% no-repeat;
+}
+
+/* ============================================================
+   63. CATEGORIENAVIGATIE OP MOBIEL (<768px), 11 november 2026
+   ------------------------------------------------------------
+   Het thema verbergt .cms-block-category-navigation onder 768px
+   (theme/css/all.css: display:none). Een mobiele bezoeker op
+   /alle-producten/ of in een categorie kon dus niet naar een andere
+   categorie zonder het hamburgermenu. De links staan wel in de HTML
+   (13 op /alle-producten/). Hier als horizontaal scrollende rij pillen
+   boven het raster, in plaats van de verticale lijst van desktop, zodat
+   de producten niet omlaag gedrukt worden. Boven 768px verandert er niets.
+   ============================================================ */
+@media (max-width: 767.98px) {
+  .cms-block-category-navigation {
+    display: block;
+    /* de zijkolom heeft hier 40px zij-padding (Bootstrap col), de rest van de pagina niet */
+    margin-inline: -40px;
+  }
+  /* het blok draagt inline padding:0 0 30px 0, vandaar !important */
+  .cms-block-category-navigation .cms-block-container { padding: 0 0 12px 0 !important; }
+  .cms-block-category-navigation .category-navigation.level-0 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0 0 4px;
+    list-style: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .cms-block-category-navigation .category-navigation.level-0::-webkit-scrollbar { display: none; }
+  .cms-block-category-navigation .category-navigation.level-0 > .category-navigation-entry {
+    flex: none;
+    border: 0;
+  }
+  .cms-block-category-navigation .category-navigation-link {
+    padding: 0.45rem 0.95rem;
+    border: 1px solid #EAE3D7;
+    border-radius: 50px;
+    background: #fff;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+  .cms-block-category-navigation .category-navigation-link.is-active {
+    border-color: #ad6331;
+  }
+  .cms-block-category-navigation .category-navigation.level-1 { display: none; }
 }

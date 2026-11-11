@@ -1,0 +1,2 @@
+./vergelijk-alles.sh:6: no matches found: verg-r3b-*.txt
+31 paginatypes x 3 breedtes: 93 metingen, 93 zonder verschil

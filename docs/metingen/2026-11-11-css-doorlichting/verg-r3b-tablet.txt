@@ -1,0 +1,33 @@
+CSS: 508024 bytes, 1767 blokken gemarkeerd
+tablet   /                            elementen=2026 VERSCHIL op 0 elementen 
+tablet   /alle-producten/             elementen=1556 VERSCHIL op 0 elementen 
+tablet   /huis-keuken/                elementen=1581 VERSCHIL op 0 elementen 
+tablet   /Borrelplank/A1352-Kerst1    elementen=898 VERSCHIL op 0 elementen 
+tablet   /eindejaarsgeschenken        elementen=1092 VERSCHIL op 0 elementen 
+tablet   /thema-s/                    elementen=1520 VERSCHIL op 0 elementen 
+tablet   /offerte                     elementen=540 VERSCHIL op 0 elementen 
+tablet   /over-ons                    elementen=638 VERSCHIL op 0 elementen 
+tablet   /merken/                     elementen=565 VERSCHIL op 0 elementen 
+tablet   /contact                     elementen=684 VERSCHIL op 0 elementen 
+tablet   /search?search=kerstbal      elementen=649 VERSCHIL op 0 elementen 
+tablet   /dag-van-de-leraar           elementen=1095 VERSCHIL op 0 elementen 
+tablet   /events-conferenties         elementen=1043 VERSCHIL op 0 elementen 
+tablet   /faq                         elementen=624 VERSCHIL op 0 elementen 
+tablet   /full-service-ontzorging     elementen=651 VERSCHIL op 0 elementen 
+tablet   /medewerker-merchandise      elementen=1046 VERSCHIL op 0 elementen 
+tablet   /onboarding-welkomstpakket   elementen=1192 VERSCHIL op 0 elementen 
+tablet   /services/                   elementen=578 VERSCHIL op 0 elementen 
+tablet   /verzending-naar-meerdere-locaties elementen=625 VERSCHIL op 0 elementen 
+tablet   /warehousing-fulfillment     elementen=615 VERSCHIL op 0 elementen 
+tablet   /alle-thema-s                elementen=575 VERSCHIL op 0 elementen 
+tablet   /wishlist                    elementen=493 VERSCHIL op 0 elementen 
+tablet   /algemeen/algemene-voorwaarden/ elementen=670 VERSCHIL op 0 elementen 
+tablet   /thema-s/winter/             elementen=716 VERSCHIL op 0 elementen 
+tablet   /thema-s/made-in-nl/         elementen=1551 VERSCHIL op 0 elementen 
+tablet   /thema-s/kerstpakketten-eindejaar/ elementen=858 VERSCHIL op 0 elementen 
+tablet   /tassen-reizen/              elementen=1748 VERSCHIL op 0 elementen 
+tablet   /eten-drinken/               elementen=1312 VERSCHIL op 0 elementen 
+tablet   /informatie/nieuwsbrief/     elementen=557 VERSCHIL op 0 elementen 
+tablet   /blog/                       elementen=580 VERSCHIL op 0 elementen 
+tablet   /elektronica/                elementen=630 VERSCHIL op 0 elementen 
+weggeschreven: vergelijk-r3b-tablet.json

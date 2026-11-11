@@ -49,7 +49,7 @@ for (const vp of gekozen) {
       menu = (await send('Runtime.evaluate', { expression: `(() => { const b = document.querySelector('.nav-main-toggle-btn, .menu-button button'); if (!b) return 'geen-knop'; b.click(); return 'geklikt'; })()`, returnByValue: true }, sid)).result.value;
       await sleep(1500);
     }
-    if (process.env.EXPR) { console.log(JSON.stringify((await send('Runtime.evaluate', { expression: process.env.EXPR, returnByValue: true }, sid)).result.value)); if (process.env.NUUR) continue; }
+    if (process.env.EXPR) { console.log(JSON.stringify((await send('Runtime.evaluate', { expression: process.env.EXPR, returnByValue: true, awaitPromise: true }, sid)).result.value)); if (process.env.NUUR) continue; }
     const r = await send('Runtime.evaluate', { expression: `(${analyse})(${JSON.stringify(VERGELIJK ? cssBron : cssGemarkeerd)}, ${JSON.stringify(VERGELIJK ? fs.readFileSync(path.resolve(process.env.CSSB), 'utf8') : (VALIDEER ? REGELS : {}))})`, awaitPromise: true, returnByValue: true, timeout: 120000 }, sid);
     const v = r.result.value;
     if (!v || v.fout) { console.log(`${vp} ${pad}: FOUT ${JSON.stringify(v || r.exceptionDetails || r).slice(0, 200)}`); continue; }

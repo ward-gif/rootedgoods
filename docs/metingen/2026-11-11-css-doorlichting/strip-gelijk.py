@@ -7,7 +7,10 @@ H=os.path.dirname(os.path.abspath(__file__))
 inv,uit=sys.argv[1],sys.argv[2]
 van,tot=(int(sys.argv[3]),int(sys.argv[4])) if len(sys.argv)>4 else (1,10**9)
 t=open(inv,encoding='utf-8').read()
-o=json.load(open(os.path.join(H,'oordeel-per-longhand.json')))
+import os as _o
+o=json.load(open(os.path.join(H,_o.environ.get('OORDEEL','oordeel-per-longhand.json'))))
+ALLES=bool(_o.environ.get('ALLES'))
+DYN=re.compile(r':(hover|focus|focus-visible|focus-within|active|checked|disabled|enabled|visited|target|placeholder-shown|invalid|valid|read-only|indeterminate|-webkit-autofill)\b')
 per={}
 for k,v in o.items():
     l,p=k.split('|'); per.setdefault(int(l),{})[p]=v['oordeel']
@@ -32,8 +35,12 @@ wijz=[];n_decl=0;n_reg=0
 for l in sorted(per):
     if not(van<=l<=tot): continue
     props=per[l]
-    if 'nodig' not in props.values(): continue   # alleen gemengde regels; 'alles gelijk' is al gedaan
+    if not ALLES and 'nodig' not in props.values(): continue   # standaard alleen gemengde regels
     j=t.index('{',starts[l-1]);k=t.index('}',j);blok=t[j+1:k]
+    # selector erbij: regels met toestand-pseudo's overslaan (die meet toestand.mjs)
+    a=j
+    while a>0 and t[a-1] not in '};/' : a-=1
+    if DYN.search(t[a:j]): continue
     nieuw=[];ch=False
     for d in splits(blok):
         m=re.match(r'^(\s*)([a-z-]+)(\s*:\s*)(.*?)(\s*!important)(\s*)$',d,flags=re.S)

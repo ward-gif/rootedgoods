@@ -1,0 +1,36 @@
+bronnen ['meting-v2-desktop.json', 'meting-v2-menu.json', 'meting-v2-mobiel.json', 'meting-v2-tablet.json'], 101 metingen (pagina x viewport), 2136 !important-longhands
+  nodig           179    8.4%
+  gelijk          244   11.4%
+  niet-gemeten   1713   80.2%
+per regel (351 regels met !important):
+  nodig                     94
+  alles gelijk              20
+  alles niet-gemeten       237
+  gelijk + niet-gemeten      0
+
+sectie                                                        long  nodig gelijk n.gem.
+6c. OFFCANVAS-MENU (mobiel/tablet, <992px) — merk-typograf     525     64    106    355
+49. WINKELMAND + CHECKOUT (.cart-offcanvas / .checkout-*)      374      0      0    374
+49.15 CHECKOUT — bevestigingspagina (/checkout/confirm,        260      0      0    260
+49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)     118      0      0    118
+41. SERVICE-DETAIL (.rg-sd) — losse pagina per service          95     10     22     63
+49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)          82      0      0     82
+40. AANVRAAGFORMULIER (#request-offer-container) — offerte      75      0      0     75
+40b. CONTACTFORMULIER — zelfde premium look als sectie 40       73      0      0     73
+53. THEMA-HERO MET PRODUCTBAND — .rg-page-hero--band            62     17     38      7
+40c. CUSTOM OFFERTE- EN AANVRAAGFORMULIEREN (cioform) — éé      60      5     20     35
+42. OVER ONS (.rg-route) — "De Route van Rooted"                50     19     18     13
+29. BRAND-STATEMENT — typografie links + Europa-kaart rech      44      1      4     39
+41. EDITORIAL SYSTEEM (globaal) — CSS-only, geen re-paste       41     17      2     22
+51. THEMA-LANDINGSPAGINA — hero zonder beeld + productrast      36      0      0     36
+30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhanke      35     13     13      9
+49.13b CHECKOUT — betaal- en verzendmethode (payment-metho      27      0      0     27
+26. RESPONSIVE TUNING — desktop + split-screen                  18      1      0     17
+59. LADEN VAN DE THEMAPAGINA: DE STAND VÓÓR DE BAND-JS GEL      16      0      0     16
+ROOTED GOODS - CUSTOM STYLESHEET                                14      8      2      4
+25b. PRODUCT-SLIDER — uitlijnen met de categorie-sectie +       12      0      0     12
+
+REGRESSIE: 1 weggehaalde longhands die op een extra pagina wel nodig blijken
+  r3962 display: mobiel /alle-producten/: none -> inline
+
+gelijk-regels-na-extra.json: 20 regels, 84 longhands

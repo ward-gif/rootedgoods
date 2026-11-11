@@ -6,7 +6,8 @@ niet-gemeten= alleen geen-match, media-uit of niet-meetbaar (hover, JS-staten, w
 import json, re, sys, os
 HIER = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HIER, '../../..'))
-bronnen = [f for f in ('meting.json', 'meting-menu.json', 'meting-extra.json') if os.path.exists(os.path.join(HIER, f))]
+import glob
+bronnen = sorted(os.path.basename(f) for f in glob.glob(os.path.join(HIER, 'meting-v2-*.json')))
 css = open(os.path.join(REPO, 'rootedgoods.css'), encoding='utf-8').read().split('\n')
 runs = 0; per = {}  # (l,p) -> {'st': set, 'n': max, 'd': eerste verschil}
 for f in bronnen:

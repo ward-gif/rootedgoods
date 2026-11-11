@@ -1,0 +1,33 @@
+CSS: 508024 bytes, 1767 blokken gemarkeerd
+tablet   /                            geladen=true menu=null regels=1765 metingen=2136 {"nodig":55,"geen-match":1807,"media-uit":150,"gelijk":35,"niet-meetbaar":89}
+tablet   /alle-producten/             geladen=true menu=null regels=1765 metingen=2136 {"nodig":44,"geen-match":1781,"media-uit":150,"gelijk":72,"niet-meetbaar":89}
+tablet   /huis-keuken/                geladen=true menu=null regels=1765 metingen=2136 {"nodig":44,"geen-match":1781,"media-uit":150,"gelijk":72,"niet-meetbaar":89}
+tablet   /Borrelplank/A1352-Kerst1    geladen=true menu=null regels=1765 metingen=2136 {"nodig":37,"geen-match":1827,"media-uit":150,"gelijk":33,"niet-meetbaar":89}
+tablet   /eindejaarsgeschenken        geladen=true menu=null regels=1765 metingen=2136 {"nodig":62,"geen-match":1753,"media-uit":150,"gelijk":82,"niet-meetbaar":89}
+tablet   /thema-s/                    geladen=true menu=null regels=1765 metingen=2136 {"nodig":44,"geen-match":1781,"media-uit":150,"gelijk":72,"niet-meetbaar":89}
+tablet   /offerte                     geladen=true menu=null regels=1765 metingen=2136 {"nodig":27,"geen-match":1839,"media-uit":150,"gelijk":31,"niet-meetbaar":89}
+tablet   /over-ons                    geladen=true menu=null regels=1765 metingen=2136 {"nodig":46,"geen-match":1818,"media-uit":150,"gelijk":33,"niet-meetbaar":89}
+tablet   /merken/                     geladen=true menu=null regels=1765 metingen=2136 {"nodig":28,"geen-match":1856,"media-uit":150,"gelijk":13,"niet-meetbaar":89}
+tablet   /contact                     geladen=true menu=null regels=1765 metingen=2136 {"nodig":31,"geen-match":1825,"media-uit":150,"gelijk":41,"niet-meetbaar":89}
+tablet   /search?search=kerstbal      geladen=true menu=null regels=1765 metingen=2136 {"nodig":35,"geen-match":1810,"media-uit":150,"gelijk":52,"niet-meetbaar":89}
+tablet   /dag-van-de-leraar           geladen=true menu=null regels=1765 metingen=2136 {"nodig":62,"geen-match":1753,"media-uit":150,"gelijk":82,"niet-meetbaar":89}
+tablet   /events-conferenties         geladen=true menu=null regels=1765 metingen=2136 {"nodig":62,"geen-match":1753,"media-uit":150,"gelijk":82,"niet-meetbaar":89}
+tablet   /faq                         geladen=true menu=null regels=1765 metingen=2136 {"nodig":31,"geen-match":1843,"media-uit":150,"gelijk":23,"niet-meetbaar":89}
+tablet   /full-service-ontzorging     geladen=true menu=null regels=1765 metingen=2136 {"nodig":45,"geen-match":1817,"media-uit":150,"gelijk":35,"niet-meetbaar":89}
+tablet   /medewerker-merchandise      geladen=true menu=null regels=1765 metingen=2136 {"nodig":62,"geen-match":1753,"media-uit":150,"gelijk":82,"niet-meetbaar":89}
+tablet   /onboarding-welkomstpakket   geladen=true menu=null regels=1765 metingen=2136 {"nodig":62,"geen-match":1753,"media-uit":150,"gelijk":82,"niet-meetbaar":89}
+tablet   /services/                   geladen=true menu=null regels=1765 metingen=2136 {"nodig":32,"geen-match":1845,"media-uit":150,"gelijk":20,"niet-meetbaar":89}
+tablet   /verzending-naar-meerdere-locaties geladen=true menu=null regels=1765 metingen=2136 {"nodig":40,"geen-match":1823,"media-uit":150,"gelijk":34,"niet-meetbaar":89}
+tablet   /warehousing-fulfillment     geladen=true menu=null regels=1765 metingen=2136 {"nodig":40,"geen-match":1823,"media-uit":150,"gelijk":34,"niet-meetbaar":89}
+tablet   /alle-thema-s                geladen=true menu=null regels=1765 metingen=2136 {"nodig":32,"geen-match":1842,"media-uit":150,"gelijk":23,"niet-meetbaar":89}
+tablet   /wishlist                    geladen=true menu=null regels=1765 metingen=2136 {"nodig":30,"geen-match":1854,"media-uit":150,"gelijk":13,"niet-meetbaar":89}
+tablet   /algemeen/algemene-voorwaarden/ geladen=true menu=null regels=1765 metingen=2136 {"nodig":27,"geen-match":1858,"media-uit":150,"gelijk":12,"niet-meetbaar":89}
+tablet   /thema-s/winter/             geladen=true menu=null regels=1765 metingen=2136 {"nodig":38,"geen-match":1806,"media-uit":150,"gelijk":53,"niet-meetbaar":89}
+tablet   /thema-s/made-in-nl/         geladen=true menu=null regels=1765 metingen=2136 {"nodig":44,"geen-match":1781,"media-uit":150,"gelijk":72,"niet-meetbaar":89}
+tablet   /thema-s/kerstpakketten-eindejaar/ geladen=true menu=null regels=1765 metingen=2136 {"nodig":38,"geen-match":1806,"media-uit":150,"gelijk":53,"niet-meetbaar":89}
+tablet   /tassen-reizen/              geladen=true menu=null regels=1765 metingen=2136 {"nodig":46,"geen-match":1781,"media-uit":150,"gelijk":70,"niet-meetbaar":89}
+tablet   /eten-drinken/               geladen=true menu=null regels=1765 metingen=2136 {"nodig":46,"geen-match":1781,"media-uit":150,"gelijk":70,"niet-meetbaar":89}
+tablet   /informatie/nieuwsbrief/     geladen=true menu=null regels=1765 metingen=2136 {"nodig":27,"geen-match":1858,"media-uit":150,"gelijk":12,"niet-meetbaar":89}
+tablet   /blog/                       geladen=true menu=null regels=1765 metingen=2136 {"nodig":31,"geen-match":1837,"media-uit":150,"gelijk":29,"niet-meetbaar":89}
+tablet   /elektronica/                geladen=true menu=null regels=1765 metingen=2136 {"nodig":38,"geen-match":1806,"media-uit":150,"gelijk":53,"niet-meetbaar":89}
+weggeschreven: meting-v2-tablet.json

@@ -879,6 +879,16 @@ document.addEventListener('DOMContentLoaded', function () {
     Cal.config = Cal.config || {};
     Cal.config.forwardQueryParams = true;
     Cal.ns.kennismakingsgesprek("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#ad6331" } }, hideEventTypeDetails: false, layout: "month_view" });
+    // Meting: een geboekt kennismakingsgesprek wordt een eigen dataLayer-event
+    // (belafspraak_gepland), zodat GTM het naar GA4 en Ads kan sturen. Geen
+    // persoonsgegevens meesturen: alleen dat er geboekt is en op welke pagina.
+    Cal.ns.kennismakingsgesprek("on", {
+      action: "bookingSuccessful",
+      callback: function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "belafspraak_gepland", cal_namespace: "kennismakingsgesprek", pagina: location.pathname });
+      }
+    });
   }
   document.querySelectorAll('[data-cal-link]').forEach(function (el) {
     el.addEventListener('pointerenter', start, { once: true });
