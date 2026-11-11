@@ -1,0 +1,30 @@
+
+### A. Doel-events, hele periode
+    basis: eventCount, totalUsers per eventName | 2026-10-06 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+### B. Doel-events, laatste 14 dagen
+    basis: zelfde, 29 okt t/m 11 nov | 2026-10-29 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+### C. generate_lead per dag
+    basis: eventCount per datum | 2026-10-06 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+### D. generate_lead/contact per pagina
+    basis: eventCount per pagePath | 2026-10-06 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+### E. Events op /contact, /offerte en de configurator-aanvraag
+    basis: eventCount per pagePath en eventName | 2026-10-06 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+### F. form_id bij generate_lead
+    basis: eventCount per customEvent:form_id (alleen als als dimensie geregistreerd) | 2026-10-06 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+### G. Sessies en key events per kanaal, laatste 14 dagen
+    basis: sessies en keyEvents per sessionDefaultChannelGroup | 2026-10-29 t/m 2026-11-11
+    NIET GEMETEN: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.
+
+Niet gemeten: ['A', 'B', 'C', 'D', 'E', 'F', 'G']

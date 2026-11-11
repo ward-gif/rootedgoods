@@ -2971,3 +2971,26 @@ document.documentElement.classList.add('rg-cirkelpijl');
     }).observe(document.body, { childList: true, subtree: true });
   }
 })();
+
+/* ---- LOGO-CAROUSEL OP DE HOME: alt-teksten en een kapotte link
+ * Het klantlogo-blok komt uit het CMS met alt="Slide 4" ... "Slide 20" (en
+ * dezelfde tekst als title), en het Franciscus-logo linkt naar
+ * href="Franciscus Ziekenhuis": een relatieve URL zonder slash en met een
+ * spatie, dus een klik gaf een 404. Hier uit de bestandsnaam een alt maken
+ * ("Logo Heineken.svg" -> "Heineken"). Zonder herkenbare naam ("Laag 3.png",
+ * een laagnaam uit het ontwerpbestand) wordt het logo decoratief (alt="") in
+ * plaats van een verzonnen naam. Een href die geen pad, anker of schema heeft,
+ * gaat weg, zodat het logo geen kapotte link meer is. */
+(function () {
+  var imgs = document.querySelectorAll('.carousel-item .card-img img[alt^="Slide "]');
+  if (!imgs.length) return;
+  Array.prototype.forEach.call(imgs, function (img) {
+    var naam = '';
+    try { naam = decodeURIComponent((img.getAttribute('src') || '').split('?')[0].split('/').pop()); } catch (e) { naam = ''; }
+    naam = naam.replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').replace(/\b(logo|png|svg|jpe?g|webp)\b/gi, ' ').replace(/\b20\d\d\b/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!naam || /^laag\s*\d+$/i.test(naam)) { img.setAttribute('alt', ''); img.removeAttribute('title'); }
+    else { img.setAttribute('alt', naam); img.setAttribute('title', naam); }
+    var a = img.closest('a[href]');
+    if (a && !/^(https?:|mailto:|tel:|\/|#)/i.test(a.getAttribute('href') || '')) a.removeAttribute('href');
+  });
+})();
