@@ -1,0 +1,5 @@
+CSS: 512765 bytes, 1769 blokken gemarkeerd
+desktop  /                            elementen=2021 VERSCHIL op 0 elementen 
+desktop  /alle-producten/             elementen=1549 VERSCHIL op 0 elementen 
+desktop  /huis-keuken/                elementen=1574 VERSCHIL op 0 elementen 
+weggeschreven: vergelijk-strip3-desktop.json

@@ -1,0 +1,33 @@
+CSS: 512765 bytes, 1769 blokken gemarkeerd
+mobiel /: FOUT {"fout":"geen link"}
+mobiel /alle-producten/: FOUT {"fout":"geen link"}
+mobiel /huis-keuken/: FOUT {"fout":"geen link"}
+mobiel   /Borrelplank/A1352-Kerst1    elementen=898 VERSCHIL op 0 elementen 
+mobiel   /eindejaarsgeschenken        elementen=1092 VERSCHIL op 0 elementen 
+mobiel   /thema-s/                    elementen=1520 VERSCHIL op 0 elementen 
+mobiel   /offerte                     elementen=540 VERSCHIL op 0 elementen 
+mobiel   /over-ons                    elementen=638 VERSCHIL op 0 elementen 
+mobiel   /merken/                     elementen=565 VERSCHIL op 0 elementen 
+mobiel   /contact                     elementen=684 VERSCHIL op 0 elementen 
+mobiel   /search?search=kerstbal      elementen=649 VERSCHIL op 0 elementen 
+mobiel   /dag-van-de-leraar           elementen=1095 VERSCHIL op 0 elementen 
+mobiel   /events-conferenties         elementen=1043 VERSCHIL op 0 elementen 
+mobiel   /faq                         elementen=624 VERSCHIL op 0 elementen 
+mobiel   /full-service-ontzorging     elementen=651 VERSCHIL op 0 elementen 
+mobiel   /medewerker-merchandise      elementen=1046 VERSCHIL op 0 elementen 
+mobiel   /onboarding-welkomstpakket   elementen=1192 VERSCHIL op 0 elementen 
+mobiel   /services/                   elementen=578 VERSCHIL op 0 elementen 
+mobiel   /verzending-naar-meerdere-locaties elementen=625 VERSCHIL op 0 elementen 
+mobiel   /warehousing-fulfillment     elementen=615 VERSCHIL op 0 elementen 
+mobiel   /alle-thema-s                elementen=575 VERSCHIL op 0 elementen 
+mobiel   /wishlist                    elementen=493 VERSCHIL op 0 elementen 
+mobiel   /algemeen/algemene-voorwaarden/ elementen=670 VERSCHIL op 0 elementen 
+mobiel   /thema-s/winter/             elementen=716 VERSCHIL op 0 elementen 
+mobiel   /thema-s/made-in-nl/         elementen=1551 VERSCHIL op 0 elementen 
+mobiel   /thema-s/kerstpakketten-eindejaar/ elementen=858 VERSCHIL op 0 elementen 
+mobiel   /tassen-reizen/              elementen=1748 VERSCHIL op 0 elementen 
+mobiel   /eten-drinken/               elementen=1312 VERSCHIL op 0 elementen 
+mobiel   /informatie/nieuwsbrief/     elementen=557 VERSCHIL op 0 elementen 
+mobiel   /blog/                       elementen=580 VERSCHIL op 0 elementen 
+mobiel   /elektronica/                elementen=630 VERSCHIL op 0 elementen 
+weggeschreven: vergelijk-strip2-mobiel.json

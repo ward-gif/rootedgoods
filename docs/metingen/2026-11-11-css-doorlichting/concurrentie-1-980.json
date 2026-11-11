@@ -1,0 +1,1598 @@
+[
+ {
+  "vp": "desktop",
+  "pad": "/wishlist",
+  "l": 148,
+  "p": "font-size",
+  "eigenSelector": "h1",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.35rem + 1.2vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2.25rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".wishlist-listing-header",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "36px",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "4rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/wishlist",
+  "l": 148,
+  "p": "font-weight",
+  "eigenSelector": "h1",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "bold",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "700",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".wishlist-listing-col .wishlist-listing-header",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "bold",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "600 !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/wishlist",
+  "l": 172,
+  "p": "font-size",
+  "eigenSelector": "h1",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.35rem + 1.2vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "4rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "3rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".wishlist-listing-header",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "23px",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "2.5rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/Borrelplank/A1352-Kerst1",
+  "l": 149,
+  "p": "font-size",
+  "eigenSelector": "h2",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.5em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.3rem + 0.6vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.75rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".card-title",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "1rem",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "3rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/Borrelplank/A1352-Kerst1",
+  "l": 149,
+  "p": "font-weight",
+  "eigenSelector": "h2",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "bold",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "700",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".card-title",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "700",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "600 !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/services/",
+  "l": 150,
+  "p": "font-size",
+  "eigenSelector": "h3",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.17em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.275rem + 0.3vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.5rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".rg-service-card__title",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem) !i",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "2.25rem !important"
+ },
+ {
+  "vp": "tablet",
+  "pad": "/wishlist",
+  "l": 164,
+  "p": "font-size",
+  "eigenSelector": "h1",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.35rem + 1.2vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "4rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".wishlist-listing-header",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "36px",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "3rem !important"
+ },
+ {
+  "vp": "tablet",
+  "pad": "/alle-producten/",
+  "l": 165,
+  "p": "font-size",
+  "eigenSelector": "h2",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.5em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.3rem + 0.6vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "3rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "2.5rem !important"
+ },
+ {
+  "vp": "tablet",
+  "pad": "/services/",
+  "l": 166,
+  "p": "font-size",
+  "eigenSelector": "h3",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.17em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.275rem + 0.3vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".rg-service-card__title",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem) !i",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2.25rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "1.875rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/alle-producten/",
+  "l": 173,
+  "p": "font-size",
+  "eigenSelector": "h2",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.5em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.3rem + 0.6vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "3rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h2",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2.5rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "2rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/services/",
+  "l": 174,
+  "p": "font-size",
+  "eigenSelector": "h3",
+  "eigenSpec": [
+   0,
+   0,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.17em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.275rem + 0.3vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".rg-service-card__title",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem) !i",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2.25rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h3",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "1.875rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "1.625rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 644,
+  "p": "position",
+  "eigenSelector": ".header-search-col",
+  "eigenSpec": [
+   0,
+   1,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".header-search-col",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "relative",
+    "important": false,
+    "volgorde": "later",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "static !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "padding-top",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.4rem 0.9rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "padding-right",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.4rem 0.9rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "padding-bottom",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.4rem 0.9rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "padding-left",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.4rem 0.9rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "font-size",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-font-size)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.8125rem !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "font-weight",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-font-weight)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "700 !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "600 !important"
+ },
+ {
+  "vp": "desktop",
+  "pad": "/",
+  "l": 489,
+  "p": "box-shadow",
+  "eigenSelector": ".header-actions-col .offerte-link.btn-primary",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn-primary",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "0 8px 22px -12px rgba(173, 99, 49, 0.9) ",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "none !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 924,
+  "p": "display",
+  "eigenSelector": ".top-bar.d-none.d-lg-block",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": "div",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "block",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": ".d-none",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "none !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "block !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 671,
+  "p": "border-top-left-radius",
+  "eigenSelector": ".header-search-input",
+  "eigenSpec": [
+   0,
+   1,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".form-control",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "1px solid #bcc1c7",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "input.form-control.header-search-input",
+    "spec": [
+     0,
+     2,
+     1
+    ],
+    "waarde": "12px",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "none"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 671,
+  "p": "border-bottom-left-radius",
+  "eigenSelector": ".header-search-input",
+  "eigenSpec": [
+   0,
+   1,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".form-control",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "1px solid #bcc1c7",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "input.form-control.header-search-input",
+    "spec": [
+     0,
+     2,
+     1
+    ],
+    "waarde": "12px",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "none"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 713,
+  "p": "line-height",
+  "eigenSelector": ".header-main .header-search .header-search-btn",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": "button",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "normal",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "button",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "inherit",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-line-height)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".header-search-btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "1",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "1.2 !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".header-main .header-search .header-search-btn",
+    "spec": [
+     0,
+     3,
+     0
+    ],
+    "waarde": "1.5",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "1.5 !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 713,
+  "p": "padding-top",
+  "eigenSelector": ".header-main .header-search .header-search-btn",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".header-search-btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "0 1rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.6rem 1rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 713,
+  "p": "padding-right",
+  "eigenSelector": ".header-main .header-search .header-search-btn",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".header-search-btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "0 1rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.6rem 1rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 713,
+  "p": "padding-bottom",
+  "eigenSelector": ".header-main .header-search .header-search-btn",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".header-search-btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "0 1rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.6rem 1rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 713,
+  "p": "padding-left",
+  "eigenSelector": ".header-main .header-search .header-search-btn",
+  "eigenSpec": [
+   0,
+   3,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "var(--bs-btn-padding-y) var(--bs-btn-pad",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".header-search-btn",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "0 1rem",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".btn:not(.header-actions-btn)",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "0.9rem 2rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "0.6rem 1rem !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 334,
+  "p": "top",
+  "eigenSelector": ".header-wishlist-badge",
+  "eigenSpec": [
+   0,
+   1,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".btn .badge",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "-1px",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "2px !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/",
+  "l": 334,
+  "p": "right",
+  "eigenSelector": ".header-wishlist-badge",
+  "eigenSpec": [
+   0,
+   1,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": ".header-wishlist .header-wishlist-badge",
+    "spec": [
+     0,
+     2,
+     0
+    ],
+    "waarde": "-0.25rem",
+    "important": false,
+    "volgorde": "later",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "-2px !important"
+ },
+ {
+  "vp": "mobiel",
+  "pad": "/search?search=kerstbal",
+  "l": 788,
+  "p": "font-size",
+  "eigenSelector": ".search-headline",
+  "eigenSpec": [
+   0,
+   1,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2em",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "calc(1.35rem + 1.2vw)",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "4rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "3rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": "h1",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "2.5rem !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem) !important"
+ },
+ {
+  "vp": "tablet",
+  "pad": "/",
+  "l": 886,
+  "p": "height",
+  "eigenSelector": ".header-logo-main-link img",
+  "eigenSpec": [
+   0,
+   1,
+   1
+  ],
+  "concurrenten": [
+   {
+    "selector": ".img-fluid",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "auto",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   },
+   {
+    "selector": ".header-logo-main-link img",
+    "spec": [
+     0,
+     1,
+     1
+    ],
+    "waarde": "45px",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   },
+   {
+    "selector": ".header-logo-main-link img",
+    "spec": [
+     0,
+     1,
+     1
+    ],
+    "waarde": "26px !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "eigen"
+   }
+  ],
+  "eigenWaarde": "34px !important"
+ },
+ {
+  "vp": "tablet",
+  "pad": "/",
+  "l": 872,
+  "p": "display",
+  "eigenSelector": ".header-actions-col .col-auto.d-sm-none:has(.search-toggle)",
+  "eigenSpec": [
+   0,
+   4,
+   0
+  ],
+  "concurrenten": [
+   {
+    "selector": "div",
+    "spec": [
+     0,
+     0,
+     1
+    ],
+    "waarde": "block",
+    "important": false,
+    "volgorde": "eerder",
+    "bron": "browser"
+   },
+   {
+    "selector": ".d-sm-none",
+    "spec": [
+     0,
+     1,
+     0
+    ],
+    "waarde": "none !important",
+    "important": true,
+    "volgorde": "eerder",
+    "bron": "thema/overig"
+   }
+  ],
+  "eigenWaarde": "block !important"
+ }
+]

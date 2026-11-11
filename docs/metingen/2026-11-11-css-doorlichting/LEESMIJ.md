@@ -25,3 +25,16 @@ Headless Chromium, geen echt toestel, geen cookie-akkoord, geen ingelogde of gev
   checkout, formulier-fouten, PDP met configurator en alles achter JS-klikken zijn niet geraakt.
 - 284 regels (o.a. secties 40, 40b, 49.x, 51) matchten nergens: of dode code, of een pagina die niet in de steekproef zat.
 - Er is niet in Safari of op een echt toestel gemeten.
+
+## Correctie na uitbreiding van de steekproef (11 november 2026, later die dag)
+De eerste 11 paginatypes misten de pagina's met veel CMS-blokken. Er kwamen 20 pagina's bij uit de menu- en footerlinks
+(`meting-extra.json`: /services/, /wishlist, /faq, /full-service-ontzorging, /thema-s/*, categorieen, enz.), alle drie
+de breedtes, gemeten tegen de CSS van voor de opschoning (`css-voor-opschoning-ed4514f.css`).
+
+- 7 van de 239 weggehaalde regels bleken op die pagina's wel nodig: de globale kopregels `h1`/`h3` (regels 148, 150,
+  164, 166, 172, 174: op /wishlist en /services/ veranderde de lettergrootte) en `.rg-spec-grid` (5447, max-width
+  op /full-service-ontzorging). Teruggezet in 84f61e9. De opschoning (40d582f) was door de jsDelivr-vertraging
+  nog nergens zichtbaar voor bezoekers.
+- Validatie van de overige 232 regels op de 20 extra pagina's: 60 metingen (20 x 3 breedtes), 0 elementen met verschil.
+- Les: een globale regel (`h1`, `.btn`) hoort pas "gelijk" te heten na meting op elk paginatype. De steekproef
+  is nu 31 paginatypes; wat daarbuiten ligt (winkelmand, checkout, PDP met opties) blijft ongemeten.

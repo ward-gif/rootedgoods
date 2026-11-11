@@ -1,0 +1,5 @@
+CSS: 512765 bytes, 1769 blokken gemarkeerd
+tablet   /                            elementen=2028 VERSCHIL op 0 elementen 
+tablet   /alle-producten/             elementen=1556 VERSCHIL op 0 elementen 
+tablet   /huis-keuken/                elementen=1581 VERSCHIL op 0 elementen 
+weggeschreven: vergelijk-strip3-tablet.json

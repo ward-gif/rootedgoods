@@ -147,11 +147,11 @@ em, i { font-style: normal; }
    h4 is uitzondering: Montserrat subtitle-stijl voor top-title / eyebrow. */
 h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 600 !important; }
 h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 600 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600; }
 h4, .cms-element-text h4 {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 0.875rem !important;
-  font-weight: 600 !important;
+  font-size: 0.875rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1.4;
@@ -332,16 +332,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .header-wishlist-badge,
 .header-cart-badge {
-  position: absolute !important;
+  position: absolute;
   top: 2px !important;
   right: -2px !important;
-  transform: translateY(-30%) !important;
+  transform: translateY(-30%);
   min-width: 10px;
-  height: 18px !important;
-  padding: 0 4px !important;
-  font-size: 0.65rem !important;
-  line-height: 18px !important;
-  border-radius: 50px !important;
+  height: 18px;
+  padding: 0 4px;
+  font-size: 0.65rem;
+  line-height: 18px;
+  border-radius: 50px;
 }
 /* Hartje volledig weg als de wishlist leeg is -- .header-wishlist-badge is
    ALTIJD in de DOM (Shopware's WishlistWidgetPlugin update 'm live), leeg
@@ -669,9 +669,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   background-color: #F0EFEB;
 }
 .header-search-input {
-  padding: 0.6rem 1rem !important;
+  padding: 0.6rem 1rem;
   background-color: #F0EFEB;
-  color: #2d4528 !important; /* getypte tekst donkergroen */
+  color: #2d4528; /* getypte tekst donkergroen */
   border: none;
   border-top-left-radius: 32px !important;
   border-bottom-left-radius: 32px !important;
@@ -713,9 +713,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .header-main .header-search .header-search-btn {
   line-height: 1.5 !important;
   padding: 0.6rem 1rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header-search-input:focus ~ .header-search-btn {
   border-color: none !important;
@@ -787,7 +787,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .search-headline,
 .search-headline h1 {
   font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem) !important;
-  line-height: 1.2 !important;
+  line-height: 1.2;
 }
 
 /* Desktop — zoekbalk en results altijd minimaal 700px, matchend */
@@ -1015,7 +1015,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .navigation-offcanvas .offcanvas-close.js-offcanvas-close {
     font-size: 0 !important;
     padding: 0.5rem !important;
-    min-width: 0 !important;
+    min-width: 0;
   }
   /* Native "categorieën"-headline zit als sibling VÓÓR de <ul> -- landt
      daardoor altijd boven het EERSTE dat in de lijst staat, en dat is nu
@@ -1431,17 +1431,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    ------------------------------------------------------------ */
 .btn:not(.header-actions-btn) {
   border-radius: 50px !important;
-  padding: 0.9rem 2rem !important;
-  font-size: 0.9rem !important;
-  font-weight: 700 !important;
-  line-height: 1.2 !important;
+  padding: 0.9rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
   transition: transform 0.15s ease, box-shadow 0.2s ease,
     background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
 }
 .btn-primary {
-  background-color: #ad6331 !important;
+  background-color: #ad6331;
   border-color: #ad6331 !important;
-  color: #fff !important;
+  color: #fff;
   box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9) !important;
 }
 .btn-primary:hover {
@@ -1472,9 +1472,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon) {
   padding: 0 5px !important;
   border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: #2d4528 !important;
+  background: transparent;
+  box-shadow: none;
+  color: #2d4528;
   font-weight: 600 !important;
   font-size: 0.95rem !important;
 }
@@ -1545,14 +1545,14 @@ img {
 .btn.btn-primary:has(.icon-arrow-up),
 .scroll-up-btn,
 .scroll-up .btn-primary {
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   padding: 0 !important;
   border-radius: 10px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: none !important;
 }
 .btn.btn-primary:has(.icon-arrow-up) .icon,
@@ -1606,10 +1606,10 @@ img {
   width: 100%;
   height: 100%;
   padding: 0 !important;
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 .rg-wishlist-float .icon svg {
   width: 22px !important;
@@ -1619,18 +1619,18 @@ img {
   fill: var(--rg-cognac, #ad6331) !important;
 }
 .rg-wishlist-float .header-wishlist-badge {
-  position: absolute !important;
+  position: absolute;
   top: -4px !important;
   right: -4px !important;
   min-width: 18px;
-  height: 18px !important;
-  padding: 0 4px !important;
-  border-radius: 50px !important;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 50px;
   background: var(--rg-cognac, #ad6331);
   color: #fff;
-  font-size: 0.65rem !important;
+  font-size: 0.65rem;
   font-weight: 700;
-  line-height: 18px !important;
+  line-height: 18px;
   text-align: center;
 }
 @media (min-width: 992px) {
@@ -1671,7 +1671,7 @@ img {
 .home-productslider .product-slider-item .product-box {
   border: none !important;
   border-radius: 12px !important;
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   overflow: hidden;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   height: 100%;
@@ -1716,15 +1716,15 @@ img {
    regels toch steevast ~180px hoog bleef. flex:none dwingt 'm terug naar
    een gewone auto-hoogte die wél naar de padding-bottom-truc luistert. */
 :is(.home-productslider, .cms-listing-row) .product-image-wrapper {
-  position: relative !important;
-  flex: none !important;
-  margin-bottom: 1rem !important;
-  background-color: #ffffff !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  width: 100% !important;
+  position: relative;
+  flex: none;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
   height: 0 !important;
-  padding-bottom: 85% !important;
+  padding-bottom: 85%;
 }
 /* Mobiel: tegels waren nog erg hoog t.o.v. hun breedte (smalle
    tegel + volle padding + bijna-vierkant beeld stapelde flink op). Beeld
@@ -1961,7 +1961,7 @@ img {
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
-  overflow: visible !important;
+  overflow: visible;
   padding-top: 1.75rem !important;   /* was 5rem -- te veel lucht tussen
     titel en slider op mobiel/tablet, teruggebracht naar hetzelfde ritme
     als de andere sectie-koppen. Geldt alleen effectief <992px -- vanaf
@@ -1976,7 +1976,7 @@ img {
    Verticaal toelaten zodat hover-shadow van tiles niet wordt afgesneden. */
 .home-productslider .tns-outer,
 .home-productslider .tns-ovh {
-  overflow-x: hidden !important;            /* clipt netjes binnen de gecentreerde row */
+  overflow-x: hidden;            /* clipt netjes binnen de gecentreerde row */
   overflow-y: visible !important;
   padding-bottom: 24px !important;
 }
@@ -2083,11 +2083,11 @@ img {
      matchen; nu ook letterlijk dezelfde waarde, geen toeval meer. */
   .cms-block-text:has(+ .cms-block-product-slider) h2 {
     font-family: 'Playfair Display', Georgia, serif !important;
-    font-weight: 600 !important;
-    letter-spacing: -0.018em !important;
+    font-weight: 600;
+    letter-spacing: -0.018em;
     line-height: 1.15 !important;
-    color: #2d4528 !important;
-    font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
+    color: #2d4528;
+    font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem);
     margin: 0 0 0.35rem !important;
     text-wrap: balance;
   }
@@ -2449,8 +2449,8 @@ img {
 .product-detail-buy .product-detail-name {
   font-size: 2.5rem !important;
   font-weight: 700 !important;
-  text-align: left !important;
-  margin: -1rem 0 1.25rem 0 !important;
+  text-align: left;
+  margin: -1rem 0 1.25rem 0;
   line-height: 1.1;
 }
 
@@ -2459,8 +2459,8 @@ img {
   .product-detail-name {
     font-size: 2rem !important;
     font-weight: 700 !important;
-    text-align: left !important;
-    margin-bottom: 1rem !important;
+    text-align: left;
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 576px) {
@@ -2615,9 +2615,9 @@ body.is-ctl-product .product-detail-ordernumber-container {
    box-shadow expliciet uit: de algemene .btn-primary-regel zet anders een
    terracotta schaduw op deze outline-knop. */
 #buyButton.btn-primary {
-  background-color: transparent !important;
-  color: #2d4528 !important;
-  border: 2px solid rgba(45, 69, 40, 0.28) !important;
+  background-color: transparent;
+  color: #2d4528;
+  border: 2px solid rgba(45, 69, 40, 0.28);
   box-shadow: none !important;
 }
 #buyButton.btn-primary:hover,
@@ -2636,10 +2636,10 @@ body.is-ctl-product .product-detail-ordernumber-container {
    padding stond daar niet bij, dus bleef de knop een paar pixels hoog
    staan. Waarden matchen #buyButton (het bijbehorende secundaire knopje). */
 #js-request-offer.btn-outline-primary {
-  background-color: #ad6331 !important;
-  color: #fff !important;
+  background-color: #ad6331;
+  color: #fff;
   border: 2px solid #ad6331 !important;
-  box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9) !important;
+  box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9);
   padding: 0.9rem 2rem !important;
   font-weight: 700 !important;
   font-size: 0.9rem !important;
@@ -2745,8 +2745,8 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .product-detail-buy .table thead.table-dark td,
 .product-detail-buy .table-dark {
   --bs-table-bg: #2d4528 !important;
-  background-color: #2d4528 !important;
-  color: #ffffff !important;
+  background-color: #2d4528;
+  color: #ffffff;
   border-color: #2d4528 !important;
 }
 .product-detail-buy .table tbody,
@@ -2764,7 +2764,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 .product-detail-buy .table.table-striped > tbody > tr:nth-of-type(odd) > * {
   background-color: #EAE3D7 !important;
-  color: #000000 !important;
+  color: #000000;
 }
 
 /* Staffel-prijzen tabel (product-block-prices-grid)
@@ -3071,8 +3071,8 @@ body.is-ctl-product .product-detail-ordernumber-container {
    koop-flow heen -- was hiervoor de enige plek met een kaal getal-veld
    zonder enige stepper-knop. */
 .rg-qty-stepper {
-  display: flex !important;
-  flex-wrap: nowrap !important;
+  display: flex;
+  flex-wrap: nowrap;
   border-radius: var(--rg-r-pill, 999px) !important;
   overflow: hidden;
   border: 1px solid #EAE3D7;
@@ -3103,11 +3103,11 @@ body.is-ctl-product .product-detail-ordernumber-container {
   border-left: 1px solid #EAE3D7 !important;
   border-right: 1px solid #EAE3D7 !important;
   border-radius: 0 !important;
-  box-shadow: none !important;
+  box-shadow: none;
   text-align: center;
   font-weight: 600;
-  width: 64px !important;
-  min-height: 34px !important;
+  width: 64px;
+  min-height: 34px;
   padding: 0 !important;
   -moz-appearance: textfield;
 }
@@ -3363,7 +3363,7 @@ body.is-ctl-product {
 .product-detail-tabs .tab-content,
 .product-detail-tabs .tab-pane,
 .product-detail-tabs .offcanvas-body {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   border: none !important;
 }
 
@@ -3394,11 +3394,11 @@ body.is-ctl-product {
 .product-detail-tabs .nav-tabs .nav-link.active,
 .product-detail-tabs .nav-tabs .nav-link.active:hover,
 .product-detail-tabs .nav-tabs .nav-link.active:focus {
-  background-color: #ffffff;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom: 2px solid #CA853F;
+  background-color: #ffffff !important;
+  border-top-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom: 2px solid #CA853F !important;
 }
 
 /* Hover/focus op INACTIEVE tabs: geen achtergrondswisseling */
@@ -3519,19 +3519,19 @@ body.is-ctl-product {
    inline-flex + align-items center voor verticaal uitlijnen van
    tekst, count en chevron-icoon. */
 .filter-panel .filter-panel-item-toggle.btn {
-  display: flex !important;
-  width: 100% !important;
-  align-items: center !important;
-  gap: 0.4rem !important;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.4rem;
   border: none !important;
   border-bottom: 1px solid #EAE3D7 !important;
   border-radius: 0 !important;
-  background-color: transparent !important;
-  color: #2d4528 !important;
+  background-color: transparent;
+  color: #2d4528;
   padding: 0.85rem 0.25rem !important;
   font-size: 0.95rem !important;
   font-weight: 600 !important;
-  line-height: 1.2 !important;
+  line-height: 1.2;
 }
 /* Chevron helemaal rechts (titel + count blijven links samen). */
 .filter-panel .filter-panel-item-toggle.btn .icon-filter-panel-item-toggle {
@@ -3581,17 +3581,17 @@ body.is-ctl-product {
    onze eigen mobiel-only regel hieronder), dus expliciete `width:auto`
    hier nodig om dat op desktop te breken. */
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
-  display: inline-flex !important;
-  width: auto !important;
+  display: inline-flex;
+  width: auto;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.25rem !important;
   border: 2px solid rgba(45, 69, 40, 0.28) !important;
-  border-radius: 50px !important;
-  background-color: transparent !important;
-  font-weight: 600 !important;
-  font-size: 0.95rem !important;
+  border-radius: 50px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
   margin-bottom: 1.25rem;
 }
 /* Volle breedte alleen op mobiel/tablet (offcanvas-trigger, hoort daar de
@@ -3699,7 +3699,7 @@ body.is-ctl-product {
 /* PLP categorie titel — Playfair, donkergroen, ademruimte */
 .cms-block-text h2 {
   font-family: 'Playfair Display', serif !important;
-  color: #2d4528 !important;
+  color: #2d4528;
   margin-bottom: 1.5rem !important;
 }
 
@@ -3825,16 +3825,16 @@ body.is-ctl-product {
 .page-item .page-link {
   min-width: 40px;
   height: 40px;
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.6rem !important;
+  padding: 0 0.6rem;
   margin: 0 0.15rem;
   border: 1px solid #EAE3D7 !important;
   border-radius: 999px !important;
-  background-color: #ffffff !important;
-  color: #2d4528 !important;
-  font-weight: 500 !important;
+  background-color: #ffffff;
+  color: #2d4528;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
@@ -3894,7 +3894,7 @@ body.is-ctl-product {
     height: 32px;
     padding: 0 0.4rem !important;
     margin: 0 0.1rem;
-    font-size: 0.85rem !important;
+    font-size: 0.85rem;
   }
 }
 
@@ -3954,7 +3954,7 @@ body.is-ctl-product {
   }
   .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon) {
     padding: 0.65rem 1.25rem !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 16px;
   }
   .sorting-label {
     display: none !important;
@@ -4817,8 +4817,8 @@ h3.rg-feature-row__title,
 h2.rg-compare__title,
 .cms-element-text h2.rg-compare__title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-weight: 600;
+  color: #2d4528;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 0.9rem !important;
@@ -4979,8 +4979,8 @@ h2.rg-compare__title,
 h2.rg-story__title,
 .cms-element-text h2.rg-story__title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-weight: 600;
+  color: #2d4528;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 1.2rem !important;
@@ -5071,10 +5071,10 @@ h2.rg-statement__title,
 .cms-element-text h2.rg-statement__title {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
-  font-weight: 600 !important;
-  line-height: 1.12 !important;
+  font-weight: 600;
+  line-height: 1.12;
   letter-spacing: -0.018em;
-  color: #2d4528 !important;
+  color: #2d4528;
   margin: 0 0 var(--rg-space-lg) !important;   /* kop -> subkop */
 }
 @media (min-width: 992px) {
@@ -5446,10 +5446,10 @@ img.rg-europe-map__svg {
   .rg-cat-head,
   .rg-spec-grid {
     max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   /* .rg-spec-grid kreeg hierboven padding:0 (leunt op de calc+80-opmaak van
      de OUDER-container) -- maar .rg-sd__faq/.rg-block-title/.rg-compare
@@ -5483,8 +5483,8 @@ img.rg-europe-map__svg {
   .home-productslider .col-12,
   .home-productslider .tns-outer,
   .home-productslider .tns-inner {
-    max-width: none !important;
-    margin: 0 !important;
+    max-width: none;
+    margin: 0;
     padding: 0 !important;
     overflow: visible !important;
   }
@@ -5518,12 +5518,12 @@ img.rg-europe-map__svg {
      .cms-element-product-slider-anker (hierboven) werd dus nooit bereikt.
      Alleen !important in extern CSS kan een inline JS-style overrulen. */
   .home-productslider .base-slider {
-    max-width: none !important;
-    width: calc(100% - 80px) !important;
+    max-width: none;
+    width: calc(100% - 80px);
     margin: 0 auto !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    position: static !important;
+    padding: 0;
+    overflow: visible;
+    position: static;
   }
   /* .cms-block-container: complete, eigen padding-regel (top 50px, links/
      rechts de gedeelde 80px-lijn, bottom 0) i.p.v. verspreid over meerdere
@@ -5531,10 +5531,10 @@ img.rg-europe-map__svg {
      stilzwijgend terugzet (dat was precies de padding-top-bug hiervoor). */
   .home-productslider .cms-block-container,
   .home-productslider .cms-block-container[style] {
-    max-width: none !important;
-    margin: 0 !important;
+    max-width: none;
+    margin: 0;
     padding: 24px calc(max((100vw - 1600px) / 2, 0px) + 80px) 0 !important;
-    overflow: visible !important;
+    overflow: visible;
   }
   /* .tns-ovh is de ECHTE clip-rand van de track (naam = "overflow hidden"):
      hier WEL horizontaal clippen, anders "piept" een 5e tegel voorbij de
@@ -5547,11 +5547,11 @@ img.rg-europe-map__svg {
      -2px + shadow 0 6px 20px) past alleen als de box zelf genoeg
      padding-bottom heeft om 'm te bevatten. 32px = ruime marge. */
   .home-productslider .tns-ovh {
-    max-width: none !important;
-    margin: 0 !important;
+    max-width: none;
+    margin: 0;
     padding: 0 0 32px 0 !important;
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container,
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container[style] {
@@ -5650,7 +5650,7 @@ img.rg-europe-map__svg {
     cursor: default !important;
   }
   .home-productslider .base-slider-controls button:disabled .icon {
-    border-color: #c7c0b3;
+    border-color: #c7c0b3 !important;
   }
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
@@ -5763,11 +5763,11 @@ h1.rg-theme-heading, h2.rg-theme-heading,
   gap: 0.6rem;
 }
 h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
-  font-family: 'Playfair Display', serif !important;
+  font-family: 'Playfair Display', serif;
   color: #fff !important;                 /* wint van globale h1..h6 color:#2d4528 !important */
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem) !important;
-  font-weight: 600 !important;
-  line-height: 1.1 !important;
+  font-weight: 600;
+  line-height: 1.1;
   margin: 0;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
@@ -6354,7 +6354,7 @@ h2.rg-block-title__title,
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary {
   padding: 1.05rem 2.4rem !important;
   font-size: 1.02rem !important;
-  box-shadow: 0 14px 30px -10px rgba(173, 99, 49, 0.95) !important;
+  box-shadow: 0 14px 30px -10px rgba(173, 99, 49, 0.95);
 }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover {
   box-shadow: 0 20px 38px -12px rgba(173, 99, 49, 1) !important;
@@ -6588,9 +6588,9 @@ h2.rg-block-title__title,
    verloor en de eerste regel vrijwel onzichtbaar donker bleef. */
 h2.rg-endcta__title,
 .cms-element-text h2.rg-endcta__title {
-  font-family: 'Playfair Display', Georgia, serif !important;
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600 !important;
-  color: #2d4528 !important;
+  color: #2d4528;
   font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.2rem) !important;
   line-height: 1.06 !important;
   letter-spacing: -0.01em;
@@ -6951,7 +6951,7 @@ h1.rg-sd__title,
   font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem) !important;
   line-height: 1.06 !important;
   letter-spacing: -0.01em;
-  margin: 0 0 1.1rem !important;
+  margin: 0 0 1.1rem;
   text-wrap: balance;
 }
 /* Cursief EXACT als de homepage-hero: de RECHTE Playfair schuingetrokken
@@ -7013,11 +7013,11 @@ h1.rg-sd__title em,
 }
 h2.rg-sd__head-title,
 .cms-element-text h2.rg-sd__head-title {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #2d4528;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
-  line-height: 1.12 !important;
+  line-height: 1.12;
   margin: 0 !important;
   text-wrap: balance;
 }
@@ -7058,12 +7058,12 @@ h2.rg-sd__head-title,
 }
 h3.rg-sd__step-title,
 .cms-element-text h3.rg-sd__step-title {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #2d4528;
   font-size: clamp(1.15rem, 1rem + 0.5vw, 1.45rem) !important;
-  line-height: 1.2 !important;
-  margin: 0 0 0.5rem !important;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
 }
 .rg-sd__step p {
   color: #4a5a44;
@@ -7092,13 +7092,13 @@ h3.rg-sd__step-title,
 .rg-sd__row--flip .rg-sd__row-copy { order: 1; }
 h2.rg-sd__row-title,
 .cms-element-text h2.rg-sd__row-title {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #2d4528;
   /* Was clamp(1.6rem...), net iets kleiner dan de rest van de sectie-
      koppen (die allemaal 1.7rem) -- gelijkgetrokken. */
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
-  line-height: 1.12 !important;
+  line-height: 1.12;
   margin: 0 0 0.85rem !important;
   text-wrap: balance;
 }
@@ -7149,8 +7149,8 @@ h2.rg-sd__row-title,
 h2.rg-sd__panel-title,
 .cms-element-text h2.rg-sd__panel-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
+  font-weight: 600;
+  color: #ffffff;
   font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.7rem) !important;
   line-height: 1.12 !important;
   margin: 0 0 1.9rem !important;
@@ -7336,11 +7336,11 @@ h2.rg-sd__panel-title,
 h3.rg-sd__journey-title,
 .cms-element-text h3.rg-sd__journey-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-weight: 600;
+  color: #2d4528;
   font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem) !important;
   line-height: 1.2 !important;
-  margin: 0 0 0.4rem !important;
+  margin: 0 0 0.4rem;
   text-wrap: balance;
 }
 .rg-sd__journey-step p {
@@ -7466,8 +7466,8 @@ h3.rg-sd__tech-title,
 h2.rg-sd__ask-title,
 .cms-element-text h2.rg-sd__ask-title {
   font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #ffffff !important;
+  font-weight: 600;
+  color: #ffffff;
   font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.65rem) !important;
   line-height: 1.15 !important;
   margin: 0 0 0.6rem !important;   /* was 0.5rem -- iets ruimer, in lijn met de marge erboven */
@@ -7528,21 +7528,21 @@ h2.rg-sd__ask-title,
    elke andere hero-titel op de site). */
 h1.rg-faq-title,
 .cms-element-text h1.rg-faq-title {
-  font-family: 'Playfair Display', serif !important;
+  font-family: 'Playfair Display', serif;
   font-weight: 700 !important;
-  color: #2d4528 !important;
+  color: #2d4528;
   font-size: clamp(2.6rem, 1.2rem + 3.6vw, 4.4rem) !important;
-  line-height: 1.1 !important;
-  margin: 0 0 0.8rem !important;
+  line-height: 1.1;
+  margin: 0 0 0.8rem;
   text-wrap: balance;
 }
 h2.rg-faq-cat,
 .cms-element-text h2.rg-faq-cat {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-  color: #2d4528 !important;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #2d4528;
   font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.7rem) !important;
-  line-height: 1.2 !important;
+  line-height: 1.2;
   margin: 2.6rem 0 1rem !important;
   padding-top: 1.4rem;
   border-top: 1px solid #EAE3D7;
@@ -7776,12 +7776,12 @@ h2.rg-faq-cat,
 }
 h1.rg-contact-head__title,
 .cms-element-text h1.rg-contact-head__title {
-  font-family: 'Playfair Display', serif !important;
+  font-family: 'Playfair Display', serif;
   font-weight: 800 !important;
-  color: #2d4528 !important;
+  color: #2d4528;
   font-size: clamp(2rem, 1.4rem + 2vw, 3rem) !important;
-  line-height: 1.1 !important;
-  margin: 0 0 0.55rem !important;
+  line-height: 1.1;
+  margin: 0 0 0.55rem;
 }
 .rg-contact-head__sub {
   color: #4a5a44;
@@ -8120,9 +8120,9 @@ h1.rg-contact-head__title,
 :is(.block-cioform-container, #request-offer-container) input:-webkit-autofill:hover,
 :is(.block-cioform-container, #request-offer-container) input:-webkit-autofill:focus {
   -webkit-text-fill-color: #2d4528;
-  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
-  box-shadow: 0 0 0 1000px #ffffff inset;
-  border: 1px solid #EAE3D7;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  border: 1px solid #EAE3D7 !important;
 }
 :is(.block-cioform-container, #request-offer-container) .form-control:hover:not(:focus) { border-color: #d8cfc0 !important; }
 
@@ -8298,8 +8298,8 @@ h1.rg-contact-head__title,
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
   letter-spacing:-.021em !important;
-  line-height:1.0 !important;
-  color:var(--rg-green) !important;
+  line-height:1.0;
+  color:var(--rg-green);
   text-wrap:balance;
 }
 /* Per-kop groottes: fors editorial, met behoud van nette line-wraps.
@@ -8344,10 +8344,10 @@ h1.rg-contact-head__title,
 .rg-sd__journey-title, h2.rg-sd__journey-title,
 .rg-theme-heading{
   font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:600 !important;
-  letter-spacing:-.018em !important;
+  font-weight:600;
+  letter-spacing:-.018em;
   line-height:1.08 !important;
-  color:var(--rg-green) !important;
+  color:var(--rg-green);
   text-wrap:balance;
 }
 .rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
@@ -8383,7 +8383,7 @@ h2.rg-statement__title em{
 
 /* ---- 41.5 DEPTH — lichtere, consistente diepte (hairline > slagschaduw) ---- */
 .rg-sd__hero-media img, .rg-sd__row-media img{
-  box-shadow:var(--rg-sh-soft) !important;
+  box-shadow:var(--rg-sh-soft);
   border-radius:var(--rg-r-xp) !important;
 }
 .rg-sd__tech-media{
@@ -8417,7 +8417,7 @@ h2.rg-statement__title em{
    tegels -- scheelt flink in scrollhoogte t.o.v. de oude opzet. */
 .rg-theme-hero{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin:0 0 0.75rem; }
 .rg-theme-hero .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
-.rg-theme-hero .rg-theme-tile--feature{ grid-column:1/-1 !important; grid-row:auto !important; aspect-ratio:16/10 !important; }
+.rg-theme-hero .rg-theme-tile--feature{ grid-column:1/-1; grid-row:auto; aspect-ratio:16/10 !important; }
 
 .rg-theme-row4{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; }
 .rg-theme-row4 .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
@@ -8443,10 +8443,10 @@ h2.rg-statement__title em{
      2 middelgroot gestapeld ernaast), maar met een lagere min-height en
      een vlakkere rij-van-4 (16:9 i.p.v. 4:3) voor minder scrollhoogte. */
   .rg-theme-hero{ grid-template-columns:1.5fr 1fr; grid-template-rows:1fr 1fr; margin-bottom:1rem; }
-  .rg-theme-hero .rg-theme-tile{ aspect-ratio:auto !important; height:100% !important; min-height:220px; }
+  .rg-theme-hero .rg-theme-tile{ aspect-ratio:auto !important; height:100%; min-height:220px; }
   .rg-theme-hero .rg-theme-tile--feature{ grid-column:1 !important; grid-row:1 / 3 !important; }
   .rg-theme-row4{ grid-template-columns:repeat(4,1fr); }
-  .rg-theme-row4 .rg-theme-tile{ aspect-ratio:16/9 !important; height:auto !important; }
+  .rg-theme-row4 .rg-theme-tile{ aspect-ratio:16/9 !important; height:auto; }
   .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
   .rg-theme-row4 h3.rg-theme-tile__title,
   .cms-element-text .rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title,
@@ -8532,7 +8532,7 @@ h2.rg-statement__title em{
   overflow-wrap: break-word;
   hyphens: none;
 }
-.rg-spec-card{ border-radius:var(--rg-r-xp) !important; box-shadow:var(--rg-sh-soft) !important; }
+.rg-spec-card{ border-radius:var(--rg-r-xp) !important; box-shadow:var(--rg-sh-soft); }
 
 /* ---- 41.9 SECTIE-KOPPEN links — GERICHT (geen blanket) ----
    Links waar de kop direct boven (a) de card-soup/spec-grid staat, (b) de
@@ -8633,9 +8633,9 @@ h2.rg-statement__title em{
 h1.rg-route__title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
-  letter-spacing:-.01em !important;
-  line-height:1.05 !important;
-  color:var(--rg-green) !important;
+  letter-spacing:-.01em;
+  line-height:1.05;
+  color:var(--rg-green);
   font-size:var(--rg-text-display) !important;
   max-width:16ch;
   margin:0 0 var(--rg-space-lg) !important;
@@ -8959,9 +8959,9 @@ h1.rg-route__title em{
 h2.rg-route__stop-title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
-  letter-spacing:-.018em !important;
-  line-height:1.08 !important;
-  color:var(--rg-green) !important;
+  letter-spacing:-.018em;
+  line-height:1.08;
+  color:var(--rg-green);
   font-size:clamp(1.9rem, 1.3rem + 2vw, 3rem) !important;
   margin:0 0 1.1rem !important;
   text-wrap:balance;
@@ -8977,9 +8977,9 @@ h2.rg-route__stop-title{
 
 /* quote-moment */
 .rg-route__quote{
-  font-family:'Playfair Display',Georgia,serif !important;
+  font-family:'Playfair Display',Georgia,serif;
   font-weight:600;
-  color:var(--rg-green) !important;
+  color:var(--rg-green);
   font-size:clamp(1.4rem, 1.1rem + 1.2vw, 2rem) !important;
   line-height:1.25 !important;
   max-width:26ch;
@@ -9030,10 +9030,10 @@ h2.rg-route__stop-title{
 .rg-route__root h3{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
-  color:var(--rg-green) !important;
+  color:var(--rg-green);
   font-size:1.3rem !important;
-  line-height:1.2 !important;
-  margin:0 0 .55rem !important;
+  line-height:1.2;
+  margin:0 0 .55rem;
 }
 .rg-route__root p{
   font-size:.98rem;
@@ -9063,11 +9063,11 @@ h2.rg-route__stop-title{
 h3.rg-route__panel-title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
-  letter-spacing:-.018em !important;
-  line-height:1.1 !important;
+  letter-spacing:-.018em;
+  line-height:1.1;
   color:#fff !important;
   font-size:clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem) !important;
-  margin:0 0 1rem !important;
+  margin:0 0 1rem;
 }
 .rg-route__panel p{ color:rgba(255,255,255,.88); max-width:56ch; }
 .rg-route__checks{
@@ -9084,14 +9084,14 @@ h3.rg-route__panel-title{
 }
 .rg-route__checks svg{ width:1.1rem; height:1.1rem; flex:none; color:var(--rg-cognac-light); margin-top:.15rem; }
 .rg-route__holdus{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-style: normal !important;
+  font-family:'Playfair Display',Georgia,serif;
+  font-style: normal;
   font-synthesis: none;
   transform: skewX(-14deg);
   font-weight:600;
   color:var(--rg-peach) !important;
   font-size:clamp(1.15rem, 1rem + .6vw, 1.5rem) !important;
-  margin-bottom:0 !important;
+  margin-bottom:0;
 }
 
 /* ---- EPILOOG: team als collage + contactkaart ---- */
@@ -9110,9 +9110,9 @@ h3.rg-route__panel-title{
 h2.rg-route__team-title{
   font-family:'Playfair Display',Georgia,serif !important;
   font-weight:700 !important;
-  letter-spacing:-.018em !important;
-  line-height:1.08 !important;
-  color:var(--rg-green) !important;
+  letter-spacing:-.018em;
+  line-height:1.08;
+  color:var(--rg-green);
   font-size:clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem) !important;
   margin:0 !important;
 }
@@ -9219,7 +9219,7 @@ h2.rg-route__team-title{
   border-color:var(--rg-cognac) !important;
   border-radius:var(--rg-r-pill) !important;
   min-height:48px;
-  padding:.7rem 1.15rem !important;
+  padding:.7rem 1.15rem;
 }
 .rg-route__contact > .rg-contact-head__callcard:hover,
 .rg-route__contact > .rg-contact-head__callcard:focus-visible{
@@ -9654,7 +9654,7 @@ h2.rg-route__team-title{
 }
 .footer-custom-paymethods.icon-container img {
   width: auto !important;
-  height: 30px !important;
+  height: 30px;
   object-fit: contain;
 }
 
@@ -10740,9 +10740,9 @@ h2.rg-route__team-title{
 /* De twee secundaire keuzes: omlijnd, bosgroen op de balk. */
 .cookie-permission-container .js-cookie-permission-button .btn.btn-primary,
 .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary {
-  background-color: transparent !important;
-  border: 2px solid rgba(45, 69, 40, 0.3) !important;
-  color: #2d4528 !important;
+  background-color: transparent;
+  border: 2px solid rgba(45, 69, 40, 0.3);
+  color: #2d4528;
   box-shadow: none !important;
 }
 .cookie-permission-container .js-cookie-permission-button .btn.btn-primary:hover,
@@ -11361,7 +11361,7 @@ h2.rg-route__team-title{
   margin: 0 0 1rem;
   max-width: 24ch;
   line-height: 1.06 !important;
-  font-size: clamp(2rem, 1.05rem + 3vw, 3.5rem) !important;
+  font-size: clamp(2rem, 1.05rem + 3vw, 3.5rem);
 }
 
 /* De feitenregel. Een <ul>: drie losse feiten, een schermlezer hoort er
@@ -11450,7 +11450,7 @@ h2.rg-route__team-title{
 .rg-band-pagina .cms-section:has(.rg-band) .cms-block-container,
 .rg-band-pagina .cms-section:has(.rg-band) .cms-block-container[style] {
   padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 .rg-band-pagina .cms-section:has(.rg-page-hero--band),
 .rg-band-pagina .cms-section:has(.rg-band) { margin-bottom: 0; }
@@ -11481,7 +11481,7 @@ h2.rg-route__team-title{
   position: relative !important;
   box-sizing: border-box !important;
   width: auto !important;
-  max-width: none !important;
+  max-width: none;
   margin: 0 !important;
   margin-inline: calc(50% - var(--rg-vw, 100vw) / 2) !important;
   /* Boven: ruimte voor de versprong zit al in de tegels zelf (margin-top).
@@ -11557,7 +11557,7 @@ h2.rg-route__team-title{
 .rg-band-pagina .rg-band .product-box {
   border: 0 !important;
   border-radius: var(--rg-r-xp) !important;
-  background: #fff !important;
+  background: #fff;
   box-shadow: var(--rg-sh-soft);
   height: auto;                      /* het thema zet height:100%; in een flex-rij rekt dat */
   overflow: hidden;
@@ -11625,7 +11625,7 @@ h2.rg-route__team-title{
   white-space: normal;               /* sectie 10 zet nowrap onder 576px */
   height: auto !important;
   min-height: 2.7em;
-  margin: 0 0 4px !important;        /* thema zet margin:0 0 15px 0 */
+  margin: 0 0 4px;        /* thema zet margin:0 0 15px 0 */
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
   line-height: 1.35;
@@ -11633,7 +11633,7 @@ h2.rg-route__team-title{
   text-transform: uppercase;
   font-weight: 600 !important;
   color: var(--rg-cognac) !important;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 .rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac-deep) !important; }
 .rg-band-pagina .rg-band .product-price-info { margin: 0; }
@@ -11644,8 +11644,8 @@ h2.rg-route__team-title{
 }
 .rg-band-pagina .rg-band .product-price {
   font-weight: 600 !important;
-  font-size: 0.92rem !important;
-  margin-left: 0 !important;
+  font-size: 0.92rem;
+  margin-left: 0;
   color: var(--rg-ink) !important;
 }
 

@@ -14,8 +14,9 @@ const cssBron = fs.readFileSync(process.env.CSSFILE ? path.resolve(process.env.C
 const { tekst: cssGemarkeerd, aantal } = markeer(cssBron);
 console.log(`CSS: ${cssBron.length} bytes, ${aantal} blokken gemarkeerd`);
 const jsLok = fs.readFileSync(path.join(REPO, 'rootedgoods.js'));
+const VERGELIJK = process.env.MODE === 'vergelijk';
 const VALIDEER = process.env.MODE === 'valideer';
-const analyse = fs.readFileSync(path.join(HIER, VALIDEER ? 'validatie.js' : 'pagina.js'), 'utf8');
+const analyse = fs.readFileSync(path.join(HIER, VERGELIJK ? 'vergelijk.js' : (VALIDEER ? 'validatie.js' : 'pagina.js')), 'utf8');
 const REGELS = VALIDEER ? JSON.parse(fs.readFileSync(path.join(HIER, process.env.REGELS || 'gelijk-regels.json'), 'utf8')) : {};
 const chrome = spawn(BIN, ['--headless', '--remote-debugging-port=0', '--hide-scrollbars', '--no-first-run', '--user-data-dir=' + fs.mkdtempSync(path.join(os.tmpdir(), 'rg-imp-')), '--lang=nl-NL', 'about:blank']);
 const wsUrl = await new Promise((res, rej) => { let b = ''; chrome.stderr.on('data', d => { b += d; const m = b.match(/DevTools listening on (ws:\/\/\S+)/); if (m) res(m[1]); }); setTimeout(() => rej(new Error('geen devtools-url')), 15000); });
@@ -42,23 +43,24 @@ for (const vp of gekozen) {
     const stop = Date.now() + 15000; let geladen = false;
     while (Date.now() < stop) { await sleep(250); if (events.some(e => e.method === 'Page.loadEventFired')) { geladen = true; break; } }
     await sleep(4000);
+    for (let t = 0; t < 20 && !(await send('Runtime.evaluate', { expression: "!!document.querySelector('link[href*=\"rootedgoods.min.css\"]')", returnByValue: true }, sid)).result.value; t++) await sleep(500);
     let menu = null;
     if (process.env.MENU && vp !== 'desktop') {
       menu = (await send('Runtime.evaluate', { expression: `(() => { const b = document.querySelector('.nav-main-toggle-btn, .menu-button button'); if (!b) return 'geen-knop'; b.click(); return 'geklikt'; })()`, returnByValue: true }, sid)).result.value;
       await sleep(1500);
     }
     if (process.env.EXPR) { console.log(JSON.stringify((await send('Runtime.evaluate', { expression: process.env.EXPR, returnByValue: true }, sid)).result.value)); if (process.env.NUUR) continue; }
-    const r = await send('Runtime.evaluate', { expression: `(${analyse})(${JSON.stringify(cssGemarkeerd)}, ${JSON.stringify(VALIDEER ? REGELS : {})})`, awaitPromise: true, returnByValue: true, timeout: 120000 }, sid);
+    const r = await send('Runtime.evaluate', { expression: `(${analyse})(${JSON.stringify(VERGELIJK ? cssBron : cssGemarkeerd)}, ${JSON.stringify(VERGELIJK ? fs.readFileSync(path.resolve(process.env.CSSB), 'utf8') : (VALIDEER ? REGELS : {}))})`, awaitPromise: true, returnByValue: true, timeout: 120000 }, sid);
     const v = r.result.value;
     if (!v || v.fout) { console.log(`${vp} ${pad}: FOUT ${JSON.stringify(v || r.exceptionDetails || r).slice(0, 200)}`); continue; }
-    if (VALIDEER) { console.log(`${vp.padEnd(8)} ${pad.padEnd(28)} elementen=${v.elementen} regels=${v.regelsAangepast} longhands=${v.longhandsAangepast} VERSCHIL op ${v.nVerschil} elementen`); resultaat.push({ vp, pad, menu: process.env.MENU ? menu : null, ...v }); continue; }
+    if (VALIDEER || VERGELIJK) { console.log(`${vp.padEnd(8)} ${pad.padEnd(28)} elementen=${v.elementen} VERSCHIL op ${v.nVerschil} elementen ${v.nVerschil ? JSON.stringify(v.verschil.slice(0, 4)) : ''}`); resultaat.push({ vp, pad, menu: process.env.MENU ? menu : null, ...v }); continue; }
     const tel = {}; for (const m of v.metingen) tel[m.st] = (tel[m.st] || 0) + 1;
     console.log(`${vp.padEnd(8)} ${pad.padEnd(28)} geladen=${geladen} menu=${menu} regels=${v.regels} metingen=${v.metingen.length} ${JSON.stringify(tel)}`);
     resultaat.push({ vp, pad, menu: process.env.MENU ? menu : null, regels: v.regels, metingen: v.metingen });
   }
 }
 if (process.env.NUUR) { await send('Browser.close'); chrome.kill(); process.exit(0); }
-const naam = process.env.UIT || (VALIDEER ? 'validatie.json' : process.env.MENU ? 'meting-menu.json' : 'meting.json');
+const naam = process.env.UIT || (VERGELIJK ? 'vergelijk.json' : VALIDEER ? 'validatie.json' : process.env.MENU ? 'meting-menu.json' : 'meting.json');
 fs.writeFileSync(path.join(HIER, naam), JSON.stringify({ datum: new Date().toISOString(), cssBytes: cssBron.length, resultaat }));
 console.log('weggeschreven:', naam);
 await send('Browser.close'); chrome.kill(); process.exit(0);
