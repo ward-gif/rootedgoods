@@ -1,0 +1,2104 @@
+[
+ {
+  "regel": 159,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": "h5, .cms-element-text h5",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 160,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": "h6, .cms-element-text h6",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 167,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": "h5, .cms-element-text h5",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 175,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": "h5, .cms-element-text h5",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 431,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": ".main-navigation-link:hover, .main-navigation-link:hover .main-navigation-link-text, .main-navigation-link:hover .main-navigation-link-text span, .main-navigati",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 495,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": ".header-actions-col .offerte-link.btn-primary:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 622,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": ".top-bar-nav .top-bar-container.container--5",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 686,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": ".header-search-input:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 737,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": ".header-main .search-suggest-container",
+  "status": "dood",
+  "ontbrekend": [
+   "search-suggest-container"
+  ]
+ },
+ {
+  "regel": 795,
+  "sectie": "ROOTED GOODS - CUSTOM STYLESHE",
+  "selector": ".header-main .search-suggest-container",
+  "status": "dood",
+  "ontbrekend": [
+   "search-suggest-container"
+  ]
+ },
+ {
+  "regel": 1300,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".rg-offcanvas-quicklink:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1447,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".btn-primary:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1460,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".btn-outline-primary:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1481,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1520,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".btn:not(.header-actions-btn):focus-visible",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1637,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".rg-wishlist-float",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1825,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ":is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev:hover, :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.ac",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 1865,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ":is(.home-productslider, .cms-listing-row) .product-name:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2113,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-section.home.productslider, .home.productslider",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2129,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".home.productslider .carousel-control-prev, .home.productslider .carousel-control-next",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2136,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".home.productslider .card",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2152,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".home.productslider .card-img img",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2213,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-block-image-text-row",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 2219,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-block-image-text-row .cms-block-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 2251,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-block-image-text-row .cms-image-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 2259,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-block-image-text-row .cms-image",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 2309,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".image-cards .cms-element-text h1, .image-cards .cms-element-text h2, .image-cards .cms-element-text h3, .image-cards .cms-element-text h4, .image-cards .cms-el",
+  "status": "dood",
+  "ontbrekend": [
+   "image-cards"
+  ]
+ },
+ {
+  "regel": 2315,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".image-cards .cms-element-text p",
+  "status": "dood",
+  "ontbrekend": [
+   "image-cards"
+  ]
+ },
+ {
+  "regel": 2326,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-block-image-text-row .cms-image-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 2329,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".image-cards .cms-element-text p",
+  "status": "dood",
+  "ontbrekend": [
+   "image-cards"
+  ]
+ },
+ {
+  "regel": 2334,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".cms-block-image-text-row .cms-image-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 2337,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".image-cards .cms-element-text p",
+  "status": "dood",
+  "ontbrekend": [
+   "image-cards"
+  ]
+ },
+ {
+  "regel": 2353,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2378,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text .cms-block-container",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2394,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text .cms-element-text, .hero-image-text .cms-element-text *, .hero-image-text h1, .hero-image-text h2, .hero-image-text h3, .hero-image-text h4, .h",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2401,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text .cms-element-text > h1, .hero-image-text .cms-element-text > h2, .hero-image-text .cms-element-text > h3",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2412,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2416,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text .cms-block-container",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2421,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2426,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".hero-image-text .cms-block-container",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 2503,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-controls-prev, .product-detail-media .gallery-slider-controls-next",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-controls-next",
+   "gallery-slider-controls-prev"
+  ]
+ },
+ {
+  "regel": 2519,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-controls-prev",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-controls-prev"
+  ]
+ },
+ {
+  "regel": 2522,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-controls-next",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-controls-next"
+  ]
+ },
+ {
+  "regel": 2530,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-controls-prev",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-controls-prev"
+  ]
+ },
+ {
+  "regel": 2533,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-controls-next",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-controls-next"
+  ]
+ },
+ {
+  "regel": 2539,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-controls svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-controls"
+  ]
+ },
+ {
+  "regel": 2548,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .magnifier-overlay, .product-detail-media .js-magnifier-overlay, .magnifier-zoom-image, .js-magnifier-zoom-image",
+  "status": "dood",
+  "ontbrekend": [
+   "js-magnifier-overlay",
+   "js-magnifier-zoom-image",
+   "magnifier-overlay",
+   "magnifier-zoom-image"
+  ]
+ },
+ {
+  "regel": 2624,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": "#buyButton.btn-primary:hover, #buyButton.btn-primary:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2648,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": "#js-request-offer.btn-outline-primary:hover, #js-request-offer.btn-outline-primary:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2691,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-buy .product-detail-configurator-options",
+  "status": "dood",
+  "ontbrekend": [
+   "product-detail-configurator-options"
+  ]
+ },
+ {
+  "regel": 2854,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-buy .product-block-prices-row.highlight-row > th, .product-detail-buy .product-block-prices-row.highlight-row > td",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2859,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-buy .product-block-prices-row.highlight-row > th:first-child",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 2865,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-buy .product-block-prices-row.highlight-row > td:last-child, .product-detail-buy .product-block-prices-row.highlight-row > th:last-child",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3024,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-buy .product-block-prices-grid .badge, .product-detail-buy .custom-configurator-table .badge",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3063,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-buy .form-control:focus, .product-detail-buy .form-select:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3200,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .gallery-slider-col .base-slider-dots",
+  "status": "dood",
+  "ontbrekend": [
+   "base-slider-dots"
+  ]
+ },
+ {
+  "regel": 3217,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-media .base-slider-dots .base-slider-dot",
+  "status": "dood",
+  "ontbrekend": [
+   "base-slider-dot",
+   "base-slider-dots"
+  ]
+ },
+ {
+  "regel": 3241,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".gallery-slider-thumbnails",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-thumbnails"
+  ]
+ },
+ {
+  "regel": 3247,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".gallery-slider-thumbnails-item-inner",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3250,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".gallery-slider-thumbnails-item.tns-nav-active .gallery-slider-thumbnails-item-inner",
+  "status": "dood",
+  "ontbrekend": [
+   "gallery-slider-thumbnails-item"
+  ]
+ },
+ {
+  "regel": 3313,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": "#js-request-sample",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3406,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-tabs .nav-tabs .nav-link:not(.active):hover, .product-detail-tabs .nav-tabs .nav-link:not(.active):focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3456,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".product-detail-properties-table.table-striped > tbody > tr:nth-of-type(odd) > *",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3505,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".sorting select.sorting:hover, .sorting select.sorting:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3560,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel .filter-panel-item-toggle.btn:hover, .filter-panel .filter-panel-item-toggle.btn[aria-expanded=\"true\"]",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3614,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon):hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3644,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel-active-container .filter-active",
+  "status": "dood",
+  "ontbrekend": [
+   "filter-active"
+  ]
+ },
+ {
+  "regel": 3657,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel-active-container .filter-active-remove, .filter-panel-active-container .filter-active button",
+  "status": "dood",
+  "ontbrekend": [
+   "filter-active",
+   "filter-active-remove"
+  ]
+ },
+ {
+  "regel": 3676,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel-active-container .filter-active-remove:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "filter-active-remove"
+  ]
+ },
+ {
+  "regel": 3683,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel-active-container .filter-reset-all, .filter-panel-active-container .btn, .filter-panel-active-container button:not(.filter-active-remove)",
+  "status": "deels-dood",
+  "ontbrekend": [
+   "filter-reset-all"
+  ]
+ },
+ {
+  "regel": 3694,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".filter-panel-active-container .filter-reset-all:hover, .filter-panel-active-container button:not(.filter-active-remove):hover",
+  "status": "deels-dood",
+  "ontbrekend": [
+   "filter-reset-all"
+  ]
+ },
+ {
+  "regel": 3715,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".category-navigation .category-navigation-link:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 3841,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".page-item .page-link:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4059,
+  "sectie": "6c. OFFCANVAS-MENU (mobiel/tab",
+  "selector": ".rg-cat-head__link:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4386,
+  "sectie": "25b. PRODUCT-SLIDER — uitlijne",
+  "selector": ".cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):not(.rg-cta__btn--ghost)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4392,
+  "sectie": "25b. PRODUCT-SLIDER — uitlijne",
+  "selector": ".cms-section:has(.home-productslider) .cms-element-text .btn:not(.btn-outline-primary):not(.rg-cta__btn--ghost):hover, .cms-section:has(.home-productslider) .cm",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4441,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".header-search, .header-row .header-search",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4459,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".cms-block-image-text-row .cms-image-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 4464,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".cms-block-image-text-row .cms-image-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 4467,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".cms-block-image-text-row .cms-block-container",
+  "status": "dood",
+  "ontbrekend": [
+   "cms-block-image-text-row"
+  ]
+ },
+ {
+  "regel": 4477,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".hero-image-text",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 4481,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".hero-image-text .cms-block-container",
+  "status": "dood",
+  "ontbrekend": [
+   "hero-image-text"
+  ]
+ },
+ {
+  "regel": 4519,
+  "sectie": "26. RESPONSIVE TUNING — deskto",
+  "selector": ".header-row",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4668,
+  "sectie": "27. FEATURE ROW — image + teks",
+  "selector": ".cms-section:has(.rg-feature-row__content) .cms-image-container",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4673,
+  "sectie": "27. FEATURE ROW — image + teks",
+  "selector": ".cms-section:has(.rg-feature-row__content) .cms-image",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4685,
+  "sectie": "27. FEATURE ROW — image + teks",
+  "selector": ".cms-section:has(.rg-feature-row__content) .cms-element-image, .cms-section:has(.rg-feature-row__content) .cms-image-container",
+  "status": "deels-dood",
+  "ontbrekend": [
+   "cms-element-image"
+  ]
+ },
+ {
+  "regel": 4688,
+  "sectie": "27. FEATURE ROW — image + teks",
+  "selector": ".cms-section:has(.rg-feature-row__content) .cms-image",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4738,
+  "sectie": "27. FEATURE ROW — image + teks",
+  "selector": ".cms-block.rg-feature-reverse .cms-block-container-row, .cms-section.rg-feature-reverse .cms-block-container-row",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4924,
+  "sectie": "27b. VERGELIJK-BLOK (.rg-compa",
+  "selector": ".rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 4963,
+  "sectie": "27d. BOSLICHT — grain-gradient",
+  "selector": ".rg-endcta__card, .rg-route__panel, .rg-sd__panel, .rg-sd__ask, .rg-compare__col--yes",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5185,
+  "sectie": "29. BRAND-STATEMENT — typograf",
+  "selector": ".rg-statement__content, .rg-statement__media",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5222,
+  "sectie": "29. BRAND-STATEMENT — typograf",
+  "selector": ".rg-europe-map__svg .st0, .rg-europe-map__svg path",
+  "status": "deels-dood",
+  "ontbrekend": [
+   "st0"
+  ]
+ },
+ {
+  "regel": 5294,
+  "sectie": "29. BRAND-STATEMENT — typograf",
+  "selector": ".rg-europe-map__pin",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5299,
+  "sectie": "29. BRAND-STATEMENT — typograf",
+  "selector": ".rg-europe-map__pin::after",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5643,
+  "sectie": "30. HOMEPAGE-UITLIJNING — dete",
+  "selector": ".home-productslider .base-slider-controls button:hover:not(:disabled) .icon",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5830,
+  "sectie": "31. THEMA-OVERZICHT — bento-gr",
+  "selector": ".rg-theme-tile, .rg-theme-tile__img, .rg-theme-tile__arrow",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5898,
+  "sectie": "32. MERKEN-GRID — gelijke logo",
+  "selector": ".rg-brand-tile, .rg-brand-tile__logo",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 5946,
+  "sectie": "32. MERKEN-GRID — gelijke logo",
+  "selector": ".rg-brand-tile__cta-text::after",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6062,
+  "sectie": "33. SERVICES-GRID — cards (bee",
+  "selector": ".rg-service-card, .rg-service-card__img, .rg-service-card__link::after",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6359,
+  "sectie": "38. HERO V2 (.rg-hero-v2) — ve",
+  "selector": ".rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6366,
+  "sectie": "38. HERO V2 (.rg-hero-v2) — ve",
+  "selector": ".rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6369,
+  "sectie": "38. HERO V2 (.rg-hero-v2) — ve",
+  "selector": ".rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6647,
+  "sectie": "39. EIND-CTA (.rg-endcta) — af",
+  "selector": ".rg-endcta__ghost:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6753,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container .form-group",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6768,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container .form-control",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6785,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container .form-control:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6791,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container select.form-control",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6801,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container input[type=\"file\"].form-control",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6861,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container .basic-captcha-content-refresh-icon.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "basic-captcha-content-refresh-icon"
+  ]
+ },
+ {
+  "regel": 6870,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container .basic-captcha-content-refresh-icon svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "basic-captcha-content-refresh-icon"
+  ]
+ },
+ {
+  "regel": 6889,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container .form-control:hover:not(:focus)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 6895,
+  "sectie": "40. AANVRAAGFORMULIER (#reques",
+  "selector": "#request-offer-container input:-webkit-autofill, #request-offer-container input:-webkit-autofill:hover, #request-offer-container input:-webkit-autofill:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7399,
+  "sectie": "41. SERVICE-DETAIL (.rg-sd) — ",
+  "selector": "h3.rg-sd__tech-title, .cms-element-text h3.rg-sd__tech-title",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7496,
+  "sectie": "41. SERVICE-DETAIL (.rg-sd) — ",
+  "selector": ".rg-sd__ask-ghost:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7511,
+  "sectie": "41. SERVICE-DETAIL (.rg-sd) — ",
+  "selector": ".rg-sd__ask-actions .btn.btn-outline-primary:not(.rg-sd__ask-ghost)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7517,
+  "sectie": "41. SERVICE-DETAIL (.rg-sd) — ",
+  "selector": ".rg-sd__ask-actions .btn.btn-outline-primary:not(.rg-sd__ask-ghost):hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7581,
+  "sectie": "41. SERVICE-DETAIL (.rg-sd) — ",
+  "selector": ".rg-sd__faq-item summary::after",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7598,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .card-body",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7620,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .form-control, .cms-element-form:has(#cms-form-contact) .form-select",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7636,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .form-control:focus, .cms-element-form:has(#cms-form-contact) .form-select:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7642,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .form-select",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7662,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .basic-captcha-content-refresh-icon.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "basic-captcha-content-refresh-icon"
+  ]
+ },
+ {
+  "regel": 7666,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .basic-captcha-content-refresh-icon svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "basic-captcha-content-refresh-icon"
+  ]
+ },
+ {
+  "regel": 7686,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) input:-webkit-autofill, .cms-element-form:has(#cms-form-contact) input:-webkit-autofill:hover, .cms-element-form:has(#c",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7693,
+  "sectie": "40b. CONTACTFORMULIER — zelfde",
+  "selector": ".cms-element-form:has(#cms-form-contact) .form-control:hover:not(:focus), .cms-element-form:has(#cms-form-contact) .form-select:hover:not(:focus)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7904,
+  "sectie": "CONTACT-KOP (.rg-contact-head)",
+  "selector": ".cms-block-form:has(#cms-form-contact) .cms-block-container",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 7975,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": "#request-offer-container .button-container button[type=\"submit\"]",
+  "status": "dood",
+  "ontbrekend": [
+   "button-container"
+  ]
+ },
+ {
+  "regel": 8002,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": "body.is-ctl-requestoffer .container:not(.header-main .container)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8003,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": "body.is-ctl-requestoffer #request-offer-container",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8064,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": ":is(.block-cioform-container, #request-offer-container) .form-control:focus",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8068,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": ":is(.block-cioform-container, #request-offer-container) select.form-control",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8075,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": ":is(.block-cioform-container, #request-offer-container) input[type=\"file\"].form-control",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8097,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": ":is(.block-cioform-container, #request-offer-container) .basic-captcha-content-refresh-icon.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "basic-captcha-content-refresh-icon"
+  ]
+ },
+ {
+  "regel": 8101,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": ":is(.block-cioform-container, #request-offer-container) .basic-captcha-content-refresh-icon svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "basic-captcha-content-refresh-icon"
+  ]
+ },
+ {
+  "regel": 8127,
+  "sectie": "40c. CUSTOM OFFERTE- EN AANVRA",
+  "selector": ":is(.block-cioform-container, #request-offer-container) .form-control:hover:not(:focus)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8230,
+  "sectie": "40d. CONTACTFORMULIER-VOORZETJ",
+  "selector": ".rg-cform__field",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8389,
+  "sectie": "41. EDITORIAL SYSTEEM (globaal",
+  "selector": ".rg-sd__tech-media",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 8998,
+  "sectie": "42. OVER ONS (.rg-route) — \"De",
+  "selector": ".rg-route__punch",
+  "status": "dood",
+  "ontbrekend": [
+   "rg-route__punch"
+  ]
+ },
+ {
+  "regel": 9006,
+  "sectie": "42. OVER ONS (.rg-route) — \"De",
+  "selector": ".rg-route__punch em",
+  "status": "dood",
+  "ontbrekend": [
+   "rg-route__punch"
+  ]
+ },
+ {
+  "regel": 9225,
+  "sectie": "42. OVER ONS (.rg-route) — \"De",
+  "selector": ".rg-route__contact > .rg-contact-head__callcard:hover, .rg-route__contact > .rg-contact-head__callcard:focus-visible",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 9253,
+  "sectie": "42. OVER ONS (.rg-route) — \"De",
+  "selector": ".rg-route__contact-link:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 9404,
+  "sectie": "44. OVER ONS — verbeterronde v",
+  "selector": ".rg-route__end-link:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 9775,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-close.js-offcanvas-close",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9779,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-close.js-offcanvas-close",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9801,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-close .icon svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9820,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-img",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-img"
+  ]
+ },
+ {
+  "regel": 9825,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-label",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-label"
+  ]
+ },
+ {
+  "regel": 9831,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-label:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-label"
+  ]
+ },
+ {
+  "regel": 9868,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .custom-configurator-table",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9880,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .custom-configurator-table > thead > tr > *",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9887,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .custom-configurator-table > tbody > tr > *",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9900,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .product-wishlist",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9926,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-quantity-group",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-quantity-group"
+  ]
+ },
+ {
+  "regel": 9935,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .btn-minus.btn, .cart-offcanvas .btn-plus.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "btn-minus",
+   "btn-plus",
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9947,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .btn-minus.btn:hover, .cart-offcanvas .btn-plus.btn:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "btn-minus",
+   "btn-plus",
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9952,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .btn-minus svg use, .cart-offcanvas .btn-plus svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "btn-minus",
+   "btn-plus",
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 9955,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .quantity-selector-group-input",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "quantity-selector-group-input"
+  ]
+ },
+ {
+  "regel": 9988,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-remove-button.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-remove-button"
+  ]
+ },
+ {
+  "regel": 9997,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-remove-button svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-remove-button"
+  ]
+ },
+ {
+  "regel": 9998,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .line-item-remove-button:hover svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "line-item-remove-button"
+  ]
+ },
+ {
+  "regel": 10005,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-items",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-items"
+  ]
+ },
+ {
+  "regel": 10020,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .summary-total",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "summary-total"
+  ]
+ },
+ {
+  "regel": 10026,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .js-toggle-shipping-selection",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "js-toggle-shipping-selection"
+  ]
+ },
+ {
+  "regel": 10045,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-promotion-form .form-control",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-promotion-form"
+  ]
+ },
+ {
+  "regel": 10052,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-promotion-form"
+  ]
+ },
+ {
+  "regel": 10063,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-promotion-form"
+  ]
+ },
+ {
+  "regel": 10066,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-promotion-form"
+  ]
+ },
+ {
+  "regel": 10072,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-promotion-form .btn-secondary svg",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-promotion-form"
+  ]
+ },
+ {
+  "regel": 10090,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .begin-checkout-btn.btn-primary",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 10096,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .begin-checkout-btn.btn-primary:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas"
+  ]
+ },
+ {
+  "regel": 10101,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-actions a.btn.btn-link",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-actions"
+  ]
+ },
+ {
+  "regel": 10112,
+  "sectie": "49. WINKELMAND + CHECKOUT (.ca",
+  "selector": ".cart-offcanvas .offcanvas-cart-actions a.btn.btn-link:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "cart-offcanvas",
+   "offcanvas-cart-actions"
+  ]
+ },
+ {
+  "regel": 10147,
+  "sectie": "49.12 CHECKOUT — \"Heeft u al e",
+  "selector": ".register-login-collapse-toogle .icon-avatar svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "register-login-collapse-toogle"
+  ]
+ },
+ {
+  "regel": 10150,
+  "sectie": "49.12 CHECKOUT — \"Heeft u al e",
+  "selector": ".register-login-collapse-toogle .login-collapse-toggle",
+  "status": "dood",
+  "ontbrekend": [
+   "login-collapse-toggle",
+   "register-login-collapse-toogle"
+  ]
+ },
+ {
+  "regel": 10156,
+  "sectie": "49.12 CHECKOUT — \"Heeft u al e",
+  "selector": ".register-login-collapse-toogle .login-collapse-toggle:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "login-collapse-toggle",
+   "register-login-collapse-toogle"
+  ]
+ },
+ {
+  "regel": 10168,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-container",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-container"
+  ]
+ },
+ {
+  "regel": 10177,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".content-main:has(.checkout-container) .container-main, .content-main:has(.checkout-card) .container-main",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10188,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".content-main:has(.checkout-container)",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10191,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-container .checkout",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-container"
+  ]
+ },
+ {
+  "regel": 10211,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".register-card",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10217,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".register-card .card-body",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10225,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".register-card .card-title",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10254,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".address-contact-type-company > div:has(#billingAddressdepartment) > .form-group",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10266,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main .row.g-2 > .form-group.col-4, .checkout-main .row.g-2 > .form-group.col-8",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10274,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main .form-group",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10290,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main .form-control, .checkout-main .form-select",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10303,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main .form-control:focus, .checkout-main .form-select:focus",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10309,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main .form-control:hover:not(:focus), .checkout-main .form-select:hover:not(:focus)",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10312,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main .form-select",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10329,
+  "sectie": "49.13 CHECKOUT — paginakop + s",
+  "selector": ".checkout-main input:-webkit-autofill, .checkout-main input:-webkit-autofill:hover, .checkout-main input:-webkit-autofill:focus",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10374,
+  "sectie": "49.13b CHECKOUT — betaal- en v",
+  "selector": ".payment-method-radio, .shipping-method-radio",
+  "status": "dood",
+  "ontbrekend": [
+   "payment-method-radio",
+   "shipping-method-radio"
+  ]
+ },
+ {
+  "regel": 10383,
+  "sectie": "49.13b CHECKOUT — betaal- en v",
+  "selector": ".payment-method-input, .shipping-method-input",
+  "status": "dood",
+  "ontbrekend": [
+   "payment-method-input",
+   "shipping-method-input"
+  ]
+ },
+ {
+  "regel": 10390,
+  "sectie": "49.13b CHECKOUT — betaal- en v",
+  "selector": ".payment-method-label, .shipping-method-label",
+  "status": "dood",
+  "ontbrekend": [
+   "payment-method-label",
+   "shipping-method-label"
+  ]
+ },
+ {
+  "regel": 10400,
+  "sectie": "49.13b CHECKOUT — betaal- en v",
+  "selector": ".payment-method-image",
+  "status": "dood",
+  "ontbrekend": [
+   "payment-method-image"
+  ]
+ },
+ {
+  "regel": 10448,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside-summary-label.checkout-aside-summary-total, .checkout-aside-summary-value.checkout-aside-summary-total",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-aside-summary-label",
+   "checkout-aside-summary-value"
+  ]
+ },
+ {
+  "regel": 10469,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside .line-item-img",
+  "status": "dood",
+  "ontbrekend": [
+   "line-item-img"
+  ]
+ },
+ {
+  "regel": 10470,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside .line-item-label",
+  "status": "dood",
+  "ontbrekend": [
+   "line-item-label"
+  ]
+ },
+ {
+  "regel": 10471,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside .line-item-label:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "line-item-label"
+  ]
+ },
+ {
+  "regel": 10481,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside .custom-configurator-table",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10489,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside .custom-configurator-table > thead > tr > *",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10490,
+  "sectie": "49.14 CHECKOUT — samenvatting-",
+  "selector": ".checkout-aside .custom-configurator-table > tbody > tr > *",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10504,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-card",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-card"
+  ]
+ },
+ {
+  "regel": 10510,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-card .card-body",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-card"
+  ]
+ },
+ {
+  "regel": 10511,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-card .card-title",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-card"
+  ]
+ },
+ {
+  "regel": 10527,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-img",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-img"
+  ]
+ },
+ {
+  "regel": 10528,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-label",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-label"
+  ]
+ },
+ {
+  "regel": 10529,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-label:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-label"
+  ]
+ },
+ {
+  "regel": 10535,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .rg-price-detail-toggle",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10541,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .rg-price-detail-toggle:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10542,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .custom-configurator-table",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10550,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .custom-configurator-table > thead > tr > *",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10551,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .custom-configurator-table > tbody > tr > *",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10570,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-quantity-group",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-quantity-group"
+  ]
+ },
+ {
+  "regel": 10579,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .btn-minus.btn, .checkout-main .btn-plus.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "btn-minus",
+   "btn-plus",
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10591,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .btn-minus.btn:hover, .checkout-main .btn-plus.btn:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "btn-minus",
+   "btn-plus",
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10593,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .btn-minus svg use, .checkout-main .btn-plus svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "btn-minus",
+   "btn-plus",
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10594,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .quantity-selector-group-input",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "quantity-selector-group-input"
+  ]
+ },
+ {
+  "regel": 10608,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-remove-button.btn",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-remove-button"
+  ]
+ },
+ {
+  "regel": 10612,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-remove-button svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-remove-button"
+  ]
+ },
+ {
+  "regel": 10613,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .line-item-remove-button:hover svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main",
+   "line-item-remove-button"
+  ]
+ },
+ {
+  "regel": 10614,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .icon-wishlist-not-added svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10615,
+  "sectie": "49.15 CHECKOUT — bevestigingsp",
+  "selector": ".checkout-main .icon-wishlist-added svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "checkout-main"
+  ]
+ },
+ {
+  "regel": 10628,
+  "sectie": "49.16 CHECKOUT — footer (.foot",
+  "selector": ".footer-minimal .footer-vat p, .footer-minimal .footer-copyright",
+  "status": "dood",
+  "ontbrekend": [
+   "footer-minimal"
+  ]
+ },
+ {
+  "regel": 10633,
+  "sectie": "49.16 CHECKOUT — footer (.foot",
+  "selector": ".footer-minimal .footer-vat a",
+  "status": "dood",
+  "ontbrekend": [
+   "footer-minimal"
+  ]
+ },
+ {
+  "regel": 10634,
+  "sectie": "49.16 CHECKOUT — footer (.foot",
+  "selector": ".footer-minimal .footer-vat a:hover",
+  "status": "dood",
+  "ontbrekend": [
+   "footer-minimal"
+  ]
+ },
+ {
+  "regel": 10635,
+  "sectie": "49.16 CHECKOUT — footer (.foot",
+  "selector": ".footer-minimal .footer-copyright svg use",
+  "status": "dood",
+  "ontbrekend": [
+   "footer-minimal"
+  ]
+ },
+ {
+  "regel": 10651,
+  "sectie": "49.16 CHECKOUT — footer (.foot",
+  "selector": ".header-minimal-logo",
+  "status": "dood",
+  "ontbrekend": [
+   "header-minimal-logo"
+  ]
+ },
+ {
+  "regel": 10665,
+  "sectie": "49.16 CHECKOUT — footer (.foot",
+  "selector": "body.is-ctl-register .content-main > .container, body.is-ctl-login .content-main > .container",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10749,
+  "sectie": "50. COOKIE-CONSENT — teruggeze",
+  "selector": ".cookie-permission-container .js-cookie-permission-button .btn.btn-primary:hover, .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary:",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10766,
+  "sectie": "50. COOKIE-CONSENT — teruggeze",
+  "selector": ".cookie-permission-container .js-cookie-accept-all-button .btn.btn-primary:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10966,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster-pagina .cms-section:has(.rg-page-hero--raster) .cms-block-container, .rg-raster-pagina .cms-section:has(.rg-page-hero--raster) .cms-block-container[s",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 10971,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster-pagina .cms-section:has(.home-productslider) .cms-block-container, .rg-raster-pagina .cms-section:has(.home-productslider) .cms-block-container[style",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11017,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .product-slider-item",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11047,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .product-box",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11057,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .product-box:hover",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11065,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .product-box .card-body",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11067,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .product-image-wrapper",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11094,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .variant-thumbnail",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11097,
+  "sectie": "51. THEMA-LANDINGSPAGINA — her",
+  "selector": ".rg-raster .product-name",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11458,
+  "sectie": "53. THEMA-HERO MET PRODUCTBAND",
+  "selector": ".rg-band-pagina .cms-section:has(.rg-band) .cms-block-text:has(.rg-cat-head), .rg-band-pagina .cms-section:has(.rg-band) .rg-slider-cta-moved",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11608,
+  "sectie": "53. THEMA-HERO MET PRODUCTBAND",
+  "selector": ".rg-band-pagina .rg-band .product-badges, .rg-band-pagina .rg-band .product-action, .rg-band-pagina .rg-band .product-wishlist, .rg-band-pagina .rg-band .varian",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11638,
+  "sectie": "53. THEMA-HERO MET PRODUCTBAND",
+  "selector": ".rg-band-pagina .rg-band .product-box:hover .product-name",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11699,
+  "sectie": "53. THEMA-HERO MET PRODUCTBAND",
+  "selector": ".rg-band-pagina .rg-band",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11708,
+  "sectie": "53. THEMA-HERO MET PRODUCTBAND",
+  "selector": ".rg-band-pagina .rg-band .product-slider-container",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11715,
+  "sectie": "53. THEMA-HERO MET PRODUCTBAND",
+  "selector": ".rg-band-pagina .rg-band .rg-band__kloon",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11941,
+  "sectie": "55. KERSTHERO, VIJFDE OPZET — ",
+  "selector": ".rg-band-pagina .container-main",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 11989,
+  "sectie": "55. KERSTHERO, VIJFDE OPZET — ",
+  "selector": ".rg-page-hero--band .rg-page-hero__strook[hidden]",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12166,
+  "sectie": "55. KERSTHERO, VIJFDE OPZET — ",
+  "selector": ".rg-band-pagina .container-main",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12376,
+  "sectie": "57. KERSTHERO OP MOBIEL, 10 no",
+  "selector": ".rg-band-pagina .rg-band .product-box:hover .product-name",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12465,
+  "sectie": "57. KERSTHERO OP MOBIEL, 10 no",
+  "selector": ".header-logo-main-link img, .header-logo img",
+  "status": "deels-dood",
+  "ontbrekend": [
+   "header-logo"
+  ]
+ },
+ {
+  "regel": 12468,
+  "sectie": "57. KERSTHERO OP MOBIEL, 10 no",
+  "selector": ".header-logo-col",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12502,
+  "sectie": "59. LADEN VAN DE THEMAPAGINA: ",
+  "selector": "html:not(.rg-band-pagina):has(.rg-page-hero--band) .container-main",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12504,
+  "sectie": "59. LADEN VAN DE THEMAPAGINA: ",
+  "selector": "html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-breadcrumb, html:not(.rg-band-pagina):has(.rg-page-hero--band) .breadcrumb.container",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12506,
+  "sectie": "59. LADEN VAN DE THEMAPAGINA: ",
+  "selector": "html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-page, html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-sections",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12508,
+  "sectie": "59. LADEN VAN DE THEMAPAGINA: ",
+  "selector": "html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) .cms-block-container, html:not(.rg-band-pagina):has(.rg-page-hero--band",
+  "status": "levend",
+  "ontbrekend": []
+ },
+ {
+  "regel": 12511,
+  "sectie": "59. LADEN VAN DE THEMAPAGINA: ",
+  "selector": "html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) .cms-block-container, html:not(.rg-band-pagina):has(.rg-page-hero--ba",
+  "status": "levend",
+  "ontbrekend": []
+ }
+]

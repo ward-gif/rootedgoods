@@ -432,7 +432,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
 .main-navigation-link:hover .main-navigation-link-text,
 .main-navigation-link:hover .main-navigation-link-text span,
 .main-navigation-link:hover [itemprop="name"] {
-  color: #ad6331 !important; /* normale terracotta hover op de menu-links */
+  color: #ad6331; /* normale terracotta hover op de menu-links */
 }
 /* Desktop: horizontale link-padding weg en spacing via gap, zodat het
    nav-blok schoon centreert (geen optische verschuiving) — recht onder de
@@ -496,7 +496,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   box-shadow: none !important;
 }
 .header-actions-col .offerte-link.btn-primary:hover {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 /* Geen pijl op deze knop -- de globale .btn-primary::after-pijl (sectie 8)
    afgezet met content:none (!important nodig: die regel staat verderop in
@@ -687,9 +687,9 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   opacity: 1;
 }
 .header-search-input:focus {
-  padding: 0.6rem 1rem !important;
+  padding: 0.6rem 1rem;
   background-color: #F0EFEB;
-  color: #2d4528 !important;
+  color: #2d4528;
   border: none;
   box-shadow: none;
 }
@@ -1448,7 +1448,7 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9) !important;
 }
 .btn-primary:hover {
-  background-color: #955529 !important; /* diepere terracotta op hover */
+  background-color: #955529; /* diepere terracotta op hover */
   border-color: #955529 !important;
   transform: translateY(-2px);
   box-shadow: 0 14px 28px -12px rgba(173, 99, 49, 0.95) !important;
@@ -1461,9 +1461,9 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   color: #2d4528;
 }
 .btn-outline-primary:hover {
-  background-color: transparent !important;
+  background-color: transparent;
   border-color: #ad6331 !important;
-  color: #ad6331 !important;
+  color: #ad6331;
   transform: translateY(-2px);
 }
 /* Secundaire CTA site-wide = KALE TEKSTLINK-met-pijl (geen omlijnde knop),
@@ -1482,9 +1482,9 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
   font-size: 0.95rem;
 }
 .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover {
-  background: transparent !important;
-  color: #ad6331 !important;
-  transform: none !important;   /* geen knop-lift */
+  background: transparent;
+  color: #ad6331;
+  transform: none;   /* geen knop-lift */
 }
 
 /* Pijl op primaire + secundaire knoppen (zelfde als de landing-CTA), zodat we
@@ -1521,8 +1521,8 @@ h6, .cms-element-text h6 { font-size: 1rem;    font-weight: 600; }
 
 /* Zichtbare toetsenbord-focus op alle knoppen (a11y, site-wide) */
 .btn:not(.header-actions-btn):focus-visible {
-  outline: 3px solid rgba(45, 69, 40, 0.55) !important;
-  outline-offset: 3px !important;
+  outline: 3px solid rgba(45, 69, 40, 0.55);
+  outline-offset: 3px;
 }
 
 /* Afbeeldingen niet selecteerbaar/sleepbaar (site-wide) — voorkomt de blauwe
@@ -1826,8 +1826,8 @@ img {
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next { right: 0; }
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev:hover,
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next:hover {
-  background: transparent !important;
-  color: #555 !important;
+  background: transparent;
+  color: #555;
 }
 /* Subtiele edge-fade over de swatch-track (zelfde idee als .rg-logo-fade
    bij de merken-slider) -- de track knipt een half-zichtbare swatch anders
@@ -1866,7 +1866,7 @@ img {
   margin: 0.25rem 0 0.5rem 0;
 }
 :is(.home-productslider, .cms-listing-row) .product-name:hover {
-  color: #ad6331 !important;
+  color: #ad6331;
 }
 
 /* Description: subtiel, max 2 regels. height:auto overschrijft native
@@ -2625,10 +2625,10 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 #buyButton.btn-primary:hover,
 #buyButton.btn-primary:focus {
-  background-color: transparent !important;
+  background-color: transparent;
   border-color: #ad6331 !important;
-  color: #ad6331 !important;
-  box-shadow: none !important;
+  color: #ad6331;
+  box-shadow: none;
 }
 
 /* Primair: "Offerte aanvragen" → filled-look (was outline).
@@ -2649,9 +2649,9 @@ body.is-ctl-product .product-detail-ordernumber-container {
 }
 #js-request-offer.btn-outline-primary:hover,
 #js-request-offer.btn-outline-primary:focus {
-  background-color: #955529 !important; /* terracotta-dark, blijft uit het groen */
+  background-color: #955529; /* terracotta-dark, blijft uit het groen */
   border-color: #955529 !important;
-  color: #fff !important;
+  color: #fff;
 }
 
 /* Reorder binnen .d-grid: primary action eerst, dan secundair, dan sample.
@@ -3397,17 +3397,17 @@ body.is-ctl-product {
 .product-detail-tabs .nav-tabs .nav-link.active,
 .product-detail-tabs .nav-tabs .nav-link.active:hover,
 .product-detail-tabs .nav-tabs .nav-link.active:focus {
-  background-color: #ffffff !important;
-  border-top-color: transparent !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  border-bottom: 2px solid #CA853F !important;
+  background-color: #ffffff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 2px solid #CA853F;
 }
 
 /* Hover/focus op INACTIEVE tabs: geen achtergrondswisseling */
 .product-detail-tabs .nav-tabs .nav-link:not(.active):hover,
 .product-detail-tabs .nav-tabs .nav-link:not(.active):focus {
-  background-color: transparent !important;
+  background-color: transparent;
   border-color: transparent !important;
 }
 
@@ -3563,7 +3563,7 @@ body.is-ctl-product {
 .filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
   border-color: #EAE3D7 !important;        /* separator blijft, geen pill-rand */
   background-color: transparent !important;
-  color: #ad6331 !important;               /* titel terracotta bij hover/open */
+  color: #ad6331;               /* titel terracotta bij hover/open */
 }
 
 /* Filter panel — geen sticky, geen achtergrond, normale flow */
@@ -3616,7 +3616,7 @@ body.is-ctl-product {
 }
 .filter-panel-wrapper-toggle.btn.btn-outline-primary:not(.basic-captcha-content-refresh-icon):hover {
   border-color: #ad6331 !important;
-  color: #ad6331 !important;
+  color: #ad6331;
 }
 /* Icoon zelf staat native op position:relative;top:6px -- duwt 'm 6px
    lager dan het midden van de knop, ondanks dat de omliggende span/flex
@@ -3716,7 +3716,7 @@ body.is-ctl-product {
   transition: color 0.15s ease;
 }
 .category-navigation .category-navigation-link:hover {
-  color: #ad6331 !important;
+  color: #ad6331;
 }
 .category-navigation .category-navigation-link.is-active {
   color: #ad6331 !important; /* actieve/geselecteerde categorie in terracotta */
@@ -3843,7 +3843,7 @@ body.is-ctl-product {
 }
 .page-item .page-link:hover {
   border-color: #ad6331 !important;
-  color: #ad6331 !important;
+  color: #ad6331;
 }
 .page-item.active .page-link {
   background-color: #ad6331 !important;
@@ -4059,7 +4059,7 @@ h2.rg-cat-heading,
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
   transition: transform 0.2s ease;
 }
-.rg-cat-head__link:hover { color: #ad6331 !important; }
+.rg-cat-head__link:hover { color: #ad6331; }
 .rg-cat-head__link:hover::after { transform: translateX(3px); }
 @media (max-width: 767px) {
   .rg-cat-head { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
@@ -4925,7 +4925,7 @@ h2.rg-compare__title,
   color: var(--rg-peach);
 }
 .rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover {
-  color: var(--rg-cognac-light) !important;
+  color: var(--rg-cognac-light);
 }
 @media (max-width: 700px) {
   .rg-compare__cols { grid-template-columns: 1fr; row-gap: 1.75rem; }
@@ -6360,7 +6360,7 @@ h2.rg-block-title__title,
   box-shadow: 0 14px 30px -10px rgba(173, 99, 49, 0.95);
 }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover {
-  box-shadow: 0 20px 38px -12px rgba(173, 99, 49, 1) !important;
+  box-shadow: 0 20px 38px -12px rgba(173, 99, 49, 1);
 }
 /* Secundaire link: teruggezet naar de gewone globale .btn-outline-primary
    look (de gedemote regular/gedempte/pijl-alleen-on-hover-variant is weer
@@ -6370,8 +6370,8 @@ h2.rg-block-title__title,
   transition: text-decoration-color .15s ease, color .2s ease !important;
 }
 .rg-hero-v2 .rg-hero-v2__cta a.btn-outline-primary:hover {
-  text-decoration: underline !important;
-  text-underline-offset: 2px !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ---- Richard-CTA: hergebruikt .rg-cta__contact (dezelfde component,
@@ -6648,9 +6648,9 @@ h2.rg-endcta__title,
   color: #ffffff;
 }
 .rg-endcta__ghost:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.85) !important;
-  color: #ffffff !important;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 /* Trust-strip — spiegelt de hero (boekensteun), in wit. */
@@ -7497,9 +7497,9 @@ h2.rg-sd__ask-title,
   color: #ffffff;
 }
 .rg-sd__ask-ghost:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.85) !important;
-  color: #ffffff !important;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 /* Vangnet: de live CMS-tekst op Contact/FAQ/service-detail gebruikt op dit
@@ -8065,7 +8065,7 @@ h1.rg-contact-head__title,
 :is(.block-cioform-container, #request-offer-container) textarea.form-control { min-height: 120px; resize: vertical; line-height: 1.55; }
 :is(.block-cioform-container, #request-offer-container) .form-control::placeholder { color: #8c857a; }
 :is(.block-cioform-container, #request-offer-container) .form-control:focus {
-  border-color: #2d4528 !important; box-shadow: 0 0 0 3px rgba(45,69,40,.12) !important; outline: none !important;
+  border-color: #2d4528 !important; box-shadow: 0 0 0 3px rgba(45,69,40,.12); outline: none;
 }
 /* Select: eigen groene chevron */
 :is(.block-cioform-container, #request-offer-container) select.form-control {
@@ -8998,21 +8998,6 @@ h2.rg-route__stop-title{
 }
 
 /* de km-punchline bij thuiskomst */
-.rg-route__punch{
-  font-family:'Playfair Display',Georgia,serif !important;
-  font-weight:700;
-  color:var(--rg-green) !important;
-  font-size:clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem) !important;
-  line-height:1.2 !important;
-  margin:0 0 clamp(1.5rem, 3vw, 2.5rem) !important;
-}
-.rg-route__punch em{
-  font-style: normal !important;
-  font-synthesis: none;
-  display: inline-block;
-  transform: skewX(-14deg);
-  color: var(--rg-cognac-light) !important;
-}
 
 /* ---- Drie wortels (stop 3) ---- */
 .rg-route__roots{
@@ -9253,7 +9238,7 @@ h2.rg-route__team-title{
   margin-bottom:.55rem;
   transition:border-color .18s ease, color .18s ease;
 }
-.rg-route__contact-link:hover{ color:var(--rg-cognac) !important; border-color:var(--rg-cognac); }
+.rg-route__contact-link:hover{ color:var(--rg-cognac); border-color:var(--rg-cognac); }
 .rg-route__contact > .rg-contact-head__callcard{ margin-top:.5rem; }
 
 /* ---- MOBIEL / TABLET: verticale rail ---- */
@@ -9406,7 +9391,7 @@ h2.rg-route__team-title{
 .rg-route__end-link span{ transition:transform .18s ease; }
 .rg-route__end-link:hover{
   gap:.6rem;
-  color:var(--rg-cognac-deep) !important;
+  color:var(--rg-cognac-deep);
 }
 
 /* ============================================================
@@ -10750,10 +10735,10 @@ h2.rg-route__team-title{
 }
 .cookie-permission-container .js-cookie-permission-button .btn.btn-primary:hover,
 .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary:hover {
-  background-color: transparent !important;
+  background-color: transparent;
   border-color: #ad6331 !important;
-  color: #ad6331 !important;
-  box-shadow: none !important;
+  color: #ad6331;
+  box-shadow: none;
 }
 
 /* Accepteren blijft de gevulde cognac knop uit sectie 8. Expliciet
@@ -10767,9 +10752,9 @@ h2.rg-route__team-title{
   box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9);
 }
 .cookie-permission-container .js-cookie-accept-all-button .btn.btn-primary:hover {
-  background-color: #955529 !important;
+  background-color: #955529;
   border-color: #955529 !important;
-  color: #fff !important;
+  color: #fff;
 }
 
 /* ============================================================

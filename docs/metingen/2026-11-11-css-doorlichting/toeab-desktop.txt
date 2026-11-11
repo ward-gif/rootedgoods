@@ -1,0 +1,14 @@
+desktop  /                            elementen=22 {"gemerkt":15,"geen-element":51,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /alle-producten/             elementen=29 {"gemerkt":19,"geen-element":47,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /huis-keuken/                elementen=27 {"gemerkt":19,"geen-element":47,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /Borrelplank/A1352-Kerst1    elementen=22 {"gemerkt":20,"geen-element":46,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /eindejaarsgeschenken        elementen=19 {"gemerkt":13,"geen-element":53,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /thema-s/                    elementen=27 {"gemerkt":19,"geen-element":47,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /offerte                     elementen=15 {"gemerkt":9,"geen-element":57,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /over-ons                    elementen=16 {"gemerkt":12,"geen-element":54,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /merken/                     elementen=12 {"gemerkt":8,"geen-element":58,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /contact                     elementen=16 {"gemerkt":10,"geen-element":56,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /services/                   elementen=13 {"gemerkt":9,"geen-element":57,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /full-service-ontzorging     elementen=15 {"gemerkt":11,"geen-element":55,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+desktop  /wishlist                    elementen=12 {"gemerkt":8,"geen-element":58,"selector-fout":6,"pseudo-element":8} ELEMENTEN MET VERSCHIL: 0
+klaar 0
