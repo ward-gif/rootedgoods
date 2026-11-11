@@ -1,16 +1,9 @@
 regel	sectie	oordeel	longhands	selector
 116	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-family	body
 128	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-family,color	h1, h2, h3, h4, h5, h6
-148	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-size,font-weight	h1, .cms-element-text h1 { font-size: 4rem !important; font-weight: 600 !important; }
-150	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-size,font-weight	h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600 !important; }
-151	ROOTED GOODS - CUSTOM STYLESHE	niet gemeten	font-family,font-size,font-weight	h4, .cms-element-text h4
 159	ROOTED GOODS - CUSTOM STYLESHE	niet gemeten	font-size,font-weight	h5, .cms-element-text h5 { font-size: 1.25rem !important; font-weight: 600 !important; }
 160	ROOTED GOODS - CUSTOM STYLESHE	niet gemeten	font-size,font-weight	h6, .cms-element-text h6 { font-size: 1rem !important; font-weight: 600 !important; }
-164	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-size	h1, .cms-element-text h1 { font-size: 3rem !important; }
-166	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-size	h3, .cms-element-text h3 { font-size: 1.875rem !important; }
 167	ROOTED GOODS - CUSTOM STYLESHE	niet gemeten	font-size	h5, .cms-element-text h5 { font-size: 1.125rem !important; }
-172	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-size	h1, .cms-element-text h1 { font-size: 2.5rem !important; }
-174	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	font-size	h3, .cms-element-text h3 { font-size: 1.625rem !important; }
 175	ROOTED GOODS - CUSTOM STYLESHE	niet gemeten	font-size	h5, .cms-element-text h5 { font-size: 1.0625rem !important; }
 182	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	max-width	.container, .cms-section .boxed
 186	ROOTED GOODS - CUSTOM STYLESHE	alles gelijk	padding-right,padding-bottom,padding-left,padding-top	.content-main
@@ -84,8 +77,8 @@ regel	sectie	oordeel	longhands	selector
 1796	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	display	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider:not(.active) .prev, :is(.home-productslider, .cms-listing-row) .variant
 1799	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	padding-top,padding-right,padding-bottom,padding-left	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active
 1803	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	background-image,background-position-x,background-position-y,background-size,background-repeat,background-attachment,background-origin,background-clip,background-color,color,border-top-width,border-right-width,border-bottom-width,border-left-width,border-top-style,border-right-style,border-bottom-style,border-left-style,border-top-color,border-right-color,border-bottom-color,border-left-color,border-image-source,border-image-slice,border-image-width,border-image-outset,border-image-repeat,border-top-left-radius,border-top-right-radius,border-bottom-right-radius,border-bottom-left-radius,width,height,top,transform,display,align-items,justify-content,font-size,font-weight,text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color,box-shadow	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev, :is(.home-productslider, .cms-listing-row) .variant-thumb
-1822	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	left	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev { left: 0 !important; }
-1823	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	right	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next { right: 0 !important; }
+1822	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	left	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev { left: 0; }
+1823	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	right	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next { right: 0; }
 1825	6c. OFFCANVAS-MENU (mobiel/tab	niet gemeten	background-image,background-position-x,background-position-y,background-size,background-repeat,background-attachment,background-origin,background-clip,background-color,color	:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev:hover, :is(.home-productslider, .cms-listing-row) .variant
 1856	6c. OFFCANVAS-MENU (mobiel/tab	alles gelijk	font-weight,color,text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color	:is(.home-productslider, .cms-listing-row) .product-name
 1865	6c. OFFCANVAS-MENU (mobiel/tab	niet gemeten	color	:is(.home-productslider, .cms-listing-row) .product-name:hover
@@ -244,14 +237,12 @@ regel	sectie	oordeel	longhands	selector
 4921	27b. VERGELIJK-BLOK (.rg-compa	alles gelijk	color	.rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon)
 4924	27b. VERGELIJK-BLOK (.rg-compa	niet gemeten	color	.rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover
 4963	27d. BOSLICHT — grain-gradient	niet gemeten	animation-duration,animation-timing-function,animation-delay,animation-iteration-count,animation-direction,animation-fill-mode,animation-play-state,animation-name,animation-timeline,animation-range-start,animation-range-end	.rg-endcta__card, .rg-route__panel, .rg-sd__panel, .rg-sd__ask, .rg-compare__col--yes { animation: none !important; }
-4980	27c. VERHAAL-BLOK (.rg-story) 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h2.rg-story__title, .cms-element-text h2.rg-story__title
 5110	29. BRAND-STATEMENT — typograf	alles gelijk	text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color,color	.rg-statement__cta-btn
 5185	29. BRAND-STATEMENT — typograf	niet gemeten	animation-duration,animation-timing-function,animation-delay,animation-iteration-count,animation-direction,animation-fill-mode,animation-play-state,animation-name,animation-timeline,animation-range-start,animation-range-end,opacity,transform	.rg-statement__content, .rg-statement__media
 5222	29. BRAND-STATEMENT — typograf	niet gemeten	fill	.rg-europe-map__svg .st0, .rg-europe-map__svg path
 5294	29. BRAND-STATEMENT — typograf	niet gemeten	animation-duration,animation-timing-function,animation-delay,animation-iteration-count,animation-direction,animation-fill-mode,animation-play-state,animation-name,animation-timeline,animation-range-start,animation-range-end,opacity,transform	.rg-europe-map__pin
 5299	29. BRAND-STATEMENT — typograf	niet gemeten	animation-duration,animation-timing-function,animation-delay,animation-iteration-count,animation-direction,animation-fill-mode,animation-play-state,animation-name,animation-timeline,animation-range-start,animation-range-end,opacity	.rg-europe-map__pin::after { animation: none !important; opacity: 0 !important; }
 5407	30. HOMEPAGE-UITLIJNING — dete	alles gelijk	max-width,margin-left,margin-right,padding-left,padding-right	.cms-section:has(.home-productslider) .cms-block-container-row, .cms-section:has(.home-productslider) .col-12, .cms-section:has(.rg-statemen
-5447	30. HOMEPAGE-UITLIJNING — dete	alles gelijk	max-width,margin-left,margin-right,padding-left,padding-right	.rg-cat-grid, .rg-cat-heading, .rg-cat-head, .rg-spec-grid
 5499	30. HOMEPAGE-UITLIJNING — dete	alles gelijk	max-width,margin-top,margin-right,margin-bottom,margin-left,padding-top,padding-right,padding-bottom,padding-left,overflow-x,overflow-y,position	.home-productslider .cms-element-product-slider
 5557	30. HOMEPAGE-UITLIJNING — dete	alles gelijk	display	.cms-section:has(.home-productslider) .home-productslider .cms-block-container, .cms-section:has(.home-productslider) .home-productslider .c
 5560	30. HOMEPAGE-UITLIJNING — dete	alles gelijk	display,width	.cms-section:has(.home-productslider) .home-productslider .cms-block-container-row
@@ -262,9 +253,7 @@ regel	sectie	oordeel	longhands	selector
 5643	30. HOMEPAGE-UITLIJNING — dete	niet gemeten	border-top-color,border-right-color,border-bottom-color,border-left-color	.home-productslider .base-slider-controls button:hover:not(:disabled) .icon
 5652	30. HOMEPAGE-UITLIJNING — dete	alles gelijk	border-top-color,border-right-color,border-bottom-color,border-left-color	.home-productslider .base-slider-controls button:disabled .icon
 5681	31. THEMA-OVERZICHT — bento-gr	alles gelijk	color,font-weight	.rg-theme-heading
-5703	31. THEMA-OVERZICHT — bento-gr	niet gemeten	text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color	.rg-theme-tile
-5765	31. THEMA-OVERZICHT — bento-gr	niet gemeten	font-family,color,font-size,font-weight,line-height	h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title
-5782	31. THEMA-OVERZICHT — bento-gr	niet gemeten	font-size	.rg-theme-tile--feature h3.rg-theme-tile__title, .cms-element-text .rg-theme-tile--feature h3.rg-theme-tile__title
+5703	31. THEMA-OVERZICHT — bento-gr	alles gelijk	text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color	.rg-theme-tile
 5792	31. THEMA-OVERZICHT — bento-gr	alles gelijk	font-family,font-style,font-weight,font-size	.rg-amp
 5830	31. THEMA-OVERZICHT — bento-gr	niet gemeten	transition-behavior,transition-duration,transition-timing-function,transition-delay,transition-property	.rg-theme-tile, .rg-theme-tile__img, .rg-theme-tile__arrow { transition: none !important; }
 5860	32. MERKEN-GRID — gelijke logo	alles gelijk	text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color	.rg-brand-tile
@@ -272,9 +261,9 @@ regel	sectie	oordeel	longhands	selector
 5916	32. MERKEN-GRID — gelijke logo	alles gelijk	font-family,font-weight,font-size,line-height,color,margin-top,margin-right,margin-bottom,margin-left	.rg-brand-tile__cta-title
 5946	32. MERKEN-GRID — gelijke logo	niet gemeten	transition-behavior,transition-duration,transition-timing-function,transition-delay,transition-property	.rg-brand-tile__cta-text::after { transition: none !important; }
 5952	32. MERKEN-GRID — gelijke logo	alles gelijk	display	body:has(.rg-theme-section) .cms-breadcrumb, body:has(.rg-brand-grid) .cms-breadcrumb
-5979	33. SERVICES-GRID — cards (bee	niet gemeten	text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color	.rg-service-card
-6014	33. SERVICES-GRID — cards (bee	niet gemeten	font-family,color,font-size,font-weight,line-height,word-break	.rg-service-card__title
-6057	33. SERVICES-GRID — cards (bee	niet gemeten	display	body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
+5979	33. SERVICES-GRID — cards (bee	alles gelijk	text-decoration-line,text-decoration-thickness,text-decoration-style,text-decoration-color	.rg-service-card
+6014	33. SERVICES-GRID — cards (bee	alles gelijk	font-family,color,font-size,font-weight,line-height,word-break	.rg-service-card__title
+6057	33. SERVICES-GRID — cards (bee	alles gelijk	display	body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
 6062	33. SERVICES-GRID — cards (bee	niet gemeten	transition-behavior,transition-duration,transition-timing-function,transition-delay,transition-property	.rg-service-card, .rg-service-card__img, .rg-service-card__link::after { transition: none !important; }
 6114	36. PAGINA-LANDING — titel + s	alles gelijk	word-break	.rg-page-hero__title
 6359	38. HERO V2 (.rg-hero-v2) — ve	niet gemeten	box-shadow	.rg-hero-v2 .rg-hero-v2__cta a.btn-primary:hover
@@ -291,13 +280,8 @@ regel	sectie	oordeel	longhands	selector
 6870	40. AANVRAAGFORMULIER (#reques	niet gemeten	fill	#request-offer-container .basic-captcha-content-refresh-icon svg use
 6889	40. AANVRAAGFORMULIER (#reques	niet gemeten	border-top-color,border-right-color,border-bottom-color,border-left-color	#request-offer-container .form-control:hover:not(:focus)
 6895	40. AANVRAAGFORMULIER (#reques	niet gemeten	box-shadow,border-top-width,border-right-width,border-bottom-width,border-left-width,border-top-style,border-right-style,border-bottom-style,border-left-style,border-top-color,border-right-color,border-bottom-color,border-left-color,border-image-source,border-image-slice,border-image-width,border-image-outset,border-image-repeat	#request-offer-container input:-webkit-autofill, #request-offer-container input:-webkit-autofill:hover, #request-offer-container input:-webk
-6928	41. SERVICE-DETAIL (.rg-sd) — 	alles gelijk	display	body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
-6939	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h1.rg-sd__title, .cms-element-text h1.rg-sd__title
-6966	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-style,font-weight	h1.rg-sd__title em, .cms-element-text h1.rg-sd__title em, .rg-sd__step-nr
-7060	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h3.rg-sd__step-title, .cms-element-text h3.rg-sd__step-title
-7094	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h2.rg-sd__row-title, .cms-element-text h2.rg-sd__row-title
-7150	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h2.rg-sd__panel-title, .cms-element-text h2.rg-sd__panel-title
-7337	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h3.rg-sd__journey-title, .cms-element-text h3.rg-sd__journey-title
+6928	41. SERVICE-DETAIL (.rg-sd) — 	alles gelijk	display	body:has(.rg-sd) .cms-breadcrumb { display: none; }
+6966	41. SERVICE-DETAIL (.rg-sd) — 	alles gelijk	font-style,font-weight	h1.rg-sd__title em, .cms-element-text h1.rg-sd__title em, .rg-sd__step-nr
 7399	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	font-family,font-weight,color,font-size,line-height,margin-top,margin-right,margin-bottom,margin-left	h3.rg-sd__tech-title, .cms-element-text h3.rg-sd__tech-title
 7491	41. SERVICE-DETAIL (.rg-sd) — 	alles gelijk	background-image,background-position-x,background-position-y,background-size,background-repeat,background-attachment,background-origin,background-clip,background-color,border-top-width,border-right-width,border-bottom-width,border-left-width,border-top-style,border-right-style,border-bottom-style,border-left-style,border-top-color,border-right-color,border-bottom-color,border-left-color,border-image-source,border-image-slice,border-image-width,border-image-outset,border-image-repeat,color	.rg-sd__ask-ghost
 7496	41. SERVICE-DETAIL (.rg-sd) — 	niet gemeten	background-image,background-position-x,background-position-y,background-size,background-repeat,background-attachment,background-origin,background-clip,background-color,border-top-color,border-right-color,border-bottom-color,border-left-color,color	.rg-sd__ask-ghost:hover
@@ -328,35 +312,27 @@ regel	sectie	oordeel	longhands	selector
 8121	40c. CUSTOM OFFERTE- EN AANVRA	alles gelijk	box-shadow,border-top-width,border-right-width,border-bottom-width,border-left-width,border-top-style,border-right-style,border-bottom-style,border-left-style,border-top-color,border-right-color,border-bottom-color,border-left-color,border-image-source,border-image-slice,border-image-width,border-image-outset,border-image-repeat	:is(.block-cioform-container, #request-offer-container) input:-webkit-autofill, :is(.block-cioform-container, #request-offer-container) inpu
 8127	40c. CUSTOM OFFERTE- EN AANVRA	niet gemeten	border-top-color,border-right-color,border-bottom-color,border-left-color	:is(.block-cioform-container, #request-offer-container) .form-control:hover:not(:focus) { border-color: #d8cfc0 !important; }
 8230	40d. CONTACTFORMULIER-VOORZETJ	niet gemeten	grid-column-start,grid-column-end	.rg-cform__field { grid-column: 1 / -1 !important; }
-8312	41. EDITORIAL SYSTEEM (globaal	niet gemeten	font-size	.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-8313	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-8314	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem) !important; }
+8312	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
+8313	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem); }
+8314	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem); }
 8317	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-style,font-weight,color,letter-spacing	.rg-hero-v2__title em, .rg-sd__title em, .rg-endcta__title em, .rg-page-hero__title em
-8327	41. EDITORIAL SYSTEEM (globaal	alles gelijk	max-width	.rg-hero-v2__title, h1.rg-hero-v2__title{ max-width:18ch !important; }
-8353	41. EDITORIAL SYSTEEM (globaal	niet gemeten	color	.rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
-8354	41. EDITORIAL SYSTEEM (globaal	alles gelijk	color	.rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff !important; } /* op groen paneel */
+8327	41. EDITORIAL SYSTEEM (globaal	alles gelijk	max-width	.rg-hero-v2__title, h1.rg-hero-v2__title{ max-width:18ch; }
+8353	41. EDITORIAL SYSTEEM (globaal	alles gelijk	color	.rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
+8354	41. EDITORIAL SYSTEEM (globaal	alles gelijk	color	.rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff; } /* op groen paneel */
 8357	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-style,font-weight,color	.rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em, .rg-compare__title em, .rg-story__title em, .rg-statement__title em,
-8375	41. EDITORIAL SYSTEEM (globaal	niet gemeten	grid-template-columns	.rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr) !important; }
-8385	41. EDITORIAL SYSTEEM (globaal	niet gemeten	box-shadow,border-top-left-radius,border-top-right-radius,border-bottom-right-radius,border-bottom-left-radius	.rg-sd__hero-media img, .rg-sd__row-media img
+8375	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-template-columns	.rg-sd__hero{ grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr) !important; }
 8389	41. EDITORIAL SYSTEEM (globaal	niet gemeten	box-shadow,border-top-width,border-right-width,border-bottom-width,border-left-width,border-top-style,border-right-style,border-bottom-style,border-left-style,border-top-color,border-right-color,border-bottom-color,border-left-color,border-image-source,border-image-slice,border-image-width,border-image-outset,border-image-repeat,border-top-left-radius,border-top-right-radius,border-bottom-right-radius,border-bottom-left-radius	.rg-sd__tech-media
-8419	41. EDITORIAL SYSTEEM (globaal	niet gemeten	aspect-ratio,height	.rg-theme-hero .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
-8420	41. EDITORIAL SYSTEEM (globaal	niet gemeten	grid-column-start,grid-column-end,grid-row-start,grid-row-end,aspect-ratio	.rg-theme-hero .rg-theme-tile--feature{ grid-column:1/-1 !important; grid-row:auto !important; aspect-ratio:16/10 !important; }
-8423	41. EDITORIAL SYSTEEM (globaal	niet gemeten	aspect-ratio,height	.rg-theme-row4 .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
-8428	41. EDITORIAL SYSTEEM (globaal	niet gemeten	padding-top,padding-right,padding-bottom,padding-left	.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) .rg-theme-tile__body, .rg-theme-row4 .rg-theme-tile__body{ padding:0.85rem !impor
-8432	41. EDITORIAL SYSTEEM (globaal	niet gemeten	font-size	.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title, .rg-theme-row4 h3.rg-theme-tile__title, .cms-element-tex
-8439	41. EDITORIAL SYSTEEM (globaal	niet gemeten	font-size	.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title, .rg-theme-row4 h3.rg-theme-tile__title, .cms-element-tex
-8446	41. EDITORIAL SYSTEEM (globaal	niet gemeten	aspect-ratio,height	.rg-theme-hero .rg-theme-tile{ aspect-ratio:auto !important; height:100% !important; min-height:220px; }
-8447	41. EDITORIAL SYSTEEM (globaal	niet gemeten	grid-column-start,grid-column-end,grid-row-start,grid-row-end	.rg-theme-hero .rg-theme-tile--feature{ grid-column:1 !important; grid-row:1 / 3 !important; }
-8449	41. EDITORIAL SYSTEEM (globaal	niet gemeten	aspect-ratio,height	.rg-theme-row4 .rg-theme-tile{ aspect-ratio:16/9 !important; height:auto !important; }
-8453	41. EDITORIAL SYSTEEM (globaal	niet gemeten	font-size	.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) h3.rg-theme-tile__title, .rg-theme-row4 h3.rg-theme-tile__title, .cms-element-tex
+8419	41. EDITORIAL SYSTEEM (globaal	alles gelijk	aspect-ratio,height	.rg-theme-hero .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
+8423	41. EDITORIAL SYSTEEM (globaal	alles gelijk	aspect-ratio,height	.rg-theme-row4 .rg-theme-tile{ aspect-ratio:1/1 !important; height:auto !important; }
+8428	41. EDITORIAL SYSTEEM (globaal	alles gelijk	padding-top,padding-right,padding-bottom,padding-left	.rg-theme-hero .rg-theme-tile:not(.rg-theme-tile--feature) .rg-theme-tile__body, .rg-theme-row4 .rg-theme-tile__body{ padding:0.85rem !impor
 8468	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size,line-height	.rg-hero-v2__sub, .rg-statement__sub, .rg-page-hero__sub, .rg-block-title__sub, .rg-sd__head-sub, .rg-sd__sub, .rg-endcta__sub, .rg-theme-in
 8475	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size,line-height	.rg-service-card__text, .rg-sd__row-copy p, .rg-feature-row__content p, .rg-sd__panel p, .rg-sd__faq-item p
 8481	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-cform__note, .rg-sd__reassurance, .rg-endcta__trust, .rg-statement__reassurance
 8491	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-template-columns,grid-template-rows,row-gap,column-gap	.rg-spec-grid
-8496	41. EDITORIAL SYSTEEM (globaal	alles gelijk	aspect-ratio	.rg-spec-card{ aspect-ratio:auto !important; height:100%; min-height:250px; }
-8497	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-row-start,grid-row-end	.rg-spec-card:nth-child(1){ grid-row:1 / 3 !important; }
-8498	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-column-start,grid-column-end,grid-row-start,grid-row-end	.rg-spec-card:nth-child(2){ grid-column:2 !important; grid-row:1 !important; }
-8499	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-column-start,grid-column-end,grid-row-start,grid-row-end	.rg-spec-card:nth-child(3){ grid-column:2 !important; grid-row:2 !important; }
+8496	41. EDITORIAL SYSTEEM (globaal	alles gelijk	aspect-ratio	.rg-spec-card{ aspect-ratio:auto; height:100%; min-height:250px; }
+8497	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-row-start,grid-row-end	.rg-spec-card:nth-child(1){ grid-row:1 / 3; }
+8498	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-column-start,grid-column-end,grid-row-start,grid-row-end	.rg-spec-card:nth-child(2){ grid-column:2; grid-row:1; }
+8499	41. EDITORIAL SYSTEEM (globaal	alles gelijk	grid-column-start,grid-column-end,grid-row-start,grid-row-end	.rg-spec-card:nth-child(3){ grid-column:2; grid-row:2; }
 8501	41. EDITORIAL SYSTEEM (globaal	alles gelijk	font-size	.rg-spec-card:nth-child(1) .rg-spec-card__title
 8506	41. EDITORIAL SYSTEEM (globaal	alles gelijk	align-items,justify-content,text-align,padding-top,padding-right,padding-bottom,padding-left	.rg-spec-card__label
 8513	41. EDITORIAL SYSTEEM (globaal	alles gelijk	background-image,background-position-x,background-position-y,background-size,background-repeat,background-attachment,background-origin,background-clip,background-color	.rg-spec-card::after
@@ -364,12 +340,12 @@ regel	sectie	oordeel	longhands	selector
 8530	41. EDITORIAL SYSTEEM (globaal	alles gelijk	word-break	.rg-spec-card__title
 8546	41. EDITORIAL SYSTEEM (globaal	alles gelijk	text-align,margin-left,max-width	.rg-sd__head:has(+ .rg-spec-grid), .rg-sd__head:has(+ .rg-sd__steps), .rg-sd__head:has(+ .rg-sd__journey), .rg-sd__faq > .rg-sd__head
 8554	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,margin-right	.rg-sd__head:has(+ .rg-spec-grid) .rg-sd__head-sub, .rg-sd__head:has(+ .rg-sd__steps) .rg-sd__head-sub, .rg-sd__head:has(+ .rg-sd__journey) 
-8560	41. EDITORIAL SYSTEEM (globaal	alles gelijk	text-align	.rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
-8561	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,max-width	.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
-8562	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,margin-right	.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
-8570	41. EDITORIAL SYSTEEM (globaal	alles gelijk	text-align	.rg-block-title--left{ text-align:left !important; }
-8571	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,max-width	.rg-block-title--left .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
-8572	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,margin-right	.rg-block-title--left .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
+8560	41. EDITORIAL SYSTEEM (globaal	alles gelijk	text-align	.rg-block-title:has(+ .rg-spec-grid){ text-align:left; }
+8561	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,max-width	.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0; max-width:none; }
+8562	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,margin-right	.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0; margin-right:0; }
+8570	41. EDITORIAL SYSTEEM (globaal	alles gelijk	text-align	.rg-block-title--left{ text-align:left; }
+8571	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,max-width	.rg-block-title--left .rg-block-title__title{ margin-left:0; max-width:none; }
+8572	41. EDITORIAL SYSTEEM (globaal	alles gelijk	margin-left,margin-right	.rg-block-title--left .rg-block-title__sub{ margin-left:0; margin-right:0; }
 8588	41. EDITORIAL SYSTEEM (globaal	alles gelijk	max-width,padding-left,padding-right	body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container, body.is-act-home .cms-section:has(.rg-block-title--left) .cms
 8598	41. EDITORIAL SYSTEEM (globaal	alles gelijk	max-width,margin-left,margin-right	.rg-block-title--left
 8646	42. OVER ONS (.rg-route) — "De	alles gelijk	font-style,color	h1.rg-route__title em
@@ -388,9 +364,9 @@ regel	sectie	oordeel	longhands	selector
 9540	47. OVER ONS — hero, tweede af	alles gelijk	margin-top,margin-right,margin-bottom,margin-left,min-height,padding-top,padding-right,padding-bottom,padding-left	.content-main:has(.rg-route) .cms-breadcrumb
 9585	48. FOOTER (.footer-main) — na	alles gelijk	color,font-size,font-weight,padding-top,padding-right,padding-bottom,padding-left	.footer-column-headline
 9649	48. FOOTER (.footer-main) — na	alles gelijk	display	.footer-custom-paymethods.icon-container
-9667	48. FOOTER (.footer-main) — na	alles gelijk	fill	.footer-column-toggle svg, .footer-column-toggle svg use, .footer-column-toggle svg path { fill: #fff !important; }
-9673	48. FOOTER (.footer-main) — na	alles gelijk	border-bottom-color	.footer-column { border-bottom-color: rgba(255, 255, 255, 0.14) !important; }
-9729	48. FOOTER (.footer-main) — na	alles gelijk	fill	.footer-copyright svg use { fill: rgba(255, 255, 255, 0.7) !important; }
+9667	48. FOOTER (.footer-main) — na	alles gelijk	fill	.footer-column-toggle svg, .footer-column-toggle svg use, .footer-column-toggle svg path { fill: #fff; }
+9673	48. FOOTER (.footer-main) — na	alles gelijk	border-bottom-color	.footer-column { border-bottom-color: rgba(255, 255, 255, 0.14); }
+9729	48. FOOTER (.footer-main) — na	alles gelijk	fill	.footer-copyright svg use { fill: rgba(255, 255, 255, 0.7); }
 9775	49. WINKELMAND + CHECKOUT (.ca	niet gemeten	display	.cart-offcanvas .offcanvas-close.js-offcanvas-close
 9779	49. WINKELMAND + CHECKOUT (.ca	niet gemeten	display,background-image,background-position-x,background-position-y,background-size,background-repeat,background-attachment,background-origin,background-clip,background-color,color,padding-top,padding-right,padding-bottom,padding-left,box-shadow	.cart-offcanvas .offcanvas-close.js-offcanvas-close
 9801	49. WINKELMAND + CHECKOUT (.ca	niet gemeten	fill	.cart-offcanvas .offcanvas-close .icon svg use
@@ -492,16 +468,16 @@ regel	sectie	oordeel	longhands	selector
 11097	51. THEMA-LANDINGSPAGINA — her	niet gemeten	margin-top,margin-right,margin-bottom,margin-left	.rg-raster .product-name
 11447	53. THEMA-HERO MET PRODUCTBAND	alles gelijk	padding-bottom	.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container, .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block
 11458	53. THEMA-HERO MET PRODUCTBAND	niet gemeten	display	.rg-band-pagina .cms-section:has(.rg-band) .cms-block-text:has(.rg-cat-head), .rg-band-pagina .cms-section:has(.rg-band) .rg-slider-cta-move
-11594	53. THEMA-HERO MET PRODUCTBAND	alles gelijk	padding-bottom	.rg-band-pagina .rg-band .product-image-wrapper { padding-bottom: 100% !important; }
+11594	53. THEMA-HERO MET PRODUCTBAND	alles gelijk	padding-bottom	.rg-band-pagina .rg-band .product-image-wrapper { padding-bottom: 100%; }
 11596	53. THEMA-HERO MET PRODUCTBAND	alles gelijk	padding-top,padding-right,padding-bottom,padding-left,box-sizing	.rg-band-pagina .rg-band .product-image
 11608	53. THEMA-HERO MET PRODUCTBAND	niet gemeten	display	.rg-band-pagina .rg-band .product-badges, .rg-band-pagina .rg-band .product-action, .rg-band-pagina .rg-band .product-wishlist, .rg-band-pag
 11638	53. THEMA-HERO MET PRODUCTBAND	niet gemeten	color	.rg-band-pagina .rg-band .product-box:hover .product-name { color: var(--rg-cognac-deep) !important; }
 11699	53. THEMA-HERO MET PRODUCTBAND	niet gemeten	overflow-x,overflow-y	.rg-band-pagina .rg-band
 11708	53. THEMA-HERO MET PRODUCTBAND	niet gemeten	padding-right	.rg-band-pagina .rg-band .product-slider-container
 11715	53. THEMA-HERO MET PRODUCTBAND	niet gemeten	display	.rg-band-pagina .rg-band .rg-band__kloon { display: none !important; }
-11773	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	padding-top	.rg-band-pagina .container-main { padding-top: 0 !important; }
-11777	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	margin-top,margin-right,margin-bottom,margin-left,padding-top,padding-right,padding-bottom,padding-left,min-height	.rg-band-pagina .cms-breadcrumb, .rg-band-pagina .breadcrumb.container { margin: 0 !important; padding: 0 !important; min-height: 0 !importa
-11779	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	margin-top,padding-top	.rg-band-pagina .cms-page, .rg-band-pagina .cms-sections { margin-top: 0 !important; padding-top: 0 !important; }
+11773	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	padding-top	.rg-band-pagina .container-main { padding-top: 0; }
+11777	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	margin-top,margin-right,margin-bottom,margin-left,padding-top,padding-right,padding-bottom,padding-left,min-height	.rg-band-pagina .cms-breadcrumb, .rg-band-pagina .breadcrumb.container { margin: 0; padding: 0; min-height: 0; }
+11779	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	margin-top,padding-top	.rg-band-pagina .cms-page, .rg-band-pagina .cms-sections { margin-top: 0; padding-top: 0; }
 11781	55. KERSTHERO, VIJFDE OPZET — 	alles gelijk	padding-top	.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container, .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block
 11941	55. KERSTHERO, VIJFDE OPZET — 	niet gemeten	padding-top	.rg-band-pagina .container-main { padding-top: 20px !important; }
 11989	55. KERSTHERO, VIJFDE OPZET — 	niet gemeten	display	.rg-page-hero--band .rg-page-hero__strook[hidden] { display: none !important; }
@@ -511,9 +487,9 @@ regel	sectie	oordeel	longhands	selector
 12419	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	display	.header-main .header-row
 12424	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	padding-left,padding-right	.header-row .rg-header-hamburger-slot
 12430	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	padding-left,padding-right	.header-row .header-actions-col
-12435	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	flex-wrap	.header-actions-col .row { flex-wrap: nowrap !important; }
+12435	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	flex-wrap	.header-actions-col .row { flex-wrap: nowrap; }
 12439	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	width,min-width	.header-logo-picture
-12445	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	display	.header-actions-col .header-wishlist { display: none !important; }
+12445	57. KERSTHERO OP MOBIEL, 10 no	alles gelijk	display	.header-actions-col .header-wishlist { display: none; }
 12465	57. KERSTHERO OP MOBIEL, 10 no	niet gemeten	height	.header-logo-main-link img, .header-logo img { height: 22px !important; }
 12468	57. KERSTHERO OP MOBIEL, 10 no	niet gemeten	padding-top,padding-bottom	.header-logo-col { padding-top: 2px !important; padding-bottom: 2px !important; }
 12502	59. LADEN VAN DE THEMAPAGINA: 	niet gemeten	padding-top	html:not(.rg-band-pagina):has(.rg-page-hero--band) .container-main { padding-top: 0 !important; }
@@ -521,5 +497,5 @@ regel	sectie	oordeel	longhands	selector
 12506	59. LADEN VAN DE THEMAPAGINA: 	niet gemeten	margin-top,padding-top	html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-page, html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-sections { margin-top:
 12508	59. LADEN VAN DE THEMAPAGINA: 	niet gemeten	padding-top,padding-bottom	html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has(.rg-page-hero--band) .cms-block-container, html:not(.rg-band-pagina):has
 12511	59. LADEN VAN DE THEMAPAGINA: 	niet gemeten	padding-top,padding-bottom	html:not(.rg-band-pagina):has(.rg-page-hero--band) .cms-section:has([data-product-slider]) .cms-block-container, html:not(.rg-band-pagina):h
-12578	60. MOBIELE HEADER (<992px): D	alles gelijk	padding-left,padding-right	.header-main .header-row { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
-12638	62. VINKJES IN DE USP-BALK ZON	alles gelijk	font-family	.top-bar-nav .fa-solid.fa-check { font-family: inherit !important; font-weight: inherit; }
+12578	60. MOBIELE HEADER (<992px): D	alles gelijk	padding-left,padding-right	.header-main .header-row { padding-left: 0.75rem; padding-right: 0.75rem; }
+12638	62. VINKJES IN DE USP-BALK ZON	alles gelijk	font-family	.top-bar-nav .fa-solid.fa-check { font-family: inherit; font-weight: inherit; }

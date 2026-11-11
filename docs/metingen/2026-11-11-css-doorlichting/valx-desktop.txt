@@ -1,0 +1,22 @@
+CSS: 518320 bytes, 1769 blokken gemarkeerd
+desktop  /dag-van-de-leraar           elementen=1088 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /events-conferenties         elementen=1036 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /faq                         elementen=617 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /full-service-ontzorging     elementen=644 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /medewerker-merchandise      elementen=1039 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /onboarding-welkomstpakket   elementen=1185 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /services/                   elementen=571 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /verzending-naar-meerdere-locaties elementen=618 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /warehousing-fulfillment     elementen=608 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /alle-thema-s                elementen=568 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /wishlist                    elementen=486 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /algemeen/algemene-voorwaarden/ elementen=663 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /thema-s/winter/             elementen=709 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /thema-s/made-in-nl/         elementen=1544 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /thema-s/kerstpakketten-eindejaar/ elementen=851 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /tassen-reizen/              elementen=1741 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /eten-drinken/               elementen=1305 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /informatie/nieuwsbrief/     elementen=550 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /blog/                       elementen=573 regels=232 longhands=1071 VERSCHIL op 0 elementen
+desktop  /elektronica/                elementen=623 regels=232 longhands=1071 VERSCHIL op 0 elementen
+weggeschreven: validatie-extra-desktop.json

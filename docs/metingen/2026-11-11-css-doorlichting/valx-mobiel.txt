@@ -1,0 +1,22 @@
+CSS: 518320 bytes, 1769 blokken gemarkeerd
+mobiel   /dag-van-de-leraar           elementen=1095 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /events-conferenties         elementen=1043 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /faq                         elementen=624 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /full-service-ontzorging     elementen=651 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /medewerker-merchandise      elementen=1046 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /onboarding-welkomstpakket   elementen=1192 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /services/                   elementen=578 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /verzending-naar-meerdere-locaties elementen=625 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /warehousing-fulfillment     elementen=615 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /alle-thema-s                elementen=575 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /wishlist                    elementen=493 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /algemeen/algemene-voorwaarden/ elementen=670 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /thema-s/winter/             elementen=716 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /thema-s/made-in-nl/         elementen=1551 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /thema-s/kerstpakketten-eindejaar/ elementen=858 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /tassen-reizen/              elementen=1748 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /eten-drinken/               elementen=1312 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /informatie/nieuwsbrief/     elementen=557 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /blog/                       elementen=580 regels=232 longhands=1071 VERSCHIL op 0 elementen
+mobiel   /elektronica/                elementen=630 regels=232 longhands=1071 VERSCHIL op 0 elementen
+weggeschreven: validatie-extra-mobiel.json

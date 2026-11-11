@@ -6,7 +6,7 @@ niet-gemeten= alleen geen-match, media-uit of niet-meetbaar (hover, JS-staten, w
 import json, re, sys, os
 HIER = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HIER, '../../..'))
-bronnen = [f for f in ('meting.json', 'meting-menu.json') if os.path.exists(os.path.join(HIER, f))]
+bronnen = [f for f in ('meting.json', 'meting-menu.json', 'meting-extra.json') if os.path.exists(os.path.join(HIER, f))]
 css = open(os.path.join(REPO, 'rootedgoods.css'), encoding='utf-8').read().split('\n')
 runs = 0; per = {}  # (l,p) -> {'st': set, 'n': max, 'd': eerste verschil}
 for f in bronnen:
@@ -65,5 +65,10 @@ with open(os.path.join(HIER, 'kandidaten-gelijk.tsv'), 'w', encoding='utf-8') as
 json.dump({f"{l}|{p}": dict(oordeel=oordeel(e), verschil=e['d']) for (l, p), e in per.items()}, open(os.path.join(HIER, 'oordeel-per-longhand.json'), 'w'), ensure_ascii=False)
 # regels waarvan alle !important-longhands 'gelijk' zijn: invoer voor de validatie (valideer.mjs)
 alles = {str(l): list(p) for l, p in perregel.items() if set(p.values()) == {'gelijk'}}
-json.dump(alles, open(os.path.join(HIER, 'gelijk-regels.json'), 'w'))
-print(f"\ngelijk-regels.json: {len(alles)} regels, {sum(len(v) for v in alles.values())} longhands")
+json.dump(alles, open(os.path.join(HIER, 'gelijk-regels-na-extra.json'), 'w'))
+# regressie: regels die al zijn weggehaald (verwijderd-regels-40d582f.json) maar nu ergens 'nodig' blijken
+verw = json.load(open(os.path.join(HIER, 'verwijderd-regels-40d582f.json')))
+reg = [(int(l), p, per[(int(l), p)]['d']) for l, ps in verw.items() for p in ps if 'nodig' in per.get((int(l), p), {'st': set()})['st']]
+print(f"\nREGRESSIE: {len(reg)} weggehaalde longhands die op een extra pagina wel nodig blijken")
+for l, p, d in reg[:40]: print(f"  r{l} {p}: {d}")
+print(f"\ngelijk-regels-na-extra.json: {len(alles)} regels, {sum(len(v) for v in alles.values())} longhands")

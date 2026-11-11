@@ -10,7 +10,7 @@ const BASIS = 'https://rootedgoods.eu';
 const PAGINAS = process.argv.length > 2 ? process.argv.slice(2) : ['/', '/alle-producten/', '/huis-keuken/', '/Borrelplank/A1352-Kerst1', '/eindejaarsgeschenken', '/thema-s/', '/offerte', '/over-ons', '/merken/', '/contact', '/search?search=kerstbal'];
 const VPS = { mobiel: [390, 844, true], tablet: [820, 1180, true], desktop: [1440, 900, false] };
 const gekozen = (process.env.VP || 'mobiel,tablet,desktop').split(',');
-const cssBron = fs.readFileSync(path.join(REPO, 'rootedgoods.css'), 'utf8');
+const cssBron = fs.readFileSync(process.env.CSSFILE ? path.resolve(process.env.CSSFILE) : path.join(REPO, 'rootedgoods.css'), 'utf8');
 const { tekst: cssGemarkeerd, aantal } = markeer(cssBron);
 console.log(`CSS: ${cssBron.length} bytes, ${aantal} blokken gemarkeerd`);
 const jsLok = fs.readFileSync(path.join(REPO, 'rootedgoods.js'));
