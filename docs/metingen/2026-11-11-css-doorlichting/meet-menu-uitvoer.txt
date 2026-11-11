@@ -1,0 +1,10 @@
+CSS: 518320 bytes, 1769 blokken gemarkeerd
+mobiel   /                            geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":652,"geen-match":2819,"media-uit":253,"nodig":113,"niet-meetbaar":89}
+mobiel   /over-ons                    geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":416,"geen-match":3085,"media-uit":253,"nodig":83,"niet-meetbaar":89}
+mobiel   /offerte                     geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":376,"geen-match":3151,"media-uit":253,"nodig":57,"niet-meetbaar":89}
+mobiel   /alle-producten/             geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":731,"geen-match":2757,"nodig":96,"media-uit":253,"niet-meetbaar":89}
+tablet   /                            geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":644,"geen-match":2740,"media-uit":337,"nodig":116,"niet-meetbaar":89}
+tablet   /over-ons                    geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":415,"geen-match":2997,"media-uit":337,"nodig":88,"niet-meetbaar":89}
+tablet   /offerte                     geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":377,"geen-match":3063,"media-uit":337,"nodig":60,"niet-meetbaar":89}
+tablet   /alle-producten/             geladen=true menu=geklikt regels=1767 metingen=3926 {"gelijk":726,"geen-match":2681,"nodig":93,"media-uit":337,"niet-meetbaar":89}
+weggeschreven: meting-menu.json

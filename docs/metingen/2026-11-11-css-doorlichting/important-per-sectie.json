@@ -1,0 +1,434 @@
+[
+ {
+  "start": 1,
+  "eind": 0,
+  "titel": "(kop en webfonts)",
+  "regels": 0,
+  "important": 0,
+  "declaraties": 0
+ },
+ {
+  "start": 1,
+  "eind": 980,
+  "titel": "ROOTED GOODS - CUSTOM STYLESHEET",
+  "regels": 980,
+  "important": 123,
+  "declaraties": 322
+ },
+ {
+  "start": 981,
+  "eind": 4256,
+  "titel": "6c. OFFCANVAS-MENU (mobiel/tablet, <992px) — merk-typografie,",
+  "regels": 3276,
+  "important": 600,
+  "declaraties": 1341
+ },
+ {
+  "start": 4257,
+  "eind": 4370,
+  "titel": "25a2. SPECIALITEITEN-KAARTEN — zelfde look als categorie-tegels,",
+  "regels": 114,
+  "important": 4,
+  "declaraties": 59
+ },
+ {
+  "start": 4371,
+  "eind": 4397,
+  "titel": "25b. PRODUCT-SLIDER — uitlijnen met de categorie-sectie + bleed",
+  "regels": 27,
+  "important": 6,
+  "declaraties": 6
+ },
+ {
+  "start": 4398,
+  "eind": 4533,
+  "titel": "26. RESPONSIVE TUNING — desktop + split-screen",
+  "regels": 136,
+  "important": 13,
+  "declaraties": 19
+ },
+ {
+  "start": 4534,
+  "eind": 4785,
+  "titel": "27. FEATURE ROW — image + tekst naast elkaar",
+  "regels": 252,
+  "important": 21,
+  "declaraties": 97
+ },
+ {
+  "start": 4786,
+  "eind": 4931,
+  "titel": "27b. VERGELIJK-BLOK (.rg-compare) — \"wat het níet is / wél is\"",
+  "regels": 146,
+  "important": 8,
+  "declaraties": 91
+ },
+ {
+  "start": 4932,
+  "eind": 4965,
+  "titel": "27d. BOSLICHT — grain-gradient-beeld op de donkere panelen",
+  "regels": 34,
+  "important": 1,
+  "declaraties": 9
+ },
+ {
+  "start": 4966,
+  "eind": 5017,
+  "titel": "27c. VERHAAL-BLOK (.rg-story) — warme prose, promoot Europese makers",
+  "regels": 52,
+  "important": 6,
+  "declaraties": 25
+ },
+ {
+  "start": 5018,
+  "eind": 5344,
+  "titel": "29. BRAND-STATEMENT — typografie links + Europa-kaart rechts",
+  "regels": 327,
+  "important": 19,
+  "declaraties": 165
+ },
+ {
+  "start": 5345,
+  "eind": 5668,
+  "titel": "30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhankelijk)",
+  "regels": 324,
+  "important": 75,
+  "declaraties": 81
+ },
+ {
+  "start": 5669,
+  "eind": 5832,
+  "titel": "31. THEMA-OVERZICHT — bento-grid van thema's (1 uitgelicht)",
+  "regels": 164,
+  "important": 15,
+  "declaraties": 90
+ },
+ {
+  "start": 5833,
+  "eind": 5955,
+  "titel": "32. MERKEN-GRID — gelijke logo-tegels op wit, hover-effect",
+  "regels": 123,
+  "important": 10,
+  "declaraties": 73
+ },
+ {
+  "start": 5956,
+  "eind": 6093,
+  "titel": "33. SERVICES-GRID — cards (beeld + titel + omschrijving + link)",
+  "regels": 138,
+  "important": 9,
+  "declaraties": 116
+ },
+ {
+  "start": 6094,
+  "eind": 6218,
+  "titel": "36. PAGINA-LANDING — titel + subline + 2 cta's + logo's, beeld rechts",
+  "regels": 125,
+  "important": 1,
+  "declaraties": 71
+ },
+ {
+  "start": 6219,
+  "eind": 6255,
+  "titel": "37. SECTIE-TITEL — gecentreerde kop boven een los blok (bv. feature-row)",
+  "regels": 37,
+  "important": 1,
+  "declaraties": 17
+ },
+ {
+  "start": 6256,
+  "eind": 6557,
+  "titel": "38. HERO V2 (.rg-hero-v2) — verplaatst uit inline <style> naar global",
+  "regels": 302,
+  "important": 7,
+  "declaraties": 141
+ },
+ {
+  "start": 6558,
+  "eind": 6690,
+  "titel": "39. EIND-CTA (.rg-endcta) — afsluitend statement, sitebreed",
+  "regels": 133,
+  "important": 12,
+  "declaraties": 79
+ },
+ {
+  "start": 6691,
+  "eind": 6906,
+  "titel": "40. AANVRAAGFORMULIER (#request-offer-container) — offerte/contact",
+  "regels": 216,
+  "important": 20,
+  "declaraties": 107
+ },
+ {
+  "start": 6907,
+  "eind": 7583,
+  "titel": "41. SERVICE-DETAIL (.rg-sd) — losse pagina per service",
+  "regels": 677,
+  "important": 78,
+  "declaraties": 397
+ },
+ {
+  "start": 7584,
+  "eind": 7699,
+  "titel": "40b. CONTACTFORMULIER — zelfde premium look als sectie 40",
+  "regels": 116,
+  "important": 19,
+  "declaraties": 84
+ },
+ {
+  "start": 7700,
+  "eind": 7754,
+  "titel": "TEAM-AVATARS (.rg-team) — herbruikbaar",
+  "regels": 55,
+  "important": 0,
+  "declaraties": 40
+ },
+ {
+  "start": 7755,
+  "eind": 7907,
+  "titel": "CONTACT-KOP (.rg-contact-head) — gecentreerde header + team-avatars",
+  "regels": 153,
+  "important": 8,
+  "declaraties": 99
+ },
+ {
+  "start": 7908,
+  "eind": 8131,
+  "titel": "40c. CUSTOM OFFERTE- EN AANVRAAGFORMULIEREN (cioform) — één stijl",
+  "regels": 224,
+  "important": 33,
+  "declaraties": 153
+ },
+ {
+  "start": 8132,
+  "eind": 8254,
+  "titel": "40d. CONTACTFORMULIER-VOORZETJE (.rg-cform) — ontwerp-mockup",
+  "regels": 123,
+  "important": 1,
+  "declaraties": 91
+ },
+ {
+  "start": 8255,
+  "eind": 8603,
+  "titel": "41. EDITORIAL SYSTEEM (globaal) — CSS-only, geen re-paste",
+  "regels": 349,
+  "important": 95,
+  "declaraties": 149
+ },
+ {
+  "start": 8604,
+  "eind": 9289,
+  "titel": "42. OVER ONS (.rg-route) — \"De Route van Rooted\"",
+  "regels": 686,
+  "important": 68,
+  "declaraties": 447
+ },
+ {
+  "start": 9290,
+  "eind": 9363,
+  "titel": "43. OVER ONS — verbeterronde v2 (copy / beeldclusters / ruimte)",
+  "regels": 74,
+  "important": 0,
+  "declaraties": 20
+ },
+ {
+  "start": 9364,
+  "eind": 9408,
+  "titel": "44. OVER ONS — verbeterronde v3 (copy / uitlijning / ruimte)",
+  "regels": 45,
+  "important": 2,
+  "declaraties": 14
+ },
+ {
+  "start": 9409,
+  "eind": 9487,
+  "titel": "45. OVER ONS — HERO (huidige stand)",
+  "regels": 79,
+  "important": 0,
+  "declaraties": 26
+ },
+ {
+  "start": 9488,
+  "eind": 9545,
+  "titel": "47. OVER ONS — hero, tweede afstemmingsronde",
+  "regels": 58,
+  "important": 9,
+  "declaraties": 10
+ },
+ {
+  "start": 9546,
+  "eind": 9742,
+  "titel": "48. FOOTER (.footer-main) — native theme-markup, alleen CSS",
+  "regels": 197,
+  "important": 13,
+  "declaraties": 86
+ },
+ {
+  "start": 9743,
+  "eind": 10115,
+  "titel": "49. WINKELMAND + CHECKOUT (.cart-offcanvas / .checkout-*)",
+  "regels": 373,
+  "important": 93,
+  "declaraties": 198
+ },
+ {
+  "start": 10116,
+  "eind": 10133,
+  "titel": "49.11 CHECKOUT — support-strip (.header-minimal)",
+  "regels": 18,
+  "important": 0,
+  "declaraties": 14
+ },
+ {
+  "start": 10134,
+  "eind": 10160,
+  "titel": "49.12 CHECKOUT — \"Heeft u al een account?\"-banner",
+  "regels": 27,
+  "important": 3,
+  "declaraties": 15
+ },
+ {
+  "start": 10161,
+  "eind": 10342,
+  "titel": "49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)",
+  "regels": 182,
+  "important": 37,
+  "declaraties": 81
+ },
+ {
+  "start": 10343,
+  "eind": 10405,
+  "titel": "49.13b CHECKOUT — betaal- en verzendmethode (payment-method/shipping-method)",
+  "regels": 63,
+  "important": 10,
+  "declaraties": 29
+ },
+ {
+  "start": 10406,
+  "eind": 10495,
+  "titel": "49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)",
+  "regels": 90,
+  "important": 21,
+  "declaraties": 83
+ },
+ {
+  "start": 10496,
+  "eind": 10616,
+  "titel": "49.15 CHECKOUT — bevestigingspagina (/checkout/confirm,",
+  "regels": 121,
+  "important": 69,
+  "declaraties": 117
+ },
+ {
+  "start": 10617,
+  "eind": 10685,
+  "titel": "49.16 CHECKOUT — footer (.footer-minimal): bewust kaal/rustig",
+  "regels": 69,
+  "important": 8,
+  "declaraties": 22
+ },
+ {
+  "start": 10686,
+  "eind": 10771,
+  "titel": "50. COOKIE-CONSENT — teruggezet naar de Shopware-standaard (28 okt 2026)",
+  "regels": 86,
+  "important": 16,
+  "declaraties": 16
+ },
+ {
+  "start": 10772,
+  "eind": 11159,
+  "titel": "51. THEMA-LANDINGSPAGINA — hero zonder beeld + productraster",
+  "regels": 388,
+  "important": 16,
+  "declaraties": 128
+ },
+ {
+  "start": 11160,
+  "eind": 11296,
+  "titel": "52. THEMA-HERO — hero-v2 met zelfgekozen pakketten",
+  "regels": 137,
+  "important": 0,
+  "declaraties": 47
+ },
+ {
+  "start": 11297,
+  "eind": 11718,
+  "titel": "53. THEMA-HERO MET PRODUCTBAND — .rg-page-hero--band",
+  "regels": 422,
+  "important": 44,
+  "declaraties": 168
+ },
+ {
+  "start": 11719,
+  "eind": 11743,
+  "titel": "54. VANGNET — kickers in blokken die nog niet herplakt zijn",
+  "regels": 25,
+  "important": 0,
+  "declaraties": 1
+ },
+ {
+  "start": 11744,
+  "eind": 12169,
+  "titel": "55. KERSTHERO, VIJFDE OPZET — .rg-page-hero--band, bovenop sectie 53",
+  "regels": 426,
+  "important": 15,
+  "declaraties": 124
+ },
+ {
+  "start": 12170,
+  "eind": 12240,
+  "titel": "56. CIRKELPIJL OP DE PRIMAIRE KNOP — sitewide, achter html.rg-cirkelpijl",
+  "regels": 71,
+  "important": 0,
+  "declaraties": 18
+ },
+ {
+  "start": 12241,
+  "eind": 12273,
+  "titel": "55.13 RUIMTE VERDELEN (5 november, avond). Staat achteraan met opzet:",
+  "regels": 33,
+  "important": 0,
+  "declaraties": 4
+ },
+ {
+  "start": 12274,
+  "eind": 12470,
+  "titel": "57. KERSTHERO OP MOBIEL, 10 november 2026, onder 992 px, achter de markers",
+  "regels": 197,
+  "important": 23,
+  "declaraties": 69
+ },
+ {
+  "start": 12471,
+  "eind": 12550,
+  "titel": "59. LADEN VAN DE THEMAPAGINA: DE STAND VÓÓR DE BAND-JS GELIJKTREKKEN MET",
+  "regels": 80,
+  "important": 10,
+  "declaraties": 29
+ },
+ {
+  "start": 12551,
+  "eind": 12603,
+  "titel": "60. MOBIELE HEADER (<992px): DE STAND VÓÓR DE JS GELIJK AAN DIE ERNA",
+  "regels": 53,
+  "important": 2,
+  "declaraties": 28
+ },
+ {
+  "start": 12604,
+  "eind": 12620,
+  "titel": "61. ZACHT VERSCHIJNEN op de themapagina's, 10 november 2026",
+  "regels": 17,
+  "important": 0,
+  "declaraties": 4
+ },
+ {
+  "start": 12621,
+  "eind": 12648,
+  "titel": "62. VINKJES IN DE USP-BALK ZONDER FONT AWESOME, 10 november 2026",
+  "regels": 28,
+  "important": 1,
+  "declaraties": 9
+ }
+]

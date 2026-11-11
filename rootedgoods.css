@@ -114,7 +114,7 @@ html {
   overflow-x: clip;
 }
 body {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
   /* Zelfde -20px .row-lek als hierboven bij html, maar clip alleen op html
      bleek niet genoeg om mobiel (Safari/iOS) heen-en-weer swipen van de
      hele pagina tegen te houden -- vooral merkbaar op de productslider,
@@ -126,8 +126,8 @@ body {
   overflow-x: clip;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif !important;
-  color: #2d4528 !important;
+  font-family: 'Playfair Display', serif;
+  color: #2d4528;
   line-height: 1.2;
 }
 /* Vangnet: browsers geven <em>/<i> standaard font-style:italic (UA-
@@ -145,9 +145,9 @@ em, i { font-style: normal; }
    thema-overrides te verslaan die op class-level staan.
    Headings op weight 600 (semibold) — één tandje boven medium.
    h4 is uitzondering: Montserrat subtitle-stijl voor top-title / eyebrow. */
-h1, .cms-element-text h1 { font-size: 4rem !important;    font-weight: 600 !important; }
+h1, .cms-element-text h1 { font-size: 4rem;    font-weight: 600; }
 h2, .cms-element-text h2 { font-size: 3rem !important;    font-weight: 600 !important; }
-h3, .cms-element-text h3 { font-size: 2.25rem !important; font-weight: 600 !important; }
+h3, .cms-element-text h3 { font-size: 2.25rem; font-weight: 600; }
 h4, .cms-element-text h4 {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 0.875rem !important;
@@ -161,17 +161,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 
 /* Type scale — tablet (<992px). h4 blijft vast op 0.875rem als subtitle. */
 @media (max-width: 991px) {
-  h1, .cms-element-text h1 { font-size: 3rem !important; }
+  h1, .cms-element-text h1 { font-size: 3rem; }
   h2, .cms-element-text h2 { font-size: 2.5rem !important; }
-  h3, .cms-element-text h3 { font-size: 1.875rem !important; }
+  h3, .cms-element-text h3 { font-size: 1.875rem; }
   h5, .cms-element-text h5 { font-size: 1.125rem !important; }
 }
 
 /* Type scale — mobile (<577px). h4 blijft vast op 0.875rem als subtitle. */
 @media (max-width: 576px) {
-  h1, .cms-element-text h1 { font-size: 2.5rem !important; }
+  h1, .cms-element-text h1 { font-size: 2.5rem; }
   h2, .cms-element-text h2 { font-size: 2rem !important; }
-  h3, .cms-element-text h3 { font-size: 1.625rem !important; }
+  h3, .cms-element-text h3 { font-size: 1.625rem; }
   h5, .cms-element-text h5 { font-size: 1.0625rem !important; }
 }
 
@@ -180,17 +180,17 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    ------------------------------------------------------------ */
 .container,
 .cms-section .boxed {
-  max-width: 100% !important;
+  max-width: 100%;
   --bs-gutter-x: 80px;
 }
 .content-main {
-  padding: 0 !important;
+  padding: 0;
   /* Compenseert de fixed header (.header-main) op MOBIEL (<992px) -- die
      blijft daar fixed, ongewijzigd. Vanaf 992px is de header nu normale
      document-flow (alleen .header-row is sticky, sectie 3/4) -- content
      wordt daar automatisch door de browser omlaag geduwd, geen reserve
      meer nodig, zie de override hieronder. */
-  padding-top: 102px !important;
+  padding-top: 102px;
 }
 /* Desktop: header-main + nav-main zijn geen fixed lagen meer (sectie 3/4),
    dus geen kunstmatige clearance meer nodig -- de browser reserveert zelf
@@ -221,7 +221,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   align-items: center;
 }
 .header-main .container {
-  max-width: 100% !important;
+  max-width: 100%;
   --bs-gutter-x: 0px;
 }
 .header-main .header-row {
@@ -231,7 +231,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 .header-row {
   padding: 0.5rem 2rem;
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 .header-main.header-hidden {
   transform: translateY(-100%);
@@ -279,8 +279,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    veiligheidsplafond). Pas de 52px aan om groter/kleiner te maken. */
 .header-logo-main-link img,
 .header-logo img {
-  height: 45px !important;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
-  width: auto !important;
+  height: 45px;   /* bepaalt de header-rij-hoogte; hoger = risico op overlap met nav (top:97px) */
+  width: auto;
   max-width: 340px;
 }
 
@@ -291,18 +291,18 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   overflow: visible;
 }
 .header-actions-btn {
-  border-radius: 0 !important;
-  padding: 0 12px !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
-  line-height: 34px !important;
-  background: none !important;
-  border: none !important;
-  overflow: visible !important;
+  border-radius: 0;
+  padding: 0 12px;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 34px;
+  background: none;
+  border: none;
+  overflow: visible;
 }
 .header-actions-btn .icon svg {
-  width: 20px !important;
-  height: 20px !important;
+  width: 20px;
+  height: 20px;
 }
 /* "€ 0,00" weg -- icoon blijft. .header-cart-badge (teller, bv. "1") wordt
    door Shopware alleen server-side gerenderd zodra de cart >=1 item heeft
@@ -310,10 +310,10 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    simpelweg niet in de DOM bij een lege cart. Live geverifieerd door een
    testproduct toe te voegen/weer te verwijderen. */
 .header-cart-total {
-  display: none !important;
+  display: none;
 }
 .header-cart-btn {
-  position: relative !important;
+  position: relative;
 }
 
 /* Header — wishlist- en cart-badge (zelfde positionering/opmaak) */
@@ -321,14 +321,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .header-wishlist-btn,
 .header-actions-col,
 .header-actions-col .row {
-  overflow: visible !important;
+  overflow: visible;
 }
 .header-wishlist {
   position: relative;
   display: inline-block;
 }
 .header-wishlist-btn {
-  position: relative !important;
+  position: relative;
 }
 .header-wishlist-badge,
 .header-cart-badge {
@@ -351,7 +351,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    verzinnen. Zodra er >=1 item in zit vult Shopware de badge -> :empty
    matcht niet meer -> icoon (met teller) verschijnt vanzelf. */
 .header-actions-col .header-wishlist:has(.header-wishlist-badge:empty) {
-  display: none !important;
+  display: none;
 }
 
 /* ------------------------------------------------------------
@@ -415,9 +415,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   justify-content: center;
 }
 .nav-main .main-navigation-link {
-  font-size: 14px !important;
-  padding-top: 0.6rem !important;
-  padding-bottom: 0.6rem !important;
+  font-size: 14px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
 }
 .main-navigation-link .main-navigation-link-text {
   font-weight: 500;
@@ -440,8 +440,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     gap: 24px;
   }
   .nav-main .main-navigation-link {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -475,7 +475,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .header-actions-btn .icon svg use,
 .header-actions-btn .icon svg path,
 .header-actions-btn .icon svg {
-  fill: #2d4528 !important;
+  fill: #2d4528;
 }
 
 /* Offerteknop in de header-actions-rij (JS sectie 1.4) — hergebruikt de
@@ -499,7 +499,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    afgezet met content:none (!important nodig: die regel staat verderop in
    het bestand en zou anders alsnog winnen). */
 .header-actions-col .offerte-link.btn-primary::after {
-  content: none !important;
+  content: none;
 }
 
 /* ------------------------------------------------------------
@@ -516,7 +516,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .top-bar-nav .fas,
 .top-bar-nav .fa-solid,
 .top-bar-nav span {
-  color: #fff !important;
+  color: #fff;
 }
 /* (USP-iconen zijn nu witte inline-SVG-vinkjes via currentColor; de oude
    terracotta <i>-icoonregel is verwijderd — terracotta blijft puur voor CTA's.)
@@ -554,9 +554,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
   padding: 0rem 2rem;
   position: relative;                   /* anker voor de absoluut-rechtse utility-links */
-  display: flex !important;
+  display: flex;
   align-items: center;
-  justify-content: center !important;   /* de USP-containers gecentreerd in de volle breedte */
+  justify-content: center;   /* de USP-containers gecentreerd in de volle breedte */
   gap: clamp(0.9rem, 2vw, 2.2rem);      /* tussenruimte tussen de USP's; krimpt mee op smallere desktops */
   flex-wrap: nowrap;
   font-size: 0.8rem;                    /* kleiner dan de theme-default (14px) */
@@ -566,9 +566,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    de items netjes tegen elkaar staan met alleen de gap ertussen. */
 .header-main .top-bar .top-bar-nav .top-bar-nav-extension .top-bar-container {
   padding: 3px 0;
-  flex: 0 0 auto !important;
-  width: auto !important;
-  max-width: none !important;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
 }
 /* Utility-links (Over ons / FAQ / Contact) blijven RECHTS staan: absoluut
    gepositioneerd, dus buiten de flow -> de USP's centreren in de volle
@@ -578,14 +578,14 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-  margin: 0 !important;
+  margin: 0;
 }
 
 /* Container 5 (Over ons / Cases / Contact links) rechts uitlijnen
    binnen de cel zodat "Contact" visueel op één lijn staat met
    het cart-icoon en "€ 0,00" in de header daaronder. */
 .top-bar-nav .top-bar-container.container--5 {
-  text-align: right !important;
+  text-align: right;
 }
 
 /* Verticale divider vóór de utility-links (Over ons/Cases/Contact) zodat ze
@@ -680,7 +680,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   font-size: 16px !important;
 }
 .header-search-input::placeholder {
-  color: #8c857a !important; /* subtieler dan ervoor */
+  color: #8c857a; /* subtieler dan ervoor */
   opacity: 1;
 }
 .header-search-input:focus {
@@ -691,24 +691,24 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   box-shadow: none;
 }
 .header-search-btn {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 1rem !important;
-  line-height: 1 !important;
-  background: #F0EFEB !important;
-  border: none !important;
-  border-top-right-radius: 32px !important;
-  border-bottom-right-radius: 32px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  line-height: 1;
+  background: #F0EFEB;
+  border: none;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
 }
 .header-search-btn .header-search-icon,
 .header-search-btn .icon {
-  display: flex !important;
-  align-items: center !important;
-  line-height: 1 !important;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 .header-search-btn .icon > svg {
-  top: 0px !important;
+  top: 0px;
 }
 .header-main .header-search .header-search-btn {
   line-height: 1.5 !important;
@@ -831,11 +831,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      actie-kolom heen. Padding weg + wrapper op auto-breedte i.p.v. vast
      200px lost dit op. */
   .header-logo-col {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
   .header-logo-main {
-    width: auto !important;
+    width: auto;
   }
 
   /* ---- Actie-rij: alleen zoeken + winkelmandje + (indien gevuld) wishlist ----
@@ -844,7 +844,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      rij duwde het zoekicoon 46 px naar het logo toe). Dit blok is de
      oudere stand, bewaard als toelichting. */
   .header-actions-col .account-menu {
-    display: none !important;
+    display: none;
   }
 
   /* ---- Zoek-collapse: ademruimte boven/onder als open (was 0) ---- */
@@ -860,7 +860,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      op display:block. Bootstrap's eigen .collapse:not(.show)-regel
      hoort dit te regelen; hier expliciet met !important herbevestigd. */
   .header-search-col .collapse:not(.show) {
-    display: none !important;
+    display: none;
   }
   /* De zoek-toggle-knop zelf zit in een wrapper met Bootstrap's eigen
      .d-sm-none (native: alleen zichtbaar <576px -- de theme liet de
@@ -932,8 +932,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      erboven maakte alleen de buitenkant hoger -- het groene vlak zelf
      bleef even dun, met zichtbare crème marge er nu overheen/onder. */
   .top-bar-nav {
-    justify-content: center !important;
-    padding: 0.4rem 1rem !important;
+    justify-content: center;
+    padding: 0.4rem 1rem;
   }
   .header-main .top-bar .top-bar-nav .top-bar-nav-extension {
     display: none !important;
@@ -996,7 +996,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      door bleef schijnen -- vandaar dat de tekst/link-blokken zelf nog
      wit oogden terwijl de rest van het paneel al crème was. */
   .navigation-offcanvas-list-item {
-    background-color: #F7F5F2 !important;
+    background-color: #F7F5F2;
   }
   .navigation-offcanvas .offcanvas-header {
     border-bottom: 1px solid #EAE3D7;
@@ -1006,7 +1006,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      warme lijnkleur die de rest van de site al gebruikt, en dunner qua
      contrast (subtieler, minder hard). */
   .navigation-offcanvas-list-item {
-    border-top-color: #EAE3D7 !important;
+    border-top-color: #EAE3D7;
   }
   /* "Menu sluiten"-tekst weg, alleen het kruisje blijft. Kale tekstnode
      na het icoon in de native markup (geen eigen span) -- font-size:0 op
@@ -1038,7 +1038,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     /* Native Shopware-headline had een lijntje erboven/eronder (scheiding
        tussen menu-secties) -- hier ongewenst, dit is nu een subtiel
        kicker-label, geen sectiedeler. */
-    border: none !important;
+    border: none;
   }
   .navigation-offcanvas-list-item:has(> a[title="Alle Producten"])::before {
     content: "Categorieën";
@@ -1060,16 +1060,16 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     font-size: 0.92rem;
   }
   .navigation-offcanvas-list-item .navigation-offcanvas-link {
-    padding-top: 0.6rem !important;
-    padding-bottom: 0.6rem !important;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
   }
   .navigation-offcanvas-link-icon svg use {
-    fill: #8c857a !important;
+    fill: #8c857a;
   }
   /* "Alle Producten" dikker (eerste/belangrijkste ingang boven de losse
      categorieën). */
   .navigation-offcanvas-link[title="Alle Producten"] {
-    font-weight: 700 !important;
+    font-weight: 700;
   }
   /* "Alle Producten" en "Verzorging" hebben van Shopware zelf geen
      data-href/submenu, dus ook geen native pijltje -- hier alsnog
@@ -1079,7 +1079,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      gedraaid) i.p.v. een andere pijl-stijl, zodat 'ie er identiek uitziet. */
   .navigation-offcanvas-link[title="Alle Producten"],
   .navigation-offcanvas-link[title="Verzorging"] {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: space-between;
   }
@@ -1151,15 +1151,15 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     justify-content: flex-end;
     min-height: 92px;
     border-radius: 12px;
-    padding: 0.65rem !important;
+    padding: 0.65rem;
     /* Padding-bottom specifiek voor de Thema-tegel (native nav-link, erft
-       een kleinere padding-bottom die zelfs !important hier niet won) wordt
+       een kleinere padding-bottom die zelfs hier niet won) wordt
        via inline style geforceerd in rootedgoods.js (bouwUitgelichteTegels) --
        zie de comment daar. */
     background-size: cover;
     background-position: center;
-    color: #fff !important;
-    text-decoration: none !important;
+    color: #fff;
+    text-decoration: none;
   }
   .rg-offcanvas-tile--thema {
     /* Zelfde beeld als de "Onboarding & welkom"-tegel op thema-overzicht.html
@@ -1194,7 +1194,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .rg-offcanvas-tile-title {
     display: block;
     text-align: left;
-    color: #fff !important;
+    color: #fff;
     font-size: 0.88rem;
     font-weight: 700;
     line-height: 1.2;
@@ -1220,7 +1220,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
      bovenaan (herlabeld naar "Shop op thema") dekt die ingang al, dubbel
      met deze losse categorie-link. */
   .navigation-offcanvas-list-item:has(> a[href$="/thema-s/"]) {
-    display: none !important;
+    display: none;
   }
 
   /* ---- Merken/Services/Over ons: gedemoot onder een eyebrow-label,
@@ -1228,7 +1228,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
   .navigation-offcanvas-list-item:has(a[href$="/merken/"]),
   .navigation-offcanvas-list-item:has(a[href$="/services/"]),
   .navigation-offcanvas-list-item:has(a[href$="/over-ons"]) {
-    display: list-item !important;
+    display: list-item;
     order: 10;
   }
   .navigation-offcanvas-list-item:has(a[href$="/merken/"]) .navigation-offcanvas-link,
@@ -1278,11 +1278,11 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     border-radius: 999px;
     border: 1.5px solid #ad6331;
     background: transparent;
-    color: #ad6331 !important;
+    color: #ad6331;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 0.88rem;
-    text-decoration: none !important;
+    text-decoration: none;
   }
   .rg-offcanvas-cta:hover {
     background: rgba(173, 99, 49, 0.08);
@@ -1294,8 +1294,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
     font-family: 'Montserrat', sans-serif;
     font-size: 0.88rem;
     font-weight: 600;
-    color: #2d4528 !important;
-    text-decoration: none !important;
+    color: #2d4528;
+    text-decoration: none;
   }
   .rg-offcanvas-quicklink:hover {
     color: #ad6331 !important;
@@ -1337,7 +1337,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 }
 /* Theme zet zelf padding-bottom:60px op de tegel-rij -- flink kleiner. */
 .navigation-flyout .row.navigation-flyout-content {
-  padding-bottom: 24px !important;
+  padding-bottom: 24px;
 }
 
 /* Flyout — categorie afbeeldingen met overlay.
@@ -1348,8 +1348,8 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    meer tegels tegelijk in beeld, en een vierkant kader toont
    verhoudingsgewijs meer van de bronfoto dan een brede banner. */
 .navigation-flyout-category {
-  flex: 0 0 20% !important;
-  max-width: 20% !important;
+  flex: 0 0 20%;
+  max-width: 20%;
 }
 .navigation-flyout-category .navigation-item {
   position: relative;
@@ -1416,7 +1416,7 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
    met onderkant van de afbeeldingen, links uitgelijnd horizontaal.
    Button krijgt natuurlijke grootte (niet stretched naar cel-breedte). */
 .flyout-cta-col {
-  display: flex !important;
+  display: flex;
   align-items: flex-end;
   justify-content: flex-start;
 }
@@ -1453,9 +1453,9 @@ h6, .cms-element-text h6 { font-size: 1rem !important;    font-weight: 600 !impo
 /* Basis-outline (rand) — blijft staan voor de captcha-refresh-icoonknop
    (die is hieronder uitgesloten van de tekstlink-variant). */
 .btn-outline-primary {
-  background-color: transparent !important;
-  border: 2px solid rgba(45, 69, 40, 0.28) !important;
-  color: #2d4528 !important;
+  background-color: transparent;
+  border: 2px solid rgba(45, 69, 40, 0.28);
+  color: #2d4528;
 }
 .btn-outline-primary:hover {
   background-color: transparent !important;
@@ -1568,8 +1568,8 @@ img {
 .btn.btn-primary:has(.icon-arrow-up) svg,
 .scroll-up-btn svg,
 .scroll-up .btn-primary svg {
-  width: 18px !important;
-  height: 18px !important;
+  width: 18px;
+  height: 18px;
   transform: translateY(-6px);
 }
 .btn.btn-primary:has(.icon-arrow-up) svg use,
@@ -1578,7 +1578,7 @@ img {
 .scroll-up-btn svg path,
 .scroll-up .btn-primary svg use,
 .scroll-up .btn-primary svg path {
-  fill: #ffffff !important;
+  fill: #ffffff;
 }
 
 /* Wishlist — zwevende badge rechtsonder (mobiel/tablet), zie rootedgoods.js
@@ -1645,7 +1645,7 @@ img {
 .product-box {
   border-color: transparent;
   background-color: #fff;
-  border-radius: 10px !important;
+  border-radius: 10px;
 }
 
 /* ------------------------------------------------------------
@@ -1657,11 +1657,11 @@ img {
 
 /* Verberg overbodige elementen op de tile */
 .badge-new {
-  display: none !important;
+  display: none;
 }
 :is(.home-productslider, .cms-listing-row) hr,
 :is(.home-productslider, .cms-listing-row) .product-box .product-action {
-  display: none !important;
+  display: none;
 }
 
 /* Selector ook op .box-image: alleen de homepage-slider-tiles hebben die
@@ -1702,7 +1702,7 @@ img {
   transform: translateY(-2px);
 }
 :is(.home-productslider, .cms-listing-row) .product-box .card-body {
-  padding: 1.75rem 1.5rem !important;
+  padding: 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -1741,33 +1741,33 @@ img {
   }
 }
 :is(.home-productslider, .cms-listing-row) .product-image-link {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 :is(.home-productslider, .cms-listing-row) .product-image,
 .home-productslider img.product-image.is-contain {
-  position: absolute !important;   /* forceer fill, ongeacht intrinsieke afmetingen */
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  min-width: 100% !important;
-  min-height: 100% !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  border-radius: 8px !important;
+  position: absolute;   /* forceer fill, ongeacht intrinsieke afmetingen */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 8px;
 }
 
 /* Wishlist button — Promidata default position (onder image, rechts).
    We laten flow positioning intact, alleen icon-kleur op-brand. */
 :is(.home-productslider, .cms-listing-row) .product-wishlist svg use,
 :is(.home-productslider, .cms-listing-row) .product-wishlist svg path {
-  fill: #2d4528 !important;
+  fill: #2d4528;
 }
 
 /* Variant thumbnails — ronde swatches met prev/next-navigatie en edge-fade
@@ -1782,11 +1782,11 @@ img {
   gap: 8px;
 }
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail-img {
-  width: 34px !important;
-  height: 34px !important;
-  border-radius: 50% !important;
-  border: 1px solid #EAE3D7 !important;
-  object-fit: cover !important;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #EAE3D7;
+  object-fit: cover;
 }
 /* Pijlen alleen tonen wanneer .active is gezet. Ruimte gereserveerd aan
    weerskanten (padding op de wrapper) zodat ze niet bovenop de eerste/
@@ -1794,33 +1794,33 @@ img {
    gecentreerd op de rij. */
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider:not(.active) .prev,
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider:not(.active) .next {
-  display: none !important;
+  display: none;
 }
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active {
-  padding: 0 20px !important;
+  padding: 0 20px;
 }
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev,
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next {
-  background: transparent !important;
-  color: #888 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  width: 16px !important;
-  height: 34px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 0.9rem !important;
-  font-weight: 400 !important;
-  text-decoration: none !important;
-  box-shadow: none !important;
+  background: transparent;
+  color: #888;
+  border: none;
+  border-radius: 0;
+  width: 16px;
+  height: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  box-shadow: none;
   cursor: pointer;
   transition: color 0.15s ease, transform 0.15s ease;
 }
-:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev { left: 0 !important; }
-:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next { right: 0 !important; }
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev { left: 0; }
+:is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next { right: 0; }
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .prev:hover,
 :is(.home-productslider, .cms-listing-row) .variant-thumbnail.slider.active .next:hover {
   background: transparent !important;
@@ -1855,9 +1855,9 @@ img {
 }
 :is(.home-productslider, .cms-listing-row) .product-name {
   display: block;
-  font-weight: 400 !important;
-  color: #2d4528 !important;
-  text-decoration: none !important;
+  font-weight: 400;
+  color: #2d4528;
+  text-decoration: none;
   font-size: 1rem;
   line-height: 1.3;
   margin: 0.25rem 0 0.5rem 0;
@@ -1870,12 +1870,12 @@ img {
    theme's vaste height:54px (voor hun eigen 3-regelige clamp), anders toont
    -webkit-line-clamp:2 zijn ellipsis nooit. */
 :is(.home-productslider, .cms-listing-row) .product-description {
-  display: -webkit-box !important;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: auto !important;
-  max-height: none !important;
+  height: auto;
+  max-height: none;
   font-size: 0.825rem;
   color: #888;
   line-height: 1.4;
@@ -1892,12 +1892,12 @@ img {
     display: none !important;
   }
   :is(.home-productslider, .cms-listing-row) .product-name {
-    display: block !important;
+    display: block;
     /* Native theme zet hier een harde height:44px (voor zijn eigen
        2-regelige clamp) -- zonder override bleef de rij die hoogte
        aanhouden ook al toont de tekst nu maar 1 regel. */
-    height: auto !important;
-    -webkit-line-clamp: 1 !important;
+    height: auto;
+    -webkit-line-clamp: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1913,8 +1913,8 @@ img {
   color: #888;
 }
 :is(.home-productslider, .cms-listing-row) .product-price {
-  font-weight: 700 !important;
-  color: #2d4528 !important;
+  font-weight: 700;
+  color: #2d4528;
   font-size: 1.15rem;
   margin-left: 0.25rem;
 }
@@ -1950,14 +1950,14 @@ img {
    (sectie 30, hieronder) net als cat/spec/feature/statement -> geen bleed
    meer, gewoon dezelfde linker/rechter rand als de rest van de homepage. */
 .home-productslider {
-  overflow-x: hidden !important;
-  overflow-y: visible !important;
+  overflow-x: hidden;
+  overflow-y: visible;
   /* Was 40px, stapelde op met .tns-ovh's eigen 24px hover-shadow-padding
      hieronder -- samen ~90px dode ruimte tussen de laatste kaart en de
      "Bekijk alle producten"-knop erna. Beide regels dienden hetzelfde doel
      (schaduw niet clippen); 1 daarvan is genoeg. */
-  padding-bottom: 10px !important;
-  box-sizing: border-box !important;
+  padding-bottom: 10px;
+  box-sizing: border-box;
 }
 .home-productslider .cms-block-container,
 .home-productslider .cms-block-container[style] {
@@ -2012,7 +2012,7 @@ img {
 @media (max-width: 991px) {
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
-    position: absolute !important;
+    position: absolute;
     /* Eerder een keer verschoven naar het midden van het BEELD i.p.v. de
        hele tegel -- op verzoek teruggedraaid naar gecentreerd op de
        volledige tegelhoogte (incl. naam/prijs eronder). Nadien alsnog op
@@ -2020,15 +2020,15 @@ img {
        de doos waarin align-items:center centreert, middenin tussen de
        twee eerdere standen in (niet weer volledig terug naar "midden van
        het beeld alleen"). */
-    inset: 0 0 25% 0 !important;
+    inset: 0 0 25% 0;
     z-index: 5;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    pointer-events: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: none !important;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
   }
   .home-productslider .base-slider-controls button {
     all: unset !important;
@@ -2042,15 +2042,15 @@ img {
     padding: 0.6rem !important;
   }
   .home-productslider .base-slider-controls button .icon svg {
-    display: none !important;
+    display: none;
   }
   .home-productslider .base-slider-controls button .icon {
-    display: block !important;
-    width: 14px !important;
-    height: 14px !important;
-    border-top: 3.5px solid #2d4528 !important;
-    border-right: 3.5px solid #2d4528 !important;
-    background: none !important;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-top: 3.5px solid #2d4528;
+    border-right: 3.5px solid #2d4528;
+    background: none;
   }
   .home-productslider .base-slider-controls-prev .icon { transform: rotate(-135deg); }
   .home-productslider .base-slider-controls-next .icon { transform: rotate(45deg); }
@@ -2071,8 +2071,8 @@ img {
     padding-right: 0 !important;
   }
   .cms-block-product-slider .cms-block-container {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
   /* Titel boven de slider: was ongestyled (Shopware's eigen kale
      tekst-editor-look, veel te groot t.o.v. de rest van de site) --
@@ -2097,10 +2097,10 @@ img {
      verkleind (was 1.25rem, samen met .home-productslider's eigen 40px
      hover-shadow-padding erboven voelde dat als een dubbele lege strook). */
   .rg-slider-cta-moved {
-    display: flex !important;
+    display: flex;
     justify-content: center;
     width: calc(100% - 30px);
-    margin: 0.25rem 15px 2rem !important;
+    margin: 0.25rem 15px 2rem;
   }
 }
 
@@ -2122,7 +2122,7 @@ img {
    draait blijft dit blok gewoon leeg (bewuste, acceptabele afweging voor
    een puur decoratieve vertrouwens-strip). */
 .logo-slider .cms-element-custom-cms-slider {
-  display: none !important;
+  display: none;
 }
 
 .home.productslider .carousel-control-prev,
@@ -2439,7 +2439,7 @@ img {
 /* Desktop — originele headline-row verbergen (h1 wordt verplaatst). */
 @media (min-width: 992px) {
   .product-detail-headline {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -2479,14 +2479,14 @@ img {
 /* Main slider col — anker voor absolute arrows + zoom-button.
    Geen padding-bottom: dots staan in normal flow eronder. */
 .product-detail-media .gallery-slider-col {
-  position: relative !important;
+  position: relative;
 }
 
 /* Hoofdafbeelding container (was 430px, toen naar 580px) — iets kleiner
    teruggezet: de brongfoto's zijn vaak lager resolutie, dus te groot
    uitvergroot valt de zachtheid/pixelering meer op. */
 .product-detail-media .gallery-slider-item {
-  min-height: 480px !important;
+  min-height: 480px;
 }
 
 /* Arrows als minimal overlay — geen knop, alleen icoon */
@@ -2550,7 +2550,7 @@ img {
 }
 .product-detail-media .gallery-slider-image,
 .product-detail-media .js-magnifier-image {
-  cursor: default !important;
+  cursor: default;
 }
 
 /* Responsive: kleinere image-height op tablet/mobile */
@@ -2580,12 +2580,12 @@ img {
 /* Sticky prijs-tabel bovenaan buy-col verbergen.
    Onderaan blijft de tabel staan via #total-price-bottom-container. */
 #total-price-top-container {
-  display: none !important;
+  display: none;
 }
 
 /* Artikelnummer-blok in de buy-col verbergen. */
 body.is-ctl-product .product-detail-ordernumber-container {
-  display: none !important;
+  display: none;
 }
 
 /* Product price info links uitlijnen — overschrijft .text-end */
@@ -2597,7 +2597,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* Buy col: extra ademruimte aan de linker kant op desktop */
 @media (min-width: 992px) {
   body.is-ctl-product .product-detail-buy {
-    padding-left: 3rem !important;
+    padding-left: 3rem;
   }
 }
 
@@ -2667,7 +2667,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* "Van € X Zonder opdruk" blok bovenaan verbergen — onderaan staat
    al een complete totaal-tabel met dezelfde info. */
 .product-detail-buy .product-price-info {
-  display: none !important;
+  display: none;
 }
 
 /* Configurator group titels (Kleur / Aantal / Opdruk / etc.) donkergroen */
@@ -2675,14 +2675,14 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .product-detail-buy .product-detail-configurator-group-title,
 .product-detail-buy .collapse-title > span,
 .product-detail-buy .product-detail-configurator-group-title > span {
-  color: #2d4528 !important;
+  color: #2d4528;
 }
 
 /* Cijferbolletjes (1, 2, 3, 4, 5) voor de titels in salie-groen (secundair accent) */
 .product-detail-buy .collapse-title::before,
 .product-detail-buy .product-detail-configurator-group-title::before {
-  background-color: #CA853F !important;
-  border-color: #CA853F !important;
+  background-color: #CA853F;
+  border-color: #CA853F;
 }
 
 /* Theme zet zelf margin-bottom:1.5rem op de options-rij (extra ruimte
@@ -2774,8 +2774,8 @@ body.is-ctl-product .product-detail-ordernumber-container {
    - Highlight-row (actieve tier) accent-border licht-bruin met radius
    - Hele rij klikbaar (cursor + JS handler) */
 .product-detail-buy .product-block-prices-grid {
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 /* Wrapper rond de tabel met afgeronde hoeken */
@@ -2787,37 +2787,37 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 /* Tbody-cellen: wit, ruime cel-padding voor lucht in de rijen */
 .product-detail-buy .product-block-prices-grid > tbody > tr > * {
-  background-color: #ffffff !important;
-  padding-top: 1.1rem !important;
-  padding-bottom: 1.1rem !important;
-  vertical-align: middle !important;
+  background-color: #ffffff;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  vertical-align: middle;
 }
 
 /* Thead-cellen: donkergroen bg, witte tekst, dikgedrukt, ruime padding */
 .product-detail-buy .product-block-prices-grid > thead > tr > * {
-  background-color: #2d4528 !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  padding-top: 1.1rem !important;
-  padding-bottom: 1.1rem !important;
-  vertical-align: middle !important;
+  background-color: #2d4528;
+  color: #ffffff;
+  font-weight: 700;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  vertical-align: middle;
 }
 
 /* Side-padding op eerste en laatste cellen voor lucht aan zijkanten */
 .product-detail-buy .product-block-prices-grid > tbody > tr > *:first-child,
 .product-detail-buy .product-block-prices-grid > thead > tr > *:first-child {
-  padding-left: 1.5rem !important;
+  padding-left: 1.5rem;
 }
 .product-detail-buy .product-block-prices-grid > tbody > tr > *:last-child,
 .product-detail-buy .product-block-prices-grid > thead > tr > *:last-child {
-  padding-right: 1.5rem !important;
+  padding-right: 1.5rem;
 }
 
 /* Subtiele rij-separator. Eerste tbody-row krijgt geen extra border (zit
    al onder de thead). Promidata's #eee border-top wordt hierdoor vervangen. */
 .product-detail-buy .product-block-prices-grid .product-block-prices-body .product-block-prices-row,
 .product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row {
-  border-top: 1px solid #EAE3D7 !important;
+  border-top: 1px solid #EAE3D7;
 }
 .product-detail-buy .product-block-prices-grid > tbody > tr.product-block-prices-row:first-child {
   border-top: none !important;
@@ -2826,13 +2826,13 @@ body.is-ctl-product .product-detail-ordernumber-container {
 /* Aantallen (eerste cel) dikgedrukt — incl. de inline qty-click span */
 .product-detail-buy .product-block-prices-grid > tbody > tr > th:first-child,
 .product-detail-buy .product-block-prices-grid .product-block-prices-quantity {
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 
 /* Prijs per stuk (laatste cel) groter + dikker */
 .product-detail-buy .product-block-prices-grid > tbody > tr > td:last-child {
-  font-size: 1.125rem !important;
-  font-weight: 600 !important;
+  font-size: 1.125rem;
+  font-weight: 600;
 }
 
 /* Besparing als sage-groene pill — wordt via JS in een
@@ -2886,9 +2886,9 @@ body.is-ctl-product .product-detail-ordernumber-container {
    ------------------------------------------------------------ */
 
 .product-detail-buy .custom-configurator-table {
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  margin-bottom: 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
   border: 1px solid #EAE3D7;
   border-bottom: none;
   border-radius: 8px 8px 0 0;
@@ -2905,21 +2905,21 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 /* Header donkergroen, witte tekst, dikgedrukt, ruime padding */
 .product-detail-buy .custom-configurator-table > thead > tr > * {
-  background-color: #2d4528 !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  padding: 1.1rem 1rem !important;
-  vertical-align: middle !important;
-  border: none !important;
+  background-color: #2d4528;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 1.1rem 1rem;
+  vertical-align: middle;
+  border: none;
 }
 
 /* Tbody rijen wit, ruime padding */
 .product-detail-buy .custom-configurator-table > tbody > tr > * {
-  background-color: #ffffff !important;
-  padding: 1.1rem 1rem !important;
-  vertical-align: middle !important;
-  border-top: 1px solid #EAE3D7 !important;
-  border-bottom: none !important;
+  background-color: #ffffff;
+  padding: 1.1rem 1rem;
+  vertical-align: middle;
+  border-top: 1px solid #EAE3D7;
+  border-bottom: none;
 }
 
 /* Side-padding op eerste/laatste cellen */
@@ -2939,7 +2939,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .product-detail-buy table.custom-configurator-table > tbody > tr > *,
 .product-detail-buy table.custom-configurator-table > tbody > tr:nth-of-type(odd) > *,
 .product-detail-buy table.custom-configurator-table > tbody > tr:nth-of-type(even) > * {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
 /* Price-container (Stukprijs / Totaalprijs Netto / Bruto) sluit
@@ -2956,13 +2956,13 @@ body.is-ctl-product .product-detail-ordernumber-container {
   margin-bottom: 1rem;
 }
 .product-detail-buy #total-price-bottom-container .configurator-price-container > table {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .product-detail-buy #total-price-bottom-container .configurator-price-container > table th,
 .product-detail-buy #total-price-bottom-container .configurator-price-container > table td {
-  border: none !important;
-  padding: 0.4rem 0 !important;
-  background-color: #ffffff !important;
+  border: none;
+  padding: 0.4rem 0;
+  background-color: #ffffff;
 }
 
 /* Mobiel (<576px): beide tabellen (staffel-prijzen + totaalprijs) hebben
@@ -3032,7 +3032,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
      bij de native font-size (20px, .totalprice). */
   .product-detail-buy #total-price-bottom-container .configurator-price-container > table th,
   .product-detail-buy #total-price-bottom-container .configurator-price-container > table td {
-    font-size: 0.95rem !important;
+    font-size: 0.95rem;
   }
 }
 
@@ -3045,11 +3045,11 @@ body.is-ctl-product .product-detail-ordernumber-container {
 .product-detail-buy .form-select,
 .product-detail-buy textarea.form-control,
 .product-detail-buy input[type="number"].form-control {
-  background-color: #ffffff !important;
-  padding: 0.75rem 1rem !important;
-  font-size: 1rem !important;
-  border: 1px solid #EAE3D7 !important;
-  border-radius: 6px !important;
+  background-color: #ffffff;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #EAE3D7;
+  border-radius: 6px;
   min-height: 48px;
 }
 
@@ -3125,13 +3125,13 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 .product-detail-buy .product-detail-configurator-group,
 .product-detail-buy .collapse-group {
-  border-color: #EAE3D7 !important;
-  border-top-color: #EAE3D7 !important;
-  border-bottom-color: #EAE3D7 !important;
+  border-color: #EAE3D7;
+  border-top-color: #EAE3D7;
+  border-bottom-color: #EAE3D7;
 }
 .product-detail-buy .product-detail-configurator-group + .product-detail-configurator-group,
 .product-detail-buy .collapse-group + .collapse-group {
-  border-top: 1px solid #EAE3D7 !important;
+  border-top: 1px solid #EAE3D7;
 }
 /* "Volgende"-knop tussen de stappen: iets meer lucht eronder, plakte
    direct tegen de rand van de volgende stap aan. Links uitgelijnd i.p.v.
@@ -3150,7 +3150,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
    producten onder "toevoegen aan verlanglijst" -- op verzoek altijd
    verborgen, los van de voorraadstand. */
 .product-detail-stockinfo-container {
-  display: none !important;
+  display: none;
 }
 
 /* Hoofdafbeelding klikbaar — cursor zoom-in als hint. */
@@ -3262,7 +3262,7 @@ body.is-ctl-product .product-detail-ordernumber-container {
 
 /* PDP body wit (overschrijft eventuele Promidata default) */
 body.is-ctl-product {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
 
 /* Desktop: gradient op content-main als split bg.
@@ -3284,14 +3284,14 @@ body.is-ctl-product {
   /* Buy col verbreden van col-lg-5 (5/12) naar 6/12 (50%) voor
      meer ademruimte rond de configurator. Media col krimpt navenant. */
   body.is-ctl-product .product-detail-media.col-lg-7 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-    width: 50% !important;
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 50%;
   }
   body.is-ctl-product .product-detail-buy.col-lg-5 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-    width: 50% !important;
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 50%;
   }
 }
 
@@ -3299,7 +3299,7 @@ body.is-ctl-product {
 @media (max-width: 991px) {
   body.is-ctl-product .product-detail-buy {
     background-color: #FBF7F5;
-    padding: 1.5rem !important;
+    padding: 1.5rem;
     border-radius: 8px;
     margin-top: 1rem;
   }
@@ -3368,7 +3368,7 @@ body.is-ctl-product {
 }
 
 .product-detail-tabs .card.card-tabs {
-  border-radius: 16px !important;
+  border-radius: 16px;
   margin: 0 auto;
   max-width: 1250px;
   display: block;
@@ -3379,14 +3379,14 @@ body.is-ctl-product {
 /* Tab navigation: subtiele border eronder zodat tabs en content
    visueel gescheiden blijven binnen de witte box */
 .product-detail-tabs .product-detail-tab-navigation {
-  border-bottom: 1px solid #EAE3D7 !important;
-  padding: 0.5rem 1.5rem 0 !important;
+  border-bottom: 1px solid #EAE3D7;
+  padding: 0.5rem 1.5rem 0;
 }
 
 /* Card body padding consistent maken */
 .product-detail-tabs .card.card-tabs > .card-body,
 .product-detail-tabs .product-detail-tabs-content {
-  padding: 0 !important;
+  padding: 0;
 }
 
 /* Actieve tab: witte bg + lichtbruine border-bottom als active-indicator.
@@ -3394,11 +3394,11 @@ body.is-ctl-product {
 .product-detail-tabs .nav-tabs .nav-link.active,
 .product-detail-tabs .nav-tabs .nav-link.active:hover,
 .product-detail-tabs .nav-tabs .nav-link.active:focus {
-  background-color: #ffffff !important;
-  border-top-color: transparent !important;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  border-bottom: 2px solid #CA853F !important;
+  background-color: #ffffff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 2px solid #CA853F;
 }
 
 /* Hover/focus op INACTIEVE tabs: geen achtergrondswisseling */
@@ -3439,9 +3439,9 @@ body.is-ctl-product {
      ipv 6/12 van de oorspronkelijke row */
   .product-detail-description .product-detail-properties .col-md-10,
   .product-detail-description .product-detail-properties .col-lg-6 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -3484,14 +3484,14 @@ body.is-ctl-product {
 .sorting select.sorting {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 2.5rem 0.5rem 1.25rem !important;
-  border: 1px solid #EAE3D7 !important;
-  border-radius: 999px !important;
-  background-color: #ffffff !important;
-  color: #2d4528 !important;
-  font-size: 0.875rem !important;
-  font-weight: 500 !important;
-  line-height: 1 !important;
+  padding: 0.5rem 2.5rem 0.5rem 1.25rem;
+  border: 1px solid #EAE3D7;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #2d4528;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
@@ -3512,7 +3512,7 @@ body.is-ctl-product {
    propertyName in de data-attribuut-JSON zodat het robuust is tegen de
    wisselende #filter-properties-<id> id's die Promidata genereert. */
 .filter-panel-item.filter-multi-select-properties[data-filter-property-select-options*="Made in Europe"] {
-  display: none !important;
+  display: none;
 }
 
 /* Filter buttons (Eco / Kleur / Made in Europe / Merk / Prijs).
@@ -3535,26 +3535,26 @@ body.is-ctl-product {
 }
 /* Chevron helemaal rechts (titel + count blijven links samen). */
 .filter-panel .filter-panel-item-toggle.btn .icon-filter-panel-item-toggle {
-  margin-left: auto !important;
+  margin-left: auto;
 }
 
 /* Chevron-icoon: span en SVG verticaal centreren, kleur on-brand
    donkergroen. Promidata's eigen CSS zet `top: <waarde>px` op de
    SVG (icon-filter-panel-item-toggle), die overschrijven we naar 0. */
 .filter-panel .filter-panel-item-toggle.btn .icon {
-  display: inline-flex !important;
-  align-items: center !important;
+  display: inline-flex;
+  align-items: center;
 }
 .filter-panel .filter-panel-item-toggle.btn .icon svg,
 .icon.icon-filter-panel-item-toggle > svg {
-  display: block !important;
-  width: 12px !important;
-  height: 12px !important;
-  top: 0 !important;
+  display: block;
+  width: 12px;
+  height: 12px;
+  top: 0;
 }
 .filter-panel .filter-panel-item-toggle.btn .icon svg use,
 .filter-panel .filter-panel-item-toggle.btn .icon svg path {
-  fill: #2d4528 !important;
+  fill: #2d4528;
 }
 .filter-panel .filter-panel-item-toggle.btn:hover,
 .filter-panel .filter-panel-item-toggle.btn[aria-expanded="true"] {
@@ -3619,7 +3619,7 @@ body.is-ctl-product {
    lager dan het midden van de knop, ondanks dat de omliggende span/flex
    wél gecentreerd is. */
 .filter-panel-wrapper-toggle .icon svg {
-  top: 0 !important;
+  top: 0;
 }
 
 /* Filter panel active container — chips + reset button als filters actief zijn.
@@ -3705,7 +3705,7 @@ body.is-ctl-product {
 
 /* Sidebar categorie navigatie cleaner */
 .category-navigation .category-navigation-link {
-  color: #2d4528 !important;
+  color: #2d4528;
   text-decoration: none;
   padding: 0.4rem 0;
   display: block;
@@ -3733,36 +3733,36 @@ body.is-ctl-product {
      duwen, en clipte die chip half weg. Terug naar normale document-flow:
      de dropdown duwt de rest van de grid nu gewoon naar beneden, zoals
      een accordeon hoort te doen. */
-  position: static !important;
-  background-color: #ffffff !important;
-  border: 1px solid #EAE3D7 !important;
-  border-radius: 12px !important;
-  margin-top: 0.4rem !important;
-  margin-bottom: 0.6rem !important;
-  padding: 0.35rem 0.85rem !important;
+  position: static;
+  background-color: #ffffff;
+  border: 1px solid #EAE3D7;
+  border-radius: 12px;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  padding: 0.35rem 0.85rem;
   /* Bootstrap/Popper blijft (ondanks position:static hierboven) een eigen
      translate3d-offset zetten, bedoeld voor de originele absolute
      plaatsing -- resultaat was een sprong van ~60px i.p.v. kort onder de
      knop te hangen (transform werkt ongeacht position-waarde). Genegeerd:
      de dropdown volgt nu puur de normale document-flow + margin-top. */
-  transform: none !important;
+  transform: none;
 }
 .filter-multi-select-list {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .filter-multi-select-list-item {
-  padding: 0 !important;
+  padding: 0;
 }
 /* Checkbox-rij: vinkje + label op één lijn, hele rij hoverbaar. */
 .filter-multi-select-list-item .form-check {
-  display: flex !important;
+  display: flex;
   align-items: center;
   gap: 0.55rem;
-  padding: 0.35rem 0.4rem !important;
-  margin: 0 !important;
-  min-height: auto !important;
+  padding: 0.35rem 0.4rem;
+  margin: 0;
+  min-height: auto;
   border-radius: 8px;
   transition: background-color 0.12s ease;
 }
@@ -3770,21 +3770,21 @@ body.is-ctl-product {
   background-color: #FBF7F5;
 }
 .filter-multi-select-list-item .form-check-input {
-  appearance: auto !important;
-  -webkit-appearance: checkbox !important;
-  float: none !important;
-  flex: none !important;
-  margin: 0 !important;
-  width: 1rem !important;
-  height: 1rem !important;
-  min-height: 0 !important;
-  border-radius: 0.25rem !important;
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  float: none;
+  flex: none;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 0;
+  border-radius: 0.25rem;
   cursor: pointer;
   accent-color: #ad6331; /* aangevinkte checkbox in terracotta */
 }
 .filter-multi-select-list-item .form-check-label {
   cursor: pointer;
-  color: #2d4528 !important;
+  color: #2d4528;
   font-size: 0.9rem;
   line-height: 1.2;
 }
@@ -3850,15 +3850,15 @@ body.is-ctl-product {
 /* Pijl-iconen (« ‹ › ») exact centreren: theme zet 'top: 2px' op de svg, dat
    neutraliseren we en de icon-span centreren we via flex. */
 .page-item .page-link .icon {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
 }
 .page-item .page-link .icon > svg {
-  position: static !important;
-  top: 0 !important;
-  display: block !important;
+  position: static;
+  top: 0;
+  display: block;
 }
 
 /* PLP-paginering mobiel: bij veel pagina's (« ‹ 1 2 3 4 › ») past de rij
@@ -3909,16 +3909,16 @@ body.is-ctl-product {
    breedte (pagina oogde daardoor smaller dan de rest van de site). */
 @media (max-width: 991px) {
   .cms-listing-col {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
   .cms-section-sidebar-main-content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
   .cms-section-sidebar-mobile-wrap.boxed {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   /* Native theme geeft dit CMS-block zelf ook nog padding: 0 links / 20px
      rechts -- op desktop is dat de halve gutter t.o.v. de sidebar ernaast
@@ -3941,7 +3941,7 @@ body.is-ctl-product {
      (16px) + het CMS-titelblok's eigen padding-top (20px) telden op tot
      36px. .pos-0 = altijd het eerste blok op de pagina (hier: de titel). */
   body:has(.cms-listing-row) .cms-breadcrumb {
-    margin-bottom: 8px !important;
+    margin-bottom: 8px;
   }
   body:has(.cms-listing-row) .cms-block.pos-0.cms-block-text > .cms-block-container {
     padding-top: 4px !important;
@@ -3960,13 +3960,13 @@ body.is-ctl-product {
     display: none !important;
   }
   .cms-element-product-listing-actions {
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
-    margin-bottom: 16px !important;
+    margin-bottom: 16px;
   }
   .cms-element-product-listing-actions > * {
-    margin: 0 !important;
+    margin: 0;
   }
 }
 
@@ -4042,8 +4042,8 @@ h2.rg-cat-heading,
   padding-bottom: 0.35rem;   /* optisch op de baseline van de subline */
   font-weight: 600;
   font-size: 0.95rem;
-  color: #2d4528 !important;
-  text-decoration: none !important;
+  color: #2d4528;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 .rg-cat-head__link::after {
@@ -4081,7 +4081,7 @@ h2.rg-cat-heading,
   aspect-ratio: 3 / 2;           /* mobiel: liggende kaart */
   border-radius: 16px;
   overflow: hidden;
-  text-decoration: none !important;
+  text-decoration: none;
   background-color: #EAE3D7;
   box-shadow: 0 14px 30px -22px rgba(45, 69, 40, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -4139,7 +4139,7 @@ h2.rg-cat-heading,
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
-  color: #ffffff !important;
+  color: #ffffff;
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.15;
@@ -4167,7 +4167,7 @@ h2.rg-cat-heading,
 }
 
 .rg-cat-tile__sub {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.3;
@@ -4283,7 +4283,7 @@ h2.rg-cat-heading,
   aspect-ratio: 3 / 2;            /* mobiel: liggende kaart */
   border-radius: 16px;
   overflow: hidden;
-  text-decoration: none !important;
+  text-decoration: none;
   background-color: #EAE3D7;
   box-shadow: 0 14px 30px -22px rgba(45, 69, 40, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -4340,8 +4340,8 @@ h2.rg-cat-heading,
 }
 
 .rg-spec-card__title {
-  font-family: 'Playfair Display', serif !important;
-  color: #ffffff !important;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
   font-size: clamp(1.5rem, 1.2rem + 0.9vw, 2rem);
   font-weight: 600;
   line-height: 1.15;
@@ -4349,7 +4349,7 @@ h2.rg-cat-heading,
 }
 
 .rg-spec-card__sub {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.35;
@@ -4501,7 +4501,7 @@ h2.rg-cat-heading,
   .top-bar-nav .top-bar-container,
   .top-bar-nav .top-bar-container a,
   .top-bar-nav .top-bar-container span {
-    white-space: nowrap !important;
+    white-space: nowrap;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -4604,8 +4604,8 @@ h3.rg-feature-row__title,
 }
 
 .rg-feature-row__cta {
-  margin-top: 2rem !important;
-  display: inline-flex !important;
+  margin-top: 2rem;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
@@ -4657,7 +4657,7 @@ h3.rg-feature-row__title,
 }
 .cms-section:has(.rg-feature-row__content) .cms-block-container-row {
   --bs-gutter-x: 4rem;                 /* ruimte tussen beeld en tekst */
-  align-items: stretch !important;     /* beeld even hoog als de tekstkolom */
+  align-items: stretch;     /* beeld even hoog als de tekstkolom */
 }
 /* Beeld vult de volledige hoogte van de tekstkolom -> lijnt in elk blok
    identiek uit (boven bij de titel, onder bij de knop), ongeacht hoeveel
@@ -4703,8 +4703,8 @@ h3.rg-feature-row__title,
    dode code (zie ook .rg-spec-grid hierboven, zelfde opschoning). */
 @media (min-width: 992px) {
   .cms-section:has(.rg-feature-row__content) .cms-block-container {
-    padding-top: 90px !important;
-    padding-bottom: 90px !important;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 }
 
@@ -4723,10 +4723,10 @@ h3.rg-feature-row__title,
 }
 @media (min-width: 992px) {
   .cms-section:has(.rg-feature-row__media) .cms-block-container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -4919,7 +4919,7 @@ h2.rg-compare__title,
   border-top: 1px solid rgba(247, 245, 242, .16);
 }
 .rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon) {
-  color: var(--rg-peach) !important;
+  color: var(--rg-peach);
 }
 .rg-compare__col--yes .btn.btn-outline-primary:not(.rg-cta__btn--ghost):not(.basic-captcha-content-refresh-icon):hover {
   color: var(--rg-cognac-light) !important;
@@ -5114,8 +5114,8 @@ h2.rg-statement__title,
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
-  text-decoration: none !important;
-  color: #fff !important;
+  text-decoration: none;
+  color: #fff;
   background-color: #ad6331;
   padding: 0.95rem 2.1rem;
   border-radius: 999px;
@@ -5405,11 +5405,11 @@ img.rg-europe-map__svg {
   .cms-section:has(.rg-statement) .col-12,
   .cms-section:has(.rg-statement) .cms-element-text,
   .cms-section:has(.rg-statement) .cms-element-html {
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   /* 2. Zet de container-content op de gedeelde lijn (links + rechts gelijk).
@@ -5445,11 +5445,11 @@ img.rg-europe-map__svg {
   .rg-cat-heading,
   .rg-cat-head,
   .rg-spec-grid {
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   /* .rg-spec-grid kreeg hierboven padding:0 (leunt op de calc+80-opmaak van
      de OUDER-container) -- maar .rg-sd__faq/.rg-block-title/.rg-compare
@@ -5497,11 +5497,11 @@ img.rg-europe-map__svg {
      -> knoppen belandden zo bij de buitenste rand van de rij i.p.v. op de
      1440px-lijn (te ver van de tegels af, "niet naast" ze). */
   .home-productslider .cms-element-product-slider {
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    position: relative !important;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    position: relative;
   }
   /* 40px zij-marge: ademruimte voor de nav-knoppen. Geen item-count-rol
      (die rol speelde toch niet: de plugin berekent items uit .base-slider's
@@ -5555,16 +5555,16 @@ img.rg-europe-map__svg {
   }
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container,
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container[style] {
-    display: block !important;
+    display: block;
   }
   .cms-section:has(.home-productslider) .home-productslider .cms-block-container-row {
-    display: block !important;
-    width: 100% !important;
+    display: block;
+    width: 100%;
   }
   .cms-section:has(.home-productslider) .home-productslider .col-12 {
-    display: block !important;
-    width: 100% !important;
-    flex: none !important;
+    display: block;
+    width: 100%;
+    flex: none;
   }
 
   /* 5. SLIDER — native nav. LET OP: dit is NIET TinySlider's generieke
@@ -5589,16 +5589,16 @@ img.rg-europe-map__svg {
   }
   .home-productslider .product-slider-controls-container,
   .home-productslider .base-slider-controls {
-    position: absolute !important;
-    inset: 0 !important;
+    position: absolute;
+    inset: 0;
     z-index: 5;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    pointer-events: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: none !important;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
   }
   /* Minimalistisch: kale pijl, geen cirkel/achtergrond/rand. Iets groter dan
      het theme-default (was klein/onopvallend). all:unset eerst (strip
@@ -5623,7 +5623,7 @@ img.rg-europe-map__svg {
      wél gegarandeerd pixel-symmetrisch: het is exact dezelfde vorm, alleen
      wiskundig gespiegeld via rotate(), niet met twee losse tekeningen. */
   .home-productslider .base-slider-controls button .icon svg {
-    display: none !important;
+    display: none;
   }
   .home-productslider .base-slider-controls button .icon {
     display: block !important;
@@ -5650,7 +5650,7 @@ img.rg-europe-map__svg {
     cursor: default !important;
   }
   .home-productslider .base-slider-controls button:disabled .icon {
-    border-color: #c7c0b3 !important;
+    border-color: #c7c0b3;
   }
 
   /* Feature-rows: herstel Bootstrap's negatieve row-marge zodat de kolom-gutter
@@ -5680,8 +5680,8 @@ img.rg-europe-map__svg {
 }
 .rg-theme-heading {
   font-family: 'Playfair Display', serif;
-  color: #2d4528 !important;
-  font-weight: 600 !important;
+  color: #2d4528;
+  font-weight: 600;
   margin: 0 0 0.4rem 0;
 }
 /* Font-size apart met h2/.cms-element-text-specificiteit: de vorige regel
@@ -5790,10 +5790,10 @@ h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
    klein/wit-op-foto (thema-tegels). Nu leest 'm duidelijk als eigen, bewust
    gestileerd teken i.p.v. gewoon "een ander lettertype dat je niet meteen ziet". */
 .rg-amp {
-  font-family: Georgia, 'Times New Roman', serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  font-size: 0.85em !important;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85em;
 }
 .rg-theme-tile--feature .rg-theme-tile__sub {
   font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
@@ -5867,7 +5867,7 @@ h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
   background: #ffffff;
   border: 1px solid #EAE3D7;
   border-radius: 14px;
-  text-decoration: none !important;
+  text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .rg-brand-tile__logo {
@@ -5914,12 +5914,12 @@ h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
   border-color: #ad6331;
 }
 .rg-brand-tile__cta-title {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 700 !important;
-  font-size: 1.1rem !important;
-  line-height: 1.2 !important;
-  color: #2d4528 !important;
-  margin: 0 !important;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: #2d4528;
+  margin: 0;
 }
 .rg-brand-tile__cta-text {
   display: inline-flex;
@@ -5950,7 +5950,7 @@ h3.rg-theme-tile__title, .cms-element-text h3.rg-theme-tile__title {
    geen Twig nodig: de pagina bevat de betreffende grid). */
 body:has(.rg-theme-section) .cms-breadcrumb,
 body:has(.rg-brand-grid) .cms-breadcrumb {
-  display: none !important;
+  display: none;
 }
 
 /* ============================================================
@@ -6124,7 +6124,7 @@ body:has(.rg-service-grid) .cms-breadcrumb { display: none !important; }
      lettergreep i.p.v. de thema-brede word-break: break-word (die brak
      "...schenke|n" af of liet 'm van de kolom vallen). hyphens vereist
      lang="nl" op <html> — dat zet Shopware. */
-  word-break: normal !important;
+  word-break: normal;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
   hyphens: auto;
@@ -6640,9 +6640,9 @@ h2.rg-endcta__title,
    achtergronden). Geen auto-pijl (die rules targeten alleen btn-primary/
    btn-outline-primary) -> zelfde hiërarchie als de hero-secundair. */
 .rg-endcta__ghost {
-  background: transparent !important;
-  border: 2px solid rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 .rg-endcta__ghost:hover {
   background: rgba(255, 255, 255, 0.1) !important;
@@ -6925,7 +6925,7 @@ h2.rg-endcta__title,
      font-feature-settings erft door naar alle Playfair-kinderen hieronder. */
   font-feature-settings: "cv02", "cv03", "cv04";
 }
-body:has(.rg-sd) .cms-breadcrumb { display: none !important; }
+body:has(.rg-sd) .cms-breadcrumb { display: none; }
 
 /* ---- Hero: copy links, beeld rechts ---- */
 .rg-sd__hero {
@@ -7489,9 +7489,9 @@ h2.rg-sd__ask-title,
   gap: 0.5rem 1.6rem;
 }
 .rg-sd__ask-ghost {
-  background: transparent !important;
-  border: 2px solid rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 .rg-sd__ask-ghost:hover {
   background: rgba(255, 255, 255, 0.1) !important;
@@ -7834,7 +7834,7 @@ h1.rg-contact-head__title,
   border: 1px solid transparent;
   border-radius: 14px;
   text-align: left;
-  text-decoration: none !important;
+  text-decoration: none;
   cursor: pointer;
   box-shadow: 0 12px 24px -16px rgba(45, 69, 40, 0.3);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -7986,8 +7986,8 @@ h1.rg-contact-head__title,
    het formulier smaller oogt dan de rest van de content. */
 @media (max-width: 575px) {
   .cms-section-default.boxed:has(.block-cioform-container) {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .cms-section-default.boxed .block-cioform-container { margin: 0 !important; width: 100% !important; }
 }
@@ -8029,7 +8029,7 @@ h1.rg-contact-head__title,
    :has() op de DOM-vorm i.p.v. een pagina-ID (zelfde aanpak als elders --
    dit paginatype heeft geen unieke body-hook, zie project-notitie). */
 :is(.block-cioform-container, #request-offer-container):not(:has([name^="request-"])) .form-group:has([name="phone"]) {
-  grid-column: 1 / -1 !important;
+  grid-column: 1 / -1;
 }
 @media (max-width: 575px) {
   :is(.block-cioform-container, #request-offer-container) form { grid-template-columns: 1fr; }
@@ -8054,10 +8054,10 @@ h1.rg-contact-head__title,
 }
 /* Velden */
 :is(.block-cioform-container, #request-offer-container) .form-control {
-  width: 100%; padding: 0.8rem 1rem !important; font-size: 1rem;
-  color: #2d4528 !important; background-color: #ffffff !important;
-  border: 1px solid #EAE3D7 !important; border-radius: 10px !important;
-  box-shadow: none !important; transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  width: 100%; padding: 0.8rem 1rem; font-size: 1rem;
+  color: #2d4528; background-color: #ffffff;
+  border: 1px solid #EAE3D7; border-radius: 10px;
+  box-shadow: none; transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 :is(.block-cioform-container, #request-offer-container) textarea.form-control { min-height: 120px; resize: vertical; line-height: 1.55; }
 :is(.block-cioform-container, #request-offer-container) .form-control::placeholder { color: #8c857a; }
@@ -8120,9 +8120,9 @@ h1.rg-contact-head__title,
 :is(.block-cioform-container, #request-offer-container) input:-webkit-autofill:hover,
 :is(.block-cioform-container, #request-offer-container) input:-webkit-autofill:focus {
   -webkit-text-fill-color: #2d4528;
-  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
-  box-shadow: 0 0 0 1000px #ffffff inset !important;
-  border: 1px solid #EAE3D7 !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  box-shadow: 0 0 0 1000px #ffffff inset;
+  border: 1px solid #EAE3D7;
 }
 :is(.block-cioform-container, #request-offer-container) .form-control:hover:not(:focus) { border-color: #d8cfc0 !important; }
 
@@ -8310,21 +8310,21 @@ h1.rg-contact-head__title,
    sectie-H2 die per ongeluk hero-schaal had gekregen (sectie 5006/41.2). */
 .rg-hero-v2__title, h1.rg-hero-v2__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
 .rg-sd__title, h1.rg-sd__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem) !important; }
-.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem) !important; }
+.rg-page-hero__title, h1.rg-page-hero__title{ font-size:clamp(2.6rem,1.2rem + 3.6vw,4.4rem); }
+.rg-endcta__title, h2.rg-endcta__title{ font-size:clamp(2.4rem,1.3rem + 3vw,4rem); }
 /* Accentwoord in display-koppen: italic + cognac (idioom), iets minder track */
 .rg-hero-v2__title em, .rg-sd__title em,
 .rg-endcta__title em, .rg-page-hero__title em{
-  font-style: normal !important;
+  font-style: normal;
   font-synthesis: none;
   display: inline-block;
   transform: skewX(-14deg);
-  font-weight:600 !important;
-  color:var(--rg-cognac-light) !important; letter-spacing:-.01em !important;
+  font-weight:600;
+  color:var(--rg-cognac-light); letter-spacing:-.01em;
 }
 /* Hero-v2: de 20ch-cap uit sectie 38 knelt bij de grotere letter; ruimer. */
 @media (min-width:992px){
-  .rg-hero-v2__title, h1.rg-hero-v2__title{ max-width:18ch !important; }
+  .rg-hero-v2__title, h1.rg-hero-v2__title{ max-width:18ch; }
 }
 
 /* ---- 41.2 SECTIE-koppen: één maat kleiner dan display, zelfde discipline ----
@@ -8351,15 +8351,15 @@ h1.rg-contact-head__title,
   text-wrap:balance;
 }
 .rg-sd__panel-title, h2.rg-sd__panel-title{ color:#fff !important; } /* op groen paneel */
-.rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff !important; } /* op groen paneel */
+.rg-sd__ask-title, h2.rg-sd__ask-title{ color:#fff; } /* op groen paneel */
 .rg-sd__head-title em, .rg-feature-row__title em, .rg-sd__row-title em,
 .rg-compare__title em, .rg-story__title em, .rg-statement__title em,
 h2.rg-statement__title em{
-  font-style: normal !important;
+  font-style: normal;
   font-synthesis: none;
   display: inline-block;
   transform: skewX(-14deg);
-  font-weight:600 !important; color:var(--rg-cognac-light) !important;
+  font-weight:600; color:var(--rg-cognac-light);
 }
 
 /* ---- 41.3 EYEBROW-signature: VERVALLEN op 5 november 2026 ----
@@ -8466,20 +8466,20 @@ h2.rg-statement__title em{
 .rg-hero-v2__sub, .rg-statement__sub, .rg-page-hero__sub, .rg-block-title__sub,
 .rg-sd__head-sub, .rg-sd__sub, .rg-endcta__sub, .rg-theme-intro,
 .rg-cat-head__sub, .rg-compare__intro, .rg-contact-head__sub{
-  font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem) !important;
-  line-height:1.6 !important;
+  font-size:clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem);
+  line-height:1.6;
 }
 /* BODY — lopende paragraaf-copy */
 .rg-service-card__text,
 .rg-sd__row-copy p, .rg-feature-row__content p, .rg-sd__panel p,
 .rg-sd__faq-item p{
-  font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem) !important;
-  line-height:1.6 !important;
+  font-size:clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
+  line-height:1.6;
 }
 /* SMALL — noten, reassurance, trust-strips */
 .rg-cform__note, .rg-sd__reassurance,
 .rg-endcta__trust, .rg-statement__reassurance{
-  font-size:0.85rem !important;
+  font-size:0.85rem;
 }
 
 /* ---- 41.8 CARD-SOUP -> redactioneel ----
@@ -8489,30 +8489,30 @@ h2.rg-statement__title em{
    3-op-een-rij-template. CSS-only op de bestaande 3 <a>'s (geen re-paste). */
 @media (min-width:992px){
   .rg-spec-grid{
-    grid-template-columns:1.5fr 1fr !important;
-    grid-template-rows:1fr 1fr !important;
-    gap:1.15rem !important;
+    grid-template-columns:1.5fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:1.15rem;
   }
-  .rg-spec-card{ aspect-ratio:auto !important; height:100%; min-height:250px; }
-  .rg-spec-card:nth-child(1){ grid-row:1 / 3 !important; }
-  .rg-spec-card:nth-child(2){ grid-column:2 !important; grid-row:1 !important; }
-  .rg-spec-card:nth-child(3){ grid-column:2 !important; grid-row:2 !important; }
+  .rg-spec-card{ aspect-ratio:auto; height:100%; min-height:250px; }
+  .rg-spec-card:nth-child(1){ grid-row:1 / 3; }
+  .rg-spec-card:nth-child(2){ grid-column:2; grid-row:1; }
+  .rg-spec-card:nth-child(3){ grid-column:2; grid-row:2; }
   /* De grote feature-tegel krijgt een grotere kop */
   .rg-spec-card:nth-child(1) .rg-spec-card__title{
-    font-size:clamp(2rem,1.5rem + 1.2vw,2.9rem) !important;
+    font-size:clamp(2rem,1.5rem + 1.2vw,2.9rem);
   }
 }
 /* Label linksonder i.p.v. gecentreerd (thema-tile-idioom) */
 .rg-spec-card__label{
-  align-items:flex-start !important;
-  justify-content:flex-end !important;
-  text-align:left !important;
-  padding:1.5rem !important;
+  align-items:flex-start;
+  justify-content:flex-end;
+  text-align:left;
+  padding:1.5rem;
 }
 /* Gradient onderzwaar zodat de linksonder-tekst leest (i.p.v. midden-dim) */
 .rg-spec-card::after{
   background:linear-gradient(to top,
-    rgba(32,22,12,.85) 0%, rgba(32,22,12,.32) 46%, rgba(32,22,12,.04) 100%) !important;
+    rgba(32,22,12,.85) 0%, rgba(32,22,12,.32) 46%, rgba(32,22,12,.04) 100%);
 }
 /* max-width in ch was een vaste cap ongeacht de daadwerkelijke tegel-
    breedte -- brak de tekst onnodig smal af, vooral op de grote (nth-
@@ -8522,13 +8522,13 @@ h2.rg-statement__title em{
    de globale word-break:break-word van het thema brak anders midden in
    een woord af op smallere tegels. */
 .rg-spec-card__sub{
-  max-width: none !important;
-  word-break: normal !important;
+  max-width: none;
+  word-break: normal;
   overflow-wrap: break-word;
   hyphens: none;
 }
 .rg-spec-card__title{
-  word-break: normal !important;
+  word-break: normal;
   overflow-wrap: break-word;
   hyphens: none;
 }
@@ -8544,22 +8544,22 @@ h2.rg-statement__title em{
 .rg-sd__head:has(+ .rg-sd__steps),
 .rg-sd__head:has(+ .rg-sd__journey),
 .rg-sd__faq > .rg-sd__head{
-  text-align:left !important;
-  margin-left:0 !important;
-  max-width:none !important;
+  text-align:left;
+  margin-left:0;
+  max-width:none;
 }
 .rg-sd__head:has(+ .rg-spec-grid) .rg-sd__head-sub,
 .rg-sd__head:has(+ .rg-sd__steps) .rg-sd__head-sub,
 .rg-sd__head:has(+ .rg-sd__journey) .rg-sd__head-sub,
 .rg-sd__faq > .rg-sd__head .rg-sd__head-sub{
-  margin-left:0 !important; margin-right:0 !important;
+  margin-left:0; margin-right:0;
 }
 /* Thema-pagina's gebruiken .rg-block-title (i.p.v. .rg-sd__head) boven de
    card-soup -> zelfde linkse behandeling. Titel/sub centreren via margin:auto,
    dus die expliciet op links zetten. */
-.rg-block-title:has(+ .rg-spec-grid){ text-align:left !important; }
-.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
-.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
+.rg-block-title:has(+ .rg-spec-grid){ text-align:left; }
+.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__title{ margin-left:0; max-width:none; }
+.rg-block-title:has(+ .rg-spec-grid) .rg-block-title__sub{ margin-left:0; margin-right:0; }
 /* Kop-padding NIET meer op 0: .rg-spec-grid kreeg inmiddels zelf 40px
    padding (sectie 30, "kaal-rand"-fix), gelijk aan .rg-block-title's eigen
    default 40px -- dus geen override meer nodig, ze staan nu vanzelf gelijk. */
@@ -8567,9 +8567,9 @@ h2.rg-statement__title em{
 /* Home-variant: daar staat de spec-grid in een APART CMS-blok (geen adjacency),
    dus links via expliciete modifier + een eyebrow-class die de kop compleet
    maakt zoals op full-service. */
-.rg-block-title--left{ text-align:left !important; }
-.rg-block-title--left .rg-block-title__title{ margin-left:0 !important; max-width:none !important; }
-.rg-block-title--left .rg-block-title__sub{ margin-left:0 !important; margin-right:0 !important; }
+.rg-block-title--left{ text-align:left; }
+.rg-block-title--left .rg-block-title__title{ margin-left:0; max-width:none; }
+.rg-block-title--left .rg-block-title__sub{ margin-left:0; margin-right:0; }
 /* Home 'Services & ontzorging'-sectie op de STANDAARD homepage-rail (+80px,
    zelfde als hero-v2 en de rest van home). Kop + tegels zitten in dezelfde
    container -> beide schuiven mee en blijven onderling uitgelijnd.
@@ -8586,9 +8586,9 @@ h2.rg-statement__title em{
      homepage-rail. Op thema/service houdt de sectie z'n eigen (spec-)rail. */
   body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container,
   body.is-act-home .cms-section:has(.rg-block-title--left) .cms-block-container[style]{
-    max-width:none !important;
-    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
-    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px) !important;
+    max-width:none;
+    padding-left: calc(max((100vw - 1600px) / 2, 0px) + 80px);
+    padding-right: calc(max((100vw - 1600px) / 2, 0px) + 80px);
   }
   body.is-act-home .rg-block-title--left,
   body.is-act-home .rg-spec-grid{
@@ -8596,8 +8596,8 @@ h2.rg-statement__title em{
     padding-right: 0 !important;
   }
   .rg-block-title--left{
-    max-width:1600px !important;
-    margin-left:auto !important; margin-right:auto !important;
+    max-width:1600px;
+    margin-left:auto; margin-right:auto;
   }
 }
 
@@ -8644,12 +8644,12 @@ h1.rg-route__title{
 /* cursief = de RECHTE Playfair schuingetrokken, zelfde techniek als overal
    elders op de site (nooit de echte italic-face/synthese) */
 h1.rg-route__title em{
-  font-style:normal !important;
+  font-style:normal;
   font-synthesis:none;
   display:inline-block;
   transform:skewX(-14deg);
   font-weight:700;
-  color:var(--rg-cognac-light) !important;
+  color:var(--rg-cognac-light);
   letter-spacing:-.01em;
 }
 
@@ -8987,11 +8987,11 @@ h2.rg-route__stop-title{
   text-wrap:balance;
 }
 .rg-route__quote em{
-  font-style: normal !important;
+  font-style: normal;
   font-synthesis: none;
   display: inline-block;
   transform: skewX(-14deg);
-  color: var(--rg-cognac-light) !important;
+  color: var(--rg-cognac-light);
 }
 
 /* de km-punchline bij thuiskomst */
@@ -9036,9 +9036,9 @@ h2.rg-route__stop-title{
   margin:0 0 .55rem !important;
 }
 .rg-route__root p{
-  font-size:.98rem !important;
+  font-size:.98rem;
   line-height:1.6;
-  margin:0 auto !important;
+  margin:0 auto;
   max-width:30ch;
 }
 
@@ -9228,7 +9228,7 @@ h2.rg-route__team-title{
 }
 .rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-title,
 .rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{
-  color:#fff !important;
+  color:#fff;
 }
 .rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-sub{ color:rgba(255,255,255,.82) !important; }
 .rg-route__contact > .rg-contact-head__callcard .rg-contact-head__callcard-arrow{
@@ -9241,7 +9241,7 @@ h2.rg-route__team-title{
   display:block;
   font-weight:600;
   font-size:1rem;
-  color:var(--rg-green) !important;
+  color:var(--rg-green);
   text-decoration:none;
   border-bottom:1px solid var(--rg-sand);
   width:max-content;
@@ -9396,7 +9396,7 @@ h2.rg-route__team-title{
   margin-top:clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight:600;
   font-size:1rem;
-  color:var(--rg-cognac) !important;   /* Shopware-linkstijl overschrijft anders, zie .rg-route__contact-link hierboven */
+  color:var(--rg-cognac);   /* Shopware-linkstijl overschrijft anders, zie .rg-route__contact-link hierboven */
   text-decoration:none;
   transition:gap .18s ease, color .18s ease;
 }
@@ -9514,10 +9514,10 @@ h2.rg-route__team-title{
 .cms-section:has(.rg-route) .cms-block-container[style],
 .cms-section:has(.rg-route) .cms-block-container-row,
 .cms-section:has(.rg-route) .col-12 {
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding: 0 !important;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
 }
 
 /* ---- 47.2 TERUGGEDRAAID: deze regel gaf .rg-route__intro extra
@@ -9534,13 +9534,13 @@ h2.rg-route__team-title{
    de kaart alsnog een stukje los van het menu, zelfs met padding-top:0
    hierboven. */
 .content-main:has(.rg-route) .container-main {
-  padding: 0 !important;
-  min-height: 0 !important;
+  padding: 0;
+  min-height: 0;
 }
 .content-main:has(.rg-route) .cms-breadcrumb {
-  margin: 0 !important;
-  min-height: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  min-height: 0;
+  padding: 0;
 }
 
 /* ============================================================
@@ -9583,12 +9583,12 @@ h2.rg-route__team-title{
    tapruimte) -- die ruimte komt al van .container hierboven, dubbelop
    anders. */
 .footer-column-headline {
-  color: #fff !important;
-  font-size: 0.9rem !important;
-  font-weight: 700 !important;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 0 0 0.85rem !important;
+  padding: 0 0 0.85rem;
   margin-bottom: 0.7rem;
 }
 
@@ -9647,7 +9647,7 @@ h2.rg-route__team-title{
 }
 .footer-column-content-inner > .footer-custom-title:first-child { margin-top: 0; }
 .footer-custom-paymethods.icon-container {
-  display: flex !important;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
@@ -9664,13 +9664,13 @@ h2.rg-route__team-title{
    <use>, anders blijft 'm net niet zuiver wit ogen. */
 .footer-column-toggle svg,
 .footer-column-toggle svg use,
-.footer-column-toggle svg path { fill: #fff !important; }
+.footer-column-toggle svg path { fill: #fff; }
 
 /* Scheidingslijntje tussen de accordion-rijen: was Shopware's eigen
    grijsblauwe randkleur (#BCC1C7), op donkergroen te hard/koud.
    Subtielere, warmere tint die bij het donkergroen past, net genoeg om
    de rijen te scheiden. */
-.footer-column { border-bottom-color: rgba(255, 255, 255, 0.14) !important; }
+.footer-column { border-bottom-color: rgba(255, 255, 255, 0.14); }
 
 /* Onderbalk: een tint dieper (--rg-green-deep) i.p.v. een lijn als
    scheiding. BTW-notitie + copyright naast elkaar i.p.v. los gestapeld.
@@ -9726,7 +9726,7 @@ h2.rg-route__team-title{
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
 }
-.footer-copyright svg use { fill: rgba(255, 255, 255, 0.7) !important; }
+.footer-copyright svg use { fill: rgba(255, 255, 255, 0.7); }
 /* Leeg native servicemenu (geen items geconfigureerd) -- geen loze ruimte. */
 .footer-service-menu-list:empty { display: none; }
 
@@ -10734,7 +10734,7 @@ h2.rg-route__team-title{
 /* Geen pijl op cookieknoppen: die suggereert navigatie, en dit zijn
    keuzes. (Overschrijft de ::after uit sectie 8.) */
 .cookie-permission-container .cookie-permission-actions .btn::after {
-  content: none !important;
+  content: none;
 }
 
 /* De twee secundaire keuzes: omlijnd, bosgroen op de balk. */
@@ -10758,10 +10758,10 @@ h2.rg-route__team-title{
    stilletjes doorwerkt, en zodat duidelijk is dat dit de enige
    gevulde knop op de balk hoort te zijn. */
 .cookie-permission-container .js-cookie-accept-all-button .btn.btn-primary {
-  background-color: #ad6331 !important;
-  border: 2px solid #ad6331 !important;
-  color: #fff !important;
-  box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9) !important;
+  background-color: #ad6331;
+  border: 2px solid #ad6331;
+  color: #fff;
+  box-shadow: 0 8px 22px -12px rgba(173, 99, 49, 0.9);
 }
 .cookie-permission-container .js-cookie-accept-all-button .btn.btn-primary:hover {
   background-color: #955529 !important;
@@ -11445,7 +11445,7 @@ h2.rg-route__team-title{
    primaire knop onder de slider, naast onze eigen scrollverwijzing. */
 .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
 .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] {
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 .rg-band-pagina .cms-section:has(.rg-band) .cms-block-container,
 .rg-band-pagina .cms-section:has(.rg-band) .cms-block-container[style] {
@@ -11591,11 +11591,11 @@ h2.rg-route__team-title{
   border-radius: calc(var(--rg-r-xp) - 8px) !important;
 }
 @media (max-width: 575px) {
-  .rg-band-pagina .rg-band .product-image-wrapper { padding-bottom: 100% !important; }
+  .rg-band-pagina .rg-band .product-image-wrapper { padding-bottom: 100%; }
 }
 .rg-band-pagina .rg-band .product-image {
-  padding: 7% !important;            /* de lucht rond het pakket */
-  box-sizing: border-box !important;
+  padding: 7%;            /* de lucht rond het pakket */
+  box-sizing: border-box;
 }
 
 /* Weg: alles wat geen beeld, naam of prijs is. De JS haalt deze ook uit
@@ -11770,15 +11770,15 @@ h2.rg-route__team-title{
    padding-top op .container-main (Shopware) en 16 px daarboven. Plus de
    eigen padding van de hero (16 px mobiel, 56 px desktop) gaf dat 57 px
    lege crème op 390 px en 92 px op 1931 px. Alleen op de bandpagina. */
-.rg-band-pagina .container-main { padding-top: 0 !important; }
+.rg-band-pagina .container-main { padding-top: 0; }
 /* De 16 px daarboven: de lege breadcrumb-container (hoogte 0, maar met
    marge) die Shopware vóór .cms-page zet. */
 .rg-band-pagina .cms-breadcrumb,
-.rg-band-pagina .breadcrumb.container { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+.rg-band-pagina .breadcrumb.container { margin: 0; padding: 0; min-height: 0; }
 .rg-band-pagina .cms-page,
-.rg-band-pagina .cms-sections { margin-top: 0 !important; padding-top: 0 !important; }
+.rg-band-pagina .cms-sections { margin-top: 0; padding-top: 0; }
 .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
-.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] { padding-top: 0 !important; }
+.rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] { padding-top: 0; }
 .rg-band-pagina .cms-section:has(.rg-page-hero--band) { margin-top: 0; }
 .rg-page-hero--band {
   padding-top: clamp(1.5rem, 2.2vw, 2.5rem);
@@ -12296,8 +12296,8 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
      vangt het af als dat niet gebeurd is. */
   .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container,
   .rg-band-pagina .cms-section:has(.rg-page-hero--band) .cms-block-container[style] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   /* 57.2 De kop breekt nooit met een streepje. Sectie 36 zet hyphens: auto;
@@ -12417,32 +12417,32 @@ html.rg-cirkelpijl .btn-primary:not(:has(.icon)):not(:has(svg)):not(.offerte-lin
 @media (max-width: 991px) {
   /* 58.1 Raster: hamburger links, logo midden, iconen rechts */
   .header-main .header-row {
-    display: grid !important;
+    display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
   }
   .header-row .rg-header-hamburger-slot {
     justify-self: start;
-    padding-left: 12px !important;
-    padding-right: 0 !important;
+    padding-left: 12px;
+    padding-right: 0;
   }
   .header-row .header-logo-col { justify-self: center; }
   .header-row .header-actions-col {
     justify-self: end;
-    padding-left: 0 !important;
-    padding-right: 10px !important;
+    padding-left: 0;
+    padding-right: 10px;
   }
-  .header-actions-col .row { flex-wrap: nowrap !important; }
+  .header-actions-col .row { flex-wrap: nowrap; }
   .header-row .header-search-col { grid-column: 1 / -1; }
 
   /* 58.2 Logo-vak op de breedte van het logo, niet van het thema */
   .header-logo-picture {
-    width: auto !important;
-    min-width: 0 !important;
+    width: auto;
+    min-width: 0;
   }
 
   /* 58.3 Wishlist-icoon uit de header: de zwevende knop heeft de teller */
-  .header-actions-col .header-wishlist { display: none !important; }
+  .header-actions-col .header-wishlist { display: none; }
 
   /* 58.4 Zoekbalk: padding op de binnenkant, niet op de animerende laag */
   .header-search-col .collapse.show,
@@ -12575,7 +12575,7 @@ html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { displ
    absolute regel vanzelf af (de selector :has(.menu-button) matcht dan
    niet meer in het icoonblok) en neemt het raster van 58 het over. */
 @media (max-width: 991px) {
-  .header-main .header-row { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+  .header-main .header-row { padding-left: 0.75rem; padding-right: 0.75rem; }
   .header-row .header-logo-col { grid-column: 2; grid-row: 1; width: auto; max-width: none; }
   .header-row .header-actions-col { grid-column: 3; grid-row: 1; width: auto; max-width: none; }
   .header-row .rg-header-hamburger-slot { grid-column: 1; grid-row: 1; }
@@ -12635,7 +12635,7 @@ html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { displ
    topbar-fa.png tegen topbar-masker.png).
    Komt er ooit een ander Font Awesome-icoon op de site, dan haalt de browser
    het lettertype alleen voor dat icoon weer op. */
-.top-bar-nav .fa-solid.fa-check { font-family: inherit !important; font-weight: inherit; }
+.top-bar-nav .fa-solid.fa-check { font-family: inherit; font-weight: inherit; }
 .top-bar-nav .fa-solid.fa-check::before {
   content: "";
   display: block;

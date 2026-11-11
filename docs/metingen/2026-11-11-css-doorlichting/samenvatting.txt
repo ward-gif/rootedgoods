@@ -1,0 +1,31 @@
+bronnen ['meting.json', 'meting-menu.json'], 41 metingen (pagina x viewport), 3926 !important-longhands
+  nodig           387    9.9%
+  gelijk         1613   41.1%
+  niet-gemeten   1926   49.1%
+per regel (675 regels met !important):
+  nodig                    151
+  alles gelijk             239
+  alles niet-gemeten       284
+  gelijk + niet-gemeten      1
+
+sectie                                                        long  nodig gelijk n.gem.
+6c. OFFCANVAS-MENU (mobiel/tablet, <992px) — merk-typograf    1415    185    835    395
+49. WINKELMAND + CHECKOUT (.cart-offcanvas / .checkout-*)      374      0      0    374
+49.15 CHECKOUT — bevestigingspagina (/checkout/confirm,        260      0      0    260
+ROOTED GOODS - CUSTOM STYLESHEET                               209     28    161     20
+41. SERVICE-DETAIL (.rg-sd) — losse pagina per service         185     11     54    120
+41. EDITORIAL SYSTEEM (globaal) — CSS-only, geen re-paste      144     12     78     54
+30. HOMEPAGE-UITLIJNING — deterministisch (theme-onafhanke     135     18    108      9
+49.13 CHECKOUT — paginakop + sectie-kaart (.register-card)     118      0      0    118
+42. OVER ONS (.rg-route) — "De Route van Rooted"               117     35     58     24
+53. THEMA-HERO MET PRODUCTBAND — .rg-page-hero--band           103     32     64      7
+40c. CUSTOM OFFERTE- EN AANVRAAGFORMULIEREN (cioform) — éé     101     10     52     39
+49.14 CHECKOUT — samenvatting-paneel (.checkout-aside)          82      0      0     82
+40. AANVRAAGFORMULIER (#request-offer-container) — offerte      75      0      0     75
+40b. CONTACTFORMULIER — zelfde premium look als sectie 40       73      0      0     73
+29. BRAND-STATEMENT — typografie links + Europa-kaart rech      55      5     11     39
+50. COOKIE-CONSENT — teruggezet naar de Shopware-standaard      54      1     40     13
+39. EIND-CTA (.rg-endcta) — afsluitend statement, sitebree      50      4     32     14
+51. THEMA-LANDINGSPAGINA — hero zonder beeld + productrast      36      0      0     36
+49.13b CHECKOUT — betaal- en verzendmethode (payment-metho      27      0      0     27
+57. KERSTHERO OP MOBIEL, 10 november 2026, onder 992 px, a      26     11     11      4

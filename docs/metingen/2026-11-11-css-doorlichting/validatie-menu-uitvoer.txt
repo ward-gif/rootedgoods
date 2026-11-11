@@ -1,0 +1,10 @@
+CSS: 518320 bytes, 1769 blokken gemarkeerd
+mobiel   /                            elementen=2151 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /over-ons                    elementen=763 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /offerte                     elementen=665 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /alle-producten/             elementen=1590 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /                            elementen=2151 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /over-ons                    elementen=763 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /offerte                     elementen=665 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /alle-producten/             elementen=1590 regels=239 longhands=1084 VERSCHIL op 0 elementen
+weggeschreven: validatie-menu.json

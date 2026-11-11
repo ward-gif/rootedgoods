@@ -1,0 +1,35 @@
+CSS: 518320 bytes, 1769 blokken gemarkeerd
+mobiel   /                            elementen=2026 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /alle-producten/             elementen=1556 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /huis-keuken/                elementen=1581 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /Borrelplank/A1352-Kerst1    elementen=898 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /eindejaarsgeschenken        elementen=1092 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /thema-s/                    elementen=1520 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /offerte                     elementen=540 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /over-ons                    elementen=638 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /merken/                     elementen=565 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /contact                     elementen=684 regels=239 longhands=1084 VERSCHIL op 0 elementen
+mobiel   /search?search=kerstbal      elementen=649 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /                            elementen=2026 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /alle-producten/             elementen=1556 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /huis-keuken/                elementen=1581 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /Borrelplank/A1352-Kerst1    elementen=898 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /eindejaarsgeschenken        elementen=1092 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /thema-s/                    elementen=1520 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /offerte                     elementen=540 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /over-ons                    elementen=638 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /merken/                     elementen=565 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /contact                     elementen=684 regels=239 longhands=1084 VERSCHIL op 0 elementen
+tablet   /search?search=kerstbal      elementen=649 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /                            elementen=2019 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /alle-producten/             elementen=1549 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /huis-keuken/                elementen=1574 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /Borrelplank/A1352-Kerst1    elementen=891 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /eindejaarsgeschenken        elementen=1085 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /thema-s/                    elementen=1513 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /offerte                     elementen=533 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /over-ons                    elementen=631 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /merken/                     elementen=558 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /contact                     elementen=677 regels=239 longhands=1084 VERSCHIL op 0 elementen
+desktop  /search?search=kerstbal      elementen=642 regels=239 longhands=1084 VERSCHIL op 0 elementen
+weggeschreven: validatie.json

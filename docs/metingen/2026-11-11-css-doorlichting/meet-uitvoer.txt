@@ -1,0 +1,35 @@
+CSS: 518320 bytes, 1769 blokken gemarkeerd
+mobiel   /                            geladen=true menu=null regels=1767 metingen=3926 {"gelijk":610,"geen-match":2868,"media-uit":253,"nodig":106,"niet-meetbaar":89}
+mobiel   /alle-producten/             geladen=true menu=null regels=1767 metingen=3926 {"gelijk":703,"geen-match":2790,"nodig":91,"media-uit":253,"niet-meetbaar":89}
+mobiel   /huis-keuken/                geladen=true menu=null regels=1767 metingen=3926 {"gelijk":702,"geen-match":2791,"nodig":91,"media-uit":253,"niet-meetbaar":89}
+mobiel   /Borrelplank/A1352-Kerst1    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":551,"nodig":111,"geen-match":2922,"media-uit":253,"niet-meetbaar":89}
+mobiel   /eindejaarsgeschenken        geladen=true menu=null regels=1767 metingen=3926 {"gelijk":657,"geen-match":2819,"media-uit":253,"nodig":108,"niet-meetbaar":89}
+mobiel   /thema-s/                    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":702,"geen-match":2791,"nodig":91,"media-uit":253,"niet-meetbaar":89}
+mobiel   /offerte                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":334,"geen-match":3200,"media-uit":253,"nodig":50,"niet-meetbaar":89}
+mobiel   /over-ons                    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":374,"geen-match":3134,"media-uit":253,"nodig":76,"niet-meetbaar":89}
+mobiel   /merken/                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":300,"geen-match":3240,"media-uit":253,"nodig":44,"niet-meetbaar":89}
+mobiel   /contact                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":417,"geen-match":3107,"media-uit":253,"nodig":60,"niet-meetbaar":89}
+mobiel   /search?search=kerstbal      geladen=true menu=null regels=1767 metingen=3926 {"gelijk":658,"geen-match":2850,"media-uit":253,"nodig":76,"niet-meetbaar":89}
+tablet   /                            geladen=true menu=null regels=1767 metingen=3926 {"gelijk":602,"geen-match":2789,"media-uit":337,"nodig":109,"niet-meetbaar":89}
+tablet   /alle-producten/             geladen=true menu=null regels=1767 metingen=3926 {"gelijk":698,"geen-match":2714,"nodig":88,"media-uit":337,"niet-meetbaar":89}
+tablet   /huis-keuken/                geladen=true menu=null regels=1767 metingen=3926 {"gelijk":697,"geen-match":2715,"nodig":88,"media-uit":337,"niet-meetbaar":89}
+tablet   /Borrelplank/A1352-Kerst1    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":546,"nodig":113,"geen-match":2841,"media-uit":337,"niet-meetbaar":89}
+tablet   /eindejaarsgeschenken        geladen=true menu=null regels=1767 metingen=3926 {"gelijk":645,"geen-match":2740,"media-uit":337,"nodig":115,"niet-meetbaar":89}
+tablet   /thema-s/                    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":697,"geen-match":2715,"nodig":88,"media-uit":337,"niet-meetbaar":89}
+tablet   /offerte                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":335,"geen-match":3112,"media-uit":337,"nodig":53,"niet-meetbaar":89}
+tablet   /over-ons                    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":373,"geen-match":3046,"media-uit":337,"nodig":81,"niet-meetbaar":89}
+tablet   /merken/                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":301,"geen-match":3150,"media-uit":337,"nodig":49,"niet-meetbaar":89}
+tablet   /contact                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":411,"geen-match":3027,"media-uit":337,"nodig":62,"niet-meetbaar":89}
+tablet   /search?search=kerstbal      geladen=true menu=null regels=1767 metingen=3926 {"gelijk":606,"geen-match":2818,"media-uit":337,"nodig":76,"niet-meetbaar":89}
+desktop  /                            geladen=true menu=null regels=1767 metingen=3926 {"gelijk":657,"geen-match":2736,"media-uit":339,"nodig":105,"niet-meetbaar":89}
+desktop  /alle-producten/             geladen=true menu=null regels=1767 metingen=3926 {"gelijk":626,"geen-match":2790,"media-uit":339,"nodig":82,"niet-meetbaar":89}
+desktop  /huis-keuken/                geladen=true menu=null regels=1767 metingen=3926 {"gelijk":627,"geen-match":2789,"media-uit":339,"nodig":82,"niet-meetbaar":89}
+desktop  /Borrelplank/A1352-Kerst1    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":517,"nodig":108,"geen-match":2873,"media-uit":339,"niet-meetbaar":89}
+desktop  /eindejaarsgeschenken        geladen=true menu=null regels=1767 metingen=3926 {"gelijk":678,"geen-match":2697,"media-uit":339,"nodig":123,"niet-meetbaar":89}
+desktop  /thema-s/                    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":626,"geen-match":2790,"media-uit":339,"nodig":82,"niet-meetbaar":89}
+desktop  /offerte                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":286,"geen-match":3163,"media-uit":339,"nodig":49,"niet-meetbaar":89}
+desktop  /over-ons                    geladen=true menu=null regels=1767 metingen=3926 {"gelijk":323,"geen-match":3099,"media-uit":339,"nodig":76,"niet-meetbaar":89}
+desktop  /merken/                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":253,"geen-match":3201,"media-uit":339,"nodig":44,"niet-meetbaar":89}
+desktop  /contact                     geladen=true menu=null regels=1767 metingen=3926 {"gelijk":361,"geen-match":3079,"media-uit":339,"nodig":58,"niet-meetbaar":89}
+desktop  /search?search=kerstbal      geladen=true menu=null regels=1767 metingen=3926 {"gelijk":535,"geen-match":2889,"media-uit":339,"nodig":74,"niet-meetbaar":89}
+weggeschreven: meting.json
