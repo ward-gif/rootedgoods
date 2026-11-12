@@ -1,0 +1,37 @@
+== /offerte
+{
+ "id": "form_018e5c1092a47207896e05675fea9324",
+ "cls": "",
+ "action": "https://rootedgoods.eu/custom-form/send",
+ "method": "post",
+ "zichtbaar": true,
+ "velden": [
+  "textarea:textarea:request-inquiry",
+  "input:text:request-name*",
+  "input:email:request-email*",
+  "input:text:request-company*",
+  "input:tel:phone"
+ ],
+ "knoppen": [
+  "Vraag offerte aan"
+ ],
+ "captcha": false
+}
+== /contact
+{
+ "id": "form_2c60f73e01c446da9fe6e7e55df9749a",
+ "cls": "",
+ "action": "https://rootedgoods.eu/custom-form/send",
+ "method": "post",
+ "zichtbaar": true,
+ "velden": [
+  "textarea:textarea:message*",
+  "input:text:firstName*",
+  "input:email:email*",
+  "input:tel:phone"
+ ],
+ "knoppen": [
+  "Versturen"
+ ],
+ "captcha": false
+}

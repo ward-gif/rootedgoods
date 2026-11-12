@@ -1,0 +1,2 @@
+eventName | aantal (laatste 30 minuten, GA4 Realtime)
+0 rijen

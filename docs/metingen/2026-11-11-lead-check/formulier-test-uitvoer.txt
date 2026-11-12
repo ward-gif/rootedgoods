@@ -1,0 +1,44 @@
+cookies accepteren: geklikt
+
+== /offerte
+invullen: request-inquiry: ok, request-name: ok, request-email: ok, request-company: ok
+verzenden: geklikt: Vraag offerte aan
+POST custom-form/send: 200
+  poging: googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=form_start
+  poging: www.google.com/rmkt/collect/18482560146/ en=form_start
+  poging: region1.analytics.google.com/measurement/conversion en=generate_lead gcs=G111 tid=G-VT3YF07ZGB
+  poging: region1.analytics.google.com/g/collect en=form_start gcs=G111 dl=https://rootedgoods.eu/offerte tid=G-VT3YF07ZGB ep.form_id=form_018e5c1092a47207896e05675fea9324
+  poging: region1.analytics.google.com/g/collect en=generate_lead gcs=G111 dl=https://rootedgoods.eu/offerte tid=G-VT3YF07ZGB ep.form_id=offerte-aanvraag
+  poging: www.googleadservices.com/pagead/conversion/18482560146/ en=conversion gcs=G111
+  poging: www.googleadservices.com/ccm/conversion/18482560146/ en=conversion gcs=G111
+  poging: googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=form_submit
+  poging: www.google.com/rmkt/collect/18482560146/ en=form_submit
+  poging: www.google.com/pagead/1p-conversion/18482560146/ en=conversion gcs=G111
+  poging: region1.analytics.google.com/g/collect en=form_submit gcs=G111 dl=https://rootedgoods.eu/offerte tid=G-VT3YF07ZGB ep.form_id=form_018e5c1092a47207896e05675fea9324
+  poging: www.clarity.ms/tag/y9d3vyhhk8 
+  poging: assets.apollo.io/micro/website-tracker/tracker.iife.js 
+  poging: googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=gtag.config
+  poging: www.google.com/rmkt/collect/18482560146/ en=gtag.config
+  poging: region1.analytics.google.com/g/collect en=page_view gcs=G111 dl=https://rootedgoods.eu/custom-form/send tid=G-VT3YF07ZGB
+  poging: www.google.com/ccm/collect en=page_view gcs=G111 dl=https://rootedgoods.eu/custom-form/send tid=AW-18482560146
+dataLayer na verzenden: ["undefined:","undefined:","gtm.js","consent:default","cookieConsentGiven","consent:update","gtm.dom","gtm.load"]
+pagina daarna: {"url":"/custom-form/send","tekst":"dank","fout":[]}
+
+== /contact
+invullen: message: ok, firstName: ok, email: ok
+verzenden: geklikt: Versturen
+POST custom-form/send: 200
+  poging: googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=form_start
+  poging: www.google.com/rmkt/collect/18482560146/ en=form_start
+  poging: region1.analytics.google.com/g/collect en=form_start gcs=G111 dl=https://rootedgoods.eu/contact tid=G-VT3YF07ZGB ep.form_id=form_2c60f73e01c446da9fe6e7e55df9749a
+  poging: googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=form_submit
+  poging: www.google.com/rmkt/collect/18482560146/ en=form_submit
+  poging: region1.analytics.google.com/g/collect en=contact gcs=G111 dl=https://rootedgoods.eu/contact tid=G-VT3YF07ZGB ep.form_id=contact
+  poging: www.clarity.ms/tag/y9d3vyhhk8 
+  poging: assets.apollo.io/micro/website-tracker/tracker.iife.js 
+  poging: googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=gtag.config
+  poging: www.google.com/rmkt/collect/18482560146/ en=gtag.config
+  poging: region1.analytics.google.com/g/collect en=page_view gcs=G111 dl=https://rootedgoods.eu/custom-form/send tid=G-VT3YF07ZGB
+  poging: www.google.com/ccm/collect en=page_view gcs=G111 dl=https://rootedgoods.eu/custom-form/send tid=AW-18482560146
+dataLayer na verzenden: ["undefined:","undefined:","gtm.js","consent:default","cookieConsentGiven","consent:update","gtm.dom","gtm.load"]
+pagina daarna: {"url":"/custom-form/send","tekst":"dank","fout":[]}

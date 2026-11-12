@@ -1,0 +1,44 @@
+week | GA4 sessies google/cpc | GA4 sessies alle kanalen (basis: sessies, alleen met toestemming)
+Traceback (most recent call last):
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 140, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate."
+	debug_error_string = "UNAVAILABLE:Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/google/analytics/data_v1beta/services/beta_analytics_data/client.py", line 699, in run_report
+    response = rpc(
+               ^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 415, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wardhaarsma/Documents/Rooted goods/rootedgoods website/.venv/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 142, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ServiceUnavailable: 503 Getting metadata from plugin failed with error: Reauthentication is needed. Please run `gcloud auth application-default login` to reauthenticate.

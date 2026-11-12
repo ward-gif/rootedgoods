@@ -1,0 +1,6 @@
+--- 16:12:48
+eventName | aantal (laatste 30 minuten, GA4 Realtime)
+0 rijen
+--- 16:13:30
+eventName | aantal (laatste 30 minuten, GA4 Realtime)
+0 rijen

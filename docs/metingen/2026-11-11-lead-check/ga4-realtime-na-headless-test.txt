@@ -1,0 +1,6 @@
+eventName | aantal (laatste 30 minuten, GA4 Realtime)
+page_view | 9
+user_engagement | 5
+view_item_list | 2
+scroll | 1
+4 rijen

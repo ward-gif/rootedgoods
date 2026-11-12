@@ -1,0 +1,3 @@
+Weigeren               knop 44px hoog | na tik: {"banner":"none","modal":false,"cookies":["cookie-preference"],"dl":["gtm.js","gtm.dom","gtm.load"]}
+Configureren           knop 44px hoog | na tik: {"banner":"none","modal":true,"cookies":[],"dl":["gtm.js","gtm.dom","gtm.load","gtm.historyChange-v2"]}
+Aanvaard alle cookies  knop 44px hoog | na tik: {"banner":"none","modal":false,"cookies":["cookie-preference","_ga","_gcl_au","_ga_VT3YF07ZGB"],"dl":["gtm.js","gtm.dom","gtm.load","cookieConsentGiven"]}

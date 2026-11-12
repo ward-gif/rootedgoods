@@ -12682,3 +12682,80 @@ html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { displ
   }
   .cms-block-category-navigation .category-navigation.level-1 { display: none; }
 }
+
+/* ============================================================
+   64. COOKIEBALK COMPACT OP MOBIEL EN TABLET, 11 november 2026
+   ------------------------------------------------------------
+   Gemeten (headless Chromium, 11 nov): de balk is op 375x667 245px hoog
+   (37% van het scherm, de offerteknop in de hero verdwijnt eronder) en op
+   768x1024 197px. Oorzaak: sectie 8 geeft elke .btn padding .9rem 2rem, dus
+   drie gestapelde knoppen van 50px.
+
+   Hier: onder 992px staat de tekst boven de knoppen. Weigeren en Accepteren
+   staan als even grote knoppen naast elkaar (zelfde hoogte en breedte, een
+   tik, op dezelfde balk). Configureren is een subtiele tekstlink, geen knop.
+   Geen overlay, geen scrollslot, geen blur: de balk blijft position:fixed.
+   Visuele volgorde via order; de volgorde in de HTML (en dus de tabvolgorde)
+   blijft Weigeren, Configureren, Accepteren.
+
+   Terugdraaien: deze sectie weghalen. */
+/* Weigeren: tekst in dezelfde cognackleur als de rand (de rand komt van .btn-primary, sectie 8). */
+.cookie-permission-container .js-cookie-permission-button .btn.btn-primary { color: #ad6331; }
+@media (max-width: 991.98px) {
+  .cookie-permission-container {
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+  .cookie-permission-container .container { padding: 0; }
+  /* Bootstrap-rij: negatieve marge en kolomgoot weg, anders steekt de rij 12px buiten de balk.
+     De actiekolom houdt .pe-2 (8px rechts, !important in het thema), links dus ook 8px. */
+  .cookie-permission-container .row { margin-inline: 0; }
+  .cookie-permission-container .row > * { padding-inline: 0; }
+  .cookie-permission-container .cookie-permission-actions { padding-left: 0.5rem; }
+  .cookie-permission-container .cookie-permission-content,
+  .cookie-permission-container .cookie-permission-actions {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .cookie-permission-container .cookie-permission-content {
+    margin-bottom: 8px;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+  .cookie-permission-container .cookie-permission-actions > span { display: flex; }
+  .cookie-permission-container .cookie-permission-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8125rem;
+    line-height: 1.15;
+    white-space: normal;
+  }
+  /* Configureren: tekstlink in plaats van omlijnde knop. */
+  .cookie-permission-container .js-cookie-configuration-button { order: -1; }
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary,
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary:hover,
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary:focus {
+    background-color: transparent !important;
+    border: 0;
+    box-shadow: none !important;
+    color: #2d4528;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary:hover { color: #ad6331; }
+}
+/* Variant 2 (zoals het voorbeeld): Configureren als kleine tekstlink boven twee even grote knoppen. */
+@media (max-width: 767.98px) {
+  .cookie-permission-container .cookie-permission-actions { flex-wrap: wrap; align-items: stretch; gap: 2px 6px; }
+  .cookie-permission-container .js-cookie-configuration-button { flex: 0 0 100%; justify-content: center; }
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary { width: auto; min-height: 40px; padding: 0.4rem 0.4rem 0.5rem; font-size: 0.75rem; }
+  .cookie-permission-container .js-cookie-permission-button,
+  .cookie-permission-container .js-cookie-accept-all-button { flex: 1 1 0; min-width: 0; }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cookie-permission-container .cookie-permission-actions { flex-wrap: nowrap; align-items: stretch; gap: 6px; justify-content: center; }
+  .cookie-permission-container .js-cookie-configuration-button { flex: 0 0 auto; }
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary { width: auto; padding-inline: 0.4rem; }
+}

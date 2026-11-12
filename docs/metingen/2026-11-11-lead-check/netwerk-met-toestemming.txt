@@ -1,0 +1,37 @@
+
+== /contact
+  www.googletagmanager.com/gtm.js id=GTM-MJ83DVQK
+  app.cal.com/embed/embed.js 
+  www.googletagmanager.com/gtag/js id=G-VT3YF07ZGB
+  www.clarity.ms/tag/y9d3vyhhk8 
+  assets.apollo.io/micro/website-tracker/tracker.iife.js 
+  region1.google-analytics.com/g/collect en=page_view gcs=G100 gcd=13p3p3p2p5l1 dl=https://rootedgoods.eu/contact tid=G-VT3YF07ZGB
+  pagead2.googlesyndication.com/ccm/collect en=page_view gcs=G100 gcd=13p3p3p2p5l1 dl=https://rootedgoods.eu/contact tid=AW-18482560146
+  scripts.clarity.ms/0.8.77/clarity.js 
+  {"banner":true,"zichtbaar":true,"knoppen":["Weigeren","Configureren","Aanvaard alle cookies"],"cookies":["timezone"],"dataLayer":["undefined:","undefined:","gtm.js","consent:default","gtm.dom","gtm.load"]}
+  -- NA KLIK OP "Aanvaard alle cookies": geklikt
+    googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=gtag.config gcd=13r3r3r2r5l1
+    www.google.com/rmkt/collect/18482560146/ en=gtag.config gcd=13r3r3r2r5l1
+    region1.analytics.google.com/g/collect en=user_engagement gcs=G111 gcd=13r3r3r2r5l1 dl=https://rootedgoods.eu/contact tid=G-VT3YF07ZGB
+    stats.g.doubleclick.net/g/collect gcs=G111 gcd=13r3r3r2r5l1 tid=G-VT3YF07ZGB
+    www.google.com/ccm/collect en=consent_update gcs=G111 gcd=13r3r3r2r5l1 dl=https://rootedgoods.eu/contact tid=AW-18482560146
+    ad.doubleclick.net/ccm/s/collect 
+    www.google.com/pagead/1p-user-list/18482560146/ en=gtag.config gcd=13r3r3r2r5l1
+    www.google.nl/pagead/1p-user-list/18482560146/ en=gtag.config gcd=13r3r3r2r5l1
+    {"cookies":["timezone","dtgsAllowGtmTracking","google-ads-enabled","wishlist-enabled","youtube-video","cookie-preference","_ga","_gcl_au","_clck","_clsk","_ga_VT3YF07ZGB"],"dataLayer":["undefined:","undefined:","gtm.js","consent:default","gtm.dom","gtm.load","cookieConsentGiven","consent:update"]}
+
+== /offerte
+  www.googletagmanager.com/gtm.js id=GTM-MJ83DVQK
+  www.googletagmanager.com/gtag/js id=G-VT3YF07ZGB
+  www.clarity.ms/tag/y9d3vyhhk8 
+  assets.apollo.io/micro/website-tracker/tracker.iife.js 
+  www.googletagmanager.com/a id=GTM-MJ83DVQK
+  googleads.g.doubleclick.net/pagead/viewthroughconversion/18482560146/ en=gtag.config gcd=13v3v3v2v5l1
+  www.google.com/rmkt/collect/18482560146/ en=gtag.config gcd=13v3v3v2v5l1
+  region1.analytics.google.com/g/collect en=page_view gcs=G111 gcd=13v3v3v2v5l1 dl=https://rootedgoods.eu/offerte tid=G-VT3YF07ZGB
+  www.google.com/ccm/collect en=page_view gcs=G111 gcd=13v3v3v2v5l1 dl=https://rootedgoods.eu/offerte tid=AW-18482560146
+  app.cal.com/embed/embed.js 
+  scripts.clarity.ms/0.8.77/clarity.js 
+  www.google.com/pagead/1p-user-list/18482560146/ en=gtag.config gcd=13v3v3v2v5l1
+  www.google.nl/pagead/1p-user-list/18482560146/ en=gtag.config gcd=13v3v3v2v5l1
+  {"banner":true,"zichtbaar":false,"knoppen":["Weigeren","Configureren","Aanvaard alle cookies"],"cookies":["timezone","dtgsAllowGtmTracking","google-ads-enabled","wishlist-enabled","youtube-video","cookie-preference","_ga","_gcl_au","_clck","_clsk","_ga_VT3YF07ZGB"],"dataLayer":["undefined:","undefined:","gtm.js","consent:default","cookieConsentGiven","consent:update","gtm.dom","gtm.load"]}

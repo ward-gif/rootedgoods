@@ -1,0 +1,22 @@
+
+== /contact
+  www.googletagmanager.com/gtm.js id=GTM-MJ83DVQK
+  www.googletagmanager.com/gtag/js id=G-VT3YF07ZGB
+  www.clarity.ms/tag/y9d3vyhhk8 
+  assets.apollo.io/micro/website-tracker/tracker.iife.js 
+  app.cal.com/embed/embed.js 
+  region1.google-analytics.com/g/collect en=page_view gcs=G100 gcd=13p3p3p2p5l1 dl=https://rootedgoods.eu/contact tid=G-VT3YF07ZGB
+  pagead2.googlesyndication.com/ccm/collect en=page_view gcs=G100 gcd=13p3p3p2p5l1 dl=https://rootedgoods.eu/contact tid=AW-18482560146
+  scripts.clarity.ms/0.8.77/clarity.js 
+  {"banner":true,"zichtbaar":true,"knoppen":["Weigeren","Configureren","Aanvaard alle cookies"],"cookies":["timezone"],"dataLayer":["undefined:","undefined:","gtm.js","consent:default","gtm.dom","gtm.load"]}
+
+== /offerte
+  www.googletagmanager.com/gtm.js id=GTM-MJ83DVQK
+  www.googletagmanager.com/gtag/js id=G-VT3YF07ZGB
+  www.clarity.ms/tag/y9d3vyhhk8 
+  assets.apollo.io/micro/website-tracker/tracker.iife.js 
+  region1.google-analytics.com/g/collect en=page_view gcs=G100 gcd=13p3p3p2p5l1 dl=https://rootedgoods.eu/offerte tid=G-VT3YF07ZGB
+  pagead2.googlesyndication.com/ccm/collect en=page_view gcs=G100 gcd=13p3p3p2p5l1 dl=https://rootedgoods.eu/offerte tid=AW-18482560146
+  app.cal.com/embed/embed.js 
+  scripts.clarity.ms/0.8.77/clarity.js 
+  {"banner":true,"zichtbaar":true,"knoppen":["Weigeren","Configureren","Aanvaard alle cookies"],"cookies":["timezone"],"dataLayer":["undefined:","undefined:","gtm.js","consent:default","gtm.dom","gtm.load"]}
