@@ -1,0 +1,11 @@
+HTTP/2 200 
+age: 99
+cache-control: no-cache, private
+content-type: text/html; charset=UTF-8
+date: Thu, 12 Nov 2026 10:47:07 GMT
+referrer-policy: strict-origin-when-cross-origin
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: deny
+

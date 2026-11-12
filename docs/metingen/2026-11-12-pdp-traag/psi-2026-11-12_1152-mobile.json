@@ -1,0 +1,20 @@
+[
+ {
+  "url": "https://rootedgoods.eu/Citizen-Green-Vanguard-gerecyclede-rugzak/A33-12080355",
+  "strategy": "mobile",
+  "label": "",
+  "runs": 3,
+  "gemeten": "2026-11-12T11:53:14",
+  "alle_scores": [
+   57,
+   57,
+   57
+  ],
+  "score": 57,
+  "largest-contentful-paint": 9676.034223440067,
+  "cumulative-layout-shift": 0,
+  "total-blocking-time": 195.5,
+  "speed-index": 6460.8319457824,
+  "first-contentful-paint": 5300.234031380802
+ }
+]

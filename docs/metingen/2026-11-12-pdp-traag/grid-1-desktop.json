@@ -1,0 +1,2539 @@
+{
+ "url": "https://rootedgoods.eu/Citizen-Green-Vanguard-gerecyclede-rugzak/A33-12080355?lastgroup=cb5feb1b7314637725a2e73bdc9f7295#aW1wcmludHMlNUJGcm9udC03MC0xNTAlNUQlNUIwJTVEJTVCb3B0aW9uJTVEPUEzMy1XU1dDRFAwMS0xNS1EZWZhdWx0LTAtMSZxdWFudGl0eT0yNSZjb25maWd1cmF0b3ItZGVsaXZlcnktZGF0ZT0mY29uZmlndXJhdG9yLWNvbW1lbnQ9",
+ "profiel": "desktop",
+ "drel": "lan",
+ "tijdstip": "2026-11-12T11:14:58.067Z",
+ "titel": "Citizen Green Vanguard gerecyclede rugzak | Marineblauw | A33-12080355",
+ "ttfb_ms": 3957,
+ "html_klaar_ms": 4090,
+ "dcl_ms": 5319,
+ "load_ms": 5366,
+ "fcp_ms": 4720,
+ "lcp": {
+  "t": 4720,
+  "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+  "url": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_800x800.jpg?1775153304"
+ },
+ "cls": 0.037,
+ "lange_taken": 2,
+ "tbt_ms": 32,
+ "langste_taak_ms": 82,
+ "configurator_in_dom_ms": 4709,
+ "requests": 41,
+ "overdracht_kb": 1008,
+ "dom_nodes": 1183,
+ "laatste_request_klaar_ms": 5567,
+ "laatste_requests": [
+  {
+   "n": "https://rootedgoods.eu/poconfigurator/render",
+   "t": "xmlhttprequest",
+   "s": 5323,
+   "d": 244,
+   "ttfb": 244,
+   "b": 6773,
+   "dec": 6473
+  },
+  {
+   "n": "https://rootedgoods.eu/widgets/checkout/info",
+   "t": "xmlhttprequest",
+   "s": 5294,
+   "d": 162,
+   "ttfb": 162,
+   "b": 300,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/detail/properties/add",
+   "t": "xmlhttprequest",
+   "s": 5289,
+   "d": 109,
+   "ttfb": 109,
+   "b": 302,
+   "dec": 2
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-300.woff2",
+   "t": "css",
+   "s": 5320,
+   "d": 44,
+   "ttfb": 44,
+   "b": 15264,
+   "dec": 14964
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 3985,
+   "d": 1250,
+   "ttfb": 849,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 4714,
+   "d": 471,
+   "ttfb": 193,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/media/d4/ff/49/1775133751/creditcard-icon.svg?1775133751",
+   "t": "img",
+   "s": 4091,
+   "d": 1016,
+   "ttfb": 743,
+   "b": 4377,
+   "dec": 4077
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_400x400.jpg?1775153304",
+   "t": "img",
+   "s": 4041,
+   "d": 1065,
+   "ttfb": 792,
+   "b": 14895,
+   "dec": 14595
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/8e/ff/ee/1234567890/776bc50c6f11e8c7d704ee98fba65f8799599d009f2ed0335e5f6b2df774753d_400x400.jpg?1793736900",
+   "t": "img",
+   "s": 4041,
+   "d": 1065,
+   "ttfb": 792,
+   "b": 10473,
+   "dec": 10173
+  },
+  {
+   "n": "https://rootedgoods.eu/media/19/5c/87/1775141463/Wero%20Ideal.png",
+   "t": "img",
+   "s": 4090,
+   "d": 1016,
+   "ttfb": 743,
+   "b": 13250,
+   "dec": 12950
+  },
+  {
+   "n": "https://rootedgoods.eu/media/07/1f/2f/1775141463/Mastercard.png",
+   "t": "img",
+   "s": 4090,
+   "d": 1016,
+   "ttfb": 743,
+   "b": 5909,
+   "dec": 5609
+  },
+  {
+   "n": "https://rootedgoods.eu/media/0d/3b/b9/1775141593/DHL.png",
+   "t": "img",
+   "s": 4090,
+   "d": 1016,
+   "ttfb": 743,
+   "b": 4887,
+   "dec": 4587
+  }
+ ],
+ "grootste_requests": [
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/css/all.css?1794392064",
+   "t": "link",
+   "s": 3984,
+   "d": 668,
+   "ttfb": 189,
+   "b": 195627,
+   "dec": 927972
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 3985,
+   "d": 1250,
+   "ttfb": 849,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 4714,
+   "d": 471,
+   "ttfb": 193,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/cf/bc/9c/1234567890/007aa79efbc3652e869208ebdf7890ca5b61941c0d7e619967ffa35f59a306ed_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 4041,
+   "d": 793,
+   "ttfb": 694,
+   "b": 65216,
+   "dec": 64916
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/19/43/1d/1234567890/705150ee6710f6eb8c5938be6d78e26a1f6c1654495f20d4cf73d5f932eac24e_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 4041,
+   "d": 694,
+   "ttfb": 662,
+   "b": 49646,
+   "dec": 49346
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/47/aa/ab/1234567890/0db47d51cc1da2046ae871788efcbe6510939e9970b1e87b97e4c3949f2197ab_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 4040,
+   "d": 611,
+   "ttfb": 327,
+   "b": 49407,
+   "dec": 49107
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 4040,
+   "d": 611,
+   "ttfb": 326,
+   "b": 48016,
+   "dec": 47716
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/cf/bc/9c/1234567890/007aa79efbc3652e869208ebdf7890ca5b61941c0d7e619967ffa35f59a306ed_400x400.jpg?1775153304",
+   "t": "img",
+   "s": 4041,
+   "d": 792,
+   "ttfb": 694,
+   "b": 22041,
+   "dec": 21741
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/css/all.min.css?1794392060",
+   "t": "link",
+   "s": 3984,
+   "d": 189,
+   "ttfb": 106,
+   "b": 21801,
+   "dec": 73890
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/19/43/1d/1234567890/705150ee6710f6eb8c5938be6d78e26a1f6c1654495f20d4cf73d5f932eac24e_400x400.jpg?1775153304",
+   "t": "img",
+   "s": 4041,
+   "d": 916,
+   "ttfb": 792,
+   "b": 17069,
+   "dec": 16769
+  }
+ ],
+ "lange_taken_lijst": [
+  [
+   4845,
+   50
+  ],
+  [
+   5237,
+   82
+  ]
+ ],
+ "verschuivingen": [
+  {
+   "t": 4903,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.top-bar-container container--1",
+     "van": [
+      301,
+      5,
+      233,
+      24
+     ],
+     "naar": [
+      255,
+      5,
+      262,
+      24
+     ]
+    },
+    {
+     "el": "A.nav-link main-navigation-link all-categories",
+     "van": [
+      505,
+      95,
+      124,
+      45
+     ],
+     "naar": [
+      485,
+      95,
+      140,
+      45
+     ]
+    },
+    {
+     "el": "DIV.top-bar-container container--4",
+     "van": [
+      935,
+      5,
+      204,
+      24
+     ],
+     "naar": [
+      957,
+      5,
+      228,
+      24
+     ]
+    },
+    {
+     "el": "DIV.top-bar-container container--2",
+     "van": [
+      563,
+      5,
+      133,
+      24
+     ],
+     "naar": [
+      545,
+      5,
+      148,
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "t": 4912,
+   "v": 0,
+   "src": [
+    {
+     "el": "::after.",
+     "van": [
+      969,
+      445,
+      28,
+      15
+     ],
+     "naar": [
+      979,
+      445,
+      28,
+      15
+     ]
+    }
+   ]
+  },
+  {
+   "t": 4938,
+   "v": 0.011,
+   "src": [
+    {
+     "el": "undefined.",
+     "van": [
+      885,
+      180,
+      515,
+      97
+     ],
+     "naar": [
+      885,
+      176,
+      515,
+      97
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      781,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      789,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      841,
+      224,
+      59
+     ],
+     "naar": [
+      885,
+      849,
+      224,
+      51
+     ]
+    },
+    {
+     "el": "SPAN.",
+     "van": [
+      913,
+      722,
+      192,
+      26
+     ],
+     "naar": [
+      889,
+      746,
+      202,
+      26
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5321,
+   "v": 0.008,
+   "src": [
+    {
+     "el": "DIV.col-12 order-1 col-sm-auto order-sm-2 header-actio",
+     "van": [
+      1296,
+      52,
+      132,
+      34
+     ],
+     "naar": [
+      1143,
+      52,
+      285,
+      34
+     ]
+    },
+    {
+     "el": "BUTTON.base-slider-controls-next gallery-slider-thumbnail",
+     "van": [
+      45,
+      594,
+      65,
+      30
+     ],
+     "naar": [
+      45,
+      584,
+      65,
+      30
+     ]
+    },
+    {
+     "el": "BUTTON.base-slider-controls-prev gallery-slider-controls-",
+     "van": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "naar": [
+      143,
+      431,
+      48,
+      48
+     ]
+    },
+    {
+     "el": "BUTTON.base-slider-controls-next gallery-slider-controls-",
+     "van": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "naar": [
+      352,
+      431,
+      48,
+      48
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5331,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      704,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      710,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      789,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      794,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      849,
+      224,
+      51
+     ],
+     "naar": [
+      885,
+      854,
+      224,
+      46
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5339,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      707,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      717,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      791,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      802,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      851,
+      224,
+      49
+     ],
+     "naar": [
+      885,
+      862,
+      224,
+      38
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5345,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      714,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      725,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      799,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      809,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      859,
+      224,
+      41
+     ],
+     "naar": [
+      885,
+      869,
+      224,
+      31
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5354,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      720,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      735,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      804,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      819,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      864,
+      224,
+      36
+     ],
+     "naar": [
+      885,
+      879,
+      224,
+      21
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5362,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      728,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      746,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      812,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      830,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      872,
+      224,
+      28
+     ],
+     "naar": [
+      885,
+      891,
+      224,
+      9
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5372,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      734,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      758,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      818,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      843,
+      224,
+      57
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      879,
+      224,
+      21
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5380,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      743,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      766,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      828,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      851,
+      224,
+      49
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      888,
+      224,
+      12
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5388,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      746,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      772,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      831,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      856,
+      224,
+      44
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      891,
+      224,
+      9
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5396,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      744,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      769,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      828,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      854,
+      224,
+      46
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      888,
+      224,
+      12
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5403,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      739,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      760,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      824,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      844,
+      224,
+      56
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      884,
+      224,
+      16
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5413,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      706,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      735,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      790,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      819,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      851,
+      224,
+      49
+     ],
+     "naar": [
+      885,
+      879,
+      224,
+      21
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5421,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      679,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      703,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      763,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      787,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      823,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      848,
+      224,
+      52
+     ]
+    },
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      884,
+      392,
+      16
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5430,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      653,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      675,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      737,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      759,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      798,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      819,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      858,
+      392,
+      42
+     ],
+     "naar": [
+      884,
+      880,
+      392,
+      20
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5438,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      834,
+      392,
+      66
+     ],
+     "naar": [
+      884,
+      855,
+      392,
+      45
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      629,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      650,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      713,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      734,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      773,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      794,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5446,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      817,
+      392,
+      83
+     ],
+     "naar": [
+      884,
+      836,
+      392,
+      64
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      612,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      631,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      696,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      715,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      756,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      775,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5453,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      808,
+      392,
+      92
+     ],
+     "naar": [
+      884,
+      823,
+      392,
+      77
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      603,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      618,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      687,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      703,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      747,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      763,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5466,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      792,
+      392,
+      108
+     ],
+     "naar": [
+      884,
+      811,
+      392,
+      89
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      587,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      605,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      672,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      690,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      732,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      750,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5470,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      790,
+      392,
+      110
+     ],
+     "naar": [
+      884,
+      803,
+      392,
+      97
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      584,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      598,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      669,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      683,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      729,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      743,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5480,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      780,
+      392,
+      120
+     ],
+     "naar": [
+      884,
+      796,
+      392,
+      104
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      575,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      590,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      660,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      675,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      720,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      735,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5488,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      779,
+      392,
+      121
+     ],
+     "naar": [
+      884,
+      791,
+      392,
+      109
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      573,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      586,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      658,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      670,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      718,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      731,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5496,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      774,
+      392,
+      126
+     ],
+     "naar": [
+      884,
+      786,
+      392,
+      114
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      569,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      580,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      653,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      665,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      714,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      725,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5504,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      774,
+      392,
+      126
+     ],
+     "naar": [
+      884,
+      783,
+      392,
+      117
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      568,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      578,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      653,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      662,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      713,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      722,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5513,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      769,
+      392,
+      131
+     ],
+     "naar": [
+      884,
+      779,
+      392,
+      121
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      564,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      574,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      648,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      659,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      708,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      719,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5521,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      767,
+      392,
+      133
+     ],
+     "naar": [
+      884,
+      777,
+      392,
+      123
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      562,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      571,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      647,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      656,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      707,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      716,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5529,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      766,
+      392,
+      134
+     ],
+     "naar": [
+      884,
+      774,
+      392,
+      126
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      560,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      568,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      645,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      653,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      705,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      713,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5538,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      765,
+      392,
+      135
+     ],
+     "naar": [
+      884,
+      772,
+      392,
+      128
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      559,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      567,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      644,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      651,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      704,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      712,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5546,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      763,
+      392,
+      137
+     ],
+     "naar": [
+      884,
+      770,
+      392,
+      130
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      558,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      564,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      642,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      649,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      703,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      709,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5555,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      762,
+      392,
+      138
+     ],
+     "naar": [
+      884,
+      768,
+      392,
+      132
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      556,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      563,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      641,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      647,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      701,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      707,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5562,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      761,
+      392,
+      139
+     ],
+     "naar": [
+      884,
+      766,
+      392,
+      135
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      556,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      560,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      640,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      645,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      700,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      705,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5574,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      759,
+      392,
+      142
+     ],
+     "naar": [
+      884,
+      764,
+      400,
+      136
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      553,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      559,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      638,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      643,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      698,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      704,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5579,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      758,
+      400,
+      142
+     ],
+     "naar": [
+      884,
+      762,
+      400,
+      138
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      553,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      557,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      637,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      641,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      698,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      702,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5588,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      756,
+      400,
+      144
+     ],
+     "naar": [
+      884,
+      760,
+      400,
+      140
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      551,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      555,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      635,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      639,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      696,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      700,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5605,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      754,
+      400,
+      146
+     ],
+     "naar": [
+      884,
+      757,
+      400,
+      143
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      549,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      552,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      633,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      637,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      693,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      697,
+      224,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 5646,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      884,
+      748,
+      400,
+      152
+     ],
+     "naar": [
+      884,
+      766,
+      400,
+      134
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      543,
+      224,
+      84
+     ],
+     "naar": [
+      885,
+      561,
+      224,
+      84
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      627,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      645,
+      224,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      885,
+      688,
+      224,
+      60
+     ],
+     "naar": [
+      885,
+      706,
+      224,
+      60
+     ]
+    }
+   ]
+  }
+ ],
+ "extra": null
+}

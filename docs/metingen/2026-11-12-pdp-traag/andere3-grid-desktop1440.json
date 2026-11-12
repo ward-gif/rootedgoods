@@ -1,0 +1,611 @@
+{
+ "url": "https://rootedgoods.eu/Novella-Austen-Colours-A5-gerecycled-notitieboek-met-zachte-cover-50-vellen/A34-21024961",
+ "profiel": "desktop",
+ "drel": "lan",
+ "tijdstip": "2026-11-12T11:32:15.002Z",
+ "titel": "Novella Austen Colours A5 gerecycled notitieboek met zachte cover, 50 vellen | groen | A34-21024961",
+ "ttfb_ms": 272,
+ "html_klaar_ms": 293,
+ "dcl_ms": 561,
+ "load_ms": 695,
+ "fcp_ms": 444,
+ "lcp": {
+  "t": 444,
+  "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+  "url": "https://rootedgoods.eu/shared/thumbnail/e1/b4/53/1234567890/2459fd8cd4dae7efdc5910f2ddd6dfed67f784f9e5004af9b3c56ee8814aae09_800x800.jpg?1787313495"
+ },
+ "cls": 0.143,
+ "lange_taken": 2,
+ "tbt_ms": 21,
+ "langste_taak_ms": 71,
+ "configurator_in_dom_ms": 440,
+ "requests": 50,
+ "overdracht_kb": 1157,
+ "dom_nodes": 1390,
+ "laatste_request_klaar_ms": 754,
+ "laatste_requests": [
+  {
+   "n": "https://region1.google-analytics.com/g/collect?v=2&tid=G-VT3YF07ZGB&gtm=45je6ba1v9262494562za20ozb9262488782zd9262488782xf1&_p=1794483130515&gcs=G100&",
+   "t": "fetch",
+   "s": 682,
+   "d": 72,
+   "ttfb": -682,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://pagead2.googlesyndication.com/ccm/collect?rcb=2&frm=0&apvc=1&tid=AW-18482560146&en=page_view&dl=https%3A%2F%2Frootedgoods.eu%2FNovella-Austen-",
+   "t": "fetch",
+   "s": 692,
+   "d": 48,
+   "ttfb": -692,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtag/js?id=G-VT3YF07ZGB&cx=c&gtm=4e6ba1",
+   "t": "script",
+   "s": 598,
+   "d": 36,
+   "ttfb": -598,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/widgets/checkout/info",
+   "t": "xmlhttprequest",
+   "s": 536,
+   "d": 88,
+   "ttfb": 87,
+   "b": 300,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/detail/properties/add",
+   "t": "xmlhttprequest",
+   "s": 530,
+   "d": 91,
+   "ttfb": 90,
+   "b": 302,
+   "dec": 2
+  },
+  {
+   "n": "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=q72rco",
+   "t": "script",
+   "s": 603,
+   "d": 0,
+   "ttfb": -603,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-300.woff2",
+   "t": "css",
+   "s": 563,
+   "d": 39,
+   "ttfb": 39,
+   "b": 15264,
+   "dec": 14964
+  },
+  {
+   "n": "https://www.clarity.ms/tag/y9d3vyhhk8?ref=gtm",
+   "t": "script",
+   "s": 602,
+   "d": 0,
+   "ttfb": -602,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/livestock/info",
+   "t": "xmlhttprequest",
+   "s": 404,
+   "d": 140,
+   "ttfb": 140,
+   "b": 397,
+   "dec": 97
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK",
+   "t": "script",
+   "s": 397,
+   "d": 115,
+   "ttfb": -397,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://images.promi-dl.de/Images/LiveR2/3635f41e-36ff-4a6c-8c39-9358077e0215/feba0b8cac05b417009c18ea20580e491d96fd898894ad0ed670d23def382cd0.jpg",
+   "t": "img",
+   "s": 294,
+   "d": 217,
+   "ttfb": -294,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://images.promi-dl.de/Images/LiveR2/3635f41e-36ff-4a6c-8c39-9358077e0215/64ae6959f5bddd3eebef59df0a8f4663b0626e19c5d2234ef7d50926855f548f.jpg",
+   "t": "img",
+   "s": 294,
+   "d": 214,
+   "ttfb": -294,
+   "b": 0,
+   "dec": 0
+  }
+ ],
+ "grootste_requests": [
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/css/all.css?1794392064",
+   "t": "link",
+   "s": 277,
+   "d": 114,
+   "ttfb": 48,
+   "b": 195627,
+   "dec": 927972
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 278,
+   "d": 207,
+   "ttfb": 178,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 417,
+   "d": 61,
+   "ttfb": 55,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/6b/ed/c2/1234567890/6d74aa72ca9ed8f3902d481361f4844bd0b019be0b6b88ec41575bdb0ca54df1_800x800.jpg?1792092762",
+   "t": "img",
+   "s": 292,
+   "d": 78,
+   "ttfb": 52,
+   "b": 79115,
+   "dec": 78815
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/e1/b4/53/1234567890/2459fd8cd4dae7efdc5910f2ddd6dfed67f784f9e5004af9b3c56ee8814aae09_800x800.jpg?1787313495",
+   "t": "img",
+   "s": 292,
+   "d": 78,
+   "ttfb": 62,
+   "b": 78899,
+   "dec": 78599
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/90/99/09/1234567890/1b2e5b87c44a5403f178b66bff612d8b4a7e7b937b93d35c497065496960b23a_400x400.jpg?1787313495",
+   "t": "img",
+   "s": 294,
+   "d": 162,
+   "ttfb": 160,
+   "b": 31336,
+   "dec": 31036
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/34/89/6a/1234567890/519c4ede5f5d37ae5514bba5a0e727490122b8e7b77b76900a832ca81d6e77eb_800x800.jpg?1787313495",
+   "t": "img",
+   "s": 294,
+   "d": 147,
+   "ttfb": 144,
+   "b": 30244,
+   "dec": 29944
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/b2/26/a6/1234567890/32a4b18bf0daade05b6c8e570ab50f228bfeaa779216f27eb75eb9d8a60a88fc_800x800.jpg?1787313495",
+   "t": "img",
+   "s": 293,
+   "d": 146,
+   "ttfb": 144,
+   "b": 30041,
+   "dec": 29741
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/aa/fb/59/1234567890/77083882165947fab9e81ac8bcb2a95fbf6b0c110cf1defd15219fe6a35f6563_800x800.jpg?1787313495",
+   "t": "img",
+   "s": 293,
+   "d": 84,
+   "ttfb": 82,
+   "b": 29669,
+   "dec": 29369
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/6b/ed/c2/1234567890/6d74aa72ca9ed8f3902d481361f4844bd0b019be0b6b88ec41575bdb0ca54df1_400x400.jpg?1792092762",
+   "t": "img",
+   "s": 294,
+   "d": 160,
+   "ttfb": 158,
+   "b": 27532,
+   "dec": 27232
+  }
+ ],
+ "lange_taken_lijst": [
+  [
+   489,
+   71
+  ],
+  [
+   642,
+   50
+  ]
+ ],
+ "verschuivingen": [
+  {
+   "t": 459,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      972,
+      393,
+      80,
+      88
+     ],
+     "naar": [
+      992,
+      393,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      904,
+      393,
+      60,
+      88
+     ],
+     "naar": [
+      924,
+      393,
+      60,
+      88
+     ]
+    },
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      1060,
+      393,
+      60,
+      88
+     ],
+     "naar": [
+      1080,
+      393,
+      60,
+      88
+     ]
+    },
+    {
+     "el": "::after.",
+     "van": [
+      844,
+      489,
+      44,
+      15
+     ],
+     "naar": [
+      854,
+      489,
+      44,
+      15
+     ]
+    }
+   ]
+  },
+  {
+   "t": 469,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      1080,
+      393,
+      60,
+      88
+     ],
+     "naar": [
+      1120,
+      393,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      992,
+      393,
+      80,
+      88
+     ],
+     "naar": [
+      1032,
+      393,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      836,
+      393,
+      80,
+      88
+     ],
+     "naar": [
+      856,
+      393,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      924,
+      393,
+      60,
+      88
+     ],
+     "naar": [
+      944,
+      393,
+      80,
+      88
+     ]
+    }
+   ]
+  },
+  {
+   "t": 478,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.top-bar-container container--1",
+     "van": [
+      301,
+      5,
+      233,
+      24
+     ],
+     "naar": [
+      255,
+      5,
+      262,
+      24
+     ]
+    },
+    {
+     "el": "DIV.top-bar-container container--4",
+     "van": [
+      935,
+      5,
+      204,
+      24
+     ],
+     "naar": [
+      957,
+      5,
+      228,
+      24
+     ]
+    },
+    {
+     "el": "TH.text-end",
+     "van": [
+      1305,
+      846,
+      95,
+      54
+     ],
+     "naar": [
+      1301,
+      846,
+      98,
+      54
+     ]
+    },
+    {
+     "el": "TH.text-end",
+     "van": [
+      1159,
+      846,
+      75,
+      54
+     ],
+     "naar": [
+      1152,
+      846,
+      75,
+      54
+     ]
+    }
+   ]
+  },
+  {
+   "t": 488,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "undefined.",
+     "van": [
+      768,
+      180,
+      632,
+      141
+     ],
+     "naar": [
+      768,
+      176,
+      632,
+      141
+     ]
+    },
+    {
+     "el": "A.nav-link main-navigation-link all-categories",
+     "van": [
+      505,
+      95,
+      124,
+      45
+     ],
+     "naar": [
+      485,
+      95,
+      140,
+      45
+     ]
+    },
+    {
+     "el": "TH.text-end",
+     "van": [
+      1152,
+      846,
+      75,
+      54
+     ],
+     "naar": [
+      1146,
+      846,
+      80,
+      54
+     ]
+    },
+    {
+     "el": "A.nav-link main-navigation-link",
+     "van": [
+      879,
+      95,
+      57,
+      45
+     ],
+     "naar": [
+      892,
+      95,
+      63,
+      45
+     ]
+    }
+   ]
+  },
+  {
+   "t": 564,
+   "v": 0.139,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      785,
+      633,
+      115
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      725,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      604,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      665,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "extra": {
+  "h1": [
+   768,
+   181,
+   632,
+   132
+  ],
+  "media": [
+   20,
+   229,
+   700,
+   484
+  ],
+  "buy": [
+   720,
+   333,
+   700,
+   1457
+  ],
+  "galerij": [
+   115,
+   229,
+   605,
+   468
+  ],
+  "prijsblok": [
+   768,
+   1249,
+   632,
+   339
+  ],
+  "qty": [
+   768,
+   545,
+   632,
+   59
+  ],
+  "h1stijl": "40px 700 44px left rgb(45, 69, 40)",
+  "docH": 2998,
+  "hscroll": false
+ }
+}

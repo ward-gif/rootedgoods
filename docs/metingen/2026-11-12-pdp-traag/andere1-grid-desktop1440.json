@@ -1,0 +1,413 @@
+{
+ "url": "https://rootedgoods.eu/Wellmark-geurstokjes/A34-12640922",
+ "profiel": "desktop",
+ "drel": "lan",
+ "tijdstip": "2026-11-12T11:31:31.944Z",
+ "titel": "Wellmark geurstokjes | Kastanjebruin | A34-12640922",
+ "ttfb_ms": 223,
+ "html_klaar_ms": 247,
+ "dcl_ms": 488,
+ "load_ms": 641,
+ "fcp_ms": 380,
+ "lcp": {
+  "t": 504,
+  "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+  "url": "https://rootedgoods.eu/shared/thumbnail/c6/9c/2d/1234567890/6525bd926b2f2256fb23af2791ab93558035f21834a1e4695abbc5d858ed6eed_800x800.jpg?1787207665"
+ },
+ "cls": 0.072,
+ "lange_taken": 2,
+ "tbt_ms": 31,
+ "langste_taak_ms": 77,
+ "configurator_in_dom_ms": 379,
+ "requests": 34,
+ "overdracht_kb": 783,
+ "dom_nodes": 1149,
+ "laatste_request_klaar_ms": 695,
+ "laatste_requests": [
+  {
+   "n": "https://pagead2.googlesyndication.com/ccm/collect?rcb=2&frm=0&apvc=1&tid=AW-18482560146&en=page_view&dl=https%3A%2F%2Frootedgoods.eu%2FWellmark-geurst",
+   "t": "fetch",
+   "s": 638,
+   "d": 57,
+   "ttfb": -638,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://region1.google-analytics.com/g/collect?v=2&tid=G-VT3YF07ZGB&gtm=45je6ba1h1v9262494562za20ozb9262488782zd9262488782xf1&_p=1794483087444&gcs=G10",
+   "t": "fetch",
+   "s": 628,
+   "d": 52,
+   "ttfb": -628,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/widgets/checkout/info",
+   "t": "xmlhttprequest",
+   "s": 464,
+   "d": 181,
+   "ttfb": 180,
+   "b": 300,
+   "dec": 0
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtag/js?id=G-VT3YF07ZGB&cx=c&gtm=4e6ba1h1",
+   "t": "script",
+   "s": 525,
+   "d": 52,
+   "ttfb": -525,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/detail/properties/add",
+   "t": "xmlhttprequest",
+   "s": 452,
+   "d": 123,
+   "ttfb": 123,
+   "b": 302,
+   "dec": 2
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-300.woff2",
+   "t": "css",
+   "s": 489,
+   "d": 65,
+   "ttfb": 57,
+   "b": 15264,
+   "dec": 14964
+  },
+  {
+   "n": "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=7rnthn",
+   "t": "script",
+   "s": 529,
+   "d": 0,
+   "ttfb": -529,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.clarity.ms/tag/y9d3vyhhk8?ref=gtm",
+   "t": "script",
+   "s": 528,
+   "d": 0,
+   "ttfb": -528,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/livestock/info",
+   "t": "xmlhttprequest",
+   "s": 334,
+   "d": 130,
+   "ttfb": 130,
+   "b": 395,
+   "dec": 95
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK",
+   "t": "script",
+   "s": 330,
+   "d": 88,
+   "ttfb": -330,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 347,
+   "d": 63,
+   "ttfb": 52,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 227,
+   "d": 182,
+   "ttfb": 148,
+   "b": 183034,
+   "dec": 674480
+  }
+ ],
+ "grootste_requests": [
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/css/all.css?1794392064",
+   "t": "link",
+   "s": 227,
+   "d": 98,
+   "ttfb": 46,
+   "b": 195627,
+   "dec": 927972
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 227,
+   "d": 182,
+   "ttfb": 148,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 347,
+   "d": 63,
+   "ttfb": 52,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/dd/62/f9/1234567890/84873cc11848e6b6c9678b8b0fa97d748a2839fabc6babd5fd5873366c66e2e3_800x800.jpg?1787207666",
+   "t": "img",
+   "s": 250,
+   "d": 48,
+   "ttfb": 44,
+   "b": 36003,
+   "dec": 35703
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/c6/9c/2d/1234567890/6525bd926b2f2256fb23af2791ab93558035f21834a1e4695abbc5d858ed6eed_800x800.jpg?1787207665",
+   "t": "img",
+   "s": 250,
+   "d": 44,
+   "ttfb": 41,
+   "b": 30698,
+   "dec": 30398
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/css/all.min.css?1794392060",
+   "t": "link",
+   "s": 227,
+   "d": 47,
+   "ttfb": 46,
+   "b": 21801,
+   "dec": 73890
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+   "t": "css",
+   "s": 347,
+   "d": 61,
+   "ttfb": 60,
+   "b": 15540,
+   "dec": 15240
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+   "t": "css",
+   "s": 346,
+   "d": 47,
+   "ttfb": 45,
+   "b": 15400,
+   "dec": 15100
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+   "t": "css",
+   "s": 347,
+   "d": 61,
+   "ttfb": 60,
+   "b": 15372,
+   "dec": 15072
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-300.woff2",
+   "t": "css",
+   "s": 489,
+   "d": 65,
+   "ttfb": 57,
+   "b": 15264,
+   "dec": 14964
+  }
+ ],
+ "lange_taken_lijst": [
+  [
+   410,
+   77
+  ],
+  [
+   584,
+   54
+  ]
+ ],
+ "verschuivingen": [
+  {
+   "t": 399,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      924,
+      305,
+      60,
+      88
+     ],
+     "naar": [
+      944,
+      305,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "DIV.top-bar-container container--1",
+     "van": [
+      301,
+      5,
+      233,
+      24
+     ],
+     "naar": [
+      255,
+      5,
+      262,
+      24
+     ]
+    },
+    {
+     "el": "TD.text-end",
+     "van": [
+      1033,
+      814,
+      114,
+      57
+     ],
+     "naar": [
+      1044,
+      814,
+      106,
+      57
+     ]
+    },
+    {
+     "el": "TH.text-end",
+     "van": [
+      1033,
+      758,
+      114,
+      56
+     ],
+     "naar": [
+      1044,
+      758,
+      106,
+      56
+     ]
+    }
+   ]
+  },
+  {
+   "t": 492,
+   "v": 0.07,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      768,
+      697,
+      632,
+      203
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      577,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      516,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      637,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "extra": {
+  "h1": [
+   768,
+   181,
+   401,
+   44
+  ],
+  "media": [
+   20,
+   229,
+   700,
+   484
+  ],
+  "buy": [
+   720,
+   245,
+   700,
+   1436
+  ],
+  "galerij": [
+   115,
+   229,
+   605,
+   468
+  ],
+  "prijsblok": [
+   768,
+   1161,
+   632,
+   318
+  ],
+  "qty": [
+   768,
+   457,
+   632,
+   59
+  ],
+  "h1stijl": "40px 700 44px left rgb(45, 69, 40)",
+  "docH": 2884,
+  "hscroll": false
+ }
+}

@@ -1,0 +1,5 @@
+desktop run 1 ttfb 607 | fcp 1212 | lcp 1212 | load 1810 | laatste request klaar 2106 | cls 0.283 | tbt 54
+desktop run 2 AFGEBROKEN: AFGEBROKEN: load-event kwam niet binnen 90 s
+desktop run 3 ttfb 363 | fcp 596 | lcp 596 | load 950 | laatste request klaar 1414 | cls 0.284 | tbt 72
+mobiel 4g run 1 ttfb 733 | fcp 4080 | lcp 4080 | load 11424 | laatste request klaar 13278 | cls 0.067 | tbt 536
+mobiel 4g run 2 ttfb 1098 | fcp 3680 | lcp 3680 | load 8450 | laatste request klaar 8634 | cls 0.083 | tbt 572

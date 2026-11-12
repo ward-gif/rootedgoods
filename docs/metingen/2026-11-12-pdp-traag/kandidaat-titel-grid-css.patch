@@ -1,0 +1,27 @@
+--- rootedgoods.css	2026-11-12 11:49:05
++++ /private/tmp/claude-501/-Users-wardhaarsma-Documents-Rooted-goods-rootedgoods-website/302525f1-e8a1-40ff-8804-7ec203a6d5e7/scratchpad/css-grid.css	2026-11-12 12:22:20
+@@ -2441,8 +2441,22 @@
+ 
+ /* Desktop — originele headline-row verbergen (h1 wordt verplaatst). */
+ @media (min-width: 992px) {
+-  .product-detail-headline {
+-    display: none;
++  /* De titel staat vanaf de eerste weergave in de rechterkolom, zonder JS-verplaatsing
++     (die gaf een layoutsprong van 0,23). Het raster zet galerij links over twee rijen,
++     titel rechts boven en het kopersblok rechts eronder. */
++  .product-detail-content {
++    display: grid;
++    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
++    margin-inline: -20px;
++    align-items: start;
++  }
++  .product-detail-content > .product-detail-main { display: contents; }
++  .product-detail-content > .product-detail-main > .product-detail-media { grid-column: 1; grid-row: 1 / span 2; width: auto !important; max-width: none !important; flex: none !important; }
++  .product-detail-content > .product-detail-headline { grid-column: 2; grid-row: 1; display: block; margin: 0; padding: 0 20px 0 48px; width: auto; max-width: none; }
++  .product-detail-content > .product-detail-main > .product-detail-buy { grid-column: 2; grid-row: 2; width: auto !important; max-width: none !important; flex: none !important; }
++  .product-detail-headline .product-detail-name-container { padding: 0; }
++  .product-detail-headline .product-detail-name {
++    font-size: 2.5rem; font-weight: 700; text-align: left; margin: -1rem 0 1.25rem 0; line-height: 1.1;
+   }
+ }
+ 

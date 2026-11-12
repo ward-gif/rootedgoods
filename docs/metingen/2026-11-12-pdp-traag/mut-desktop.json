@@ -1,0 +1,11748 @@
+{
+ "url": "https://rootedgoods.eu/Citizen-Green-Vanguard-gerecyclede-rugzak/A33-12080355?lastgroup=cb5feb1b7314637725a2e73bdc9f7295#aW1wcmludHMlNUJGcm9udC03MC0xNTAlNUQlNUIwJTVEJTVCb3B0aW9uJTVEPUEzMy1XU1dDRFAwMS0xNS1EZWZhdWx0LTAtMSZxdWFudGl0eT0yNSZjb25maWd1cmF0b3ItZGVsaXZlcnktZGF0ZT0mY29uZmlndXJhdG9yLWNvbW1lbnQ9",
+ "profiel": "desktop",
+ "drel": "lan",
+ "tijdstip": "2026-11-12T11:12:07.187Z",
+ "titel": "Citizen Green Vanguard gerecyclede rugzak | Marineblauw | A33-12080355",
+ "ttfb_ms": 452,
+ "html_klaar_ms": 477,
+ "dcl_ms": 1984,
+ "load_ms": 2965,
+ "fcp_ms": 1428,
+ "lcp": {
+  "t": 1428,
+  "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+  "url": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_800x800.jpg?1775153304"
+ },
+ "cls": 0.292,
+ "lange_taken": 2,
+ "tbt_ms": 79,
+ "langste_taak_ms": 129,
+ "configurator_in_dom_ms": 1436,
+ "requests": 41,
+ "overdracht_kb": 1059,
+ "dom_nodes": 1183,
+ "laatste_request_klaar_ms": 3033,
+ "laatste_requests": [
+  {
+   "n": "https://pagead2.googlesyndication.com/ccm/collect?rcb=17&frm=0&apvc=1&tid=AW-18482560146&en=page_view&dl=https%3A%2F%2Frootedgoods.eu%2FCitizen-Green-",
+   "t": "fetch",
+   "s": 2963,
+   "d": 70,
+   "ttfb": -2963,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://region1.google-analytics.com/g/collect?v=2&tid=G-VT3YF07ZGB&gtm=45je6ba1v9262494562za20ozb9262488782zd9262488782xf1&_p=1794481921395&gcs=G100&",
+   "t": "fetch",
+   "s": 2954,
+   "d": 77,
+   "ttfb": -2954,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtag/js?id=G-VT3YF07ZGB&cx=c&gtm=4e6ba1",
+   "t": "script",
+   "s": 2872,
+   "d": 34,
+   "ttfb": -2872,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=qmrqk",
+   "t": "script",
+   "s": 2877,
+   "d": 0,
+   "ttfb": -2877,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.clarity.ms/tag/y9d3vyhhk8?ref=gtm",
+   "t": "script",
+   "s": 2876,
+   "d": 0,
+   "ttfb": -2876,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/media/07/1f/2f/1775141463/Mastercard.png",
+   "t": "img",
+   "s": 477,
+   "d": 2364,
+   "ttfb": 2322,
+   "b": 5909,
+   "dec": 5609
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK",
+   "t": "script",
+   "s": 1386,
+   "d": 1455,
+   "ttfb": -1386,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/media/19/5c/87/1775141463/Wero%20Ideal.png",
+   "t": "img",
+   "s": 477,
+   "d": 2363,
+   "ttfb": 2322,
+   "b": 13250,
+   "dec": 12950
+  },
+  {
+   "n": "https://rootedgoods.eu/media/d4/ff/49/1775133751/creditcard-icon.svg?1775133751",
+   "t": "img",
+   "s": 477,
+   "d": 2363,
+   "ttfb": 2323,
+   "b": 4377,
+   "dec": 4077
+  },
+  {
+   "n": "https://rootedgoods.eu/media/0d/3b/b9/1775141593/DHL.png",
+   "t": "img",
+   "s": 477,
+   "d": 2363,
+   "ttfb": 2322,
+   "b": 4887,
+   "dec": 4587
+  },
+  {
+   "n": "https://rootedgoods.eu/media/22/32/9c/1775133752/ideal-icon.svg?1775133752",
+   "t": "img",
+   "s": 477,
+   "d": 2323,
+   "ttfb": 2303,
+   "b": 6479,
+   "dec": 6179
+  },
+  {
+   "n": "https://rootedgoods.eu/media/27/17/32/1775141593/dpd.png",
+   "t": "img",
+   "s": 477,
+   "d": 2303,
+   "ttfb": 2302,
+   "b": 7756,
+   "dec": 7456
+  }
+ ],
+ "grootste_requests": [
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/css/all.css?1794392064",
+   "t": "link",
+   "s": 460,
+   "d": 901,
+   "ttfb": 412,
+   "b": 195627,
+   "dec": 927972
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 460,
+   "d": 1394,
+   "ttfb": 960,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 1442,
+   "d": 1281,
+   "ttfb": 542,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/cf/bc/9c/1234567890/007aa79efbc3652e869208ebdf7890ca5b61941c0d7e619967ffa35f59a306ed_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 460,
+   "d": 2031,
+   "ttfb": 1420,
+   "b": 65216,
+   "dec": 64916
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/19/43/1d/1234567890/705150ee6710f6eb8c5938be6d78e26a1f6c1654495f20d4cf73d5f932eac24e_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 460,
+   "d": 901,
+   "ttfb": 746,
+   "b": 49646,
+   "dec": 49346
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/47/aa/ab/1234567890/0db47d51cc1da2046ae871788efcbe6510939e9970b1e87b97e4c3949f2197ab_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 460,
+   "d": 285,
+   "ttfb": 270,
+   "b": 49407,
+   "dec": 49107
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 460,
+   "d": 371,
+   "ttfb": 286,
+   "b": 48016,
+   "dec": 47716
+  },
+  {
+   "n": "https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+   "t": "link",
+   "s": 460,
+   "d": 77,
+   "ttfb": 74,
+   "b": 37947,
+   "dec": 228331
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/cf/bc/9c/1234567890/007aa79efbc3652e869208ebdf7890ca5b61941c0d7e619967ffa35f59a306ed_400x400.jpg?1775153304",
+   "t": "img",
+   "s": 477,
+   "d": 2147,
+   "ttfb": 1507,
+   "b": 22041,
+   "dec": 21741
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/css/all.min.css?1794392060",
+   "t": "link",
+   "s": 460,
+   "d": 587,
+   "ttfb": 373,
+   "b": 21801,
+   "dec": 73890
+  }
+ ],
+ "lange_taken_lijst": [
+  [
+   1855,
+   129
+  ],
+  [
+   2913,
+   50
+  ]
+ ],
+ "verschuivingen": [
+  {
+   "t": 1991,
+   "v": 0.237,
+   "src": [
+    {
+     "el": "DIV.js-magnifier-zoom-image-container",
+     "van": [
+      747,
+      197,
+      674,
+      703
+     ],
+     "naar": [
+      747,
+      289,
+      674,
+      611
+     ]
+    },
+    {
+     "el": "DIV.col-12 order-1 col-sm-auto order-sm-2 header-actio",
+     "van": [
+      1296,
+      52,
+      132,
+      34
+     ],
+     "naar": [
+      1143,
+      52,
+      285,
+      34
+     ]
+    },
+    {
+     "el": "undefined.",
+     "van": [
+      793,
+      849,
+      504,
+      18
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.top-bar-container container--1",
+     "van": [
+      301,
+      5,
+      233,
+      24
+     ],
+     "naar": [
+      255,
+      5,
+      262,
+      24
+     ]
+    }
+   ]
+  },
+  {
+   "t": 1996,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.col-12 col-md-auto d-flex justify-content-center f",
+     "van": [
+      931,
+      829,
+      494,
+      71
+     ],
+     "naar": [
+      903,
+      829,
+      522,
+      71
+     ]
+    },
+    {
+     "el": "TH.text-end",
+     "van": [
+      1130,
+      802,
+      78,
+      56
+     ],
+     "naar": [
+      1127,
+      802,
+      82,
+      56
+     ]
+    },
+    {
+     "el": "undefined.",
+     "van": [
+      1294,
+      821,
+      105,
+      18
+     ],
+     "naar": [
+      1295,
+      820,
+      104,
+      18
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2004,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      740,
+      633,
+      160
+     ],
+     "naar": [
+      767,
+      747,
+      633,
+      153
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      559,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      565,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      620,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      626,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      680,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      686,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2012,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      745,
+      633,
+      155
+     ],
+     "naar": [
+      767,
+      753,
+      633,
+      147
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      563,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      572,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      624,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      632,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      684,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      693,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2018,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      750,
+      633,
+      150
+     ],
+     "naar": [
+      767,
+      762,
+      633,
+      138
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      569,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      581,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      629,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      641,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      690,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      701,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2026,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      756,
+      633,
+      144
+     ],
+     "naar": [
+      767,
+      770,
+      633,
+      130
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      575,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      589,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      635,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      650,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      695,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      710,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2034,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      761,
+      633,
+      139
+     ],
+     "naar": [
+      767,
+      779,
+      633,
+      121
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      580,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      598,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      641,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      658,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      701,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      719,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2042,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      766,
+      633,
+      134
+     ],
+     "naar": [
+      767,
+      786,
+      633,
+      114
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      585,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      604,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      645,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      665,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      706,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      725,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2051,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      765,
+      633,
+      135
+     ],
+     "naar": [
+      767,
+      788,
+      633,
+      112
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      583,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      607,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      644,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      668,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      704,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      728,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2059,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      761,
+      633,
+      139
+     ],
+     "naar": [
+      767,
+      784,
+      633,
+      116
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      580,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      603,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      641,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      663,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      701,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      723,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2067,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      746,
+      633,
+      154
+     ],
+     "naar": [
+      767,
+      770,
+      633,
+      130
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      565,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      589,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      625,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      649,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      685,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      710,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2076,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      726,
+      633,
+      174
+     ],
+     "naar": [
+      767,
+      751,
+      633,
+      149
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      545,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      570,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      605,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      630,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      666,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      690,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2085,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      711,
+      633,
+      189
+     ],
+     "naar": [
+      767,
+      736,
+      633,
+      164
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      530,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      555,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      590,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      615,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      650,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      676,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2093,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      706,
+      633,
+      194
+     ],
+     "naar": [
+      767,
+      728,
+      633,
+      172
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      525,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      547,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      585,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      608,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      646,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      668,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2101,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      704,
+      633,
+      196
+     ],
+     "naar": [
+      767,
+      726,
+      633,
+      174
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      523,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      545,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      584,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      605,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      644,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      665,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2110,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      705,
+      633,
+      195
+     ],
+     "naar": [
+      767,
+      724,
+      633,
+      176
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      524,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      543,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      584,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      604,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      644,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      664,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2117,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      709,
+      633,
+      191
+     ],
+     "naar": [
+      767,
+      726,
+      633,
+      174
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      528,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      545,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      589,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      605,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      649,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      666,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2126,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      710,
+      633,
+      190
+     ],
+     "naar": [
+      767,
+      729,
+      633,
+      171
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      529,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      548,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      589,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      608,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      650,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      668,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2134,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      717,
+      633,
+      183
+     ],
+     "naar": [
+      767,
+      732,
+      633,
+      168
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      536,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      551,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      596,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      612,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      656,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      672,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2142,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      721,
+      633,
+      179
+     ],
+     "naar": [
+      767,
+      735,
+      633,
+      165
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      540,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      554,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      601,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      614,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      661,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      675,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2152,
+   "v": 0.002,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      725,
+      633,
+      175
+     ],
+     "naar": [
+      767,
+      739,
+      633,
+      161
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      544,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      558,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      604,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      618,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      665,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      679,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2160,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      731,
+      633,
+      169
+     ],
+     "naar": [
+      767,
+      743,
+      633,
+      157
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      550,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      562,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      610,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      622,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      671,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      683,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2167,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      736,
+      633,
+      164
+     ],
+     "naar": [
+      767,
+      746,
+      633,
+      154
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      555,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      565,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      615,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      626,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      676,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      686,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2177,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      739,
+      633,
+      161
+     ],
+     "naar": [
+      767,
+      750,
+      633,
+      150
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      558,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      568,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      619,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      629,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      679,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      689,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2185,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      744,
+      633,
+      156
+     ],
+     "naar": [
+      767,
+      753,
+      633,
+      147
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      562,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      572,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      623,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      632,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      683,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      693,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2193,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      748,
+      633,
+      152
+     ],
+     "naar": [
+      767,
+      756,
+      633,
+      144
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      567,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      575,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      627,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      636,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      688,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      696,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2201,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      751,
+      633,
+      149
+     ],
+     "naar": [
+      767,
+      760,
+      633,
+      140
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      570,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      578,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      631,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      639,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      691,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      699,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2210,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      756,
+      633,
+      144
+     ],
+     "naar": [
+      767,
+      763,
+      633,
+      137
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      574,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      582,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      635,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      642,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      695,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      702,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2218,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      759,
+      633,
+      141
+     ],
+     "naar": [
+      767,
+      765,
+      633,
+      135
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      578,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      583,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      638,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      644,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      698,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      704,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2226,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      762,
+      633,
+      138
+     ],
+     "naar": [
+      767,
+      768,
+      633,
+      132
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      580,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      587,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      641,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      647,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      701,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      708,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2234,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      765,
+      633,
+      135
+     ],
+     "naar": [
+      767,
+      770,
+      633,
+      130
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      584,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      588,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      644,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      649,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      705,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      709,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2242,
+   "v": 0.001,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      767,
+      633,
+      133
+     ],
+     "naar": [
+      767,
+      772,
+      633,
+      128
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      585,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      590,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      646,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      651,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      706,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      711,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2251,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      770,
+      633,
+      130
+     ],
+     "naar": [
+      767,
+      774,
+      633,
+      126
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      588,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      593,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      649,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      653,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      709,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      714,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2259,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      772,
+      633,
+      128
+     ],
+     "naar": [
+      767,
+      776,
+      633,
+      124
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      591,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      594,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      651,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      655,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      712,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      715,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2268,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      774,
+      633,
+      126
+     ],
+     "naar": [
+      767,
+      805,
+      633,
+      95
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      592,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      624,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      653,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      684,
+      632,
+      60
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      713,
+      632,
+      60
+     ],
+     "naar": [
+      768,
+      745,
+      632,
+      60
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2445,
+   "v": 0,
+   "src": [
+    {
+     "el": "SPAN.product-block-prices-savings",
+     "van": [
+      1060,
+      429,
+      81,
+      29
+     ],
+     "naar": [
+      1063,
+      429,
+      80,
+      29
+     ]
+    }
+   ]
+  },
+  {
+   "t": 2467,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      924,
+      0,
+      80,
+      28
+     ],
+     "naar": [
+      944,
+      0,
+      80,
+      28
+     ]
+    },
+    {
+     "el": "::after.",
+     "van": [
+      872,
+      36,
+      28,
+      15
+     ],
+     "naar": [
+      882,
+      36,
+      28,
+      15
+     ]
+    }
+   ]
+  }
+ ],
+ "extra": [
+  {
+   "t": 466,
+   "type": "+",
+   "el": "HTML.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "HEAD.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 466,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "TITLE.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "NOSCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "STYLE.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 469,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1369,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1386,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1386,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1386,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1387,
+   "type": "+",
+   "el": "BODY.is-ctl-product is-act-index",
+   "y": 0,
+   "h": 900,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "NOSCRIPT.noscript-main",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "NOSCRIPT.noscript-gtm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "HEADER.header-main",
+   "y": 0,
+   "h": 95,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 0,
+   "h": 95,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar d-none d-lg-block",
+   "y": 0,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "NAV.top-bar-nav",
+   "y": 0,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar-nav-extension",
+   "y": 0,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar-container container--1",
+   "y": 5,
+   "h": 24,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "I.fa-solid fa-check",
+   "y": 10,
+   "h": 12,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar-container container--2",
+   "y": 5,
+   "h": 24,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "I.fa-solid fa-check",
+   "y": 10,
+   "h": 12,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar-container container--3",
+   "y": 5,
+   "h": 24,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "I.fa-solid fa-check",
+   "y": 10,
+   "h": 12,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar-container container--4",
+   "y": 5,
+   "h": 24,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "I.fa-solid fa-check",
+   "y": 10,
+   "h": 12,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.top-bar-container container--5",
+   "y": 5,
+   "h": 24,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.",
+   "y": 10,
+   "h": 14,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.",
+   "y": 10,
+   "h": 14,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row align-items-center header-row",
+   "y": 34,
+   "h": 61,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-12 col-lg-auto header-logo-col",
+   "y": 42,
+   "h": 53,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.header-logo-main",
+   "y": 42,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.header-logo-main-link",
+   "y": 42,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "PICTURE.header-logo-picture",
+   "y": 42,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.img-fluid header-logo-main-img",
+   "y": 42,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-12 order-2 col-sm order-sm-1 header-search-col",
+   "y": 69,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row",
+   "y": 69,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-sm-auto d-none d-sm-block d-lg-none",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.nav-main-toggle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn nav-main-toggle-btn header-actions-btn",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-stack",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-stack.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col",
+   "y": 69,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV#searchCollapse.collapse",
+   "y": 69,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.header-search",
+   "y": 44,
+   "h": 41,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "FORM.header-search-form",
+   "y": 44,
+   "h": 41,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.input-group",
+   "y": 44,
+   "h": 41,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "INPUT.form-control header-search-input",
+   "y": 44,
+   "h": 41,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn header-search-btn",
+   "y": 44,
+   "h": 41,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.header-search-icon",
+   "y": 54,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-search",
+   "y": 54,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 54,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-search.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 56,
+   "h": 18,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-12 order-1 col-sm-auto order-sm-2 header-actions-col",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row g-0",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col d-sm-none",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.menu-button",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn nav-main-toggle-btn header-actions-btn",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-stack",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-auto d-sm-none",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.search-toggle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn header-actions-btn search-toggle-btn js-search-toggle-bt",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-search",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-auto",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.header-wishlist",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.btn header-wishlist-btn header-actions-btn",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.header-wishlist-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-heart",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-heart.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN#wishlist-basket.badge bg-primary header-wishlist-badge",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-auto",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.account-menu",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.dropdown",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON#accountWidget.btn account-menu-btn header-actions-btn",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-avatar",
+   "y": 54,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 60,
+   "h": 20,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-avatar.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 61,
+   "h": 18,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.dropdown-menu dropdown-menu-end account-menu-dropdown js-acc",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.offcanvas-header",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn btn-light offcanvas-close js-offcanvas-close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-x icon-sm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-x.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.offcanvas-body",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.account-menu",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.dropdown-header account-menu-header",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.account-menu-login",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.btn btn-primary account-menu-login-button",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.account-menu-register",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.account-menu-links",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.header-account-menu",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.card account-menu-inner",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.list-group list-group-flush account-aside-list-group",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.list-group-item list-group-item-action account-aside-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.list-group-item list-group-item-action account-aside-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.list-group-item list-group-item-action account-aside-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.list-group-item list-group-item-action account-aside-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.list-group-item list-group-item-action account-aside-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.list-group-item list-group-item-action account-aside-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-auto",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.header-cart",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.btn header-cart-btn header-actions-btn",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.header-cart-icon",
+   "y": 61,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-bag",
+   "y": 54,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 60,
+   "h": 20,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-bag.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 60,
+   "h": 20,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.header-cart-total",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.nav-main",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV#mainNavigation.main-navigation",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "NAV.nav main-navigation-menu",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-link main-navigation-link home-link",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.main-navigation-link-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-link main-navigation-link all-categories",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.main-navigation-link-text",
+   "y": 105,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-stack",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.align-top",
+   "y": 105,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-link main-navigation-link",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.main-navigation-link-text",
+   "y": 105,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 107,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-link main-navigation-link",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.main-navigation-link-text",
+   "y": 105,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 107,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-link main-navigation-link",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.main-navigation-link-text",
+   "y": 105,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 107,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-link main-navigation-link",
+   "y": 95,
+   "h": 45,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.main-navigation-link-text",
+   "y": 105,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 107,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-flyouts",
+   "y": 140,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-flyout cio-all-categories-navigation",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row navigation-flyout-bar",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-flyout-category-link",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.nav-link",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-auto",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-flyout-close js-close-flyout-menu",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-x",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row navigation-flyout-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-3 navigation-flyout-category",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.navigation-item has--bg-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.icon-and-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flyout-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-flyouts",
+   "y": 140,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.d-none js-navigation-offcanvas-initial-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.offcanvas-header",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn btn-light offcanvas-close js-offcanvas-close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-x icon-sm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.offcanvas-body",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "NAV.nav navigation-offcanvas-actions",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-offcanvas-container js-navigation-offcanvas",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.navigation-offcanvas-overlay-content js-navigation-offcanvas",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-item nav-link is-home-link navigation-offcanvas-link js-",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.navigation-offcanvas-link-icon js-navigation-offcanvas-loadi",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-stack",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-item nav-link navigation-offcanvas-headline",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-item nav-link is-back-link navigation-offcanvas-link js-",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.navigation-offcanvas-link-icon js-navigation-offcanvas-loadi",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-medium-left icon-sm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-solid-arrow-medium-left.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "UL.list-unstyled navigation-offcanvas-list",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LI.navigation-offcanvas-list-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.nav-item nav-link navigation-offcanvas-link is-current-categ",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "MAIN.content-main",
+   "y": 140,
+   "h": 760,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.flashbags container",
+   "y": 140,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 140,
+   "h": 700,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.container-main",
+   "y": 140,
+   "h": 700,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "NAV.",
+   "y": 160,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "OL.breadcrumb",
+   "y": 160,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LI.breadcrumb-item",
+   "y": 160,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.breadcrumb-link ",
+   "y": 162,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.breadcrumb-title",
+   "y": 162,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.breadcrumb-placeholder",
+   "y": 160,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-medium-right icon-fluid",
+   "y": 161,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 164,
+   "h": 14,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-solid-arrow-medium-right.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 167,
+   "h": 9,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LI.breadcrumb-item",
+   "y": 160,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "A.breadcrumb-link  is-active",
+   "y": 162,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.breadcrumb-title",
+   "y": 162,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail",
+   "y": 197,
+   "h": 478,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-content",
+   "y": 197,
+   "h": 478,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row align-items-center product-detail-headline",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col product-detail-name-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "H1.product-detail-name",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row product-detail-main",
+   "y": 197,
+   "h": 478,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-lg-7 product-detail-media",
+   "y": 229,
+   "h": 446,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.cms-element-",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.row gallery-slider-row is-loading js-gallery-zoom-modal-cont",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-col col order-1 order-md-2",
+   "y": 229,
+   "h": 2188,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.base-slider gallery-slider",
+   "y": 229,
+   "h": 2172,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-container",
+   "y": 229,
+   "h": 2150,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item is-contain js-magnifier-container",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container",
+   "y": 659,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item is-contain js-magnifier-container",
+   "y": 659,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+   "y": 659,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container",
+   "y": 1089,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item is-contain js-magnifier-container",
+   "y": 1089,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+   "y": 1089,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container",
+   "y": 1519,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item is-contain js-magnifier-container",
+   "y": 1519,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+   "y": 1519,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container",
+   "y": 1949,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item is-contain js-magnifier-container",
+   "y": 1949,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+   "y": 2164,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-controls",
+   "y": 229,
+   "h": 2172,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-prev gallery-slider-controls-prev is-na",
+   "y": 1291,
+   "h": 48,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-left",
+   "y": 1304,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 1308,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-arrow-head-left.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 1308,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-next gallery-slider-controls-next is-na",
+   "y": 1291,
+   "h": 48,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-right",
+   "y": 1304,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 1308,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-arrow-head-right.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 1308,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.base-slider-dots ",
+   "y": 2395,
+   "h": 6,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-dot",
+   "y": 2395,
+   "h": 6,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-dot",
+   "y": 2395,
+   "h": 6,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-dot",
+   "y": 2395,
+   "h": 6,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-dot",
+   "y": 2395,
+   "h": 6,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-dot",
+   "y": 2395,
+   "h": 6,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-col col-0 col-md-auto order-2 orde",
+   "y": 229,
+   "h": 2188,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-container",
+   "y": 229,
+   "h": 375,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails",
+   "y": 229,
+   "h": 375,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 229,
+   "h": 75,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 229,
+   "h": 65,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image",
+   "y": 234,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 304,
+   "h": 75,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 304,
+   "h": 65,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image",
+   "y": 309,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 379,
+   "h": 75,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 379,
+   "h": 65,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image",
+   "y": 384,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 454,
+   "h": 75,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 454,
+   "h": 65,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image",
+   "y": 459,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 529,
+   "h": 75,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 529,
+   "h": 65,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image",
+   "y": 562,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-controls",
+   "y": 604,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-prev gallery-slider-thumbnails-controls",
+   "y": 199,
+   "h": 30,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-up",
+   "y": 202,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 205,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-arrow-head-up.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 210,
+   "h": 12,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-next gallery-slider-thumbnails-controls",
+   "y": 594,
+   "h": 30,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-down",
+   "y": 597,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 600,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-arrow-head-down.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 605,
+   "h": 12,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.zoom-modal-wrapper",
+   "y": 229,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.modal is-fullscreen zoom-modal js-zoom-modal",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.modal-dialog",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.modal-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn-close close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.modal-body",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.zoom-modal-actions btn-group",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn btn-light image-zoom-btn js-image-zoom-out",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-minus-circle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-minus-circle.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn btn-light image-zoom-btn js-image-zoom-reset",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-screen-minimize",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-screen-minimize.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.btn btn-light image-zoom-btn js-image-zoom-in",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-plus-circle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "path#icons-default-plus-circle.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.image-zoom-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-image js-image-zoom-element js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.image-zoom-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-image js-image-zoom-element js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.image-zoom-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-image js-image-zoom-element js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.image-zoom-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-image js-image-zoom-element js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.image-zoom-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-image js-image-zoom-element js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-controls",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-prev gallery-slider-controls-prev",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-left",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-next gallery-slider-controls-next",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-right",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.modal-footer",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-modal-controls",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-modal-thumbnails",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-prev gallery-slider-thumbnails-controls",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-left",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "BUTTON.base-slider-controls-next gallery-slider-thumbnails-controls",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-head-right",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.gallery-slider-thumbnails-item-inner",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.gallery-slider-thumbnails-image js-load-img",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.col-lg-5 product-detail-buy",
+   "y": 197,
+   "h": 211,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.js-magnifier-zoom-image-container",
+   "y": 197,
+   "h": 203,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.",
+   "y": 197,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.",
+   "y": 197,
+   "h": 203,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-price-info",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "P.product-price-unit",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-cheapest-price-wrapper text-end pb-2",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.product-cheapest-price-price",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV#total-price-top-container.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.configurator-price-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TABLE.table table-borderless table-sm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TBODY.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TR.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TH.text-end w-100 fw-normal unitprice-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TD.text-end configurator-price-element unitprice",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TR.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TH.text-end w-100 fw-bold totalprice",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TD.configurator-price-element fw-bold totalprice text-end text-",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TR.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TH.text-end w-100 fw-normal",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "TD.configurator-price-element text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-container",
+   "y": 197,
+   "h": 203,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator",
+   "y": 197,
+   "h": 203,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "FORM.",
+   "y": 197,
+   "h": 203,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-group",
+   "y": 197,
+   "h": 203,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-group-title collapse-title d-fle",
+   "y": 197,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 214,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-options",
+   "y": 257,
+   "h": 144,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-option",
+   "y": 257,
+   "h": 88,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "INPUT#cb5feb1b7314637725a2e73bdc9f7295-d25c026bb15ce160746b819e58e5dd3b.product-detail-configurator-option-input is-combinable",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LABEL.product-detail-configurator-option-label is-combinable is-di",
+   "y": 257,
+   "h": 80,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.product-detail-configurator-option-image",
+   "y": 261,
+   "h": 72,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-option",
+   "y": 257,
+   "h": 88,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "INPUT#cb5feb1b7314637725a2e73bdc9f7295-fa56d1aec29df358afa51bb32d9da709.product-detail-configurator-option-input is-combinable",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LABEL.product-detail-configurator-option-label is-combinable is-di",
+   "y": 257,
+   "h": 80,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.product-detail-configurator-option-image",
+   "y": 261,
+   "h": 72,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-option",
+   "y": 257,
+   "h": 88,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "INPUT#cb5feb1b7314637725a2e73bdc9f7295-b49b2c206c1e405b001bcc329118d7e7.product-detail-configurator-option-input is-combinable",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "LABEL.product-detail-configurator-option-label is-combinable is-di",
+   "y": 257,
+   "h": 80,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "IMG.product-detail-configurator-option-image",
+   "y": 261,
+   "h": 72,
+   "bron": ""
+  },
+  {
+   "t": 1391,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.product-detail-form-container",
+   "y": 409,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "FORM#productDetailPageBuyProductForm.buy-widget",
+   "y": 409,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.collapse-group product-detail-configurator-group",
+   "y": 409,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV#qty-title.collapse-title d-flex collapsed",
+   "y": 409,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 426,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV#qty-wrapper.collapse-content collapse ps-4 ms-1 ",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.col-auto",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.form-group",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "LABEL.form-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "INPUT#product-order-quantity.form-control product-detail-quantity-select",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.product-block-prices",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TABLE.table product-block-prices-grid",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "THEAD.product-block-prices-head table-dark",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TR.product-block-prices-row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell  text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TBODY.product-block-prices-body",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TR.product-block-prices-row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "SPAN.product-block-prices-quantity",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TD.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TR.product-block-prices-row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "SPAN.product-block-prices-quantity",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TD.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TR.product-block-prices-row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "SPAN.product-block-prices-quantity",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TD.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TR.product-block-prices-row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "SPAN.product-block-prices-quantity",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TH.product-block-prices-cell text-end",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "TD.product-block-prices-cell",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1411,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.collapse-group product-detail-configurator-group",
+   "y": 468,
+   "h": 60,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#imprint-title.collapse-title collapsed d-flex",
+   "y": 469,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 486,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#imprint-wrapper.collapse-content collapse ps-4 ms-1",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.po-imprints-container container d-flex flex-warp w-100",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "LABEL.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.po-imprint p-2 ",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.form-check",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "INPUT#imprint-Front-70-150.form-check-input",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "LABEL.form-check-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.po-imprint-options-container container d-flex flex-column w-",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.po-imprint-option w-100 ",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "LABEL.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.row row-notify",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#uploadErrorNoticeGeneral_Front-70-150.upload-notify-Front-70-150 mt-2 d-none",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.alert alert-danger alert-has-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN.icon icon-blocked",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "path#icons-default-blocked.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.alert-content-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.alert-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#uploadErrorNoticeFileType_Front-70-150.upload-notify-Front-70-150 mt-2 d-none",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.alert alert-danger alert-has-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN.icon icon-blocked",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "path#icons-default-blocked.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.alert-content-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.alert-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "TEMPLATE#selectImprintTemplate_Front-70-150.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#imprint-form-rows-container_Front-70-150.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.row",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.select-imprint mb-3 col",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SELECT.form-control form-select",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "OPTION.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV.select-upload mb-3 col-auto",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#upload_button_container_Front-70-150_0.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "LABEL.btn btn-primary btn-logo-upload",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "INPUT#file_upload_Front-70-150_0.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "DIV#uploaded_file_container_Front-70-150_0.uploaded-file-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN.icon icon-file",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN.filename-text",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN#filename_remove_Front-70-150_0.filename-remove",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SPAN.icon icon-x",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1418,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "DIV.select-delete mb-3 col-auto",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "SPAN#imprint_remove_Front-70-150_0.imprint-remove",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "SPAN.icon icon-trash",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "DIV.mb-3",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "A#btn-Front-70-150-add-new-imprint-select.btn btn-primary btn-configurator-add-option",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1420,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#po-informations-container.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.product-detail-configurator-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#detailed-price-table-container.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.collapse-group product-detail-configurator-group",
+   "y": 529,
+   "h": 60,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#delivery-date-title.collapse-title d-flex collapsed",
+   "y": 530,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 547,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#delivery-date-wrapper.collapse-content collapse ps-4 ms-1",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.form-group",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "LABEL.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "SPAN.icon icon-calendar",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "path#icons-default-calendar.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.collapse-group product-detail-configurator-group",
+   "y": 589,
+   "h": 60,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#comment-title.collapse-title collapsed d-flex",
+   "y": 590,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 607,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#comment-wrapper.collapse-content collapse ps-4 ms-1",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.form-group",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TEXTAREA#configurator-comment.form-control",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV#total-price-bottom-container.",
+   "y": 649,
+   "h": 318,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.collapse-group mb-3",
+   "y": 649,
+   "h": 318,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.collapse-title",
+   "y": 649,
+   "h": 59,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.collapse show",
+   "y": 709,
+   "h": 259,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TABLE.table custom-configurator-table table-striped table-sm",
+   "y": 709,
+   "h": 114,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "THEAD.table-dark",
+   "y": 710,
+   "h": 56,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TR.",
+   "y": 710,
+   "h": 56,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.",
+   "y": 710,
+   "h": 56,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.text-end",
+   "y": 710,
+   "h": 56,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.text-end",
+   "y": 710,
+   "h": 56,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.text-end",
+   "y": 710,
+   "h": 56,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TBODY.",
+   "y": 766,
+   "h": 57,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TR.",
+   "y": 766,
+   "h": 57,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.",
+   "y": 766,
+   "h": 57,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.text-end",
+   "y": 766,
+   "h": 57,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.text-end",
+   "y": 766,
+   "h": 57,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.text-end",
+   "y": 766,
+   "h": 57,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.configurator-price-container",
+   "y": 823,
+   "h": 144,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TABLE.table table-borderless table-sm",
+   "y": 840,
+   "h": 110,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TBODY.",
+   "y": 840,
+   "h": 110,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TR.",
+   "y": 840,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.text-end w-100 fw-normal unitprice-label",
+   "y": 840,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.text-end configurator-price-element unitprice",
+   "y": 840,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TR.",
+   "y": 874,
+   "h": 43,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.text-end w-100 fw-bold totalprice",
+   "y": 874,
+   "h": 43,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.configurator-price-element fw-bold totalprice text-end text-",
+   "y": 874,
+   "h": 43,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TR.",
+   "y": 917,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TH.text-end w-100 fw-normal",
+   "y": 917,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "TD.configurator-price-element text-end",
+   "y": 917,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.row g-2 buy-widget-container",
+   "y": 975,
+   "h": 88,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.col-12",
+   "y": 983,
+   "h": 80,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "DIV.d-grid gap-2 mt-2",
+   "y": 991,
+   "h": 50,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "BUTTON#buyButton.btn btn-primary btn-buy",
+   "y": 991,
+   "h": 50,
+   "bron": ""
+  },
+  {
+   "t": 1421,
+   "type": "+",
+   "el": "A#js-print-offer.btn btn-block btn-outline-primary btn-custom-action",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1425,
+   "type": "+",
+   "el": "A#js-request-offer.btn btn-block btn-outline-primary btn-custom-action",
+   "y": 991,
+   "h": 50,
+   "bron": ""
+  },
+  {
+   "t": 1425,
+   "type": "+",
+   "el": "TEMPLATE#stepNextButton.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1425,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1427,
+   "type": "+",
+   "el": "DIV.d-grid mb-2",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1427,
+   "type": "+",
+   "el": "DIV.d-grid mb-2",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1427,
+   "type": "+",
+   "el": "DIV.d-grid mb-2",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1428,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "DIV.product-wishlist",
+   "y": 1144,
+   "h": 27,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "BUTTON.product-wishlist-5f3fce8d9c37bfe599cd19828fe3285c product-wi",
+   "y": 1144,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN.icon icon-heart-fill icon-md icon-wishlist icon-wishlist-add",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "path#icons-default-heart-fill.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN.icon icon-heart icon-md icon-wishlist icon-wishlist-not-adde",
+   "y": 1144,
+   "h": 20,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 1144,
+   "h": 20,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "path#icons-default-heart.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 1146,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN.product-wishlist-btn-content product-wishlist-btn-content-md",
+   "y": 1144,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "DIV.product-detail-ordernumber-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN.product-detail-ordernumber-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "META.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN.product-detail-ordernumber",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "DIV#js-stock-info-container.product-detail-stockinfo-container invisible",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN.product-detail-stockinfo-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN#js-stock-info.product-detail-stockinfo",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SPAN#js-stock-incoming.product-detail-stockIncoming",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1430,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.product-detail-tabs",
+   "y": 1234,
+   "h": 602,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.card card-tabs",
+   "y": 1274,
+   "h": 522,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.card-header product-detail-tab-navigation",
+   "y": 1274,
+   "h": 63,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "UL#product-detail-tabs.nav nav-tabs product-detail-tab-navigation-list",
+   "y": 1282,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "LI.nav-item",
+   "y": 1282,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "A#description-tab.nav-link active product-detail-tab-navigation-link",
+   "y": 1282,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.",
+   "y": 1300,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.product-detail-tab-navigation-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-medium-right",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "path#icons-solid-arrow-medium-right.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.product-detail-tab-preview",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.product-detail-tab-preview-more",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "LI.nav-item",
+   "y": 1282,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "A#review-tab.nav-link  product-detail-tab-navigation-link",
+   "y": 1282,
+   "h": 55,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.product-detail-tab-navigation-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-medium-right",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.product-detail-tabs-content card-body",
+   "y": 1337,
+   "h": 459,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.tab-content",
+   "y": 1337,
+   "h": 459,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV#description-tab-pane.tab-pane fade show active",
+   "y": 1337,
+   "h": 459,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.offcanvas-header",
+   "y": 1337,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "BUTTON.btn btn-light offcanvas-close js-offcanvas-close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.icon icon-x icon-sm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.offcanvas-body",
+   "y": 1337,
+   "h": 459,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.product-detail-description tab-pane-container",
+   "y": 1337,
+   "h": 459,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.h3 product-detail-description-title",
+   "y": 1377,
+   "h": 33,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.product-detail-description-text",
+   "y": 1444,
+   "h": 288,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.product-detail-properties",
+   "y": 1444,
+   "h": 312,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.row product-detail-properties-container",
+   "y": 1444,
+   "h": 312,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "DIV.col-md-10 col-lg-6",
+   "y": 1444,
+   "h": 312,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TABLE.table table-striped product-detail-properties-table",
+   "y": 1444,
+   "h": 296,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TBODY.",
+   "y": 1444,
+   "h": 296,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row static-property",
+   "y": 1444,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1444,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1444,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1481,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1481,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1481,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1491,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1518,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1518,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1518,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1528,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1555,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1555,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1555,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1565,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1592,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1592,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1592,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1602,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1629,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1629,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1629,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1639,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1666,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1666,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1666,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1676,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TR.properties-row",
+   "y": 1703,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TH.properties-label",
+   "y": 1703,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "TD.properties-value",
+   "y": 1703,
+   "h": 37,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SPAN.js-property-value",
+   "y": 1713,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1432,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#review-tab-pane.tab-pane fade show ",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.offcanvas-header",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-light offcanvas-close js-offcanvas-close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-x icon-sm",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.offcanvas-body",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-detail-review tab-pane-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.row product-detail-review-content js-review-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col-sm-4",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.sticky-top product-detail-review-widget",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-detail-review-info js-review-info",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.product-detail-review-title h5",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-detail-review-rating",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-review-rating",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-review-point",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-rating point-blank",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-star icon-xs",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "path#icons-solid-star.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-review-point",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-rating point-blank",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-star icon-xs",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-review-point",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-rating point-blank",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-star icon-xs",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-review-point",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-rating point-blank",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-star icon-xs",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-review-point",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.point-rating point-blank",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-star icon-xs",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-detail-review-teaser js-review-teaser",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.h4",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-primary product-detail-review-teaser-btn",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.product-detail-review-teaser-show",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.product-detail-review-teaser-hide",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col product-detail-review-main js-review-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#review-form.collapse multi-collapse",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.product-detail-review-login",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.card login-card",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.card-body",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "H2.card-title",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "FORM.login-form",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "INPUT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.login-form-description",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.row g-2",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.form-group col-md-6",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LABEL.form-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "INPUT#loginMail.form-control",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.form-group col-md-6",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LABEL.form-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "INPUT#loginPassword.form-control",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.login-password-recover",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.float-start",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.login-submit",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-primary",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.login-cancel",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.btn btn-outline-secondary ms-1",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#review-list.collapse multi-collapse product-detail-review-list show",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.row align-items-center product-detail-review-actions",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col product-detail-review-language",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "FORM.product-detail-review-language-form",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.form-check form-switch",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "INPUT#showForeignReviews.form-check-input",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LABEL.custom-control-label form-label",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SMALL.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "HR.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.text-right product-detail-review-counter",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.alert alert-info alert-has-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-info",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "path#icons-default-info.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.alert-content-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.alert-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "FOOTER.footer-main",
+   "y": 1901,
+   "h": 367,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 1902,
+   "h": 315,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#footerColumns.row footer-columns",
+   "y": 1929,
+   "h": 261,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col-md-4 footer-column js-footer-column",
+   "y": 1929,
+   "h": 241,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#collapseFooterHotlineTitle.footer-column-headline footer-headline js-footer-column-head",
+   "y": 1929,
+   "h": 35,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-toggle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-plus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-plus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "path#icons-default-plus.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-minus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-minus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "path#icons-default-minus.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#collapseFooterHotline.footer-column-content collapse js-footer-column-content foot",
+   "y": 1968,
+   "h": 169,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-content-inner",
+   "y": 1968,
+   "h": 132,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.footer-contact-hotline",
+   "y": 1968,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "UL.",
+   "y": 1968,
+   "h": 100,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.",
+   "y": 1968,
+   "h": 25,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "I.fas fa-map-marker-alt fa-lg",
+   "y": 1981,
+   "h": 1,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.",
+   "y": 1993,
+   "h": 25,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "I.fas fa-map-marker-alt fa-lg",
+   "y": 2006,
+   "h": 1,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.",
+   "y": 2018,
+   "h": 25,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "I.fas fa-phone-alt",
+   "y": 2023,
+   "h": 15,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 2022,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.",
+   "y": 2043,
+   "h": 25,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "I.fas fa-envelope",
+   "y": 2048,
+   "h": 15,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 2047,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.",
+   "y": 2084,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-contact-form",
+   "y": 2115,
+   "h": 22,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 2118,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col-md-4 footer-column js-footer-column",
+   "y": 1929,
+   "h": 241,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-headline footer-headline js-collapse-footer-co",
+   "y": 1929,
+   "h": 35,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-toggle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-plus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-plus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-minus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-minus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#collapseFooter1.footer-column-content collapse js-footer-column-content",
+   "y": 1975,
+   "h": 92,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-content-inner",
+   "y": 1975,
+   "h": 92,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "UL.list-unstyled",
+   "y": 1975,
+   "h": 60,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 1975,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 1980,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 2010,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 2015,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col-md-4 footer-column js-footer-column",
+   "y": 1929,
+   "h": 241,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-headline footer-headline js-collapse-footer-co",
+   "y": 1929,
+   "h": 35,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-toggle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-plus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-plus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-minus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-minus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#collapseFooter2.footer-column-content collapse js-footer-column-content",
+   "y": 1975,
+   "h": 194,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-content-inner",
+   "y": 1975,
+   "h": 194,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "UL.list-unstyled",
+   "y": 1975,
+   "h": 162,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 1975,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 1980,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 2010,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 2015,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 2044,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 2049,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 2078,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 2083,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LI.footer-link-item",
+   "y": 2112,
+   "h": 26,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.footer-link",
+   "y": 2117,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col-md-4 footer-column js-footer-column footer-column-custom",
+   "y": 1929,
+   "h": 241,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#collapseFooterCustomTitle.footer-column-headline footer-headline js-footer-column-head",
+   "y": 1929,
+   "h": 35,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-toggle",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-plus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-plus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.footer-minus-icon",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-minus",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV#collapseFooterCustom.footer-column-content collapse js-footer-column-content",
+   "y": 1975,
+   "h": 151,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-column-content-inner",
+   "y": 1975,
+   "h": 151,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-custom-title",
+   "y": 1975,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-custom-paymethods icon-container",
+   "y": 2002,
+   "h": 36,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "IMG.",
+   "y": 2008,
+   "h": 30,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "IMG.",
+   "y": 2008,
+   "h": 30,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.clearfix",
+   "y": 2038,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-custom-title",
+   "y": 2048,
+   "h": 16,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-custom-paymethods icon-container",
+   "y": 2074,
+   "h": 36,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "IMG.",
+   "y": 2080,
+   "h": 30,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "IMG.",
+   "y": 2080,
+   "h": 30,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.clearfix",
+   "y": 2110,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-logos",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-logo is-payment",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "IMG.img-fluid footer-logo-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-logo is-payment",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "IMG.img-fluid footer-logo-image",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-bottom",
+   "y": 2217,
+   "h": 51,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "UL.footer-service-menu-list list-unstyled",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-vat",
+   "y": 2233,
+   "h": 19,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "P.",
+   "y": 2233,
+   "h": 19,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 2235,
+   "h": 15,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.footer-copyright",
+   "y": 2233,
+   "h": 19,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-shopware icon-xs",
+   "y": 2234,
+   "h": 17,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "path#icons-default-shopware.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "STYLE.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "STYLE.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "LINK.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.scroll-up-container",
+   "y": 2268,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.scroll-up-button js-scroll-up-button",
+   "y": 852,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-primary",
+   "y": 852,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.icon icon-arrow-up icon-sm",
+   "y": 852,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "svg.[object SVGAnimatedString]",
+   "y": 852,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "defs.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "path#icons-default-arrow-up.[object SVGAnimatedString]",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "use.[object SVGAnimatedString]",
+   "y": 852,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.cookie-permission-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.row align-items-center",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col cookie-permission-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "A.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.col-12 col-md-auto d-flex justify-content-center flex-wrap c",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.cookie-permission-button js-cookie-permission-button",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-primary",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.js-cookie-configuration-button",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-primary",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "SPAN.js-cookie-accept-all-button",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn btn-primary",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.js-pseudo-modal-template",
+   "y": 2268,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.modal fade",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.modal-dialog",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.modal-content",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.modal-header only-close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.modal-title js-pseudo-modal-template-title-element h5",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "BUTTON.btn-close close",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "DIV.modal-body js-pseudo-modal-template-content-element",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1439,
+   "type": "+",
+   "el": "TEMPLATE.js-pseudo-modal-back-btn-template",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1448,
+   "type": "attr:style",
+   "el": "HEADER.header-main",
+   "y": 0,
+   "h": 95
+  },
+  {
+   "t": 1448,
+   "type": "attr:style",
+   "el": "DIV.nav-main",
+   "y": 95,
+   "h": 45
+  },
+  {
+   "t": 1908,
+   "type": "attr:class",
+   "el": "DIV.product-detail-configurator-group-title collapse-title d-fle",
+   "y": 197,
+   "h": 59
+  },
+  {
+   "t": 1908,
+   "type": "attr:class",
+   "el": "DIV#qty-title.collapse-title d-flex",
+   "y": 409,
+   "h": 59
+  },
+  {
+   "t": 1908,
+   "type": "attr:class",
+   "el": "DIV#imprint-title.collapse-title collapsed d-flex",
+   "y": 469,
+   "h": 59
+  },
+  {
+   "t": 1908,
+   "type": "attr:class",
+   "el": "DIV#delivery-date-title.collapse-title d-flex collapsed",
+   "y": 530,
+   "h": 59
+  },
+  {
+   "t": 1908,
+   "type": "attr:class",
+   "el": "DIV#comment-title.collapse-title collapsed d-flex",
+   "y": 590,
+   "h": 59
+  },
+  {
+   "t": 1908,
+   "type": "attr:class",
+   "el": "DIV#qty-title.collapse-title d-flex",
+   "y": 409,
+   "h": 59
+  },
+  {
+   "t": 1908,
+   "type": "+",
+   "el": "DIV.col-md-3 flyout-spacer",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1908,
+   "type": "+",
+   "el": "DIV.col-md-3 flyout-spacer",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1908,
+   "type": "+",
+   "el": "DIV.col-md-3 navigation-flyout-category flyout-cta-col",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1910,
+   "type": "+",
+   "el": "DIV.col-auto",
+   "y": 52,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1913,
+   "type": "+",
+   "el": "DIV.rg-usp-slider",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1915,
+   "type": "+",
+   "el": "H1.product-detail-name",
+   "y": 181,
+   "h": 88,
+   "bron": ""
+  },
+  {
+   "t": 1915,
+   "type": "attr:class",
+   "el": "DIV#qty-title.collapse-title d-flex",
+   "y": 501,
+   "h": 59
+  },
+  {
+   "t": 1915,
+   "type": "+",
+   "el": "SPAN.product-block-prices-savings",
+   "y": 783,
+   "h": 29,
+   "bron": ""
+  },
+  {
+   "t": 1915,
+   "type": "+",
+   "el": "SPAN.product-block-prices-savings",
+   "y": 850,
+   "h": 29,
+   "bron": ""
+  },
+  {
+   "t": 1915,
+   "type": "+",
+   "el": "SPAN.product-block-prices-savings",
+   "y": 914,
+   "h": 29,
+   "bron": ""
+  },
+  {
+   "t": 1915,
+   "type": "+",
+   "el": "BUTTON.gallery-zoom-trigger",
+   "y": 245,
+   "h": 40,
+   "bron": ""
+  },
+  {
+   "t": 1944,
+   "type": "+",
+   "el": "DIV.rg-qty-stepper",
+   "y": 584,
+   "h": 36,
+   "bron": ""
+  },
+  {
+   "t": 1944,
+   "type": "+",
+   "el": "BUTTON.rg-qty-stepper__btn rg-qty-stepper__btn--minus",
+   "y": 585,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1944,
+   "type": "+",
+   "el": "INPUT#product-order-quantity.form-control product-detail-quantity-select",
+   "y": 585,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1944,
+   "type": "+",
+   "el": "BUTTON.rg-qty-stepper__btn rg-qty-stepper__btn--plus",
+   "y": 585,
+   "h": 34,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV.row gallery-slider-row is-loading js-gallery-zoom-modal-cont",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.tns-t-subp2",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "P.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1.gallery-slider-container  tns-slider tns-carousel tns-subpix",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "STYLE.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1.gallery-slider-container  tns-slider tns-carousel tns-subpix",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1.gallery-slider-container  tns-slider tns-carousel tns-subpix",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV#tns1-ow.tns-outer",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV#tns1.gallery-slider-container  tns-slider tns-carousel tns-subpix",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1-item0.gallery-slider-item-container tns-item tns-slide-active",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1-item1.gallery-slider-item-container tns-item",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1-item2.gallery-slider-item-container tns-item",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1-item3.gallery-slider-item-container tns-item",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1-item4.gallery-slider-item-container tns-item",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container tns-item tns-slide-cloned",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.gallery-slider-item-container tns-item tns-slide-cloned",
+   "y": 229,
+   "h": 430,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:style",
+   "el": "DIV#tns1.gallery-slider-container  tns-slider tns-carousel tns-subpix",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:style",
+   "el": "DIV#tns1.gallery-slider-container  tns-slider tns-carousel tns-subpix",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns1-item0.gallery-slider-item-container tns-item tns-slide-active",
+   "y": 229,
+   "h": 430
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.tns-liveregion tns-visually-hidden",
+   "y": 229,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2-item0.gallery-slider-thumbnails-item tns-nav-active tns-item",
+   "y": 229,
+   "h": 75
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2.gallery-slider-thumbnails  tns-slider tns-carousel tns-subpi",
+   "y": 229,
+   "h": 375
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "STYLE.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2.gallery-slider-thumbnails  tns-slider tns-carousel tns-subpi",
+   "y": 229,
+   "h": 375
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2.gallery-slider-thumbnails  tns-slider tns-carousel tns-subpi",
+   "y": 229,
+   "h": 375
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV#tns2-ow.tns-outer",
+   "y": 229,
+   "h": 365,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV#tns2.gallery-slider-thumbnails  tns-slider tns-carousel tns-subpi",
+   "y": 229,
+   "h": 375,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2-item0.gallery-slider-thumbnails-item tns-nav-active tns-item",
+   "y": 229,
+   "h": 75
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2-item1.gallery-slider-thumbnails-item tns-item",
+   "y": 304,
+   "h": 75
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2-item2.gallery-slider-thumbnails-item tns-item",
+   "y": 379,
+   "h": 75
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2-item3.gallery-slider-thumbnails-item tns-item",
+   "y": 454,
+   "h": 75
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "DIV#tns2-item4.gallery-slider-thumbnails-item tns-item",
+   "y": 529,
+   "h": 75
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loading",
+   "y": 234,
+   "h": 55
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loading",
+   "y": 309,
+   "h": 55
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loading",
+   "y": 384,
+   "h": 55
+  },
+  {
+   "t": 1983,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loading",
+   "y": 459,
+   "h": 55
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "INPUT. form-control input",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "+",
+   "el": "DIV.flatpickr-calendar hasWeeks animate",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 1983,
+   "type": "attr:style",
+   "el": "DIV.cookie-permission-container",
+   "y": 833,
+   "h": 67
+  },
+  {
+   "t": 1986,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image tns-complete",
+   "y": 234,
+   "h": 55
+  },
+  {
+   "t": 1986,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image tns-complete",
+   "y": 234,
+   "h": 55
+  },
+  {
+   "t": 1986,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image tns-complete",
+   "y": 384,
+   "h": 55
+  },
+  {
+   "t": 1986,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image tns-complete",
+   "y": 384,
+   "h": 55
+  },
+  {
+   "t": 1993,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 309,
+   "h": 55
+  },
+  {
+   "t": 1993,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 309,
+   "h": 55
+  },
+  {
+   "t": 1993,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 309,
+   "h": 55
+  },
+  {
+   "t": 1995,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 459,
+   "h": 55
+  },
+  {
+   "t": 1995,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 459,
+   "h": 55
+  },
+  {
+   "t": 1995,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 459,
+   "h": 55
+  },
+  {
+   "t": 2051,
+   "type": "attr:style",
+   "el": "DIV.nav-main nav-hidden",
+   "y": 60,
+   "h": 45
+  },
+  {
+   "t": 2051,
+   "type": "attr:class",
+   "el": "DIV.nav-main nav-hidden",
+   "y": 60,
+   "h": 45
+  },
+  {
+   "t": 2262,
+   "type": "attr:class",
+   "el": "DIV#qty-wrapper.collapse-content ps-4 ms-1 show collapse",
+   "y": 158,
+   "h": 460
+  },
+  {
+   "t": 2262,
+   "type": "attr:class",
+   "el": "DIV#qty-wrapper.collapse-content ps-4 ms-1 show collapse",
+   "y": 158,
+   "h": 460
+  },
+  {
+   "t": 2262,
+   "type": "attr:style",
+   "el": "DIV#qty-wrapper.collapse-content ps-4 ms-1 show collapse",
+   "y": 158,
+   "h": 460
+  },
+  {
+   "t": 2623,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 337,
+   "h": 55
+  },
+  {
+   "t": 2623,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 337,
+   "h": 55
+  },
+  {
+   "t": 2623,
+   "type": "attr:class",
+   "el": "IMG.gallery-slider-thumbnails-image loaded tns-complete",
+   "y": 337,
+   "h": 55
+  },
+  {
+   "t": 2626,
+   "type": "attr:style",
+   "el": "DIV#tns2-mw.tns-ovh",
+   "y": 32,
+   "h": 375
+  },
+  {
+   "t": 2626,
+   "type": "attr:style",
+   "el": "DIV#tns2.gallery-slider-thumbnails  tns-slider tns-carousel tns-subpi",
+   "y": 32,
+   "h": 375
+  },
+  {
+   "t": 2626,
+   "type": "attr:style",
+   "el": "DIV#tns2.gallery-slider-thumbnails  tns-slider tns-carousel tns-subpi",
+   "y": 32,
+   "h": 375
+  },
+  {
+   "t": 2626,
+   "type": "attr:class",
+   "el": "DIV#tns2-item0.gallery-slider-thumbnails-item tns-nav-active tns-item tns-s",
+   "y": 32,
+   "h": 75
+  },
+  {
+   "t": 2626,
+   "type": "attr:class",
+   "el": "DIV#tns2-item1.gallery-slider-thumbnails-item tns-item tns-slide-active",
+   "y": 107,
+   "h": 75
+  },
+  {
+   "t": 2626,
+   "type": "attr:class",
+   "el": "DIV#tns2-item2.gallery-slider-thumbnails-item tns-item tns-slide-active",
+   "y": 182,
+   "h": 75
+  },
+  {
+   "t": 2626,
+   "type": "attr:class",
+   "el": "DIV#tns2-item3.gallery-slider-thumbnails-item tns-item tns-slide-active",
+   "y": 257,
+   "h": 75
+  },
+  {
+   "t": 2626,
+   "type": "attr:class",
+   "el": "DIV#tns2-item4.gallery-slider-thumbnails-item tns-item tns-slide-active",
+   "y": 332,
+   "h": 75
+  },
+  {
+   "t": 2626,
+   "type": "+",
+   "el": "DIV.tns-liveregion tns-visually-hidden",
+   "y": 32,
+   "h": 21,
+   "bron": ""
+  },
+  {
+   "t": 2626,
+   "type": "attr:class",
+   "el": "DIV.row gallery-slider-row js-gallery-zoom-modal-container js-sl",
+   "y": 32,
+   "h": 468
+  },
+  {
+   "t": 2691,
+   "type": "+",
+   "el": "SPAN.header-cart-icon",
+   "y": 26,
+   "h": 18,
+   "bron": ""
+  },
+  {
+   "t": 2691,
+   "type": "+",
+   "el": "SPAN.header-cart-total",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2727,
+   "type": "+",
+   "el": "DIV#detailed-price-table-container.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2727,
+   "type": "+",
+   "el": "DIV.collapse-group mb-3",
+   "y": 800,
+   "h": 372,
+   "bron": ""
+  },
+  {
+   "t": 2727,
+   "type": "+",
+   "el": "DIV.configurator-price-container",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2727,
+   "type": "+",
+   "el": "DIV.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2877,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2877,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2877,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 2877,
+   "type": "+",
+   "el": "SCRIPT.",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  },
+  {
+   "t": 5418,
+   "type": "+",
+   "el": "DIV.rg-usp-slider-item rg-usp-slider-item--animate",
+   "y": 0,
+   "h": 0,
+   "bron": ""
+  }
+ ]
+}

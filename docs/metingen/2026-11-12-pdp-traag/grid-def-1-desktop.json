@@ -1,0 +1,373 @@
+{
+ "url": "https://rootedgoods.eu/Citizen-Green-Vanguard-gerecyclede-rugzak/A33-12080355",
+ "profiel": "desktop",
+ "drel": "lan",
+ "tijdstip": "2026-11-12T11:23:00.851Z",
+ "titel": "Citizen Green Vanguard gerecyclede rugzak | Marineblauw | A33-12080355",
+ "ttfb_ms": 273,
+ "html_klaar_ms": 298,
+ "dcl_ms": 588,
+ "load_ms": 749,
+ "fcp_ms": 468,
+ "lcp": {
+  "t": 468,
+  "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+  "url": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_800x800.jpg?1775153304"
+ },
+ "cls": 0.157,
+ "lange_taken": 2,
+ "tbt_ms": 27,
+ "langste_taak_ms": 74,
+ "configurator_in_dom_ms": 457,
+ "requests": 40,
+ "overdracht_kb": 1001,
+ "dom_nodes": 1178,
+ "laatste_request_klaar_ms": 816,
+ "laatste_requests": [
+  {
+   "n": "https://pagead2.googlesyndication.com/ccm/collect?rcb=1&frm=0&apvc=1&tid=AW-18482560146&en=page_view&dl=https%3A%2F%2Frootedgoods.eu%2FCitizen-Green-V",
+   "t": "fetch",
+   "s": 748,
+   "d": 68,
+   "ttfb": -747,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://region1.google-analytics.com/g/collect?v=2&tid=G-VT3YF07ZGB&gtm=45je6bb0h2v9262494562za20ozb9262488782zd9262488782xf1&_p=1794482576378&gcs=G10",
+   "t": "fetch",
+   "s": 737,
+   "d": 66,
+   "ttfb": -737,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/detail/properties/add",
+   "t": "xmlhttprequest",
+   "s": 557,
+   "d": 153,
+   "ttfb": 153,
+   "b": 302,
+   "dec": 2
+  },
+  {
+   "n": "https://rootedgoods.eu/widgets/checkout/info",
+   "t": "xmlhttprequest",
+   "s": 563,
+   "d": 137,
+   "ttfb": 137,
+   "b": 300,
+   "dec": 0
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtag/js?id=G-VT3YF07ZGB&cx=c&gtm=4e6bb0h2",
+   "t": "script",
+   "s": 635,
+   "d": 54,
+   "ttfb": -635,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=qi02h",
+   "t": "script",
+   "s": 640,
+   "d": 0,
+   "ttfb": -640,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.clarity.ms/tag/y9d3vyhhk8?ref=gtm",
+   "t": "script",
+   "s": 639,
+   "d": 0,
+   "ttfb": -639,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-300.woff2",
+   "t": "css",
+   "s": 589,
+   "d": 41,
+   "ttfb": 40,
+   "b": 15264,
+   "dec": 14964
+  },
+  {
+   "n": "https://rootedgoods.eu/livestock/info",
+   "t": "xmlhttprequest",
+   "s": 421,
+   "d": 160,
+   "ttfb": 159,
+   "b": 390,
+   "dec": 90
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK",
+   "t": "script",
+   "s": 414,
+   "d": 132,
+   "ttfb": -414,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 435,
+   "d": 87,
+   "ttfb": 82,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+   "t": "css",
+   "s": 434,
+   "d": 87,
+   "ttfb": 81,
+   "b": 15372,
+   "dec": 15072
+  }
+ ],
+ "grootste_requests": [
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/css/all.css?1794392064",
+   "t": "link",
+   "s": 280,
+   "d": 128,
+   "ttfb": 70,
+   "b": 195627,
+   "dec": 927972
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 280,
+   "d": 233,
+   "ttfb": 205,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 435,
+   "d": 87,
+   "ttfb": 82,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/cf/bc/9c/1234567890/007aa79efbc3652e869208ebdf7890ca5b61941c0d7e619967ffa35f59a306ed_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 299,
+   "d": 184,
+   "ttfb": 180,
+   "b": 65216,
+   "dec": 64916
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/19/43/1d/1234567890/705150ee6710f6eb8c5938be6d78e26a1f6c1654495f20d4cf73d5f932eac24e_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 298,
+   "d": 109,
+   "ttfb": 96,
+   "b": 49646,
+   "dec": 49346
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/47/aa/ab/1234567890/0db47d51cc1da2046ae871788efcbe6510939e9970b1e87b97e4c3949f2197ab_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 298,
+   "d": 76,
+   "ttfb": 65,
+   "b": 49407,
+   "dec": 49107
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/7d/23/d7/1234567890/0059c11361d15df6d7c0bcffd341f77a86173304694b68d43f03722e25d85b0b_800x800.jpg?1775153304",
+   "t": "img",
+   "s": 298,
+   "d": 51,
+   "ttfb": 43,
+   "b": 48016,
+   "dec": 47716
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/cf/bc/9c/1234567890/007aa79efbc3652e869208ebdf7890ca5b61941c0d7e619967ffa35f59a306ed_400x400.jpg?1775153304",
+   "t": "img",
+   "s": 299,
+   "d": 184,
+   "ttfb": 180,
+   "b": 22041,
+   "dec": 21741
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/css/all.min.css?1794392060",
+   "t": "link",
+   "s": 279,
+   "d": 47,
+   "ttfb": 47,
+   "b": 21801,
+   "dec": 73890
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/19/43/1d/1234567890/705150ee6710f6eb8c5938be6d78e26a1f6c1654495f20d4cf73d5f932eac24e_400x400.jpg?1775153304",
+   "t": "img",
+   "s": 299,
+   "d": 187,
+   "ttfb": 183,
+   "b": 17069,
+   "dec": 16769
+  }
+ ],
+ "lange_taken_lijst": [
+  [
+   514,
+   74
+  ],
+  [
+   694,
+   53
+  ]
+ ],
+ "verschuivingen": [
+  {
+   "t": 485,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      904,
+      349,
+      80,
+      88
+     ],
+     "naar": [
+      944,
+      349,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      836,
+      349,
+      60,
+      88
+     ],
+     "naar": [
+      856,
+      349,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "::after.",
+     "van": [
+      758,
+      445,
+      80,
+      31
+     ],
+     "naar": [
+      768,
+      445,
+      80,
+      31
+     ]
+    },
+    {
+     "el": "::after.",
+     "van": [
+      853,
+      445,
+      26,
+      15
+     ],
+     "naar": [
+      883,
+      445,
+      26,
+      15
+     ]
+    }
+   ]
+  },
+  {
+   "t": 599,
+   "v": 0.156,
+   "src": [
+    {
+     "el": "DIV.",
+     "van": [
+      768,
+      741,
+      632,
+      159
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "undefined.",
+     "van": [
+      768,
+      180,
+      632,
+      97
+     ],
+     "naar": [
+      768,
+      176,
+      632,
+      97
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      681,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      560,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "extra": null
+}

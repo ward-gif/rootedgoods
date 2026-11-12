@@ -1,0 +1,25 @@
+== 2026-11-12 11:47:27 ==
+zonder-query | ttfb 21.823687s | totaal 23.644365s | 200
+zonder-query | ttfb 0.204145s | totaal 0.230271s | 200
+zonder-query | ttfb 0.187597s | totaal 0.207197s | 200
+zonder-query | ttfb 1.206028s | totaal 1.290534s | 200
+zonder-query | ttfb 4.300007s | totaal 5.734294s | 200
+zonder-query | ttfb 0.190495s | totaal 0.214905s | 200
+met-lastgroup | ttfb 0.230690s | totaal 0.248299s | 200
+met-lastgroup | ttfb 0.284896s | totaal 0.305635s | 200
+met-lastgroup | ttfb 0.263349s | totaal 0.285427s | 200
+met-lastgroup | ttfb 0.215201s | totaal 0.244900s | 200
+met-lastgroup | ttfb 0.211308s | totaal 0.238667s | 200
+met-lastgroup | ttfb 0.277378s | totaal 0.309428s | 200
+home | ttfb 0.323517s | totaal 0.345792s | 200
+home | ttfb 0.294177s | totaal 0.311771s | 200
+home | ttfb 0.226340s | totaal 0.263257s | 200
+home | ttfb 0.212180s | totaal 0.235319s | 200
+home | ttfb 0.262557s | totaal 0.302021s | 200
+home | ttfb 0.460653s | totaal 0.553254s | 200
+categorie | ttfb 1.653054s | totaal 3.417440s | 200
+categorie | ttfb 0.540014s | totaal 0.597514s | 200
+categorie | ttfb 2.537098s | totaal 2.727238s | 200
+categorie | ttfb 0.208716s | totaal 0.256603s | 200
+categorie | ttfb 3.701003s | totaal 4.933811s | 200
+categorie | ttfb 4.671594s | totaal 7.355239s | 200

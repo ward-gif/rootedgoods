@@ -1,0 +1,12 @@
+A huidig  run 1 | AFGEBROKEN (geen load binnen 90 s)
+C grid    run 1 | cls 0.119 | grootste sprong 0.107 | load 2105
+A huidig  run 2 | cls 0.229 | grootste sprong 0.226 | load 48481
+C grid    run 2 | cls 0.11 | grootste sprong 0.108 | load 622
+A huidig  run 3 | cls 0.244 | grootste sprong 0.244 | load 648
+C grid    run 3 | cls 0.11 | grootste sprong 0.107 | load 8099
+A huidig  run 4 | cls 0.229 | grootste sprong 0.226 | load 40259
+C grid    run 4 | cls 0.111 | grootste sprong 0.107 | load 684
+A huidig  run 5 | cls 0.229 | grootste sprong 0.226 | load 4038
+C grid    run 5 | AFGEBROKEN (geen load binnen 90 s)
+A huidig  run 6 | cls 0.244 | grootste sprong 0.244 | load 690
+C grid    run 6 | cls 0.109 | grootste sprong 0.107 | load 624

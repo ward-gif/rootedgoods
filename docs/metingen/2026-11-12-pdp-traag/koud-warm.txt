@@ -1,0 +1,19 @@
+== 2026-11-12 11:56:15 koud (unieke query) tegen warm (zelfde URL direct erna) ==
+koud 0.466459s [age: 0]  warm 0.375530s [age: 1]
+koud 0.413180s [age: 0]  warm 1.026912s [age: 2]
+koud 0.591014s [age: 0]  warm 0.000000s []
+koud 0.596641s [age: 0]  warm 0.266154s [age: 1]
+koud 0.549612s [age: 0]  warm 0.675148s [age: 1]
+== headers volledig (koud) ==
+HTTP/2 200 
+age: 0
+cache-control: no-cache, private
+content-type: text/html; charset=UTF-8
+date: Thu, 12 Nov 2026 11:01:58 GMT
+referrer-policy: strict-origin-when-cross-origin
+server: Apache
+set-cookie: session-=0bdf0bl6a0tlk7uvs41f2ejr9i; expires=Sun, 15 Nov 2026 11:01:58 GMT; Max-Age=259200; path=/; secure; httponly; samesite=lax
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: deny
+

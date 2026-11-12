@@ -1318,25 +1318,17 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!document.body.classList.contains('is-ctl-product')) return;
 
   document.addEventListener('DOMContentLoaded', function () {
-    moveProductNameToBuyCol();
     openQuantityAccordionByDefault();
     keepConfiguratorStepsOpen();
     enhanceTierPriceTable();
     addGalleryZoomButton();
   });
 
-  /* ---- 3.1 Productnaam verplaatsen naar bovenaan de buy-col (col-lg-5)
-   * Promidata rendert de h1 standaard in een eigen row boven gallery+buy.
-   * Wij willen 'm naast de gallery, bovenaan de rechter kolom (Sugarcoat-style).
-   * Alleen op desktop (>= 992px); op mobile blijft de naam waar 'ie is. */
-  function moveProductNameToBuyCol() {
-    if (window.innerWidth < 992) return;
-    var h1 = document.querySelector('.product-detail-name');
-    var buyCol = document.querySelector('.product-detail-buy');
-    if (!h1 || !buyCol) return;
-    if (buyCol.firstChild === h1) return; // al verplaatst — idempotent
-    buyCol.insertBefore(h1, buyCol.firstChild);
-  }
+  /* ---- 3.1 Productnaam: staat sinds 12 nov 2026 in CSS (sectie 15), niet meer in JS.
+   * De h1 werd hier bij DOMContentLoaded naar de buy-col verplaatst, nadat de CSS
+   * de oorspronkelijke kopregel al had verborgen. Het kopersblok sprong daardoor
+   * 92 px omlaag (CLS 0,23). Nu zet een CSS-raster de titel vanaf de eerste weergave
+   * rechtsboven. Zie docs/metingen/2026-11-12-pdp-traag/. */
 
   /* ---- 3.2 "Aantal" accordion standaard open
    * Promidata rendert collapsed; wij willen 'm direct zichtbaar zodat

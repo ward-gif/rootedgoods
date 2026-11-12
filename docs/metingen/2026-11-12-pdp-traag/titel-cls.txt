@@ -1,0 +1,6 @@
+js-controle run 1 | cls 0.287 | grote verschuivingen (ms,waarde): [(524, 0.226), (685, 0.021)] | load 681
+js-controle run 2 | cls 0.281 | grote verschuivingen (ms,waarde): [(489, 0.226), (616, 0.016)] | load 617
+js-controle run 3 | cls 0.299 | grote verschuivingen (ms,waarde): [(517, 0.244), (673, 0.015)] | load 559
+js-zonder-titelverplaatsing run 1 | cls 0.082 | grote verschuivingen (ms,waarde): [(619, 0.022)] | load 616
+js-zonder-titelverplaatsing run 2 | cls 0.075 | grote verschuivingen (ms,waarde): [] | load 1483
+js-zonder-titelverplaatsing run 3 | cls 0.078 | grote verschuivingen (ms,waarde): [] | load 1662

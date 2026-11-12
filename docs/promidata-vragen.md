@@ -719,6 +719,60 @@ mogelijk in de head gezet, dus dit is het beste geval. Dit hoort in dezelfde wij
 **Prioriteit:** laag tot midden. Op de kerstpagina blijft de shift met 0,06 onder de 0,1 die als
 goed telt. Op de home komt hij met 0,09 op de grens, en daar staan nog andere shifts naast.
 
+### A6. Verbindingen met rootedgoods.eu stokken, ook bij statische bestanden
+
+**Wat:** op 12 november 2026 lag de wachttijd niet bij Shopware dat een pagina bouwt,
+maar bij de verbinding met de server. Een deel van de aanvragen krijgt de TLS-handshake
+pas na 1 tot 2 seconden (normaal 0,1 s), een deel krijgt na een snelle eerste byte de
+rest pas na 8 seconden, en een deel stokt helemaal. Een CSS-bestand uit het thema had na
+45 seconden 32 KB van de ruim 190 KB binnen. Dat is geen paginabouw: dat bestand komt
+rechtstreeks van de webserver.
+
+Gemeten vanaf Wards netwerk, elke aanvraag 45 seconden de tijd. De controles en de twee
+laatste rijen liepen tegelijk; de productpagina is kort daarvoor gemeten:
+
+| Doel | n | Mediaan totaaltijd | Boven 2 s | Langste |
+|---|---:|---:|---:|---:|
+| Google (controle) | 12 | 0,16 s | 0 | 0,2 s |
+| cdn.jsdelivr.net (controle) | 12 | 0,16 s | 0 | 0,2 s |
+| rootedgoods.eu, productpagina | 15 | 2,12 s | 8 | 45 s (afgebroken) |
+| rootedgoods.eu, `/alle-producten/` | 12 | 0,38 s | 3 | 25,4 s |
+| rootedgoods.eu, `all.css` uit het thema | 12 | 0,34 s | 2 | 45 s (afgebroken) |
+
+Twaalf volledige laadbeurten van de productpagina in een browser (headless Chromium,
+zelfde URL, achter elkaar): twee haalden in 90 seconden het laad-event niet, twee deden
+er 40 en 48 seconden over, één 8 seconden, zes waren klaar binnen 2,1 seconden. De
+slechtste ervaring is dus niet traag maar onvoorspelbaar: dezelfde pagina laadt in
+0,6 seconden of in bijna een minuut.
+
+Ruwe uitvoer: `docs/metingen/2026-11-12-pdp-traag/` (`ttfb-opgesplitst.txt`,
+`controle-uitvoer.txt`, `reeks-uitvoer.txt`). Meetscript `controle.sh` in dezelfde map.
+
+**Wat we vragen:**
+
+1. **Kunnen jullie in de serverlogs kijken naar 12 november, rond 11:50 tot 12:30?** We
+   zoeken: Apache die zijn maximum aantal gelijktijdige verbindingen haalt, een
+   wachtrij voor TLS, een bandbreedtegrens, of een andere bezoeker/bot die de server
+   bezet houdt.
+2. **Draaien er op die server meer webshops of zware taken (import, indexering) op
+   het moment dat dit gebeurt?** Het patroon is willekeurig, niet gebonden aan een
+   pagina.
+3. **Hoeveel gelijktijdige verbindingen kan de server aan, en wat gebeurt er bij meer?**
+
+**Waarom het telt:** deze pagina ging naar een klant. Wie een link krijgt en een lege
+pagina ziet, beoordeelt niet de pagina maar ons. Dit kunnen we niet zelf oplossen of
+omzeilen, want het zit onder de laag waar onze CSS en JS bij kunnen.
+
+**Prioriteit:** hoog, en vóór de rest van deze lijst. A4 (cache) gaat over de wachttijd
+voor de HTML als de cache koud is; dit gaat over verbindingen die blijven hangen, ook
+voor bestanden die nooit uit de cache komen.
+
+**Wat we niet weten:** of het ook bij andere bezoekers gebeurt of alleen op Wards
+verbinding. Google en jsDelivr deden het in dezelfde minuten niet, wat een lokaal
+netwerkprobleem onwaarschijnlijk maakt, maar een tweede meetpunt (bijvoorbeeld de
+PageSpeed-servers, die in dezelfde uren 20 ms respons zagen) is nodig om het te
+bewijzen.
+
 ---
 
 ## Nog uit te zoeken voordat we het vraagt

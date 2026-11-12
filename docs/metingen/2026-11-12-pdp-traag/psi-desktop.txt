@@ -1,0 +1,9 @@
+PageSpeed, desktop, 1 pagina's, 2026-11-12
+Mediaan van de metingen. Een losse PSI-meting schommelt op deze site met een
+factor 2 tot 3, dus een enkel getal zegt hier niets. Spreiding staat achteraan.
+
+pagina                                  score       LCP       CLS       TBT        SI       FCP
+-----------------------------------------------------------------------------------------------
+/Citizen-Green-Vanguard-gerecyclede-rugzak/A33-12080355     69      1.3s     0.253      0.3s      0.9s      0.6s  [69-79]
+
+opgeslagen: docs/metingen/psi-2026-11-12_1153-desktop.json

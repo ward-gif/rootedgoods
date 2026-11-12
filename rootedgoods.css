@@ -2441,8 +2441,22 @@ img {
 
 /* Desktop — originele headline-row verbergen (h1 wordt verplaatst). */
 @media (min-width: 992px) {
-  .product-detail-headline {
-    display: none;
+  /* De titel staat vanaf de eerste weergave in de rechterkolom, zonder JS-verplaatsing
+     (die gaf een layoutsprong van 0,23). Het raster zet galerij links over twee rijen,
+     titel rechts boven en het kopersblok rechts eronder. */
+  .product-detail-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    margin-inline: -20px;
+    align-items: start;
+  }
+  .product-detail-content > .product-detail-main { display: contents; }
+  .product-detail-content > .product-detail-main > .product-detail-media { grid-column: 1; grid-row: 1 / span 2; width: auto !important; max-width: none !important; flex: none !important; }
+  .product-detail-content > .product-detail-headline { grid-column: 2; grid-row: 1; display: block; margin: 0; padding: 0 20px 0 48px; width: auto; max-width: none; }
+  .product-detail-content > .product-detail-main > .product-detail-buy { grid-column: 2; grid-row: 2; width: auto !important; max-width: none !important; flex: none !important; }
+  .product-detail-headline .product-detail-name-container { padding: 0; }
+  .product-detail-headline .product-detail-name {
+    font-size: 2.5rem; font-weight: 700; text-align: left; margin: -1rem 0 1.25rem 0; line-height: 1.1;
   }
 }
 
@@ -12701,6 +12715,10 @@ html:not(.rg-band-pagina):has(.rg-page-hero--band) [data-product-slider] { displ
    Terugdraaien: deze sectie weghalen. */
 /* Weigeren: tekst in dezelfde cognackleur als de rand (de rand komt van .btn-primary, sectie 8). */
 .cookie-permission-container .js-cookie-permission-button .btn.btn-primary { color: #ad6331; }
+/* Desktop: Configureren krijgt dezelfde omlijnde knop als Weigeren (onder 992 px is het een tekstlink). */
+@media (min-width: 992px) {
+  .cookie-permission-container .js-cookie-configuration-button .btn.btn-primary { color: #ad6331; }
+}
 @media (max-width: 991.98px) {
   .cookie-permission-container {
     padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));

@@ -1,0 +1,8 @@
+geen run 1 | cls 0.282 | grote verschuivingen (ms,waarde): [(6166, 0.226)] | load 6232
+geen run 2 | cls 0.288 | grote verschuivingen (ms,waarde): [(554, 0.226), (690, 0.021)] | load 686
+zonder-onze-js run 1 | cls 0.071 | grote verschuivingen (ms,waarde): [] | load 2296
+zonder-onze-js run 2 | cls 0.071 | grote verschuivingen (ms,waarde): [] | load 51732
+zonder-onze-css run 1 | cls 1.015 | grote verschuivingen (ms,waarde): [(506, 0.981), (648, 0.011)] | load 646
+zonder-onze-css run 2 | cls 1.01 | grote verschuivingen (ms,waarde): [(7795, 0.981)] | load 7797
+zonder-beide run 1 | cls 0.036 | grote verschuivingen (ms,waarde): [] | load 1480
+zonder-beide run 2 | cls 0.039 | grote verschuivingen (ms,waarde): [(600, 0.01)] | load 600

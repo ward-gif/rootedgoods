@@ -1,0 +1,442 @@
+{
+ "url": "https://rootedgoods.eu/Wellmark-geurstokjes/A34-12640922",
+ "profiel": "desktop",
+ "drel": "lan",
+ "tijdstip": "2026-11-12T11:32:53.935Z",
+ "titel": "Wellmark geurstokjes | Kastanjebruin | A34-12640922",
+ "ttfb_ms": 272,
+ "html_klaar_ms": 305,
+ "dcl_ms": 558,
+ "load_ms": 709,
+ "fcp_ms": 448,
+ "lcp": {
+  "t": 572,
+  "el": "IMG.img-fluid gallery-slider-image magnifier-image js-magnifier-",
+  "url": "https://rootedgoods.eu/shared/thumbnail/c6/9c/2d/1234567890/6525bd926b2f2256fb23af2791ab93558035f21834a1e4695abbc5d858ed6eed_800x800.jpg?1787207665"
+ },
+ "cls": 0.138,
+ "lange_taken": 2,
+ "tbt_ms": 33,
+ "langste_taak_ms": 71,
+ "configurator_in_dom_ms": 440,
+ "requests": 35,
+ "overdracht_kb": 820,
+ "dom_nodes": 1149,
+ "laatste_request_klaar_ms": 755,
+ "laatste_requests": [
+  {
+   "n": "https://pagead2.googlesyndication.com/ccm/collect?rcb=1&frm=0&apvc=1&tid=AW-18482560146&en=page_view&dl=https%3A%2F%2Frootedgoods.eu%2FWellmark-geurst",
+   "t": "fetch",
+   "s": 707,
+   "d": 48,
+   "ttfb": -707,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://pagead2.googlesyndication.com/ccm/collect?rcb=1&frm=0&apvc=1&tid=AW-18482560146&en=source_update&dl=https%3A%2F%2Frootedgoods.eu%2FWellmark-ge",
+   "t": "fetch",
+   "s": 712,
+   "d": 43,
+   "ttfb": -711,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/widgets/checkout/info",
+   "t": "xmlhttprequest",
+   "s": 535,
+   "d": 219,
+   "ttfb": 219,
+   "b": 300,
+   "dec": 0
+  },
+  {
+   "n": "https://region1.google-analytics.com/g/collect?v=2&tid=G-VT3YF07ZGB&gtm=45je6ba1v9262494562za20ozb9262488782zd9262488782xf1&_p=1794483169445&gcs=G100&",
+   "t": "fetch",
+   "s": 686,
+   "d": 42,
+   "ttfb": -686,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/livestock/info",
+   "t": "xmlhttprequest",
+   "s": 399,
+   "d": 301,
+   "ttfb": 300,
+   "b": 395,
+   "dec": 95
+  },
+  {
+   "n": "https://rootedgoods.eu/detail/properties/add",
+   "t": "xmlhttprequest",
+   "s": 528,
+   "d": 159,
+   "ttfb": 159,
+   "b": 302,
+   "dec": 2
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtag/js?id=G-VT3YF07ZGB&cx=c&gtm=4e6ba1",
+   "t": "script",
+   "s": 596,
+   "d": 42,
+   "ttfb": -595,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-300.woff2",
+   "t": "css",
+   "s": 559,
+   "d": 62,
+   "ttfb": 61,
+   "b": 15264,
+   "dec": 14964
+  },
+  {
+   "n": "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=xory7",
+   "t": "script",
+   "s": 601,
+   "d": 0,
+   "ttfb": -600,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.clarity.ms/tag/y9d3vyhhk8?ref=gtm",
+   "t": "script",
+   "s": 600,
+   "d": 0,
+   "ttfb": -600,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://www.googletagmanager.com/gtm.js?id=GTM-MJ83DVQK",
+   "t": "script",
+   "s": 394,
+   "d": 88,
+   "ttfb": -393,
+   "b": 0,
+   "dec": 0
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 277,
+   "d": 202,
+   "ttfb": 176,
+   "b": 183034,
+   "dec": 674480
+  }
+ ],
+ "grootste_requests": [
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/css/all.css?1794392064",
+   "t": "link",
+   "s": 277,
+   "d": 110,
+   "ttfb": 50,
+   "b": 195627,
+   "dec": 927972
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/06f1482ffc688956f25b23506f6c93f4/js/all.js?1794392064",
+   "t": "script",
+   "s": 277,
+   "d": 202,
+   "ttfb": 176,
+   "b": 183034,
+   "dec": 674480
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/webfonts/fa-solid-900.woff2",
+   "t": "css",
+   "s": 414,
+   "d": 62,
+   "ttfb": 59,
+   "b": 158520,
+   "dec": 158220
+  },
+  {
+   "n": "https://cdn.jsdelivr.net/gh/ward-gif/rootedgoods@main/rootedgoods.min.css",
+   "t": "link",
+   "s": 277,
+   "d": 94,
+   "ttfb": 93,
+   "b": 37947,
+   "dec": 228331
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/dd/62/f9/1234567890/84873cc11848e6b6c9678b8b0fa97d748a2839fabc6babd5fd5873366c66e2e3_800x800.jpg?1787207666",
+   "t": "img",
+   "s": 305,
+   "d": 71,
+   "ttfb": 47,
+   "b": 36003,
+   "dec": 35703
+  },
+  {
+   "n": "https://rootedgoods.eu/shared/thumbnail/c6/9c/2d/1234567890/6525bd926b2f2256fb23af2791ab93558035f21834a1e4695abbc5d858ed6eed_800x800.jpg?1787207665",
+   "t": "img",
+   "s": 305,
+   "d": 71,
+   "ttfb": 45,
+   "b": 30698,
+   "dec": 30398
+  },
+  {
+   "n": "https://rootedgoods.eu/bundles/cioincludefontawesome/assets/css/all.min.css?1794392060",
+   "t": "link",
+   "s": 277,
+   "d": 50,
+   "ttfb": 49,
+   "b": 21801,
+   "dec": 73890
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-700.woff2",
+   "t": "css",
+   "s": 413,
+   "d": 62,
+   "ttfb": 61,
+   "b": 15540,
+   "dec": 15240
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-500.woff2",
+   "t": "css",
+   "s": 413,
+   "d": 62,
+   "ttfb": 62,
+   "b": 15400,
+   "dec": 15100
+  },
+  {
+   "n": "https://rootedgoods.eu/theme/d0e952ba81e948f2878b79e00f0421b7/assets/fonts/Montserrat/montserrat-v26-latin-600.woff2",
+   "t": "css",
+   "s": 413,
+   "d": 62,
+   "ttfb": 61,
+   "b": 15372,
+   "dec": 15072
+  }
+ ],
+ "lange_taken_lijst": [
+  [
+   487,
+   71
+  ],
+  [
+   644,
+   62
+  ]
+ ],
+ "verschuivingen": [
+  {
+   "t": 448,
+   "v": 0,
+   "src": [
+    {
+     "el": "DIV.product-detail-configurator-option",
+     "van": [
+      924,
+      257,
+      60,
+      88
+     ],
+     "naar": [
+      944,
+      257,
+      80,
+      88
+     ]
+    },
+    {
+     "el": "::after.",
+     "van": [
+      852,
+      353,
+      69,
+      15
+     ],
+     "naar": [
+      862,
+      353,
+      69,
+      15
+     ]
+    },
+    {
+     "el": "::after.",
+     "van": [
+      938,
+      353,
+      32,
+      15
+     ],
+     "naar": [
+      968,
+      353,
+      32,
+      15
+     ]
+    }
+   ]
+  },
+  {
+   "t": 485,
+   "v": 0.003,
+   "src": [
+    {
+     "el": "undefined.",
+     "van": [
+      793,
+      849,
+      515,
+      18
+     ],
+     "naar": [
+      793,
+      848,
+      505,
+      18
+     ]
+    },
+    {
+     "el": "undefined.",
+     "van": [
+      793,
+      884,
+      515,
+      16
+     ],
+     "naar": [
+      793,
+      883,
+      505,
+      17
+     ]
+    },
+    {
+     "el": "TD.text-end",
+     "van": [
+      1267,
+      766,
+      132,
+      57
+     ],
+     "naar": [
+      1270,
+      766,
+      129,
+      57
+     ]
+    },
+    {
+     "el": "TH.text-end",
+     "van": [
+      1267,
+      710,
+      132,
+      56
+     ],
+     "naar": [
+      1270,
+      710,
+      129,
+      56
+     ]
+    }
+   ]
+  },
+  {
+   "t": 561,
+   "v": 0.135,
+   "src": [
+    {
+     "el": "DIV.js-magnifier-zoom-image-container",
+     "van": [
+      747,
+      197,
+      674,
+      703
+     ],
+     "naar": [
+      747,
+      245,
+      674,
+      655
+     ]
+    },
+    {
+     "el": "DIV.",
+     "van": [
+      767,
+      649,
+      633,
+      251
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      529,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "el": "DIV.collapse-group product-detail-configurator-group",
+     "van": [
+      768,
+      589,
+      632,
+      60
+     ],
+     "naar": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "extra": {
+  "tekstregels": [
+   [
+    768,
+    176,
+    401,
+    53
+   ]
+  ],
+  "tekst": "Wellmark geurstokjes",
+  "stijl": "40px 700 44px left rgb(45, 69, 40) -16px 20px",
+  "ouder": "col-lg-5 product-detail-buy | block | 700px | flex 0 0 50%",
+  "ouderRect": [
+   720,
+   197,
+   700,
+   1484
+  ]
+ }
+}
