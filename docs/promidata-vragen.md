@@ -763,12 +763,16 @@ Ruwe uitvoer: `docs/metingen/2026-11-12-pdp-traag/` (`ttfb-opgesplitst.txt`,
 pagina ziet, beoordeelt niet de pagina maar ons. Dit kunnen we niet zelf oplossen of
 omzeilen, want het zit onder de laag waar onze CSS en JS bij kunnen.
 
+**Stand 12 november:** apart als mail voorbereid, zonder de betaalde punten, in
+`docs/mails/2026-11-12-promidata-verbindingen-stokken.md`. Nog niet verstuurd.
+
 **Prioriteit:** hoog, en vóór de rest van deze lijst. A4 (cache) gaat over de wachttijd
 voor de HTML als de cache koud is; dit gaat over verbindingen die blijven hangen, ook
 voor bestanden die nooit uit de cache komen.
 
 **Wat we niet weten:** of het ook bij andere bezoekers gebeurt of alleen op Wards
-verbinding. Google en jsDelivr deden het in dezelfde minuten niet, wat een lokaal
+verbinding. Ward meldt (12 november, na de meting) dat bezoekers dit soms ook hebben;
+het is niet gemeten en niet uit data gehaald. Google en jsDelivr deden het in dezelfde minuten niet, wat een lokaal
 netwerkprobleem onwaarschijnlijk maakt, maar een tweede meetpunt (bijvoorbeeld de
 PageSpeed-servers, die in dezelfde uren 20 ms respons zagen) is nodig om het te
 bewijzen.
